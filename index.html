@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>福岡ゴルフ場ガイド｜外国人ゴルファーのための情報サイト</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark: #1a5c38; --green-mid: #2e8b57; --green-light: #e8f5ee;
+      --gold: #c9a227; --bg: #f2f5f0; --text: #1e1e2e; --muted: #6b7280; --radius: 14px;
+    }
+    body { font-family: 'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background: var(--bg); color: var(--text); }
+
+    .disclaimer { background:#fff3cd; border-bottom:2px solid #e6a817; padding:8px 16px; font-size:0.75rem; line-height:1.5; color:#5a3e00; text-align:center; }
+
+    .site-header { background:linear-gradient(160deg,var(--green-dark) 0%,#267347 60%,#3aaa6e 100%); color:#fff; padding:28px 20px 22px; text-align:center; }
+    .site-header .badge { font-size:0.7rem; background:rgba(0,0,0,0.25); display:inline-block; padding:2px 10px; border-radius:10px; margin-bottom:8px; }
+    .site-header h1 { font-size:1.4rem; font-weight:800; }
+    .site-header .tagline { font-size:0.82rem; opacity:0.85; margin-top:6px; line-height:1.6; }
+
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid var(--green-mid); position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:var(--green-dark); background:var(--green-light); border-bottom:3px solid var(--green-mid); margin-bottom:-2px; }
+
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 12px 2px; }
+
+    /* ── コンテンツカード ── */
+    .content-card {
+      background:#fff; border-radius:var(--radius); overflow:hidden;
+      box-shadow:0 3px 10px rgba(0,0,0,.08); margin-bottom:12px;
+      display:flex; align-items:stretch; text-decoration:none; color:var(--text);
+      transition:transform .18s, box-shadow .18s;
+    }
+    .content-card:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.12); }
+    .content-card.coming-soon { opacity:0.5; pointer-events:none; }
+    .card-accent { width:6px; flex-shrink:0; }
+    .accent-green  { background:var(--green-mid); }
+    .accent-gold   { background:var(--gold); }
+    .accent-blue   { background:#3a7bd5; }
+    .accent-red    { background:#c0392b; }
+    .accent-purple { background:#8e44ad; }
+    .card-inner { padding:14px 16px; flex:1; }
+    .card-row { display:flex; align-items:center; gap:10px; }
+    .card-icon { font-size:1.8rem; flex-shrink:0; }
+    .card-title { font-size:0.95rem; font-weight:800; }
+    .card-desc { font-size:0.78rem; color:var(--muted); margin-top:3px; line-height:1.5; }
+    .card-tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:8px; }
+    .tag { font-size:0.68rem; background:var(--green-light); color:var(--green-dark); border-radius:8px; padding:2px 8px; font-weight:600; }
+    .tag.blue { background:#e8f0fb; color:#1a3a8f; }
+    .tag.gold { background:#fff3e0; color:#7a5000; }
+    .tag.gray { background:#f0f0f0; color:#888; }
+    .card-arrow { margin-left:auto; color:#ccc; font-size:1rem; flex-shrink:0; }
+
+    /* ── ゴルフ場カード ── */
+    .course-card { background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.08); margin-bottom:12px; }
+    .course-head { background:linear-gradient(135deg,var(--green-dark),var(--green-mid)); color:#fff; padding:14px 16px; }
+    .course-name { font-size:1rem; font-weight:800; }
+    .course-meta { font-size:0.74rem; opacity:0.85; margin-top:3px; }
+    .course-body { padding:12px 16px; }
+    .mini-link-row { display:flex; gap:8px; flex-wrap:wrap; }
+    .mini-link { display:inline-flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:700;
+      background:var(--green-light); border:1.5px solid #b8d9c5; border-radius:8px; padding:6px 10px;
+      text-decoration:none; color:var(--green-dark); transition:background .15s; }
+    .mini-link:hover { background:#d0eedd; }
+    .mini-link.soon { background:#f5f5f5; border-color:#ddd; color:#bbb; pointer-events:none; }
+
+    .about-box { background:#fff; border-radius:var(--radius); padding:16px; font-size:0.82rem; line-height:1.7; box-shadow:0 2px 6px rgba(0,0,0,.07); }
+    .about-box h3 { font-size:0.9rem; color:var(--green-dark); margin-bottom:8px; }
+
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde8dd; }
+  </style>
+</head>
+<body>
+
+
+<header class="site-header">
+  <h1>⛳ 福岡ゴルフ場ガイド</h1>
+  <p class="tagline">
+    外国人ゴルファーのための福岡・九州ゴルフ情報<br>
+    Fukuoka Golf Guide for Inbound Visitors<br>
+    인바운드 방문자를 위한 후쿠오카 골프 가이드
+  </p>
+</header>
+
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- ════ 日本語 ════ -->
+<div id="c-ja" class="content on">
+
+  <div class="sec-head">📖 ガイド記事</div>
+
+  <a href="rules-japan.html" class="content-card">
+    <div class="card-accent accent-red"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">🚨</span>
+        <div>
+          <div class="card-title">日本ゴルフのルール・マナーの違い</div>
+          <div class="card-desc">海外とここが違う！知らないと恥ずかしいor罰則になるルール一覧</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">日英韓 対応</span><span class="tag gold">初心者必読</span><span class="tag blue">マナー</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="beginner-cards.html" class="content-card">
+    <div class="card-accent accent-green"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">🏌️</span>
+        <div>
+          <div class="card-title">初心者向けプレーガイド</div>
+          <div class="card-desc">1日の流れ・カート操作・ドレスコードをビジュアルで解説</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">日英韓 対応</span><span class="tag gold">カート操作</span><span class="tag blue">午後スルー・ナイター</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="access.html" class="content-card">
+    <div class="card-accent accent-blue"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">🗺️</span>
+        <div>
+          <div class="card-title">アクセスガイド</div>
+          <div class="card-desc">博多からのルート・ナビアプリ・駐車場情報</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">日英韓 対応</span><span class="tag blue">カーナビ</span></div>
+    </div>
+  </a>
+
+  <a href="faq.html" class="content-card">
+    <div class="card-accent accent-gold"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">❓</span>
+        <div>
+          <div class="card-title">外国人ゴルファーのよくある疑問</div>
+          <div class="card-desc">予約・言葉の壁・緊急時・便利な日本語フレーズ</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">日英韓 対応</span><span class="tag gold">フレーズ集</span></div>
+    </div>
+  </a>
+
+  <a href="fees.html" class="content-card">
+    <div class="card-accent accent-purple"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">💰</span>
+        <div>
+          <div class="card-title">料金・予約サイト案内</div>
+          <div class="card-desc">GDO・楽天GORA・外国語対応サービスと料金相場</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">日英韓 対応</span><span class="tag blue">予約サイト比較</span></div>
+    </div>
+  </a>
+
+  <div class="sec-head">📍 掲載ゴルフ場</div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">福岡レイクサイドカントリークラブ</div>
+      <div class="course-meta">📍 福岡県　｜　18ホール　｜　乗用カート　｜　ナイター（2025年4月〜）　｜　午後スルーあり</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-lakeside.html" class="mini-link">⛳ コース紹介</a>
+        <a href="access.html"          class="mini-link">🗺️ アクセス</a>
+        <a href="fees.html"            class="mini-link">📅 予約・料金</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">セントラル福岡ゴルフ倶楽部</div>
+      <div class="course-meta">📍 福岡県筑紫野市　｜　18ホール　｜　ナビ付きカート・セルフ　｜　午前・午後スルーあり　｜　2サム保証</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-central.html"  class="mini-link">⛳ コース紹介</a>
+        <a href="access-central.html"  class="mini-link">🗺️ アクセス</a>
+        <a href="fees.html"            class="mini-link">📅 予約・料金</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">ミッションバレーゴルフクラブ</div>
+      <div class="course-meta">📍 福岡県鞍手郡小竹町　｜　18ホール　｜　GPSカート・セルフ　｜　グラハム・マーシュ設計　｜　午後スルーあり</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-mission.html"  class="mini-link">⛳ コース紹介</a>
+        <a href="access-mission.html"  class="mini-link">🗺️ アクセス</a>
+        <a href="fees.html"            class="mini-link">📅 予約・料金</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">ムーンレイクゴルフクラブ 鞍手コース</div>
+      <div class="course-meta">📍 福岡県鞍手郡鞍手町　｜　27ホール　｜　GPSカート・セルフ　｜　ナイターあり　｜　1人予約対応</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-moonlake.html"  class="mini-link">⛳ コース紹介</a>
+        <a href="access-moonlake.html"  class="mini-link">🗺️ アクセス</a>
+        <a href="fees.html"             class="mini-link">📅 予約・料金</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card" style="border:2px dashed #ccc;background:#fafafa;box-shadow:none;">
+    <div class="course-body" style="text-align:center;padding:18px;color:#aaa;">
+      <div style="font-size:1.4rem;margin-bottom:4px;">＋</div>
+      <div style="font-size:0.82rem;font-weight:700;">次のゴルフ場を追加予定</div>
+    </div>
+  </div>
+
+  <div class="sec-head">ℹ️ このサイトについて</div>
+  <div class="about-box">
+    <h3>ゴルフ好きが作った情報ガイドです</h3>
+    福岡・九州のゴルフ場を訪れる外国人ゴルファーに、もっと便利に・気軽に楽しんでいただきたいという気持ちで作りました。
+    料金・営業時間などの最新情報は必ず各ゴルフ場の公式サイトまたはお電話にてご確認ください。
+  </div>
+
+</div><!-- /ja -->
+
+<!-- ════ English ════ -->
+<div id="c-en" class="content">
+
+  <div class="sec-head">📖 Guide Articles</div>
+
+  <a href="rules-japan.html" class="content-card">
+    <div class="card-accent accent-red"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">🚨</span>
+        <div>
+          <div class="card-title">Japanese Golf Rules & Etiquette Differences</div>
+          <div class="card-desc">What's different from your home country — rules you must know before playing</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">JA / EN / KO</span><span class="tag gold">Must-read</span><span class="tag blue">Etiquette</span></div>
+    </div>
+  </a>
+
+  <a href="beginner-cards.html" class="content-card">
+    <div class="card-accent accent-green"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">🏌️</span>
+        <div>
+          <div class="card-title">Beginner's Play Guide</div>
+          <div class="card-desc">Day schedule, cart operation, dress code — explained visually</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">JA / EN / KO</span><span class="tag blue">Afternoon through &amp; Night golf</span></div>
+    </div>
+  </a>
+
+  <a href="access.html" class="content-card">
+    <div class="card-accent accent-blue"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">🗺️</span>
+        <div>
+          <div class="card-title">Access Guide</div>
+          <div class="card-desc">Routes from Hakata, navigation apps, parking info</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">JA / EN / KO</span><span class="tag blue">Navigation apps</span></div>
+    </div>
+  </a>
+
+  <a href="faq.html" class="content-card">
+    <div class="card-accent accent-gold"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">❓</span>
+        <div>
+          <div class="card-title">FAQ for Foreign Golfers</div>
+          <div class="card-desc">Booking, language barriers, emergencies, useful phrases</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">JA / EN / KO</span><span class="tag gold">Phrase guide</span></div>
+    </div>
+  </a>
+
+  <a href="fees.html" class="content-card">
+    <div class="card-accent accent-purple"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">💰</span>
+        <div>
+          <div class="card-title">Green Fees & Booking Sites</div>
+          <div class="card-desc">GDO, Rakuten GORA, English-friendly services & fee ranges</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">JA / EN / KO</span><span class="tag blue">Booking comparison</span></div>
+    </div>
+  </a>
+
+  <div class="sec-head">📍 Golf Courses</div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">Fukuoka Lakeside Country Club</div>
+      <div class="course-meta">📍 Fukuoka　｜　18 holes　｜　Riding carts　｜　Night golf (Apr 2025–)　｜　Afternoon through available</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-lakeside.html" class="mini-link">⛳ Course Info</a>
+        <a href="access.html"          class="mini-link">🗺️ Access</a>
+        <a href="fees.html"            class="mini-link">📅 Booking</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">Central Fukuoka Golf Club</div>
+      <div class="course-meta">📍 Chikushino, Fukuoka　｜　18 holes　｜　GPS nav cart, self-play　｜　Morning &amp; Afternoon through　｜　2-ball guarantee</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-central.html"  class="mini-link">⛳ Course Info</a>
+        <a href="access-central.html"  class="mini-link">🗺️ Access</a>
+        <a href="fees.html"            class="mini-link">📅 Booking</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">Mission Valley Golf Club</div>
+      <div class="course-meta">📍 Kotake, Kurate-gun, Fukuoka　｜　18 holes　｜　GPS cart, self-play　｜　Graham Marsh design　｜　Afternoon through available</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-mission.html"  class="mini-link">⛳ Course Info</a>
+        <a href="access-mission.html"  class="mini-link">🗺️ Access</a>
+        <a href="fees.html"            class="mini-link">📅 Booking</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">Moon Lake Golf Club — Kurate Course</div>
+      <div class="course-meta">📍 Kurate, Kurate-gun, Fukuoka　｜　27 holes　｜　GPS cart, self-play　｜　Night golf available　｜　Solo booking accepted</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-moonlake.html"  class="mini-link">⛳ Course Info</a>
+        <a href="access-moonlake.html"  class="mini-link">🗺️ Access</a>
+        <a href="fees.html"             class="mini-link">📅 Booking</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card" style="border:2px dashed #ccc;background:#fafafa;box-shadow:none;">
+    <div class="course-body" style="text-align:center;padding:18px;color:#aaa;">
+      <div style="font-size:1.4rem;margin-bottom:4px;">＋</div>
+      <div style="font-size:0.82rem;font-weight:700;">More courses coming soon</div>
+    </div>
+  </div>
+
+  <div class="sec-head">ℹ️ About This Site</div>
+  <div class="about-box">
+    <h3>A guide made by golf lovers, for golf lovers</h3>
+    We made this so that visitors coming to Fukuoka and Kyushu for golf can enjoy their experience with ease.
+    Always verify fees and hours directly with each club's official website or by phone.
+  </div>
+
+</div><!-- /en -->
+
+<!-- ════ 한국어 ════ -->
+<div id="c-ko" class="content">
+
+  <div class="sec-head">📖 가이드 기사</div>
+
+  <a href="rules-japan.html" class="content-card">
+    <div class="card-accent accent-red"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">🚨</span>
+        <div>
+          <div class="card-title">일본 골프 룰·매너의 차이점</div>
+          <div class="card-desc">해외와 다른 점! 모르면 실례가 되거나 벌칙이 될 수 있는 룰 목록</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">한/일/영 대응</span><span class="tag gold">필독</span><span class="tag blue">매너</span></div>
+    </div>
+  </a>
+
+  <a href="beginner-cards.html" class="content-card">
+    <div class="card-accent accent-green"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">🏌️</span>
+        <div>
+          <div class="card-title">초보자 플레이 가이드</div>
+          <div class="card-desc">하루 일정·카트 조작·드레스 코드를 비주얼로 설명</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">한/일/영 대응</span><span class="tag blue">오후 스루·나이터</span></div>
+    </div>
+  </a>
+
+  <a href="access.html" class="content-card">
+    <div class="card-accent accent-blue"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">🗺️</span>
+        <div>
+          <div class="card-title">오시는 길 가이드</div>
+          <div class="card-desc">하카타에서의 경로·내비 앱·주차장 정보</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">한/일/영 대응</span><span class="tag blue">내비 앱</span></div>
+    </div>
+  </a>
+
+  <a href="faq.html" class="content-card">
+    <div class="card-accent accent-gold"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">❓</span>
+        <div>
+          <div class="card-title">외국인 골퍼 자주 묻는 질문</div>
+          <div class="card-desc">예약·언어 장벽·긴급 상황·유용한 일본어 표현</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">한/일/영 대응</span><span class="tag gold">표현 모음</span></div>
+    </div>
+  </a>
+
+  <a href="fees.html" class="content-card">
+    <div class="card-accent accent-purple"></div>
+    <div class="card-inner">
+      <div class="card-row">
+        <span class="card-icon">💰</span>
+        <div>
+          <div class="card-title">요금·예약 사이트 안내</div>
+          <div class="card-desc">GDO·라쿠텐 GORA·한국어 대응 서비스와 요금 시세</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="card-tags"><span class="tag">한/일/영 대응</span><span class="tag blue">예약 사이트 비교</span></div>
+    </div>
+  </a>
+
+  <div class="sec-head">📍 소개 골프장</div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">후쿠오카 레이크사이드 컨트리클럽</div>
+      <div class="course-meta">📍 후쿠오카　｜　18홀　｜　승용 카트　｜　나이터 (2025년 4월~)　｜　오후 스루 있음</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-lakeside.html" class="mini-link">⛳ 코스 소개</a>
+        <a href="access.html"          class="mini-link">🗺️ 오시는 길</a>
+        <a href="fees.html"            class="mini-link">📅 예약·요금</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">센트럴 후쿠오카 골프 클럽</div>
+      <div class="course-meta">📍 후쿠오카 지쿠시노　｜　18홀　｜　GPS 내비 카트·셀프　｜　오전·오후 스루　｜　2섬 보장</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-central.html"  class="mini-link">⛳ 코스 소개</a>
+        <a href="access-central.html"  class="mini-link">🗺️ 오시는 길</a>
+        <a href="fees.html"            class="mini-link">📅 예약·요금</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">미션 밸리 골프 클럽</div>
+      <div class="course-meta">📍 후쿠오카현 쿠라테군 코타케마치　｜　18홀　｜　GPS 카트·셀프　｜　그레이엄 마쉬 설계　｜　오후 스루 있음</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-mission.html"  class="mini-link">⛳ 코스 소개</a>
+        <a href="access-mission.html"  class="mini-link">🗺️ 오시는 길</a>
+        <a href="fees.html"            class="mini-link">📅 예약·요금</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <div class="course-head">
+      <div class="course-name">문레이크 골프 클럽 쿠라테 코스</div>
+      <div class="course-meta">📍 후쿠오카현 쿠라테군 쿠라테마치　｜　27홀　｜　GPS 카트·셀프　｜　나이터 있음　｜　1인 예약 가능</div>
+    </div>
+    <div class="course-body">
+      <div class="mini-link-row">
+        <a href="course-moonlake.html"  class="mini-link">⛳ 코스 소개</a>
+        <a href="access-moonlake.html"  class="mini-link">🗺️ 오시는 길</a>
+        <a href="fees.html"             class="mini-link">📅 예약·요금</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card" style="border:2px dashed #ccc;background:#fafafa;box-shadow:none;">
+    <div class="course-body" style="text-align:center;padding:18px;color:#aaa;">
+      <div style="font-size:1.4rem;margin-bottom:4px;">＋</div>
+      <div style="font-size:0.82rem;font-weight:700;">다음 골프장 추가 예정</div>
+    </div>
+  </div>
+
+  <div class="sec-head">ℹ️ 이 사이트에 대해</div>
+  <div class="about-box">
+    <h3>골프를 좋아하는 사람이 만든 가이드입니다</h3>
+    후쿠오카·규슈의 골프장을 방문하는 외국인 골퍼가 더 편하고 즐겁게 플레이할 수 있도록 만들었습니다.
+    요금·영업 시간 등 최신 정보는 반드시 각 골프장의 공식 사이트 또는 전화로 확인해 주세요.
+  </div>
+
+</div><!-- /ko -->
+
+<footer>⛳ 福岡ゴルフ場ガイド — このサイトはゴルフ好きが作った情報ガイドです。最新情報は各ゴルフ場の公式サイトでご確認ください。</footer>
+
+<script>
+  function sw(lang) {
+    ['ja','en','ko'].forEach(l => document.getElementById('c-'+l).classList.toggle('on', l===lang));
+    document.querySelectorAll('.lbtn').forEach((b,i) => b.classList.toggle('on', ['ja','en','ko'][i]===lang));
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+</script>
+</body>
+</html>

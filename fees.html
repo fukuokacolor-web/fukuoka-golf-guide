@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>料金・予約サイト案内 | 福岡ゴルフ場ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark:#1a5c38; --green-mid:#2e8b57; --green-light:#e8f5ee;
+      --gold:#c9a227; --gold-light:#fff8e1;
+      --bg:#f2f5f0; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+    }
+    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+    .disclaimer { background:#fff3cd; border-bottom:2px solid #e6a817; padding:8px 16px; font-size:0.75rem; line-height:1.5; color:#5a3e00; text-align:center; }
+    .page-header { background:linear-gradient(160deg,#7d6608 0%,var(--gold) 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header .badge { font-size:0.7rem; background:rgba(0,0,0,0.25); display:inline-block; padding:2px 10px; border-radius:10px; margin-bottom:6px; }
+    .page-header h1 { font-size:1.2rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #e0e8e0; font-size:0.8rem; }
+    .back-bar a { color:var(--green-dark); text-decoration:none; font-weight:700; }
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid var(--gold); position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:#7d6608; background:var(--gold-light); border-bottom:3px solid var(--gold); margin-bottom:-2px; }
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
+    .card { background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.07); }
+    .card-head { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #f0f0f0; }
+    .card-head .icon { font-size:1.8rem; flex-shrink:0; }
+    .card-head .title { font-size:0.95rem; font-weight:800; }
+    .card-body { padding:14px 16px; font-size:0.84rem; line-height:1.7; }
+    .price-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0; }
+    .price-box { border-radius:10px; padding:12px 14px; text-align:center; }
+    .price-box .day { font-size:0.72rem; font-weight:800; color:var(--muted); margin-bottom:4px; }
+    .price-box .price { font-size:1.1rem; font-weight:800; }
+    .price-box .note { font-size:0.68rem; color:var(--muted); margin-top:2px; }
+    .weekday { background:var(--green-light); border:1.5px solid #b8d9c5; }
+    .weekday .price { color:var(--green-dark); }
+    .weekend { background:var(--gold-light); border:1.5px solid #e0c870; }
+    .weekend .price { color:#7d6608; }
+    .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
+    .warn-bar { display:flex; gap:8px; background:#fdecea; border-left:4px solid #c0392b; border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#7d1a1a; }
+    .booking-card { background:#fff; border-radius:var(--radius); margin-bottom:10px; padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.07); display:flex; gap:12px; align-items:flex-start; }
+    .booking-icon { font-size:2rem; flex-shrink:0; }
+    .booking-name { font-size:0.95rem; font-weight:800; color:var(--green-dark); }
+    .booking-desc { font-size:0.8rem; color:#555; margin-top:3px; line-height:1.5; }
+    .lang-tag { display:inline-block; font-size:0.68rem; font-weight:700; padding:1px 7px; border-radius:8px; margin-top:5px; }
+    .lang-ja { background:#e8f5ee; color:var(--green-dark); }
+    .lang-en { background:#e8f0fb; color:#1a3a8f; }
+    .lang-ko { background:#fdecea; color:#7d1a1a; }
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde8dd; }
+    footer a { color:var(--green-dark); text-decoration:none; }
+  </style>
+</head>
+<body>
+<header class="page-header">
+  <h1>💰 料金・予約サイト案内</h1>
+  <p>Green Fees &amp; Booking Guide / 요금·예약 사이트 안내</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a></div>
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- 日本語 -->
+<div id="c-ja" class="content on">
+
+  <div class="sec-head">💴 料金の目安（福岡県一般的な相場）</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">💴</span><span class="title">グリーンフィー相場（カート・昼食別）</span></div>
+    <div class="card-body">
+      福岡県内のゴルフ場の一般的な相場です。コースや季節・時間帯によって大きく異なります。
+      <div class="price-grid">
+        <div class="price-box weekday">
+          <div class="day">☀️ 平日</div>
+          <div class="price">¥6,000〜¥12,000</div>
+          <div class="note">目安 / カート・食事別</div>
+        </div>
+        <div class="price-box weekend">
+          <div class="day">🎉 土日祝</div>
+          <div class="price">¥12,000〜¥20,000</div>
+          <div class="note">目安 / カート・食事別</div>
+        </div>
+      </div>
+      <div class="warn-bar"><span>⚠️</span>上記は福岡県内の一般的な相場です。各ゴルフ場の実際の料金は公式サイトでご確認ください。</div>
+      <div class="tip-bar"><span>💡</span>早朝・薄暮プランや平日割引を活用するとお得にプレーできます。予約サイトで比較しましょう。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📱 外国人も使いやすい予約サイト</div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🟢</span>
+    <div>
+      <div class="booking-name">GDO（ゴルフダイジェスト・オンライン）</div>
+      <div class="booking-desc">日本最大のゴルフ予約サイト。掲載数が多く、空き状況や料金比較がしやすい。</div>
+      <span class="lang-tag lang-ja">日本語</span>
+    </div>
+  </div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🔴</span>
+    <div>
+      <div class="booking-name">楽天GORA</div>
+      <div class="booking-desc">楽天ポイントが貯まる・使える。会員登録不要で見られる。一部英語対応あり。</div>
+      <span class="lang-tag lang-ja">日本語</span><span class="lang-tag lang-en" style="margin-left:4px">一部英語</span>
+    </div>
+  </div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🌐</span>
+    <div>
+      <div class="booking-name">Golf in Japan（英語サイト）</div>
+      <div class="booking-desc">外国人向けに特化した英語の予約サービス。日本全国のゴルフ場を英語で予約できる。</div>
+      <span class="lang-tag lang-en">English</span>
+    </div>
+  </div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🇰🇷</span>
+    <div>
+      <div class="booking-name">NAVERLINE ゴルフ / 현지 예약 앱</div>
+      <div class="booking-desc">韓国から日本のゴルフ場を韓国語で予約できるサービスも増えています。「일본 골프 예약」で検索を。</div>
+      <span class="lang-tag lang-ko">한국어</span>
+    </div>
+  </div>
+
+  <div class="sec-head">💡 お得に予約するコツ</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🎯</span><span class="title">賢い予約のポイント</span></div>
+    <div class="card-body">
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li style="display:flex;gap:8px;"><span>🌅</span><div><strong>早朝プランを使う</strong><br>スタート時間が早いほど料金が安くなる傾向があります</div></li>
+        <li style="display:flex;gap:8px;"><span>📅</span><div><strong>平日を選ぶ</strong><br>土日祝は料金が大幅に上がります。平日なら同じコースがお得</div></li>
+        <li style="display:flex;gap:8px;"><span>🍜</span><div><strong>昼食付きプランを比較する</strong><br>食事込みのパックの方が個別注文より安い場合もあります</div></li>
+        <li style="display:flex;gap:8px;"><span>🌙</span><div><strong>ナイタープランを活用</strong><br>夕方以降のナイタープランは日中より安い傾向があります</div></li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /ja -->
+
+<!-- English -->
+<div id="c-en" class="content">
+
+  <div class="sec-head">💴 Typical Green Fees (Fukuoka area)</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">💴</span><span class="title">Green Fee Range (cart & meals not included)</span></div>
+    <div class="card-body">
+      These are general estimates for Fukuoka golf courses. Prices vary widely by course, season, and time of day.
+      <div class="price-grid">
+        <div class="price-box weekday">
+          <div class="day">☀️ Weekdays</div>
+          <div class="price">¥6,000–¥12,000</div>
+          <div class="note">Estimate / cart & food extra</div>
+        </div>
+        <div class="price-box weekend">
+          <div class="day">🎉 Weekends / Holidays</div>
+          <div class="price">¥12,000–¥20,000</div>
+          <div class="note">Estimate / cart & food extra</div>
+        </div>
+      </div>
+      <div class="warn-bar"><span>⚠️</span>These are general Fukuoka estimates. Always check each club's official site for actual fees.</div>
+      <div class="tip-bar"><span>💡</span>Early morning and twilight plans offer significant discounts — compare options on booking sites.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📱 Booking Sites for Foreign Visitors</div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🟢</span>
+    <div>
+      <div class="booking-name">GDO (Golf Digest Online)</div>
+      <div class="booking-desc">Japan's largest golf booking site. Huge selection, easy to compare availability and prices.</div>
+      <span class="lang-tag lang-ja">Japanese</span>
+    </div>
+  </div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🔴</span>
+    <div>
+      <div class="booking-name">Rakuten GORA</div>
+      <div class="booking-desc">Earn and spend Rakuten points. Browsable without an account. Some English support.</div>
+      <span class="lang-tag lang-ja">Japanese</span><span class="lang-tag lang-en" style="margin-left:4px">Partial English</span>
+    </div>
+  </div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🌐</span>
+    <div>
+      <div class="booking-name">Golf in Japan (English site)</div>
+      <div class="booking-desc">Dedicated English booking service for visitors. Book Japanese golf courses entirely in English.</div>
+      <span class="lang-tag lang-en">English</span>
+    </div>
+  </div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🇰🇷</span>
+    <div>
+      <div class="booking-name">Korean booking services</div>
+      <div class="booking-desc">Korean-language Japan golf booking services are growing. Search "일본 골프 예약" on Naver or your preferred platform.</div>
+      <span class="lang-tag lang-ko">한국어</span>
+    </div>
+  </div>
+
+  <div class="sec-head">💡 Tips to Get a Better Price</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🎯</span><span class="title">Smart Booking Tips</span></div>
+    <div class="card-body">
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li style="display:flex;gap:8px;"><span>🌅</span><div><strong>Book early morning tee times</strong><br>Earlier start times are generally cheaper</div></li>
+        <li style="display:flex;gap:8px;"><span>📅</span><div><strong>Play on weekdays</strong><br>Weekend prices are significantly higher — weekdays offer great value</div></li>
+        <li style="display:flex;gap:8px;"><span>🍜</span><div><strong>Compare meal-inclusive packages</strong><br>Bundled lunch plans can be cheaper than ordering separately</div></li>
+        <li style="display:flex;gap:8px;"><span>🌙</span><div><strong>Try a twilight/night golf plan</strong><br>Evening and night plans are typically cheaper than daytime rates</div></li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /en -->
+
+<!-- 한국어 -->
+<div id="c-ko" class="content">
+
+  <div class="sec-head">💴 요금 참고치 (후쿠오카 일반적인 시세)</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">💴</span><span class="title">그린피 시세 (카트·식사 별도)</span></div>
+    <div class="card-body">
+      후쿠오카 골프장의 일반적인 시세입니다. 코스·계절·시간대에 따라 크게 다릅니다.
+      <div class="price-grid">
+        <div class="price-box weekday">
+          <div class="day">☀️ 평일</div>
+          <div class="price">¥6,000〜¥12,000</div>
+          <div class="note">참고치 / 카트·식사 별도</div>
+        </div>
+        <div class="price-box weekend">
+          <div class="day">🎉 토·일·공휴일</div>
+          <div class="price">¥12,000〜¥20,000</div>
+          <div class="note">참고치 / 카트·식사 별도</div>
+        </div>
+      </div>
+      <div class="warn-bar"><span>⚠️</span>위는 후쿠오카 일반 시세입니다. 각 골프장의 실제 요금은 공식 사이트에서 확인해 주세요.</div>
+      <div class="tip-bar"><span>💡</span>이른 아침·황혼 플랜이나 평일 할인을 활용하면 저렴하게 플레이할 수 있습니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📱 외국인도 사용하기 쉬운 예약 사이트</div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🟢</span>
+    <div>
+      <div class="booking-name">GDO (골프다이제스트 온라인)</div>
+      <div class="booking-desc">일본 최대 골프 예약 사이트. 등록 수가 많고 공석 확인·요금 비교가 쉽습니다.</div>
+      <span class="lang-tag lang-ja">일본어</span>
+    </div>
+  </div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🔴</span>
+    <div>
+      <div class="booking-name">라쿠텐 GORA</div>
+      <div class="booking-desc">라쿠텐 포인트 적립·사용 가능. 회원 가입 없이도 조회 가능. 일부 영어 지원.</div>
+      <span class="lang-tag lang-ja">일본어</span><span class="lang-tag lang-en" style="margin-left:4px">일부 영어</span>
+    </div>
+  </div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🌐</span>
+    <div>
+      <div class="booking-name">Golf in Japan (영어 사이트)</div>
+      <div class="booking-desc">외국인 전용 영어 예약 서비스. 일본 전국 골프장을 영어로 예약 가능.</div>
+      <span class="lang-tag lang-en">English</span>
+    </div>
+  </div>
+
+  <div class="booking-card">
+    <span class="booking-icon">🇰🇷</span>
+    <div>
+      <div class="booking-name">한국어 예약 서비스</div>
+      <div class="booking-desc">한국어로 일본 골프장을 예약할 수 있는 서비스가 늘고 있습니다. 네이버에서 「일본 골프 예약」으로 검색해 보세요.</div>
+      <span class="lang-tag lang-ko">한국어</span>
+    </div>
+  </div>
+
+  <div class="sec-head">💡 저렴하게 예약하는 팁</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🎯</span><span class="title">스마트한 예약 포인트</span></div>
+    <div class="card-body">
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li style="display:flex;gap:8px;"><span>🌅</span><div><strong>이른 아침 플랜 활용</strong><br>출발 시간이 이를수록 요금이 저렴한 경향이 있습니다</div></li>
+        <li style="display:flex;gap:8px;"><span>📅</span><div><strong>평일을 선택</strong><br>주말·공휴일은 요금이 크게 오릅니다. 평일이라면 같은 코스를 저렴하게</div></li>
+        <li style="display:flex;gap:8px;"><span>🍜</span><div><strong>점심 포함 패키지 비교</strong><br>식사 포함 패키지가 개별 주문보다 저렴한 경우도 있습니다</div></li>
+        <li style="display:flex;gap:8px;"><span>🌙</span><div><strong>나이터 플랜 활용</strong><br>저녁 이후 나이터 플랜은 낮 시간대보다 저렴한 경향이 있습니다</div></li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /ko -->
+
+<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　このサイトはゴルフ好きが作った情報ガイドです。最新情報は各ゴルフ場の公式サイトでご確認ください。</footer>
+<script>
+  function sw(l){['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body>
+</html>

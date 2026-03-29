@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>レストランガイド（非公式）| 福岡レイクサイドカントリークラブ 訪問者向け</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Hiragino Sans', 'Noto Sans KR', 'Arial', sans-serif;
+      background: #f4f0e8;
+      color: #2c2c2c;
+      min-height: 100vh;
+    }
+
+    .site-header {
+      background: linear-gradient(135deg, #1a5c38 0%, #2e8b57 100%);
+      color: #fff;
+      text-align: center;
+      padding: 20px 16px 14px;
+    }
+    .site-header .logo-icon { font-size: 2.4rem; }
+    .site-header h1 { font-size: 1.15rem; font-weight: 700; margin-top: 4px; letter-spacing: 0.03em; }
+    .site-header p  { font-size: 0.78rem; opacity: 0.85; margin-top: 2px; }
+
+    .disclaimer {
+      background: #fff3cd;
+      border-bottom: 2px solid #e6a817;
+      padding: 10px 16px;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: #5a3e00;
+      text-align: center;
+    }
+    .disclaimer strong { display: block; font-size: 0.85rem; margin-bottom: 2px; }
+
+    /* 言語タブ */
+    .lang-tabs {
+      display: flex;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 3px solid #2e8b57;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    .lang-btn {
+      flex: 1;
+      padding: 12px 4px;
+      border: none;
+      background: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #888;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .lang-btn .flag { font-size: 1.3rem; }
+    .lang-btn.active {
+      color: #1a5c38;
+      background: #e8f5ee;
+      border-bottom: 3px solid #2e8b57;
+      margin-bottom: -3px;
+    }
+
+    .menu-content { display: none; padding: 16px; max-width: 600px; margin: 0 auto; }
+    .menu-content.active { display: block; }
+
+    /* セクション見出し */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a5c38;
+      margin: 20px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px dashed #b8d9c5;
+    }
+
+    /* メニューカード */
+    .menu-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+      border-left: 4px solid #2e8b57;
+    }
+    .card-info { flex: 1; }
+    .card-name { font-size: 1rem; font-weight: 700; line-height: 1.3; }
+    .card-desc { font-size: 0.78rem; color: #777; margin-top: 3px; line-height: 1.4; }
+    .card-price {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a5c38;
+      white-space: nowrap;
+      margin-left: 12px;
+      padding-top: 2px;
+    }
+    .card-price .tax { font-size: 0.65rem; font-weight: 400; color: #999; display: block; text-align: right; }
+
+    /* プレースホルダーカード */
+    .placeholder-card {
+      background: #f9f9f9;
+      border: 2px dashed #ccc;
+      border-radius: 12px;
+      padding: 18px 16px;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.85rem;
+    }
+    .placeholder-card .ph-icon { font-size: 1.6rem; display: block; margin-bottom: 6px; }
+
+    /* 案内バナー */
+    .notice-banner {
+      background: linear-gradient(135deg, #fff3e0, #ffecc0);
+      border: 1.5px solid #e67e22;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 10px 0 20px;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #7d3c0e;
+    }
+    .notice-banner .notice-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+
+    .menu-footer {
+      text-align: center;
+      padding: 20px 16px 32px;
+      font-size: 0.75rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+
+<header class="site-header">
+  <div class="logo-icon">⛳</div>
+  <p style="font-size:0.72rem;background:rgba(0,0,0,0.25);display:inline-block;padding:2px 10px;border-radius:10px;margin-bottom:6px;">非公式ガイド / Unofficial Guide / 비공식 안내</p>
+  <h1>レストラン案内</h1>
+  <p>福岡レイクサイドカントリークラブを訪れる方へ</p>
+</header>
+
+<div class="lang-tabs" role="tablist">
+  <button class="lang-btn active" onclick="switchLang('ja')" role="tab" aria-selected="true">
+    <span class="flag">🇯🇵</span>日本語
+  </button>
+  <button class="lang-btn" onclick="switchLang('en')" role="tab" aria-selected="false">
+    <span class="flag">🇺🇸</span>English
+  </button>
+  <button class="lang-btn" onclick="switchLang('ko')" role="tab" aria-selected="false">
+    <span class="flag">🇰🇷</span>한국어
+  </button>
+</div>
+
+<!-- 日本語 -->
+<div id="lang-ja" class="menu-content active">
+  <div class="notice-banner">
+    <div class="notice-title">🍽️ レストランについて</div>
+    クラブハウス内のレストランをご利用いただけます。
+    ハーフターン休憩（前半9ホール終了後）の際にご利用ください。
+    午後スルーの場合は休憩なしでプレーが続きます。
+  </div>
+
+  <div class="section-title"><span>🍚</span>フード</div>
+
+  <div class="placeholder-card">
+    <span class="ph-icon">📋</span>
+    メニュー・価格は店頭でご確認ください
+  </div>
+
+  <div class="section-title"><span>🍺</span>ドリンク</div>
+
+  <div class="placeholder-card">
+    <span class="ph-icon">📋</span>
+    メニュー・価格は店頭でご確認ください
+  </div>
+</div>
+
+<!-- English -->
+<div id="lang-en" class="menu-content">
+  <div class="notice-banner">
+    <div class="notice-title">🍽️ About the Restaurant</div>
+    The restaurant is located inside the clubhouse.
+    It is available during the half-turn break (after the front 9 holes).
+    Afternoon through-play continues without a break.
+  </div>
+
+  <div class="section-title"><span>🍚</span>Food</div>
+
+  <div class="placeholder-card">
+    <span class="ph-icon">📋</span>
+    Please check the menu and prices at the restaurant
+  </div>
+
+  <div class="section-title"><span>🍺</span>Drinks</div>
+
+  <div class="placeholder-card">
+    <span class="ph-icon">📋</span>
+    Please check the menu and prices at the restaurant
+  </div>
+</div>
+
+<!-- 한국어 -->
+<div id="lang-ko" class="menu-content">
+  <div class="notice-banner">
+    <div class="notice-title">🍽️ 레스토랑 안내</div>
+    클럽하우스 내 레스토랑을 이용하실 수 있습니다.
+    하프 턴 휴식(전반 9홀 종료 후) 시 이용해 주세요.
+    오후 스루 플레이의 경우 휴식 없이 플레이가 계속됩니다.
+  </div>
+
+  <div class="section-title"><span>🍚</span>푸드</div>
+
+  <div class="placeholder-card">
+    <span class="ph-icon">📋</span>
+    메뉴 및 가격은 레스토랑에서 확인해 주세요
+  </div>
+
+  <div class="section-title"><span>🍺</span>음료</div>
+
+  <div class="placeholder-card">
+    <span class="ph-icon">📋</span>
+    메뉴 및 가격은 레스토랑에서 확인해 주세요
+  </div>
+</div>
+
+<div class="menu-footer">
+  福岡レイクサイドカントリークラブ &copy; 2025
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.querySelectorAll('.menu-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('active');
+    const order = ['ja', 'en', 'ko'];
+    document.querySelectorAll('.lang-btn')[order.indexOf(lang)].classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

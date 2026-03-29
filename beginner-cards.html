@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初心者向けプレーガイド | 福岡ゴルフ場ガイド</title>
+  <style>
+    /* ── リセット & ベース ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:  #1a5c38;
+      --green-mid:   #2e8b57;
+      --green-light: #e8f5ee;
+      --gold:        #c9a227;
+      --gold-light:  #fff8e1;
+      --red-soft:    #c0392b;
+      --red-light:   #fdecea;
+      --blue-soft:   #1a3a8f;
+      --blue-light:  #e8f0fb;
+      --text:        #1e1e2e;
+      --muted:       #6b7280;
+      --bg:          #f2f5f0;
+      --radius:      14px;
+    }
+
+    body {
+      font-family: 'Hiragino Sans', 'Noto Sans KR', 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 0 0 48px;
+    }
+
+    .disclaimer {
+      background: #fff3cd;
+      border-bottom: 2px solid #e6a817;
+      padding: 10px 16px;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: #5a3e00;
+      text-align: center;
+    }
+    .disclaimer strong { display: block; font-size: 0.85rem; margin-bottom: 2px; }
+
+    /* ── ヘッダー ── */
+    .page-header {
+      background: linear-gradient(160deg, var(--green-dark) 0%, #267347 60%, #3aaa6e 100%);
+      color: #fff;
+      padding: 28px 20px 22px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: '⛳ ⛳ ⛳';
+      position: absolute;
+      font-size: 6rem;
+      opacity: 0.06;
+      top: -10px; left: 0; right: 0;
+      letter-spacing: 1rem;
+      pointer-events: none;
+    }
+    .page-header h1 { font-size: 1.25rem; font-weight: 800; letter-spacing: 0.03em; }
+    .page-header p  { font-size: 0.8rem; opacity: 0.85; margin-top: 4px; }
+
+    /* ── 言語スイッチ ── */
+    .lang-bar {
+      display: flex;
+      background: #fff;
+      border-bottom: 2px solid var(--green-mid);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .lbtn {
+      flex: 1; border: none; background: none;
+      padding: 10px 4px; font-size: 0.8rem; font-weight: 700;
+      cursor: pointer; color: #aaa; transition: all 0.18s;
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+    }
+    .lbtn .f { font-size: 1.2rem; }
+    .lbtn.on { color: var(--green-dark); background: var(--green-light); border-bottom: 3px solid var(--green-mid); margin-bottom: -2px; }
+
+    /* ── コンテンツ ── */
+    .content { display: none; padding: 16px; max-width: 640px; margin: 0 auto; }
+    .content.on { display: block; }
+
+    /* ── セクション見出し ── */
+    .sec-head {
+      font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--muted);
+      margin: 24px 0 10px 4px;
+    }
+
+    /* ════ カード共通 ════ */
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.11); }
+
+    /* カードヘッダー帯 */
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 16px;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+    .card-head .big-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .card-head .title-wrap { flex: 1; }
+    .card-head .title-wrap .en { font-size: 0.68rem; font-weight: 500; opacity: 0.7; margin-top: 1px; }
+
+    /* 色テーマ */
+    .theme-green .card-head { background: var(--green-light); color: var(--green-dark); border-bottom: 2px solid #b8d9c5; }
+    .theme-gold  .card-head { background: var(--gold-light);  color: #7a5a00;           border-bottom: 2px solid #e8cc80; }
+    .theme-red   .card-head { background: var(--red-light);   color: var(--red-soft);   border-bottom: 2px solid #f5b8b8; }
+    .theme-blue  .card-head { background: var(--blue-light);  color: var(--blue-soft);  border-bottom: 2px solid #b8c8f0; }
+
+    /* カード本文 */
+    .card-body { padding: 14px 16px; }
+
+    /* ── ステップリスト ── */
+    .steps { list-style: none; counter-reset: s; }
+    .steps li {
+      counter-increment: s;
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 8px 0;
+      border-bottom: 1px dashed #ececec;
+      font-size: 0.85rem; line-height: 1.55;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: counter(s);
+      background: var(--green-mid); color: #fff;
+      font-size: 0.72rem; font-weight: 800;
+      min-width: 22px; height: 22px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+
+    /* ── チェックリスト ── */
+    .checklist { list-style: none; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 0.84rem; line-height: 1.5;
+      padding: 7px 0; border-bottom: 1px dashed #ececec;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: '✅'; font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── NGリスト ── */
+    .nglist { list-style: none; }
+    .nglist li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 0.84rem; line-height: 1.5;
+      padding: 7px 0; border-bottom: 1px dashed #fdd;
+    }
+    .nglist li:last-child { border-bottom: none; }
+    .nglist li::before { content: '🚫'; font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── タイムライン ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 10px; top: 6px; bottom: 6px;
+      width: 2px; background: linear-gradient(to bottom, var(--green-mid), #b8d9c5);
+      border-radius: 2px;
+    }
+    .tl-item {
+      position: relative;
+      margin-bottom: 14px;
+      font-size: 0.84rem; line-height: 1.5;
+    }
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -22px; top: 5px;
+      width: 12px; height: 12px;
+      background: var(--green-mid); border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--green-mid);
+    }
+    .tl-time {
+      font-size: 0.7rem; font-weight: 800; color: var(--green-dark);
+      background: var(--green-light); display: inline-block;
+      padding: 1px 7px; border-radius: 8px; margin-bottom: 3px;
+    }
+
+    /* ── カート操作図 ── */
+    .cart-diagram {
+      background: #1e2832;
+      border-radius: 10px;
+      padding: 14px;
+      color: #e0ffe0;
+      font-family: monospace;
+      font-size: 0.78rem;
+      line-height: 1.8;
+      margin-top: 8px;
+    }
+    .cart-row { display: flex; justify-content: space-between; align-items: center; }
+    .cart-key {
+      background: #3a5a3a;
+      border: 1px solid #5a8a5a;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.82rem;
+      cursor: default;
+      transition: background 0.15s;
+    }
+    .cart-key:hover { background: #4a8a4a; }
+    .cart-arrow { color: #80dd80; font-size: 1rem; }
+
+    /* ── info帯 ── */
+    .info-bar {
+      display: flex; align-items: flex-start; gap: 8px;
+      background: var(--gold-light);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 12px;
+      font-size: 0.8rem; line-height: 1.55;
+      margin-top: 10px;
+      color: #5a4000;
+    }
+    .info-bar .icon { font-size: 1.2rem; flex-shrink: 0; }
+
+    /* ── ドレスコードグリッド ── */
+    .dress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+    .dress-item {
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 0.8rem; text-align: center; line-height: 1.4;
+    }
+    .dress-ok  { background: var(--green-light); border: 1.5px solid #b8d9c5; color: var(--green-dark); }
+    .dress-ng  { background: var(--red-light);   border: 1.5px solid #f5b8b8; color: var(--red-soft); }
+    .dress-item .big { font-size: 1.6rem; display: block; margin-bottom: 4px; }
+    .dress-item .lbl { font-weight: 700; display: block; }
+
+    /* ── 緊急連絡バナー ── */
+    .sos-banner {
+      background: linear-gradient(135deg, var(--red-soft), #e74c3c);
+      color: #fff;
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex; align-items: center; gap: 12px;
+      margin-top: 8px;
+    }
+    .sos-icon { font-size: 2rem; flex-shrink: 0; }
+    .sos-text h3 { font-size: 0.95rem; font-weight: 800; }
+    .sos-text p  { font-size: 0.78rem; opacity: 0.9; margin-top: 3px; line-height: 1.45; }
+
+    /* ── フッター ── */
+    footer {
+      text-align: center; font-size: 0.72rem; color: var(--muted);
+      padding: 20px 16px 8px;
+    }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #e0e8e0; font-size:0.8rem; }
+    .back-bar a { color:var(--green-dark); text-decoration:none; font-weight:700; }
+  </style>
+</head>
+<body>
+
+
+<header class="page-header">
+  <h1>⛳ 初心者向けプレーガイド</h1>
+  <p>Beginner's Play Guide / 초보자 플레이 가이드</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a></div>
+
+<!-- 言語バー -->
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')" ><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')" ><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')" ><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- ══════════════════════════════════
+     日本語
+══════════════════════════════════ -->
+<div id="c-ja" class="content on">
+
+  <div class="sec-head">⏱ プレーの流れ</div>
+
+  <!-- タイムライン -->
+  <div class="card theme-green">
+    <div class="card-head">
+      <span class="big-icon">🗓️</span>
+      <div class="title-wrap">
+        <div>1日の流れ</div>
+        <div class="en">Day Schedule</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-time">〜スタート30分前</div>受付・ロッカー着替え。スパイクに履き替え</div>
+        <div class="tl-item"><div class="tl-time">スタート直前</div>練習グリーンでパター練習（任意）</div>
+        <div class="tl-item"><div class="tl-time">前半9ホール（OUT）</div>約2時間。カートで各ホールへ移動</div>
+        <div class="tl-item"><div class="tl-time">🍜 ハーフターン休憩</div><strong>必須の休憩（約40分）</strong>。レストランで食事・精算</div>
+        <div class="tl-item"><div class="tl-time">後半9ホール（IN）</div>約2時間。スコアカード記入</div>
+        <div class="tl-item"><div class="tl-time">終了後</div>シャワー・入浴。スコア確認。お土産コーナー</div>
+      </div>
+      <div class="info-bar"><span class="icon">💡</span>ハーフターン休憩は省略できません。前後半の間、全員レストランに集合してスコアを集計します。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🌅 プランの種類</div>
+
+  <div class="card theme-blue">
+    <div class="card-head">
+      <span class="big-icon">🏌️</span>
+      <div class="title-wrap">
+        <div>3つのプレースタイル</div>
+        <div class="en">Play Options</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="dress-grid" style="grid-template-columns:1fr 1fr 1fr;">
+        <div class="dress-item dress-ok" style="background:#e8f5ee;border-color:#b8d9c5;color:#1a5c38;">
+          <span class="big">☀️</span>
+          <span class="lbl">通常ラウンド</span>
+          朝スタート・18ホール・ハーフ休憩あり
+        </div>
+        <div class="dress-item dress-ok" style="background:#fff3e0;border-color:#f0c890;color:#7a5a00;">
+          <span class="big">🌤️</span>
+          <span class="lbl">午後スルー</span>
+          昼過ぎスタート・18ホール休憩なし続行
+        </div>
+        <div class="dress-item dress-ok" style="background:#e8ecfb;border-color:#b0bce8;color:#1a3080;">
+          <span class="big">🌙</span>
+          <span class="lbl">ナイター</span>
+          照明完備・夕方以降スタート<br><small style="font-size:0.68rem;opacity:0.8">2025年4月1日〜</small>
+        </div>
+      </div>
+      <div class="info-bar" style="margin-top:10px"><span class="icon">💡</span>
+        <strong>午後スルー</strong>はハーフ休憩なしで18ホールを続けてプレーするプランです。通常より短時間で回れるため、初心者にも人気です。
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 カートの操作</div>
+
+  <!-- カート -->
+  <div class="card theme-gold">
+    <div class="card-head">
+      <span class="big-icon">🚙</span>
+      <div class="title-wrap">
+        <div>乗用カートの使い方</div>
+        <div class="en">How to Operate the Golf Cart</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="steps">
+        <li>キーをONに回す（エンジン音ではなくモーター音）</li>
+        <li>フットブレーキを踏みながら前進ペダルを踏む</li>
+        <li>ホール間の<strong>カート道のみ走行</strong>。芝の上に乗り入れ禁止</li>
+        <li>グリーン周り30m以内は必ずカートを止めて徒歩</li>
+        <li>次のホールへ移動後はカートブレーキを必ずかける</li>
+      </ul>
+      <div class="cart-diagram">
+        <div style="text-align:center;margin-bottom:8px;opacity:0.6;font-size:0.7rem">— カート操作パネルイメージ —</div>
+        <div class="cart-row"><span class="cart-key">▶ 前進ペダル</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">踏む＝前進</span></div>
+        <div style="height:6px"></div>
+        <div class="cart-row"><span class="cart-key">⏸ ブレーキ</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">踏む＝停止</span></div>
+        <div style="height:6px"></div>
+        <div class="cart-row"><span class="cart-key">🔔 ホーン</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">前方に人がいるとき</span></div>
+        <div style="height:6px"></div>
+        <div class="cart-row"><span class="cart-key">📟 GPS</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">距離表示・ピン位置確認</span></div>
+      </div>
+      <div class="info-bar"><span class="icon">⚠️</span>カートに乗ったまま動画・写真撮影は転倒の恐れがあります。停車してから撮影してください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">👔 ドレスコード</div>
+
+  <div class="card theme-blue">
+    <div class="card-head">
+      <span class="big-icon">👕</span>
+      <div class="title-wrap">
+        <div>服装ルール</div>
+        <div class="en">Dress Code</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="dress-grid">
+        <div class="dress-item dress-ok"><span class="big">🧢</span><span class="lbl">帽子 OK</span>日差し対策に必須</div>
+        <div class="dress-item dress-ok"><span class="big">👔</span><span class="lbl">襟付きシャツ OK</span>ポロシャツ推奨</div>
+        <div class="dress-item dress-ok"><span class="big">👟</span><span class="lbl">ゴルフシューズ OK</span>スパイク・スパイクレス</div>
+        <div class="dress-item dress-ok"><span class="big">🩳</span><span class="lbl">ハーフパンツ OK</span>膝上でなければ可</div>
+        <div class="dress-item dress-ng"><span class="big">👕</span><span class="lbl">ノーカラーシャツ NG</span>Tシャツ・タンクトップ不可</div>
+        <div class="dress-item dress-ng"><span class="big">👟</span><span class="lbl">スニーカー NG</span>コース内持込不可</div>
+        <div class="dress-item dress-ng"><span class="big">🩴</span><span class="lbl">サンダル NG</span>クラブハウスも不可</div>
+        <div class="dress-item dress-ng"><span class="big">🧣</span><span class="lbl">フード付き NG</span>パーカー・フード不可</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚨 緊急・マナー</div>
+
+  <div class="card theme-red">
+    <div class="card-head">
+      <span class="big-icon">📣</span>
+      <div class="title-wrap">
+        <div>コース上の大切なルール</div>
+        <div class="en">Important Course Rules</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="nglist">
+        <li><strong>「フォア！」</strong>を叫ぶ — 打球が他のプレーヤーに向かうとき、必ず大声で叫ぶ</li>
+        <li>他組のプレー中は静かに待つ（大声・走り回り禁止）</li>
+        <li>ディボット（芝の削れ）は自分で砂を埋め戻す</li>
+        <li>バンカーのならしは必ず行い、レーキを元の場所へ</li>
+        <li>グリーン上でのスパイクの引きずり歩き禁止</li>
+      </ul>
+      <div class="sos-banner">
+        <span class="sos-icon">🆘</span>
+        <div class="sos-text">
+          <h3>体調不良・怪我のとき</h3>
+          <p>カートのGPS画面またはクラブハウスに連絡。スタッフが即座に駆けつけます。無理してプレーを続けないでください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /ja -->
+
+<!-- ══════════════════════════════════
+     English
+══════════════════════════════════ -->
+<div id="c-en" class="content">
+
+  <div class="sec-head">⏱ Day Schedule</div>
+
+  <div class="card theme-green">
+    <div class="card-head">
+      <span class="big-icon">🗓️</span>
+      <div class="title-wrap"><div>Flow of the Day</div></div>
+    </div>
+    <div class="card-body">
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-time">30 min before tee-off</div>Check in at reception, change at locker room, put on golf shoes</div>
+        <div class="tl-item"><div class="tl-time">Just before tee-off</div>Optional warm-up on the practice green</div>
+        <div class="tl-item"><div class="tl-time">Front 9 (OUT)</div>~2 hours. Travel between holes by cart</div>
+        <div class="tl-item"><div class="tl-time">🍜 Half-Turn Break</div><strong>Mandatory break (~40 min)</strong>. Lunch at restaurant & settle scores</div>
+        <div class="tl-item"><div class="tl-time">Back 9 (IN)</div>~2 hours. Fill in scorecard</div>
+        <div class="tl-item"><div class="tl-time">After play</div>Shower/bath, review scores, visit souvenir shop</div>
+      </div>
+      <div class="info-bar"><span class="icon">💡</span>The half-turn break is mandatory — all players gather at the restaurant between the front and back nine to tally scores.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🌅 Play Options</div>
+
+  <div class="card theme-blue">
+    <div class="card-head">
+      <span class="big-icon">🏌️</span>
+      <div class="title-wrap"><div>3 Ways to Play</div></div>
+    </div>
+    <div class="card-body">
+      <div class="dress-grid" style="grid-template-columns:1fr 1fr 1fr;">
+        <div class="dress-item dress-ok" style="background:#e8f5ee;border-color:#b8d9c5;color:#1a5c38;">
+          <span class="big">☀️</span>
+          <span class="lbl">Morning Round</span>
+          18 holes, mandatory half-turn break
+        </div>
+        <div class="dress-item dress-ok" style="background:#fff3e0;border-color:#f0c890;color:#7a5a00;">
+          <span class="big">🌤️</span>
+          <span class="lbl">Afternoon Through</span>
+          18 holes non-stop, no break, great for beginners
+        </div>
+        <div class="dress-item dress-ok" style="background:#e8ecfb;border-color:#b0bce8;color:#1a3080;">
+          <span class="big">🌙</span>
+          <span class="lbl">Night Golf</span>
+          Flood-lit course, evening tee times available<br><small style="font-size:0.68rem;opacity:0.8">Available from Apr 1, 2025</small>
+        </div>
+      </div>
+      <div class="info-bar" style="margin-top:10px"><span class="icon">💡</span>
+        <strong>Afternoon Through</strong> means playing all 18 holes without stopping — no half-turn break. A popular option for those short on time.
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 Cart Operation</div>
+
+  <div class="card theme-gold">
+    <div class="card-head">
+      <span class="big-icon">🚙</span>
+      <div class="title-wrap"><div>How to Operate the Golf Cart</div></div>
+    </div>
+    <div class="card-body">
+      <ul class="steps">
+        <li>Turn the key ON (you'll hear a motor hum, not a combustion engine)</li>
+        <li>Press the foot brake, then press the forward pedal to move</li>
+        <li><strong>Stay on the cart path only.</strong> Driving on the fairway turf is prohibited</li>
+        <li>Within ~30 m of the green, park the cart and walk</li>
+        <li>Always apply the parking brake when stopped at each hole</li>
+      </ul>
+      <div class="cart-diagram">
+        <div style="text-align:center;margin-bottom:8px;opacity:0.6;font-size:0.7rem">— Cart Control Panel —</div>
+        <div class="cart-row"><span class="cart-key">▶ Forward Pedal</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">Press = Move forward</span></div>
+        <div style="height:6px"></div>
+        <div class="cart-row"><span class="cart-key">⏸ Brake</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">Press = Stop</span></div>
+        <div style="height:6px"></div>
+        <div class="cart-row"><span class="cart-key">🔔 Horn</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">Use when players are ahead</span></div>
+        <div style="height:6px"></div>
+        <div class="cart-row"><span class="cart-key">📟 GPS Screen</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">Distance & pin location</span></div>
+      </div>
+      <div class="info-bar"><span class="icon">⚠️</span>Do not take videos or photos while the cart is moving — stop first to avoid accidents.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">👔 Dress Code</div>
+
+  <div class="card theme-blue">
+    <div class="card-head">
+      <span class="big-icon">👕</span>
+      <div class="title-wrap"><div>Dress Code Rules</div></div>
+    </div>
+    <div class="card-body">
+      <div class="dress-grid">
+        <div class="dress-item dress-ok"><span class="big">🧢</span><span class="lbl">Hats ✔</span>Sun protection recommended</div>
+        <div class="dress-item dress-ok"><span class="big">👔</span><span class="lbl">Collared shirt ✔</span>Polo shirts preferred</div>
+        <div class="dress-item dress-ok"><span class="big">👟</span><span class="lbl">Golf shoes ✔</span>Spikes or spikeless</div>
+        <div class="dress-item dress-ok"><span class="big">🩳</span><span class="lbl">Shorts ✔</span>Not above the knee</div>
+        <div class="dress-item dress-ng"><span class="big">👕</span><span class="lbl">T-shirts ✖</span>No collarless tops</div>
+        <div class="dress-item dress-ng"><span class="big">👟</span><span class="lbl">Sneakers ✖</span>Not allowed on course</div>
+        <div class="dress-item dress-ng"><span class="big">🩴</span><span class="lbl">Sandals ✖</span>Not allowed anywhere</div>
+        <div class="dress-item dress-ng"><span class="big">🧣</span><span class="lbl">Hoodies ✖</span>No hooded tops</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚨 Safety & Etiquette</div>
+
+  <div class="card theme-red">
+    <div class="card-head">
+      <span class="big-icon">📣</span>
+      <div class="title-wrap"><div>Important Course Rules</div></div>
+    </div>
+    <div class="card-body">
+      <ul class="nglist">
+        <li>Shout <strong>"Fore!"</strong> loudly whenever your ball heads toward other players</li>
+        <li>Be quiet and wait patiently when other groups are playing</li>
+        <li>Fill any divots (turf chunks) with the sand provided on the cart</li>
+        <li>Always rake bunkers after use and return the rake to its place</li>
+        <li>Do not drag your feet on the green — lift your feet when walking</li>
+      </ul>
+      <div class="sos-banner">
+        <span class="sos-icon">🆘</span>
+        <div class="sos-text">
+          <h3>Feeling Unwell or Injured?</h3>
+          <p>Contact staff via the cart's GPS screen or head to the clubhouse. Staff will come immediately. Do not push through — your safety comes first.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /en -->
+
+<!-- ══════════════════════════════════
+     한국어
+══════════════════════════════════ -->
+<div id="c-ko" class="content">
+
+  <div class="sec-head">⏱ 하루 일정</div>
+
+  <div class="card theme-green">
+    <div class="card-head">
+      <span class="big-icon">🗓️</span>
+      <div class="title-wrap">
+        <div>하루 플레이 흐름</div>
+        <div class="en">Day Schedule</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-time">티오프 30분 전</div>프런트 체크인 → 락커룸에서 갈아입기 → 골프화 착용</div>
+        <div class="tl-item"><div class="tl-time">티오프 직전</div>퍼팅 연습 그린 이용 가능 (선택)</div>
+        <div class="tl-item"><div class="tl-time">전반 9홀 (OUT)</div>약 2시간. 카트로 각 홀 이동</div>
+        <div class="tl-item"><div class="tl-time">🍜 하프 턴 휴식</div><strong>필수 휴식 (약 40분)</strong>. 레스토랑에서 식사 및 스코어 집계</div>
+        <div class="tl-item"><div class="tl-time">후반 9홀 (IN)</div>약 2시간. 스코어카드 기입</div>
+        <div class="tl-item"><div class="tl-time">플레이 종료 후</div>샤워·목욕, 스코어 확인, 기념품 쇼핑</div>
+      </div>
+      <div class="info-bar"><span class="icon">💡</span>하프 턴 휴식은 생략 불가입니다. 전·후반 사이에 전원이 레스토랑에 모여 스코어를 집계합니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🌅 플레이 옵션</div>
+
+  <div class="card theme-blue">
+    <div class="card-head">
+      <span class="big-icon">🏌️</span>
+      <div class="title-wrap">
+        <div>3가지 플레이 스타일</div>
+        <div class="en">Play Options</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="dress-grid" style="grid-template-columns:1fr 1fr 1fr;">
+        <div class="dress-item dress-ok" style="background:#e8f5ee;border-color:#b8d9c5;color:#1a5c38;">
+          <span class="big">☀️</span>
+          <span class="lbl">일반 라운드</span>
+          오전 출발·18홀·하프 휴식 있음
+        </div>
+        <div class="dress-item dress-ok" style="background:#fff3e0;border-color:#f0c890;color:#7a5a00;">
+          <span class="big">🌤️</span>
+          <span class="lbl">오후 스루</span>
+          오후 출발·휴식 없이 18홀 연속 플레이
+        </div>
+        <div class="dress-item dress-ok" style="background:#e8ecfb;border-color:#b0bce8;color:#1a3080;">
+          <span class="big">🌙</span>
+          <span class="lbl">나이터</span>
+          조명 완비·저녁 이후 출발 가능<br><small style="font-size:0.68rem;opacity:0.8">2025년 4월 1일 ~</small>
+        </div>
+      </div>
+      <div class="info-bar" style="margin-top:10px"><span class="icon">💡</span>
+        <strong>오후 스루</strong>는 하프 휴식 없이 18홀을 한 번에 도는 플랜입니다. 시간이 부족한 분이나 초보자에게도 인기입니다.
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 카트 조작법</div>
+
+  <div class="card theme-gold">
+    <div class="card-head">
+      <span class="big-icon">🚙</span>
+      <div class="title-wrap">
+        <div>승용 카트 사용법</div>
+        <div class="en">How to Operate the Golf Cart</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="steps">
+        <li>키를 ON으로 돌립니다 (전동 모터 소리가 납니다)</li>
+        <li>풋 브레이크를 밟은 채 전진 페달을 밟으면 출발</li>
+        <li><strong>카트 도로만 주행.</strong> 페어웨이(잔디) 진입 금지</li>
+        <li>그린 주변 약 30m 이내에서는 카트를 세우고 도보 이동</li>
+        <li>각 홀 도착 후 반드시 주차 브레이크를 체결할 것</li>
+      </ul>
+      <div class="cart-diagram">
+        <div style="text-align:center;margin-bottom:8px;opacity:0.6;font-size:0.7rem">— 카트 조작 패널 이미지 —</div>
+        <div class="cart-row"><span class="cart-key">▶ 전진 페달</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">밟으면 전진</span></div>
+        <div style="height:6px"></div>
+        <div class="cart-row"><span class="cart-key">⏸ 브레이크</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">밟으면 정지</span></div>
+        <div style="height:6px"></div>
+        <div class="cart-row"><span class="cart-key">🔔 경적</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">앞에 사람이 있을 때</span></div>
+        <div style="height:6px"></div>
+        <div class="cart-row"><span class="cart-key">📟 GPS 화면</span><span class="cart-arrow">→</span><span style="font-size:0.75rem">거리 표시·핀 위치 확인</span></div>
+      </div>
+      <div class="info-bar"><span class="icon">⚠️</span>카트가 움직이는 중에 사진·영상 촬영은 전도 위험이 있습니다. 반드시 정차 후 촬영하세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">👔 드레스 코드</div>
+
+  <div class="card theme-blue">
+    <div class="card-head">
+      <span class="big-icon">👕</span>
+      <div class="title-wrap">
+        <div>복장 규정</div>
+        <div class="en">Dress Code</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="dress-grid">
+        <div class="dress-item dress-ok"><span class="big">🧢</span><span class="lbl">모자 ✔</span>자외선 차단 필수</div>
+        <div class="dress-item dress-ok"><span class="big">👔</span><span class="lbl">카라 셔츠 ✔</span>폴로 셔츠 권장</div>
+        <div class="dress-item dress-ok"><span class="big">👟</span><span class="lbl">골프화 ✔</span>스파이크/스파이크리스</div>
+        <div class="dress-item dress-ok"><span class="big">🩳</span><span class="lbl">반바지 ✔</span>무릎 아래 길이</div>
+        <div class="dress-item dress-ng"><span class="big">👕</span><span class="lbl">티셔츠 ✖</span>카라 없는 상의 불가</div>
+        <div class="dress-item dress-ng"><span class="big">👟</span><span class="lbl">운동화 ✖</span>코스 반입 불가</div>
+        <div class="dress-item dress-ng"><span class="big">🩴</span><span class="lbl">샌들 ✖</span>클럽하우스도 불가</div>
+        <div class="dress-item dress-ng"><span class="big">🧣</span><span class="lbl">후드 ✖</span>후디·파카 불가</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚨 안전 & 매너</div>
+
+  <div class="card theme-red">
+    <div class="card-head">
+      <span class="big-icon">📣</span>
+      <div class="title-wrap">
+        <div>코스에서 지켜야 할 규칙</div>
+        <div class="en">Important Course Rules</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="nglist">
+        <li>공이 다른 플레이어 쪽으로 날아갈 때 반드시 <strong>"포어!(Fore!)"</strong>를 크게 외칩니다</li>
+        <li>다른 조가 플레이 중일 때는 조용히 대기 (큰 소리·뛰기 금지)</li>
+        <li>디봇(잔디 패인 곳)은 카트 위의 모래로 직접 메워줍니다</li>
+        <li>벙커 사용 후 반드시 고무래로 정리하고 제자리에 반납</li>
+        <li>그린 위에서 스파이크를 끌며 걷지 않도록 주의</li>
+      </ul>
+      <div class="sos-banner">
+        <span class="sos-icon">🆘</span>
+        <div class="sos-text">
+          <h3>몸이 좋지 않거나 부상이 발생했을 때</h3>
+          <p>카트 GPS 화면 또는 클럽하우스로 연락하세요. 스태프가 즉시 출동합니다. 무리하게 플레이를 계속하지 마세요.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /ko -->
+
+<footer>
+  福岡レイクサイドカントリークラブ &copy; 2025　|
+  内容に変更がある場合はスタッフへお問い合わせください
+</footer>
+
+<script>
+  function sw(lang) {
+    ['ja','en','ko'].forEach(l => {
+      document.getElementById('c-' + l).classList.toggle('on', l === lang);
+    });
+    document.querySelectorAll('.lbtn').forEach((btn, i) => {
+      btn.classList.toggle('on', ['ja','en','ko'][i] === lang);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

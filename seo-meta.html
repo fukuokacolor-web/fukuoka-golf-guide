@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEOメタテキスト（非公式紹介ページ用）| 福岡レイクサイドカントリークラブ</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Hiragino Sans', 'Noto Sans', Arial, sans-serif;
+      background: #f0f4f8;
+      color: #1a1a2e;
+      padding: 16px;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+      background: #1a5c38;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 0;
+    }
+    .subtitle {
+      background: #2e8b57;
+      color: #d5f0e2;
+      font-size: 0.78rem;
+      padding: 6px 18px 10px;
+      border-radius: 0 0 10px 10px;
+      margin-bottom: 20px;
+    }
+
+    /* ── セクション ── */
+    .section {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .section-header {
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid #e8f0e8;
+    }
+    .section-header.green  { background: #e8f5ee; color: #1a5c38; }
+    .section-header.blue   { background: #e8f0fb; color: #1a3a6e; }
+    .section-header.orange { background: #fff3e0; color: #7d3c0e; }
+    .section-header.red    { background: #fde8e8; color: #7d1a1a; }
+
+    .section-body { padding: 14px 16px; }
+
+    /* ── コピーブロック ── */
+    .copy-block {
+      position: relative;
+      background: #f6f9f7;
+      border: 1.5px solid #c8e0d0;
+      border-radius: 8px;
+      padding: 12px 48px 12px 14px;
+      margin-bottom: 10px;
+      font-size: 0.83rem;
+      line-height: 1.65;
+      color: #2c3e2d;
+      word-break: break-all;
+    }
+    .copy-block.code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      background: #1e2832;
+      color: #a8d8a8;
+      border-color: #3a5a3a;
+    }
+    .copy-block.ko {
+      background: #f0f0fb;
+      border-color: #b8c0e0;
+      color: #1a1a3e;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #2e8b57;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 4px 9px;
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover { background: #1a5c38; }
+    .copy-btn.copied { background: #e67e22; }
+
+    .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #888;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── キーワードタグ ── */
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 0 4px; }
+    .tag {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.1s;
+      user-select: none;
+    }
+    .tag:active { transform: scale(0.93); opacity: 0.7; }
+    .tag.ja   { background: #e8f5ee; color: #1a5c38; border: 1px solid #b8d9c5; }
+    .tag.ko   { background: #e8ecfb; color: #1a3080; border: 1px solid #b0bce8; }
+    .tag.en   { background: #fff3e0; color: #7d3c0e; border: 1px solid #f0c890; }
+    .tag.high { background: #fde8e8; color: #7d1a1a; border: 1px solid #f0b0b0; }
+
+    .tag-note {
+      font-size: 0.72rem;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    /* ── ガイドステップ ── */
+    .steps { counter-reset: step; }
+    .step {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      background: #2e8b57;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.8rem;
+      min-width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-text { font-size: 0.83rem; line-height: 1.55; padding-top: 3px; }
+    .step-text strong { color: #1a5c38; }
+
+    /* ── 注意帯 ── */
+    .warning {
+      background: #fff8e1;
+      border-left: 4px solid #f0a500;
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      margin-top: 8px;
+      color: #5a4000;
+    }
+  </style>
+</head>
+<body>
+
+<div style="background:#fff3cd;border:2px solid #e6a817;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:0.78rem;line-height:1.6;color:#5a3e00;">
+  <strong style="display:block;font-size:0.85rem;margin-bottom:2px;">⚠️ これは非公式の紹介ページ向けSEOテキストです</strong>
+  このメタテキストは福岡レイクサイドカントリークラブの公式サイトではなく、<strong>非公式の訪問者向け紹介ページ</strong>に使用することを前提に作成しています。ページ内でも「非公式・公式サイトではない」旨を必ず明示してください。
+</div>
+<h1>⛳ SEOメタテキスト — 福岡レイクサイドカントリークラブ</h1>
+<div class="subtitle">Googleサイト「設定」にコピペするだけで韓国・英語圏からの流入を増やせるテキスト集</div>
+
+<!-- ══ 1. ページタイトル ══ -->
+<div class="section">
+  <div class="section-header green">📄 1. ページタイトル（Google Sitesの「ページ名」欄）</div>
+  <div class="section-body">
+    <div class="label">日本語サイト用</div>
+    <div class="copy-block">
+      福岡レイクサイドカントリークラブ｜福岡のゴルフ場 外国人歓迎 午後スルー・ナイター対応
+      <button class="copy-btn" onclick="copyText(this)">コピー</button>
+    </div>
+    <div class="label">韓国語ページ用（Google Sites の多言語ページ）</div>
+    <div class="copy-block ko">
+      후쿠오카 레이크사이드 컨트리클럽 | 후쿠오카 골프장 · 한국어 안내 · 오후 스루 · 나이터
+      <button class="copy-btn" onclick="copyText(this)">コピー</button>
+    </div>
+    <div class="label">英語ページ用</div>
+    <div class="copy-block">
+      Fukuoka Lakeside Country Club | Fukuoka Golf Course – Afternoon & Night Golf Welcome
+      <button class="copy-btn" onclick="copyText(this)">コピー</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 2. メタディスクリプション ══ -->
+<div class="section">
+  <div class="section-header blue">🔍 2. メタディスクリプション（Google Sites「設定 → 説明文」欄）</div>
+  <div class="section-body">
+    <div class="label">日本語 — 160文字以内</div>
+    <div class="copy-block">
+      福岡県のゴルフ場「福岡レイクサイドカントリークラブ」。英語・韓国語対応、インバウンド歓迎。全18ホール・乗用カート・レストラン完備。午後スルー・ナイターも対応。博多から車1時間。外国人ゴルファーのご予約はネットで24時間受付中。
+      <button class="copy-btn" onclick="copyText(this)">コピー</button>
+    </div>
+    <div class="label">韓국어 — NAVER・Google 両対応（160字相当）</div>
+    <div class="copy-block ko">
+      후쿠오카 레이크사이드 컨트리클럽 | 한국어 안내 가능 · 카트 완비 · 레스토랑 있음. 오후 스루·나이터 운영. 하카타에서 차로 약 1시간. 외국인 환영, 온라인 예약 24시간 접수 중. 규슈 골프 여행이라면 후쿠오카 레이크사이드!
+      <button class="copy-btn" onclick="copyText(this)">コピー</button>
+    </div>
+    <div class="label">English</div>
+    <div class="copy-block">
+      Fukuoka Lakeside Country Club — a scenic 18-hole course in Fukuoka, Japan. Afternoon through-play & night golf available. English-friendly staff, cart included, restaurant on-site. 1 hr from Hakata. Online booking 24/7. Perfect for inbound golfers visiting Kyushu!
+      <button class="copy-btn" onclick="copyText(this)">コピー</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 3. HTMLメタタグ（head内貼付け） ══ -->
+<div class="section">
+  <div class="section-header orange">💻 3. HTMLメタタグ（Google Sites「HTML埋め込み」ウィジェット）</div>
+  <div class="section-body">
+    <div class="label">コピーして Google Sites の &lt;head&gt; / カスタムコードに貼り付け</div>
+    <div class="copy-block code">
+&lt;!-- 基本SEO --&gt;<br>
+&lt;meta name="description" content="후쿠오카 레이크사이드 컨트리클럽 | 한국어 안내, 18홀, 카트, 레스토랑, 오후 스루·나이터 운영. Fukuoka Lakeside Country Club – English welcome, afternoon & night golf."&gt;<br>
+&lt;meta name="keywords" content="福岡レイクサイドカントリークラブ, 福岡ゴルフ場, 午後スルー, ナイターゴルフ, 후쿠오카 레이크사이드, 후쿠오카 골프장, 규슈 골프, Fukuoka golf, Fukuoka Lakeside Country Club, 九州ゴルフ, インバウンドゴルフ"&gt;<br>
+&lt;meta name="robots" content="index, follow"&gt;<br>
+&lt;meta name="language" content="ja, ko, en"&gt;<br>
+&lt;link rel="alternate" hreflang="ko" href="YOUR_KO_PAGE_URL"&gt;<br>
+&lt;link rel="alternate" hreflang="en" href="YOUR_EN_PAGE_URL"&gt;<br>
+&lt;link rel="alternate" hreflang="ja" href="YOUR_JA_PAGE_URL"&gt;<br>
+&lt;br&gt;<br>
+&lt;!-- OGP (SNSシェア最適化) --&gt;<br>
+&lt;meta property="og:title" content="후쿠오카 레이크사이드 컨트리클럽 | 후쿠오카 골프장 오후 스루·나이터"&gt;<br>
+&lt;meta property="og:description" content="후쿠오카에서 차로 1시간. 한국어 안내 가능, 오후 스루·나이터 운영. 온라인 예약 24시간 접수."&gt;<br>
+&lt;meta property="og:type" content="website"&gt;<br>
+&lt;meta property="og:locale" content="ko_KR"&gt;<br>
+&lt;meta property="og:locale:alternate" content="ja_JP"&gt;<br>
+&lt;meta property="og:locale:alternate" content="en_US"&gt;
+      <button class="copy-btn" onclick="copyText(this)">コピー</button>
+    </div>
+    <div class="warning">
+      ⚠️ <strong>YOUR_KO_PAGE_URL</strong> などのプレースホルダーを Google Sites の実際のURLに置き換えてください。
+    </div>
+  </div>
+</div>
+
+<!-- ══ 4. キーワードタグクラウド ══ -->
+<div class="section">
+  <div class="section-header red">🏷️ 4. キーワードタグ一覧（タップでコピー）</div>
+  <div class="section-body">
+    <div class="label">高優先度（検索ボリューム大）</div>
+    <div class="tag-cloud">
+      <span class="tag high" onclick="copyTag(this)">후쿠오카 골프장</span>
+      <span class="tag high" onclick="copyTag(this)">규슈 골프</span>
+      <span class="tag high" onclick="copyTag(this)">후쿠오카 골프 여행</span>
+      <span class="tag high" onclick="copyTag(this)">일본 골프 여행</span>
+      <span class="tag high" onclick="copyTag(this)">福岡ゴルフ場</span>
+      <span class="tag high" onclick="copyTag(this)">インバウンド ゴルフ 福岡</span>
+    </div>
+
+    <div class="label" style="margin-top:10px">韓国語キーワード（NAVER対応）</div>
+    <div class="tag-cloud">
+      <span class="tag ko" onclick="copyTag(this)">후쿠오카 레이크사이드</span>
+      <span class="tag ko" onclick="copyTag(this)">후쿠오카 레이크사이드 컨트리클럽</span>
+      <span class="tag ko" onclick="copyTag(this)">후쿠오카 골프클럽</span>
+      <span class="tag ko" onclick="copyTag(this)">하카타 근교 골프</span>
+      <span class="tag ko" onclick="copyTag(this)">기타큐슈 골프</span>
+      <span class="tag ko" onclick="copyTag(this)">후쿠오카 인근 골프장</span>
+      <span class="tag ko" onclick="copyTag(this)">규슈 골프장 예약</span>
+      <span class="tag ko" onclick="copyTag(this)">일본 골프 코스</span>
+      <span class="tag ko" onclick="copyTag(this)">후쿠오카 오후 스루 골프</span>
+      <span class="tag ko" onclick="copyTag(this)">후쿠오카 나이터 골프</span>
+      <span class="tag ko" onclick="copyTag(this)">외국인 골프 일본</span>
+    </div>
+
+    <div class="label" style="margin-top:10px">日本語キーワード</div>
+    <div class="tag-cloud">
+      <span class="tag ja" onclick="copyTag(this)">福岡レイクサイドカントリークラブ</span>
+      <span class="tag ja" onclick="copyTag(this)">福岡レイクサイド ゴルフ</span>
+      <span class="tag ja" onclick="copyTag(this)">福岡ゴルフ インバウンド</span>
+      <span class="tag ja" onclick="copyTag(this)">外国人ゴルフ 福岡</span>
+      <span class="tag ja" onclick="copyTag(this)">九州ゴルフ場 英語</span>
+      <span class="tag ja" onclick="copyTag(this)">午後スルー ゴルフ 福岡</span>
+      <span class="tag ja" onclick="copyTag(this)">ナイターゴルフ 福岡</span>
+      <span class="tag ja" onclick="copyTag(this)">ゴルフ 福岡 韓国人</span>
+      <span class="tag ja" onclick="copyTag(this)">レイクサイド ゴルフ 九州</span>
+    </div>
+
+    <div class="label" style="margin-top:10px">英語キーワード（Google英語圏）</div>
+    <div class="tag-cloud">
+      <span class="tag en" onclick="copyTag(this)">Fukuoka golf course</span>
+      <span class="tag en" onclick="copyTag(this)">Fukuoka Lakeside Country Club</span>
+      <span class="tag en" onclick="copyTag(this)">afternoon golf Fukuoka</span>
+      <span class="tag en" onclick="copyTag(this)">night golf Fukuoka</span>
+      <span class="tag en" onclick="copyTag(this)">Kyushu golf tour</span>
+      <span class="tag en" onclick="copyTag(this)">Japan golf inbound</span>
+      <span class="tag en" onclick="copyTag(this)">golf near Hakata</span>
+      <span class="tag en" onclick="copyTag(this)">English-friendly golf Japan</span>
+    </div>
+    <div class="tag-note">★ タグをタップすると自動コピーされます</div>
+  </div>
+</div>
+
+<!-- ══ 5. Google Sites 設定ガイド ══ -->
+<div class="section">
+  <div class="section-header green">📋 5. Google Sites への設定手順</div>
+  <div class="section-body">
+    <div class="steps">
+      <div class="step"><div class="step-text">Google Sites を開き、右上の <strong>「⚙ 設定」</strong> をクリック</div></div>
+      <div class="step"><div class="step-text"><strong>「検索エンジン最適化」</strong> セクションで「説明文」にメタディスクリプション（セクション2）を貼り付け</div></div>
+      <div class="step"><div class="step-text">各ページの <strong>「ページ設定 → ページの説明」</strong> にも個別の説明文を入れると効果倍増</div></div>
+      <div class="step"><div class="step-text">韓国語・英語ページを別途作成し、<strong>hreflang タグ</strong>（セクション3）でリンクさせる</div></div>
+      <div class="step"><div class="step-text">公開後、<strong>Google Search Console</strong> でサイトマップを送信し、インデックスを促進する</div></div>
+    </div>
+    <div class="warning">
+      💡 NAVERへの登録は「NAVER Search Advisor (서치어드바이저)」から無料でサイトを登録できます。韓国語ページのURLを登録すると流入が大幅に増加します。
+    </div>
+  </div>
+</div>
+
+<script>
+  function copyText(btn) {
+    const block = btn.closest('.copy-block');
+    // ボタンテキストを除いたテキストを取得
+    const clone = block.cloneNode(true);
+    clone.querySelector('.copy-btn')?.remove();
+    const text = clone.innerText.trim();
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓ コピー済';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'コピー'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  function copyTag(el) {
+    navigator.clipboard.writeText(el.textContent.trim()).then(() => {
+      const orig = el.style.background;
+      el.style.background = '#c8f0d8';
+      el.textContent = '✓ ' + el.textContent;
+      setTimeout(() => {
+        el.style.background = orig;
+        el.textContent = el.textContent.replace('✓ ', '');
+      }, 1500);
+    });
+  }
+</script>
+</body>
+</html>

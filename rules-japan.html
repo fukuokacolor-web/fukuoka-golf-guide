@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本ゴルフのルール・マナーの違い | 福岡ゴルフ場ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark: #1a5c38; --green-mid: #2e8b57; --green-light: #e8f5ee;
+      --red: #c0392b; --red-light: #fdecea;
+      --gold: #c9a227; --gold-light: #fff8e1;
+      --blue: #1a3a8f; --blue-light: #e8f0fb;
+      --bg: #f2f5f0; --text: #1e1e2e; --muted: #6b7280; --radius: 14px;
+    }
+    body { font-family: 'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+
+    .disclaimer { background:#fff3cd; border-bottom:2px solid #e6a817; padding:8px 16px; font-size:0.75rem; line-height:1.5; color:#5a3e00; text-align:center; }
+
+    .page-header { background:linear-gradient(160deg,var(--red) 0%,#e74c3c 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header .badge { font-size:0.7rem; background:rgba(0,0,0,0.25); display:inline-block; padding:2px 10px; border-radius:10px; margin-bottom:6px; }
+    .page-header h1 { font-size:1.2rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #e0e8e0; font-size:0.8rem; }
+    .back-bar a { color:var(--green-dark); text-decoration:none; font-weight:700; }
+
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid var(--red); position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:var(--red); background:#fdecea; border-bottom:3px solid var(--red); margin-bottom:-2px; }
+
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
+
+    /* ── ルールカード ── */
+    .rule-card { background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.07); }
+    .rule-head { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #f0f0f0; }
+    .rule-icon { font-size:1.8rem; flex-shrink:0; }
+    .rule-title { font-size:0.95rem; font-weight:800; flex:1; }
+    .badge-diff { font-size:0.68rem; font-weight:700; padding:2px 8px; border-radius:8px; white-space:nowrap; }
+    .diff-high   { background:var(--red-light);  color:var(--red); }
+    .diff-mid    { background:var(--gold-light);  color:#7a5000; }
+    .diff-low    { background:var(--blue-light);  color:var(--blue); }
+
+    .rule-body { padding:12px 16px; font-size:0.84rem; line-height:1.65; }
+
+    .compare { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0; }
+    .compare-box { border-radius:8px; padding:10px 12px; font-size:0.8rem; line-height:1.5; }
+    .compare-box .label { font-size:0.68rem; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px; }
+    .box-overseas { background:#f0f0fb; border:1.5px solid #c8c8f0; }
+    .box-overseas .label { color:#555; }
+    .box-japan   { background:var(--green-light); border:1.5px solid #b8d9c5; }
+    .box-japan .label   { color:var(--green-dark); }
+
+    .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
+    .tip-bar .icon { font-size:1.1rem; flex-shrink:0; }
+
+    .warn-bar { display:flex; gap:8px; background:var(--red-light); border-left:4px solid var(--red); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#7d1a1a; }
+    .warn-bar .icon { font-size:1.1rem; flex-shrink:0; }
+
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde8dd; }
+    footer a { color:var(--green-dark); text-decoration:none; }
+  </style>
+</head>
+<body>
+
+
+<header class="page-header">
+  <h1>🚨 日本ゴルフのルール・マナーの違い</h1>
+  <p>Japanese Golf Rules &amp; Etiquette Differences<br>일본 골프 룰·매너의 차이점</p>
+</header>
+
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a></div>
+
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- ════ 日本語 ════ -->
+<div id="c-ja" class="content on">
+
+  <div class="sec-head">🕐 プレーの仕組み</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🍜</span>
+      <span class="rule-title">ハーフターン休憩は「強制」</span>
+      <span class="badge-diff diff-high">海外と大違い</span>
+    </div>
+    <div class="rule-body">
+      前半9ホール（OUT）が終わると、全プレーヤーがレストランに集まる休憩が義務付けられています。省略できません。
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 海外</div>休憩なしで18ホール続けてプレーするのが一般的</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 日本</div>9ホール終了後に約40分の休憩。スコア集計・食事・会計をここで行う</div>
+      </div>
+      <div class="tip-bar"><span class="icon">💡</span>「午後スルー」プランは例外。18ホール休憩なしで続けてプレーできます。</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">⏱️</span>
+      <span class="rule-title">スロープレーは厳禁</span>
+      <span class="badge-diff diff-high">海外と大違い</span>
+    </div>
+    <div class="rule-body">
+      各ホールに目安タイムがあり、遅れると後続組を待たせる原因になります。スタッフから注意を受けることもあります。
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 海外</div>比較的ゆるやかなペースで許容されることが多い</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 日本</div>組ごとに時間間隔が厳密に管理され、遅延は周囲に迷惑となる</div>
+      </div>
+      <div class="tip-bar"><span class="icon">💡</span>打つ前から次のショットを考えておく「準備プレー」が基本です。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 カート・コースのルール</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🚙</span>
+      <span class="rule-title">カートはフェアウェイ乗り入れ禁止</span>
+      <span class="badge-diff diff-high">海外と大違い</span>
+    </div>
+    <div class="rule-body">
+      日本のほとんどのコースでカートはカート道のみ走行。芝（フェアウェイ・ラフ）への乗り入れは禁止です。
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 海外</div>フェアウェイまでカートで乗り入れ可能なコースが多い</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 日本</div>カート道のみ走行。ボールのそばまで歩いて行く</div>
+      </div>
+      <div class="warn-bar"><span class="icon">🚫</span>違反すると芝を傷め、他のプレーヤーや管理者に迷惑をかけます。</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🔇</span>
+      <span class="rule-title">コース内での携帯電話</span>
+      <span class="badge-diff diff-mid">要注意</span>
+    </div>
+    <div class="rule-body">
+      クラブハウスやコース内での通話は基本的にマナー違反です。マナーモードにしておきましょう。
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 海外</div>コース内で通話・SNS投稿をオープンにしているケースも多い</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 日本</div>通話はNG。写真・動画は停車中・プレー外のみ。SNS投稿は事前確認推奨</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">💳 お金・予約</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">💳</span>
+      <span class="rule-title">クレジットカード払いが一般的</span>
+      <span class="badge-diff diff-low">知識として</span>
+    </div>
+    <div class="rule-body">
+      多くのゴルフ場でクレジットカードが使えます。ただし、コース内の飲食や一部サービスは現金のみの場合もあるため、少額の現金も持参しておくと安心です。
+      <div class="tip-bar"><span class="icon">💡</span>VISA・Mastercardは広く使えます。事前に各ゴルフ場の公式サイトで確認を。</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🙅</span>
+      <span class="rule-title">チップは不要</span>
+      <span class="badge-diff diff-low">知識として</span>
+    </div>
+    <div class="rule-body">
+      日本ではスタッフへのチップ文化はありません。渡すと逆に困らせてしまう場合があります。
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 海外（米・韓など）</div>キャディーへのチップが慣例</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 日本</div>チップ不要。感謝は「ありがとうございます」の一言で十分</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🛁 クラブハウスのマナー</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">👟</span>
+      <span class="rule-title">スパイクはロッカーで履き替える</span>
+      <span class="badge-diff diff-mid">要注意</span>
+    </div>
+    <div class="rule-body">
+      クラブハウス内にゴルフシューズ（スパイク）のまま入ることは禁止です。必ずロッカールームで履き替えます。
+      <div class="tip-bar"><span class="icon">💡</span>受付後すぐロッカーへ。着替えとシューズの交換を終えてからコースに向かいます。</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🛁</span>
+      <span class="rule-title">プレー後はお風呂・シャワーが一般的</span>
+      <span class="badge-diff diff-low">知識として</span>
+    </div>
+    <div class="rule-body">
+      多くの日本のゴルフ場にはシャワーまたは大浴場が設置されています。プレー後に利用するのが一般的です。
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 海外</div>シャワー設備がないコースも多い</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 日本</div>大浴場完備のコースも多く、プレー後の入浴が慣習</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">⛳ コースマナー</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🌱</span>
+      <span class="rule-title">ディボット・バンカーは必ず直す</span>
+      <span class="badge-diff diff-mid">要注意</span>
+    </div>
+    <div class="rule-body">
+      ショットで削れた芝（ディボット）は砂で埋め、バンカーは使用後に必ずならします。
+      <div class="warn-bar"><span class="icon">🚫</span>直さずにプレーを続けると他のプレーヤーに大きな迷惑です。スタッフが注意しに来ることもあります。</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">📣</span>
+      <span class="rule-title">「フォア！」は必ず叫ぶ</span>
+      <span class="badge-diff diff-high">安全に関わる</span>
+    </div>
+    <div class="rule-body">
+      打球が他のプレーヤーや隣のホール方向に飛んだ場合、「フォア！（Fore!）」と大声で叫ぶことは安全のための義務です。
+      <div class="warn-bar"><span class="icon">⚠️</span>叫ばずに放置して他人にボールが当たると、責任問題になる場合があります。</div>
+    </div>
+  </div>
+
+</div><!-- /ja -->
+
+<!-- ════ English ════ -->
+<div id="c-en" class="content">
+
+  <div class="sec-head">🕐 How Play Works</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🍜</span>
+      <span class="rule-title">The Half-Turn Break is Mandatory</span>
+      <span class="badge-diff diff-high">Very different</span>
+    </div>
+    <div class="rule-body">
+      After the front 9 holes, all players must gather at the restaurant for a break. It cannot be skipped.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 Overseas</div>Playing all 18 holes straight through without a break is the norm</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 Japan</div>~40 min break after 9 holes. Scores are tallied, food is eaten, and payments are made</div>
+      </div>
+      <div class="tip-bar"><span class="icon">💡</span>Exception: the "Afternoon Through" plan allows 18 holes without a break.</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">⏱️</span>
+      <span class="rule-title">Slow Play is Strictly Frowned Upon</span>
+      <span class="badge-diff diff-high">Very different</span>
+    </div>
+    <div class="rule-body">
+      Each hole has a target time. Falling behind delays everyone and staff may intervene.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 Overseas</div>A relaxed pace is more commonly tolerated</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 Japan</div>Tee times are managed precisely. Delays cause problems for following groups</div>
+      </div>
+      <div class="tip-bar"><span class="icon">💡</span>Plan your next shot before it's your turn — "ready golf" thinking is key.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 Cart & Course Rules</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🚙</span>
+      <span class="rule-title">Carts Must Stay on Cart Paths</span>
+      <span class="badge-diff diff-high">Very different</span>
+    </div>
+    <div class="rule-body">
+      At most Japanese courses, carts are restricted to designated cart paths. Driving on fairways or rough is prohibited.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 Overseas</div>Driving carts onto fairways is common at many courses</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 Japan</div>Cart paths only. Walk to your ball from the path</div>
+      </div>
+      <div class="warn-bar"><span class="icon">🚫</span>Violations damage the turf and disturb other players and the club.</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🔇</span>
+      <span class="rule-title">Mobile Phones — Keep It Quiet</span>
+      <span class="badge-diff diff-mid">Watch out</span>
+    </div>
+    <div class="rule-body">
+      Phone calls on the course or in the clubhouse are generally considered bad manners. Keep your phone on silent.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 Overseas</div>Open phone use and social media on course is widely accepted</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 Japan</div>No calls. Photos/video OK when stopped. Check club rules before posting on SNS</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">💳 Money & Booking</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">💴</span>
+      <span class="rule-title">Cash May Be Required</span>
+      <span class="badge-diff diff-mid">Watch out</span>
+    </div>
+    <div class="rule-body">
+      Credit cards are accepted at most golf courses in Japan. However, some on-course food or extras may be cash-only, so carrying a small amount of cash is a good idea.
+      <div class="tip-bar"><span class="icon">💡</span>VISA and Mastercard are widely accepted. Check the club's official site to confirm before you go.</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🙅</span>
+      <span class="rule-title">No Tipping</span>
+      <span class="badge-diff diff-low">Good to know</span>
+    </div>
+    <div class="rule-body">
+      Tipping is not a custom in Japan. Offering a tip may actually confuse or embarrass staff.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 Overseas (US, Korea…)</div>Tipping caddies is standard practice</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 Japan</div>No tips needed. A sincere "arigatou gozaimasu" is enough</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🛁 Clubhouse Etiquette</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">👟</span>
+      <span class="rule-title">Change Shoes in the Locker Room</span>
+      <span class="badge-diff diff-mid">Watch out</span>
+    </div>
+    <div class="rule-body">
+      Golf spikes are not allowed inside the clubhouse. Always change in the locker room before and after your round.
+      <div class="tip-bar"><span class="icon">💡</span>After check-in, go straight to the locker room to change before heading to the course.</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🛁</span>
+      <span class="rule-title">A Bath or Shower After Play is Common</span>
+      <span class="badge-diff diff-low">Good to know</span>
+    </div>
+    <div class="rule-body">
+      Most Japanese golf clubs have shower or bathing facilities. Using them after your round is common and expected.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🌍 Overseas</div>Many courses lack bathing facilities</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 Japan</div>Many clubs have full baths (onsen-style). Post-round bathing is part of the experience</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">⛳ Course Manners</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🌱</span>
+      <span class="rule-title">Always Repair Divots and Rake Bunkers</span>
+      <span class="badge-diff diff-mid">Watch out</span>
+    </div>
+    <div class="rule-body">
+      Fill divots (turf chunks) with the sand bottle on the cart. After using a bunker, rake it smooth and replace the rake.
+      <div class="warn-bar"><span class="icon">🚫</span>Leaving divots or unraked bunkers is considered very poor etiquette — staff may approach you.</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">📣</span>
+      <span class="rule-title">Always Shout "Fore!"</span>
+      <span class="badge-diff diff-high">Safety matter</span>
+    </div>
+    <div class="rule-body">
+      If your ball heads toward other players or an adjacent hole, shout "Fore!" loudly. This is a safety obligation, not optional.
+      <div class="warn-bar"><span class="icon">⚠️</span>Failing to warn someone and injuring them with your ball can result in legal responsibility.</div>
+    </div>
+  </div>
+
+</div><!-- /en -->
+
+<!-- ════ 한국어 ════ -->
+<div id="c-ko" class="content">
+
+  <div class="sec-head">🕐 플레이 방식</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🍜</span>
+      <span class="rule-title">하프 턴 휴식은 「필수」</span>
+      <span class="badge-diff diff-high">한국과 크게 다름</span>
+    </div>
+    <div class="rule-body">
+      전반 9홀(아웃)이 끝나면 모든 플레이어가 레스토랑에 모이는 휴식이 의무입니다. 생략할 수 없습니다.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🇰🇷 한국</div>휴식 없이 18홀을 연속으로 도는 것이 일반적</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 일본</div>9홀 후 약 40분 휴식. 스코어 집계·식사·계산을 이 시간에 진행</div>
+      </div>
+      <div class="tip-bar"><span class="icon">💡</span>예외: 「오후 스루」 플랜은 휴식 없이 18홀을 연속으로 돌 수 있습니다.</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">⏱️</span>
+      <span class="rule-title">슬로 플레이는 엄격히 금지</span>
+      <span class="badge-diff diff-high">한국과 크게 다름</span>
+    </div>
+    <div class="rule-body">
+      각 홀마다 기준 시간이 있으며, 뒤처지면 뒤 팀에 민폐가 됩니다. 직원이 주의를 주러 올 수도 있습니다.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🇰🇷 한국</div>비교적 여유로운 페이스도 허용되는 경우가 많음</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 일본</div>조별 시간 간격이 엄격하게 관리됨. 지연은 민폐</div>
+      </div>
+      <div class="tip-bar"><span class="icon">💡</span>자기 차례가 오기 전부터 다음 샷을 준비해 두는 것이 기본입니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 카트·코스 룰</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🚙</span>
+      <span class="rule-title">카트는 카트 도로만 주행</span>
+      <span class="badge-diff diff-high">한국과 크게 다름</span>
+    </div>
+    <div class="rule-body">
+      일본 대부분의 코스에서는 카트를 카트 도로에서만 주행할 수 있습니다. 페어웨이·러프 진입은 금지입니다.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🇰🇷 한국</div>페어웨이까지 카트로 진입 가능한 코스가 많음</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 일본</div>카트 도로만 주행. 공이 있는 곳까지 걸어서 이동</div>
+      </div>
+      <div class="warn-bar"><span class="icon">🚫</span>위반하면 잔디를 훼손하고 다른 플레이어 및 관리자에게 민폐가 됩니다.</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🔇</span>
+      <span class="rule-title">코스 내 휴대폰 통화는 매너 위반</span>
+      <span class="badge-diff diff-mid">주의</span>
+    </div>
+    <div class="rule-body">
+      클럽하우스나 코스 내에서의 통화는 기본적으로 매너 위반입니다. 무음 모드로 설정해 두세요.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🇰🇷 한국</div>코스 내 통화·SNS 업로드를 공개적으로 하는 경우도 많음</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 일본</div>통화 NG. 사진·영상은 정차 중·플레이 외에만 가능. SNS 게시는 사전 확인 권장</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">💳 요금·예약</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">💴</span>
+      <span class="rule-title">현금 결제가 기본인 경우가 많음</span>
+      <span class="badge-diff diff-mid">주의</span>
+    </div>
+    <div class="rule-body">
+      대부분의 골프장에서 신용카드를 사용할 수 있습니다. 다만 코스 내 음식이나 일부 서비스는 현금만 받는 경우도 있으므로, 소액의 현금도 함께 준비해 두면 안심입니다.
+      <div class="tip-bar"><span class="icon">💡</span>VISA·Mastercard는 대부분 사용 가능합니다. 사전에 각 골프장의 공식 사이트에서 확인해 주세요.</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🙅</span>
+      <span class="rule-title">팁은 불필요</span>
+      <span class="badge-diff diff-low">참고</span>
+    </div>
+    <div class="rule-body">
+      일본에는 팁 문화가 없습니다. 팁을 건네면 오히려 직원이 당황할 수 있습니다.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🇰🇷 한국</div>캐디에게 팁을 주는 것이 관례</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 일본</div>팁 불필요. 감사 인사 한마디로 충분</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🛁 클럽하우스 매너</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">👟</span>
+      <span class="rule-title">스파이크는 락커룸에서 갈아신기</span>
+      <span class="badge-diff diff-mid">주의</span>
+    </div>
+    <div class="rule-body">
+      클럽하우스 내부에는 골프화(스파이크)를 신고 들어갈 수 없습니다. 반드시 락커룸에서 갈아신으세요.
+      <div class="tip-bar"><span class="icon">💡</span>체크인 후 바로 락커룸으로 이동해 갈아입은 후 코스로 향합니다.</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🛁</span>
+      <span class="rule-title">플레이 후 목욕·샤워가 일반적</span>
+      <span class="badge-diff diff-low">참고</span>
+    </div>
+    <div class="rule-body">
+      많은 일본 골프장에는 샤워 또는 대욕장이 설비되어 있습니다. 플레이 후 이용하는 것이 일반적입니다.
+      <div class="compare">
+        <div class="compare-box box-overseas"><div class="label">🇰🇷 한국</div>샤워 설비가 없는 코스도 많음</div>
+        <div class="compare-box box-japan"><div class="label">🇯🇵 일본</div>대욕장 완비 코스도 많고, 플레이 후 입욕이 관습</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">⛳ 코스 매너</div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">🌱</span>
+      <span class="rule-title">디봇·벙커는 반드시 정리</span>
+      <span class="badge-diff diff-mid">주의</span>
+    </div>
+    <div class="rule-body">
+      샷으로 파인 잔디(디봇)는 카트 위의 모래로 메우고, 벙커 사용 후에는 고무래로 반드시 정리합니다.
+      <div class="warn-bar"><span class="icon">🚫</span>정리하지 않으면 다른 플레이어에게 큰 민폐입니다. 직원이 주의를 주러 올 수도 있습니다.</div>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <div class="rule-head">
+      <span class="rule-icon">📣</span>
+      <span class="rule-title">「포어!(Fore!)」는 반드시 외쳐야 함</span>
+      <span class="badge-diff diff-high">안전에 관련</span>
+    </div>
+    <div class="rule-body">
+      공이 다른 플레이어나 인접 홀 방향으로 날아갈 경우, 「포어!(Fore!)」를 크게 외치는 것은 안전을 위한 의무입니다.
+      <div class="warn-bar"><span class="icon">⚠️</span>외치지 않아 다른 사람에게 공이 맞으면 책임 문제가 될 수 있습니다.</div>
+    </div>
+  </div>
+
+</div><!-- /ko -->
+
+<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　このサイトはゴルフ好きが作った情報ガイドです。最新情報は各ゴルフ場の公式サイトでご確認ください。</footer>
+
+<script>
+  function sw(lang) {
+    ['ja','en','ko'].forEach(l => document.getElementById('c-'+l).classList.toggle('on', l===lang));
+    document.querySelectorAll('.lbtn').forEach((b,i) => b.classList.toggle('on', ['ja','en','ko'][i]===lang));
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+</script>
+</body>
+</html>

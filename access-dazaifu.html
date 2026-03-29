@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>太宰府ゴルフ倶楽部 アクセスガイド | 福岡ゴルフ場ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent:#1a6b5c; --accent-mid:#2ea87a; --accent-light:#e0f5ec;
+      --gold:#c9a227; --gold-light:#fff8e1;
+      --bg:#f2f5f0; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+    }
+    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+    .page-header { background:linear-gradient(160deg,#0d4a3a 0%,#1a7a5a 60%,#2ea87a 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header h1 { font-size:1.2rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #e0e8e0; font-size:0.8rem; }
+    .back-bar a { color:var(--accent); text-decoration:none; font-weight:700; }
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid #2ea87a; position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:#1a6b5c; background:#e0f5ec; border-bottom:3px solid #2ea87a; margin-bottom:-2px; }
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
+    .card { background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.07); }
+    .card-head { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #f0f0f0; }
+    .card-head .icon { font-size:1.8rem; flex-shrink:0; }
+    .card-head .title { font-size:0.95rem; font-weight:800; }
+    .card-body { padding:14px 16px; font-size:0.84rem; line-height:1.7; }
+    .step-list { list-style:none; counter-reset:s; }
+    .step-list li { counter-increment:s; display:flex; gap:12px; padding:9px 0; border-bottom:1px dashed #ececec; font-size:0.84rem; line-height:1.5; }
+    .step-list li:last-child { border-bottom:none; }
+    .step-list li::before { content:counter(s); background:#2ea87a; color:#fff; font-weight:800; font-size:0.72rem; min-width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
+    .info-bar { display:flex; gap:8px; background:var(--accent-light); border-left:4px solid var(--accent-mid); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#0d4a3a; }
+    .app-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+    .app-card { background:var(--accent-light); border:1.5px solid #a8d9c5; border-radius:10px; padding:10px 12px; font-size:0.8rem; display:block; text-decoration:none; color:inherit; transition:background .15s; }
+    .app-card:hover { background:#c0edd8; }
+    .app-card .app-name { font-weight:800; color:var(--accent); margin-bottom:3px; }
+    .map-embed { width:100%; height:220px; border:0; border-radius:10px; margin-top:10px; display:block; }
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde8dd; }
+    footer a { color:var(--accent); text-decoration:none; }
+  </style>
+</head>
+<body>
+<header class="page-header">
+  <h1>🗺️ 太宰府ゴルフ倶楽部 アクセスガイド</h1>
+  <p>Access Guide / 오시는 길 안내</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　｜　<a href="course-dazaifu.html">コース紹介に戻る</a></div>
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- 日本語 -->
+<div id="c-ja" class="content on">
+  <div class="sec-head">📍 基本情報</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">太宰府ゴルフ倶楽部</span></div>
+    <div class="card-body">
+      〒818-0100　福岡県太宰府市石穴3467-39<br>
+      📞 092-922-5231
+      <div class="tip-bar"><span>💡</span>最新のアクセス情報は必ず公式サイトまたは楽天GORAでご確認ください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 福岡空港からのアクセス</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">福岡空港から（推奨ルート）</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>福岡空港から九州自動車道（鳥栖方面）へ</li>
+        <li>太宰府ICで降りる（約20〜25分）</li>
+        <li>ICから県道・一般道で約5〜10分走行</li>
+        <li>太宰府ゴルフ倶楽部の看板に従って進む</li>
+        <li>合計：福岡空港から車で約30分</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>Google Mapsで「太宰府ゴルフ倶楽部」と検索すると最適ルートが案内されます。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 博多・天神方面から</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">九州自動車道利用</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>博多ICまたは太宰府ICから九州自動車道を利用</li>
+        <li>太宰府ICで降りる</li>
+        <li>ICから一般道で約5〜10分</li>
+        <li>博多駅から約30分、天神から約35分</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>太宰府ICは九州自動車道の主要インターの一つです。太宰府天満宮の観光と組み合わせる場合は午前中に観光、午後にゴルフがおすすめです。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 ナビアプリ</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">おすすめナビアプリ</span></div>
+    <div class="card-body">
+      タップするとアプリ・サイトが開きます。
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=太宰府ゴルフ倶楽部&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=太宰府ゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>英語・韓国語対応。最もわかりやすい</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=太宰府ゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo!カーナビ</div>日本道路情報が充実。無料</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/太宰府ゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>韓国語で使えて便利</a>
+        <a class="app-card" href="https://map.kakao.com/?q=다자이후+골프클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>韓国語対応。韓国人に人気</a>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>レンタカーの車載ナビは日本語のみの場合が多いため、スマホアプリの併用をおすすめします。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 公共交通機関</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">電車＋タクシー</span></div>
+    <div class="card-body">
+      西鉄太宰府線「太宰府駅」が最寄り駅ですが、ゴルフ場まで直通バスはありません。駅からタクシーで約10〜15分です。
+      <div class="tip-bar"><span>💡</span>タクシー乗車時はスマホ画面に「太宰府ゴルフ倶楽部」と表示してドライバーに見せてください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ 駐車場</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">駐車場情報</span></div>
+    <div class="card-body">
+      無料駐車場完備。スタッフの誘導に従ってお停めください。
+      <div class="info-bar"><span>ℹ️</span>駐車場は無料です。コース入口でスタッフが誘導します。</div>
+    </div>
+  </div>
+</div>
+
+<!-- English -->
+<div id="c-en" class="content">
+  <div class="sec-head">📍 Basic Info</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">Dazaifu Golf Club</span></div>
+    <div class="card-body">
+      3467-39 Isiana, Dazaifu City, Fukuoka 818-0100<br>
+      📞 092-922-5231
+      <div class="tip-bar"><span>💡</span>Always verify the latest access details on the official website or Rakuten GORA.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ From Fukuoka Airport</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">From Fukuoka Airport (Recommended)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>Take the Kyushu Expressway toward Tosu</li>
+        <li>Exit at Dazaifu IC (approx. 20–25 min)</li>
+        <li>Take local roads approx. 5–10 min to the course</li>
+        <li>Follow signage for Dazaifu Golf Club</li>
+        <li>Total: approx. 30 min from Fukuoka Airport</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>Search "太宰府ゴルフ倶楽部" in Google Maps for turn-by-turn directions.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 From Hakata / Tenjin</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">Via Kyushu Expressway</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>Take the Kyushu Expressway from Hakata IC or Dazaifu IC</li>
+        <li>Exit at Dazaifu IC</li>
+        <li>Follow local roads approx. 5–10 min to the course</li>
+        <li>Approx. 30 min from Hakata Station, 35 min from Tenjin</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>Dazaifu IC is one of the main Kyushu Expressway interchanges. Consider visiting Dazaifu Tenmangu Shrine in the morning and golfing in the afternoon.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 Navigation Apps</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">Recommended Apps</span></div>
+    <div class="card-body">
+      Tap to open the app or website with the destination pre-filled.
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=太宰府ゴルフ倶楽部&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=太宰府ゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>English support. Easiest for visitors</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=太宰府ゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo! Car Navi</div>Best Japanese road data. Free</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/太宰府ゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>Korean language support</a>
+        <a class="app-card" href="https://map.kakao.com/?q=다자이후+골프클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>Popular among Korean visitors</a>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>Rental car GPS units are often Japanese-only. We recommend using a smartphone app alongside them.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 Public Transport</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">Train + Taxi</span></div>
+    <div class="card-body">
+      The nearest station is Nishitetsu Dazaifu Line "Dazaifu Station." No direct bus — take a taxi approx. 10–15 min to the course.
+      <div class="tip-bar"><span>💡</span>Show "太宰府ゴルフ倶楽部" on your phone screen to the taxi driver.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ Parking</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">Parking Info</span></div>
+    <div class="card-body">
+      Free parking available. Staff will guide you on arrival.
+      <div class="info-bar"><span>ℹ️</span>Parking is free. Course staff direct you at the entrance.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 한국어 -->
+<div id="c-ko" class="content">
+  <div class="sec-head">📍 기본 정보</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">다자이후 골프 클럽</span></div>
+    <div class="card-body">
+      〒818-0100　후쿠오카현 다자이후시 이사나 3467-39<br>
+      📞 092-922-5231
+      <div class="tip-bar"><span>💡</span>최신 오시는 길 정보는 반드시 공식 사이트 또는 라쿠텐 GORA에서 확인해 주세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 후쿠오카 공항에서 오시는 길</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">후쿠오카 공항에서 (추천 경로)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>규슈 자동차도로 (도스 방면) 진입</li>
+        <li>다자이후 IC에서 하차 (약 20〜25분)</li>
+        <li>일반도로로 약 5〜10분 주행</li>
+        <li>다자이후 골프 클럽 안내판을 따라 진행</li>
+        <li>합계: 후쿠오카 공항에서 차로 약 30분</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>Google Maps에서 「太宰府ゴルフ倶楽部」로 검색하면 최적 경로를 안내받을 수 있습니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 하카타·텐진 방면에서</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">규슈 자동차도로 이용</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>규슈 자동차도로 하카타 IC 또는 다자이후 IC 진입</li>
+        <li>다자이후 IC에서 하차</li>
+        <li>일반도로로 약 5〜10분</li>
+        <li>하카타역에서 약 30분, 텐진에서 약 35분</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>다자이후 텐만구를 오전에 관광하고 오후에 라운드하는 일정을 추천합니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 내비게이션 앱</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">추천 내비게이션 앱</span></div>
+    <div class="card-body">
+      탭하면 앱 또는 사이트가 열립니다.
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=太宰府ゴルフ倶楽部&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=太宰府ゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>영어·한국어 지원. 가장 쉬움</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=太宰府ゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo! 카내비</div>일본 도로 정보 충실. 무료</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/太宰府ゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>한국어로 사용 가능</a>
+        <a class="app-card" href="https://map.kakao.com/?q=다자이후+골프클럽" target="_blank" rel="noopener"><div class="app-name">카카오맵</div>한국어 지원. 한국인에게 인기</a>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>렌터카 내비는 일본어만 지원하는 경우가 많습니다. 스마트폰 앱 병용을 권장합니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 대중교통</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">전철 + 택시</span></div>
+    <div class="card-body">
+      가장 가까운 역은 니시테츠 다자이후선 「다자이후역」입니다. 직통 버스가 없으므로 택시를 이용하세요 (약 10〜15분).
+      <div class="tip-bar"><span>💡</span>택시 기사에게 「太宰府ゴルフ倶楽部」를 스마트폰 화면으로 보여주세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ 주차장</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">주차장 정보</span></div>
+    <div class="card-body">
+      무료 주차장 완비. 직원의 안내에 따라 주차해 주세요.
+      <div class="info-bar"><span>ℹ️</span>주차는 무료입니다. 입구에서 직원이 안내해 드립니다.</div>
+    </div>
+  </div>
+</div>
+
+<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　このサイトはゴルフ好きが作った情報ガイドです。最新情報は各ゴルフ場の公式サイトでご確認ください。</footer>
+<script>
+  function sw(l){['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>古賀ゴルフ・クラブ コース紹介 | 福岡ゴルフ場ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent:#1a3a8f; --accent-mid:#3a6abf; --accent-light:#e8f0fb;
+      --gold:#c9a227; --gold-light:#fff8e1;
+      --teal:#1a6b5c; --teal-light:#e0f5ec;
+      --bg:#f2f5f0; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+    }
+    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+    .page-header { background:linear-gradient(160deg,#0d1f5c 0%,#1a3a8f 60%,#3a6abf 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header h1 { font-size:1.15rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #e0e8f0; font-size:0.8rem; }
+    .back-bar a { color:var(--accent); text-decoration:none; font-weight:700; }
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid #3a6abf; position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:#1a3a8f; background:#e8f0fb; border-bottom:3px solid #3a6abf; margin-bottom:-2px; }
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
+    .card { background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.07); }
+    .card-head { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #f0f0f0; }
+    .card-head .icon { font-size:1.8rem; flex-shrink:0; }
+    .card-head .title { font-size:0.95rem; font-weight:800; }
+    .card-body { padding:14px 16px; font-size:0.84rem; line-height:1.7; }
+    .fact-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:8px 0; }
+    .fact-item { background:var(--accent-light); border:1.5px solid #a0b8e0; border-radius:10px; padding:10px 12px; text-align:center; }
+    .fact-item .f-icon { font-size:1.5rem; display:block; margin-bottom:4px; }
+    .fact-item .f-label { font-size:0.68rem; color:var(--muted); display:block; }
+    .fact-item .f-val { font-size:0.88rem; font-weight:800; color:var(--accent); display:block; margin-top:2px; }
+    .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
+    .info-bar { display:flex; gap:8px; background:var(--teal-light); border-left:4px solid var(--teal); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#0d3a2e; }
+    .play-option { background:#fff; border-radius:10px; border:1.5px solid #a0b8e0; padding:12px 14px; margin-bottom:8px; }
+    .play-option-head { display:flex; align-items:center; gap:8px; font-weight:800; font-size:0.9rem; color:var(--accent); margin-bottom:4px; }
+    .play-option-body { font-size:0.82rem; color:#555; line-height:1.55; }
+    .official-btn { display:flex; align-items:center; justify-content:center; gap:8px; background:var(--accent); color:#fff; border-radius:10px; padding:14px 16px; text-decoration:none; font-weight:800; font-size:0.9rem; margin-top:8px; transition:background .15s; }
+    .official-btn:hover { background:#162f7a; }
+    .discount-box { background:var(--gold-light); border:1.5px solid #e0c870; border-radius:10px; padding:12px 14px; margin-bottom:8px; }
+    .discount-title { font-weight:800; font-size:0.88rem; color:#7a5000; margin-bottom:6px; display:flex; align-items:center; gap:6px; }
+    .discount-row { display:flex; justify-content:space-between; font-size:0.82rem; padding:4px 0; border-bottom:1px dashed #e8d070; }
+    .discount-row:last-child { border-bottom:none; }
+    .contact-row { display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px dashed #e0e8f0; font-size:0.84rem; }
+    .contact-row:last-child { border-bottom:none; }
+    .contact-row .c-icon { font-size:1.4rem; flex-shrink:0; }
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde4ee; }
+    footer a { color:var(--accent); text-decoration:none; }
+  </style>
+</head>
+<body>
+<header class="page-header">
+  <h1>⛳ 古賀ゴルフ・クラブ</h1>
+  <p>Koga Golf Club<br>코가 골프 클럽</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a></div>
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- ════ 日本語 ════ -->
+<div id="c-ja" class="content on">
+
+  <div class="sec-head">📋 基本情報</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📋</span><span class="title">コース概要</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">⛳</span><span class="f-label">ホール数</span><span class="f-val">18ホール</span></div>
+        <div class="fact-item"><span class="f-icon">🚙</span><span class="f-label">カート</span><span class="f-val">乗用カート</span></div>
+        <div class="fact-item"><span class="f-icon">🌲</span><span class="f-label">コースタイプ</span><span class="f-val">丘陵コース</span></div>
+        <div class="fact-item"><span class="f-icon">🏞️</span><span class="f-label">ロケーション</span><span class="f-val">古賀市・鹿部</span></div>
+        <div class="fact-item"><span class="f-icon">📅</span><span class="f-label">開業</span><span class="f-val">1953年（歴史あり）</span></div>
+        <div class="fact-item"><span class="f-icon">✏️</span><span class="f-label">設計</span><span class="f-val">上田治</span></div>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>1953年開業の歴史あるコース。伝説のコース設計家・上田治が手がけた18ホールの丘陵コースで、長い歴史と格式を誇ります。玄界灘を望む自然豊かな古賀市に位置し、九州でも屈指の名コースのひとつです。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📞 連絡先・所在地</div>
+  <div class="card">
+    <div class="card-body">
+      <div class="contact-row"><span class="c-icon">📍</span><div><strong>住所</strong><br>〒811-3105 福岡県古賀市鹿部1310-1</div></div>
+      <div class="contact-row"><span class="c-icon">📞</span><div><strong>電話</strong><br>092-943-2261</div></div>
+      <div class="contact-row"><span class="c-icon">💳</span><div><strong>支払方法</strong><br>現金・クレジットカード（公式サイトで要確認）</div></div>
+      <a href="https://www.gora.golf.rakuten.co.jp/front/search?keyword=古賀ゴルフクラブ" class="official-btn" target="_blank" rel="noopener">
+        📅 楽天GORAで予約・料金を確認 ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 アクセス</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚗</span><span class="title">車でのアクセス（推奨）</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">✈️</span><span class="f-label">福岡空港から</span><span class="f-val">車で約40分</span></div>
+        <div class="fact-item"><span class="f-icon">🚉</span><span class="f-label">博多駅から</span><span class="f-val">車で約40分</span></div>
+      </div>
+      <div class="tip-bar"><span>💡</span>九州自動車道 古賀ICが最寄インターです。ICから約5〜10分でアクセスできます。</div>
+      <a href="access-koga.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--accent);text-decoration:none;">🗺️ 詳しいアクセスガイドはこちら →</a>
+    </div>
+  </div>
+
+  <div class="sec-head">🏌️ プレースタイル</div>
+  <div class="play-option">
+    <div class="play-option-head"><span>☀️</span>通常ラウンド（18ホール・ハーフ休憩あり）</div>
+    <div class="play-option-body">午前スタート。前半9ホール後にレストランで休憩を挟み、後半9ホールをプレー。歴史あるコースでじっくり楽しめます。</div>
+  </div>
+  <div class="play-option">
+    <div class="play-option-head"><span>🌤️</span>午後スルー（18ホール・休憩なし）</div>
+    <div class="play-option-body">昼過ぎスタート。休憩なしで18ホールを続けてプレー。</div>
+  </div>
+  <div class="play-option">
+    <div class="play-option-head"><span>🌅</span>ハーフラウンド（9ホール）</div>
+    <div class="play-option-body">9ホールのみのショートプレー。時間が限られている方にもおすすめ。</div>
+  </div>
+
+  <div class="sec-head">💰 料金の目安</div>
+  <div class="discount-box">
+    <div class="discount-title">🎯 プレー料金目安（税込・カート代込）</div>
+    <div class="discount-row"><span>📅 平日</span><strong>約8,000〜14,000円</strong></div>
+    <div class="discount-row"><span>🎉 土日祝</span><strong>約14,000〜20,000円</strong></div>
+    <div class="discount-row"><span>🌤️ 午後スルー（平日）</span><strong>約6,000〜9,000円</strong></div>
+  </div>
+  <div class="tip-bar"><span>💡</span>料金は季節・時期により変動します。最新料金は楽天GORAまたはGDOでご確認ください。</div>
+
+</div><!-- /ja -->
+
+<!-- ════ English ════ -->
+<div id="c-en" class="content">
+
+  <div class="sec-head">📋 Course Overview</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📋</span><span class="title">Basic Specs</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">⛳</span><span class="f-label">Holes</span><span class="f-val">18 holes</span></div>
+        <div class="fact-item"><span class="f-icon">🚙</span><span class="f-label">Cart</span><span class="f-val">Riding cart</span></div>
+        <div class="fact-item"><span class="f-icon">🌲</span><span class="f-label">Course Type</span><span class="f-val">Hillside course</span></div>
+        <div class="fact-item"><span class="f-icon">🏞️</span><span class="f-label">Location</span><span class="f-val">Koga City, Kabu</span></div>
+        <div class="fact-item"><span class="f-icon">📅</span><span class="f-label">Established</span><span class="f-val">1953 (Historic)</span></div>
+        <div class="fact-item"><span class="f-icon">✏️</span><span class="f-label">Designer</span><span class="f-val">Osamu Ueda</span></div>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>One of Kyushu's most storied golf clubs, opened in 1953 and designed by legendary architect Osamu Ueda. The 18-hole hillside course is set amid the lush nature of Koga City, close to the Genkai Sea coast.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📞 Contact &amp; Location</div>
+  <div class="card">
+    <div class="card-body">
+      <div class="contact-row"><span class="c-icon">📍</span><div><strong>Address</strong><br>1310-1 Kabu, Koga City, Fukuoka 811-3105</div></div>
+      <div class="contact-row"><span class="c-icon">📞</span><div><strong>Phone</strong><br>092-943-2261</div></div>
+      <div class="contact-row"><span class="c-icon">💳</span><div><strong>Payment</strong><br>Cash, Credit cards (confirm on official website)</div></div>
+      <a href="https://www.gora.golf.rakuten.co.jp/front/search?keyword=古賀ゴルフクラブ" class="official-btn" target="_blank" rel="noopener">
+        📅 Book &amp; Check Rates on Rakuten GORA ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 Getting Here</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚗</span><span class="title">By Car (Recommended)</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">✈️</span><span class="f-label">From Fukuoka Airport</span><span class="f-val">~40 min by car</span></div>
+        <div class="fact-item"><span class="f-icon">🚉</span><span class="f-label">From Hakata Station</span><span class="f-val">~40 min by car</span></div>
+      </div>
+      <div class="tip-bar"><span>💡</span>Use Koga IC on the Kyushu Expressway. The course is approx. 5–10 min from the interchange.</div>
+      <a href="access-koga.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--accent);text-decoration:none;">🗺️ Full Access Guide →</a>
+    </div>
+  </div>
+
+  <div class="sec-head">🏌️ Play Styles</div>
+  <div class="play-option">
+    <div class="play-option-head"><span>☀️</span>Standard Round (18 holes with half-turn break)</div>
+    <div class="play-option-body">Morning start. Restaurant break after the front 9, then back 9. Take your time to enjoy a piece of Kyushu golf history.</div>
+  </div>
+  <div class="play-option">
+    <div class="play-option-head"><span>🌤️</span>Afternoon Through (18 holes, no break)</div>
+    <div class="play-option-body">Afternoon start. Play all 18 holes straight through without a break.</div>
+  </div>
+  <div class="play-option">
+    <div class="play-option-head"><span>🌅</span>Half Round (9 holes)</div>
+    <div class="play-option-body">9 holes only — perfect if time is short.</div>
+  </div>
+
+  <div class="sec-head">💰 Green Fee Guide</div>
+  <div class="discount-box">
+    <div class="discount-title">🎯 Approximate Fees (Tax &amp; Cart Included)</div>
+    <div class="discount-row"><span>📅 Weekdays</span><strong>¥8,000–¥14,000</strong></div>
+    <div class="discount-row"><span>🎉 Weekends / Holidays</span><strong>¥14,000–¥20,000</strong></div>
+    <div class="discount-row"><span>🌤️ Afternoon Through (Weekday)</span><strong>¥6,000–¥9,000</strong></div>
+  </div>
+  <div class="tip-bar"><span>💡</span>Fees vary by season. Check Rakuten GORA or GDO for current pricing. Visitor bookings welcome.</div>
+
+</div><!-- /en -->
+
+<!-- ════ 한국어 ════ -->
+<div id="c-ko" class="content">
+
+  <div class="sec-head">📋 기본 정보</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📋</span><span class="title">코스 개요</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">⛳</span><span class="f-label">홀 수</span><span class="f-val">18홀</span></div>
+        <div class="fact-item"><span class="f-icon">🚙</span><span class="f-label">카트</span><span class="f-val">승용 카트</span></div>
+        <div class="fact-item"><span class="f-icon">🌲</span><span class="f-label">코스 유형</span><span class="f-val">구릉 코스</span></div>
+        <div class="fact-item"><span class="f-icon">🏞️</span><span class="f-label">위치</span><span class="f-val">코가시·가부</span></div>
+        <div class="fact-item"><span class="f-icon">📅</span><span class="f-label">개업</span><span class="f-val">1953년 (유서 깊음)</span></div>
+        <div class="fact-item"><span class="f-icon">✏️</span><span class="f-label">설계</span><span class="f-val">우에다 오사무</span></div>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>1953년 개업, 전설적인 코스 설계가 우에다 오사무가 설계한 유서 깊은 18홀 구릉 코스입니다. 규슈를 대표하는 명문 코스 중 하나로, 코가시의 풍요로운 자연 속에 위치합니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📞 연락처·위치</div>
+  <div class="card">
+    <div class="card-body">
+      <div class="contact-row"><span class="c-icon">📍</span><div><strong>주소</strong><br>〒811-3105 후쿠오카현 코가시 가부 1310-1</div></div>
+      <div class="contact-row"><span class="c-icon">📞</span><div><strong>전화</strong><br>092-943-2261</div></div>
+      <div class="contact-row"><span class="c-icon">💳</span><div><strong>결제 방법</strong><br>현금, 신용카드 (공식 사이트 확인)</div></div>
+      <a href="https://www.gora.golf.rakuten.co.jp/front/search?keyword=古賀ゴルフクラブ" class="official-btn" target="_blank" rel="noopener">
+        📅 라쿠텐 GORA에서 예약·요금 확인 ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 오시는 길</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚗</span><span class="title">자동차 이용 (추천)</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">✈️</span><span class="f-label">후쿠오카공항에서</span><span class="f-val">차로 약 40분</span></div>
+        <div class="fact-item"><span class="f-icon">🚉</span><span class="f-label">하카타역에서</span><span class="f-val">차로 약 40분</span></div>
+      </div>
+      <div class="tip-bar"><span>💡</span>규슈 자동차도로 코가 IC를 이용하세요. IC에서 약 5〜10분 거리입니다.</div>
+      <a href="access-koga.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--accent);text-decoration:none;">🗺️ 자세한 오시는 길 가이드 →</a>
+    </div>
+  </div>
+
+  <div class="sec-head">🏌️ 플레이 스타일</div>
+  <div class="play-option">
+    <div class="play-option-head"><span>☀️</span>일반 라운드 (18홀·하프 휴식 있음)</div>
+    <div class="play-option-body">오전 출발. 전반 9홀 후 레스토랑에서 휴식, 이후 후반 9홀 플레이. 유서 깊은 코스를 천천히 즐겨보세요.</div>
+  </div>
+  <div class="play-option">
+    <div class="play-option-head"><span>🌤️</span>오후 스루 (18홀·휴식 없음)</div>
+    <div class="play-option-body">오후 출발. 18홀 연속 플레이.</div>
+  </div>
+  <div class="play-option">
+    <div class="play-option-head"><span>🌅</span>하프 라운드 (9홀)</div>
+    <div class="play-option-body">9홀만 플레이. 시간이 제한적인 분께 추천합니다.</div>
+  </div>
+
+  <div class="sec-head">💰 요금 안내</div>
+  <div class="discount-box">
+    <div class="discount-title">🎯 플레이 요금 목표 (세금·카트 포함)</div>
+    <div class="discount-row"><span>📅 평일</span><strong>약 8,000〜14,000엔</strong></div>
+    <div class="discount-row"><span>🎉 토·일·공휴일</span><strong>약 14,000〜20,000엔</strong></div>
+    <div class="discount-row"><span>🌤️ 오후 스루 (평일)</span><strong>약 6,000〜9,000엔</strong></div>
+  </div>
+  <div class="tip-bar"><span>💡</span>요금은 계절·시기에 따라 변동됩니다. 최신 요금은 라쿠텐 GORA 또는 GDO에서 확인하세요.</div>
+
+</div><!-- /ko -->
+
+<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　福岡ゴルフ場ガイド — 最新情報は公式サイトでご確認ください</footer>
+<script>
+  function sw(l){['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九州ゴルフ倶楽部 八幡コース コース紹介 | 福岡ゴルフ情報ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent:#3a2a6b; --accent-mid:#6a4ab0; --accent-light:#eee8f8;
+      --gold:#c9a227; --gold-light:#fff8e1;
+      --blue:#1a3a8f; --blue-light:#e8f0fb;
+      --bg:#f2f4f8; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+    }
+    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+    .page-header { background:linear-gradient(160deg,#2a1a5a 0%,#4a3090 60%,#6a4ab0 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header h1 { font-size:1.15rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #e0e0f0; font-size:0.8rem; }
+    .back-bar a { color:var(--accent); text-decoration:none; font-weight:700; }
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid #6a4ab0; position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:#3a2a6b; background:#eee8f8; border-bottom:3px solid #6a4ab0; margin-bottom:-2px; }
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
+    .card { background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.07); }
+    .card-head { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #f0f0f0; }
+    .card-head .icon { font-size:1.8rem; flex-shrink:0; }
+    .card-head .title { font-size:0.95rem; font-weight:800; }
+    .card-body { padding:14px 16px; font-size:0.84rem; line-height:1.7; }
+    .fact-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:8px 0; }
+    .fact-item { background:var(--accent-light); border:1.5px solid #c8b8e8; border-radius:10px; padding:10px 12px; text-align:center; }
+    .fact-item .f-icon { font-size:1.5rem; display:block; margin-bottom:4px; }
+    .fact-item .f-label { font-size:0.68rem; color:var(--muted); display:block; }
+    .fact-item .f-val { font-size:0.88rem; font-weight:800; color:var(--accent); display:block; margin-top:2px; }
+    .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
+    .info-bar { display:flex; gap:8px; background:var(--accent-light); border-left:4px solid var(--accent-mid); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#2a1a5a; }
+    .play-option { background:#fff; border-radius:10px; border:1.5px solid #c8b8e8; padding:12px 14px; margin-bottom:8px; }
+    .play-option-head { display:flex; align-items:center; gap:8px; font-weight:800; font-size:0.9rem; color:var(--accent); margin-bottom:4px; }
+    .play-option-body { font-size:0.82rem; color:#555; line-height:1.55; }
+    .official-btn { display:flex; align-items:center; justify-content:center; gap:8px; background:var(--accent); color:#fff; border-radius:10px; padding:14px 16px; text-decoration:none; font-weight:800; font-size:0.9rem; margin-top:8px; transition:background .15s; }
+    .official-btn:hover { background:#4a3090; }
+    .fee-box { background:var(--accent-light); border:1.5px solid #c8b8e8; border-radius:10px; padding:12px 14px; margin-bottom:8px; }
+    .fee-title { font-weight:800; font-size:0.88rem; color:var(--accent); margin-bottom:6px; display:flex; align-items:center; gap:6px; }
+    .fee-row { display:flex; justify-content:space-between; font-size:0.82rem; padding:4px 0; border-bottom:1px dashed #c8b8e8; }
+    .fee-row:last-child { border-bottom:none; }
+    .contact-row { display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px dashed #e0e0f0; font-size:0.84rem; }
+    .contact-row:last-child { border-bottom:none; }
+    .contact-row .c-icon { font-size:1.4rem; flex-shrink:0; }
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #ddd8ee; }
+    footer a { color:var(--accent); text-decoration:none; }
+  </style>
+</head>
+<body>
+<header class="page-header">
+  <h1>⛳ 九州ゴルフ倶楽部 八幡コース</h1>
+  <p>Kyushu Golf Club — Yahata Course<br>규슈 골프 클럽 야하타 코스</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a></div>
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- ════ 日本語 ════ -->
+<div id="c-ja" class="content on">
+
+  <div class="sec-head">📋 基本情報</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📋</span><span class="title">コース概要</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">⛳</span><span class="f-label">ホール数</span><span class="f-val">18ホール</span></div>
+        <div class="fact-item"><span class="f-icon">🚙</span><span class="f-label">カート</span><span class="f-val">乗用カートあり</span></div>
+        <div class="fact-item"><span class="f-icon">🌲</span><span class="f-label">コースタイプ</span><span class="f-val">丘陵・林間</span></div>
+        <div class="fact-item"><span class="f-icon">📏</span><span class="f-label">全長</span><span class="f-val">約6,500yd</span></div>
+        <div class="fact-item"><span class="f-icon">🏆</span><span class="f-label">Par</span><span class="f-val">Par 72</span></div>
+        <div class="fact-item"><span class="f-icon">📍</span><span class="f-label">エリア</span><span class="f-val">北九州市八幡西区</span></div>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>北九州市八幡西区に位置する伝統ある丘陵・林間コース。自然の起伏を巧みに取り込んだ戦略性の高いレイアウトで、北九州を代表するゴルフ倶楽部のひとつです。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📞 連絡先・所在地</div>
+  <div class="card">
+    <div class="card-body">
+      <div class="contact-row"><span class="c-icon">📍</span><div><strong>住所</strong><br>〒806-0046 福岡県北九州市八幡西区石坂2丁目</div></div>
+      <div class="contact-row"><span class="c-icon">📞</span><div><strong>電話</strong><br>093-691-0461</div></div>
+      <div class="contact-row"><span class="c-icon">🌐</span><div><strong>公式サイト</strong><br>www.kyushu-gc.jp/yahata/</div></div>
+      <a href="http://www.kyushu-gc.jp/yahata/" class="official-btn" target="_blank" rel="noopener">
+        🔗 公式サイトで予約・最新情報を見る ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 アクセス</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚗</span><span class="title">車でのアクセス（推奨）</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">✈️</span><span class="f-label">福岡空港から</span><span class="f-val">車で約70分</span></div>
+        <div class="fact-item"><span class="f-icon">🚉</span><span class="f-label">博多駅から</span><span class="f-val">車で約60分</span></div>
+      </div>
+      <div class="tip-bar"><span>💡</span>九州自動車道「八幡IC」または「若宮IC」が最寄りインターです。Google Maps で「九州ゴルフ倶楽部 八幡コース」と検索すると案内されます。</div>
+      <a href="access-kyushugc.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--accent);text-decoration:none;">🗺️ 詳しいアクセスガイドはこちら →</a>
+    </div>
+  </div>
+
+  <div class="sec-head">🏌️ プレースタイル</div>
+
+  <div class="play-option">
+    <div class="play-option-head"><span>☀️</span>通常ラウンド（18ホール・ハーフ休憩あり）</div>
+    <div class="play-option-body">午前スタート。前半9ホール後にレストランで約40〜50分の休憩を挟み、後半9ホールをプレー。倶楽部の雰囲気をゆっくり楽しめます。</div>
+  </div>
+  <div class="play-option">
+    <div class="play-option-head"><span>🌤️</span>午後スルー（18ホール・休憩なし）</div>
+    <div class="play-option-body">昼過ぎスタート。休憩なしで18ホールを続けてプレー。時間を効率的に使いたい方に最適です。</div>
+  </div>
+
+  <div class="sec-head">💰 料金・お支払い</div>
+  <div class="fee-box">
+    <div class="fee-title">🗓️ 目安料金（税込）</div>
+    <div class="fee-row"><span>📅 平日</span><strong>¥8,000〜¥14,000 程度</strong></div>
+    <div class="fee-row"><span>🎉 土日祝</span><strong>¥14,000〜¥22,000 程度</strong></div>
+    <div class="fee-row"><span>💳 支払方法</span><strong>現金・クレジットカード</strong></div>
+  </div>
+  <div class="tip-bar"><span>💡</span>料金はシーズン・プランにより変動します。最新料金は公式サイトでご確認ください。</div>
+  <div class="tip-bar"><span>💡</span><a href="fees.html" style="color:#5a4000;font-weight:700;">料金比較ページ</a>で他コースとの比較もできます。</div>
+
+</div><!-- /ja -->
+
+<!-- ════ English ════ -->
+<div id="c-en" class="content">
+
+  <div class="sec-head">📋 Course Overview</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📋</span><span class="title">Basic Specs</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">⛳</span><span class="f-label">Holes</span><span class="f-val">18 holes</span></div>
+        <div class="fact-item"><span class="f-icon">🚙</span><span class="f-label">Cart</span><span class="f-val">Riding carts</span></div>
+        <div class="fact-item"><span class="f-icon">🌲</span><span class="f-label">Course Type</span><span class="f-val">Hilly / Woodland</span></div>
+        <div class="fact-item"><span class="f-icon">📏</span><span class="f-label">Total Length</span><span class="f-val">~6,500 yds</span></div>
+        <div class="fact-item"><span class="f-icon">🏆</span><span class="f-label">Par</span><span class="f-val">Par 72</span></div>
+        <div class="fact-item"><span class="f-icon">📍</span><span class="f-label">Area</span><span class="f-val">Yahata, Kitakyushu</span></div>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>Set in Yahata-nishi Ward, Kitakyushu, this historic hilly/woodland course uses natural undulations for a highly strategic layout — one of Kitakyushu's finest golf clubs.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📞 Contact & Location</div>
+  <div class="card">
+    <div class="card-body">
+      <div class="contact-row"><span class="c-icon">📍</span><div><strong>Address</strong><br>2-chome Ishizaka, Yahata-nishi Ward, Kitakyushu City, Fukuoka 806-0046</div></div>
+      <div class="contact-row"><span class="c-icon">📞</span><div><strong>Phone</strong><br>093-691-0461</div></div>
+      <div class="contact-row"><span class="c-icon">🌐</span><div><strong>Website</strong><br>www.kyushu-gc.jp/yahata/</div></div>
+      <a href="http://www.kyushu-gc.jp/yahata/" class="official-btn" target="_blank" rel="noopener">
+        🔗 Official Website — Book &amp; Latest Info ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 Getting Here</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚗</span><span class="title">By Car (Recommended)</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">✈️</span><span class="f-label">From Fukuoka Airport</span><span class="f-val">~70 min by car</span></div>
+        <div class="fact-item"><span class="f-icon">🚉</span><span class="f-label">From Hakata Station</span><span class="f-val">~60 min by car</span></div>
+      </div>
+      <div class="tip-bar"><span>💡</span>Nearest expressway exits: "Yahata IC" or "Wakamiya IC" on the Kyushu Expressway. Search "Kyushu Golf Club Yahata Course" in Google Maps for directions.</div>
+      <a href="access-kyushugc.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--accent);text-decoration:none;">🗺️ Full Access Guide →</a>
+    </div>
+  </div>
+
+  <div class="sec-head">🏌️ Play Styles</div>
+
+  <div class="play-option">
+    <div class="play-option-head"><span>☀️</span>Standard Round (18 holes with half-turn break)</div>
+    <div class="play-option-body">Morning start. ~40–50 min break at the restaurant after the front 9, then back for the final 9. A great way to enjoy the full club atmosphere.</div>
+  </div>
+  <div class="play-option">
+    <div class="play-option-head"><span>🌤️</span>Afternoon Through (18 holes, no break)</div>
+    <div class="play-option-body">Afternoon start. Play all 18 holes straight through — ideal for visitors with limited time.</div>
+  </div>
+
+  <div class="sec-head">💰 Fees &amp; Payment</div>
+  <div class="fee-box">
+    <div class="fee-title">🗓️ Estimated Fees (tax incl.)</div>
+    <div class="fee-row"><span>📅 Weekdays</span><strong>¥8,000 – ¥14,000</strong></div>
+    <div class="fee-row"><span>🎉 Weekends / Holidays</span><strong>¥14,000 – ¥22,000</strong></div>
+    <div class="fee-row"><span>💳 Payment</span><strong>Cash · Credit cards</strong></div>
+  </div>
+  <div class="tip-bar"><span>💡</span>Rates vary by season and plan. Check the official site for the latest pricing.</div>
+  <div class="tip-bar"><span>💡</span>Compare rates with other courses on the <a href="fees.html" style="color:#5a4000;font-weight:700;">Fees Comparison page</a>.</div>
+
+</div><!-- /en -->
+
+<!-- ════ 한국어 ════ -->
+<div id="c-ko" class="content">
+
+  <div class="sec-head">📋 기본 정보</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📋</span><span class="title">코스 개요</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">⛳</span><span class="f-label">홀 수</span><span class="f-val">18홀</span></div>
+        <div class="fact-item"><span class="f-icon">🚙</span><span class="f-label">카트</span><span class="f-val">승용 카트 있음</span></div>
+        <div class="fact-item"><span class="f-icon">🌲</span><span class="f-label">코스 타입</span><span class="f-val">구릉·임간</span></div>
+        <div class="fact-item"><span class="f-icon">📏</span><span class="f-label">전장</span><span class="f-val">약 6,500야드</span></div>
+        <div class="fact-item"><span class="f-icon">🏆</span><span class="f-label">파</span><span class="f-val">Par 72</span></div>
+        <div class="fact-item"><span class="f-icon">📍</span><span class="f-label">지역</span><span class="f-val">기타큐슈시 야하타</span></div>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>기타큐슈시 야하타니시구에 위치한 유서 깊은 구릉·임간 코스입니다. 자연 지형을 살린 전략적인 레이아웃이 특징이며, 기타큐슈를 대표하는 골프 클럽 중 하나입니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📞 연락처·위치</div>
+  <div class="card">
+    <div class="card-body">
+      <div class="contact-row"><span class="c-icon">📍</span><div><strong>주소</strong><br>〒806-0046 후쿠오카현 기타큐슈시 야하타니시구 이시자카 2초메</div></div>
+      <div class="contact-row"><span class="c-icon">📞</span><div><strong>전화</strong><br>093-691-0461</div></div>
+      <div class="contact-row"><span class="c-icon">🌐</span><div><strong>공식 사이트</strong><br>www.kyushu-gc.jp/yahata/</div></div>
+      <a href="http://www.kyushu-gc.jp/yahata/" class="official-btn" target="_blank" rel="noopener">
+        🔗 공식 사이트에서 예약·최신 정보 보기 ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 오시는 길</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚗</span><span class="title">자동차 이용 (추천)</span></div>
+    <div class="card-body">
+      <div class="fact-grid">
+        <div class="fact-item"><span class="f-icon">✈️</span><span class="f-label">후쿠오카공항에서</span><span class="f-val">차로 약 70분</span></div>
+        <div class="fact-item"><span class="f-icon">🚉</span><span class="f-label">하카타역에서</span><span class="f-val">차로 약 60분</span></div>
+      </div>
+      <div class="tip-bar"><span>💡</span>가장 가까운 IC: 규슈 고속도로 「야하타 IC」또는「와카미야 IC」. Google Maps에서 「규슈 골프 클럽 야하타 코스」로 검색해 주세요.</div>
+      <a href="access-kyushugc.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--accent);text-decoration:none;">🗺️ 자세한 오시는 길 가이드 →</a>
+    </div>
+  </div>
+
+  <div class="sec-head">🏌️ 플레이 스타일</div>
+
+  <div class="play-option">
+    <div class="play-option-head"><span>☀️</span>일반 라운드 (18홀·하프 휴식 있음)</div>
+    <div class="play-option-body">오전 출발. 전반 9홀 후 레스토랑에서 약 40〜50분 휴식 후 후반 9홀 플레이. 클럽 분위기를 여유롭게 즐길 수 있습니다.</div>
+  </div>
+  <div class="play-option">
+    <div class="play-option-head"><span>🌤️</span>오후 스루 (18홀·휴식 없음)</div>
+    <div class="play-option-body">오후 출발. 휴식 없이 18홀 연속 플레이. 시간이 많지 않은 방문객에게 최적입니다.</div>
+  </div>
+
+  <div class="sec-head">💰 요금·결제</div>
+  <div class="fee-box">
+    <div class="fee-title">🗓️ 예상 요금 (세금 포함)</div>
+    <div class="fee-row"><span>📅 평일</span><strong>¥8,000〜¥14,000 정도</strong></div>
+    <div class="fee-row"><span>🎉 토·일·공휴일</span><strong>¥14,000〜¥22,000 정도</strong></div>
+    <div class="fee-row"><span>💳 결제 수단</span><strong>현금·신용카드</strong></div>
+  </div>
+  <div class="tip-bar"><span>💡</span>요금은 시즌·플랜에 따라 다릅니다. 최신 요금은 공식 사이트에서 확인해 주세요.</div>
+  <div class="tip-bar"><span>💡</span><a href="fees.html" style="color:#5a4000;font-weight:700;">요금 비교 페이지</a>에서 다른 코스와 비교해 보세요.</div>
+
+</div><!-- /ko -->
+
+<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　福岡ゴルフ情報ガイド — 最新情報は<a href="http://www.kyushu-gc.jp/yahata/" target="_blank" rel="noopener">公式サイト</a>でご確認ください</footer>
+
+<script>
+  function sw(l){['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body>
+</html>

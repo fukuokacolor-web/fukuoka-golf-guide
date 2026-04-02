@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北九州カントリー倶楽部 アクセスガイド | 福岡ゴルフ場ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent:#9b1c1c; --accent-mid:#dc2626; --accent-light:#fee2e2;
+      --gold:#c9a227; --gold-light:#fff8e1;
+      --bg:#f5f0f0; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+    }
+    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+    .page-header { background:linear-gradient(160deg,#450a0a 0%,#9b1c1c 60%,#dc2626 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header h1 { font-size:1.2rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #f5e0e0; font-size:0.8rem; }
+    .back-bar a { color:var(--accent); text-decoration:none; font-weight:700; }
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid #dc2626; position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:#9b1c1c; background:#fee2e2; border-bottom:3px solid #dc2626; margin-bottom:-2px; }
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
+    .card { background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.07); }
+    .card-head { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #f0f0f0; }
+    .card-head .icon { font-size:1.8rem; flex-shrink:0; }
+    .card-head .title { font-size:0.95rem; font-weight:800; }
+    .card-body { padding:14px 16px; font-size:0.84rem; line-height:1.7; }
+    .step-list { list-style:none; counter-reset:s; }
+    .step-list li { counter-increment:s; display:flex; gap:12px; padding:9px 0; border-bottom:1px dashed #fca5a5; font-size:0.84rem; line-height:1.5; }
+    .step-list li:last-child { border-bottom:none; }
+    .step-list li::before { content:counter(s); background:#dc2626; color:#fff; font-weight:800; font-size:0.72rem; min-width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
+    .info-bar { display:flex; gap:8px; background:var(--accent-light); border-left:4px solid var(--accent-mid); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#7f1d1d; }
+    .warn-bar { display:flex; gap:8px; background:#fffbeb; border-left:4px solid #f59e0b; border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#78350f; }
+    .app-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+    .app-card { background:var(--accent-light); border:1.5px solid #fca5a5; border-radius:10px; padding:10px 12px; font-size:0.8rem; display:block; text-decoration:none; color:inherit; transition:background .15s; }
+    .app-card:hover { background:#fecaca; }
+    .app-card .app-name { font-weight:800; color:var(--accent); margin-bottom:3px; }
+    .map-embed { width:100%; height:220px; border:0; border-radius:10px; margin-top:10px; display:block; }
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #f5c8c8; }
+    footer a { color:var(--accent); text-decoration:none; }
+  </style>
+</head>
+<body>
+<header class="page-header">
+  <h1>🗺️ 北九州カントリー倶楽部 アクセスガイド</h1>
+  <p>Access Guide / 오시는 길 안내</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　｜　<a href="course-kitakyushu.html">コース紹介に戻る</a></div>
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- 日本語 -->
+<div id="c-ja" class="content on">
+  <div class="sec-head">📍 基本情報</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">北九州カントリー倶楽部</span></div>
+    <div class="card-body">
+      〒808-0135　福岡県北九州市若松区大字蜑住<br>📞 093-741-3211
+      <div class="tip-bar"><span>💡</span>北九州市若松区に位置するゴルフ場。北九州都市高速の若松ICまたは響灘ICからアクセス。福岡空港から車で約70分。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 福岡空港からのアクセス</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">福岡空港から（推奨ルート）</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>福岡空港から九州自動車道・北九州方面へ</li>
+        <li>北九州都市高速に入り若松IC または 響灘ICで降りる</li>
+        <li>ICから一般道を経由してクラブハウス着</li>
+        <li>合計：福岡空港から車で約70分</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>若松区の自然豊かなエリアに位置しています。ナビアプリで「北九州カントリー倶楽部」と検索してご来場ください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 博多・天神方面から</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">九州自動車道・北九州都市高速利用</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>博多ICから九州自動車道（北九州・小倉方面）へ</li>
+        <li>北九州都市高速に接続</li>
+        <li>若松IC または 響灘ICで降りる（博多から約55〜60分）</li>
+        <li>ICから一般道を経由してクラブハウスへ</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>若松ICと響灘IC、どちらからでもアクセス可能です。ナビアプリで最短ルートを確認してください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 ナビアプリ</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">おすすめナビアプリ</span></div>
+    <div class="card-body">
+      タップするとアプリ・サイトが開きます。
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=北九州カントリー倶楽部&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=北九州カントリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>英語・韓国語対応</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=北九州カントリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo!カーナビ</div>日本道路情報充実。無料</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/北九州カントリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>韓国語で使えて便利</a>
+        <a class="app-card" href="https://map.kakao.com/?q=기타큐슈+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>韓国語対応</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 公共交通機関</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">電車＋タクシー</span></div>
+    <div class="card-body">
+      JR鹿児島本線「折尾駅」が最寄りの主要駅です。駅からはタクシーをご利用ください。
+      <div class="tip-bar"><span>💡</span>タクシー乗車時はスマホ画面に「北九州カントリー倶楽部 若松区」と表示してドライバーに見せてください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ 駐車場</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">駐車場情報</span></div>
+    <div class="card-body">
+      無料駐車場完備。スタッフの誘導に従ってお停めください。
+    </div>
+  </div>
+</div>
+
+<!-- English -->
+<div id="c-en" class="content">
+  <div class="sec-head">📍 Basic Info</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">Kitakyushu Country Club</span></div>
+    <div class="card-body">
+      Azaazu, Wakamatsu-ku, Kitakyushu City, Fukuoka 808-0135<br>📞 093-741-3211
+      <div class="tip-bar"><span>💡</span>Located in Wakamatsu-ku, Kitakyushu. Access via Wakamatsu IC or Hibikino IC on the Kitakyushu Urban Expressway. Approx. 70 min from Fukuoka Airport.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ From Fukuoka Airport</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">From Fukuoka Airport (Recommended)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>Take the Kyushu Expressway toward Kitakyushu / Kokura</li>
+        <li>Connect to the Kitakyushu Urban Expressway</li>
+        <li>Exit at Wakamatsu IC or Hibikino IC</li>
+        <li>Total: approx. 70 min from Fukuoka Airport</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>Search "北九州カントリー倶楽部" in your navigation app for an accurate route.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 From Hakata / Tenjin</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">Via Kyushu Expressway &amp; Kitakyushu Urban Expressway</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>Take the Kyushu Expressway from Hakata IC toward Kitakyushu / Kokura</li>
+        <li>Connect to the Kitakyushu Urban Expressway</li>
+        <li>Exit at Wakamatsu IC or Hibikino IC (approx. 55–60 min from Hakata)</li>
+        <li>Follow local roads to the clubhouse</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>Both Wakamatsu IC and Hibikino IC provide access. Check your navigation app for the best route.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 Navigation Apps</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">Recommended Apps</span></div>
+    <div class="card-body">
+      Tap to open the app or website.
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=北九州カントリー倶楽部&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=北九州カントリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>English support</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=北九州カントリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo! Car Navi</div>Best Japanese road data</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/北九州カントリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>Korean language support</a>
+        <a class="app-card" href="https://map.kakao.com/?q=기타큐슈+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>Popular among Korean visitors</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 Public Transport</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">Train + Taxi</span></div>
+    <div class="card-body">
+      Nearest major station: JR Kagoshima Main Line "Orio Station." Take a taxi from the station.
+      <div class="tip-bar"><span>💡</span>Show "北九州カントリー倶楽部 若松区" on your phone screen to the taxi driver.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ Parking</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">Parking Info</span></div>
+    <div class="card-body">Free parking available. Staff will guide you on arrival.</div>
+  </div>
+</div>
+
+<!-- 한국어 -->
+<div id="c-ko" class="content">
+  <div class="sec-head">📍 기본 정보</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">기타큐슈 컨트리 클럽</span></div>
+    <div class="card-body">
+      〒808-0135　후쿠오카현 기타큐슈시 와카마츠구 오아자에스미<br>📞 093-741-3211
+      <div class="tip-bar"><span>💡</span>기타큐슈시 와카마츠구에 위치. 기타큐슈 도시 고속도로 와카마츠 IC 또는 히비키노 IC 경유. 후쿠오카 공항에서 차로 약 70분.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 후쿠오카 공항에서 오시는 길</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">후쿠오카 공항에서 (추천 경로)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>규슈 자동차도로 (기타큐슈·고쿠라 방면) 진입</li>
+        <li>기타큐슈 도시 고속도로에 연결</li>
+        <li>와카마츠 IC 또는 히비키노 IC에서 하차</li>
+        <li>합계: 후쿠오카 공항에서 차로 약 70분</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>내비게이션 앱에서 「北九州カントリー倶楽部」로 검색하면 정확한 경로를 확인할 수 있습니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 하카타·텐진 방면에서</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">규슈 자동차도로·기타큐슈 도시 고속도로 이용</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>하카타 IC에서 규슈 자동차도로 (기타큐슈·고쿠라 방면) 진입</li>
+        <li>기타큐슈 도시 고속도로에 연결</li>
+        <li>와카마츠 IC 또는 히비키노 IC에서 하차 (하카타에서 약 55〜60분)</li>
+        <li>일반 도로를 경유하여 클럽하우스로</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>와카마츠 IC와 히비키노 IC 모두 이용 가능합니다. 내비게이션 앱에서 최적 경로를 확인하세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 내비게이션 앱</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">추천 내비게이션 앱</span></div>
+    <div class="card-body">
+      탭하면 앱 또는 사이트가 열립니다.
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=北九州カントリー倶楽部&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=北九州カントリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>영어·한국어 지원</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=北九州カントリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo! 카내비</div>일본 도로 정보 충실</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/北九州カントリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>한국어로 사용 가능</a>
+        <a class="app-card" href="https://map.kakao.com/?q=기타큐슈+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">카카오맵</div>한국어 지원</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 대중교통</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">전철 + 택시</span></div>
+    <div class="card-body">
+      JR 가고시마 본선 「오리오역」에서 택시 이용.
+      <div class="tip-bar"><span>💡</span>택시 기사에게 「北九州カントリー倶楽部 若松区」를 스마트폰 화면으로 보여주세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ 주차장</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">주차장 정보</span></div>
+    <div class="card-body">무료 주차장 완비. 직원의 안내에 따라 주차해 주세요.</div>
+  </div>
+</div>
+
+<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　このサイトはゴルフ好きが作った情報ガイドです。最新情報は各ゴルフ場の公式サイトでご確認ください。</footer>
+<script>
+  function sw(l){['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body>
+</html>

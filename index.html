@@ -75,6 +75,18 @@
     .about-box h3 { font-size:0.9rem; color:var(--green-dark); margin-bottom:8px; }
 
     footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde8dd; }
+
+    /* filter */
+    .filter-bar { display:flex; gap:6px; flex-wrap:wrap; margin:12px 0 8px; }
+    .fbtn { border:1.5px solid transparent; background:#f0f2f0; color:#555; padding:5px 13px; border-radius:20px; font-size:0.74rem; font-weight:700; cursor:pointer; transition:all .18s; }
+    .fbtn:hover { background:#e0e8e0; }
+    .fbtn.on[data-f="all"] { background:var(--green-mid); color:#fff; border-color:var(--green-mid); }
+    .fbtn.on[data-f="d30"] { background:#1a6b5c; color:#fff; border-color:#1a6b5c; }
+    .fbtn.on[data-f="d40"] { background:#1a5c8f; color:#fff; border-color:#1a5c8f; }
+    .fbtn.on[data-f="d50"] { background:#b45309; color:#fff; border-color:#b45309; }
+    .fbtn.on[data-f="d60"] { background:#9b1c1c; color:#fff; border-color:#9b1c1c; }
+    .course-card.dist-hidden { display:none; }
+    .dist-label.dist-hidden { display:none; }
   </style>
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/index.html">
@@ -186,8 +198,16 @@
   </a>
 
   <div class="sec-head">📍 掲載ゴルフ場</div>
+  <div class="filter-bar" id="fb-ja">
+    <button class="fbtn on" data-f="all" onclick="filterCourses('ja','all')">すべて</button>
+    <button class="fbtn"    data-f="d30" onclick="filterCourses('ja','d30')">✈️ 〜30分</button>
+    <button class="fbtn"    data-f="d40" onclick="filterCourses('ja','d40')">✈️ 〜40分</button>
+    <button class="fbtn"    data-f="d50" onclick="filterCourses('ja','d50')">✈️ 50〜60分</button>
+    <button class="fbtn"    data-f="d60" onclick="filterCourses('ja','d60')">🚗 1時間以上</button>
+  </div>
 
-  <div style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:8px 0 8px;display:inline-block;">✈️ 福岡空港から約30分圏内</div>
+
+  <div class="dist-label" data-dist="d30" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:8px 0 8px;display:inline-block;">✈️ 福岡空港から約30分圏内</div>
 
   <div class="course-card">
     <div class="course-head">
@@ -243,7 +263,7 @@
     </div></div>
   </div>
 
-  <div style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">✈️ 福岡空港から約40分圏内</div>
+  <div class="dist-label" data-dist="d40" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">✈️ 福岡空港から約40分圏内</div>
 
   <div class="course-card">
     <div class="course-head">
@@ -454,7 +474,7 @@
     </div></div>
   </div>
 
-  <div style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">🚗 北九州・南福岡エリア（1時間以上）</div>
+  <div class="dist-label" data-dist="d60" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">🚗 北九州・南福岡エリア（1時間以上）</div>
 
   <div class="course-card">
     <div class="course-head">
@@ -619,7 +639,7 @@
 
   <div class="sec-head">📍 Golf Courses</div>
 
-  <div style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:8px 0 8px;display:inline-block;">✈️ Within ~30 min from Fukuoka Airport</div>
+  <div class="dist-label" data-dist="d30" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:8px 0 8px;display:inline-block;">✈️ Within ~30 min from Fukuoka Airport</div>
 
   <div class="course-card">
     <div class="course-head">
@@ -675,7 +695,7 @@
     </div></div>
   </div>
 
-  <div style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">✈️ Within ~40 min from Fukuoka Airport</div>
+  <div class="dist-label" data-dist="d40" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">✈️ Within ~40 min from Fukuoka Airport</div>
 
   <div class="course-card">
     <div class="course-head">
@@ -773,7 +793,7 @@
     </div></div>
   </div>
 
-  <div style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">✈️ Within ~50–60 min from Fukuoka Airport</div>
+  <div class="dist-label" data-dist="d50" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">✈️ Within ~50–60 min from Fukuoka Airport</div>
 
   <div class="course-card">
     <div class="course-head">
@@ -886,7 +906,7 @@
     </div></div>
   </div>
 
-  <div style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">🚗 Kitakyushu / South Fukuoka (1 hour+)</div>
+  <div class="dist-label" data-dist="d60" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">🚗 Kitakyushu / South Fukuoka (1 hour+)</div>
 
   <div class="course-card">
     <div class="course-head">
@@ -1050,8 +1070,16 @@
   </a>
 
   <div class="sec-head">📍 소개 골프장</div>
+  <div class="filter-bar" id="fb-ko">
+    <button class="fbtn on" data-f="all" onclick="filterCourses('ko','all')">전체</button>
+    <button class="fbtn"    data-f="d30" onclick="filterCourses('ko','d30')">✈️ 〜30분</button>
+    <button class="fbtn"    data-f="d40" onclick="filterCourses('ko','d40')">✈️ 〜40분</button>
+    <button class="fbtn"    data-f="d50" onclick="filterCourses('ko','d50')">✈️ 50〜60분</button>
+    <button class="fbtn"    data-f="d60" onclick="filterCourses('ko','d60')">🚗 1시간 이상</button>
+  </div>
 
-  <div style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:8px 0 8px;display:inline-block;">✈️ 후쿠오카 공항에서 약 30분 이내</div>
+
+  <div class="dist-label" data-dist="d30" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:8px 0 8px;display:inline-block;">✈️ 후쿠오카 공항에서 약 30분 이내</div>
 
   <div class="course-card">
     <div class="course-head">
@@ -1107,7 +1135,7 @@
     </div></div>
   </div>
 
-  <div style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">✈️ 후쿠오카 공항에서 약 40분 이내</div>
+  <div class="dist-label" data-dist="d40" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">✈️ 후쿠오카 공항에서 약 40분 이내</div>
 
   <div class="course-card">
     <div class="course-head">
@@ -1318,7 +1346,7 @@
     </div></div>
   </div>
 
-  <div style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">🚗 기타큐슈·남후쿠오카 지역（1시간 이상）</div>
+  <div class="dist-label" data-dist="d60" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:16px 0 8px;display:inline-block;">🚗 기타큐슈·남후쿠오카 지역（1시간 이상）</div>
 
   <div class="course-card">
     <div class="course-head">
@@ -1418,6 +1446,35 @@
     window.scrollTo({top:0,behavior:'smooth'});
   }
 </script>
+
+  <script>
+  (function(){
+    ["ja","en","ko"].forEach(function(lang){
+      var section = document.getElementById("c-" + lang);
+      if (!section) return;
+      var currentDist = "d30";
+      Array.from(section.children).forEach(function(el){
+        if (el.classList.contains("dist-label")) currentDist = el.dataset.dist || currentDist;
+        else if (el.classList.contains("course-card")) el.dataset.dist = currentDist;
+      });
+    });
+  })();
+  function filterCourses(lang, dist) {
+    var section = document.getElementById("c-" + lang);
+    if (!section) return;
+    var fb = document.getElementById("fb-" + lang);
+    if (fb) fb.querySelectorAll(".fbtn").forEach(function(b){ b.classList.toggle("on", b.dataset.f === dist); });
+    var visibleDists = new Set();
+    section.querySelectorAll(".course-card").forEach(function(card){
+      var show = (dist === "all" || card.dataset.dist === dist);
+      card.classList.toggle("dist-hidden", !show);
+      if (show) visibleDists.add(card.dataset.dist);
+    });
+    section.querySelectorAll(".dist-label").forEach(function(label){
+      label.classList.toggle("dist-hidden", dist !== "all" && !visibleDists.has(label.dataset.dist));
+    });
+  }
+  </script>
 
   <!-- トップに戻るボタン -->
   <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップに戻る">▲</button>

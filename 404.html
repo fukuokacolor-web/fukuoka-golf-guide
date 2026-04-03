@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ページが見つかりません | 福岡ゴルフ場ガイド</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark: #1a5c38; --green-mid: #2e8b57; --green-light: #e8f5ee;
+      --bg: #f2f5f0; --text: #1e1e2e; --muted: #6b7280; --radius: 14px;
+    }
+    body { font-family: 'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+
+    .site-header { background: linear-gradient(160deg, var(--green-dark) 0%, #267347 60%, #3aaa6e 100%); color: #fff; padding: 24px 20px 20px; text-align: center; }
+    .site-header h1 { font-size: 1.2rem; font-weight: 800; }
+    .site-header p  { font-size: 0.78rem; opacity: 0.85; margin-top: 4px; }
+
+    .lang-bar { display: flex; background: #fff; border-bottom: 2px solid var(--green-mid); position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex: 1; border: none; background: none; padding: 10px 4px; font-size: 0.8rem; font-weight: 700; cursor: pointer; color: #aaa; transition: all .18s; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .lbtn .f { font-size: 1.2rem; }
+    .lbtn.on { color: var(--green-dark); background: var(--green-light); border-bottom: 3px solid var(--green-mid); margin-bottom: -2px; }
+
+    .content { display: none; flex: 1; padding: 40px 20px; max-width: 480px; margin: 0 auto; text-align: center; }
+    .content.on { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+
+    .code { font-size: 4rem; font-weight: 900; color: var(--green-mid); line-height: 1; }
+    .icon { font-size: 2.5rem; }
+    .msg-title { font-size: 1.1rem; font-weight: 800; margin-top: 4px; }
+    .msg-body  { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+    .btn-home {
+      display: inline-block; margin-top: 8px;
+      background: var(--green-mid); color: #fff;
+      padding: 12px 28px; border-radius: 999px;
+      font-size: 0.9rem; font-weight: 700; text-decoration: none;
+      transition: background .18s;
+    }
+    .btn-home:hover { background: var(--green-dark); }
+
+    .divider { width: 40px; height: 3px; background: var(--green-light); border-radius: 2px; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>⛳ 福岡ゴルフ場ガイド</h1>
+    <p>Fukuoka Golf Course Guide</p>
+  </header>
+
+  <nav class="lang-bar">
+    <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+    <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+    <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+  </nav>
+
+  <!-- JA -->
+  <div class="content on" id="c-ja">
+    <div class="icon">🕳️</div>
+    <div class="code">404</div>
+    <div class="divider"></div>
+    <div class="msg-title">ページが見つかりません</div>
+    <div class="msg-body">
+      お探しのページは移動または削除された可能性があります。<br>
+      トップページからお探しください。
+    </div>
+    <a href="index.html" class="btn-home">🏠 トップページへ戻る</a>
+  </div>
+
+  <!-- EN -->
+  <div class="content" id="c-en">
+    <div class="icon">🕳️</div>
+    <div class="code">404</div>
+    <div class="divider"></div>
+    <div class="msg-title">Page Not Found</div>
+    <div class="msg-body">
+      The page you're looking for may have been moved or deleted.<br>
+      Please return to the top page.
+    </div>
+    <a href="index.html" class="btn-home">🏠 Back to Top</a>
+  </div>
+
+  <!-- KO -->
+  <div class="content" id="c-ko">
+    <div class="icon">🕳️</div>
+    <div class="code">404</div>
+    <div class="divider"></div>
+    <div class="msg-title">페이지를 찾을 수 없습니다</div>
+    <div class="msg-body">
+      찾으시는 페이지가 이동되었거나 삭제되었을 수 있습니다.<br>
+      상단 페이지로 돌아가 주세요.
+    </div>
+    <a href="index.html" class="btn-home">🏠 상단 페이지로 돌아가기</a>
+  </div>
+
+  <script>
+    function sw(lang) {
+      ['ja','en','ko'].forEach(l => {
+        document.getElementById('c-' + l).classList.toggle('on', l === lang);
+      });
+      document.querySelectorAll('.lbtn').forEach((b, i) => {
+        b.classList.toggle('on', ['ja','en','ko'][i] === lang);
+      });
+    }
+  </script>
+</body>
+</html>

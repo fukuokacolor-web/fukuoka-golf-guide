@@ -566,5 +566,29 @@
     window.scrollTo({top:0,behavior:'smooth'});
   }
 </script>
+
+  <!-- トップに戻るボタン -->
+  <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップに戻る">▲</button>
+  <style>
+    #btt {
+      position: fixed; bottom: 20px; right: 16px; z-index: 999;
+      width: 44px; height: 44px; border-radius: 50%; border: none;
+      background: #2e8b57; color: #fff; font-size: 1rem; font-weight: 700;
+      cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      transform: translateY(8px);
+    }
+    #btt.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    #btt:hover { background: #1a5c38; }
+  </style>
+  <script>
+    (function(){
+      var btn = document.getElementById('btt');
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('show', window.scrollY > 300);
+      }, {passive: true});
+    })();
+  </script>
 </body>
 </html>

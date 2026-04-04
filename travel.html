@@ -19,9 +19,24 @@
     }
     body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
 
-    .page-header { background:linear-gradient(160deg,#1a5c38 0%,#2e8b57 60%,#52b788 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
-    .page-header h1 { font-size:1.2rem; font-weight:800; }
-    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .page-header {
+      background: linear-gradient(to bottom, rgba(0,25,12,0.28) 0%, rgba(0,20,10,0.62) 100%),
+                  url('images/golf-mountain.webp') center 45%/cover no-repeat;
+      color:#fff; padding:72px 20px 52px; text-align:center; position:relative;
+    }
+    .page-header::after {
+      content:''; position:absolute; bottom:0; left:0; right:0;
+      height:44px; background:linear-gradient(to bottom, transparent, var(--bg));
+      pointer-events:none;
+    }
+    .page-header .hero-badge {
+      display:inline-block; font-size:0.68rem; font-weight:700; letter-spacing:0.08em;
+      background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.45);
+      backdrop-filter:blur(4px); padding:4px 14px; border-radius:20px; margin-bottom:12px;
+    }
+    .page-header h1 { font-size:1.6rem; font-weight:900; text-shadow:0 2px 10px rgba(0,0,0,0.5); margin-bottom:10px; }
+    .page-header .hero-divider { width:36px; height:2px; background:rgba(255,255,255,0.6); margin:0 auto 10px; border-radius:2px; }
+    .page-header p { font-size:0.78rem; opacity:0.90; line-height:1.6; text-shadow:0 1px 4px rgba(0,0,0,0.5); }
     .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #e0e8e0; font-size:0.8rem; }
     .back-bar a { color:var(--green-dark); text-decoration:none; font-weight:700; }
 
@@ -84,6 +99,7 @@
     .spot-name { font-size:0.88rem; font-weight:800; color:var(--green-dark); margin-bottom:3px; }
     .spot-loc  { font-size:0.72rem; color:var(--muted); margin-bottom:4px; }
     .spot-desc { font-size:0.8rem; line-height:1.6; color:#444; }
+    .spot-img { width:100%; border-radius:8px; margin-top:10px; display:block; object-fit:cover; max-height:200px; }
 
     /* モデルプラン */
     .plan-card { background:#fff; border-radius:var(--radius); padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.07); margin-bottom:10px; }
@@ -139,7 +155,9 @@
 <body>
 
 <header class="page-header">
-  <h1>✈️ 福岡ゴルフ旅行ガイド</h1>
+  <div class="hero-badge">✈️ FUKUOKA GOLF TRAVEL GUIDE</div>
+  <h1>福岡ゴルフ旅行ガイド</h1>
+  <div class="hero-divider"></div>
   <p>Fukuoka Golf Travel Guide / 후쿠오카 골프 여행 가이드</p>
 </header>
 <div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a></div>
@@ -319,6 +337,7 @@
       <div class="spot-name">糸島シーサイドドライブ</div>
       <div class="spot-loc">📍 糸島市　🚗 福岡市内から約40分</div>
       <div class="spot-desc">玄界灘を望む絶景ドライブコース。カフェ・シーフードレストランが点在し、芥屋GC・糸島GCとのセットで訪れる観光客に人気。夕日スポットとしても有名な二見ヶ浦の夫婦岩は必見。</div>
+      <img src="images/island-view.webp" class="spot-img" alt="糸島・玄界灘の絶景" loading="lazy" width="900" height="675">
     </div>
   </div>
 
@@ -540,6 +559,7 @@
       <div class="spot-name">Itoshima Coastal Drive</div>
       <div class="spot-loc">📍 Itoshima City　🚗 ~40 min from central Fukuoka</div>
       <div class="spot-desc">A scenic coastal route along the Genkai Sea with ocean-view cafés and fresh seafood restaurants. A natural pairing with a round at Keya or Itoshima Golf Club. Don't miss the Futamigaura sacred rocks at sunset.</div>
+      <img src="images/island-view.webp" class="spot-img" alt="Itoshima coastal scenery" loading="lazy" width="900" height="675">
     </div>
   </div>
 
@@ -761,6 +781,7 @@
       <div class="spot-name">이토시마 시사이드 드라이브</div>
       <div class="spot-loc">📍 이토시마시　🚗 후쿠오카 시내에서 약 40분</div>
       <div class="spot-desc">겐카이나다를 바라보는 절경 드라이브 코스. 해변 카페와 해산물 레스토랑이 점재하며 케야·이토시마 GC와의 세트 방문으로 인기. 일몰 명소인 후타미가우라 부부 바위도 필수 코스.</div>
+      <img src="images/island-view.webp" class="spot-img" alt="이토시마 해안 절경" loading="lazy" width="900" height="675">
     </div>
   </div>
 

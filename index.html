@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://www.google-analytics.com">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="福岡近郊の主要ゴルフ場28コースを徹底ガイド。アクセス・料金・コースデータを日本語・English・한국어で掲載。">
@@ -23,13 +21,56 @@
     .disclaimer { background:#fff3cd; border-bottom:2px solid #e6a817; padding:8px 16px; font-size:0.75rem; line-height:1.5; color:#5a3e00; text-align:center; }
 
     .site-header {
-      background: linear-gradient(rgba(0,60,30,0.55), rgba(0,40,20,0.70)),
-                  url('images/itoshimatorii.webp') center/cover no-repeat;
-      color:#fff; padding:48px 20px 36px; text-align:center;
+      background: linear-gradient(to bottom,
+                    rgba(0,25,12,0.30) 0%,
+                    rgba(0,20,10,0.20) 40%,
+                    rgba(0,15,8,0.65) 100%),
+                  url('images/itoshimatorii.webp') center 38%/cover no-repeat;
+      color:#fff;
+      padding: 80px 20px 56px;
+      text-align:center;
+      position:relative;
     }
-    .site-header .badge { font-size:0.7rem; background:rgba(0,0,0,0.25); display:inline-block; padding:2px 10px; border-radius:10px; margin-bottom:8px; }
-    .site-header h1 { font-size:1.4rem; font-weight:800; }
-    .site-header .tagline { font-size:0.82rem; opacity:0.85; margin-top:6px; line-height:1.6; }
+    .site-header::after {
+      content:'';
+      position:absolute;
+      bottom:0; left:0; right:0;
+      height:48px;
+      background: linear-gradient(to bottom, transparent, #f5f9f5);
+      pointer-events:none;
+    }
+    .site-header .hero-badge {
+      display:inline-block;
+      font-size:0.68rem;
+      font-weight:700;
+      letter-spacing:0.08em;
+      background:rgba(255,255,255,0.18);
+      border:1px solid rgba(255,255,255,0.45);
+      backdrop-filter:blur(4px);
+      padding:4px 14px;
+      border-radius:20px;
+      margin-bottom:14px;
+      text-shadow:none;
+    }
+    .site-header h1 {
+      font-size:1.75rem;
+      font-weight:900;
+      letter-spacing:0.02em;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
+      margin-bottom:12px;
+    }
+    .site-header .hero-divider {
+      width:40px; height:2px;
+      background:rgba(255,255,255,0.6);
+      margin:0 auto 12px;
+      border-radius:2px;
+    }
+    .site-header .tagline {
+      font-size:0.80rem;
+      opacity:0.90;
+      line-height:1.8;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    }
 
     .lang-bar { display:flex; background:#fff; border-bottom:2px solid var(--green-mid); position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
     .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
@@ -138,20 +179,14 @@
   <meta property="og:image:alt"    content="福岡ゴルフ場ガイド | Fukuoka Golf Guide">
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:image"       content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/itoshimatorii.webp">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PENH0Z4VT7');
-  </script>
 </head>
 <body>
 
 
 <header class="site-header">
-  <h1>⛳ 福岡ゴルフ場ガイド</h1>
+  <div class="hero-badge">⛳ FUKUOKA GOLF GUIDE</div>
+  <h1>福岡ゴルフ場ガイド</h1>
+  <div class="hero-divider"></div>
   <p class="tagline">
     外国人ゴルファーのための福岡・九州ゴルフ情報<br>
     Fukuoka Golf Guide for Inbound Visitors<br>
@@ -246,51 +281,6 @@
         <span class="card-arrow">›</span>
       </div>
       <div class="card-tags"><span class="tag">日英韓 対応</span><span class="tag blue">予約サイト比較</span></div>
-    </div>
-  </a>
-
-  <a href="recommend.html" class="content-card">
-    <div class="card-accent accent-green"></div>
-    <div class="card-inner">
-      <div class="card-row">
-        <span class="card-icon">⭐</span>
-        <div>
-          <div class="card-title">目的別おすすめゴルフ場特集</div>
-          <div class="card-desc">アクセス・絶景・初心者・コスパ・本格派 — 目的で選ぶ5カテゴリ</div>
-        </div>
-        <span class="card-arrow">›</span>
-      </div>
-      <div class="card-tags"><span class="tag">日英韓 対応</span><span class="tag gold">おすすめ特集</span></div>
-    </div>
-  </a>
-
-  <a href="seasonal.html" class="content-card">
-    <div class="card-accent accent-green"></div>
-    <div class="card-inner">
-      <div class="card-row">
-        <span class="card-icon">🌸</span>
-        <div>
-          <div class="card-title">季節別おすすめゴルフ場</div>
-          <div class="card-desc">春の新緑・夏の海風・秋の紅葉・冬のお得プラン — 季節で選ぶ</div>
-        </div>
-        <span class="card-arrow">›</span>
-      </div>
-      <div class="card-tags"><span class="tag">日英韓 対応</span><span class="tag gold">季節特集</span></div>
-    </div>
-  </a>
-
-  <a href="travel.html" class="content-card">
-    <div class="card-accent accent-green"></div>
-    <div class="card-inner">
-      <div class="card-row">
-        <span class="card-icon">✈️</span>
-        <div>
-          <div class="card-title">福岡ゴルフ旅行ガイド</div>
-          <div class="card-desc">アクセス・ホテル・グルメ・観光スポット＆モデルプラン</div>
-        </div>
-        <span class="card-arrow">›</span>
-      </div>
-      <div class="card-tags"><span class="tag">日英韓 対応</span><span class="tag gold">旅行ガイド</span></div>
     </div>
   </a>
 
@@ -762,51 +752,6 @@
     </div>
   </a>
 
-  <a href="recommend.html" class="content-card">
-    <div class="card-accent accent-green"></div>
-    <div class="card-inner">
-      <div class="card-row">
-        <span class="card-icon">⭐</span>
-        <div>
-          <div class="card-title">Best Courses by Purpose</div>
-          <div class="card-desc">Access, scenery, beginners, value & serious play — 5 curated categories</div>
-        </div>
-        <span class="card-arrow">›</span>
-      </div>
-      <div class="card-tags"><span class="tag">JA / EN / KO</span><span class="tag gold">Recommended picks</span></div>
-    </div>
-  </a>
-
-  <a href="seasonal.html" class="content-card">
-    <div class="card-accent accent-green"></div>
-    <div class="card-inner">
-      <div class="card-row">
-        <span class="card-icon">🌸</span>
-        <div>
-          <div class="card-title">Best Courses by Season</div>
-          <div class="card-desc">Spring greenery, summer breezes, autumn foliage & winter deals</div>
-        </div>
-        <span class="card-arrow">›</span>
-      </div>
-      <div class="card-tags"><span class="tag">JA / EN / KO</span><span class="tag gold">Seasonal guide</span></div>
-    </div>
-  </a>
-
-  <a href="travel.html" class="content-card">
-    <div class="card-accent accent-green"></div>
-    <div class="card-inner">
-      <div class="card-row">
-        <span class="card-icon">✈️</span>
-        <div>
-          <div class="card-title">Fukuoka Golf Travel Guide</div>
-          <div class="card-desc">Access, hotels, dining, sightseeing & sample itineraries</div>
-        </div>
-        <span class="card-arrow">›</span>
-      </div>
-      <div class="card-tags"><span class="tag">JA / EN / KO</span><span class="tag gold">Travel guide</span></div>
-    </div>
-  </a>
-
   <div class="sec-head">📍 Golf Courses</div>
 
   <div class="dist-label" data-dist="d30" style="font-size:0.7rem;font-weight:800;color:var(--green-dark);background:var(--green-light);border:1.5px solid #b8d9c5;padding:4px 12px;border-radius:20px;margin:8px 0 8px;display:inline-block;">✈️ Within ~30 min from Fukuoka Airport</div>
@@ -1264,51 +1209,6 @@
         <span class="card-arrow">›</span>
       </div>
       <div class="card-tags"><span class="tag">한/일/영 대응</span><span class="tag blue">예약 사이트 비교</span></div>
-    </div>
-  </a>
-
-  <a href="recommend.html" class="content-card">
-    <div class="card-accent accent-green"></div>
-    <div class="card-inner">
-      <div class="card-row">
-        <span class="card-icon">⭐</span>
-        <div>
-          <div class="card-title">목적별 추천 골프장 특집</div>
-          <div class="card-desc">교통·절경·초보자·가성비·본격파 — 목적으로 고르는 5카테고리</div>
-        </div>
-        <span class="card-arrow">›</span>
-      </div>
-      <div class="card-tags"><span class="tag">한/일/영 대응</span><span class="tag gold">추천 특집</span></div>
-    </div>
-  </a>
-
-  <a href="seasonal.html" class="content-card">
-    <div class="card-accent accent-green"></div>
-    <div class="card-inner">
-      <div class="card-row">
-        <span class="card-icon">🌸</span>
-        <div>
-          <div class="card-title">계절별 추천 골프장</div>
-          <div class="card-desc">봄 신록·여름 해풍·가을 단풍·겨울 할인 — 계절로 고르는 특집</div>
-        </div>
-        <span class="card-arrow">›</span>
-      </div>
-      <div class="card-tags"><span class="tag">한/일/영 대응</span><span class="tag gold">계절 특집</span></div>
-    </div>
-  </a>
-
-  <a href="travel.html" class="content-card">
-    <div class="card-accent accent-green"></div>
-    <div class="card-inner">
-      <div class="card-row">
-        <span class="card-icon">✈️</span>
-        <div>
-          <div class="card-title">후쿠오카 골프 여행 가이드</div>
-          <div class="card-desc">교통·호텔·맛집·관광지 & 모델 플랜 완비</div>
-        </div>
-        <span class="card-arrow">›</span>
-      </div>
-      <div class="card-tags"><span class="tag">한/일/영 대응</span><span class="tag gold">여행 가이드</span></div>
     </div>
   </a>
 

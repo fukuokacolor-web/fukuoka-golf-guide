@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="目的別・福岡おすすめゴルフ場特集。初心者向け・絶景・アクセス抜群・コスパ重視・本格派など、あなたにぴったりのコースが見つかる。">
+  <meta name="description" lang="en" content="Best golf courses in Fukuoka by category. Beginner-friendly, scenic ocean views, close to the airport, best value, and challenging courses for experienced players.">
+  <meta name="description" lang="ko" content="목적별 후쿠오카 추천 골프장 특집. 초보자 추천·절경·교통 편리·가성비·상급자 코스 등 당신에게 딱 맞는 코스를 찾아보세요.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>目的別おすすめゴルフ場 | 福岡ゴルフ場ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark:#1a5c38; --green-mid:#2e8b57; --green-light:#e8f5ee;
+      --gold:#c9a227; --gold-light:#fff8e1;
+      --bg:#f2f5f0; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+    }
+    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+    .page-header { background:linear-gradient(160deg,#1a5c38 0%,#2e8b57 60%,#52b788 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header h1 { font-size:1.2rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #e0e8e0; font-size:0.8rem; }
+    .back-bar a { color:var(--green-dark); text-decoration:none; font-weight:700; }
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid var(--green-mid); position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:var(--green-dark); background:var(--green-light); border-bottom:3px solid var(--green-mid); margin-bottom:-2px; }
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+
+    /* カテゴリヘッダー */
+    .cat-head { display:flex; align-items:center; gap:12px; background:#fff; border-radius:var(--radius); padding:14px 16px; margin:24px 0 10px; box-shadow:0 2px 8px rgba(0,0,0,.07); border-left:5px solid var(--green-mid); }
+    .cat-emoji { font-size:2rem; flex-shrink:0; }
+    .cat-title { font-size:1rem; font-weight:800; color:var(--green-dark); }
+    .cat-sub { font-size:0.75rem; color:var(--muted); margin-top:2px; line-height:1.4; }
+
+    /* コースカード */
+    .rec-card { background:#fff; border-radius:var(--radius); margin-bottom:10px; padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.07); display:flex; gap:12px; align-items:flex-start; }
+    .rec-card-icon { font-size:1.8rem; flex-shrink:0; }
+    .rec-card-body { flex:1; }
+    .rec-card-name { font-size:0.95rem; font-weight:800; color:var(--green-dark); margin-bottom:4px; }
+    .rec-card-loc { font-size:0.75rem; color:var(--muted); margin-bottom:6px; }
+    .rec-badges { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:8px; }
+    .rec-badge { font-size:0.68rem; font-weight:700; padding:2px 8px; border-radius:8px; }
+    .badge-green { background:var(--green-light); color:var(--green-dark); }
+    .badge-gold  { background:var(--gold-light);  color:#7a5000; }
+    .badge-blue  { background:#e8f0fb; color:#1a3a8f; }
+    .badge-red   { background:#fdecea; color:#c0392b; }
+    .rec-reason { font-size:0.82rem; line-height:1.6; color:#444; background:#f8fdf9; border-left:3px solid var(--green-mid); padding:8px 10px; border-radius:0 6px 6px 0; margin-bottom:8px; }
+    .rec-link { display:inline-flex; align-items:center; gap:4px; font-size:0.8rem; font-weight:700; color:var(--green-dark); text-decoration:none; background:var(--green-light); padding:5px 12px; border-radius:20px; }
+    .rec-link:hover { background:#c5e8d5; }
+
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde8dd; }
+    footer a { color:var(--green-dark); text-decoration:none; }
+  </style>
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/recommend.html">
+  <meta property="og:site_name"   content="福岡ゴルフ場ガイド">
+  <meta property="og:title"       content="目的別おすすめゴルフ場 | 福岡ゴルフ場ガイド">
+  <meta property="og:description" content="目的別・福岡おすすめゴルフ場特集。初心者向け・絶景・アクセス抜群・コスパ重視・本格派など。">
+  <meta property="og:image"        content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/itoshimatorii.webp">
+  <meta property="og:image:width"  content="1920">
+  <meta property="og:image:height" content="1280">
+  <meta property="og:image:alt"    content="福岡ゴルフ場ガイド | Fukuoka Golf Guide">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:image"       content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/itoshimatorii.webp">
+  <link rel="canonical" href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/recommend.html">
+  <link rel="alternate" hreflang="ja"        href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/recommend.html">
+  <link rel="alternate" hreflang="en"        href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/recommend.html">
+  <link rel="alternate" hreflang="ko"        href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/recommend.html">
+  <link rel="alternate" hreflang="x-default" href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/recommend.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"トップ","item":"https://fukuokacolor-web.github.io/fukuoka-golf-guide/"},
+      {"@type":"ListItem","position":2,"name":"目的別おすすめゴルフ場","item":"https://fukuokacolor-web.github.io/fukuoka-golf-guide/recommend.html"}
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="page-header">
+  <h1>⛳ 目的別おすすめゴルフ場</h1>
+  <p>Best Courses by Category / 목적별 추천 골프장</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a></div>
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- ════ 日本語 ════ -->
+<div id="c-ja" class="content on">
+
+  <!-- 1. アクセス抜群 -->
+  <div class="cat-head">
+    <span class="cat-emoji">🚗</span>
+    <div>
+      <div class="cat-title">アクセス抜群</div>
+      <div class="cat-sub">福岡空港・市内から30分以内。到着後すぐプレーしたい方に。</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">福岡カンツリー倶楽部（和白コース）</div>
+      <div class="rec-card-loc">📍 福岡市東区　✈️ 空港から車で約20分</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">市内最近</span>
+        <span class="rec-badge badge-blue">博多湾近く</span>
+        <span class="rec-badge badge-gold">18H・Par72</span>
+      </div>
+      <div class="rec-reason">福岡空港から最短約20分という抜群のアクセスを誇る市内随一のコース。博多湾に近いフラットな地形で、海風を感じながらプレーできます。</div>
+      <a href="course-fukuokacc.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">久山カントリー倶楽部</div>
+      <div class="rec-card-loc">📍 久山町・三郡山系　✈️ 空港から車で約25分</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">空港近い</span>
+        <span class="rec-badge badge-blue">三郡山系の自然</span>
+        <span class="rec-badge badge-gold">18H・Par72</span>
+      </div>
+      <div class="rec-reason">福岡市に隣接する久山町の三郡山系に広がる丘陵コース。市内から25分とアクセス良好でありながら、豊かな自然の中で本格的なラウンドが楽しめます。</div>
+      <a href="course-hisayama.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">油山ゴルフクラブ</div>
+      <div class="rec-card-loc">📍 福岡市城南区・油山山麓　✈️ 空港から車で約25〜30分</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">市内近郊</span>
+        <span class="rec-badge badge-red">丘陵・山岳</span>
+        <span class="rec-badge badge-gold">18H・Par72</span>
+      </div>
+      <div class="rec-reason">福岡市内からわずか30分以内でアクセスできる山岳・丘陵コース。起伏に富んだダイナミックなレイアウトで、近さと本格的なコースの両方を求める方に最適です。</div>
+      <a href="course-aburayama.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+  <!-- 2. 絶景コース -->
+  <div class="cat-head">
+    <span class="cat-emoji">🌊</span>
+    <div>
+      <div class="cat-title">絶景コース</div>
+      <div class="cat-sub">海の眺望が楽しめる、ロケーション抜群のコース。</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">芥屋ゴルフ倶楽部</div>
+      <div class="rec-card-loc">📍 糸島市・志摩芥屋　✈️ 空港から車で約60分</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-blue">シーサイドコース</span>
+        <span class="rec-badge badge-green">玄界灘一望</span>
+        <span class="rec-badge badge-gold">1964年創設の名門</span>
+      </div>
+      <div class="rec-reason">玄界灘を望む糸島半島の絶景シーサイドコース。1964年創設の名門で、プロトーナメントも開催されてきた格式ある一流コースです。</div>
+      <a href="course-keya.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">西戸崎シーサイドカントリークラブ</div>
+      <div class="rec-card-loc">📍 玄界灘・博多湾を一望　✈️ 空港から車で約30〜40分</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-blue">シーサイド</span>
+        <span class="rec-badge badge-green">博多湾も見える</span>
+        <span class="rec-badge badge-gold">18H</span>
+      </div>
+      <div class="rec-reason">玄界灘と博多湾の両方を望める西戸崎半島のシーサイドコース。海風を感じながらの爽快なラウンドは、他では味わえない特別な体験です。</div>
+      <a href="course-saitozaki.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">有明カントリークラブ</div>
+      <div class="rec-card-loc">📍 大牟田市・岬　✈️ 空港から車で約70分</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-blue">有明海一望</span>
+        <span class="rec-badge badge-green">丘陵コース</span>
+        <span class="rec-badge badge-gold">18H・Par72</span>
+      </div>
+      <div class="rec-reason">丘の上から有明海を眼下に望む、開放感抜群の丘陵コース。バンカーが戦略的に配置されており、景色と攻略性を同時に楽しめます。</div>
+      <a href="course-ariake.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+  <!-- 3. 初心者向け -->
+  <div class="cat-head">
+    <span class="cat-emoji">🌱</span>
+    <div>
+      <div class="cat-title">初めての日本ゴルフにおすすめ</div>
+      <div class="cat-sub">フェアウェイが広く、のびのびプレーできるコース。</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">小郡カントリークラブ</div>
+      <div class="rec-card-loc">📍 小郡市・三沢　✈️ 空港から車で約50分</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">フェアウェイ広め</span>
+        <span class="rec-badge badge-blue">27H展開</span>
+        <span class="rec-badge badge-gold">初心者〜上級者</span>
+      </div>
+      <div class="rec-reason">フェアウェイが広く、初心者でもドライバーを思い切り振れます。27ホール展開でコースの組み合わせも楽しめる、ゆったりプレーしたい方におすすめの一コースです。</div>
+      <a href="course-ogori.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">福岡レイクサイドカントリークラブ</div>
+      <div class="rec-card-loc">📍 久保白ダム湖畔　✈️ 空港から車で約40分</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">フェアウェイ広め</span>
+        <span class="rec-badge badge-blue">湖畔ロケーション</span>
+        <span class="rec-badge badge-gold">18H</span>
+      </div>
+      <div class="rec-reason">ダム湖畔の美しいロケーションと広いフェアウェイで、初心者でもドライバーを使いやすいコースです。池越えホールも多く、慣れてくると戦略性も楽しめます。</div>
+      <a href="course-lakeside.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+  <!-- 4. コスパ重視 -->
+  <div class="cat-head">
+    <span class="cat-emoji">💴</span>
+    <div>
+      <div class="cat-title">コスパ重視</div>
+      <div class="cat-sub">料金以上の満足感が得られる、厳選コース。</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">セントラル福岡ゴルフ倶楽部</div>
+      <div class="rec-card-loc">📍 筑紫野市　✈️ 空港から車で約35〜45分</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-gold">コスパ◎</span>
+        <span class="rec-badge badge-green">丘陵コース</span>
+        <span class="rec-badge badge-blue">18H・Par72</span>
+      </div>
+      <div class="rec-reason">コストパフォーマンスに優れながら、斜面を活かした戦略的なホール設計が楽しめます。ただ安いだけでなく、スコアを本気で考えたいプレーヤーにも満足のいくコースです。</div>
+      <a href="course-central.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+  <!-- 5. 本格派・上級者 -->
+  <div class="cat-head">
+    <span class="cat-emoji">🏔️</span>
+    <div>
+      <div class="cat-title">本格派・上級者向け</div>
+      <div class="cat-sub">起伏・難易度・戦略性で本気の攻略を楽しみたい方へ。</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">ミッションバレーゴルフクラブ</div>
+      <div class="rec-card-loc">📍 福岡県内</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-red">上級者向け</span>
+        <span class="rec-badge badge-blue">グラハム・マーシュ設計</span>
+        <span class="rec-badge badge-gold">池越えホール多数</span>
+      </div>
+      <div class="rec-reason">国際的な設計家グラハム・マーシュによるチャンピオンシップコース。起伏が激しくコースの戦略が難しく、池越えホールが随所に配置された本格派向けの難コースです。</div>
+      <a href="course-mission.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">セブンミリオンカントリークラブ</div>
+      <div class="rec-card-loc">📍 福岡市早良区・背振山麓　✈️ 空港から車で約30〜35分</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-red">山岳・丘陵</span>
+        <span class="rec-badge badge-blue">市内から近い</span>
+        <span class="rec-badge badge-gold">18H・Par72</span>
+      </div>
+      <div class="rec-reason">背振山麓の山岳・丘陵コースで、標高差のあるダイナミックなホールが続きます。市内から30分程度でアクセスできながら、本格的な山岳コースの醍醐味を味わえます。</div>
+      <a href="course-sevenmillion.html" class="rec-link">詳しく見る →</a>
+    </div>
+  </div>
+
+</div><!-- /ja -->
+
+<!-- ════ English ════ -->
+<div id="c-en" class="content">
+
+  <!-- 1. Close to Airport -->
+  <div class="cat-head">
+    <span class="cat-emoji">🚗</span>
+    <div>
+      <div class="cat-title">Quick Access</div>
+      <div class="cat-sub">Within 30 min from Fukuoka Airport — perfect if you want to play straight after landing.</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Fukuoka Country Club (Wajiro Course)</div>
+      <div class="rec-card-loc">📍 Higashi-ku, Fukuoka　✈️ ~20 min from Fukuoka Airport</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">Closest to city</span>
+        <span class="rec-badge badge-blue">Near Hakata Bay</span>
+        <span class="rec-badge badge-gold">18 holes · Par 72</span>
+      </div>
+      <div class="rec-reason">The closest major course to Fukuoka Airport at just ~20 minutes. A flat layout near Hakata Bay means you can enjoy sea breezes and easy access all in one.</div>
+      <a href="course-fukuokacc.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Hisayama Country Club</div>
+      <div class="rec-card-loc">📍 Hisayama, Sangun Mountains　✈️ ~25 min from Fukuoka Airport</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">Near airport</span>
+        <span class="rec-badge badge-blue">Natural setting</span>
+        <span class="rec-badge badge-gold">18 holes · Par 72</span>
+      </div>
+      <div class="rec-reason">Just 25 minutes from Fukuoka, nestled in the lush Sangun mountain range. Great access combined with genuine parkland challenge — a solid choice for any ability level.</div>
+      <a href="course-hisayama.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Aburayama Golf Club</div>
+      <div class="rec-card-loc">📍 Jonan-ku, Fukuoka · Mt. Aburayama　✈️ ~25–30 min from Fukuoka Airport</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">City-close</span>
+        <span class="rec-badge badge-red">Hilly · Mountain</span>
+        <span class="rec-badge badge-gold">18 holes · Par 72</span>
+      </div>
+      <div class="rec-reason">Within 30 minutes of the city, yet offers a dynamic mountain-and-hill layout. Ideal for players who want both convenience and a proper challenge.</div>
+      <a href="course-aburayama.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+  <!-- 2. Scenic -->
+  <div class="cat-head">
+    <span class="cat-emoji">🌊</span>
+    <div>
+      <div class="cat-title">Scenic Courses</div>
+      <div class="cat-sub">Play with stunning ocean views — the most scenic courses in Fukuoka.</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Keya Golf Club</div>
+      <div class="rec-card-loc">📍 Shima-Keya, Itoshima City　✈️ ~60 min from Fukuoka Airport</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-blue">Seaside course</span>
+        <span class="rec-badge badge-green">Genkai Sea views</span>
+        <span class="rec-badge badge-gold">Est. 1964 · Prestigious</span>
+      </div>
+      <div class="rec-reason">A prestigious seaside course overlooking the Genkai Sea on the Itoshima Peninsula, opened in 1964. It has hosted professional tournaments and remains one of the finest courses in Kyushu.</div>
+      <a href="course-keya.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Satozaki Seaside Country Club</div>
+      <div class="rec-card-loc">📍 Satozaki Peninsula · Genkai Sea &amp; Hakata Bay　✈️ ~30–40 min</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-blue">Seaside</span>
+        <span class="rec-badge badge-green">Dual ocean views</span>
+        <span class="rec-badge badge-gold">18 holes</span>
+      </div>
+      <div class="rec-reason">Perched on the Satozaki Peninsula with views of both the Genkai Sea and Hakata Bay. The sea breeze and panoramic scenery make this an unforgettable round — and it's only 30–40 minutes from the airport.</div>
+      <a href="course-saitozaki.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Ariake Country Club</div>
+      <div class="rec-card-loc">📍 Omuta City · Cape　✈️ ~70 min from Fukuoka Airport</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-blue">Ariake Sea views</span>
+        <span class="rec-badge badge-green">Hilltop location</span>
+        <span class="rec-badge badge-gold">18 holes · Par 72</span>
+      </div>
+      <div class="rec-reason">A hillside parkland course with sweeping views over the Ariake Sea below. Strategically placed bunkers add challenge, while the scenery makes every hole a memorable experience.</div>
+      <a href="course-ariake.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+  <!-- 3. Beginner -->
+  <div class="cat-head">
+    <span class="cat-emoji">🌱</span>
+    <div>
+      <div class="cat-title">Beginner-Friendly</div>
+      <div class="cat-sub">Wide fairways and forgiving layouts — great for first-time players in Japan.</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Ogori Country Club</div>
+      <div class="rec-card-loc">📍 Ogori City · Misawa　✈️ ~50 min from Fukuoka Airport</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">Wide fairways</span>
+        <span class="rec-badge badge-blue">27 holes · 3 courses</span>
+        <span class="rec-badge badge-gold">All levels welcome</span>
+      </div>
+      <div class="rec-reason">Wide fairways give beginners plenty of room to swing freely with a driver. With 27 holes across three courses, you can switch things up and explore different layouts during your visit.</div>
+      <a href="course-ogori.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Fukuoka Lakeside Country Club</div>
+      <div class="rec-card-loc">📍 Kuboshiro Dam lakeside　✈️ ~40 min from Fukuoka Airport</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">Wide fairways</span>
+        <span class="rec-badge badge-blue">Lakeside setting</span>
+        <span class="rec-badge badge-gold">18 holes</span>
+      </div>
+      <div class="rec-reason">Wide fairways make this a comfortable choice for beginners, while the scenic lakeside setting adds atmosphere. As your game develops, the water hazard holes offer a satisfying strategic challenge.</div>
+      <a href="course-lakeside.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+  <!-- 4. Best Value -->
+  <div class="cat-head">
+    <span class="cat-emoji">💴</span>
+    <div>
+      <div class="cat-title">Best Value</div>
+      <div class="cat-sub">Great quality at a reasonable price — hand-picked for value.</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Central Fukuoka Golf Club</div>
+      <div class="rec-card-loc">📍 Chikushino City　✈️ ~35–45 min from Fukuoka Airport</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-gold">Excellent value</span>
+        <span class="rec-badge badge-green">Hilly course</span>
+        <span class="rec-badge badge-blue">18 holes · Par 72</span>
+      </div>
+      <div class="rec-reason">Impressive value for money, with a hilly layout that demands real course management. Not just cheap — it's a genuinely strategic course that keeps you thinking about every shot.</div>
+      <a href="course-central.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+  <!-- 5. Challenging -->
+  <div class="cat-head">
+    <span class="cat-emoji">🏔️</span>
+    <div>
+      <div class="cat-title">For the Serious Golfer</div>
+      <div class="cat-sub">Demanding layouts that test every part of your game.</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Mission Valley Golf Club</div>
+      <div class="rec-card-loc">📍 Fukuoka Prefecture</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-red">Advanced level</span>
+        <span class="rec-badge badge-blue">Graham Marsh design</span>
+        <span class="rec-badge badge-gold">Many water holes</span>
+      </div>
+      <div class="rec-reason">Designed by international golf architect Graham Marsh, this championship course features dramatic undulation and strategically placed water hazards throughout. Demanding terrain makes every shot a real decision.</div>
+      <a href="course-mission.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">Seven Million Country Club</div>
+      <div class="rec-card-loc">📍 Sawara-ku, Fukuoka · Mt. Seburi foothills　✈️ ~30–35 min</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-red">Mountain · Hilly</span>
+        <span class="rec-badge badge-blue">Near city</span>
+        <span class="rec-badge badge-gold">18 holes · Par 72</span>
+      </div>
+      <div class="rec-reason">A genuine mountain-and-hill course at the foot of Mt. Seburi. Dramatic elevation changes challenge your distance judgement on every hole — all within 35 minutes of the city.</div>
+      <a href="course-sevenmillion.html" class="rec-link">View course →</a>
+    </div>
+  </div>
+
+</div><!-- /en -->
+
+<!-- ════ 한국어 ════ -->
+<div id="c-ko" class="content">
+
+  <!-- 1. 교통 편리 -->
+  <div class="cat-head">
+    <span class="cat-emoji">🚗</span>
+    <div>
+      <div class="cat-title">교통 편리</div>
+      <div class="cat-sub">후쿠오카공항·시내에서 30분 이내. 도착 후 바로 플레이하고 싶은 분께.</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">후쿠오카 컨트리 클럽 (와지로 코스)</div>
+      <div class="rec-card-loc">📍 후쿠오카시 히가시구　✈️ 공항에서 차로 약 20분</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">시내 최근접</span>
+        <span class="rec-badge badge-blue">하카타만 근처</span>
+        <span class="rec-badge badge-gold">18홀·파72</span>
+      </div>
+      <div class="rec-reason">후쿠오카공항에서 불과 약 20분이라는 탁월한 접근성을 자랑하는 코스. 하카타만 근처의 평탄한 지형에서 해풍을 느끼며 플레이할 수 있습니다.</div>
+      <a href="course-fukuokacc.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">히사야마 컨트리 클럽</div>
+      <div class="rec-card-loc">📍 히사야마마치·산군산계　✈️ 공항에서 차로 약 25분</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">공항 근처</span>
+        <span class="rec-badge badge-blue">자연 풍부</span>
+        <span class="rec-badge badge-gold">18홀·파72</span>
+      </div>
+      <div class="rec-reason">후쿠오카시 인접 히사야마마치의 산군산계에 펼쳐진 구릉 코스. 25분의 가까운 거리에 있으면서도 풍부한 자연 속에서 본격적인 라운드를 즐길 수 있습니다.</div>
+      <a href="course-hisayama.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">아부라야마 골프 클럽</div>
+      <div class="rec-card-loc">📍 후쿠오카시 조난구·아부라야마 산록　✈️ 공항에서 차로 약 25〜30분</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">시내 근교</span>
+        <span class="rec-badge badge-red">구릉·산악</span>
+        <span class="rec-badge badge-gold">18홀·파72</span>
+      </div>
+      <div class="rec-reason">시내에서 30분 이내로 접근 가능한 산악·구릉 코스. 기복 있는 다이내믹한 레이아웃으로, 가까움과 본격적인 코스 공략을 동시에 원하는 분에게 최적입니다.</div>
+      <a href="course-aburayama.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+  <!-- 2. 절경 -->
+  <div class="cat-head">
+    <span class="cat-emoji">🌊</span>
+    <div>
+      <div class="cat-title">절경 코스</div>
+      <div class="cat-sub">바다 전망을 즐기며 플레이할 수 있는 후쿠오카 최고의 절경 코스.</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">케야 골프 클럽</div>
+      <div class="rec-card-loc">📍 이토시마시 시마케야　✈️ 공항에서 차로 약 60분</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-blue">시사이드 코스</span>
+        <span class="rec-badge badge-green">겐카이나다 일망</span>
+        <span class="rec-badge badge-gold">1964년 창설 명문</span>
+      </div>
+      <div class="rec-reason">이토시마 반도에서 겐카이나다를 바라보는 절경 시사이드 코스. 1964년에 창설된 명문으로 프로 토너먼트도 개최되어 온 격식 있는 일류 코스입니다.</div>
+      <a href="course-keya.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">니시토자키 시사이드 컨트리 클럽</div>
+      <div class="rec-card-loc">📍 겐카이나다·하카타만 일망　✈️ 공항에서 차로 약 30〜40분</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-blue">시사이드</span>
+        <span class="rec-badge badge-green">두 바다 조망</span>
+        <span class="rec-badge badge-gold">18홀</span>
+      </div>
+      <div class="rec-reason">겐카이나다와 하카타만 두 바다를 바라볼 수 있는 니시토자키 반도의 시사이드 코스. 해풍과 파노라마 절경 속의 상쾌한 라운드는 다른 곳에서는 경험할 수 없습니다.</div>
+      <a href="course-saitozaki.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">아리아케 컨트리 클럽</div>
+      <div class="rec-card-loc">📍 오무타시·곶　✈️ 공항에서 차로 약 70분</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-blue">아리아케해 일망</span>
+        <span class="rec-badge badge-green">구릉 코스</span>
+        <span class="rec-badge badge-gold">18홀·파72</span>
+      </div>
+      <div class="rec-reason">언덕 위에서 아리아케해를 발아래로 바라보는 탁 트인 구릉 코스. 전략적으로 배치된 벙커와 아름다운 전망을 동시에 즐길 수 있습니다.</div>
+      <a href="course-ariake.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+  <!-- 3. 초보자 -->
+  <div class="cat-head">
+    <span class="cat-emoji">🌱</span>
+    <div>
+      <div class="cat-title">초보자 추천</div>
+      <div class="cat-sub">페어웨이가 넓어 마음껏 드라이버를 휘두를 수 있는 코스.</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">오고리 컨트리 클럽</div>
+      <div class="rec-card-loc">📍 오고리시·미사와　✈️ 공항에서 차로 약 50분</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">페어웨이 넓음</span>
+        <span class="rec-badge badge-blue">27홀·3코스</span>
+        <span class="rec-badge badge-gold">초보~상급자 모두 OK</span>
+      </div>
+      <div class="rec-reason">페어웨이가 넓어 초보자도 드라이버를 마음껏 사용할 수 있습니다. 27홀 전개로 코스 조합을 바꾸며 여유롭게 플레이하고 싶은 분에게 추천하는 코스입니다.</div>
+      <a href="course-ogori.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">후쿠오카 레이크사이드 컨트리 클럽</div>
+      <div class="rec-card-loc">📍 구보시로 댐 호숫가　✈️ 공항에서 차로 약 40분</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-green">페어웨이 넓음</span>
+        <span class="rec-badge badge-blue">호숫가 입지</span>
+        <span class="rec-badge badge-gold">18홀</span>
+      </div>
+      <div class="rec-reason">댐 호수 옆의 아름다운 입지와 넓은 페어웨이로 초보자도 드라이버를 사용하기 쉬운 코스. 실력이 늘면 연못 넘기 홀의 전략성도 즐길 수 있습니다.</div>
+      <a href="course-lakeside.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+  <!-- 4. 가성비 -->
+  <div class="cat-head">
+    <span class="cat-emoji">💴</span>
+    <div>
+      <div class="cat-title">가성비 최고</div>
+      <div class="cat-sub">요금 이상의 만족감을 얻을 수 있는 엄선 코스.</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">센트럴 후쿠오카 골프 클럽</div>
+      <div class="rec-card-loc">📍 지쿠시노시　✈️ 공항에서 차로 약 35〜45분</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-gold">가성비 최고</span>
+        <span class="rec-badge badge-green">구릉 코스</span>
+        <span class="rec-badge badge-blue">18홀·파72</span>
+      </div>
+      <div class="rec-reason">가성비가 뛰어나면서도 경사를 살린 전략적인 홀 설계를 즐길 수 있습니다. 단순히 저렴한 것뿐만 아니라 스코어를 진지하게 목표로 하는 플레이어도 만족할 수 있는 코스입니다.</div>
+      <a href="course-central.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+  <!-- 5. 상급자 -->
+  <div class="cat-head">
+    <span class="cat-emoji">🏔️</span>
+    <div>
+      <div class="cat-title">상급자 도전 코스</div>
+      <div class="cat-sub">기복·난이도·전략성으로 진지한 공략을 즐기고 싶은 분께.</div>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">미션 밸리 골프 클럽</div>
+      <div class="rec-card-loc">📍 후쿠오카현</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-red">상급자 추천</span>
+        <span class="rec-badge badge-blue">그래엄 마쉬 설계</span>
+        <span class="rec-badge badge-gold">연못 넘기 홀 다수</span>
+      </div>
+      <div class="rec-reason">국제적 설계가 그래엄 마쉬가 설계한 챔피언십 코스. 기복이 심하고 코스 전략이 까다로우며 연못 넘기 홀이 곳곳에 배치된 본격파를 위한 난코스입니다.</div>
+      <a href="course-mission.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <span class="rec-card-icon">🏌️</span>
+    <div class="rec-card-body">
+      <div class="rec-card-name">세븐 밀리언 컨트리 클럽</div>
+      <div class="rec-card-loc">📍 후쿠오카시 사와라구·세후리산 산록　✈️ 공항에서 차로 약 30〜35분</div>
+      <div class="rec-badges">
+        <span class="rec-badge badge-red">산악·구릉</span>
+        <span class="rec-badge badge-blue">시내에서 가까움</span>
+        <span class="rec-badge badge-gold">18홀·파72</span>
+      </div>
+      <div class="rec-reason">세후리산 산록의 산악·구릉 코스로 고저차가 큰 다이내믹한 홀이 이어집니다. 시내에서 35분 이내라는 가까운 거리에 있으면서 본격적인 산악 코스의 묘미를 맛볼 수 있습니다.</div>
+      <a href="course-sevenmillion.html" class="rec-link">자세히 보기 →</a>
+    </div>
+  </div>
+
+</div><!-- /ko -->
+
+<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　このサイトはゴルフ好きが作った情報ガイドです。最新情報は各ゴルフ場の公式サイトでご確認ください。</footer>
+<script>
+  function sw(l){['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+  <!-- トップに戻るボタン -->
+  <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップに戻る">▲</button>
+  <style>
+    #btt { position:fixed; bottom:20px; right:16px; z-index:999; width:44px; height:44px; border-radius:50%; border:none; background:#2e8b57; color:#fff; font-size:1rem; font-weight:700; cursor:pointer; box-shadow:0 3px 10px rgba(0,0,0,0.25); opacity:0; pointer-events:none; transition:opacity 0.25s,transform 0.25s; transform:translateY(8px); }
+    #btt.show { opacity:1; pointer-events:auto; transform:translateY(0); }
+    #btt:hover { background:#1a5c38; }
+  </style>
+  <script>
+    (function(){ var btn=document.getElementById('btt'); window.addEventListener('scroll',function(){ btn.classList.toggle('show',window.scrollY>300); },{passive:true}); })();
+  </script>
+</body>
+</html>

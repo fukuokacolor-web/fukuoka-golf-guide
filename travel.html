@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="福岡ゴルフ旅行完全ガイド。空港からのアクセス・おすすめホテルエリア・福岡グルメ・観光スポット・モデルプランを日本語・英語・韓国語で紹介。">
+  <meta name="description" lang="en" content="Complete Fukuoka golf travel guide. Airport access, recommended hotel areas, local restaurants, sightseeing spots and sample itineraries for golfers visiting Fukuoka.">
+  <meta name="description" lang="ko" content="후쿠오카 골프 여행 완전 가이드. 공항 교통·추천 호텔 지역·현지 맛집·관광 명소·모델 플랜을 한국어로 안내합니다.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>福岡ゴルフ旅行ガイド | 福岡ゴルフ場ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark:#1a5c38; --green-mid:#2e8b57; --green-light:#e8f5ee;
+      --gold:#c9a227; --gold-light:#fff8e1;
+      --blue:#1a3a8f; --blue-light:#e8f0fb;
+      --red:#c0392b; --red-light:#fdecea;
+      --bg:#f2f5f0; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+    }
+    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+
+    .page-header { background:linear-gradient(160deg,#1a5c38 0%,#2e8b57 60%,#52b788 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header h1 { font-size:1.2rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #e0e8e0; font-size:0.8rem; }
+    .back-bar a { color:var(--green-dark); text-decoration:none; font-weight:700; }
+
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid var(--green-mid); position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:var(--green-dark); background:var(--green-light); border-bottom:3px solid var(--green-mid); margin-bottom:-2px; }
+
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 12px 2px; }
+
+    /* カード */
+    .card { background:#fff; border-radius:var(--radius); padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.07); margin-bottom:10px; }
+    .card-title { font-size:0.95rem; font-weight:800; color:var(--green-dark); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+    .card ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .card li { font-size:0.82rem; line-height:1.6; display:flex; gap:10px; }
+    .card li .bullet { flex-shrink:0; }
+
+    /* アクセスカード */
+    .access-card { background:#fff; border-radius:var(--radius); padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.07); margin-bottom:10px; border-left:4px solid var(--green-mid); }
+    .access-head { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+    .access-icon { font-size:1.6rem; flex-shrink:0; }
+    .access-name { font-size:0.92rem; font-weight:800; color:var(--green-dark); }
+    .access-sub  { font-size:0.74rem; color:var(--muted); margin-top:1px; }
+    .access-body { font-size:0.82rem; line-height:1.7; }
+    .access-badge { display:inline-block; font-size:0.68rem; font-weight:700; padding:2px 8px; border-radius:8px; margin-right:4px; margin-bottom:4px; }
+    .ab-green { background:var(--green-light); color:var(--green-dark); }
+    .ab-gold  { background:var(--gold-light); color:#7a5000; }
+    .ab-blue  { background:var(--blue-light); color:var(--blue); }
+    .ab-red   { background:var(--red-light); color:var(--red); }
+
+    /* ホテルカード */
+    .hotel-card { background:#fff; border-radius:var(--radius); padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.07); margin-bottom:10px; }
+    .hotel-head { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+    .hotel-icon { font-size:1.5rem; flex-shrink:0; }
+    .hotel-name { font-size:0.92rem; font-weight:800; color:var(--green-dark); }
+    .hotel-sub  { font-size:0.74rem; color:var(--muted); margin-top:1px; }
+    .hotel-body { font-size:0.82rem; line-height:1.7; color:#444; }
+
+    /* グルメカード */
+    .gourmet-card { background:#fff; border-radius:var(--radius); padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.07); margin-bottom:10px; display:flex; gap:14px; }
+    .gourmet-icon { font-size:2.2rem; flex-shrink:0; }
+    .gourmet-body { flex:1; }
+    .gourmet-name { font-size:0.95rem; font-weight:800; color:var(--green-dark); margin-bottom:2px; }
+    .gourmet-loc  { font-size:0.74rem; color:var(--muted); margin-bottom:6px; }
+    .gourmet-tags { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:8px; }
+    .gourmet-tag  { font-size:0.68rem; font-weight:700; padding:2px 8px; border-radius:8px; }
+    .gt-red   { background:var(--red-light); color:var(--red); }
+    .gt-gold  { background:var(--gold-light); color:#7a5000; }
+    .gt-green { background:var(--green-light); color:var(--green-dark); }
+    .gt-blue  { background:var(--blue-light); color:var(--blue); }
+    .gourmet-desc { font-size:0.82rem; line-height:1.7; color:#444; background:#f8fdf9; border-left:3px solid var(--green-mid); padding:8px 10px; border-radius:0 6px 6px 0; }
+
+    /* 観光カード */
+    .spot-card { background:#fff; border-radius:var(--radius); padding:12px 14px; box-shadow:0 2px 8px rgba(0,0,0,.07); margin-bottom:8px; display:flex; gap:12px; align-items:flex-start; }
+    .spot-icon { font-size:1.6rem; flex-shrink:0; }
+    .spot-name { font-size:0.88rem; font-weight:800; color:var(--green-dark); margin-bottom:3px; }
+    .spot-loc  { font-size:0.72rem; color:var(--muted); margin-bottom:4px; }
+    .spot-desc { font-size:0.8rem; line-height:1.6; color:#444; }
+
+    /* モデルプラン */
+    .plan-card { background:#fff; border-radius:var(--radius); padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.07); margin-bottom:10px; }
+    .plan-title { font-size:0.92rem; font-weight:800; color:var(--green-dark); margin-bottom:10px; padding-bottom:8px; border-bottom:2px solid var(--green-light); }
+    .plan-day { font-size:0.78rem; font-weight:800; color:var(--muted); margin:10px 0 6px; text-transform:uppercase; letter-spacing:0.08em; }
+    .plan-item { display:flex; gap:10px; font-size:0.82rem; line-height:1.6; margin-bottom:6px; }
+    .plan-time { font-weight:800; color:var(--green-dark); flex-shrink:0; min-width:60px; }
+
+    /* infoバー */
+    .info-bar { display:flex; align-items:flex-start; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.55; margin-top:10px; color:#5a4000; }
+    .info-bar .icon { font-size:1.2rem; flex-shrink:0; }
+
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde8dd; }
+    footer a { color:var(--green-dark); text-decoration:none; }
+  </style>
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/travel.html">
+  <meta property="og:site_name"   content="福岡ゴルフ場ガイド">
+  <meta property="og:title"       content="福岡ゴルフ旅行ガイド | 福岡ゴルフ場ガイド">
+  <meta property="og:description" content="空港〜ゴルフ〜グルメ〜観光まで丸ごと紹介。福岡ゴルフ旅行の完全ガイド。">
+  <meta property="og:image"        content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/itoshimatorii.webp">
+  <meta property="og:image:width"  content="1920">
+  <meta property="og:image:height" content="1280">
+  <meta property="og:image:alt"    content="福岡ゴルフ場ガイド | Fukuoka Golf Guide">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:image"       content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/itoshimatorii.webp">
+  <link rel="canonical" href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/travel.html">
+  <link rel="alternate" hreflang="ja"        href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/travel.html">
+  <link rel="alternate" hreflang="en"        href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/travel.html">
+  <link rel="alternate" hreflang="ko"        href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/travel.html">
+  <link rel="alternate" hreflang="x-default" href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/travel.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"トップ","item":"https://fukuokacolor-web.github.io/fukuoka-golf-guide/"},
+      {"@type":"ListItem","position":2,"name":"福岡ゴルフ旅行ガイド","item":"https://fukuokacolor-web.github.io/fukuoka-golf-guide/travel.html"}
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PENH0Z4VT7');
+  </script>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>✈️ 福岡ゴルフ旅行ガイド</h1>
+  <p>Fukuoka Golf Travel Guide / 후쿠오카 골프 여행 가이드</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a></div>
+
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- ════ 日本語 ════ -->
+<div id="c-ja" class="content on">
+
+  <div class="sec-head">✈️ 空港からのアクセス</div>
+
+  <div class="access-card">
+    <div class="access-head">
+      <span class="access-icon">🚗</span>
+      <div>
+        <div class="access-name">レンタカー（最もおすすめ）</div>
+        <div class="access-sub">ゴルファーにはレンタカーが断然便利</div>
+      </div>
+    </div>
+    <div class="access-body">
+      <span class="access-badge ab-green">クラブを楽々運搬</span>
+      <span class="access-badge ab-green">コース間の移動が自由</span>
+      <span class="access-badge ab-gold">福岡空港内に各社窓口あり</span>
+      <p style="margin-top:8px;">福岡空港の国際線・国内線ターミナルにレンタカー各社のカウンターがあります。ゴルフバッグをそのまま積めて、複数コースを回る旅程にも最適。駐車場は各ゴルフ場に完備。</p>
+    </div>
+    <div class="info-bar" style="margin-top:10px;"><span class="icon">💡</span>国際免許証（IDP）を必ず準備してください。日本は左側通行です。カーナビは日本語設定でも住所・電話番号入力で目的地設定可能。</div>
+  </div>
+
+  <div class="access-card">
+    <div class="access-head">
+      <span class="access-icon">🚕</span>
+      <div>
+        <div class="access-name">タクシー・ハイヤー</div>
+        <div class="access-sub">乗り換えなしで快適。グループに最適</div>
+      </div>
+    </div>
+    <div class="access-body">
+      <span class="access-badge ab-blue">空港〜博多駅 約1,500〜2,000円</span>
+      <span class="access-badge ab-blue">空港〜久山CC 約4,000〜5,000円</span>
+      <p style="margin-top:8px;">4人グループならタクシー代をシェアすることでリーズナブルになります。DiDi・GoなどのタクシーアプリはGPS対応で日本語・英語切替可能。ゴルフ場への送迎を事前予約できるハイヤーサービスも便利。</p>
+    </div>
+  </div>
+
+  <div class="access-card">
+    <div class="access-head">
+      <span class="access-icon">🚇</span>
+      <div>
+        <div class="access-name">地下鉄・電車</div>
+        <div class="access-sub">市内移動・観光に便利</div>
+      </div>
+    </div>
+    <div class="access-body">
+      <span class="access-badge ab-blue">福岡空港〜博多駅 約5分（地下鉄）</span>
+      <span class="access-badge ab-blue">博多駅〜天神 約5分</span>
+      <p style="margin-top:8px;">市内観光・食事には地下鉄が最適。ただしゴルフ場は郊外に多く、最寄り駅からの移動が必要なケースがほとんどです。観光用にはSuica・ICOCAが使えます。</p>
+    </div>
+  </div>
+
+  <div class="sec-head">🏨 おすすめホテルエリア</div>
+
+  <div class="hotel-card">
+    <div class="hotel-head">
+      <span class="hotel-icon">🏨</span>
+      <div>
+        <div class="hotel-name">博多駅周辺（最もおすすめ）</div>
+        <div class="hotel-sub">新幹線・地下鉄・バスの起点。移動の便が抜群</div>
+      </div>
+    </div>
+    <div class="hotel-body">新幹線・地下鉄・バスすべての起点となる博多駅周辺。空港から地下鉄で約5分、福岡市内の主要ゴルフ場へのアクセスも良好です。ビジネスホテルから高級ホテルまで豊富な選択肢があります。<br><br>
+      <span class="access-badge ab-green">ビジネス〜高級まで選択肢豊富</span>
+      <span class="access-badge ab-green">空港から地下鉄5分</span>
+      <span class="access-badge ab-gold">博多駅直結のホテルも</span>
+    </div>
+  </div>
+
+  <div class="hotel-card">
+    <div class="hotel-head">
+      <span class="hotel-icon">🏙️</span>
+      <div>
+        <div class="hotel-name">天神エリア</div>
+        <div class="hotel-sub">繁華街・ショッピング・屋台に近い</div>
+      </div>
+    </div>
+    <div class="hotel-body">福岡最大の繁華街・天神に位置し、ショッピングや夜の屋台街へのアクセス抜群。中洲の屋台や歓楽街へも徒歩圏内。ゴルフ後の食事・観光拠点として最適です。<br><br>
+      <span class="access-badge ab-blue">屋台・中洲まで徒歩圏</span>
+      <span class="access-badge ab-blue">ショッピング充実</span>
+      <span class="access-badge ab-gold">糸島方面のゴルフに特に便利</span>
+    </div>
+  </div>
+
+  <div class="hotel-card">
+    <div class="hotel-head">
+      <span class="hotel-icon">🌊</span>
+      <div>
+        <div class="hotel-name">ベイエリア（シーサイドももち・マリノア）</div>
+        <div class="hotel-sub">ヤフオクドーム周辺・海に近い立地</div>
+      </div>
+    </div>
+    <div class="hotel-body">福岡タワーやPayPayドーム近くのエリア。糸島・芥屋方面のゴルフ場へのアクセスに優れています。海辺の開放的な雰囲気と、西区・糸島方面へのアクセスの良さが魅力です。<br><br>
+      <span class="access-badge ab-blue">芥屋・糸島GCに便利</span>
+      <span class="access-badge ab-green">海辺の開放的な雰囲気</span>
+    </div>
+  </div>
+
+
+  <div class="sec-head">🍜 福岡グルメ — ゴルフ後においしいお店</div>
+
+  <div class="gourmet-card">
+    <span class="gourmet-icon">🔥</span>
+    <div class="gourmet-body">
+      <div class="gourmet-name">びっくり亭</div>
+      <div class="gourmet-loc">📍 南福岡本店 / 粕屋店 / ブランチ博多店</div>
+      <div class="gourmet-tags">
+        <span class="gourmet-tag gt-red">鉄板焼き</span>
+        <span class="gourmet-tag gt-gold">福岡ローカル名店</span>
+        <span class="gourmet-tag gt-green">ゴルフ後に最適</span>
+      </div>
+      <div class="gourmet-desc">熱々の鉄板にたっぷりのキャベツとニンニクを敷き、その上で豪快に焼いた焼肉が名物。シンプルな見た目の裏に、ニンニクの香りとキャベツの甘みが絡んだ唯一無二の味わい。ガッツリ食べたいゴルフ後にぴったりの一軒。複数店舗あり、粕屋店は東部コースからのアクセスに便利。</div>
+    </div>
+  </div>
+
+  <div class="gourmet-card">
+    <span class="gourmet-icon">🍜</span>
+    <div class="gourmet-body">
+      <div class="gourmet-name">元祖長浜屋</div>
+      <div class="gourmet-loc">📍 福岡市中央区 長浜（長浜鮮魚市場そば）</div>
+      <div class="gourmet-tags">
+        <span class="gourmet-tag gt-red">長浜ラーメン</span>
+        <span class="gourmet-tag gt-gold">博多とんこつ発祥</span>
+        <span class="gourmet-tag gt-blue">24時間営業</span>
+      </div>
+      <div class="gourmet-desc">長浜鮮魚市場の仲買人たちが通い続けた、博多とんこつラーメンの原点。濃厚でクリーミーなスープと極細麺のシンプルな一杯。「替え玉」文化もここが発祥とも言われます。深夜のラウンド帰りにも立ち寄れる24時間営業が魅力。</div>
+    </div>
+  </div>
+
+  <div class="gourmet-card">
+    <span class="gourmet-icon">🥣</span>
+    <div class="gourmet-body">
+      <div class="gourmet-name">長崎亭</div>
+      <div class="gourmet-loc">📍 福岡市西区 福重</div>
+      <div class="gourmet-tags">
+        <span class="gourmet-tag gt-red">ちゃんぽん</span>
+        <span class="gourmet-tag gt-gold">西区の名店</span>
+        <span class="gourmet-tag gt-green">糸島・芥屋帰りに</span>
+      </div>
+      <div class="gourmet-desc">福岡市西区福重にある地元に愛されるちゃんぽんの名店。野菜たっぷりのボリューム満点ちゃんぽんは、ラウンド後の疲れた体に染み渡る優しい味わい。芥屋GCや糸島GCからの帰り道に立ち寄るのに最適なロケーション。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗺️ 観光スポット</div>
+
+  <div class="spot-card">
+    <span class="spot-icon">⛩️</span>
+    <div>
+      <div class="spot-name">太宰府天満宮</div>
+      <div class="spot-loc">📍 太宰府市　🚗 博多から約30分</div>
+      <div class="spot-desc">学問の神様・菅原道真を祀る全国屈指の神社。参道に並ぶ梅ヶ枝餅の香りと歴史ある建築が旅人を迎えます。筑紫野・太宰府エリアのゴルフと組み合わせた1日観光コースとして人気。</div>
+    </div>
+  </div>
+
+  <div class="spot-card">
+    <span class="spot-icon">🌊</span>
+    <div>
+      <div class="spot-name">糸島シーサイドドライブ</div>
+      <div class="spot-loc">📍 糸島市　🚗 福岡市内から約40分</div>
+      <div class="spot-desc">玄界灘を望む絶景ドライブコース。カフェ・シーフードレストランが点在し、芥屋GC・糸島GCとのセットで訪れる観光客に人気。夕日スポットとしても有名な二見ヶ浦の夫婦岩は必見。</div>
+    </div>
+  </div>
+
+  <div class="spot-card">
+    <span class="spot-icon">🏮</span>
+    <div>
+      <div class="spot-name">中洲屋台</div>
+      <div class="spot-loc">📍 福岡市中央区　🚇 天神駅・中洲川端駅から徒歩</div>
+      <div class="spot-desc">福岡の夜の風物詩。那珂川沿いに並ぶ屋台でラーメン・おでん・焼き鳥を楽しめます。18時頃から開店。カウンター越しに大将と会話しながらの食事は福岡旅行の定番体験。</div>
+    </div>
+  </div>
+
+  <div class="spot-card">
+    <span class="spot-icon">🛍️</span>
+    <div>
+      <div class="spot-name">キャナルシティ博多</div>
+      <div class="spot-loc">📍 福岡市博多区　🚇 博多駅から徒歩15分</div>
+      <div class="spot-desc">運河が流れる大型複合施設。ショッピング・映画・グルメが一箇所に揃い、雨の日の観光にも最適。ゴルフ用品店やアウトドアショップも入っており、ゴルフ関連グッズの買い物にも便利。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📅 モデルプラン</div>
+
+  <div class="plan-card">
+    <div class="plan-title">🗓️ 1泊2日プラン — 週末ゴルフ旅行</div>
+    <div class="plan-day">1日目</div>
+    <div class="plan-item"><span class="plan-time">午前</span>福岡空港到着 → レンタカー手配 → チェックイン（博多駅周辺）</div>
+    <div class="plan-item"><span class="plan-time">午後</span>午後スルー or ナイターゴルフ（久山CC・福岡CCなど市内近郊コース）</div>
+    <div class="plan-item"><span class="plan-time">夜</span>中洲屋台 or びっくり亭でディナー</div>
+    <div class="plan-day">2日目</div>
+    <div class="plan-item"><span class="plan-time">早朝</span>元祖長浜で朝ラーメン（長浜は朝から営業）</div>
+    <div class="plan-item"><span class="plan-time">午前</span>18ホール通常ラウンド（芥屋GC・西戸崎GCなど）</div>
+    <div class="plan-item"><span class="plan-time">夕方</span>糸島ドライブ or 太宰府観光 → 空港へ</div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-title">🗓️ 2泊3日プラン — 海外からのゴルフ旅行</div>
+    <div class="plan-day">1日目</div>
+    <div class="plan-item"><span class="plan-time">午前</span>福岡空港到着 → レンタカー → ホテルチェックイン</div>
+    <div class="plan-item"><span class="plan-time">午後</span>太宰府天満宮観光 → 中洲屋台でディナー</div>
+    <div class="plan-day">2日目</div>
+    <div class="plan-item"><span class="plan-time">早朝</span>18ホールラウンド（芥屋GC・久山CCなどお好みで）</div>
+    <div class="plan-item"><span class="plan-time">夜</span>長崎亭でちゃんぽん or びっくり亭で鉄板焼き</div>
+    <div class="plan-day">3日目</div>
+    <div class="plan-item"><span class="plan-time">午前</span>18ホールラウンド（市内近郊コース）</div>
+    <div class="plan-item"><span class="plan-time">昼</span>元祖長浜でラーメン</div>
+    <div class="plan-item"><span class="plan-time">夕方</span>キャナルシティでショッピング → 空港へ</div>
+  </div>
+
+  <div class="info-bar"><span class="icon">💡</span>韓国（釜山・ソウル）から福岡へのLCCは所要約1時間。週末の弾丸ゴルフ旅行としても非常に人気です。</div>
+
+</div><!-- /ja -->
+
+<!-- ════ English ════ -->
+<div id="c-en" class="content">
+
+  <div class="sec-head">✈️ Getting Around from the Airport</div>
+
+  <div class="access-card">
+    <div class="access-head">
+      <span class="access-icon">🚗</span>
+      <div>
+        <div class="access-name">Rental Car (Highly Recommended)</div>
+        <div class="access-sub">By far the most convenient option for golfers</div>
+      </div>
+    </div>
+    <div class="access-body">
+      <span class="access-badge ab-green">Easy transport for clubs</span>
+      <span class="access-badge ab-green">Visit multiple courses freely</span>
+      <span class="access-badge ab-gold">Rental desks inside Fukuoka Airport</span>
+      <p style="margin-top:8px;">Rental car counters are available at both the domestic and international terminals of Fukuoka Airport. Load your clubs straight into the car and enjoy total freedom to visit any course. All golf courses have ample parking.</p>
+    </div>
+    <div class="info-bar" style="margin-top:10px;"><span class="icon">💡</span>An International Driving Permit (IDP) is required. Japan drives on the left. Most car navigation systems accept address or phone number input even in Japanese — entering the course's phone number usually works.</div>
+  </div>
+
+  <div class="access-card">
+    <div class="access-head">
+      <span class="access-icon">🚕</span>
+      <div>
+        <div class="access-name">Taxi / Private Car</div>
+        <div class="access-sub">Comfortable, no transfers — great for groups</div>
+      </div>
+    </div>
+    <div class="access-body">
+      <span class="access-badge ab-blue">Airport → Hakata Stn: ~¥1,500–2,000</span>
+      <span class="access-badge ab-blue">Airport → Hisayama CC: ~¥4,000–5,000</span>
+      <p style="margin-top:8px;">Splitting a taxi among four players keeps costs reasonable. Apps like DiDi and Go support GPS and English/Japanese switching. Pre-booked hire cars with golf course drop-off are also available.</p>
+    </div>
+  </div>
+
+  <div class="access-card">
+    <div class="access-head">
+      <span class="access-icon">🚇</span>
+      <div>
+        <div class="access-name">Subway & Train</div>
+        <div class="access-sub">Best for city sightseeing and dining</div>
+      </div>
+    </div>
+    <div class="access-body">
+      <span class="access-badge ab-blue">Airport → Hakata Stn: ~5 min (subway)</span>
+      <span class="access-badge ab-blue">Hakata → Tenjin: ~5 min</span>
+      <p style="margin-top:8px;">The subway is ideal for city sightseeing and dining. However, most golf courses are suburban and require additional transport from the nearest station. Suica / ICOCA IC cards work on all city transport.</p>
+    </div>
+  </div>
+
+  <div class="sec-head">🏨 Recommended Hotel Areas</div>
+
+  <div class="hotel-card">
+    <div class="hotel-head">
+      <span class="hotel-icon">🏨</span>
+      <div>
+        <div class="hotel-name">Hakata Station Area (Top Pick)</div>
+        <div class="hotel-sub">Hub for shinkansen, subway and buses — unbeatable access</div>
+      </div>
+    </div>
+    <div class="hotel-body">The central hub connecting shinkansen, subway and bus routes. Just 5 minutes from the airport by subway, with easy access to golf courses across the city. Options range from business hotels to luxury properties, including some directly connected to the station.<br><br>
+      <span class="access-badge ab-green">Wide range from budget to luxury</span>
+      <span class="access-badge ab-green">5 min from airport by subway</span>
+      <span class="access-badge ab-gold">Station-connected hotels available</span>
+    </div>
+  </div>
+
+  <div class="hotel-card">
+    <div class="hotel-head">
+      <span class="hotel-icon">🏙️</span>
+      <div>
+        <div class="hotel-name">Tenjin Area</div>
+        <div class="hotel-sub">Shopping, dining and yatai stalls on your doorstep</div>
+      </div>
+    </div>
+    <div class="hotel-body">Fukuoka's largest downtown area, walking distance from the famous Nakasu yatai food stalls and the entertainment district. Perfect base for combining golf with evening dining and nightlife.<br><br>
+      <span class="access-badge ab-blue">Walking distance to yatai stalls</span>
+      <span class="access-badge ab-blue">Excellent shopping</span>
+      <span class="access-badge ab-gold">Convenient for Itoshima-area courses</span>
+    </div>
+  </div>
+
+  <div class="hotel-card">
+    <div class="hotel-head">
+      <span class="hotel-icon">🌊</span>
+      <div>
+        <div class="hotel-name">Bay Area (Seaside Momochi / Marinoa)</div>
+        <div class="hotel-sub">Near PayPay Dome — great access to western courses</div>
+      </div>
+    </div>
+    <div class="hotel-body">The waterfront area near Fukuoka Tower and PayPay Dome. Excellent access to courses in the Itoshima and Keya direction, with an open coastal atmosphere that makes for a relaxing stay.<br><br>
+      <span class="access-badge ab-blue">Convenient for Keya & Itoshima GC</span>
+      <span class="access-badge ab-green">Open seaside atmosphere</span>
+    </div>
+  </div>
+
+  <div class="sec-head">🍜 Fukuoka Dining — Great Spots After Golf</div>
+
+  <div class="gourmet-card">
+    <span class="gourmet-icon">🔥</span>
+    <div class="gourmet-body">
+      <div class="gourmet-name">Bikkuri-tei (びっくり亭)</div>
+      <div class="gourmet-loc">📍 Minami-Fukuoka (main) / Kasuya / Branch Hakata</div>
+      <div class="gourmet-tags">
+        <span class="gourmet-tag gt-red">Teppan grilled meat</span>
+        <span class="gourmet-tag gt-gold">Fukuoka local institution</span>
+        <span class="gourmet-tag gt-green">Perfect after a round</span>
+      </div>
+      <div class="gourmet-desc">A sizzling iron plate piled with garlic, cabbage and grilled meat — simple, bold, and completely addictive. The garlic aroma and the natural sweetness of the cabbage make this dish uniquely Fukuokan. An ideal post-round feast. The Kasuya branch is conveniently located for eastern-area courses.</div>
+    </div>
+  </div>
+
+  <div class="gourmet-card">
+    <span class="gourmet-icon">🍜</span>
+    <div class="gourmet-body">
+      <div class="gourmet-name">Ganso Nagahamaya (元祖長浜屋)</div>
+      <div class="gourmet-loc">📍 Chuo-ku, Fukuoka (Nagahama Fish Market area)</div>
+      <div class="gourmet-tags">
+        <span class="gourmet-tag gt-red">Nagahama Ramen</span>
+        <span class="gourmet-tag gt-gold">Original Hakata tonkotsu</span>
+        <span class="gourmet-tag gt-blue">Open 24 hours</span>
+      </div>
+      <div class="gourmet-desc">The original home of Hakata tonkotsu ramen, beloved by fish market workers for generations. Rich, creamy pork bone broth with ultra-thin noodles — pure, unfussy perfection. The concept of "kaedama" (ordering extra noodles) is said to have originated here. Open 24 hours, so it works for late-night post-round visits too.</div>
+    </div>
+  </div>
+
+  <div class="gourmet-card">
+    <span class="gourmet-icon">🥣</span>
+    <div class="gourmet-body">
+      <div class="gourmet-name">Nagasakitei (長崎亭)</div>
+      <div class="gourmet-loc">📍 Nishiku, Fukuoka (Fukushige area)</div>
+      <div class="gourmet-tags">
+        <span class="gourmet-tag gt-red">Champon noodles</span>
+        <span class="gourmet-tag gt-gold">Local gem in Nishi-ku</span>
+        <span class="gourmet-tag gt-green">Great stop after Keya / Itoshima GC</span>
+      </div>
+      <div class="gourmet-desc">A well-loved local champon restaurant in the Fukushige area of Nishi-ku. Hearty, vegetable-packed champon noodles in a warm, comforting broth — exactly what your body needs after a full round of golf. Perfectly located on the way back from Keya Golf Club and Itoshima Golf Club.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗺️ Sightseeing Highlights</div>
+
+  <div class="spot-card">
+    <span class="spot-icon">⛩️</span>
+    <div>
+      <div class="spot-name">Dazaifu Tenmangu Shrine</div>
+      <div class="spot-loc">📍 Dazaifu City　🚗 ~30 min from Hakata</div>
+      <div class="spot-desc">One of Japan's most celebrated Shinto shrines, dedicated to the deity of learning. The approach lined with plum blossom trees and umegaemochi rice cake stalls is iconic. Pairs perfectly with a round at Dazaifu Country Club or courses in the Chikushino area.</div>
+    </div>
+  </div>
+
+  <div class="spot-card">
+    <span class="spot-icon">🌊</span>
+    <div>
+      <div class="spot-name">Itoshima Coastal Drive</div>
+      <div class="spot-loc">📍 Itoshima City　🚗 ~40 min from central Fukuoka</div>
+      <div class="spot-desc">A scenic coastal route along the Genkai Sea with ocean-view cafés and fresh seafood restaurants. A natural pairing with a round at Keya or Itoshima Golf Club. Don't miss the Futamigaura sacred rocks at sunset.</div>
+    </div>
+  </div>
+
+  <div class="spot-card">
+    <span class="spot-icon">🏮</span>
+    <div>
+      <div class="spot-name">Nakasu Yatai Food Stalls</div>
+      <div class="spot-loc">📍 Chuo-ku, Fukuoka　🚇 Walk from Tenjin / Nakasu-Kawabata Stn</div>
+      <div class="spot-desc">Fukuoka's signature nightlife experience. Rows of open-air stalls along the Naka River serve ramen, oden and yakitori from around 6 PM. Chatting with the chef over the counter is a quintessential Fukuoka memory.</div>
+    </div>
+  </div>
+
+  <div class="spot-card">
+    <span class="spot-icon">🛍️</span>
+    <div>
+      <div class="spot-name">Canal City Hakata</div>
+      <div class="spot-loc">📍 Hakata-ku, Fukuoka　🚶 15 min walk from Hakata Stn</div>
+      <div class="spot-desc">A large shopping and entertainment complex built around an indoor canal. Shops, cinema, restaurants and a variety of brands all under one roof — ideal for a rainy day. Sporting goods stores carry golf equipment for any last-minute purchases.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📅 Sample Itineraries</div>
+
+  <div class="plan-card">
+    <div class="plan-title">🗓️ 2-Day Weekend Golf Trip</div>
+    <div class="plan-day">Day 1</div>
+    <div class="plan-item"><span class="plan-time">Morning</span>Arrive at Fukuoka Airport → pick up rental car → check in (Hakata area)</div>
+    <div class="plan-item"><span class="plan-time">Afternoon</span>Afternoon through or night golf (Hisayama CC, Fukuoka CC — close to city)</div>
+    <div class="plan-item"><span class="plan-time">Evening</span>Dinner at Nakasu yatai stalls or Bikkuri-tei teppan grill</div>
+    <div class="plan-day">Day 2</div>
+    <div class="plan-item"><span class="plan-time">Early AM</span>Morning ramen at Ganso Nagahamaya (open from early morning)</div>
+    <div class="plan-item"><span class="plan-time">Morning</span>18-hole round (Keya GC, Saitozaki GC or similar)</div>
+    <div class="plan-item"><span class="plan-time">Afternoon</span>Itoshima coastal drive or Dazaifu sightseeing → airport</div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-title">🗓️ 3-Day Golf & Sightseeing Trip</div>
+    <div class="plan-day">Day 1</div>
+    <div class="plan-item"><span class="plan-time">Morning</span>Arrive at Fukuoka Airport → rental car → hotel check-in</div>
+    <div class="plan-item"><span class="plan-time">Afternoon</span>Dazaifu Tenmangu sightseeing → Nakasu yatai dinner</div>
+    <div class="plan-day">Day 2</div>
+    <div class="plan-item"><span class="plan-time">Morning</span>Full 18-hole round (choose your course)</div>
+    <div class="plan-item"><span class="plan-time">Evening</span>Nagasakitei champon or Bikkuri-tei teppan grill</div>
+    <div class="plan-day">Day 3</div>
+    <div class="plan-item"><span class="plan-time">Morning</span>18-hole round (city-area course)</div>
+    <div class="plan-item"><span class="plan-time">Midday</span>Ramen at Ganso Nagahamaya</div>
+    <div class="plan-item"><span class="plan-time">Afternoon</span>Canal City shopping → airport departure</div>
+  </div>
+
+  <div class="info-bar"><span class="icon">💡</span>LCC flights from Korea (Busan / Seoul) to Fukuoka take about 1 hour — making Fukuoka one of Japan's most popular weekend golf destinations for Korean visitors.</div>
+
+</div><!-- /en -->
+
+<!-- ════ 한국어 ════ -->
+<div id="c-ko" class="content">
+
+  <div class="sec-head">✈️ 공항에서의 교통편</div>
+
+  <div class="access-card">
+    <div class="access-head">
+      <span class="access-icon">🚗</span>
+      <div>
+        <div class="access-name">렌터카 (가장 추천)</div>
+        <div class="access-sub">골퍼에게 압도적으로 편리한 이동 수단</div>
+      </div>
+    </div>
+    <div class="access-body">
+      <span class="access-badge ab-green">클럽 운반이 편함</span>
+      <span class="access-badge ab-green">여러 코스 자유롭게 이동</span>
+      <span class="access-badge ab-gold">후쿠오카 공항 내 각사 카운터 있음</span>
+      <p style="margin-top:8px;">후쿠오카 공항 국제선·국내선 터미널에 렌터카 각사 카운터가 있습니다. 골프백을 그대로 실을 수 있어 여러 코스를 도는 일정에도 최적. 모든 골프장에 주차장이 완비되어 있습니다.</p>
+    </div>
+    <div class="info-bar" style="margin-top:10px;"><span class="icon">💡</span>국제운전면허증(IDP)이 필수입니다. 일본은 좌측통행. 카내비에 목적지 전화번호를 입력하면 일본어 설정에서도 골프장 안내가 가능합니다.</div>
+  </div>
+
+  <div class="access-card">
+    <div class="access-head">
+      <span class="access-icon">🚕</span>
+      <div>
+        <div class="access-name">택시 / 하이어</div>
+        <div class="access-sub">환승 없이 쾌적. 그룹 여행에 최적</div>
+      </div>
+    </div>
+    <div class="access-body">
+      <span class="access-badge ab-blue">공항→하카타역 약 ¥1,500〜2,000</span>
+      <span class="access-badge ab-blue">공항→히사야마CC 약 ¥4,000〜5,000</span>
+      <p style="margin-top:8px;">4인 그룹이라면 택시비를 나눠 합리적으로 이동할 수 있습니다. DiDi·Go 등 택시 앱은 GPS 대응 및 한국어·일본어 전환 가능. 골프장까지의 픽업 서비스도 있습니다.</p>
+    </div>
+  </div>
+
+  <div class="access-card">
+    <div class="access-head">
+      <span class="access-icon">🚇</span>
+      <div>
+        <div class="access-name">지하철·전철</div>
+        <div class="access-sub">시내 이동·관광에 편리</div>
+      </div>
+    </div>
+    <div class="access-body">
+      <span class="access-badge ab-blue">공항→하카타역 약 5분 (지하철)</span>
+      <span class="access-badge ab-blue">하카타역→텐진 약 5분</span>
+      <p style="margin-top:8px;">시내 관광·식사에는 지하철이 최적. 단 골프장은 교외에 많아 최寄역에서 추가 이동이 필요한 경우가 대부분입니다. Suica·ICOCA 교통카드를 사용할 수 있습니다.</p>
+    </div>
+  </div>
+
+  <div class="sec-head">🏨 추천 호텔 지역</div>
+
+  <div class="hotel-card">
+    <div class="hotel-head">
+      <span class="hotel-icon">🏨</span>
+      <div>
+        <div class="hotel-name">하카타역 주변 (가장 추천)</div>
+        <div class="hotel-sub">신칸센·지하철·버스의 거점. 이동 편리성 최고</div>
+      </div>
+    </div>
+    <div class="hotel-body">신칸센·지하철·버스 모든 노선의 거점인 하카타역 주변. 공항에서 지하철로 약 5분, 후쿠오카 시내 주요 골프장으로의 접근도 우수합니다. 비즈니스 호텔부터 고급 호텔까지 폭넓은 선택지가 있습니다.<br><br>
+      <span class="access-badge ab-green">비즈니스~고급까지 다양</span>
+      <span class="access-badge ab-green">공항에서 지하철 5분</span>
+      <span class="access-badge ab-gold">역과 직결된 호텔도 있음</span>
+    </div>
+  </div>
+
+  <div class="hotel-card">
+    <div class="hotel-head">
+      <span class="hotel-icon">🏙️</span>
+      <div>
+        <div class="hotel-name">텐진 지역</div>
+        <div class="hotel-sub">번화가·쇼핑·야타이 포장마차 근접</div>
+      </div>
+    </div>
+    <div class="hotel-body">후쿠오카 최대 번화가 텐진에 위치해 쇼핑과 나카스 야타이 포장마차까지 도보권. 골프 후 저녁 식사·관광 거점으로 최적입니다.<br><br>
+      <span class="access-badge ab-blue">야타이·나카스까지 도보 가능</span>
+      <span class="access-badge ab-blue">쇼핑 풍부</span>
+      <span class="access-badge ab-gold">이토시마 방면 코스에 편리</span>
+    </div>
+  </div>
+
+  <div class="hotel-card">
+    <div class="hotel-head">
+      <span class="hotel-icon">🌊</span>
+      <div>
+        <div class="hotel-name">베이 에리어 (시사이드 모모치·마리노아)</div>
+        <div class="hotel-sub">후쿠오카 타워 근처·서부 코스 접근 우수</div>
+      </div>
+    </div>
+    <div class="hotel-body">후쿠오카 타워·PayPay 돔 근처의 해변 지역. 케야·이토시마 방면 골프장 접근에 우수하며, 바다 옆의 개방적인 분위기가 매력입니다.<br><br>
+      <span class="access-badge ab-blue">케야·이토시마 GC에 편리</span>
+      <span class="access-badge ab-green">바다 옆 개방적 분위기</span>
+    </div>
+  </div>
+
+  <div class="sec-head">🍜 후쿠오카 맛집 — 라운드 후 꼭 가야 할 곳</div>
+
+  <div class="gourmet-card">
+    <span class="gourmet-icon">🔥</span>
+    <div class="gourmet-body">
+      <div class="gourmet-name">빗쿠리테이 (びっくり亭)</div>
+      <div class="gourmet-loc">📍 미나미후쿠오카 본점 / 카스야점 / 브랜치 하카타점</div>
+      <div class="gourmet-tags">
+        <span class="gourmet-tag gt-red">철판 구이</span>
+        <span class="gourmet-tag gt-gold">후쿠오카 로컬 명점</span>
+        <span class="gourmet-tag gt-green">라운드 후 최적</span>
+      </div>
+      <div class="gourmet-desc">뜨겁게 달군 철판 위에 듬뿍 쌓은 마늘과 양배추, 그 위에서 호쾌하게 구운 고기가 명물. 마늘 향과 양배추의 단맛이 어우러진 독창적인 맛. 라운드 후 배부르게 먹고 싶을 때 딱 맞는 가게. 카스야점은 동부 코스에서 접근하기 편리합니다.</div>
+    </div>
+  </div>
+
+  <div class="gourmet-card">
+    <span class="gourmet-icon">🍜</span>
+    <div class="gourmet-body">
+      <div class="gourmet-name">원조 나가하마야 (元祖長浜屋)</div>
+      <div class="gourmet-loc">📍 후쿠오카시 추오구 나가하마 (나가하마 수산시장 옆)</div>
+      <div class="gourmet-tags">
+        <span class="gourmet-tag gt-red">나가하마 라멘</span>
+        <span class="gourmet-tag gt-gold">하카타 돈코츠 발상지</span>
+        <span class="gourmet-tag gt-blue">24시간 영업</span>
+      </div>
+      <div class="gourmet-desc">하카타 돈코츠 라멘의 원점. 수산시장 상인들이 대대로 다닌 가게로, 진하고 크리미한 돼지뼈 육수와 극세면의 심플한 한 그릇. 「가에다마(면 추가)」 문화의 발상지이기도 합니다. 24시간 영업으로 늦은 밤 귀갓길에도 들를 수 있습니다.</div>
+    </div>
+  </div>
+
+  <div class="gourmet-card">
+    <span class="gourmet-icon">🥣</span>
+    <div class="gourmet-body">
+      <div class="gourmet-name">나가사키테이 (長崎亭)</div>
+      <div class="gourmet-loc">📍 후쿠오카시 니시구 후쿠시게</div>
+      <div class="gourmet-tags">
+        <span class="gourmet-tag gt-red">짬뽕</span>
+        <span class="gourmet-tag gt-gold">니시구 숨은 명점</span>
+        <span class="gourmet-tag gt-green">케야·이토시마 GC 귀갓길에</span>
+      </div>
+      <div class="gourmet-desc">후쿠오카시 니시구 후쿠시게에 위치한 지역 단골 짬뽕 맛집. 야채 듬뿍의 볼륨 만점 짬뽕은 라운드 후 지친 몸에 스며드는 따뜻한 맛. 케야 골프 클럽·이토시마 골프 클럽에서 귀가 도중 들르기 딱 좋은 위치에 있습니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗺️ 관광 명소</div>
+
+  <div class="spot-card">
+    <span class="spot-icon">⛩️</span>
+    <div>
+      <div class="spot-name">다자이후 텐만구 (太宰府天満宮)</div>
+      <div class="spot-loc">📍 다자이후시　🚗 하카타에서 약 30분</div>
+      <div class="spot-desc">학문의 신을 모시는 전국적인 유명 신사. 참배길에 늘어선 우메가에모치(매화떡) 가게 향기와 역사적인 건축이 여행객을 맞이합니다. 지쿠시노·다자이후 지역 골프와 조합하면 완벽한 하루 관광 코스.</div>
+    </div>
+  </div>
+
+  <div class="spot-card">
+    <span class="spot-icon">🌊</span>
+    <div>
+      <div class="spot-name">이토시마 시사이드 드라이브</div>
+      <div class="spot-loc">📍 이토시마시　🚗 후쿠오카 시내에서 약 40분</div>
+      <div class="spot-desc">겐카이나다를 바라보는 절경 드라이브 코스. 해변 카페와 해산물 레스토랑이 점재하며 케야·이토시마 GC와의 세트 방문으로 인기. 일몰 명소인 후타미가우라 부부 바위도 필수 코스.</div>
+    </div>
+  </div>
+
+  <div class="spot-card">
+    <span class="spot-icon">🏮</span>
+    <div>
+      <div class="spot-name">나카스 야타이 포장마차</div>
+      <div class="spot-loc">📍 후쿠오카시 추오구　🚇 텐진역·나카스카와바타역에서 도보</div>
+      <div class="spot-desc">후쿠오카의 밤을 대표하는 풍경. 나카강변에 늘어선 포장마차에서 라멘·오뎅·야키토리를 즐길 수 있습니다. 저녁 6시경부터 영업. 카운터 너머 주인장과 대화하며 먹는 경험은 후쿠오카 여행의 정수.</div>
+    </div>
+  </div>
+
+  <div class="spot-card">
+    <span class="spot-icon">🛍️</span>
+    <div>
+      <div class="spot-name">캐널 시티 하카타</div>
+      <div class="spot-loc">📍 후쿠오카시 하카타구　🚶 하카타역에서 도보 15분</div>
+      <div class="spot-desc">운하가 흐르는 대형 복합 시설. 쇼핑·영화·맛집이 한곳에 모여 있어 비오는 날 관광에도 최적. 골프용품점·아웃도어 숍도 입점해 있어 골프 관련 쇼핑에도 편리합니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📅 모델 플랜</div>
+
+  <div class="plan-card">
+    <div class="plan-title">🗓️ 1박 2일 플랜 — 주말 골프 여행</div>
+    <div class="plan-day">1일째</div>
+    <div class="plan-item"><span class="plan-time">오전</span>후쿠오카 공항 도착 → 렌터카 수령 → 체크인 (하카타역 주변)</div>
+    <div class="plan-item"><span class="plan-time">오후</span>오후 스루 or 나이터 골프 (히사야마CC·후쿠오카CC 등 시내 근교 코스)</div>
+    <div class="plan-item"><span class="plan-time">저녁</span>나카스 야타이 or 빗쿠리테이에서 저녁 식사</div>
+    <div class="plan-day">2일째</div>
+    <div class="plan-item"><span class="plan-time">이른 아침</span>원조 나가하마야에서 아침 라멘 (이른 아침부터 영업)</div>
+    <div class="plan-item"><span class="plan-time">오전</span>18홀 라운드 (케야 GC·사이토자키 GC 등)</div>
+    <div class="plan-item"><span class="plan-time">오후</span>이토시마 드라이브 or 다자이후 관광 → 공항으로</div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-title">🗓️ 2박 3일 플랜 — 한국에서의 골프 여행</div>
+    <div class="plan-day">1일째</div>
+    <div class="plan-item"><span class="plan-time">오전</span>후쿠오카 공항 도착 → 렌터카 → 호텔 체크인</div>
+    <div class="plan-item"><span class="plan-time">오후</span>다자이후 텐만구 관광 → 나카스 야타이에서 저녁</div>
+    <div class="plan-day">2일째</div>
+    <div class="plan-item"><span class="plan-time">오전</span>18홀 풀 라운드 (원하는 코스 선택)</div>
+    <div class="plan-item"><span class="plan-time">저녁</span>나가사키테이 짬뽕 or 빗쿠리테이 철판 구이</div>
+    <div class="plan-day">3일째</div>
+    <div class="plan-item"><span class="plan-time">오전</span>18홀 라운드 (시내 근교 코스)</div>
+    <div class="plan-item"><span class="plan-time">점심</span>원조 나가하마야에서 라멘</div>
+    <div class="plan-item"><span class="plan-time">오후</span>캐널 시티 쇼핑 → 공항 출발</div>
+  </div>
+
+  <div class="info-bar"><span class="icon">💡</span>한국(부산·서울)에서 후쿠오카까지 LCC로 약 1시간. 주말 당일치기·1박 2일 골프 여행지로 압도적인 인기를 자랑합니다.</div>
+
+</div><!-- /ko -->
+
+<footer>
+  <a href="index.html">← トップに戻る / Back to Top / 목록으로</a>　|
+  福岡ゴルフ場ガイド — 店舗情報・営業時間は各店公式情報でご確認ください
+</footer>
+
+<script>
+  function sw(l){
+    ['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));
+    document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+</script>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップに戻る">▲</button>
+<style>
+  #btt { position:fixed; bottom:20px; right:16px; z-index:999; width:44px; height:44px; border-radius:50%; border:none; background:#2e8b57; color:#fff; font-size:1rem; font-weight:700; cursor:pointer; box-shadow:0 3px 10px rgba(0,0,0,0.25); opacity:0; pointer-events:none; transition:opacity 0.25s,transform 0.25s; transform:translateY(8px); }
+  #btt.show { opacity:1; pointer-events:auto; transform:translateY(0); }
+  #btt:hover { background:#1a5c38; }
+</style>
+<script>
+  (function(){ var btn=document.getElementById('btt'); window.addEventListener('scroll',function(){ btn.classList.toggle('show',window.scrollY>300); },{passive:true}); })();
+</script>
+</body>
+</html>

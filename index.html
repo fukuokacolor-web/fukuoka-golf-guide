@@ -71,6 +71,18 @@
       line-height:1.8;
       text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }
+    .hero-kpis { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:14px; }
+    .hero-kpi { background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.4);
+                backdrop-filter:blur(4px); border-radius:20px; padding:4px 12px;
+                font-size:0.7rem; font-weight:700; letter-spacing:0.02em; }
+    .hero-kpi strong { font-size:0.85rem; margin-right:3px; }
+    .hero-cta-row { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:18px; }
+    .hero-cta { display:inline-flex; align-items:center; gap:6px; background:#fff; color:var(--green-dark);
+                border-radius:10px; padding:10px 16px; font-size:0.82rem; font-weight:800;
+                text-decoration:none; box-shadow:0 3px 10px rgba(0,0,0,0.2);
+                transition:transform .15s, box-shadow .15s; }
+    .hero-cta:hover { transform:translateY(-1px); box-shadow:0 5px 14px rgba(0,0,0,0.25); }
+    .hero-cta.primary { background:linear-gradient(135deg,#c9a227,#e6b82e); color:#4a3500; }
 
     .lang-bar { display:flex; background:#fff; border-bottom:2px solid var(--green-mid); position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
     .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
@@ -179,6 +191,45 @@
   <meta property="og:image:alt"    content="福岡ゴルフ場ガイド | Fukuoka Golf Guide">
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:image"       content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/itoshimatorii.webp">
+<!-- GA4_TAG -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PENH0Z4VT7');
+  </script>
+<!-- AFFILIATE_TRACKER -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    var service = null;
+    if (/jalan/i.test(h)) service = 'jalan';
+    else if (/rakuten/i.test(h) || /gora/i.test(h)) service = 'rakuten_gora';
+    else if (/agoda/i.test(h)) service = 'agoda';
+    else if (/skyticket/i.test(h)) service = 'skyticket';
+    else if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(h)) service = 'tabimonogatari';
+    else if (/amazon|amzn/i.test(h)) service = 'amazon';
+    else if (/a8\.net/i.test(h)) service = 'a8_other';
+    if (!service) return;
+    var page = (location.pathname.split('/').pop() || 'index') + '';
+    var active = document.querySelector('.content.on');
+    var lang = active ? active.id.replace('c-','') : 'ja';
+    if (typeof gtag === 'function') {
+      gtag('event', 'click_affiliate', {
+        service: service,
+        page: page,
+        lang: lang,
+        link_text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80),
+        link_url: h.slice(0, 200)
+      });
+    }
+  }, true);
+})();
+</script>
 </head>
 <body>
 
@@ -192,6 +243,15 @@
     Fukuoka Golf Guide for Inbound Visitors<br>
     인바운드 방문자를 위한 후쿠오카 골프 가이드
   </p>
+  <div class="hero-kpis">
+    <span class="hero-kpi"><strong>28</strong>コース / Courses / 코스</span>
+    <span class="hero-kpi">🇯🇵 🇺🇸 🇰🇷 <strong>3言語</strong></span>
+    <span class="hero-kpi">✈️ 福岡空港 30分〜</span>
+  </div>
+  <div class="hero-cta-row">
+    <a href="#courses-list" class="hero-cta primary">⛳ コースを探す / Find Course</a>
+    <a href="fees.html" class="hero-cta">💰 料金比較</a>
+  </div>
 </header>
 
 <div class="lang-bar">
@@ -299,7 +359,7 @@
     </div>
   </a>
 
-  <div class="sec-head">📍 掲載ゴルフ場</div>
+  <div class="sec-head" id="courses-list">📍 掲載ゴルフ場</div>
   <div class="filter-bar" id="fb-ja">
     <button class="fbtn on" data-f="all" onclick="filterCourses('ja','all')">すべて</button>
     <button class="fbtn"    data-f="d30" onclick="filterCourses('ja','d30')">✈️ 〜30分</button>

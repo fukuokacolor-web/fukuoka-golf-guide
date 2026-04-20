@@ -135,6 +135,37 @@
     gtag('js', new Date());
     gtag('config', 'G-PENH0Z4VT7');
   </script>
+<!-- AFFILIATE_TRACKER -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    var service = null;
+    if (/jalan/i.test(h)) service = 'jalan';
+    else if (/rakuten/i.test(h) || /gora/i.test(h)) service = 'rakuten_gora';
+    else if (/agoda/i.test(h)) service = 'agoda';
+    else if (/skyticket/i.test(h)) service = 'skyticket';
+    else if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(h)) service = 'tabimonogatari';
+    else if (/amazon|amzn/i.test(h)) service = 'amazon';
+    else if (/a8\.net/i.test(h)) service = 'a8_other';
+    if (!service) return;
+    var page = (location.pathname.split('/').pop() || 'index') + '';
+    var active = document.querySelector('.content.on');
+    var lang = active ? active.id.replace('c-','') : 'ja';
+    if (typeof gtag === 'function') {
+      gtag('event', 'click_affiliate', {
+        service: service,
+        page: page,
+        lang: lang,
+        link_text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80),
+        link_url: h.slice(0, 200)
+      });
+    }
+  }, true);
+})();
+</script>
 </head>
 <body>
 

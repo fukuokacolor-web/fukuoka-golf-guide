@@ -119,6 +119,37 @@
     gtag('js', new Date());
     gtag('config', 'G-PENH0Z4VT7');
   </script>
+<!-- AFFILIATE_TRACKER -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    var service = null;
+    if (/jalan/i.test(h)) service = 'jalan';
+    else if (/rakuten/i.test(h) || /gora/i.test(h)) service = 'rakuten_gora';
+    else if (/agoda/i.test(h)) service = 'agoda';
+    else if (/skyticket/i.test(h)) service = 'skyticket';
+    else if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(h)) service = 'tabimonogatari';
+    else if (/amazon|amzn/i.test(h)) service = 'amazon';
+    else if (/a8\.net/i.test(h)) service = 'a8_other';
+    if (!service) return;
+    var page = (location.pathname.split('/').pop() || 'index') + '';
+    var active = document.querySelector('.content.on');
+    var lang = active ? active.id.replace('c-','') : 'ja';
+    if (typeof gtag === 'function') {
+      gtag('event', 'click_affiliate', {
+        service: service,
+        page: page,
+        lang: lang,
+        link_text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80),
+        link_url: h.slice(0, 200)
+      });
+    }
+  }, true);
+})();
+</script>
 </head>
 <body>
 <header class="page-header">
@@ -437,5 +468,52 @@
       }, {passive: true});
     })();
   </script>
+<!-- STICKY_CTA -->
+<style>
+  #sticky-cta { position:fixed; bottom:0; left:0; right:0; z-index:200;
+    background:rgba(255,255,255,0.98); border-top:2px solid #e0c0a0;
+    box-shadow:0 -4px 14px rgba(0,0,0,0.14); padding:8px 10px 10px;
+    display:flex; gap:6px; justify-content:center; align-items:center; }
+  #sticky-cta .sc-btn { flex:1; max-width:200px; text-align:center;
+    padding:11px 8px; border-radius:10px; font-weight:800; font-size:0.86rem;
+    color:#fff; text-decoration:none; line-height:1.25;
+    box-shadow:0 2px 5px rgba(0,0,0,0.18); }
+  #sticky-cta .sc-btn:active { transform:translateY(1px); }
+  #sticky-cta .sc-jalan   { background:linear-gradient(135deg,#ff8c00,#e36b00); }
+  #sticky-cta .sc-rakuten { background:linear-gradient(135deg,#c81d1d,#8f0000); }
+  body { padding-bottom:76px; }
+  @media (min-width:900px) {
+    #sticky-cta { max-width:680px; left:50%; transform:translateX(-50%); right:auto;
+      border-radius:14px 14px 0 0; }
+  }
+</style>
+<div id="sticky-cta" aria-label="予約CTA"></div>
+<script>
+(function(){
+  var JALAN="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F";
+  var RAKUTEN="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F";
+  var tpl = {
+    ja:'<a href="'+JALAN+'" class="sc-btn sc-jalan" rel="nofollow sponsored" target="_blank">📅 じゃらん</a>'+
+       '<a href="'+RAKUTEN+'" class="sc-btn sc-rakuten" rel="nofollow sponsored" target="_blank">🏌️ 楽天GORA</a>',
+    en:'<a href="'+JALAN+'" class="sc-btn sc-jalan" rel="nofollow sponsored" target="_blank">📅 Jalan</a>'+
+       '<a href="'+RAKUTEN+'" class="sc-btn sc-rakuten" rel="nofollow sponsored" target="_blank">🏌️ Rakuten GORA</a>',
+    ko:'<a href="'+JALAN+'" class="sc-btn sc-jalan" rel="nofollow sponsored" target="_blank" style="max-width:360px;">📅 자란골프에서 예약하기</a>'
+  };
+  function render(){
+    var el = document.getElementById('sticky-cta');
+    if (!el) return;
+    var active = document.querySelector('.content.on');
+    var lang = active ? active.id.replace('c-','') : 'ja';
+    el.innerHTML = tpl[lang] || tpl.ja;
+  }
+  if (document.readyState === 'loading')
+    document.addEventListener('DOMContentLoaded', render);
+  else render();
+  document.addEventListener('click', function(e){
+    if (e.target.closest('.lbtn')) setTimeout(render, 10);
+  });
+})();
+</script>
+
 </body>
 </html>

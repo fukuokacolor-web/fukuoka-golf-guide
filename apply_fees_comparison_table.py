@@ -12,7 +12,7 @@ BASE = r'C:/Users/Owner/fukuoka-golf-guide'
 
 # 28コースの3言語名（表示用・短め）
 COURSE_NAMES = {
-    "aburayama":     {"ja":"油山ゴルフクラブ",               "en":"Aburayama GC",            "ko":"아부라야마 GC",          "area_ja":"福岡市城南区","area_en":"Fukuoka City","area_ko":"후쿠오카시"},
+    "aburayama":     {"ja":"⚠️ 油山GC（10Hショート）",     "en":"⚠️ Aburayama GC (10H SHORT)", "ko":"⚠️ 아부라야마 GC (10H 쇼트)", "area_ja":"福岡市城南区","area_en":"Fukuoka City","area_ko":"후쿠오카시"},
     "akane":         {"ja":"あかねゴルフクラブ",             "en":"Akane GC",                "ko":"아카네 GC",              "area_ja":"糟屋郡","area_en":"Kasuya","area_ko":"카스야"},
     "ariake":        {"ja":"有明グランドゴルフクラブ",        "en":"Ariake Grand GC",         "ko":"아리아케 그랜드 GC",     "area_ja":"大牟田市","area_en":"Omuta","area_ko":"오무타"},
     "asoiizuka":     {"ja":"麻生飯塚ゴルフ倶楽部",           "en":"Aso Iizuka GC",           "ko":"아소 이이즈카 GC",       "area_ja":"飯塚市","area_en":"Iizuka","area_ko":"이이즈카"},

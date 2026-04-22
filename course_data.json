@@ -1,0 +1,2256 @@
+[
+  {
+    "slug": "aburayama",
+    "file": "course-aburayama.html",
+    "name_ja": "油山ゴルフクラブ",
+    "name_en": "Aburayama Golf Club",
+    "name_ko": "아부라야마 골프 클럽",
+    "title_full": "油山ゴルフクラブ（ララヒルズ油山・10Hショート）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "ララヒルズ油山・10Hショート",
+    "phone": "092-871-2515",
+    "street": "大字東油山169-1",
+    "locality": "福岡市城南区",
+    "region": "福岡県",
+    "desc_ja": "油山ゴルフクラブ（現ララヒルズ油山・福岡市城南区）は10ホールのショートコース。2グリーン制・最長345ヤード。初心者・短時間ラウンド向け。福岡空港から約25〜30分。",
+    "airport_min": "25〜30",
+    "hero_img": "images/golf-mountain.webp",
+    "holes": "10ホール（2グリーン）",
+    "location_ja": "福岡市城南区 東油山",
+    "airport_val_ja": "車で約25〜30分",
+    "airport_val_en": "~25–30 min by car",
+    "airport_val_ko": "차로 약 25〜30분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約3,000〜4,500円"
+      ],
+      [
+        "🎉 土日祝",
+        "約3,200〜4,500円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約5,000〜8,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥3,000–¥4,500"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥3,200–¥4,500"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥5,000–¥8,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 3,000〜4,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 3만원〜4.5만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 3,200〜4,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 3만원〜4.5만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 5,000〜8,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 5만원〜8만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-fukuokacc.html",
+        "label": "福岡CC（和白） / Fukuoka CC (Wajiro) / 후쿠오카 CC"
+      },
+      {
+        "href": "course-hisayama.html",
+        "label": "久山CC / Hisayama CC / 히사야마 CC"
+      },
+      {
+        "href": "course-saitozaki.html",
+        "label": "西戸崎GC / Saitozaki GC / 사이토자키 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "akane",
+    "file": "course-akane.html",
+    "name_ja": "茜カントリークラブ",
+    "name_en": "Akane Country Club",
+    "name_ko": "아카네 컨트리 클럽",
+    "title_full": "茜カントリークラブ（飯塚市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "飯塚市",
+    "phone": "0948-72-4000",
+    "street": "大分1931",
+    "locality": "飯塚市",
+    "region": "福岡県",
+    "desc_ja": "茜カントリークラブ（飯塚市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約55分。",
+    "airport_min": "55",
+    "hero_img": "images/spring-forest.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hillside / Forest",
+    "location_ja": "飯塚市・大分",
+    "airport_val_ja": "車で約55分",
+    "airport_val_en": "~55 min by car",
+    "airport_val_ko": "차로 약 55분",
+    "ic_ja": "筑穂IC",
+    "ic_en": "Chikuho IC",
+    "fees_ja": [
+      [
+        "📅 平日セルフ",
+        "約3,500〜15,000円"
+      ],
+      [
+        "🎉 土日祝セルフ",
+        "約3,500〜21,000円"
+      ],
+      [
+        "👤 キャディ付き",
+        "別途キャディ費用加算"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekday Self-Play",
+        "¥3,500–¥15,000"
+      ],
+      [
+        "🎉 Weekend Self-Play",
+        "¥3,500–¥21,000"
+      ],
+      [
+        "👤 With Caddie",
+        "Add caddie fee"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일 셀프",
+        "약 3,500〜15,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 3.5만원〜15만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일 셀프",
+        "약 3,500〜21,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 3.5만원〜21만원)</span>"
+      ],
+      [
+        "👤 캐디 포함",
+        "캐디 비용 별도"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-dazaifu.html",
+        "label": "太宰府CC / Dazaifu CC / 다자이후 CC"
+      },
+      {
+        "href": "course-chikushino.html",
+        "label": "筑紫野GC / Chikushino GC / 지쿠시노 GC"
+      },
+      {
+        "href": "course-ogori.html",
+        "label": "小郡CC / Ogori CC / 오고리 CC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "ariake",
+    "file": "course-ariake.html",
+    "name_ja": "有明カントリークラブ",
+    "name_en": "Ariake Country Club",
+    "name_ko": "아리아케 컨트리 클럽",
+    "title_full": "有明カントリークラブ（大牟田市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "大牟田市",
+    "phone": "0944-56-3131",
+    "street": "大字岬1523",
+    "locality": "大牟田市",
+    "region": "福岡県",
+    "desc_ja": "有明カントリークラブ（大牟田市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約70分。",
+    "airport_min": "70",
+    "hero_img": "images/itoshima-sea.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hillside (Ariake Sea view)",
+    "location_ja": "大牟田市・岬",
+    "website": "https://greenland-resort.com/golf/acc/",
+    "airport_val_ja": "車で約70分",
+    "airport_val_en": "~70 min by car",
+    "airport_val_ko": "차로 약 70분",
+    "ic_ja": "南関IC（約10km）",
+    "ic_en": "Nankan IC (~10 km)",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約7,000〜8,500円"
+      ],
+      [
+        "🎉 土日祝",
+        "約10,500〜11,500円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約4,000〜8,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥7,000–¥8,500"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥10,500–¥11,500"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥4,000–¥8,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 7,000〜8,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 7만원〜8.5만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 10,500〜11,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 10.5만원〜11.5만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 4,000〜8,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 4만원〜8만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-century.html",
+        "label": "センチュリー大牟田GC / Century Omuta GC / 센추리 오무타 GC"
+      },
+      {
+        "href": "course-kurume.html",
+        "label": "久留米CC / Kurume CC / 구루메 CC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "asoiizuka",
+    "file": "course-asoiizuka.html",
+    "name_ja": "麻生飯塚ゴルフ倶楽部",
+    "name_en": "Aso Iizuka Golf Club",
+    "name_ko": "아소이이즈카 골프 클럽",
+    "title_full": "麻生飯塚ゴルフ倶楽部（飯塚市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "飯塚市",
+    "phone": "0948-22-3311",
+    "street": "伊岐須1112",
+    "locality": "飯塚市",
+    "region": "福岡県",
+    "desc_ja": "麻生飯塚ゴルフ倶楽部（飯塚市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約50分。",
+    "airport_min": "50",
+    "hero_img": "images/spring-forest.webp",
+    "holes": "27ホール",
+    "course_type_en": "Hilly / Woodland",
+    "location_ja": "飯塚市郊外",
+    "website": "http://www.asoiizuka-gc.jp/",
+    "airport_val_ja": "車で約50分",
+    "airport_val_en": "~50 min by car",
+    "airport_val_ko": "차로 약 50분",
+    "ic_ja": "飯塚IC",
+    "ic_en": "Iizuka IC",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約9,000〜15,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約9,500〜21,500円"
+      ],
+      [
+        "💳 支払方法",
+        "現金・クレジットカード"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥9,000–¥15,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥9,500–¥21,500"
+      ],
+      [
+        "💳 Payment",
+        "Cash &amp; Credit Cards"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 9,000〜15,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 9만원〜15만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 9,500〜21,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 9.5만원〜21.5만원)</span>"
+      ],
+      [
+        "💳 결제 방법",
+        "현금·신용카드"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-kyushugc.html",
+        "label": "九州GC / Kyushu GC / 규슈 GC"
+      },
+      {
+        "href": "course-mission.html",
+        "label": "ミッションバレーGC / Mission Valley GC / 미션밸리 GC"
+      },
+      {
+        "href": "course-sevenmillion.html",
+        "label": "セブンミリオンGC / Seven Million GC / 세븐밀리언 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "central",
+    "file": "course-central.html",
+    "name_ja": "セントラル福岡ゴルフ倶楽部",
+    "name_en": "Central Fukuoka Golf Club",
+    "name_ko": "센트럴 후쿠오카 골프 클럽",
+    "title_full": "セントラル福岡ゴルフ倶楽部（筑紫野市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "筑紫野市",
+    "phone": "092-926-3551",
+    "street": "大字山家上西山",
+    "locality": "筑紫野市",
+    "region": "福岡県",
+    "desc_ja": "セントラル福岡ゴルフクラブ（筑紫野市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約35〜45分。",
+    "airport_min": "35〜45",
+    "hero_img": "images/sakura-river.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hilly / undulating",
+    "location_ja": "筑紫野市",
+    "website": "https://reserve.accordiagolf.com/golfCourse/fukuoka/central_fukuoka/",
+    "airport_val_ja": "車で約35〜45分",
+    "airport_val_en": "~35–45 min by car",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約6,500〜12,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約8,000〜14,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約4,000〜8,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥6,500–¥12,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥8,000–¥14,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥4,000–¥8,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 6,500〜12,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6.5만원〜12만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 8,000〜14,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 8만원〜14만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 4,000〜8,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 4만원〜8만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-chikushigaoka.html",
+        "label": "筑紫ヶ丘GC / Chikushigaoka GC / 지쿠시가오카 GC"
+      },
+      {
+        "href": "course-koga.html",
+        "label": "古賀GC / Koga GC / 고가 GC"
+      },
+      {
+        "href": "course-moonlake.html",
+        "label": "ムーンレイクGC / Moon Lake GC / 문레이크 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "century",
+    "file": "course-century.html",
+    "name_ja": "福岡センチュリーゴルフ倶楽部",
+    "name_en": "Fukuoka Century Golf Club",
+    "name_ko": "후쿠오카 센추리 골프 클럽",
+    "title_full": "福岡センチュリーゴルフ倶楽部（朝倉市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "朝倉市",
+    "phone": "092-938-3031",
+    "street": "朝倉市",
+    "locality": "糟屋郡",
+    "region": "福岡県",
+    "desc_ja": "福岡センチュリーゴルフクラブ（朝倉市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約55分。",
+    "airport_min": "55",
+    "hero_img": "images/sakura-river.webp",
+    "holes": "27ホール",
+    "course_type_ja": "丘陵・林間コース",
+    "course_type_en": "Hilly / Wooded",
+    "course_type_ko": "구릉·임간 코스",
+    "location_ja": "福岡市近郊",
+    "website": "https://www.fcgc.biz/",
+    "airport_val_ja": "車で約55分",
+    "airport_val_en": "~55 min by car",
+    "airport_val_ko": "차로 약 55분",
+    "ic_ja": "朝倉方面",
+    "ic_en": "Asakura area",
+    "ic_ko": "가스야·고가 방면",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約9,500〜21,500円"
+      ],
+      [
+        "🎉 土日祝",
+        "約11,500〜21,500円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約5,500〜12,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥9,500–¥21,500"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥11,500–¥21,500"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥5,500–¥12,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 9,500〜21,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 9.5만원〜21.5만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 11,500〜21,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 11.5만원〜21.5만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 5,500〜12,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 5.5만원〜12만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-ariake.html",
+        "label": "有明GC / Ariake GC / 아리아케 GC"
+      },
+      {
+        "href": "course-kurume.html",
+        "label": "久留米CC / Kurume CC / 구루메 CC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "chikushigaoka",
+    "file": "course-chikushigaoka.html",
+    "name_ja": "筑紫ヶ丘ゴルフクラブ",
+    "name_en": "Chikushigaoka Golf Club",
+    "name_ko": "지쿠시가오카 골프 클럽",
+    "title_full": "筑紫ヶ丘ゴルフクラブ（那珂川市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "那珂川市",
+    "phone": "092-952-2711",
+    "street": "五ケ山",
+    "locality": "那珂川市",
+    "region": "福岡県",
+    "desc_ja": "筑紫ヶ丘ゴルフクラブ（那珂川市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約30分。",
+    "airport_min": "30",
+    "hero_img": "images/golf-mountain.webp",
+    "holes": "27ホール",
+    "course_type_ja": "丘陵・広大",
+    "course_type_ko": "구릉·광대",
+    "website": "http://gaoka27.com/",
+    "airport_val_ja": "車で約30分",
+    "airport_val_en": "~30 min by car",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約13,900円"
+      ],
+      [
+        "🎉 土日祝",
+        "約18,400円"
+      ],
+      [
+        "🌤️ 午後スルー",
+        "¥6,000〜¥11,000程度"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥13,900"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥18,400"
+      ],
+      [
+        "🌤️ Afternoon Through",
+        "¥6,000–¥11,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 13,900엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 14만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 18,400엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 18.5만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루",
+        "약 ¥6,000〜¥11,000"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-koga.html",
+        "label": "古賀GC / Koga GC / 고가 GC"
+      },
+      {
+        "href": "course-central.html",
+        "label": "セントラル福岡GC / Central Fukuoka GC / 센트럴 후쿠오카 GC"
+      },
+      {
+        "href": "course-moonlake.html",
+        "label": "ムーンレイクGC / Moon Lake GC / 문레이크 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "chikushino",
+    "file": "course-chikushino.html",
+    "name_ja": "筑紫野カントリークラブ",
+    "name_en": "Chikushino Country Club",
+    "name_ko": "치쿠시노 컨트리 클럽",
+    "title_full": "筑紫野カントリークラブ（筑紫野市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "筑紫野市",
+    "phone": "092-926-1661",
+    "street": "山家2014-22",
+    "locality": "筑紫野市",
+    "region": "福岡県",
+    "desc_ja": "筑紫野カントリークラブ（筑紫野市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約50分。",
+    "airport_min": "50",
+    "hero_img": "images/spring-forest.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hillside course",
+    "location_ja": "筑紫野市・山家",
+    "website": "https://chikushino-cc.co.jp/",
+    "airport_val_ja": "車で約50分",
+    "airport_val_en": "~50 min by car",
+    "airport_val_ko": "차로 약 50분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約9,500〜17,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約10,000〜18,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約6,000〜9,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥9,500–¥17,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥10,000–¥18,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥6,000–¥9,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 9,500〜17,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 9.5만원〜17만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 10,000〜18,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 10만원〜18만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 6,000〜9,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6만원〜9만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-dazaifu.html",
+        "label": "太宰府CC / Dazaifu CC / 다자이후 CC"
+      },
+      {
+        "href": "course-akane.html",
+        "label": "あかねGC / Akane GC / 아카네 GC"
+      },
+      {
+        "href": "course-ogori.html",
+        "label": "小郡CC / Ogori CC / 오고리 CC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "daihakata",
+    "file": "course-daihakata.html",
+    "name_ja": "大博多カントリー倶楽部",
+    "name_en": "Dai-Hakata Country Club",
+    "name_ko": "다이하카타 컨트리 클럽",
+    "title_full": "大博多カントリー倶楽部（那珂川市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "那珂川市",
+    "phone": "(公式サイト参照)",
+    "street": "大字埋金5",
+    "locality": "那珂川市",
+    "region": "福岡県",
+    "desc_ja": "大博多カントリークラブ（那珂川市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約50分。",
+    "airport_min": "50",
+    "hero_img": "images/golf-mountain.webp",
+    "holes": "27ホール",
+    "course_type_en": "Hillside course",
+    "location_ja": "那珂川市・埋金",
+    "website": "https://www.pacificgolf.co.jp/daihakata/",
+    "airport_val_ja": "車で約50分",
+    "airport_val_en": "~50 min by car",
+    "airport_val_ko": "차로 약 50분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約3,500〜11,500円"
+      ],
+      [
+        "🎉 土日祝",
+        "約8,000〜14,500円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約6,000〜9,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥3,500–¥11,500"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥8,000–¥14,500"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥6,000–¥9,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 3,500〜11,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 3.5만원〜11.5만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 8,000〜14,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 8만원〜14.5만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 6,000〜9,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6만원〜9만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-hisayama.html",
+        "label": "久山CC / Hisayama CC / 히사야마 CC"
+      },
+      {
+        "href": "course-fukuokacc.html",
+        "label": "福岡CC（和白） / Fukuoka CC (Wajiro) / 후쿠오카 CC"
+      },
+      {
+        "href": "course-saitozaki.html",
+        "label": "西戸崎GC / Saitozaki GC / 사이토자키 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "dazaifu",
+    "file": "course-dazaifu.html",
+    "name_ja": "太宰府ゴルフ倶楽部",
+    "name_en": "Dazaifu Golf Club",
+    "name_ko": "다자이후 골프 클럽",
+    "title_full": "太宰府ゴルフ倶楽部（太宰府市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "太宰府市",
+    "phone": "092-922-5231",
+    "street": "石穴3467-39",
+    "locality": "太宰府市",
+    "region": "福岡県",
+    "desc_ja": "太宰府ゴルフクラブ（太宰府市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約30分。",
+    "airport_min": "30",
+    "hero_img": "images/sakura-road.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hillside course",
+    "location_ja": "太宰府市・石穴",
+    "airport_val_ja": "車で約30分",
+    "airport_val_en": "~30 min by car",
+    "airport_val_ko": "차로 약 30분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約11,000〜15,500円"
+      ],
+      [
+        "🎉 土日祝",
+        "約14,000〜22,500円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約5,500〜8,500円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥11,000–¥15,500"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥14,000–¥22,500"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥5,500–¥8,500"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 11,000〜15,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 11만원〜15.5만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 14,000〜22,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 14만원〜22.5만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 5,500〜8,500엔"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-chikushino.html",
+        "label": "筑紫野GC / Chikushino GC / 지쿠시노 GC"
+      },
+      {
+        "href": "course-akane.html",
+        "label": "あかねGC / Akane GC / 아카네 GC"
+      },
+      {
+        "href": "course-ogori.html",
+        "label": "小郡CC / Ogori CC / 오고리 CC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "fukuokacc",
+    "file": "course-fukuokacc.html",
+    "name_ja": "福岡カンツリー倶楽部（和白コース）",
+    "name_en": "Fukuoka Country Club (Wajiro Course)",
+    "name_ko": "후쿠오카 컨트리 클럽 (와지로 코스)",
+    "title_full": "福岡カンツリー倶楽部 和白コース（福岡市東区）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "福岡市東区",
+    "phone": "092-606-5600",
+    "street": "和白丘2丁目",
+    "locality": "福岡市東区",
+    "region": "福岡県",
+    "desc_ja": "福岡カントリークラブ和白コース（福岡市東区）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約20分。",
+    "airport_min": "20",
+    "hero_img": "images/fukuoka-bay.webp",
+    "holes": "18ホール",
+    "course_type_ja": "海沿い・フラット",
+    "course_type_ko": "해안·평탄",
+    "website": "http://www.fukuokacc.com/",
+    "airport_val_ja": "車で約20分",
+    "airport_val_en": "~20 min by car",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約5,000〜12,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約8,000〜15,500円"
+      ],
+      [
+        "🌤️ 午後スルー",
+        "¥9,000〜¥14,000程度"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥5,000–¥12,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥8,000–¥15,500"
+      ],
+      [
+        "🌤️ Afternoon Through",
+        "¥9,000–¥14,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 5,000〜12,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 5만원〜12만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 8,000〜15,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 8만원〜15.5만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루",
+        "약 ¥9,000〜¥14,000"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-hisayama.html",
+        "label": "久山CC / Hisayama CC / 히사야마 CC"
+      },
+      {
+        "href": "course-daihakata.html",
+        "label": "大博多CC / Dai-Hakata CC / 다이하카타 CC"
+      },
+      {
+        "href": "course-saitozaki.html",
+        "label": "西戸崎GC / Saitozaki GC / 사이토자키 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "hisayama",
+    "file": "course-hisayama.html",
+    "name_ja": "久山カントリー倶楽部",
+    "name_en": "Hisayama Country Club",
+    "name_ko": "히사야마 컨트리 클럽",
+    "title_full": "久山カントリー倶楽部（久山町）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "久山町",
+    "phone": "092-976-0001",
+    "street": "大字久原2347",
+    "locality": "糟屋郡久山町",
+    "region": "福岡県",
+    "desc_ja": "久山カントリークラブ（糟屋郡久山町）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約25分。",
+    "airport_min": "25",
+    "hero_img": "images/sakura-road.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hillside course",
+    "location_ja": "久山町・三郡山系",
+    "website": "https://www.hisayama.cc/",
+    "airport_val_ja": "車で約25分",
+    "airport_val_en": "~25 min by car",
+    "airport_val_ko": "차로 약 25분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約3,500〜12,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約4,000〜15,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約6,000〜9,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥3,500–¥12,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥4,000–¥15,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥6,000–¥9,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 3,500〜12,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 3.5만원〜12만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 4,000〜15,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 4만원〜15만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 6,000〜9,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6만원〜9만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-fukuokacc.html",
+        "label": "福岡CC（和白） / Fukuoka CC (Wajiro) / 후쿠오카 CC"
+      },
+      {
+        "href": "course-daihakata.html",
+        "label": "大博多CC / Dai-Hakata CC / 다이하카타 CC"
+      },
+      {
+        "href": "course-koga.html",
+        "label": "古賀GC / Koga GC / 고가 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "ito",
+    "file": "course-ito.html",
+    "name_ja": "伊都ゴルフ倶楽部",
+    "name_en": "Ito Golf Club",
+    "name_ko": "이토 골프 클럽",
+    "title_full": "伊都ゴルフ倶楽部（糸島市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "糸島市",
+    "phone": "092-325-0001",
+    "street": "二丈深江2243",
+    "locality": "糸島市",
+    "region": "福岡県",
+    "desc_ja": "伊都ゴルフクラブ（糸島市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約50分。",
+    "airport_min": "50",
+    "hero_img": "images/itoshimatorii.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hilly / Parkland",
+    "location_ja": "糸島半島",
+    "website": "http://www.itogolf.jp/",
+    "airport_val_ja": "車で約50分",
+    "airport_val_en": "~50 min by car",
+    "airport_val_ko": "차로 약 50분",
+    "ic_ja": "前原IC",
+    "ic_en": "Maebaru IC",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約9,000〜22,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約9,000〜22,000円"
+      ],
+      [
+        "💳 支払方法",
+        "現金・クレジットカード"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥9,000–¥22,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥9,000–¥22,000"
+      ],
+      [
+        "💳 Payment",
+        "Cash &amp; Credit Cards"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 9,000〜22,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 9만원〜22만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 9,000〜22,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 9만원〜22만원)</span>"
+      ],
+      [
+        "💳 결제 방법",
+        "현금·신용카드"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-keya.html",
+        "label": "芥屋GC / Keya GC / 케야 GC"
+      },
+      {
+        "href": "course-nijo.html",
+        "label": "二丈GC / Nijo GC / 니조 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "keya",
+    "file": "course-keya.html",
+    "name_ja": "芥屋ゴルフ倶楽部",
+    "name_en": "Keya Golf Club",
+    "name_ko": "케야 골프 클럽",
+    "title_full": "芥屋ゴルフ倶楽部（糸島市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "糸島市",
+    "phone": "092-327-0261",
+    "street": "志摩芥屋1-1",
+    "locality": "糸島市",
+    "region": "福岡県",
+    "desc_ja": "芥屋ゴルフクラブ（糸島市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約60分。",
+    "airport_min": "60",
+    "hero_img": "images/keya-rocks.webp",
+    "holes": "18ホール",
+    "course_type_en": "Seaside / Hillside",
+    "location_ja": "糸島市・志摩芥屋",
+    "website": "https://www.keyagc.co.jp/",
+    "airport_val_ja": "車で約60分",
+    "airport_val_en": "~60 min by car",
+    "airport_val_ko": "차로 약 60분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約21,500〜25,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約30,500〜34,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約8,000〜12,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥21,500–¥25,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥30,500–¥34,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥8,000–¥12,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 21,500〜25,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 21.5만원〜25만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 30,500〜34,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 30.5만원〜34만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 8,000〜12,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 8만원〜12만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-ito.html",
+        "label": "糸島GC / Itoshima GC / 이토시마 GC"
+      },
+      {
+        "href": "course-nijo.html",
+        "label": "二丈GC / Nijo GC / 니조 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "kitakyushu",
+    "file": "course-kitakyushu.html",
+    "name_ja": "北九州カントリー倶楽部",
+    "name_en": "Kitakyushu Country Club",
+    "name_ko": "기타큐슈 컨트리 클럽",
+    "title_full": "北九州カントリー倶楽部（北九州市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "北九州市",
+    "phone": "093-741-3211",
+    "street": "大字蜑住",
+    "locality": "北九州市若松区",
+    "region": "福岡県",
+    "desc_ja": "北九州カントリークラブ（北九州市若松区）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約70分。",
+    "airport_min": "70",
+    "hero_img": "images/island-view.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hilly / Woodland",
+    "website": "https://www.kitakyushu-cc.com/",
+    "airport_val_ja": "車で約70分",
+    "airport_val_en": "~70 min by car",
+    "airport_val_ko": "차로 약 70분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約7,000〜10,500円"
+      ],
+      [
+        "🎉 土日祝",
+        "約11,500円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約4,500〜7,500円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥7,000–¥10,500"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥11,500"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥4,500–¥7,500"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 7,000〜10,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 7만원〜10.5만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 11,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 11.5만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 4,500〜7,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 4.5만원〜7.5만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-moji.html",
+        "label": "門司GC / Moji GC / 모지 GC"
+      },
+      {
+        "href": "course-sevenmillion.html",
+        "label": "セブンミリオンGC / Seven Million GC / 세븐밀리언 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "koga",
+    "file": "course-koga.html",
+    "name_ja": "古賀ゴルフ・クラブ",
+    "name_en": "Koga Golf Club",
+    "name_ko": "코가 골프 클럽",
+    "title_full": "古賀ゴルフ・クラブ（古賀市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "古賀市",
+    "phone": "092-943-2261",
+    "street": "鹿部1310-1",
+    "locality": "古賀市",
+    "region": "福岡県",
+    "desc_ja": "古賀ゴルフクラブ（古賀市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約40分。",
+    "airport_min": "40",
+    "hero_img": "images/fukuoka-overview.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hillside course",
+    "location_ja": "古賀市・鹿部",
+    "airport_val_ja": "車で約40分",
+    "airport_val_en": "~40 min by car",
+    "airport_val_ko": "차로 약 40분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約24,800〜30,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約30,100〜36,200円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約6,000〜9,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥24,800–¥30,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥30,100–¥36,200"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥6,000–¥9,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 24,800〜30,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 25만원〜30만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 30,100〜36,200엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 30만원〜36만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 6,000〜9,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6만원〜9만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-central.html",
+        "label": "セントラル福岡GC / Central Fukuoka GC / 센트럴 후쿠오카 GC"
+      },
+      {
+        "href": "course-chikushigaoka.html",
+        "label": "筑紫ヶ丘GC / Chikushigaoka GC / 지쿠시가오카 GC"
+      },
+      {
+        "href": "course-hisayama.html",
+        "label": "久山CC / Hisayama CC / 히사야마 CC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "kurume",
+    "file": "course-kurume.html",
+    "name_ja": "久留米カントリークラブ",
+    "name_en": "Kurume Country Club",
+    "name_ko": "구루메 컨트리 클럽",
+    "title_full": "久留米カントリークラブ（広川町）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "広川町",
+    "phone": "0943-32-3131",
+    "street": "長延1243-1",
+    "locality": "八女郡広川町",
+    "region": "福岡県",
+    "desc_ja": "久留米カントリークラブ（八女郡広川町）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約55分。",
+    "airport_min": "55",
+    "hero_img": "images/sakura-road.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hillside / Forest",
+    "website": "https://greenland-resort.com/golf/kcc/",
+    "airport_val_ja": "車で約55分",
+    "airport_val_en": "~55 min by car",
+    "airport_val_ko": "차로 약 55분",
+    "ic_ja": "広川IC（約3km）",
+    "ic_en": "Hirokawa IC (~3 km)",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約6,000〜8,500円"
+      ],
+      [
+        "🎉 土日祝",
+        "約10,000〜14,500円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約4,000〜7,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥6,000–¥8,500"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥10,000–¥14,500"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥4,000–¥7,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 6,000〜8,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6만원〜8.5만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 10,000〜14,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 10만원〜14.5만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 4,000〜7,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 4만원〜7만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-ogori.html",
+        "label": "小郡CC / Ogori CC / 오고리 CC"
+      },
+      {
+        "href": "course-ariake.html",
+        "label": "有明GC / Ariake GC / 아리아케 GC"
+      },
+      {
+        "href": "course-century.html",
+        "label": "センチュリー大牟田GC / Century Omuta GC / 센추리 오무타 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "kyushugc",
+    "file": "course-kyushugc.html",
+    "name_ja": "九州ゴルフ倶楽部 八幡コース",
+    "name_en": "Kyushu Golf Club — Yahata Course",
+    "name_ko": "규슈 골프 클럽 야하타 코스",
+    "title_full": "九州ゴルフ倶楽部 八幡コース（北九州市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "北九州市",
+    "phone": "093-691-0461",
+    "street": "石坂2丁目",
+    "locality": "北九州市八幡西区",
+    "region": "福岡県",
+    "desc_ja": "九州ゴルフクラブ八幡コース（北九州市八幡西区）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約70分。",
+    "airport_min": "70",
+    "hero_img": "images/fukuoka-bay.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hilly / Woodland",
+    "website": "http://www.kyushu-gc.jp/yahata/",
+    "airport_val_ja": "車で約70分",
+    "airport_val_en": "~70 min by car",
+    "airport_val_ko": "차로 약 70분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約15,500円"
+      ],
+      [
+        "🎉 土日祝",
+        "約15,500〜20,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約8,000〜12,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥15,500"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥15,500–¥20,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥8,000–¥12,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 15,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 15.5만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 15,500〜20,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 15.5만원〜20만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 8,000〜12,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 8만원〜12만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-asoiizuka.html",
+        "label": "阿蘇飯塚GC / Aso Iizuka GC / 아소이이즈카 GC"
+      },
+      {
+        "href": "course-mission.html",
+        "label": "ミッションバレーGC / Mission Valley GC / 미션밸리 GC"
+      },
+      {
+        "href": "course-sevenmillion.html",
+        "label": "セブンミリオンGC / Seven Million GC / 세븐밀리언 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "lakeside",
+    "file": "course-lakeside.html",
+    "name_ja": "福岡レイクサイドカントリークラブ",
+    "name_en": "Fukuoka Lakeside Country Club",
+    "name_ko": "후쿠오카 레이크사이드 컨트리클럽",
+    "title_full": "福岡レイクサイドCC（飯塚市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "飯塚市",
+    "phone": "0948-65-3636",
+    "street": "椋本611-19",
+    "locality": "飯塚市",
+    "region": "福岡県",
+    "desc_ja": "福岡レイクサイドカントリークラブ（飯塚市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約40分。",
+    "airport_min": "40",
+    "hero_img": "images/spring-forest.webp",
+    "holes": "18ホール",
+    "course_type_ja": "12ホールに池",
+    "course_type_ko": "12홀에 연못",
+    "location_ja": "久保白ダム湖畔",
+    "website": "https://booking.pacificgolf.co.jp/guide/160.html",
+    "airport_val_ja": "車で約40分",
+    "airport_val_en": "~40 min by car",
+    "airport_val_ko": "차로 약 40분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約7,000〜12,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約7,000〜16,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約4,000〜8,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥7,000–¥12,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥7,000–¥16,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥4,000–¥8,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 7,000〜12,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 7만원〜12만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 7,000〜16,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 7만원〜16만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 4,000〜8,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 4만원〜8만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-ogori.html",
+        "label": "小郡CC / Ogori CC / 오고리 CC"
+      },
+      {
+        "href": "course-dazaifu.html",
+        "label": "太宰府CC / Dazaifu CC / 다자이후 CC"
+      },
+      {
+        "href": "course-chikushino.html",
+        "label": "筑紫野GC / Chikushino GC / 지쿠시노 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "mission",
+    "file": "course-mission.html",
+    "name_ja": "ミッションバレーゴルフクラブ",
+    "name_en": "Mission Valley Golf Club",
+    "name_ko": "미션 밸리 골프 클럽",
+    "title_full": "ミッションバレーゴルフクラブ（小竹町）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "小竹町",
+    "phone": "0949-62-6200",
+    "street": "大字勝野1870-1",
+    "locality": "鞍手郡小竹町",
+    "region": "福岡県",
+    "desc_ja": "ミッションバレーゴルフクラブ（鞍手郡小竹町）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約50分。",
+    "airport_min": "50",
+    "hero_img": "images/fukuoka-overview.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hilly / championship",
+    "website": "https://www.missionvalley-gc.com/",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約5,000〜12,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約8,000〜15,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約3,000〜7,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥5,000–¥12,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥8,000–¥15,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥3,000–¥7,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 5,000〜12,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 5만원〜12만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 8,000〜15,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 8만원〜15만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 3,000〜7,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 3만원〜7만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-sevenmillion.html",
+        "label": "セブンミリオンGC / Seven Million GC / 세븐밀리언 GC"
+      },
+      {
+        "href": "course-kyushugc.html",
+        "label": "九州GC / Kyushu GC / 규슈 GC"
+      },
+      {
+        "href": "course-asoiizuka.html",
+        "label": "阿蘇飯塚GC / Aso Iizuka GC / 아소이이즈카 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "moji",
+    "file": "course-moji.html",
+    "name_ja": "門司ゴルフ倶楽部",
+    "name_en": "Moji Golf Club",
+    "name_ko": "모지 골프 클럽",
+    "title_full": "門司ゴルフ倶楽部（北九州市門司区）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "北九州市門司区",
+    "phone": "093-481-0711",
+    "street": "大字吉志175",
+    "locality": "北九州市門司区",
+    "region": "福岡県",
+    "desc_ja": "門司ゴルフクラブ（北九州市門司区）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約75分。",
+    "airport_min": "75",
+    "hero_img": "images/keya-waves.webp",
+    "holes": "18ホール (PAR72)",
+    "course_type_en": "Hillside / Forest",
+    "location_ja": "北九州市門司区",
+    "website": "https://www.mojigolf.co.jp/",
+    "airport_val_ja": "車で約75分",
+    "airport_val_en": "~75 min by car",
+    "airport_val_ko": "차로 약 75분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約6,000〜28,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約6,000〜33,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥6,000–¥28,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥6,000–¥33,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 6,000〜28,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6만원〜28만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 6,000〜33,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6만원〜33만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-kitakyushu.html",
+        "label": "北九州GC / Kitakyushu GC / 기타큐슈 GC"
+      },
+      {
+        "href": "course-sevenmillion.html",
+        "label": "セブンミリオンGC / Seven Million GC / 세븐밀리언 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "moonlake",
+    "file": "course-moonlake.html",
+    "name_ja": "🌙 ムーンレイクゴルフクラブ 鞍手コース",
+    "name_en": "Moon Lake Golf Club – Kurate Course",
+    "name_ko": "문레이크 골프 클럽 쿠라테 코스",
+    "title_full": "ムーンレイクゴルフクラブ 鞍手コース（鞍手町）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "鞍手町",
+    "phone": "0949-42-8200",
+    "street": "八尋1331",
+    "locality": "鞍手郡鞍手町",
+    "region": "福岡県",
+    "desc_ja": "ムーンレイクゴルフクラブ鞍手（鞍手郡鞍手町）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約60分。",
+    "airport_min": "60",
+    "hero_img": "images/itoshima-bay.webp",
+    "holes": "27ホール",
+    "course_type_en": "Hilly / undulating",
+    "website": "https://booking.pacificgolf.co.jp/guide/144.html",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約6,500〜9,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約6,500〜14,500円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約4,000〜6,500円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥6,500–¥9,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥6,500–¥14,500"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥4,000–¥6,500"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 6,500〜9,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6.5만원〜9만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 6,500〜14,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6.5만원〜14.5만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 4,000〜6,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 4만원〜6.5만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-central.html",
+        "label": "セントラル福岡GC / Central Fukuoka GC / 센트럴 후쿠오카 GC"
+      },
+      {
+        "href": "course-chikushigaoka.html",
+        "label": "筑紫ヶ丘GC / Chikushigaoka GC / 지쿠시가오카 GC"
+      },
+      {
+        "href": "course-koga.html",
+        "label": "古賀GC / Koga GC / 고가 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "nijo",
+    "file": "course-nijo.html",
+    "name_ja": "二丈カントリークラブ",
+    "name_en": "Nijo Country Club",
+    "name_ko": "니조 컨트리클럽",
+    "title_full": "二丈カントリークラブ（糸島市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "糸島市",
+    "phone": "092-326-2222",
+    "street": "二丈福井",
+    "locality": "糸島市",
+    "region": "福岡県",
+    "desc_ja": "二丈カントリークラブ（糸島市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約55分。",
+    "airport_min": "55",
+    "hero_img": "images/itoshima-sea.webp",
+    "holes": "18ホール",
+    "course_type_ja": "海望む丘陵コース",
+    "course_type_en": "Hilly, sea views",
+    "course_type_ko": "바다가 보이는 구릉",
+    "location_ja": "糸島市 二丈地区",
+    "website": "https://reserve.accordiagolf.com/golfCourse/fukuoka/nijo/",
+    "airport_val_ja": "車で約55分",
+    "airport_val_en": "~55 min by car",
+    "airport_val_ko": "차로 약 55분",
+    "ic_ja": "二丈浜玉道路",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約4,000〜13,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約7,500〜16,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥4,000–¥13,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥7,500–¥16,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 4,000〜13,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 4만원〜13만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 7,500〜16,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 7.5만원〜16만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-keya.html",
+        "label": "芥屋GC / Keya GC / 케야 GC"
+      },
+      {
+        "href": "course-ito.html",
+        "label": "糸島GC / Itoshima GC / 이토시마 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "ogori",
+    "file": "course-ogori.html",
+    "name_ja": "小郡カントリークラブ",
+    "name_en": "Ogori Country Club",
+    "name_ko": "오고리 컨트리 클럽",
+    "title_full": "小郡カントリークラブ（小郡市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "小郡市",
+    "phone": "0942-75-4181",
+    "street": "三沢1788",
+    "locality": "小郡市",
+    "region": "福岡県",
+    "desc_ja": "小郡カントリークラブ（小郡市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約50分。",
+    "airport_min": "50",
+    "hero_img": "images/sakura-river.webp",
+    "holes": "27ホール",
+    "course_type_en": "Hillside / Forest",
+    "location_ja": "小郡市・三沢",
+    "airport_val_ja": "車で約50分",
+    "airport_val_en": "~50 min by car",
+    "airport_val_ko": "차로 약 50분",
+    "ic_ja": "鳥栖JCT周辺",
+    "ic_en": "Tosu JCT area",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約13,500〜14,500円"
+      ],
+      [
+        "🎉 土日祝",
+        "約18,000〜19,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約4,000〜8,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥13,500–¥14,500"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥18,000–¥19,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥4,000–¥8,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 13,500〜14,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 13.5만원〜14.5만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 18,000〜19,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 18만원〜19만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 4,000〜8,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 4만원〜8만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-lakeside.html",
+        "label": "レイクサイドGC / Lakeside GC / 레이크사이드 GC"
+      },
+      {
+        "href": "course-chikushino.html",
+        "label": "筑紫野GC / Chikushino GC / 지쿠시노 GC"
+      },
+      {
+        "href": "course-dazaifu.html",
+        "label": "太宰府CC / Dazaifu CC / 다자이후 CC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "queenshill",
+    "file": "course-queenshill.html",
+    "name_ja": "クイーンズヒルゴルフクラブ",
+    "name_en": "Queens Hill Golf Club",
+    "name_ko": "퀸즈힐 골프 클럽",
+    "title_full": "クイーンズヒルゴルフクラブ（糸島市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "糸島市",
+    "phone": "092-324-5333",
+    "street": "富838",
+    "locality": "糸島市",
+    "region": "福岡県",
+    "desc_ja": "クイーンズヒルゴルフクラブ（糸島市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約30分。",
+    "airport_min": "30",
+    "hero_img": "images/itoshima-bay.webp",
+    "holes": "18ホール",
+    "course_type_en": "Hillside / Forest",
+    "location_ja": "糸島市・富",
+    "airport_val_ja": "車で約30分",
+    "airport_val_en": "~30 min by car",
+    "airport_val_ko": "차로 약 30분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約21,800円"
+      ],
+      [
+        "🎉 土日祝",
+        "約30,200円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約5,000〜9,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥21,800"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥30,200"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥5,000–¥9,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 21,800엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 22만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 30,200엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 30만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 5,000〜9,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 5만원〜9만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-wakamiya.html",
+        "label": "若宮GC / Wakamiya GC / 와카미야 GC"
+      },
+      {
+        "href": "course-central.html",
+        "label": "セントラル福岡GC / Central Fukuoka GC / 센트럴 후쿠오카 GC"
+      },
+      {
+        "href": "course-koga.html",
+        "label": "古賀GC / Koga GC / 고가 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "saitozaki",
+    "file": "course-saitozaki.html",
+    "name_ja": "西戸崎シーサイドカントリークラブ",
+    "name_en": "Saitozaki Seaside Country Club",
+    "name_ko": "사이토자키 씨사이드 컨트리클럽",
+    "title_full": "西戸崎シーサイドCC（福岡市東区）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "福岡市東区",
+    "phone": "092-603-1555",
+    "street": "西戸崎17-18",
+    "locality": "福岡市東区",
+    "region": "福岡県",
+    "desc_ja": "西戸崎シーサイドカントリークラブ（福岡市東区）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約30〜40分。",
+    "airport_min": "30〜40",
+    "hero_img": "images/saitozaki-bridge.webp",
+    "holes": "18ホール",
+    "course_type_ja": "海を望む丘陵コース",
+    "course_type_ko": "바다 전망 구릉 코스",
+    "location_ja": "玄界灘を一望",
+    "website": "http://www.saitozaki.com/",
+    "airport_val_ja": "車で約30〜40分",
+    "airport_val_en": "~30–40 min by car",
+    "airport_val_ko": "차로 약 30〜40분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約6,000〜10,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約5,500〜15,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約3,500〜7,000円"
+      ],
+      [
+        "🍽️ 食事",
+        "昼食付プランあり"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥6,000–¥10,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥5,500–¥15,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥3,500–¥7,000"
+      ],
+      [
+        "🍽️ Meals",
+        "Lunch-included plans available"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 6,000〜10,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 6만원〜10만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 5,500〜15,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 5.5만원〜15만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 3,500〜7,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 3.5만원〜7만원)</span>"
+      ],
+      [
+        "🍽️ 식사",
+        "점심 포함 플랜 있음"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-fukuokacc.html",
+        "label": "福岡CC（和白） / Fukuoka CC (Wajiro) / 후쿠오카 CC"
+      },
+      {
+        "href": "course-hisayama.html",
+        "label": "久山CC / Hisayama CC / 히사야마 CC"
+      },
+      {
+        "href": "course-daihakata.html",
+        "label": "大博多CC / Dai-Hakata CC / 다이하카타 CC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "sevenmillion",
+    "file": "course-sevenmillion.html",
+    "name_ja": "セブンミリオンカントリークラブ",
+    "name_en": "Seven Million Country Club",
+    "name_ko": "세븐 밀리언 컨트리 클럽",
+    "title_full": "セブンミリオンCC（福岡市早良区）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "福岡市早良区",
+    "phone": "092-804-7000",
+    "street": "小笠木103-1",
+    "locality": "福岡市早良区",
+    "region": "福岡県",
+    "desc_ja": "セブンミリオンカントリークラブ（福岡市早良区）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約30〜35分。",
+    "airport_min": "30〜35",
+    "hero_img": "images/fukuoka-overview.webp",
+    "holes": "18ホール",
+    "course_type_en": "Mountain / Hillside",
+    "location_ja": "早良区・背振山麓",
+    "airport_val_ja": "車で約30〜35分",
+    "airport_val_en": "~30–35 min by car",
+    "airport_val_ko": "차로 약 30〜35분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約9,500〜15,000円"
+      ],
+      [
+        "🎉 土日祝",
+        "約10,500〜15,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約5,000〜8,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥9,500–¥15,000"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥10,500–¥15,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥5,000–¥8,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 9,500〜15,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 9.5만원〜15만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 10,500〜15,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 10.5만원〜15만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 5,000〜8,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 5만원〜8만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-mission.html",
+        "label": "ミッションバレーGC / Mission Valley GC / 미션밸리 GC"
+      },
+      {
+        "href": "course-kyushugc.html",
+        "label": "九州GC / Kyushu GC / 규슈 GC"
+      },
+      {
+        "href": "course-asoiizuka.html",
+        "label": "阿蘇飯塚GC / Aso Iizuka GC / 아소이이즈카 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "wakamiya",
+    "file": "course-wakamiya.html",
+    "name_ja": "トライアルゴルフ＆リゾート WAKAMIYA COURSE",
+    "name_en": "Trial Golf &amp; Resort Wakamiya Course",
+    "name_ko": "트라이얼 골프 앤 리조트 와카미야 코스",
+    "title_full": "トライアルGF WAKAMIYA（宮若市）料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "宮若市",
+    "phone": "0949-54-0595",
+    "street": "乙野1121",
+    "locality": "宮若市",
+    "region": "福岡県",
+    "desc_ja": "トライアルゴルフ場WAKAMIYA（宮若市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約50分。",
+    "airport_min": "50",
+    "hero_img": "images/spring-forest.webp",
+    "holes": "18ホール",
+    "course_type_en": "Flat / Water hazards",
+    "location_ja": "宮若市・乙野",
+    "website": "https://trial-golf-resort-wakamiya-course.com/",
+    "airport_val_ja": "車で約50分",
+    "airport_val_en": "~50 min by car",
+    "airport_val_ko": "차로 약 50분",
+    "ic_ja": "若宮IC（約7km）",
+    "ic_en": "Wakamiya IC (~7 km)",
+    "fees_ja": [
+      [
+        "📅 平日セルフ",
+        "約8,000〜15,500円"
+      ],
+      [
+        "🎉 土日祝セルフ",
+        "約12,500〜17,000円"
+      ],
+      [
+        "🌤️ 午後スルー（平日）",
+        "約4,000〜7,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekday Self-Play",
+        "¥8,000–¥15,500"
+      ],
+      [
+        "🎉 Weekend Self-Play",
+        "¥12,500–¥17,000"
+      ],
+      [
+        "🌤️ Afternoon Through (Weekday)",
+        "¥4,000–¥7,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일 셀프",
+        "약 8,000〜15,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 8만원〜15.5만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일 셀프",
+        "약 12,500〜17,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 12.5만원〜17만원)</span>"
+      ],
+      [
+        "🌤️ 오후 스루 (평일)",
+        "약 4,000〜7,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 4만원〜7만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-queenshill.html",
+        "label": "クイーンズヒルGC / Queens Hill GC / 퀸즈힐 GC"
+      },
+      {
+        "href": "course-central.html",
+        "label": "セントラル福岡GC / Central Fukuoka GC / 센트럴 후쿠오카 GC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  }
+]

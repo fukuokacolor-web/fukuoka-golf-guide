@@ -3,116 +3,45 @@
 <head>
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="福岡レイクサイドカントリークラブ（飯塚市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約40分。">
-  <meta name="description" lang="en" content="福岡レイクサイドカントリークラブ golf course in Fukuoka Prefecture. Championship layout. Green fees, access map and tee time booking for foreign visitors. ~40 min from Fukuoka Airport by car.">
-  <meta name="description" lang="ko" content="福岡レイクサイドカントリークラブ 골프장 (후쿠오카현). 챔피언십 코스. 그린피·오시는 길·예약 정보를 한국어로 안내합니다. 후쿠오카공항에서 차로 약 40분.">
-
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <title>福岡レイクサイドCC（飯塚市）料金・アクセス | 福岡ゴルフ場ガイド</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green-dark:#1a5c38; --green-mid:#2e8b57; --green-light:#e8f5ee;
-      --gold:#c9a227; --gold-light:#fff8e1;
-      --blue:#1a3a8f; --blue-light:#e8f0fb;
-      --bg:#f2f5f0; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
-    }
-    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
-    .page-header { background:linear-gradient(160deg,var(--green-dark) 0%,#267347 60%,#3aaa6e 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
-    .page-header h1 { font-size:1.15rem; font-weight:800; }
-    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
-    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #e0e8e0; font-size:0.8rem; }
-    .back-bar a { color:var(--green-dark); text-decoration:none; font-weight:700; }
-    .lang-bar { display:flex; background:#fff; border-bottom:2px solid var(--green-mid); position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
-    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
-    .lbtn .f { font-size:1.2rem; }
-    .lbtn.on { color:var(--green-dark); background:var(--green-light); border-bottom:3px solid var(--green-mid); margin-bottom:-2px; }
-    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
-    .content.on { display:block; }
-    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
-    .card { background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.07); }
-    .card-head { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #f0f0f0; }
-    .card-head .icon { font-size:1.8rem; flex-shrink:0; }
-    .card-head .title { font-size:0.95rem; font-weight:800; }
-    .card-body { padding:14px 16px; font-size:0.84rem; line-height:1.7; }
-    .fact-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:8px 0; }
-    .fact-item { background:var(--green-light); border:1.5px solid #b8d9c5; border-radius:10px; padding:10px 12px; text-align:center; }
-    .fact-item .f-icon { font-size:1.5rem; display:block; margin-bottom:4px; }
-    .fact-item .f-label { font-size:0.68rem; color:var(--muted); display:block; }
-    .fact-item .f-val { font-size:0.88rem; font-weight:800; color:var(--green-dark); display:block; margin-top:2px; }
-    .new-badge { background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:8px; margin-left:6px; vertical-align:middle; }
-    .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
-    .info-bar { display:flex; gap:8px; background:var(--blue-light); border-left:4px solid var(--blue); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#1a2a6e; }
-    .play-option { background:#fff; border-radius:10px; border:1.5px solid #b8d9c5; padding:12px 14px; margin-bottom:8px; }
-    .play-option-head { display:flex; align-items:center; gap:8px; font-weight:800; font-size:0.9rem; color:var(--green-dark); margin-bottom:4px; }
-    .play-option-body { font-size:0.82rem; color:#555; line-height:1.55; }
-    .official-btn { display:flex; align-items:center; justify-content:center; gap:8px; background:var(--green-dark); color:#fff; border-radius:10px; padding:14px 16px; text-decoration:none; font-weight:800; font-size:0.9rem; margin-top:8px; transition:background .15s; }
-    .official-btn:hover { background:#267347; }
-    .discount-box { background:var(--gold-light); border:1.5px solid #e0c870; border-radius:10px; padding:12px 14px; margin-bottom:8px; }
-    .discount-title { font-weight:800; font-size:0.88rem; color:#7a5000; margin-bottom:6px; display:flex; align-items:center; gap:6px; }
-    .discount-row { display:flex; justify-content:space-between; font-size:0.82rem; padding:4px 0; border-bottom:1px dashed #e8d070; }
-    .discount-row:last-child { border-bottom:none; }
-    .contact-row { display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px dashed #e0e8e0; font-size:0.84rem; }
-    .contact-row:last-child { border-bottom:none; }
-    .contact-row .c-icon { font-size:1.4rem; flex-shrink:0; }
-    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde8dd; }
-    footer a { color:var(--green-dark); text-decoration:none; }
-      .course-hero { width:100%; display:block; object-fit:cover; height:180px; }
-    </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "GolfCourse",
-  "name": "福岡レイクサイドカントリークラブ",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "椋本611-19",
-    "addressLocality": "飯塚市",
-    "addressRegion": "福岡県",
-    "addressCountry": "JP"
-  },
-  "telephone": "0948-65-3636",
-  "description": "福岡レイクサイドカントリークラブ（飯塚市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約40分。"
-}
-</script>
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/course-lakeside.html">
-  <meta property="og:site_name"   content="福岡ゴルフ場ガイド">
-  <meta property="og:title"       content="福岡レイクサイドCC（飯塚市）料金・アクセス | 福岡ゴルフ場ガイド">
-  <meta property="og:description" content="福岡レイクサイドカントリークラブ（飯塚市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約40分。">
-  <meta name="twitter:card"       content="summary_large_image">
-  <link rel="canonical" href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/course-lakeside.html">
-  <link rel="alternate" hreflang="ja" href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/course-lakeside.html">
+  <title>福岡レイクサイドカントリークラブ｜料金・アクセス | 福岡ゴルフ場ガイド</title>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "トップ",
-      "item": "https://fukuokacolor-web.github.io/fukuoka-golf-guide/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "福岡レイクサイドCC（飯塚市）料金・アクセス",
-      "item": "https://fukuokacolor-web.github.io/fukuoka-golf-guide/course-lakeside.html"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "GolfCourse",
+    "name": "福岡レイクサイドカントリークラブ",
+    "address": {"@type":"PostalAddress","streetAddress":"椋本611-19","addressLocality":"飯塚市","addressRegion":"福岡県","addressCountry":"JP"},
+    "telephone": "0948-65-3636",
+    "description": "福岡レイクサイドカントリークラブ（飯塚市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約40分。"
+  }
   </script>
-  <meta property="og:image"        content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/itoshimatorii.webp">
-  <meta property="og:image:width"  content="1920">
-  <meta property="og:image:height" content="1280">
-  <meta property="og:image:alt"    content="福岡ゴルフ場ガイド | Fukuoka Golf Guide">
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:image"       content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/itoshimatorii.webp">
-  <!-- Google Analytics -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"トップ","item":"https://fukuokacolor-web.github.io/fukuoka-golf-guide/"},
+      {"@type":"ListItem","position":2,"name":"福岡レイクサイドカントリークラブ","item":"https://fukuokacolor-web.github.io/fukuoka-golf-guide/course-lakeside.html"}
+    ]
+  }
+  </script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/course-lakeside.html">
+  <meta property="og:site_name" content="福岡ゴルフ場ガイド">
+  <meta property="og:title" content="福岡レイクサイドカントリークラブ｜料金・アクセス | 福岡ゴルフ場ガイド">
+  <meta property="og:description" content="福岡レイクサイドカントリークラブ（飯塚市）の詳細情報。コースデータ・アクセス・料金を掲載。福岡空港から約40分。">
+  <meta property="og:image" content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/spring-forest.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/course-lakeside.html">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -120,398 +49,734 @@
     gtag('js', new Date());
     gtag('config', 'G-PENH0Z4VT7');
   </script>
-<!-- AFFILIATE_TRACKER -->
-<script>
-(function(){
-  document.addEventListener('click', function(e){
-    var a = e.target.closest('a[href]');
-    if (!a) return;
-    var h = a.getAttribute('href') || '';
-    var service = null;
-    if (/jalan/i.test(h)) service = 'jalan';
-    else if (/rakuten/i.test(h) || /gora/i.test(h)) service = 'rakuten_gora';
-    else if (/agoda/i.test(h)) service = 'agoda';
-    else if (/skyticket/i.test(h)) service = 'skyticket';
-    else if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(h)) service = 'tabimonogatari';
-    else if (/amazon|amzn/i.test(h)) service = 'amazon';
-    else if (/a8\.net/i.test(h)) service = 'a8_other';
-    if (!service) return;
-    var page = (location.pathname.split('/').pop() || 'index') + '';
-    var active = document.querySelector('.content.on');
-    var lang = active ? active.id.replace('c-','') : 'ja';
-    if (typeof gtag === 'function') {
-      gtag('event', 'click_affiliate', {
-        service: service,
-        page: page,
-        lang: lang,
-        link_text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80),
-        link_url: h.slice(0, 200)
-      });
+  <script>
+  (function(){
+    document.addEventListener('click', function(e){
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var h = a.getAttribute('href') || '';
+      var service = null;
+      if (/jalan/i.test(h)) service = 'jalan';
+      else if (/rakuten/i.test(h) || /gora/i.test(h)) service = 'rakuten_gora';
+      else if (/agoda/i.test(h)) service = 'agoda';
+      else if (/skyticket/i.test(h)) service = 'skyticket';
+      else if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(h)) service = 'tabimonogatari';
+      else if (/amazon|amzn/i.test(h)) service = 'amazon';
+      else if (/a8\.net/i.test(h)) service = 'a8_other';
+      if (!service) return;
+      var page = (location.pathname.split('/').pop() || 'index') + '';
+      var active = document.querySelector('.content.on');
+      var lang = active ? active.id.replace('c-','') : 'ja';
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_affiliate', {
+          service: service, page: page, lang: lang,
+          link_text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80),
+          link_url: h.slice(0, 200)
+        });
+      }
+    }, true);
+  })();
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --forest:#1F4D3A; --forest-dark:#163829; --orange:#E8744C; --orange-dark:#D15A34;
+      --sand:#F3EADA; --paper:#FAF8F3; --charcoal:#2A2A2A; --muted:#6B7280;
+      --line:#E5DDC8; --ocean:#3A7CA5; --fairway:#7FA65A;
+      --serif:'Noto Serif JP','Playfair Display',Georgia,serif;
+      --sans:'Noto Sans JP','Noto Sans KR','Inter',-apple-system,sans-serif;
+      --num:'Inter','Noto Sans JP',sans-serif;
     }
-  }, true);
-})();
-</script>
-<!-- AF_PRICE_ADDED -->
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--sans); background:var(--paper); color:var(--charcoal); line-height:1.7; -webkit-font-smoothing:antialiased; padding-bottom:76px; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+    .lang-switcher { position:fixed; top:16px; right:16px; z-index:100; display:flex; background:rgba(255,255,255,0.96); border-radius:999px; padding:4px; gap:2px; box-shadow:0 4px 14px rgba(0,0,0,0.15); backdrop-filter:blur(10px); }
+    .lang-switcher button { border:none; background:none; padding:8px 14px; font-size:12px; font-weight:700; cursor:pointer; border-radius:999px; color:var(--muted); font-family:var(--sans); letter-spacing:0.05em; transition:all 0.2s; }
+    .lang-switcher button.on { background:var(--forest); color:#fff; }
+    .back-link { position:fixed; top:16px; left:16px; z-index:100; background:rgba(255,255,255,0.96); border-radius:999px; padding:8px 14px; font-size:12px; font-weight:700; color:var(--forest); box-shadow:0 4px 14px rgba(0,0,0,0.15); backdrop-filter:blur(10px); }
+    .hero { position:relative; height:88vh; min-height:560px; max-height:780px; overflow:hidden; color:#fff; }
+    .hero-img { position:absolute; inset:0; background-image:linear-gradient(180deg,rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.15) 40%,rgba(0,0,0,0.75) 100%),url('images/spring-forest.webp'); background-size:cover; background-position:center; }
+    .hero-inner { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:0 24px 48px; max-width:1100px; margin:0 auto; left:0; right:0; }
+    .hero-eyebrow { font-family:'Playfair Display',serif; font-style:italic; font-size:16px; opacity:0.9; margin-bottom:10px; letter-spacing:0.03em; }
+    .hero-title { font-family:var(--serif); font-weight:700; font-size:clamp(28px,5.5vw,52px); line-height:1.15; margin-bottom:14px; letter-spacing:-0.01em; }
+    .hero-sub { font-size:14px; opacity:0.85; font-weight:300; letter-spacing:0.05em; margin-bottom:24px; }
+    .hero-badges { display:flex; flex-wrap:wrap; gap:8px; }
+    .hero-badge { background:rgba(255,255,255,0.15); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25); color:#fff; padding:7px 14px; border-radius:999px; font-size:12px; font-weight:500; }
+    .stats-bar { background:var(--forest); color:#fff; padding:24px 20px; }
+    .stats-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:4px; text-align:center; }
+    .stat-item { padding:8px 4px; border-right:1px solid rgba(255,255,255,0.15); }
+    .stat-item:last-child { border-right:none; }
+    .stat-num { font-family:var(--num); font-weight:700; font-size:clamp(20px,3.6vw,30px); line-height:1.1; color:#fff; margin-bottom:4px; }
+    .stat-num .unit { font-size:0.55em; font-weight:500; opacity:0.75; margin-left:2px; }
+    .stat-label { font-size:11px; letter-spacing:0.08em; opacity:0.75; text-transform:uppercase; font-family:'Inter',sans-serif; }
+    .content { display:none; }
+    .content.on { display:block; }
+    .section { max-width:1100px; margin:0 auto; padding:72px 24px; }
+    .section-sand { background:var(--sand); }
+    .section-forest { background:var(--forest); color:#fff; }
+    .sec-eyebrow { font-family:'Playfair Display',serif; font-style:italic; font-size:14px; color:var(--orange); margin-bottom:10px; letter-spacing:0.03em; }
+    .section-forest .sec-eyebrow { color:#F3D5C5; }
+    .sec-title { font-family:var(--serif); font-weight:700; font-size:clamp(26px,4vw,36px); line-height:1.25; color:var(--forest); margin-bottom:14px; letter-spacing:-0.01em; }
+    .section-forest .sec-title { color:#fff; }
+    .sec-desc { font-size:15px; color:var(--muted); max-width:620px; line-height:1.8; margin-bottom:36px; }
+    .section-forest .sec-desc { color:rgba(255,255,255,0.78); }
+    .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .price-card { background:#fff; border-radius:20px; overflow:hidden; box-shadow:0 4px 20px rgba(31,77,58,0.06); border:1px solid var(--line); display:flex; flex-direction:column; transition:transform 0.25s,box-shadow 0.25s; }
+    .price-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(31,77,58,0.12); }
+    .price-card.featured { border:2px solid var(--orange); position:relative; }
+    .price-card.featured::before { content:'BEST VALUE'; position:absolute; top:14px; right:14px; background:var(--orange); color:#fff; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:4px 10px; border-radius:999px; font-family:'Inter',sans-serif; }
+    .price-card-head { padding:24px 24px 8px; }
+    .price-card-label { font-family:'Inter',sans-serif; font-size:11px; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; margin-bottom:8px; }
+    .price-card-name { font-family:var(--serif); font-weight:700; font-size:20px; color:var(--forest); margin-bottom:4px; }
+    .price-card-body { padding:8px 24px 24px; flex:1; }
+    .price-amount { font-family:var(--num); font-weight:700; font-size:32px; color:var(--charcoal); line-height:1.1; display:flex; align-items:baseline; gap:4px; margin:12px 0 6px; }
+    .price-amount .yen { font-size:20px; color:var(--muted); font-weight:500; }
+    .price-amount .range { font-size:14px; color:var(--muted); font-weight:400; }
+    .price-note { font-size:12px; color:var(--muted); line-height:1.5; }
+    .price-card-cta { display:flex; flex-direction:column; gap:8px; padding:0 20px 20px; }
+    .btn-book { display:flex; align-items:center; justify-content:center; padding:13px 16px; border-radius:12px; font-weight:700; font-size:14px; transition:transform 0.2s,box-shadow 0.2s; gap:8px; }
+    .btn-book:hover { transform:translateY(-2px); }
+    .btn-jalan { background:linear-gradient(135deg,var(--orange),var(--orange-dark)); color:#fff; box-shadow:0 4px 14px rgba(232,116,76,0.35); }
+    .btn-rakuten { background:#fff; color:#C81D1D; border:1.5px solid #C81D1D; }
+    .btn-rakuten:hover { background:#C81D1D; color:#fff; }
+    .character-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center; }
+    .character-img { aspect-ratio:4/5; border-radius:24px; overflow:hidden; background-size:cover; background-position:center; box-shadow:0 20px 50px rgba(31,77,58,0.18); }
+    .character-body p { font-size:16px; line-height:1.9; color:var(--charcoal); margin-bottom:18px; }
+    .check-list { list-style:none; margin-top:24px; }
+    .check-list li { display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--line); font-size:14px; line-height:1.6; }
+    .check-list li:last-child { border-bottom:none; }
+    .check-list .check-icon { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--fairway); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; }
+    .check-list strong { color:var(--forest); display:block; margin-bottom:2px; }
+    .access-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:32px; }
+    .access-card { background:#fff; border-radius:16px; padding:24px; border:1px solid var(--line); text-align:center; }
+    .access-icon { font-size:28px; margin-bottom:10px; }
+    .access-label { font-size:12px; color:var(--muted); margin-bottom:6px; letter-spacing:0.08em; text-transform:uppercase; font-family:'Inter',sans-serif; }
+    .access-value { font-family:var(--serif); font-weight:700; font-size:18px; color:var(--forest); }
+    .access-tip { background:var(--sand); border-radius:12px; padding:16px 20px; font-size:14px; line-height:1.7; color:var(--charcoal); display:flex; gap:10px; }
+    .access-tip-icon { color:var(--orange); flex-shrink:0; }
+    .play-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .play-card { background:#fff; border-radius:16px; padding:28px; border:1px solid var(--line); }
+    .play-card-icon { font-size:32px; margin-bottom:14px; }
+    .play-card-title { font-family:var(--serif); font-weight:700; font-size:18px; color:var(--forest); margin-bottom:8px; }
+    .play-card-desc { font-size:14px; line-height:1.7; color:var(--muted); }
+    .booking-hub { padding:72px 24px; }
+    .booking-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:1000px; margin:0 auto; }
+    .booking-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:24px; padding:36px 32px; backdrop-filter:blur(8px); transition:transform 0.3s,background 0.3s; display:block; }
+    .booking-card:hover { transform:translateY(-6px); background:rgba(255,255,255,0.12); }
+    .booking-logo { font-size:12px; letter-spacing:0.15em; color:var(--orange); font-family:'Inter',sans-serif; font-weight:700; margin-bottom:12px; }
+    .booking-service-name { font-family:var(--serif); font-weight:700; font-size:26px; color:#fff; margin-bottom:10px; }
+    .booking-desc { color:rgba(255,255,255,0.75); font-size:14px; line-height:1.7; margin-bottom:24px; }
+    .booking-price-tag { font-family:var(--num); color:var(--orange); font-size:15px; font-weight:700; margin-bottom:18px; }
+    .booking-price-tag .big { font-size:28px; margin:0 2px; }
+    .booking-arrow { display:inline-flex; align-items:center; gap:8px; color:#fff; font-weight:700; font-size:14px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.15); width:100%; }
+    .booking-arrow .arrow-ico { transition:transform 0.3s; }
+    .booking-card:hover .arrow-ico { transform:translateX(6px); }
+    .contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:28px; }
+    .contact-item { background:#fff; border-radius:14px; padding:18px 20px; border:1px solid var(--line); display:flex; gap:14px; align-items:flex-start; }
+    .contact-icon { font-size:22px; flex-shrink:0; }
+    .contact-label { font-size:11px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; font-family:'Inter',sans-serif; margin-bottom:4px; }
+    .contact-value { font-size:14px; font-weight:500; color:var(--forest); word-break:break-all; }
+    .btn-official { display:inline-flex; align-items:center; gap:8px; background:var(--forest); color:#fff; padding:14px 26px; border-radius:999px; font-weight:700; font-size:14px; transition:background 0.2s; }
+    .btn-official:hover { background:var(--forest-dark); }
+    .related { background:var(--sand); padding:56px 24px; }
+    .related-inner { max-width:1100px; margin:0 auto; }
+    .related-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .related-card { background:#fff; border-radius:14px; padding:20px 22px; border:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; transition:transform 0.2s,border-color 0.2s; }
+    .related-card:hover { transform:translateX(4px); border-color:var(--forest); }
+    .related-card-name { font-family:var(--serif); font-weight:700; font-size:15px; color:var(--forest); }
+    .related-card-arrow { color:var(--orange); font-size:18px; }
+    .airport-banner { background:linear-gradient(135deg,var(--ocean),#2E6A8F); color:#fff; padding:20px 24px; border-radius:16px; margin-bottom:32px; display:flex; gap:16px; align-items:center; }
+    .airport-banner-icon { font-size:32px; }
+    .airport-banner-title { font-weight:700; font-size:16px; margin-bottom:4px; }
+    .airport-banner-sub { font-size:12px; opacity:0.85; }
+    footer { background:var(--forest-dark); color:rgba(255,255,255,0.7); padding:40px 24px; text-align:center; font-size:13px; }
+    footer a { color:#fff; font-weight:600; }
+    #sticky-cta { position:fixed; bottom:0; left:0; right:0; z-index:200; background:rgba(255,255,255,0.98); border-top:1px solid var(--line); box-shadow:0 -4px 20px rgba(0,0,0,0.12); padding:10px 12px; display:flex; gap:8px; justify-content:center; backdrop-filter:blur(10px); }
+    #sticky-cta .sc-btn { flex:1; max-width:240px; text-align:center; padding:13px 10px; border-radius:12px; font-weight:700; font-size:14px; color:#fff; line-height:1.2; box-shadow:0 3px 10px rgba(0,0,0,0.18); display:flex; align-items:center; justify-content:center; gap:6px; }
+    #sticky-cta .sc-jalan { background:linear-gradient(135deg,var(--orange),var(--orange-dark)); }
+    #sticky-cta .sc-rakuten { background:linear-gradient(135deg,#c81d1d,#8f0000); }
+    @media (min-width:900px) { #sticky-cta { max-width:640px; left:50%; transform:translateX(-50%); right:auto; border-radius:16px 16px 0 0; } }
+    #btt { position:fixed; bottom:90px; right:16px; z-index:150; width:44px; height:44px; border-radius:50%; border:none; background:var(--forest); color:#fff; font-size:14px; font-weight:700; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.25); opacity:0; pointer-events:none; transition:opacity 0.25s,transform 0.25s; }
+    #btt.show { opacity:1; pointer-events:auto; }
+    #btt:hover { background:var(--forest-dark); }
+    @media (max-width:900px) {
+      .pricing-grid { grid-template-columns:1fr; }
+      .character-grid { grid-template-columns:1fr; gap:24px; }
+      .character-img { aspect-ratio:16/10; }
+      .access-grid { grid-template-columns:1fr; }
+      .play-grid { grid-template-columns:1fr; }
+      .booking-grid { grid-template-columns:1fr; }
+      .contact-grid { grid-template-columns:1fr; }
+      .related-cards { grid-template-columns:1fr; }
+      .stats-inner { grid-template-columns:repeat(2,1fr); gap:16px 4px; }
+      .stat-item:nth-child(2) { border-right:none; }
+      .section { padding:56px 20px; }
+    }
+  </style>
 </head>
 <body>
-<header class="page-header">
-  <h1>⛳ 福岡レイクサイドカントリークラブ</h1>
-  <p>Fukuoka Lakeside Country Club<br>후쿠오카 레이크사이드 컨트리클럽</p>
-</header>
-<img src="images/spring-forest.webp" class="course-hero" alt="コース周辺の景色" loading="lazy" width="900" height="600">
-<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a></div>
-<div class="lang-bar">
-  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
-  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
-  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+
+<a href="index.html" class="back-link">← Top</a>
+
+<div class="lang-switcher" role="tablist">
+  <button class="on" onclick="sw('ja')">JA</button>
+  <button onclick="sw('en')">EN</button>
+  <button onclick="sw('ko')">KO</button>
 </div>
 
-<!-- ════ 日本語 ════ -->
+<!-- ═══════════════ 日本語 ═══════════════ -->
 <div id="c-ja" class="content on">
 
-  <div class="sec-head">📋 基本情報</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">📋</span><span class="title">コース概要</span></div>
-    <div class="card-body">
-      <div class="fact-grid">
-        <div class="fact-item"><span class="f-icon">⛳</span><span class="f-label">ホール数</span><span class="f-val">18ホール</span></div>
-        <div class="fact-item"><span class="f-icon">🚙</span><span class="f-label">カート</span><span class="f-val">乗用カートあり</span></div>
-        <div class="fact-item"><span class="f-icon">🌊</span><span class="f-label">コース特徴</span><span class="f-val">12ホールに池</span></div>
-        <div class="fact-item"><span class="f-icon">🏞️</span><span class="f-label">ロケーション</span><span class="f-val">久保白ダム湖畔</span></div>
-        <div class="fact-item"><span class="f-icon">🌙</span><span class="f-label">ナイター</span><span class="f-val">2025年4月1日〜<span class="new-badge">NEW</span></span></div>
-        <div class="fact-item"><span class="f-icon">🌤️</span><span class="f-label">午後スルー</span><span class="f-val">対応あり</span></div>
+  <section class="hero">
+    <div class="hero-img"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">— 飯塚市</div>
+      <h1 class="hero-title">福岡レイクサイドカントリークラブ</h1>
+      <div class="hero-sub">Fukuoka Lakeside Country Club ｜ 18H</div>
+      <div class="hero-badges">
+        <span class="hero-badge">✈️ 空港から40分</span>
+        <span class="hero-badge">⛳ 18H</span>
+        <span class="hero-badge">💴 ¥4,000〜</span>
       </div>
-      <div class="info-bar"><span>ℹ️</span>久保白ダム湖畔に位置し、18ホール中12ホールに大小さまざまな池が戦略的に配置されたウォーターハザードが特徴のコースです。</div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-num">18<span class="unit">H</span></div><div class="stat-label">Holes</div></div>
+      <div class="stat-item"><div class="stat-num">40<span class="unit">min</span></div><div class="stat-label">From Airport</div></div>
+      <div class="stat-item"><div class="stat-num">¥4,000<span class="unit">〜</span></div><div class="stat-label">Lowest Fee</div></div>
+      <div class="stat-item"><div class="stat-num">JP<span class="unit">/EN/KO</span></div><div class="stat-label">3 Languages</div></div>
     </div>
   </div>
 
-  
-  <div class="sec-head">⭐ このコースの見どころ</div>
-  <div class="card">
-    <div class="card-body">
-      <p style="font-size:0.84rem;line-height:1.8;margin-bottom:14px;">福岡県内でも人気の高いゴルフコースで、整備されたフェアウェイと充実した施設が多くのプレーヤーに親しまれています。初心者から上級者まで楽しめるバランスの良いコース設計です。</p>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-        <li style="display:flex;gap:10px;font-size:0.84rem;line-height:1.6;"><span style="flex-shrink:0;">✅</span><div><strong>整備されたコースコンディション</strong> — 年間を通じて良好なコース状態が維持されており、快適なプレーが楽しめます。</div></li>
-        <li style="display:flex;gap:10px;font-size:0.84rem;line-height:1.6;"><span style="flex-shrink:0;">✅</span><div><strong>アクセス良好</strong> — 福岡空港から車で約40分のドライブで到着。レンタカーや送迎バスを利用するとスムーズです。</div></li>
-        <li style="display:flex;gap:10px;font-size:0.84rem;line-height:1.6;"><span style="flex-shrink:0;">✅</span><div><strong>ハーフターン休憩あり</strong> — 前半9ホール後にレストランで食事休憩。日本ゴルフ文化を体験できる伝統的なスタイルで楽しめます。</div></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="sec-head">📞 連絡先・所在地</div>
-  <div class="card">
-    <div class="card-body">
-      <div class="contact-row"><span class="c-icon">📍</span><div><strong>住所</strong><br>〒820-0077 福岡県飯塚市椋本611-19</div></div>
-      <div class="contact-row"><span class="c-icon">📞</span><div><strong>電話</strong><br>0948-65-3636</div></div>
-      <div class="contact-row"><span class="c-icon">🏢</span><div><strong>運営</strong><br>パシフィックゴルフマネージメント（PGM）</div></div>
-      <a href="https://booking.pacificgolf.co.jp/guide/160.html" class="official-btn" target="_blank" rel="noopener">
-        🔗 公式サイトで予約・最新情報を見る ↗
-      </a>
-      <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" class="rakuten-btn" target="_blank" rel="nofollow noopener">
-        🏌️ 楽天GORAで予約・料金を確認 →
-      </a>
-    </div>
-  </div>
-
-  <div class="sec-head">🚗 アクセス</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🚗</span><span class="title">車でのアクセス（推奨）</span></div>
-    <div class="card-body">
-      <div class="fact-grid">
-        <div class="fact-item"><span class="f-icon">🚉</span><span class="f-label">博多駅から</span><span class="f-val">車で約40分</span></div>
-        <div class="fact-item"><span class="f-icon">✈️</span><span class="f-label">福岡空港から</span><span class="f-val">車で約40分</span></div>
+  <section class="section">
+    <div class="sec-eyebrow">— Green Fees</div>
+    <h2 class="sec-title">料金を、一目で比べる。</h2>
+    <p class="sec-desc">平日・土日祝・午後スルーを横並びで比較。価格は目安。最新のベストレートは予約サイトでご確認ください。</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-card-head">
+          <div class="price-card-label">WEEKDAY</div>
+          <div class="price-card-name">平日</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-amount"><span class="yen">¥</span>7,000<span class="range">〜12,000</span></div>
+          <div class="price-note">月〜金（祝日除く）。</div>
+        </div>
+        <div class="price-card-cta">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="btn-book btn-jalan" target="_blank" rel="nofollow sponsored noopener">📅 じゃらんゴルフで予約 →</a>
+          <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" class="btn-book btn-rakuten" target="_blank" rel="nofollow sponsored noopener">🏌️ 楽天GORAで予約 →</a>
+        </div>
       </div>
-      <div class="tip-bar"><span>💡</span>Google Maps・Naver Mapsで「福岡レイクサイドカントリークラブ」と検索すると案内されます。</div>
-      <a href="access-lakeside.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--green-dark);text-decoration:none;">🗺️ 詳しいアクセスガイドはこちら →</a>
+
+      <div class="price-card">
+        <div class="price-card-head">
+          <div class="price-card-label">WEEKEND / HOLIDAY</div>
+          <div class="price-card-name">土日祝</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-amount"><span class="yen">¥</span>7,000<span class="range">〜16,000</span></div>
+          <div class="price-note">土・日・祝日。人気時間帯は早めの予約を。</div>
+        </div>
+        <div class="price-card-cta">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="btn-book btn-jalan" target="_blank" rel="nofollow sponsored noopener">📅 じゃらんゴルフで予約 →</a>
+          <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" class="btn-book btn-rakuten" target="_blank" rel="nofollow sponsored noopener">🏌️ 楽天GORAで予約 →</a>
+        </div>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-card-head">
+          <div class="price-card-label">AFTERNOON THROUGH</div>
+          <div class="price-card-name">午後スルー</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-amount"><span class="yen">¥</span>4,000<span class="range">〜8,000</span></div>
+          <div class="price-note">午後スタート・休憩なしで18ホール。コスパ最強プラン。</div>
+        </div>
+        <div class="price-card-cta">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="btn-book btn-jalan" target="_blank" rel="nofollow sponsored noopener">📅 じゃらんゴルフで予約 →</a>
+          <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" class="btn-book btn-rakuten" target="_blank" rel="nofollow sponsored noopener">🏌️ 楽天GORAで予約 →</a>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="sec-head">🏌️ プレースタイル</div>
+  <section class="section section-sand">
+    <div class="character-grid">
+      <div class="character-img" style="background-image:url('images/spring-forest.webp');"></div>
+      <div class="character-body">
+        <div class="sec-eyebrow">— The Course</div>
+        <h2 class="sec-title">福岡レイクサイドカントリークラブ<br>の魅力。</h2>
+        <p>飯塚市に広がる12ホールに池。整備の行き届いたフェアウェイと、戦略性のあるレイアウトで、初心者から上級者まで幅広く楽しめます。福岡空港から車で約40分、日帰りでも十分アクセス可能です。</p>
+        <ul class="check-list">
+          <li><span class="check-icon">✓</span><div><strong>年間通して良好なコースコンディション</strong>整備されたフェアウェイとグリーンで、気持ちよくプレーできます。</div></li>
+          <li><span class="check-icon">✓</span><div><strong>福岡空港から40分</strong>レンタカーや送迎でスムーズに到着できます。</div></li>
+          <li><span class="check-icon">✓</span><div><strong>午後スルーなどプレースタイルも選べる</strong>時間や予算に合わせて柔軟に楽しめるのが魅力です。</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <div class="play-option">
-    <div class="play-option-head"><span>☀️</span>通常ラウンド（18ホール・ハーフ休憩あり）</div>
-    <div class="play-option-body">午前スタート。前半9ホール後にレストランで約40分の休憩を挟み、後半9ホールをプレー。</div>
-  </div>
-  <div class="play-option">
-    <div class="play-option-head"><span>🌤️</span>午後スルー（18ホール・休憩なし）</div>
-    <div class="play-option-body">昼過ぎスタート。休憩なしで18ホールを続けてプレー。効率よく回りたい方に人気。</div>
-  </div>
-  <div class="play-option" style="border-color:#b0bce8;background:#f4f6fd;">
-    <div class="play-option-head" style="color:var(--blue);"><span>🌙</span>ナイターゴルフ <span class="new-badge">2025年4月1日〜</span></div>
-    <div class="play-option-body">照明設備完備。夕方以降もプレー可能。仕事終わりや観光後にも楽しめます。</div>
-  </div>
+  <section class="section">
+    <div class="sec-eyebrow">— Getting Here</div>
+    <h2 class="sec-title">アクセス</h2>
+    <p class="sec-desc">車でのご来場を推奨。福岡都市高速・九州自動車道経由。</p>
+    <div class="access-grid">
+      <div class="access-card"><div class="access-icon">✈️</div><div class="access-label">From Fukuoka Airport</div><div class="access-value">車で約40分</div></div>
+      <div class="access-card"><div class="access-icon">🚄</div><div class="access-label">From Hakata Station</div><div class="access-value">車で約40分</div></div>
+      <div class="access-card"><div class="access-icon">🛣️</div><div class="access-label">Nearest IC</div><div class="access-value">最寄IC</div></div>
+    </div>
+    <div class="access-tip"><span class="access-tip-icon">💡</span><div>Google Maps・Naver Mapsで「福岡レイクサイドカントリークラブ」と検索すると案内されます。<br><a href="access-lakeside.html" style="color:var(--forest);font-weight:700;text-decoration:underline;">詳しいアクセスガイドを見る →</a></div></div>
+  </section>
 
-  <div class="sec-head">💰 お得な予約のコツ</div>
-  <div class="discount-box">
-    <div class="discount-title">🎯 公式サイト直予約特典</div>
-    <div class="discount-row"><span>📅 平日</span><strong>約7,000〜12,000円</strong></div>
-    <div class="discount-row"><span>🎉 土日祝</span><strong>約7,000〜16,000円</strong></div>
-    <div class="discount-row"><span>🌤️ 午後スルー（平日）</span><strong>約4,000〜8,000円</strong></div>
-  </div>
-  <div class="tip-bar"><span>💡</span>公式サイトから直接予約すると他社予約サイトより割安になります。1人予約プランも対応しています。</div>
+  <section class="section section-sand">
+    <div class="sec-eyebrow">— Play Styles</div>
+    <h2 class="sec-title">プレースタイル</h2>
+    <div class="play-grid">
+      <div class="play-card">
+        <div class="play-card-icon">☀️</div>
+        <div class="play-card-title">通常ラウンド</div>
+        <div class="play-card-desc">午前スタート・18ホール。前半9ホール後にクラブハウスで休憩を挟む、日本ゴルフの王道スタイル。</div>
+      </div>
+      <div class="play-card">
+        <div class="play-card-icon">🌤️</div>
+        <div class="play-card-title">午後スルー</div>
+        <div class="play-card-desc">午後スタート・休憩なしで18ホール続けてプレー。半日でラウンドできて料金もお得。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-forest booking-hub">
+    <div style="max-width:1100px;margin:0 auto 32px;text-align:center;">
+      <div class="sec-eyebrow">— Book Your Tee Time</div>
+      <h2 class="sec-title">今すぐ、ベストレートを確認。</h2>
+      <p class="sec-desc" style="margin:0 auto 0;">日本最大級のゴルフ予約サイトで、最新の空き状況と価格をチェック。両サイトを比較すると、プランによって差が出ることも。</p>
+    </div>
+    <div class="booking-grid">
+      <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="booking-card" target="_blank" rel="nofollow sponsored noopener">
+        <div class="booking-logo">01 ／ JALAN GOLF</div>
+        <div class="booking-service-name">じゃらんゴルフ</div>
+        <div class="booking-desc">リクルートが運営する国内最大級のゴルフ予約サイト。Pontaポイントも貯まる・使える。</div>
+        <div class="booking-price-tag">最安 <span class="big">¥4,000</span>〜</div>
+        <div class="booking-arrow">ベストレートで予約する <span class="arrow-ico">→</span></div>
+      </a>
+      <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" class="booking-card" target="_blank" rel="nofollow sponsored noopener">
+        <div class="booking-logo">02 ／ RAKUTEN GORA</div>
+        <div class="booking-service-name">楽天GORA</div>
+        <div class="booking-desc">楽天ポイントが貯まる・使えるゴルフ予約サイト。SPUでポイント倍率アップの日も。</div>
+        <div class="booking-price-tag">最安 <span class="big">¥4,000</span>〜</div>
+        <div class="booking-arrow">ベストレートで予約する <span class="arrow-ico">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-eyebrow">— Contact</div>
+    <h2 class="sec-title">連絡先・公式情報</h2>
+    <div class="contact-grid">
+      <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Address</div><div class="contact-value">飯塚市 椋本611-19</div></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone</div><div class="contact-value">0948-65-3636</div></div></div>
+      <div class="contact-item"><div class="contact-icon">🌐</div><div><div class="contact-label">Website</div><div class="contact-value">booking.pacificgolf.co.jp</div></div></div>
+    </div>
+    <a href="https://booking.pacificgolf.co.jp/guide/160.html" class="btn-official" target="_blank" rel="noopener">🔗 公式サイトで最新情報を見る ↗</a>
+  </section>
+
+  <section class="related">
+    <div class="related-inner">
+      <div class="sec-eyebrow">— Related Courses</div>
+      <h2 class="sec-title" style="margin-bottom:28px;">近くのコースも見る</h2>
+      <div class="related-cards">
+        <a href="course-ogori.html" class="related-card"><span class="related-card-name">小郡CC</span><span class="related-card-arrow">→</span></a>
+        <a href="course-dazaifu.html" class="related-card"><span class="related-card-name">太宰府CC</span><span class="related-card-arrow">→</span></a>
+        <a href="course-chikushino.html" class="related-card"><span class="related-card-name">筑紫野GC</span><span class="related-card-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
 
 </div><!-- /ja -->
 
-<!-- ════ English ════ -->
+<!-- ═══════════════ English ═══════════════ -->
 <div id="c-en" class="content">
 
-  <div class="sec-head">📋 Course Overview</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">📋</span><span class="title">Basic Specs</span></div>
-    <div class="card-body">
-      <div class="fact-grid">
-        <div class="fact-item"><span class="f-icon">⛳</span><span class="f-label">Holes</span><span class="f-val">18 holes</span></div>
-        <div class="fact-item"><span class="f-icon">🚙</span><span class="f-label">Cart</span><span class="f-val">Riding carts</span></div>
-        <div class="fact-item"><span class="f-icon">🌊</span><span class="f-label">Feature</span><span class="f-val">Water on 12 holes</span></div>
-        <div class="fact-item"><span class="f-icon">🏞️</span><span class="f-label">Location</span><span class="f-val">Kuboshiro Dam</span></div>
-        <div class="fact-item"><span class="f-icon">🌙</span><span class="f-label">Night Golf</span><span class="f-val">From Apr 1, 2025<span class="new-badge">NEW</span></span></div>
-        <div class="fact-item"><span class="f-icon">🌤️</span><span class="f-label">Afternoon Through</span><span class="f-val">Available</span></div>
+  <section class="hero">
+    <div class="hero-img"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">— 飯塚市</div>
+      <h1 class="hero-title">Fukuoka Lakeside Country Club</h1>
+      <div class="hero-sub">福岡レイクサイドカントリークラブ ｜ 18 Holes</div>
+      <div class="hero-badges">
+        <span class="hero-badge">✈️ 40 min from airport</span>
+        <span class="hero-badge">⛳ 18 holes</span>
+        <span class="hero-badge">💴 From ¥4,000</span>
       </div>
-      <div class="info-bar"><span>ℹ️</span>Set along the shores of Kuboshiro Dam, 12 of the 18 holes feature strategically placed water hazards — a hallmark of this lakeside layout.</div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-num">18<span class="unit">H</span></div><div class="stat-label">Holes</div></div>
+      <div class="stat-item"><div class="stat-num">40<span class="unit">min</span></div><div class="stat-label">From Airport</div></div>
+      <div class="stat-item"><div class="stat-num">¥4,000<span class="unit">〜</span></div><div class="stat-label">Lowest Fee</div></div>
+      <div class="stat-item"><div class="stat-num">JP<span class="unit">/EN/KO</span></div><div class="stat-label">3 Languages</div></div>
     </div>
   </div>
 
-  
-  <div class="sec-head">⭐ Course Highlights</div>
-  <div class="card">
-    <div class="card-body">
-      <p style="font-size:0.84rem;line-height:1.8;margin-bottom:14px;">A popular golf course in the Fukuoka area, well-maintained with excellent facilities. A well-balanced layout suited to players of all levels, from beginners to experienced golfers.</p>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-        <li style="display:flex;gap:10px;font-size:0.84rem;line-height:1.6;"><span style="flex-shrink:0;">✅</span><div><strong>Well-maintained course conditions</strong> — Consistently great playing conditions year-round for a comfortable, enjoyable round.</div></li>
-        <li style="display:flex;gap:10px;font-size:0.84rem;line-height:1.6;"><span style="flex-shrink:0;">✅</span><div><strong>Easy access</strong> — Approximately ~40 min from Fukuoka Airport by car. Rental cars or courtesy buses are recommended.</div></li>
-        <li style="display:flex;gap:10px;font-size:0.84rem;line-height:1.6;"><span style="flex-shrink:0;">✅</span><div><strong>Half-turn restaurant break included</strong> — Enjoy a ~40-min lunch break after the front 9. Experience traditional Japanese golf culture.</div></li>
-      </ul>
-    </div>
-  </div>
+  <section class="section">
+    <div class="sec-eyebrow">— Green Fees</div>
+    <h2 class="sec-title">Compare at a glance.</h2>
+    <p class="sec-desc">Weekday, weekend, and afternoon-through rates side by side. Prices are indicative — check the booking sites for the latest best rate.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-card-head">
+          <div class="price-card-label">WEEKDAY</div>
+          <div class="price-card-name">Monday–Friday</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-amount"><span class="yen">¥</span>7,000<span class="range">〜12,000</span></div>
+          <div class="price-note">Often includes lunch and facility fees.</div>
+        </div>
+        <div class="price-card-cta">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="btn-book btn-jalan" target="_blank" rel="nofollow sponsored noopener">📅 Book on Jalan Golf →</a>
+          <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" class="btn-book btn-rakuten" target="_blank" rel="nofollow sponsored noopener">🏌️ Book on Rakuten GORA →</a>
+        </div>
+      </div>
 
-  <div class="sec-head">📞 Contact & Location</div>
-  <div class="card">
-    <div class="card-body">
-      <div class="contact-row"><span class="c-icon">📍</span><div><strong>Address</strong><br>611-19 Mukumoto, Iizuka City, Fukuoka 820-0077</div></div>
-      <div class="contact-row"><span class="c-icon">📞</span><div><strong>Phone</strong><br>0948-65-3636</div></div>
-      <div class="contact-row"><span class="c-icon">🏢</span><div><strong>Operated by</strong><br>Pacific Golf Management (PGM)</div></div>
-      <a href="https://booking.pacificgolf.co.jp/guide/160.html" class="official-btn" target="_blank" rel="noopener">
-        🔗 Official Website — Book & Latest Info ↗
+      <div class="price-card">
+        <div class="price-card-head">
+          <div class="price-card-label">WEEKEND / HOLIDAY</div>
+          <div class="price-card-name">Sat · Sun · Holidays</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-amount"><span class="yen">¥</span>7,000<span class="range">〜16,000</span></div>
+          <div class="price-note">Peak times book out early — reserve ahead.</div>
+        </div>
+        <div class="price-card-cta">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="btn-book btn-jalan" target="_blank" rel="nofollow sponsored noopener">📅 Book on Jalan Golf →</a>
+          <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" class="btn-book btn-rakuten" target="_blank" rel="nofollow sponsored noopener">🏌️ Book on Rakuten GORA →</a>
+        </div>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-card-head">
+          <div class="price-card-label">AFTERNOON THROUGH</div>
+          <div class="price-card-name">Weekday Afternoon</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-amount"><span class="yen">¥</span>4,000<span class="range">〜8,000</span></div>
+          <div class="price-note">18 holes straight through. Best value plan.</div>
+        </div>
+        <div class="price-card-cta">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="btn-book btn-jalan" target="_blank" rel="nofollow sponsored noopener">📅 Book on Jalan Golf →</a>
+          <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" class="btn-book btn-rakuten" target="_blank" rel="nofollow sponsored noopener">🏌️ Book on Rakuten GORA →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="character-grid">
+      <div class="character-img" style="background-image:url('images/spring-forest.webp');"></div>
+      <div class="character-body">
+        <div class="sec-eyebrow">— The Course</div>
+        <h2 class="sec-title">Why golfers love<br>this course.</h2>
+        <p>A well-balanced layout in 飯塚市, with nicely maintained fairways and a course design suited to all skill levels. About 40 minutes from Fukuoka Airport by car — a perfect day-trip destination.</p>
+        <ul class="check-list">
+          <li><span class="check-icon">✓</span><div><strong>Year-round great conditions</strong>Consistently maintained fairways and greens, enjoyable for every skill level.</div></li>
+          <li><span class="check-icon">✓</span><div><strong>40 min from Fukuoka Airport</strong>Easy by rental car or courtesy bus.</div></li>
+          <li><span class="check-icon">✓</span><div><strong>Flexible play styles</strong>Choose morning rounds with a half-turn break, or afternoon-through for half-day value.</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-eyebrow">— Getting Here</div>
+    <h2 class="sec-title">Access</h2>
+    <p class="sec-desc">Car is recommended. Via Fukuoka Urban Expressway / Kyushu Expressway.</p>
+    <div class="access-grid">
+      <div class="access-card"><div class="access-icon">✈️</div><div class="access-label">From Fukuoka Airport</div><div class="access-value">~40 min by car</div></div>
+      <div class="access-card"><div class="access-icon">🚄</div><div class="access-label">From Hakata Station</div><div class="access-value">~40 min by car</div></div>
+      <div class="access-card"><div class="access-icon">🛣️</div><div class="access-label">Nearest IC</div><div class="access-value">Nearest IC</div></div>
+    </div>
+    <div class="access-tip"><span class="access-tip-icon">💡</span><div>Search "福岡レイクサイドカントリークラブ" in Google Maps or Naver Maps.<br><a href="access-lakeside.html" style="color:var(--forest);font-weight:700;text-decoration:underline;">Full access guide →</a></div></div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="sec-eyebrow">— Play Styles</div>
+    <h2 class="sec-title">Two ways to play.</h2>
+    <div class="play-grid">
+      <div class="play-card">
+        <div class="play-card-icon">☀️</div>
+        <div class="play-card-title">Standard Round</div>
+        <div class="play-card-desc">Morning start, 18 holes with a lunch break after the front 9 — the classic Japanese format.</div>
+      </div>
+      <div class="play-card">
+        <div class="play-card-icon">🌤️</div>
+        <div class="play-card-title">Afternoon Through</div>
+        <div class="play-card-desc">Afternoon start, 18 holes played straight through — half-day golf at the best price.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-forest booking-hub">
+    <div style="max-width:1100px;margin:0 auto 32px;text-align:center;">
+      <div class="sec-eyebrow">— Book Your Tee Time</div>
+      <h2 class="sec-title">Check the best rate now.</h2>
+      <p class="sec-desc" style="margin:0 auto 0;">Japan's two biggest tee-time booking platforms. Comparing both often reveals meaningful differences.</p>
+    </div>
+    <div class="booking-grid">
+      <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="booking-card" target="_blank" rel="nofollow sponsored noopener">
+        <div class="booking-logo">01 ／ JALAN GOLF</div>
+        <div class="booking-service-name">Jalan Golf</div>
+        <div class="booking-desc">Japan's largest tee-time booking site. Earn and use Ponta points.</div>
+        <div class="booking-price-tag">From <span class="big">¥4,000</span></div>
+        <div class="booking-arrow">Book at best rate <span class="arrow-ico">→</span></div>
+      </a>
+      <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" class="booking-card" target="_blank" rel="nofollow sponsored noopener">
+        <div class="booking-logo">02 ／ RAKUTEN GORA</div>
+        <div class="booking-service-name">Rakuten GORA</div>
+        <div class="booking-desc">Earn and use Rakuten points. SPU campaigns can multiply returns.</div>
+        <div class="booking-price-tag">From <span class="big">¥4,000</span></div>
+        <div class="booking-arrow">Book at best rate <span class="arrow-ico">→</span></div>
       </a>
     </div>
-  </div>
+  </section>
 
-  <div class="sec-head">🚗 Getting Here</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🚗</span><span class="title">By Car (Recommended)</span></div>
-    <div class="card-body">
-      <div class="fact-grid">
-        <div class="fact-item"><span class="f-icon">🚉</span><span class="f-label">From Hakata Station</span><span class="f-val">~40 min by car</span></div>
-        <div class="fact-item"><span class="f-icon">✈️</span><span class="f-label">From Fukuoka Airport</span><span class="f-val">~40 min by car</span></div>
-      </div>
-      <div class="tip-bar"><span>💡</span>Search "Fukuoka Lakeside Country Club" in Google Maps or Naver Maps for directions.</div>
-      <a href="access-lakeside.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--green-dark);text-decoration:none;">🗺️ Full Access Guide →</a>
+  <section class="section">
+    <div class="sec-eyebrow">— Contact</div>
+    <h2 class="sec-title">Contact & Official</h2>
+    <div class="contact-grid">
+      <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Address</div><div class="contact-value">飯塚市</div></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone</div><div class="contact-value">0948-65-3636</div></div></div>
+      <div class="contact-item"><div class="contact-icon">🌐</div><div><div class="contact-label">Website</div><div class="contact-value">booking.pacificgolf.co.jp</div></div></div>
     </div>
-  </div>
+    <a href="https://booking.pacificgolf.co.jp/guide/160.html" class="btn-official" target="_blank" rel="noopener">🔗 Visit Official Website ↗</a>
+  </section>
 
-  <div class="sec-head">🏌️ Play Styles</div>
-
-  <div class="play-option">
-    <div class="play-option-head"><span>☀️</span>Standard Round (18 holes with half-turn break)</div>
-    <div class="play-option-body">Morning start. ~40-min break at the restaurant after the front 9, then back for the final 9.</div>
-  </div>
-  <div class="play-option">
-    <div class="play-option-head"><span>🌤️</span>Afternoon Through (18 holes, no break)</div>
-    <div class="play-option-body">Afternoon start. Play all 18 holes straight through — great for those with limited time.</div>
-  </div>
-  <div class="play-option" style="border-color:#b0bce8;background:#f4f6fd;">
-    <div class="play-option-head" style="color:var(--blue);"><span>🌙</span>Night Golf <span class="new-badge">From Apr 1, 2025</span></div>
-    <div class="play-option-body">Floodlit course — evening play now available after sightseeing or work.</div>
-  </div>
-
-  <div class="sec-head">💰 Booking Tips</div>
-  <div class="discount-box">
-    <div class="discount-title">🎯 Direct Booking Discount</div>
-    <div class="discount-row"><span>📅 Weekdays</span><strong>¥7,000–¥12,000</strong></div>
-    <div class="discount-row"><span>🎉 Weekends / Holidays</span><strong>¥7,000–¥16,000</strong></div>
-    <div class="discount-row"><span>🌤️ Afternoon Through (Weekday)</span><strong>¥4,000–¥8,000</strong></div>
-  </div>
-  <div class="tip-bar"><span>💡</span>Booking directly on the official site saves you money vs. third-party booking sites. Single-player booking is also available.</div>
+  <section class="related">
+    <div class="related-inner">
+      <div class="sec-eyebrow">— Related Courses</div>
+      <h2 class="sec-title" style="margin-bottom:28px;">Nearby Courses</h2>
+      <div class="related-cards">
+        <a href="course-ogori.html" class="related-card"><span class="related-card-name">Ogori CC</span><span class="related-card-arrow">→</span></a>
+        <a href="course-dazaifu.html" class="related-card"><span class="related-card-name">Dazaifu CC</span><span class="related-card-arrow">→</span></a>
+        <a href="course-chikushino.html" class="related-card"><span class="related-card-name">Chikushino GC</span><span class="related-card-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
 
 </div><!-- /en -->
 
-<!-- ════ 한국어 ════ -->
+<!-- ═══════════════ 한국어 ═══════════════ -->
 <div id="c-ko" class="content">
 
-  <div class="airport-badge">
-    <div class="airport-badge-time">✈️ 후쿠오카공항에서 차로 약 40분</div>
-    <div class="airport-badge-sub">인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동</div>
-  </div>
-
-
-  <div class="sec-head">📋 기본 정보</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">📋</span><span class="title">코스 개요</span></div>
-    <div class="card-body">
-      <div class="fact-grid">
-        <div class="fact-item"><span class="f-icon">⛳</span><span class="f-label">홀 수</span><span class="f-val">18홀</span></div>
-        <div class="fact-item"><span class="f-icon">🚙</span><span class="f-label">카트</span><span class="f-val">승용 카트 있음</span></div>
-        <div class="fact-item"><span class="f-icon">🌊</span><span class="f-label">코스 특징</span><span class="f-val">12홀에 연못</span></div>
-        <div class="fact-item"><span class="f-icon">🏞️</span><span class="f-label">위치</span><span class="f-val">구보시로댐 호반</span></div>
-        <div class="fact-item"><span class="f-icon">🌙</span><span class="f-label">나이터</span><span class="f-val">2025년 4월 1일~<span class="new-badge">NEW</span></span></div>
-        <div class="fact-item"><span class="f-icon">🌤️</span><span class="f-label">오후 스루</span><span class="f-val">이용 가능</span></div>
+  <section class="hero">
+    <div class="hero-img"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">— 飯塚市</div>
+      <h1 class="hero-title">후쿠오카 레이크사이드 컨트리클럽</h1>
+      <div class="hero-sub">Fukuoka Lakeside Country Club ｜ 18홀</div>
+      <div class="hero-badges">
+        <span class="hero-badge">✈️ 공항에서 40분</span>
+        <span class="hero-badge">⛳ 18홀</span>
+        <span class="hero-badge">💴 ¥4,000부터</span>
       </div>
-      <div class="info-bar"><span>ℹ️</span>구보시로댐 호반에 위치하며, 18홀 중 12홀에 크고 작은 연못이 전략적으로 배치된 워터 해저드가 특징인 코스입니다.</div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-num">18<span class="unit">H</span></div><div class="stat-label">홀 수</div></div>
+      <div class="stat-item"><div class="stat-num">40<span class="unit">분</span></div><div class="stat-label">공항에서</div></div>
+      <div class="stat-item"><div class="stat-num">¥4,000<span class="unit">〜</span></div><div class="stat-label">최저 그린피</div></div>
+      <div class="stat-item"><div class="stat-num">JP<span class="unit">/EN/KO</span></div><div class="stat-label">3개 언어</div></div>
     </div>
   </div>
 
-  
-  <div class="sec-head">⭐ 이 코스의 매력</div>
-  <div class="card">
-    <div class="card-body">
-      <p style="font-size:0.84rem;line-height:1.8;margin-bottom:14px;">후쿠오카현에서도 인기가 높은 골프 코스로, 잘 정비된 페어웨이와 충실한 시설이 많은 플레이어에게 친숙하게 다가옵니다. 초보자부터 상급자까지 즐길 수 있는 균형 잡힌 코스 설계입니다.</p>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-        <li style="display:flex;gap:10px;font-size:0.84rem;line-height:1.6;"><span style="flex-shrink:0;">✅</span><div><strong>잘 정비된 코스 컨디션</strong> — 연중 쾌적한 코스 상태가 유지되어 편안한 플레이를 즐길 수 있습니다.</div></li>
-        <li style="display:flex;gap:10px;font-size:0.84rem;line-height:1.6;"><span style="flex-shrink:0;">✅</span><div><strong>편리한 접근성</strong> — 후쿠오카공항에서 차로 약 40분 거리. 렌터카나 셔틀버스 이용을 추천합니다.</div></li>
-        <li style="display:flex;gap:10px;font-size:0.84rem;line-height:1.6;"><span style="flex-shrink:0;">✅</span><div><strong>하프 턴 휴식 있음</strong> — 전반 9홀 후 레스토랑에서 식사·휴식. 일본 골프 문화를 체험할 수 있는 전통적인 스타일로 즐길 수 있습니다.</div></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="sec-head">📞 연락처·위치</div>
-  <div class="card">
-    <div class="card-body">
-      <div class="contact-row"><span class="c-icon">📍</span><div><strong>주소</strong><br>〒820-0077 후쿠오카현 이이즈카시 무쿠모토 611-19</div></div>
-      <div class="contact-row"><span class="c-icon">📞</span><div><strong>전화</strong><br>0948-65-3636</div></div>
-      <div class="contact-row"><span class="c-icon">🏢</span><div><strong>운영</strong><br>퍼시픽 골프 매니지먼트 (PGM)</div></div>
-      <a href="https://booking.pacificgolf.co.jp/guide/160.html" class="official-btn" target="_blank" rel="noopener">
-        🔗 공식 사이트에서 예약·최신 정보 보기 ↗
-      </a>
-      <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" class="rakuten-btn" target="_blank" rel="nofollow noopener">
-      <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="jalan-btn" target="_blank" rel="nofollow noopener">
-        <span>⛳ じゃらんゴルフ에서 예약·요금 확인 →</span>
-        <span class="jalan-btn-sub">외국인 예약 OK ｜ 그린피 비교 가능</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="sec-head">🚗 오시는 길</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🚗</span><span class="title">자동차 이용 (추천)</span></div>
-    <div class="card-body">
-      <div class="fact-grid">
-        <div class="fact-item"><span class="f-icon">🚉</span><span class="f-label">하카타역에서</span><span class="f-val">차로 약 40분</span></div>
-        <div class="fact-item"><span class="f-icon">✈️</span><span class="f-label">후쿠오카공항에서</span><span class="f-val">차로 약 40분</span></div>
+  <section class="section">
+    <div class="airport-banner">
+      <div class="airport-banner-icon">✈️</div>
+      <div>
+        <div class="airport-banner-title">후쿠오카공항에서 차로 약 40분</div>
+        <div class="airport-banner-sub">인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동</div>
       </div>
-      <div class="tip-bar"><span>💡</span>Google Maps·Naver Maps에서 「후쿠오카 레이크사이드 컨트리클럽」으로 검색하면 안내됩니다.</div>
-      <a href="access-lakeside.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--green-dark);text-decoration:none;">🗺️ 자세한 오시는 길 가이드 →</a>
     </div>
-  </div>
 
-  <div class="sec-head">🏌️ 플레이 스타일</div>
+    <div class="sec-eyebrow">— 그린피</div>
+    <h2 class="sec-title">한눈에 비교하는 요금.</h2>
+    <p class="sec-desc">평일·주말·오후 스루 3가지 플랜을 나란히 비교. 최신 요금은 예약 사이트에서 확인해 주세요.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-card-head">
+          <div class="price-card-label">WEEKDAY</div>
+          <div class="price-card-name">평일</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-amount"><span class="yen">¥</span>7,000<span class="range">〜12,000</span></div>
+          <div class="price-note">월〜금 (공휴일 제외). <span style="color:var(--ocean);font-size:12px;"><span style="color:#1a3a8f;font-size:0.78rem;">(약 7만원〜12만원)</span></span></div>
+        </div>
+        <div class="price-card-cta">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="btn-book btn-jalan" target="_blank" rel="nofollow sponsored noopener">📅 자란골프에서 예약 →</a>
+        </div>
+      </div>
 
-  <div class="play-option">
-    <div class="play-option-head"><span>☀️</span>일반 라운드 (18홀·하프 휴식 있음)</div>
-    <div class="play-option-body">오전 출발. 전반 9홀 후 레스토랑에서 약 40분 휴식, 이후 후반 9홀 플레이.</div>
-  </div>
-  <div class="play-option">
-    <div class="play-option-head"><span>🌤️</span>오후 스루 (18홀·휴식 없음)</div>
-    <div class="play-option-body">오후 출발. 휴식 없이 18홀 연속 플레이. 시간을 효율적으로 쓰고 싶은 분에게 인기.</div>
-  </div>
-  <div class="play-option" style="border-color:#b0bce8;background:#f4f6fd;">
-    <div class="play-option-head" style="color:var(--blue);"><span>🌙</span>나이터 골프 <span class="new-badge">2025년 4월 1일~</span></div>
-    <div class="play-option-body">조명 완비. 저녁 이후 플레이 가능. 관광이나 일과 후에도 즐길 수 있습니다.</div>
-  </div>
+      <div class="price-card">
+        <div class="price-card-head">
+          <div class="price-card-label">WEEKEND / HOLIDAY</div>
+          <div class="price-card-name">토·일·공휴일</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-amount"><span class="yen">¥</span>7,000<span class="range">〜16,000</span></div>
+          <div class="price-note">인기 시간대는 일찍 예약하세요. <span style="color:var(--ocean);font-size:12px;"><span style="color:#1a3a8f;font-size:0.78rem;">(약 7만원〜16만원)</span></span></div>
+        </div>
+        <div class="price-card-cta">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="btn-book btn-jalan" target="_blank" rel="nofollow sponsored noopener">📅 자란골프에서 예약 →</a>
+        </div>
+      </div>
 
-  <div class="sec-head">💰 예약 혜택</div>
-  <div class="discount-box">
-    <div class="discount-title">🎯 공식 사이트 직접 예약 특전</div>
-    <div class="discount-row"><span>📅 평일</span><strong>약 7,000〜12,000엔 <span style="color:#1a3a8f;font-size:0.78rem;">(약 7만원〜12만원)</span></strong></div>
-    <div class="discount-row"><span>🎉 토·일·공휴일</span><strong>약 7,000〜16,000엔 <span style="color:#1a3a8f;font-size:0.78rem;">(약 7만원〜16만원)</span></strong></div>
-    <div class="discount-row"><span>🌤️ 오후 스루 (평일)</span><strong>약 4,000〜8,000엔 <span style="color:#1a3a8f;font-size:0.78rem;">(약 4만원〜8만원)</span></strong></div>
-  </div>
-  <div class="tip-bar"><span>💡</span>공식 사이트에서 직접 예약하면 타사 예약 사이트보다 저렴합니다. 1인 예약 플랜도 이용 가능합니다.</div>
+      <div class="price-card featured">
+        <div class="price-card-head">
+          <div class="price-card-label">AFTERNOON THROUGH</div>
+          <div class="price-card-name">오후 스루</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-amount"><span class="yen">¥</span>4,000<span class="range">〜8,000</span></div>
+          <div class="price-note">오후 출발·휴식 없이 18홀 연속. 가성비 최고 플랜. <span style="color:var(--ocean);font-size:12px;"><span style="color:#1a3a8f;font-size:0.78rem;">(약 4만원〜8만원)</span></span></div>
+        </div>
+        <div class="price-card-cta">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="btn-book btn-jalan" target="_blank" rel="nofollow sponsored noopener">📅 자란골프에서 예약 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="character-grid">
+      <div class="character-img" style="background-image:url('images/spring-forest.webp');"></div>
+      <div class="character-body">
+        <div class="sec-eyebrow">— 코스 소개</div>
+        <h2 class="sec-title">이 코스의<br>매력.</h2>
+        <p>飯塚市에 위치한 균형 잡힌 코스. 잘 정비된 페어웨이와 전략적인 레이아웃으로 초보자부터 상급자까지 모두 즐길 수 있습니다. 후쿠오카공항에서 차로 약 40분로 당일치기 여행에도 최적입니다.</p>
+        <ul class="check-list">
+          <li><span class="check-icon">✓</span><div><strong>연중 쾌적한 코스 컨디션</strong>정비된 페어웨이와 그린으로 편안하게 플레이할 수 있습니다.</div></li>
+          <li><span class="check-icon">✓</span><div><strong>후쿠오카공항에서 40분</strong>렌터카나 셔틀로 간편하게 도착합니다.</div></li>
+          <li><span class="check-icon">✓</span><div><strong>유연한 플레이 스타일</strong>오전 라운드·오후 스루 등 시간과 예산에 맞춰 선택할 수 있습니다.</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-eyebrow">— 오시는 길</div>
+    <h2 class="sec-title">액세스</h2>
+    <p class="sec-desc">자동차 추천. 후쿠오카 도시 고속도로·규슈 고속도로 경유.</p>
+    <div class="access-grid">
+      <div class="access-card"><div class="access-icon">✈️</div><div class="access-label">후쿠오카공항에서</div><div class="access-value">차로 약 40분</div></div>
+      <div class="access-card"><div class="access-icon">🚄</div><div class="access-label">하카타역에서</div><div class="access-value">차로 약 40분</div></div>
+      <div class="access-card"><div class="access-icon">🛣️</div><div class="access-label">최근 IC</div><div class="access-value">최근 IC</div></div>
+    </div>
+    <div class="access-tip"><span class="access-tip-icon">💡</span><div>Google Maps 또는 Naver Maps에서 「福岡レイクサイドカントリークラブ」로 검색하세요.<br><a href="access-lakeside.html" style="color:var(--forest);font-weight:700;text-decoration:underline;">자세한 오시는 길 가이드 →</a></div></div>
+  </section>
+
+  <section class="section section-sand">
+    <div class="sec-eyebrow">— 플레이 스타일</div>
+    <h2 class="sec-title">두 가지 플레이 방식.</h2>
+    <div class="play-grid">
+      <div class="play-card">
+        <div class="play-card-icon">☀️</div>
+        <div class="play-card-title">일반 라운드</div>
+        <div class="play-card-desc">오전 출발, 18홀. 전반 9홀 후 클럽하우스에서 점심 휴식. 일본 골프의 정통 스타일.</div>
+      </div>
+      <div class="play-card">
+        <div class="play-card-icon">🌤️</div>
+        <div class="play-card-title">오후 스루</div>
+        <div class="play-card-desc">오후 출발, 휴식 없이 18홀 연속 플레이. 반나절에 끝나고 요금도 가성비 최고.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-forest booking-hub">
+    <div style="max-width:1100px;margin:0 auto 32px;text-align:center;">
+      <div class="sec-eyebrow">— 티타임 예약</div>
+      <h2 class="sec-title">지금 베스트 레이트 확인.</h2>
+      <p class="sec-desc" style="margin:0 auto 0;">일본 최대 골프 예약 사이트에서 최신 빈자리와 가격을 확인하세요.</p>
+    </div>
+    <div class="booking-grid" style="grid-template-columns:1fr;max-width:600px;">
+      <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="booking-card" target="_blank" rel="nofollow sponsored noopener">
+        <div class="booking-logo">JALAN GOLF ／ 자란골프</div>
+        <div class="booking-service-name">자란골프에서 예약</div>
+        <div class="booking-desc">일본 최대 규모의 골프 예약 사이트. 그린피·플레이 스타일·식사 포함 여부를 한눈에 비교할 수 있습니다.</div>
+        <div class="booking-price-tag">최저 <span class="big">¥4,000</span>부터</div>
+        <div class="booking-arrow">베스트 레이트로 예약하기 <span class="arrow-ico">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-eyebrow">— 연락처</div>
+    <h2 class="sec-title">연락처·공식 정보</h2>
+    <div class="contact-grid">
+      <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">주소</div><div class="contact-value">飯塚市</div></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">전화</div><div class="contact-value">0948-65-3636</div></div></div>
+      <div class="contact-item"><div class="contact-icon">🌐</div><div><div class="contact-label">웹사이트</div><div class="contact-value">booking.pacificgolf.co.jp</div></div></div>
+    </div>
+    <a href="https://booking.pacificgolf.co.jp/guide/160.html" class="btn-official" target="_blank" rel="noopener">🔗 공식 사이트에서 최신 정보 보기 ↗</a>
+  </section>
+
+  <section class="related">
+    <div class="related-inner">
+      <div class="sec-eyebrow">— 관련 코스</div>
+      <h2 class="sec-title" style="margin-bottom:28px;">근처 코스 보기</h2>
+      <div class="related-cards">
+        <a href="course-ogori.html" class="related-card"><span class="related-card-name">오고리 CC</span><span class="related-card-arrow">→</span></a>
+        <a href="course-dazaifu.html" class="related-card"><span class="related-card-name">다자이후 CC</span><span class="related-card-arrow">→</span></a>
+        <a href="course-chikushino.html" class="related-card"><span class="related-card-name">지쿠시노 GC</span><span class="related-card-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
 
 </div><!-- /ko -->
 
-<div style="max-width:680px;margin:0 auto;padding:12px 16px 28px;">
-  <div style="font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#6b7280;margin-bottom:10px;">🔗 関連コース / Related Courses / 관련 코스</div>
-  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
-    <a href="course-ogori.html" style="display:inline-block;background:#fff;border:1.5px solid #b8d9c5;border-radius:8px;padding:7px 14px;font-size:0.8rem;font-weight:700;text-decoration:none;color:#1a5c38;">小郡CC / Ogori CC / 오고리 CC</a>
-    <a href="course-dazaifu.html" style="display:inline-block;background:#fff;border:1.5px solid #b8d9c5;border-radius:8px;padding:7px 14px;font-size:0.8rem;font-weight:700;text-decoration:none;color:#1a5c38;">太宰府CC / Dazaifu CC / 다자이후 CC</a>
-    <a href="course-chikushino.html" style="display:inline-block;background:#fff;border:1.5px solid #b8d9c5;border-radius:8px;padding:7px 14px;font-size:0.8rem;font-weight:700;text-decoration:none;color:#1a5c38;">筑紫野GC / Chikushino GC / 지쿠시노 GC</a>
-  </div>
-  <a href="recommend.html" style="display:block;background:linear-gradient(135deg,#1a5c38,#2e8b57);color:#fff;text-align:center;padding:11px 16px;border-radius:10px;text-decoration:none;font-size:0.82rem;font-weight:700;">⭐ 目的別おすすめ特集 / Best Courses by Purpose / 추천 골프장 특집 →</a>
-</div>
-<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　福岡ゴルフ場ガイド — 最新情報は<a href="https://booking.pacificgolf.co.jp/guide/160.html" target="_blank" rel="noopener">公式サイト</a>でご確認ください</footer>
+<footer>
+  ⛳ 福岡ゴルフ場ガイド ｜ Fukuoka Golf Guide ｜ 후쿠오카 골프 가이드<br>
+  <small><a href="index.html">トップへ戻る / Back to Top / 목록으로</a></small>
+</footer>
 
-<script>
-  function sw(l){['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));window.scrollTo({top:0,behavior:'smooth'});}
-</script>
-
-  <!-- トップに戻るボタン -->
-  <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップに戻る">▲</button>
-  <style>
-    #btt {
-      position: fixed; bottom: 20px; right: 16px; z-index: 999;
-      width: 44px; height: 44px; border-radius: 50%; border: none;
-      background: #2e8b57; color: #fff; font-size: 1rem; font-weight: 700;
-      cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.25);
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.25s, transform 0.25s;
-      transform: translateY(8px);
-    }
-    #btt.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
-    #btt:hover { background: #1a5c38; }
-  </style>
-  <script>
-    (function(){
-      var btn = document.getElementById('btt');
-      window.addEventListener('scroll', function(){
-        btn.classList.toggle('show', window.scrollY > 300);
-      }, {passive: true});
-    })();
-  </script>
-<!-- STICKY_CTA -->
-<style>
-  #sticky-cta { position:fixed; bottom:0; left:0; right:0; z-index:200;
-    background:rgba(255,255,255,0.98); border-top:2px solid #e0c0a0;
-    box-shadow:0 -4px 14px rgba(0,0,0,0.14); padding:8px 10px 10px;
-    display:flex; gap:6px; justify-content:center; align-items:center; }
-  #sticky-cta .sc-btn { flex:1; max-width:200px; text-align:center;
-    padding:11px 8px; border-radius:10px; font-weight:800; font-size:0.86rem;
-    color:#fff; text-decoration:none; line-height:1.25;
-    box-shadow:0 2px 5px rgba(0,0,0,0.18); }
-  #sticky-cta .sc-btn:active { transform:translateY(1px); }
-  #sticky-cta .sc-jalan   { background:linear-gradient(135deg,#ff8c00,#e36b00); }
-  #sticky-cta .sc-rakuten { background:linear-gradient(135deg,#c81d1d,#8f0000); }
-  body { padding-bottom:76px; }
-  @media (min-width:900px) {
-    #sticky-cta { max-width:680px; left:50%; transform:translateX(-50%); right:auto;
-      border-radius:14px 14px 0 0; }
-  }
-</style>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップに戻る">▲</button>
 <div id="sticky-cta" aria-label="予約CTA"></div>
+
 <script>
-(function(){
-  var JALAN="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F";
-  var RAKUTEN="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F";
-  var tpl = {
+  function sw(l){
+    ['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on', x===l));
+    document.querySelectorAll('.lang-switcher button').forEach((b,i)=>b.classList.toggle('on', ['ja','en','ko'][i]===l));
+    renderStickyCTA();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  (function(){
+    var btn = document.getElementById('btt');
+    window.addEventListener('scroll', function(){ btn.classList.toggle('show', window.scrollY > 400); }, {passive:true});
+  })();
+  var JALAN="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F";
+  var RAKUTEN="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F";
+  var sttpl = {
     ja:'<a href="'+JALAN+'" class="sc-btn sc-jalan" rel="nofollow sponsored" target="_blank">📅 じゃらん</a>'+
        '<a href="'+RAKUTEN+'" class="sc-btn sc-rakuten" rel="nofollow sponsored" target="_blank">🏌️ 楽天GORA</a>',
     en:'<a href="'+JALAN+'" class="sc-btn sc-jalan" rel="nofollow sponsored" target="_blank">📅 Jalan</a>'+
        '<a href="'+RAKUTEN+'" class="sc-btn sc-rakuten" rel="nofollow sponsored" target="_blank">🏌️ Rakuten GORA</a>',
     ko:'<a href="'+JALAN+'" class="sc-btn sc-jalan" rel="nofollow sponsored" target="_blank" style="max-width:360px;">📅 자란골프에서 예약하기</a>'
   };
-  function render(){
+  function renderStickyCTA(){
     var el = document.getElementById('sticky-cta');
     if (!el) return;
     var active = document.querySelector('.content.on');
     var lang = active ? active.id.replace('c-','') : 'ja';
-    el.innerHTML = tpl[lang] || tpl.ja;
+    el.innerHTML = sttpl[lang] || sttpl.ja;
   }
-  if (document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', render);
-  else render();
-  document.addEventListener('click', function(e){
-    if (e.target.closest('.lbtn')) setTimeout(render, 10);
-  });
-})();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderStickyCTA);
+  else renderStickyCTA();
 </script>
 
 </body>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="小倉カンツリー倶楽部へのアクセス。〒800-0243 北九州市小倉南区西貫2-1-1。車・高速道路でのルート・地図を掲載。北九州空港から車で約25分。">
+  <meta name="description" lang="en" content="How to get to Kokura Country Club in Kitakyushu, Fukuoka. Driving route from Fukuoka/Kitakyushu Airport, nearest highway exit and access map. ~25 min from Kitakyushu Airport by car.">
+  <meta name="description" lang="ko" content="코쿠라 컨트리 클럽 오시는 길. 후쿠오카현 기타큐슈시. 기타큐슈공항에서 차로 약 25분. 한국어 상세 지도·루트 안내.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>小倉カンツリー倶楽部 アクセス・地図 | 福岡ゴルフ場ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent:#9b1c1c; --accent-mid:#dc2626; --accent-light:#fee2e2;
+      --gold:#c9a227; --gold-light:#fff8e1;
+      --bg:#f5f0f0; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+    }
+    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+    .page-header { background:linear-gradient(160deg,#450a0a 0%,#9b1c1c 60%,#dc2626 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header h1 { font-size:1.2rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #f5e0e0; font-size:0.8rem; }
+    .back-bar a { color:var(--accent); text-decoration:none; font-weight:700; }
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid #dc2626; position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:#9b1c1c; background:#fee2e2; border-bottom:3px solid #dc2626; margin-bottom:-2px; }
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
+    .card { background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.07); }
+    .card-head { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #f0f0f0; }
+    .card-head .icon { font-size:1.8rem; flex-shrink:0; }
+    .card-head .title { font-size:0.95rem; font-weight:800; }
+    .card-body { padding:14px 16px; font-size:0.84rem; line-height:1.7; }
+    .step-list { list-style:none; counter-reset:s; }
+    .step-list li { counter-increment:s; display:flex; gap:12px; padding:9px 0; border-bottom:1px dashed #fca5a5; font-size:0.84rem; line-height:1.5; }
+    .step-list li:last-child { border-bottom:none; }
+    .step-list li::before { content:counter(s); background:#dc2626; color:#fff; font-weight:800; font-size:0.72rem; min-width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
+    .info-bar { display:flex; gap:8px; background:var(--accent-light); border-left:4px solid var(--accent-mid); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#7f1d1d; }
+    .warn-bar { display:flex; gap:8px; background:#fffbeb; border-left:4px solid #f59e0b; border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#78350f; }
+    .app-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+    .app-card { background:var(--accent-light); border:1.5px solid #fca5a5; border-radius:10px; padding:10px 12px; font-size:0.8rem; display:block; text-decoration:none; color:inherit; transition:background .15s; }
+    .app-card:hover { background:#fecaca; }
+    .app-card .app-name { font-weight:800; color:var(--accent); margin-bottom:3px; }
+    .map-embed { width:100%; height:220px; border:0; border-radius:10px; margin-top:10px; display:block; }
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #f5c8c8; }
+    footer a { color:var(--accent); text-decoration:none; }
+  </style>
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/access-kokura.html">
+  <meta property="og:site_name"   content="福岡ゴルフ場ガイド">
+  <meta property="og:title"       content="小倉カンツリー倶楽部 アクセス・地図 | 福岡ゴルフ場ガイド">
+  <meta property="og:description" content="小倉カンツリー倶楽部へのアクセス。〒800-0243 北九州市小倉南区西貫2-1-1。車・高速道路でのルート・地図を掲載。">
+  <meta name="twitter:card"       content="summary_large_image">
+  <link rel="canonical" href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/access-kokura.html">
+  <link rel="alternate" hreflang="ja" href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/access-kokura.html">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "トップ",
+      "item": "https://fukuokacolor-web.github.io/fukuoka-golf-guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "小倉カンツリー倶楽部 アクセス・地図",
+      "item": "https://fukuokacolor-web.github.io/fukuoka-golf-guide/access-kokura.html"
+    }
+  ]
+}
+  </script>
+  <meta property="og:image"        content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/IMG_1281-EDIT.webp">
+  <meta property="og:image:width"  content="1920">
+  <meta property="og:image:height" content="1280">
+  <meta property="og:image:alt"    content="小倉カンツリー倶楽部 | Kokura Country Club">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:image"       content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/images/IMG_1281-EDIT.webp">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PENH0Z4VT7');
+  </script>
+<!-- AFFILIATE_TRACKER -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    var service = null;
+    if (/jalan/i.test(h)) service = 'jalan';
+    else if (/rakuten/i.test(h) || /gora/i.test(h)) service = 'rakuten_gora';
+    else if (/agoda/i.test(h)) service = 'agoda';
+    else if (/skyticket/i.test(h) || /4B1DXO/.test(h)) service = 'skyticket';
+    else if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(h)) service = 'tabimonogatari';
+    else if (/amazon|amzn/i.test(h)) service = 'amazon';
+    else if (/a8\.net/i.test(h)) service = 'a8_other';
+    if (!service) return;
+    var page = (location.pathname.split('/').pop() || 'index') + '';
+    var active = document.querySelector('.content.on');
+    var lang = active ? active.id.replace('c-','') : 'ja';
+    if (typeof gtag === 'function') {
+      gtag('event', 'click_affiliate', {
+        service: service,
+        page: page,
+        lang: lang,
+        link_text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80),
+        link_url: h.slice(0, 200)
+      });
+    }
+  }, true);
+})();
+</script>
+</head>
+<body>
+<header class="page-header">
+  <h1>🗺️ 小倉カンツリー倶楽部 アクセス・地図</h1>
+  <p>Access Guide / 오시는 길 안내 ｜ 🎩 ジャケット着用必須の名門コース</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　｜　<a href="course-kokura.html">コース紹介に戻る</a></div>
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- 日本語 -->
+<div id="c-ja" class="content on">
+  <div class="sec-head">📍 基本情報</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">小倉カンツリー倶楽部</span></div>
+    <div class="card-body">
+      〒800-0243　福岡県北九州市小倉南区西貫2-1-1<br>📞 093-471-7611
+      <div class="tip-bar"><span>💡</span>1961年開場、上田治設計の伝統ある名門コース。来場時はジャケット着用が必須です。</div>
+      <div class="warn-bar"><span>🎩</span>ドレスコード：来場時のジャケット着用が必須。詳細は<a href="https://kokura-cc.com/guide/" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline;">公式サイト</a>をご確認ください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 北九州空港からのアクセス（最寄り）</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">北九州空港から（推奨ルート・最短）</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>北九州空港連絡道路 → 東九州自動車道へ</li>
+        <li>苅田北九州空港IC → 九州自動車道方面へ</li>
+        <li>小倉東ICで降りる</li>
+        <li>ICから一般道を経由してクラブハウス着</li>
+        <li>合計：北九州空港から車で約25分</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>韓国・台湾からの直行便は北九州空港が近く、レンタカーでの直行が最もスムーズです。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 福岡空港からのアクセス</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">福岡空港から（九州自動車道経由）</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>福岡空港 → 福岡都市高速 → 九州自動車道（北九州・小倉方面）</li>
+        <li>小倉南IC または 小倉東ICで降りる</li>
+        <li>ICから一般道を経由してクラブハウスへ</li>
+        <li>合計：福岡空港から車で約70分</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>ナビアプリで「小倉カンツリー倶楽部」と検索すると正確なルートが表示されます。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 小倉駅・博多方面から</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚄</span><span class="title">JR小倉駅から／博多から</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>JR小倉駅から車で約30分（タクシー・レンタカー）</li>
+        <li>博多駅からは新幹線で小倉駅まで約17分＋タクシー30分</li>
+        <li>または博多から九州自動車道経由で車で約60〜70分</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>早朝のティータイムの場合は、小倉市内のホテルに前泊するのがおすすめです。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 ナビアプリ</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">おすすめナビアプリ</span></div>
+    <div class="card-body">
+      タップするとアプリ・サイトが開きます。
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=小倉カンツリー倶楽部&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=小倉カンツリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>英語・韓国語対応</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=小倉カンツリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo!カーナビ</div>日本道路情報充実。無料</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/小倉カンツリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>韓国語で使えて便利</a>
+        <a class="app-card" href="https://map.kakao.com/?q=코쿠라+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>韓国語対応</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 公共交通機関</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">電車＋タクシー</span></div>
+    <div class="card-body">
+      JR日豊本線「下曽根駅」または「朽網駅」が最寄り駅です。駅からはタクシーをご利用ください（約10〜15分）。
+      <div class="tip-bar"><span>💡</span>タクシー乗車時はスマホ画面に「小倉カンツリー倶楽部 小倉南区西貫」と表示してドライバーに見せてください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ 駐車場</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">駐車場情報</span></div>
+    <div class="card-body">
+      無料駐車場完備。スタッフの誘導に従ってお停めください。
+    </div>
+  </div>
+  <div class="sec-head">🚗 レンタカー予約</div>
+  <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
+    <div style="font-size:0.72rem;opacity:.85;margin-bottom:4px;">🚗 ゴルフ場へのアクセスはレンタカーが便利！</div>
+    <div style="font-size:1rem;font-weight:800;">skyticket レンタカーで格安予約 →</div>
+    <div style="font-size:0.7rem;opacity:.8;margin-top:4px;">比較して最安値を探せる</div>
+  </a>
+  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1DXO+5K1O1E+DRA+356I3M" alt="">
+</div>
+
+<!-- English -->
+<div id="c-en" class="content">
+  <div class="sec-head">📍 Basic Info</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">Kokura Country Club</span></div>
+    <div class="card-body">
+      2-1-1 Nishinuki, Kokuraminami-ku, Kitakyushu City, Fukuoka 800-0243<br>📞 +81-93-471-7611
+      <div class="tip-bar"><span>💡</span>A traditional prestige club founded in 1961, designed by Osamu Ueda. A jacket is required on arrival.</div>
+      <div class="warn-bar"><span>🎩</span>Dress code: Jacket required on arrival. See the <a href="https://kokura-cc.com/guide/" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline;">official guide</a> for full details.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ From Kitakyushu Airport (Nearest)</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">From Kitakyushu Airport (Fastest)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>Take the Kitakyushu Airport access road to the Higashi-Kyushu Expressway</li>
+        <li>At Kanda-Kitakyushu-Kuko IC, join the Kyushu Expressway direction</li>
+        <li>Exit at Kokura-higashi IC</li>
+        <li>Follow local roads to the clubhouse</li>
+        <li>Total: approx. 25 min from Kitakyushu Airport</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>Kitakyushu Airport is the most convenient entry point from Korea and Taiwan. A rental car is recommended.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ From Fukuoka Airport</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">From Fukuoka Airport (via Kyushu Expressway)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>Fukuoka Airport → Fukuoka Urban Expressway → Kyushu Expressway toward Kitakyushu / Kokura</li>
+        <li>Exit at Kokuraminami IC or Kokura-higashi IC</li>
+        <li>Follow local roads to the clubhouse</li>
+        <li>Total: approx. 70 min from Fukuoka Airport</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>Search "小倉カンツリー倶楽部" or "Kokura Country Club" in your navigation app.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 From Kokura / Hakata</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚄</span><span class="title">From JR Kokura Station / Hakata</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>From JR Kokura Station: approx. 30 min by taxi or rental car</li>
+        <li>From Hakata: Shinkansen to Kokura (~17 min) + 30 min taxi</li>
+        <li>Or drive from Hakata via Kyushu Expressway: approx. 60–70 min</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>For early tee times, staying at a hotel in central Kokura the night before is recommended.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 Navigation Apps</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">Recommended Apps</span></div>
+    <div class="card-body">
+      Tap to open the app or website.
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=小倉カンツリー倶楽部&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=小倉カンツリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>English support</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=小倉カンツリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo! Car Navi</div>Best Japanese road data</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/小倉カンツリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>Korean language support</a>
+        <a class="app-card" href="https://map.kakao.com/?q=코쿠라+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>Popular among Korean visitors</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 Public Transport</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">Train + Taxi</span></div>
+    <div class="card-body">
+      Nearest stations: JR Nippo Main Line "Shimosone" or "Kusami" — then a ~10–15 min taxi ride.
+      <div class="tip-bar"><span>💡</span>Show "小倉カンツリー倶楽部 小倉南区西貫" on your phone to the taxi driver.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ Parking</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">Parking Info</span></div>
+    <div class="card-body">Free parking available. Staff will guide you on arrival.</div>
+  </div>
+  <div class="sec-head">🚗 Rent a Car</div>
+  <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
+    <div style="font-size:0.72rem;opacity:.85;margin-bottom:4px;">🚗 A rental car is the easiest way to reach the golf course!</div>
+    <div style="font-size:1rem;font-weight:800;">Book cheap rental cars on skyticket →</div>
+    <div style="font-size:0.7rem;opacity:.8;margin-top:4px;">Compare prices and find the best deal</div>
+  </a>
+  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1DXO+5K1O1E+DRA+356I3M" alt="">
+</div>
+
+<!-- 한국어 -->
+<div id="c-ko" class="content">
+  <div class="sec-head">📍 기본 정보</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">코쿠라 컨트리 클럽</span></div>
+    <div class="card-body">
+      〒800-0243　후쿠오카현 기타큐슈시 코쿠라미나미구 니시누키 2-1-1<br>📞 +81-93-471-7611
+      <div class="tip-bar"><span>💡</span>1961년 개장, 우에다 오사무가 설계한 전통 명문 클럽. 내장 시 재킷 착용이 필수입니다.</div>
+      <div class="warn-bar"><span>🎩</span>드레스 코드: 내장 시 재킷 착용 필수. 자세한 내용은 <a href="https://kokura-cc.com/guide/" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline;">공식 사이트</a>에서 확인해 주세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 기타큐슈공항에서 오시는 길 (최단)</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">기타큐슈공항에서 (추천·최단 경로)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>기타큐슈공항 연결 도로 → 히가시큐슈 자동차도로 진입</li>
+        <li>칸다 기타큐슈공항 IC → 규슈 자동차도로 방면</li>
+        <li>코쿠라히가시 IC에서 하차</li>
+        <li>IC에서 일반 도로를 경유하여 클럽하우스</li>
+        <li>합계: 기타큐슈공항에서 차로 약 25분</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>인천·부산에서 기타큐슈공항까지 직항 약 1시간 30분. 렌터카 이동이 가장 빠릅니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 후쿠오카공항에서 오시는 길</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">후쿠오카공항에서 (규슈 자동차도로 경유)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>후쿠오카공항 → 후쿠오카 도시 고속도로 → 규슈 자동차도로 (기타큐슈·고쿠라 방면)</li>
+        <li>코쿠라미나미 IC 또는 코쿠라히가시 IC에서 하차</li>
+        <li>IC에서 일반 도로를 경유하여 클럽하우스</li>
+        <li>합계: 후쿠오카공항에서 차로 약 70분</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>내비게이션 앱에서 「小倉カンツリー倶楽部」 또는 「코쿠라 컨트리 클럽」으로 검색하세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 코쿠라역·하카타에서</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚄</span><span class="title">JR 코쿠라역 / 하카타에서</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>JR 코쿠라역에서 택시·렌터카로 약 30분</li>
+        <li>하카타에서는 신칸센으로 코쿠라역까지 약 17분 + 택시 30분</li>
+        <li>또는 하카타에서 규슈 자동차도로 경유 차로 약 60〜70분</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>이른 아침 티타임이라면 코쿠라 시내 호텔에 전날 숙박하시는 것을 추천합니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 내비게이션 앱</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">추천 내비게이션 앱</span></div>
+    <div class="card-body">
+      탭하면 앱 또는 사이트가 열립니다.
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=小倉カンツリー倶楽部&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=小倉カンツリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>영어·한국어 지원</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=小倉カンツリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo! 카내비</div>일본 도로 정보 충실</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/小倉カンツリー倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>한국어로 사용 가능</a>
+        <a class="app-card" href="https://map.kakao.com/?q=코쿠라+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">카카오맵</div>한국어 지원</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 대중교통</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">전철 + 택시</span></div>
+    <div class="card-body">
+      JR 닛포 본선 「시모소네역」 또는 「쿠사미역」에서 택시 이용 (약 10〜15분).
+      <div class="tip-bar"><span>💡</span>택시 기사에게 「小倉カンツリー倶楽部 小倉南区西貫」을 스마트폰 화면으로 보여주세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ 주차장</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">주차장 정보</span></div>
+    <div class="card-body">무료 주차장 완비. 직원의 안내에 따라 주차해 주세요.</div>
+  </div>
+  <div class="sec-head">🚗 렌터카 예약</div>
+  <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
+    <div style="font-size:0.72rem;opacity:.85;margin-bottom:4px;">🚗 골프장까지는 렌터카가 가장 편리합니다!</div>
+    <div style="font-size:1rem;font-weight:800;">skyticket 렌터카로 저렴하게 예약 →</div>
+    <div style="font-size:0.7rem;opacity:.8;margin-top:4px;">가격 비교로 최저가 찾기</div>
+  </a>
+  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1DXO+5K1O1E+DRA+356I3M" alt="">
+</div>
+
+<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　このサイトはゴルフ好きが作った情報ガイドです。最新情報は各ゴルフ場の公式サイトでご確認ください。</footer>
+<script>
+  function sw(l){['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+
+  <!-- トップに戻るボタン -->
+  <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップに戻る">▲</button>
+  <style>
+    #btt {
+      position: fixed; bottom: 20px; right: 16px; z-index: 999;
+      width: 44px; height: 44px; border-radius: 50%; border: none;
+      background: #2e8b57; color: #fff; font-size: 1rem; font-weight: 700;
+      cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      transform: translateY(8px);
+    }
+    #btt.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    #btt:hover { background: #1a5c38; }
+  </style>
+  <script>
+    (function(){
+      var btn = document.getElementById('btt');
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('show', window.scrollY > 300);
+      }, {passive: true});
+    })();
+  </script>
+</body>
+</html>

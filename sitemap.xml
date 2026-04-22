@@ -276,4 +276,9 @@
     <loc>https://fukuokacolor-web.github.io/fukuoka-golf-guide/sitemap-guide.html</loc>
     <lastmod>2026-04-21</lastmod>
   </url>
+  <url>
+    <loc>https://fukuokacolor-web.github.io/fukuoka-golf-guide/airport-access-top5.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
 </urlset>

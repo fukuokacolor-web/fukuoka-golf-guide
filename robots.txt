@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://fukuokacolor-web.github.io/fukuoka-golf-guide/sitemap.xml
+
+Sitemap: https://fukuoka-golf-guide.com/sitemap.xml

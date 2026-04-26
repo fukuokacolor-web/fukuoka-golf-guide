@@ -281,20 +281,20 @@ def generate_course(c):
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {{"@type":"ListItem","position":1,"name":"トップ","item":"https://fukuokacolor-web.github.io/fukuoka-golf-guide/"}},
-      {{"@type":"ListItem","position":2,"name":"{name_ja}","item":"https://fukuokacolor-web.github.io/fukuoka-golf-guide/course-{slug}.html"}}
+      {{"@type":"ListItem","position":1,"name":"トップ","item":"https://fukuoka-golf-guide.com/"}},
+      {{"@type":"ListItem","position":2,"name":"{name_ja}","item":"https://fukuoka-golf-guide.com/course-{slug}.html"}}
     ]
   }}
   </script>
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/course-{slug}.html">
+  <meta property="og:url" content="https://fukuoka-golf-guide.com/course-{slug}.html">
   <meta property="og:site_name" content="福岡ゴルフ場ガイド">
   <meta property="og:title" content="{name_ja}｜料金・アクセス | 福岡ゴルフ場ガイド">
   <meta property="og:description" content="{desc_ja}">
-  <meta property="og:image" content="https://fukuokacolor-web.github.io/fukuoka-golf-guide/{hero_img}">
+  <meta property="og:image" content="https://fukuoka-golf-guide.com/{hero_img}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://fukuokacolor-web.github.io/fukuoka-golf-guide/course-{slug}.html">
+  <link rel="canonical" href="https://fukuoka-golf-guide.com/course-{slug}.html">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
   <script>

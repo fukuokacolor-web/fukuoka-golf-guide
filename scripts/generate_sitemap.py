@@ -21,6 +21,7 @@ HIGH_PRIORITY_PAGES = {
     "area-itoshima.html",
     "area-chikugo.html",
     "area-fukuokacity.html",
+    "area-chikuho.html",
     "course-kokura.html",
 }
 

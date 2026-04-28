@@ -58,6 +58,55 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "筑豊・朝倉でおすすめコースは？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "セントラル福岡（朝倉郡）と茜カントリークラブ（飯塚市）の2コースが筑豊エリアの代表格。どちらも平日¥6,500〜と料金が手頃で、戦略性も初心者対応もバランス良し。初訪問なら最優先で検討するべき2コースです。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "公共交通でアクセスできる？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "筑豊・朝倉エリアは電車・バスでのアクセスが極めて困難。レンタカーが必須です。福岡空港・博多駅からskyticketで車を確保すれば、九州道・大分道で1時間圏内、温泉・観光地もスムーズに巡れます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "コスパ最高はどこ？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "福岡レイクサイドカントリークラブが平日¥6,000〜と筑豊エリア最安。池絡みの戦略コースで、価格以上のプレー価値あり。午後スルーなら¥4,000台のプランもあるので、コスパ重視ならまずココ。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "宿泊は原鶴温泉でOK？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "原鶴温泉（朝倉市）が筑豊・朝倉ゴルフの定番宿泊地。筑後川沿いの素朴な湯治宿が並び、夏は鵜飼い遊覧船もセットにできます。より手軽に済ませるなら飯塚市内のビジネスホテルも選択肢。空港近くに戻りたい場合は博多駅周辺の宿も◎。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "福岡市から日帰りできる？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "十分日帰り可能。福岡空港・博多駅から全コース60〜75分圏内、午前ハーフ・午後スルー・1.5ラウンドなど時間調整も柔軟。レンタカーで往復すれば、温泉立寄り＋ゴルフの日帰りプランも組めます。"
+        }
+      }
+    ]
+  }
+  </script>
+
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fukuoka-golf-guide.com/area-chikuho.html">
   <meta property="og:site_name" content="福岡ゴルフ場ガイド">
@@ -427,6 +476,80 @@
       max-width: 820px; margin: 32px auto 0;
       display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
     }
+    .jalan-microcopy {
+      max-width: 820px; margin: 18px auto 8px;
+      font-size: 12px; color: var(--ink-soft);
+      text-align: center; letter-spacing: .02em;
+    }
+    .jalan-microcopy strong { color: var(--earth-dark); font-weight: 700; }
+
+    /* === 4コース横並び比較表 (SEO 差別化の核 / per affiliate council) === */
+    .compare-section {
+      max-width: 1100px; margin: 0 auto;
+      padding: 56px 20px 0;
+    }
+    .compare-section .compare-eyebrow {
+      text-align: center; font-size: 12px; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--earth-dark);
+      font-weight: 800; margin-bottom: 8px;
+    }
+    .compare-section .compare-title {
+      text-align: center; font-size: 22px; line-height: 1.4;
+      color: var(--ink); font-weight: 800; margin-bottom: 6px;
+    }
+    .compare-section .compare-sub {
+      text-align: center; font-size: 13px; color: var(--ink-soft);
+      margin-bottom: 24px;
+    }
+    .compare-table-wrap { overflow-x: auto; }
+    .compare-table {
+      width: 100%; min-width: 720px;
+      border-collapse: separate; border-spacing: 0;
+      font-size: 13px; line-height: 1.55;
+      background: #fff;
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,.06);
+    }
+    .compare-table thead th {
+      background: linear-gradient(135deg, var(--earth), var(--earth-dark));
+      color: #fff; font-weight: 800; padding: 12px 10px;
+      font-size: 12px; letter-spacing: .04em; text-align: left;
+    }
+    .compare-table thead th:first-child { padding-left: 18px; }
+    .compare-table tbody td {
+      padding: 12px 10px;
+      border-top: 1px solid #ece6da;
+      vertical-align: middle;
+    }
+    .compare-table tbody td:first-child { padding-left: 18px; font-weight: 700; }
+    .compare-table tbody tr:hover { background: #fffaf0; }
+    .compare-table tbody tr.featured td {
+      background: linear-gradient(180deg, #fff8e6, #fff);
+    }
+    .compare-table tbody tr.featured td:first-child {
+      border-left: 3px solid #c9a227;
+      padding-left: 15px;
+    }
+    .compare-table .compare-badge {
+      display: inline-block;
+      background: #c9a227; color: #fff;
+      font-size: 9px; padding: 2px 6px;
+      border-radius: 3px; margin-left: 6px;
+      font-weight: 800; letter-spacing: .05em;
+      vertical-align: middle;
+    }
+    .compare-table .compare-price-weekday { color: var(--earth-dark); font-weight: 700; }
+    .compare-table .compare-price-weekend { color: var(--ink-soft); }
+    .compare-foot-note {
+      max-width: 1100px; margin: 14px auto 0;
+      padding: 0 20px;
+      font-size: 11px; color: var(--ink-soft);
+      text-align: center; letter-spacing: .02em;
+    }
+    @media (max-width: 720px) {
+      .compare-section { padding: 40px 14px 0; }
+      .compare-section .compare-title { font-size: 18px; }
+    }
     .plan-cta-dual a {
       display: flex; align-items: center; justify-content: center; gap: 8px;
       padding: 14px 20px; border-radius: 12px;
@@ -677,6 +800,57 @@
     </div>
   </section>
 
+  <!-- 4コース横並び比較表 -->
+  <section class="compare-section">
+    <div class="compare-eyebrow">— Quick Compare —</div>
+    <h2 class="compare-title">筑豊・朝倉 4コース 一覧比較</h2>
+    <p class="compare-sub">料金・アクセス・特徴をワンタップで把握。詳細は各コース欄へ。</p>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>コース</th>
+            <th>平日</th>
+            <th>土日祝</th>
+            <th>FUKから</th>
+            <th>特徴</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="featured">
+            <td>セントラル福岡<span class="compare-badge">★ FEATURED</span></td>
+            <td><span class="compare-price-weekday">¥6,500〜</span></td>
+            <td><span class="compare-price-weekend">¥14,000</span></td>
+            <td>60分</td>
+            <td>朝倉郡・原鶴温泉セット可能</td>
+          </tr>
+          <tr>
+            <td>あかねCC</td>
+            <td><span class="compare-price-weekday">¥6,500〜</span></td>
+            <td><span class="compare-price-weekend">¥13,000</span></td>
+            <td>70分</td>
+            <td>飯塚・平地林間・初級者OK</td>
+          </tr>
+          <tr>
+            <td>麻生飯塚CC</td>
+            <td><span class="compare-price-weekday">¥7,000〜</span></td>
+            <td><span class="compare-price-weekend">¥14,500</span></td>
+            <td>65分</td>
+            <td>飯塚・歴史ある林間名門</td>
+          </tr>
+          <tr>
+            <td>レイクサイドCC</td>
+            <td><span class="compare-price-weekday">¥6,000〜</span></td>
+            <td><span class="compare-price-weekend">¥12,000</span></td>
+            <td>75分</td>
+            <td>飯塚・池絡み戦略コース</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="compare-foot-note">💡 当日料金は平均 +¥3,000。<strong style="color:var(--earth-dark)">じゃらんゴルフのWeb予約</strong>でほぼ全コース最安。</div>
+  </section>
+
   <!-- WHY -->
   <section class="section">
     <div style="text-align:center;">
@@ -870,6 +1044,7 @@
       <div class="plan-row"><div class="plan-time">15:30</div><div class="plan-content"><strong>秋月城下町</strong>散策。筑前の小京都・桜並木で締めくくり。</div></div>
       <div class="plan-row"><div class="plan-time">17:30</div><div class="plan-content">福岡空港へ返却（約60分）。夜便で帰路へ。</div></div>
     </div>
+    <div class="jalan-microcopy">✅ <strong>キャンセル無料</strong>（前日まで）｜ Pontaポイント1%還元 ｜ Web予約で平均¥3,000お得</div>
     <div class="plan-cta-dual">
       <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="plan-cta-jalan" target="_blank" rel="nofollow sponsored noopener">📅 じゃらんゴルフでコース予約</a>
       <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" class="plan-cta-sky" target="_blank" rel="nofollow sponsored noopener">🚗 skyticketで車を確保</a>
@@ -1018,6 +1193,57 @@
       <div class="stat-item"><div class="stat-num">¥6,000<span class="unit">〜</span></div><div class="stat-label">Lowest weekday</div></div>
       <div class="stat-item"><div class="stat-num">Hidden<span class="unit">Gems</span></div><div class="stat-label">Best value</div></div>
     </div>
+  </section>
+
+  <!-- 4-course quick-compare table (EN) -->
+  <section class="compare-section">
+    <div class="compare-eyebrow">— Quick Compare —</div>
+    <h2 class="compare-title">All 4 Courses at a Glance</h2>
+    <p class="compare-sub">Fees, access, and signature traits — tap any row for full course detail.</p>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Weekday</th>
+            <th>Weekend</th>
+            <th>From FUK</th>
+            <th>Highlight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="featured">
+            <td>Central Fukuoka<span class="compare-badge">★ FEATURED</span></td>
+            <td><span class="compare-price-weekday">¥6,500〜</span></td>
+            <td><span class="compare-price-weekend">¥14,000</span></td>
+            <td>60 min</td>
+            <td>Asakura · Pairs with Harazuru Onsen</td>
+          </tr>
+          <tr>
+            <td>Akane CC</td>
+            <td><span class="compare-price-weekday">¥6,500〜</span></td>
+            <td><span class="compare-price-weekend">¥13,000</span></td>
+            <td>70 min</td>
+            <td>Iizuka · Flat parkland · Beginner-friendly</td>
+          </tr>
+          <tr>
+            <td>Aso Iizuka CC</td>
+            <td><span class="compare-price-weekday">¥7,000〜</span></td>
+            <td><span class="compare-price-weekend">¥14,500</span></td>
+            <td>65 min</td>
+            <td>Iizuka · Historic parkland prestige</td>
+          </tr>
+          <tr>
+            <td>Lakeside CC</td>
+            <td><span class="compare-price-weekday">¥6,000〜</span></td>
+            <td><span class="compare-price-weekend">¥12,000</span></td>
+            <td>75 min</td>
+            <td>Iizuka · Strategic water-hole layout</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="compare-foot-note">💡 Walk-in rates avg. +¥3,000 vs. <strong style="color:var(--earth-dark)">Jalan web booking</strong> (lowest across all 4 courses).</div>
   </section>
 
   <section class="section">
@@ -1209,6 +1435,7 @@
       <div class="plan-row"><div class="plan-time">15:30</div><div class="plan-content">Walk <strong>Akizuki Castle Town</strong> — Chikuzen's "Little Kyoto" cherry road.</div></div>
       <div class="plan-row"><div class="plan-time">17:30</div><div class="plan-content">Return car at FUK (~60 min). Evening flight home.</div></div>
     </div>
+    <div class="jalan-microcopy">✅ <strong>Free cancel</strong> (until day before) ｜ Ponta Points 1% back ｜ Save avg. ¥3,000 vs walk-in</div>
     <div class="plan-cta-dual">
       <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="plan-cta-jalan" target="_blank" rel="nofollow sponsored noopener">📅 Book courses on Jalan</a>
       <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" class="plan-cta-sky" target="_blank" rel="nofollow sponsored noopener">🚗 Book car on skyticket</a>
@@ -1354,15 +1581,58 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="airport-banner">
-      <div class="airport-banner-icon">⛰️</div>
-      <div>
-        <div class="airport-banner-title">후쿠오카 가성비 골프의 보석 같은 5번째 에리어</div>
-        <div class="airport-banner-sub">평일 ¥5,000대부터 시작하는 숨은 명소 4코스 ｜ 도심 혼잡 무관</div>
-      </div>
+  <!-- 4코스 한눈 비교표 (KO) -->
+  <section class="compare-section">
+    <div class="compare-eyebrow">— Quick Compare —</div>
+    <h2 class="compare-title">4개 코스 한눈에 비교</h2>
+    <p class="compare-sub">요금·접근성·특징을 한눈에. 자세한 정보는 각 코스 페이지에서.</p>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>코스</th>
+            <th>평일</th>
+            <th>주말</th>
+            <th>FUK에서</th>
+            <th>특징</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="featured">
+            <td>센트럴 후쿠오카<span class="compare-badge">★ FEATURED</span></td>
+            <td><span class="compare-price-weekday">¥6,500〜</span></td>
+            <td><span class="compare-price-weekend">¥14,000</span></td>
+            <td>60분</td>
+            <td>아사쿠라·하라즈루 온천 세트 가능</td>
+          </tr>
+          <tr>
+            <td>아카네 CC</td>
+            <td><span class="compare-price-weekday">¥6,500〜</span></td>
+            <td><span class="compare-price-weekend">¥13,000</span></td>
+            <td>70분</td>
+            <td>이이즈카·평지 임간·초보자 OK</td>
+          </tr>
+          <tr>
+            <td>아소 이이즈카 CC</td>
+            <td><span class="compare-price-weekday">¥7,000〜</span></td>
+            <td><span class="compare-price-weekend">¥14,500</span></td>
+            <td>65분</td>
+            <td>이이즈카·역사 있는 임간 명문</td>
+          </tr>
+          <tr>
+            <td>레이크사이드 CC</td>
+            <td><span class="compare-price-weekday">¥6,000〜</span></td>
+            <td><span class="compare-price-weekend">¥12,000</span></td>
+            <td>75분</td>
+            <td>이이즈카·연못 전략 코스</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <div class="compare-foot-note">💡 당일 요금은 평균 +¥3,000. <strong style="color:var(--earth-dark)">자란골프 Web 예약</strong>이 거의 모든 코스 최저가.</div>
+  </section>
 
+  <section class="section">
     <div style="text-align:center;">
       <div class="sec-eyebrow">— Why Chikuho &amp; Asakura</div>
       <h2 class="sec-title">왜 치쿠호·아사쿠라에서 골프를?</h2>
@@ -1551,6 +1821,7 @@
       <div class="plan-row"><div class="plan-time">15:30</div><div class="plan-content"><strong>아키즈키 성하마을</strong>산책. 치쿠젠의 작은 교토·벚꽃길로 마무리.</div></div>
       <div class="plan-row"><div class="plan-time">17:30</div><div class="plan-content">FUK 반납(약 60분). 저녁 편으로 귀국.</div></div>
     </div>
+    <div class="jalan-microcopy">✅ <strong>무료 취소</strong>(전날까지) ｜ 폰타포인트 1% 적립 ｜ Web 예약으로 평균 ¥3,000 절약</div>
     <div class="plan-cta-dual">
       <a href="https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F" class="plan-cta-jalan" target="_blank" rel="nofollow sponsored noopener">📅 자란골프로 코스 예약</a>
       <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" class="plan-cta-sky" target="_blank" rel="nofollow sponsored noopener">🚗 skyticket으로 차 확보</a>

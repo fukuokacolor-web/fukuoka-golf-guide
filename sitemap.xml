@@ -301,6 +301,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://fukuoka-golf-guide.com/course-genkai.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fukuoka-golf-guide.com/course-hisayama.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -385,6 +391,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://fukuoka-golf-guide.com/course-pheasant.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fukuoka-golf-guide.com/course-queenshill.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -399,6 +411,12 @@
   <url>
     <loc>https://fukuoka-golf-guide.com/course-sevenmillion.html</loc>
     <lastmod>2026-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fukuoka-golf-guide.com/course-takaha.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

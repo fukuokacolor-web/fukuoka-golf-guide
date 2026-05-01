@@ -178,6 +178,79 @@
     margin-bottom:40px;
   }
 
+  /* ========= Persona Section ========= */
+  .persona-section{background:var(--paper);}
+  .persona-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  }
+  @media (max-width:900px){
+    .persona-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:520px){
+    .persona-grid{grid-template-columns:1fr;}
+  }
+  .persona-card{
+    position:relative;border-radius:var(--radius-lg);
+    padding:32px 26px 28px;
+    border:1px solid var(--line);
+    background:#fff;
+    transition:all .3s;
+    overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .persona-card::before{
+    content:"";position:absolute;inset:0;
+    background:var(--persona-grad);
+    opacity:.07;transition:opacity .3s;pointer-events:none;
+  }
+  .persona-card::after{
+    content:"";position:absolute;top:0;left:0;right:0;height:4px;
+    background:var(--persona-grad);
+  }
+  .persona-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-md);
+    border-color:transparent;
+  }
+  .persona-card:hover::before{opacity:.14;}
+  .persona-emoji{
+    font-size:42px;line-height:1;margin-bottom:14px;
+    position:relative;z-index:1;
+  }
+  .persona-name{
+    font-family:var(--serif);font-weight:700;
+    font-size:19px;color:var(--persona-color);
+    margin-bottom:8px;letter-spacing:-.01em;
+    position:relative;z-index:1;
+  }
+  .persona-desc{
+    font-size:13px;color:var(--ink-soft);line-height:1.7;
+    flex:1;margin-bottom:16px;
+    position:relative;z-index:1;
+  }
+  .persona-cta{
+    font-family:var(--serif-en);font-style:italic;
+    font-size:13px;font-weight:600;
+    color:var(--persona-color);
+    position:relative;z-index:1;
+  }
+  .persona-card.beginner{
+    --persona-color:#5C8344;
+    --persona-grad:linear-gradient(135deg,#7FA65A,#5C8344);
+  }
+  .persona-card.traveler{
+    --persona-color:#2C5E80;
+    --persona-grad:linear-gradient(135deg,#3A7CA5,#2C5E80);
+  }
+  .persona-card.business{
+    --persona-color:#b8860b;
+    --persona-grad:linear-gradient(135deg,#c9a227,#b8860b);
+  }
+  .persona-card.budget{
+    --persona-color:#D85F38;
+    --persona-grad:linear-gradient(135deg,#E8744C,#D85F38);
+  }
+
   /* ========= Area Section ========= */
   .area-section{background:var(--sand);}
   .area-grid{
@@ -420,6 +493,41 @@
     <div class="hero-scroll">Scroll</div>
   </section>
 
+  <!-- Persona Hubs -->
+  <section class="persona-section">
+    <div class="container">
+      <span class="sec-label">Find Your Way · 4 Hubs</span>
+      <h2 class="sec-title">あなたはどのタイプ？</h2>
+      <p class="sec-desc">目的に合わせた入口で、最適なコースを。"初心者向け"から"接待・名門"まで、4つのテーマで35コースを再編。</p>
+      <div class="persona-grid">
+        <a class="persona-card beginner" href="hub-beginner.html">
+          <div class="persona-emoji">🌱</div>
+          <div class="persona-name">初心者向け</div>
+          <div class="persona-desc">ショートコース・フラット・¥4,060〜。"ゴルフ場って怖い"を払拭する5コース。</div>
+          <div class="persona-cta">このタイプを見る →</div>
+        </a>
+        <a class="persona-card traveler" href="hub-traveler.html">
+          <div class="persona-emoji">🌊</div>
+          <div class="persona-name">旅行者向け</div>
+          <div class="persona-desc">糸島の海、太宰府の門前、筑後の温泉。観光ゴルフを最大化する5コース。</div>
+          <div class="persona-cta">このタイプを見る →</div>
+        </a>
+        <a class="persona-card business" href="hub-business.html">
+          <div class="persona-emoji">🏛️</div>
+          <div class="persona-name">接待・名門</div>
+          <div class="persona-desc">1957〜創設の老舗、2026年シニアオープン会場。特別な一日を支える6コース。</div>
+          <div class="persona-cta">このタイプを見る →</div>
+        </a>
+        <a class="persona-card budget" href="hub-budget.html">
+          <div class="persona-emoji">💴</div>
+          <div class="persona-name">コスパ重視</div>
+          <div class="persona-desc">平日¥6,000・午後スルー・月曜セルフ¥7,880。賢く回る6コース。</div>
+          <div class="persona-cta">このタイプを見る →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Area -->
   <section class="area-section">
     <div class="container">
@@ -620,6 +728,41 @@
     <div class="hero-scroll">Scroll</div>
   </section>
 
+  <!-- Persona Hubs -->
+  <section class="persona-section">
+    <div class="container">
+      <span class="sec-label">Find Your Way · 4 Hubs</span>
+      <h2 class="sec-title">Find Your Way</h2>
+      <p class="sec-desc">Choose by purpose — your best course awaits. From "first-time" to "heritage hospitality," 35 courses curated into 4 themes.</p>
+      <div class="persona-grid">
+        <a class="persona-card beginner" href="hub-beginner.html">
+          <div class="persona-emoji">🌱</div>
+          <div class="persona-name">For Beginners</div>
+          <div class="persona-desc">Short layouts, flat fairways, fees from ¥4,060. Five welcoming courses without the intimidation.</div>
+          <div class="persona-cta">View this type →</div>
+        </a>
+        <a class="persona-card traveler" href="hub-traveler.html">
+          <div class="persona-emoji">🌊</div>
+          <div class="persona-name">For Travelers</div>
+          <div class="persona-desc">Itoshima ocean, Dazaifu Shrine town, Chikugo onsen. Five courses paired with sightseeing.</div>
+          <div class="persona-cta">View this type →</div>
+        </a>
+        <a class="persona-card business" href="hub-business.html">
+          <div class="persona-emoji">🏛️</div>
+          <div class="persona-name">Heritage &amp; Hospitality</div>
+          <div class="persona-desc">Clubs founded 1957–1961, the 2026 Senior Open venue. Six courses for the days that matter.</div>
+          <div class="persona-cta">View this type →</div>
+        </a>
+        <a class="persona-card budget" href="hub-budget.html">
+          <div class="persona-emoji">💴</div>
+          <div class="persona-name">Smart &amp; Budget</div>
+          <div class="persona-desc">Weekday from ¥6,000, afternoon-thru, Monday self-play ¥7,880. Six courses to play more for less.</div>
+          <div class="persona-cta">View this type →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="area-section">
     <div class="container">
       <span class="sec-label">Find by Area</span>
@@ -812,6 +955,41 @@
       <a href="#pickup-ko" class="hero-cta">코스 찾기　→</a>
     </div>
     <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- Persona Hubs -->
+  <section class="persona-section">
+    <div class="container">
+      <span class="sec-label">Find Your Way · 4 Hubs</span>
+      <h2 class="sec-title">당신의 스타일은?</h2>
+      <p class="sec-desc">목적별 입구에서 최적의 코스로. "초보자"부터 "접대·명문"까지, 35개 코스를 4가지 테마로 재편.</p>
+      <div class="persona-grid">
+        <a class="persona-card beginner" href="hub-beginner.html">
+          <div class="persona-emoji">🌱</div>
+          <div class="persona-name">초보자용</div>
+          <div class="persona-desc">짧은 코스·평탄·¥4,060부터. "골프장이 무섭다"는 인상을 바꾸는 5개 코스.</div>
+          <div class="persona-cta">이 타입 보기 →</div>
+        </a>
+        <a class="persona-card traveler" href="hub-traveler.html">
+          <div class="persona-emoji">🌊</div>
+          <div class="persona-name">여행자용</div>
+          <div class="persona-desc">이토시마 바다, 다자이후 몬젠, 치쿠고 온천. 관광 골프를 극대화하는 5개 코스.</div>
+          <div class="persona-cta">이 타입 보기 →</div>
+        </a>
+        <a class="persona-card business" href="hub-business.html">
+          <div class="persona-emoji">🏛️</div>
+          <div class="persona-name">접대·명문</div>
+          <div class="persona-desc">1957년 창설 노포, 2026년 시니어 오픈 개최지. 특별한 하루의 6개 코스.</div>
+          <div class="persona-cta">이 타입 보기 →</div>
+        </a>
+        <a class="persona-card budget" href="hub-budget.html">
+          <div class="persona-emoji">💴</div>
+          <div class="persona-name">가성비 중시</div>
+          <div class="persona-desc">평일 ¥6,000·오후 스루·월요일 셀프 ¥7,880. 똑똑하게 도는 6개 코스.</div>
+          <div class="persona-cta">이 타입 보기 →</div>
+        </a>
+      </div>
+    </div>
   </section>
 
   <section class="area-section">

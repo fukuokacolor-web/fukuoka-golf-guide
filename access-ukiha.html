@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="浮羽カントリークラブへのアクセス。〒839-1413 うきは市浮羽町新川4094。大分自動車道 杷木ICから約15km/18分。車でのルート・地図を掲載。">
+  <meta name="description" lang="en" content="How to get to Ukiha Country Club in Ukiha, Fukuoka. About 15 km / 18 min from Haki IC on the Oita Expressway. Driving route from Fukuoka Airport (~60-70 min) and map.">
+  <meta name="description" lang="ko" content="우키하 컨트리 클럽 오시는 길 (후쿠오카 우키하). 오이타 자동차도로 하키 IC에서 약 15km / 18분. 후쿠오카공항에서 약 60-70분. 차량 루트와 지도 안내.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>浮羽カントリークラブ アクセス・地図 | 福岡ゴルフ場ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent:#b45309; --accent-mid:#d97706; --accent-light:#fef3c7;
+      --gold:#c9a227; --gold-light:#fff8e1;
+      --bg:#f5f2ee; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+    }
+    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+    .page-header { background:linear-gradient(160deg,#7c2d12 0%,#b45309 60%,#d97706 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header h1 { font-size:1.2rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #f0e8d8; font-size:0.8rem; }
+    .back-bar a { color:var(--accent); text-decoration:none; font-weight:700; }
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid #d97706; position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:#b45309; background:#fef3c7; border-bottom:3px solid #d97706; margin-bottom:-2px; }
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
+    .card { background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.07); }
+    .card-head { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #f0f0f0; }
+    .card-head .icon { font-size:1.8rem; flex-shrink:0; }
+    .card-head .title { font-size:0.95rem; font-weight:800; }
+    .card-body { padding:14px 16px; font-size:0.84rem; line-height:1.7; }
+    .step-list { list-style:none; counter-reset:s; }
+    .step-list li { counter-increment:s; display:flex; gap:12px; padding:9px 0; border-bottom:1px dashed #ececec; font-size:0.84rem; line-height:1.5; }
+    .step-list li:last-child { border-bottom:none; }
+    .step-list li::before { content:counter(s); background:#d97706; color:#fff; font-weight:800; font-size:0.72rem; min-width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
+    .info-bar { display:flex; gap:8px; background:var(--accent-light); border-left:4px solid var(--accent-mid); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#78350f; }
+    .app-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+    .app-card { background:var(--accent-light); border:1.5px solid #fcd34d; border-radius:10px; padding:10px 12px; font-size:0.8rem; display:block; text-decoration:none; color:inherit; transition:background .15s; }
+    .app-card:hover { background:#fde68a; }
+    .app-card .app-name { font-weight:800; color:var(--accent); margin-bottom:3px; }
+    .map-embed { width:100%; height:220px; border:0; border-radius:10px; margin-top:10px; display:block; }
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #eeddc8; }
+    footer a { color:var(--accent); text-decoration:none; }
+  </style>
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://fukuoka-golf-guide.com/access-ukiha.html">
+  <meta property="og:site_name"   content="福岡ゴルフ場ガイド">
+  <meta property="og:title"       content="浮羽カントリークラブ アクセス・地図 | 福岡ゴルフ場ガイド">
+  <meta property="og:description" content="浮羽カントリークラブへのアクセス。〒839-1413 うきは市浮羽町新川4094。大分自動車道 杷木ICから約15km/18分。車でのルート・地図を掲載。">
+  <meta name="twitter:card"       content="summary_large_image">
+  <link rel="canonical" href="https://fukuoka-golf-guide.com/access-ukiha.html" />
+  <link rel="alternate" hreflang="ja" href="https://fukuoka-golf-guide.com/access-ukiha.html">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "トップ",
+      "item": "https://fukuoka-golf-guide.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "浮羽カントリークラブ アクセス・地図",
+      "item": "https://fukuoka-golf-guide.com/access-ukiha.html"
+    }
+  ]
+}
+  </script>
+  <meta property="og:image"        content="https://fukuoka-golf-guide.com/images/spring-forest.webp">
+  <meta property="og:image:width"  content="1920">
+  <meta property="og:image:height" content="1280">
+  <meta property="og:image:alt"    content="福岡ゴルフ場ガイド | Fukuoka Golf Guide">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:image"       content="https://fukuoka-golf-guide.com/images/spring-forest.webp">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PENH0Z4VT7');
+  </script>
+<!-- AFFILIATE_TRACKER -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    var service = null;
+    if (/jalan/i.test(h)) service = 'jalan';
+    else if (/rakuten/i.test(h) || /gora/i.test(h)) service = 'rakuten_gora';
+    else if (/agoda/i.test(h)) service = 'agoda';
+    else if (/skyticket/i.test(h)) service = 'skyticket';
+    else if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(h)) service = 'tabimonogatari';
+    else if (/amazon|amzn/i.test(h)) service = 'amazon';
+    else if (/a8\.net/i.test(h)) service = 'a8_other';
+    if (!service) return;
+    var page = (location.pathname.split('/').pop() || 'index') + '';
+    var active = document.querySelector('.content.on');
+    var lang = active ? active.id.replace('c-','') : 'ja';
+    if (typeof gtag === 'function') {
+      gtag('event', 'click_affiliate', {
+        service: service,
+        page: page,
+        lang: lang,
+        link_text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80),
+        link_url: h.slice(0, 200)
+      });
+    }
+  }, true);
+})();
+</script>
+</head>
+<body>
+<header class="page-header">
+  <h1>🗺️ 浮羽カントリークラブ アクセス・地図</h1>
+  <p>Access Guide / 오시는 길 안내</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　｜　<a href="course-ukiha.html">コース紹介に戻る</a></div>
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- 日本語 -->
+<div id="c-ja" class="content on">
+  <div class="sec-head">📍 基本情報</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">浮羽カントリークラブ</span></div>
+    <div class="card-body">
+      〒839-1413　福岡県うきは市浮羽町新川4094<br>📞 0943-77-8585<br>🌐 <a href="https://ukiha-cc.com/" target="_blank" rel="noopener">公式サイト</a>
+      <div class="tip-bar"><span>💡</span>うきは市の丘陵地に広がる丘陵コース。久留米方面からのアクセスも比較的良好です。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 福岡空港からのアクセス</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">福岡空港から（推奨ルート）</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>福岡空港から都市高速2号線で太宰府IC方面へ</li>
+        <li>九州自動車道で鳥栖JCTへ</li>
+        <li>鳥栖JCTから大分自動車道（湯布院・大分方面）へ分岐</li>
+        <li>杷木ICで降りて、約15km・18分でクラブハウスへ</li>
+        <li>合計：福岡空港から車で約60〜70分</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>Google Mapsで「浮羽カントリークラブ」と検索すると最適ルートが案内されます。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 博多駅・久留米方面から</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">主要拠点から</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>博多駅から：都市高速・九州自動車道・大分自動車道経由で約60分</li>
+        <li>久留米方面から：国道210号または大分自動車道経由で約30〜40分</li>
+        <li>杷木ICから：県道経由で約15km・18分</li>
+        <li>朝倉地域を抜ける一般道ルートも風景が楽しめます</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>うきは市は果物の産地としても有名。フルーツ狩りなどとセットで観光プランを組めます。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 ナビアプリ</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">おすすめナビアプリ</span></div>
+    <div class="card-body">
+      タップするとアプリ・サイトが開きます。
+      <iframe class="map-embed" src="https://www.google.com/maps?q=浮羽カントリークラブ&hl=ja&output=embed" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=浮羽カントリークラブ" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>英語・韓国語対応。最もわかりやすい</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=浮羽カントリークラブ" target="_blank" rel="noopener"><div class="app-name">Yahoo!カーナビ</div>日本道路情報が充実。無料</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/浮羽カントリークラブ" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>韓国語で使えて便利</a>
+        <a class="app-card" href="https://map.kakao.com/?q=우키하+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>韓国語対応。韓国人に人気</a>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>レンタカーの車載ナビは日本語のみの場合が多いため、スマホアプリの併用をおすすめします。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 公共交通機関</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">電車＋タクシー</span></div>
+    <div class="card-body">
+      JR久大本線「うきは駅」または「筑後吉井駅」が最寄りです。駅からタクシーをご利用ください（約15〜20分）。
+      <div class="tip-bar"><span>💡</span>タクシー乗車時はスマホ画面に「浮羽カントリークラブ」と表示してドライバーに見せてください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ 駐車場</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">駐車場情報</span></div>
+    <div class="card-body">
+      無料駐車場完備。スタッフの誘導に従ってお停めください。
+    </div>
+  </div>
+  <div class="sec-head">🚗 レンタカー予約</div>
+  <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
+    <div style="font-size:0.72rem;opacity:.85;margin-bottom:4px;">🚗 ゴルフ場へのアクセスはレンタカーが便利！</div>
+    <div style="font-size:1rem;font-weight:800;">skyticket レンタカーで格安予約 →</div>
+    <div style="font-size:0.7rem;opacity:.8;margin-top:4px;">比較して最安値を探せる</div>
+  </a>
+  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1DXO+5K1O1E+DRA+356I3M" alt="">
+</div>
+
+<!-- English -->
+<div id="c-en" class="content">
+  <div class="sec-head">📍 Basic Info</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">Ukiha Country Club</span></div>
+    <div class="card-body">
+      4094 Shinkawa, Ukiha-machi, Ukiha City, Fukuoka 839-1413<br>📞 0943-77-8585<br>🌐 <a href="https://ukiha-cc.com/" target="_blank" rel="noopener">Official site</a>
+      <div class="tip-bar"><span>💡</span>A hilly course set in the Ukiha highlands. Easy access from the Kurume area as well.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ From Fukuoka Airport</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">From Fukuoka Airport (Recommended)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>Take Urban Expressway Route 2 toward Dazaifu IC</li>
+        <li>Continue on the Kyushu Expressway to Tosu JCT</li>
+        <li>At Tosu JCT, branch onto the Oita Expressway (toward Yufuin / Oita)</li>
+        <li>Exit at Haki IC; about 15 km / 18 min to the clubhouse</li>
+        <li>Total: approx. 60–70 min from Fukuoka Airport</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>Search "浮羽カントリークラブ" in Google Maps for turn-by-turn directions.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 From Hakata / Kurume</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">From Major Stations</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>From Hakata Station: approx. 60 min via Urban Expressway / Kyushu Expressway / Oita Expressway</li>
+        <li>From Kurume area: approx. 30–40 min via Route 210 or the Oita Expressway</li>
+        <li>From Haki IC: approx. 15 km / 18 min via prefectural roads</li>
+        <li>Surface roads through the Asakura area also offer scenic views</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>Ukiha is also well known as a fruit-growing region, making it easy to combine golf with fruit picking.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 Navigation Apps</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">Recommended Apps</span></div>
+    <div class="card-body">
+      Tap to open the app or website.
+      <iframe class="map-embed" src="https://www.google.com/maps?q=浮羽カントリークラブ&hl=en&output=embed" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=浮羽カントリークラブ" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>English support. Easiest for visitors</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=浮羽カントリークラブ" target="_blank" rel="noopener"><div class="app-name">Yahoo! Car Navi</div>Best Japanese road data. Free</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/浮羽カントリークラブ" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>Korean language support</a>
+        <a class="app-card" href="https://map.kakao.com/?q=우키하+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>Popular among Korean visitors</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 Public Transport</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">Train + Taxi</span></div>
+    <div class="card-body">
+      The closest stations are Ukiha and Chikugo-Yoshii on the JR Kyudai Main Line. From either, take a taxi to the course (approx. 15–20 min).
+      <div class="tip-bar"><span>💡</span>Show "浮羽カントリークラブ" on your phone screen to the taxi driver.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ Parking</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">Parking Info</span></div>
+    <div class="card-body">
+      Free parking available. Staff will guide you on arrival.
+    </div>
+  </div>
+  <div class="sec-head">🚗 Rent a Car</div>
+  <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
+    <div style="font-size:0.72rem;opacity:.85;margin-bottom:4px;">🚗 A rental car is the easiest way to reach the golf course!</div>
+    <div style="font-size:1rem;font-weight:800;">Book cheap rental cars on skyticket →</div>
+    <div style="font-size:0.7rem;opacity:.8;margin-top:4px;">Compare prices and find the best deal</div>
+  </a>
+  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1DXO+5K1O1E+DRA+356I3M" alt="">
+</div>
+
+<!-- 한국어 -->
+<div id="c-ko" class="content">
+  <div class="sec-head">📍 기본 정보</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">우키하 컨트리 클럽</span></div>
+    <div class="card-body">
+      〒839-1413　후쿠오카현 우키하시 우키하마치 신카와 4094<br>📞 0943-77-8585<br>🌐 <a href="https://ukiha-cc.com/" target="_blank" rel="noopener">공식 사이트</a>
+      <div class="tip-bar"><span>💡</span>우키하시 구릉지대에 펼쳐진 구릉 코스. 쿠루메 방면에서의 접근도 양호합니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 후쿠오카 공항에서 오시는 길</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">후쿠오카 공항에서 (추천 경로)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>후쿠오카 공항에서 도시고속 2호선으로 다자이후 IC 방면</li>
+        <li>규슈 자동차도로로 토스 JCT까지</li>
+        <li>토스 JCT에서 오이타 자동차도로 (유후인·오이타 방면) 분기</li>
+        <li>하키 IC에서 하차해 약 15km · 18분이면 클럽하우스</li>
+        <li>합계: 후쿠오카 공항에서 차로 약 60〜70분</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>Google Maps에서 「浮羽カントリークラブ」로 검색하면 안내됩니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 하카타역·쿠루메 방면에서</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">주요 거점에서</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>하카타역에서: 도시고속·규슈 자동차도로·오이타 자동차도로 경유 약 60분</li>
+        <li>쿠루메 방면에서: 국도 210호선 또는 오이타 자동차도로 경유 약 30〜40분</li>
+        <li>하키 IC에서: 현도 경유 약 15km · 18분</li>
+        <li>아사쿠라 지역을 통과하는 일반도 루트도 풍경이 좋습니다</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>우키하시는 과일 산지로도 유명합니다. 과일 따기와 함께 관광 일정을 짤 수도 있습니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 내비게이션 앱</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">추천 내비게이션 앱</span></div>
+    <div class="card-body">
+      탭하면 앱 또는 사이트가 열립니다.
+      <iframe class="map-embed" src="https://www.google.com/maps?q=浮羽カントリークラブ&hl=ko&output=embed" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=浮羽カントリークラブ" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>영어·한국어 지원</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=浮羽カントリークラブ" target="_blank" rel="noopener"><div class="app-name">Yahoo! 카내비</div>일본 도로 정보 충실. 무료</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/浮羽カントリークラブ" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>한국어로 사용 가능</a>
+        <a class="app-card" href="https://map.kakao.com/?q=우키하+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">카카오맵</div>한국어 지원</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 대중교통</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">전철 + 택시</span></div>
+    <div class="card-body">
+      JR 큐다이 본선 「우키하역」 또는 「치쿠고요시이역」이 가장 가깝습니다. 역에서 택시를 이용해 주세요 (약 15〜20분).
+      <div class="tip-bar"><span>💡</span>택시 기사에게 「浮羽カントリークラブ」를 스마트폰 화면으로 보여주세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ 주차장</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">주차장 정보</span></div>
+    <div class="card-body">
+      무료 주차장 완비. 직원의 안내에 따라 주차해 주세요.
+    </div>
+  </div>
+  <div class="sec-head">🚗 렌터카 예약</div>
+  <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
+    <div style="font-size:0.72rem;opacity:.85;margin-bottom:4px;">🚗 골프장까지는 렌터카가 가장 편리합니다!</div>
+    <div style="font-size:1rem;font-weight:800;">skyticket 렌터카로 저렴하게 예약 →</div>
+    <div style="font-size:0.7rem;opacity:.8;margin-top:4px;">가격 비교로 최저가 찾기</div>
+  </a>
+  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1DXO+5K1O1E+DRA+356I3M" alt="">
+</div>
+
+<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　このサイトはゴルフ好きが作った情報ガイドです。最新情報は各ゴルフ場の公式サイトでご確認ください。</footer>
+<script>
+  function sw(l){['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+
+  <!-- トップに戻るボタン -->
+  <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップに戻る">▲</button>
+  <style>
+    #btt {
+      position: fixed; bottom: 20px; right: 16px; z-index: 999;
+      width: 44px; height: 44px; border-radius: 50%; border: none;
+      background: #2e8b57; color: #fff; font-size: 1rem; font-weight: 700;
+      cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      transform: translateY(8px);
+    }
+    #btt.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    #btt:hover { background: #1a5c38; }
+  </style>
+  <script>
+    (function(){
+      var btn = document.getElementById('btt');
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('show', window.scrollY > 300);
+      }, {passive: true});
+    })();
+  </script>
+</body>
+</html>

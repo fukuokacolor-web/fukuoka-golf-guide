@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="福岡フェザントカントリークラブ（アコーディア運営）へのアクセス。〒827-0001 田川郡川崎町大字安眞木1086-7。九州自動車道 小倉南ICから30km/約30分。車でのルート・地図を掲載。">
+  <meta name="description" lang="en" content="How to get to Fukuoka Pheasant Country Club (Accordia) in Kawasaki, Tagawa District, Fukuoka. About 30 km / 30 min from Kokura-Minami IC on the Kyushu Expressway. Driving route from Fukuoka Airport and map.">
+  <meta name="description" lang="ko" content="후쿠오카 페전트 컨트리 클럽 (아코디아 운영) 오시는 길. 〒827-0001 후쿠오카현 타가와군 가와사키마치 야스마키 1086-7. 규슈 자동차도로 고쿠라미나미 IC에서 30km / 약 30분. 차량 루트와 지도 안내.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>福岡フェザントカントリークラブ アクセス・地図 | 福岡ゴルフ場ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent:#b45309; --accent-mid:#d97706; --accent-light:#fef3c7;
+      --gold:#c9a227; --gold-light:#fff8e1;
+      --bg:#f5f2ee; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+    }
+    body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
+    .page-header { background:linear-gradient(160deg,#7c2d12 0%,#b45309 60%,#d97706 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header h1 { font-size:1.2rem; font-weight:800; }
+    .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #f0e8d8; font-size:0.8rem; }
+    .back-bar a { color:var(--accent); text-decoration:none; font-weight:700; }
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid #d97706; position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+    .lbtn .f { font-size:1.2rem; }
+    .lbtn.on { color:#b45309; background:#fef3c7; border-bottom:3px solid #d97706; margin-bottom:-2px; }
+    .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
+    .content.on { display:block; }
+    .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
+    .card { background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.07); }
+    .card-head { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #f0f0f0; }
+    .card-head .icon { font-size:1.8rem; flex-shrink:0; }
+    .card-head .title { font-size:0.95rem; font-weight:800; }
+    .card-body { padding:14px 16px; font-size:0.84rem; line-height:1.7; }
+    .step-list { list-style:none; counter-reset:s; }
+    .step-list li { counter-increment:s; display:flex; gap:12px; padding:9px 0; border-bottom:1px dashed #ececec; font-size:0.84rem; line-height:1.5; }
+    .step-list li:last-child { border-bottom:none; }
+    .step-list li::before { content:counter(s); background:#d97706; color:#fff; font-weight:800; font-size:0.72rem; min-width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
+    .info-bar { display:flex; gap:8px; background:var(--accent-light); border-left:4px solid var(--accent-mid); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#78350f; }
+    .app-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+    .app-card { background:var(--accent-light); border:1.5px solid #fcd34d; border-radius:10px; padding:10px 12px; font-size:0.8rem; display:block; text-decoration:none; color:inherit; transition:background .15s; }
+    .app-card:hover { background:#fde68a; }
+    .app-card .app-name { font-weight:800; color:var(--accent); margin-bottom:3px; }
+    .map-embed { width:100%; height:220px; border:0; border-radius:10px; margin-top:10px; display:block; }
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #eeddc8; }
+    footer a { color:var(--accent); text-decoration:none; }
+  </style>
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://fukuoka-golf-guide.com/access-pheasant.html">
+  <meta property="og:site_name"   content="福岡ゴルフ場ガイド">
+  <meta property="og:title"       content="福岡フェザントカントリークラブ アクセス・地図 | 福岡ゴルフ場ガイド">
+  <meta property="og:description" content="福岡フェザントカントリークラブ（アコーディア運営）へのアクセス。〒827-0001 田川郡川崎町大字安眞木1086-7。九州自動車道 小倉南ICから30km/約30分。">
+  <meta name="twitter:card"       content="summary_large_image">
+  <link rel="canonical" href="https://fukuoka-golf-guide.com/access-pheasant.html" />
+  <link rel="alternate" hreflang="ja" href="https://fukuoka-golf-guide.com/access-pheasant.html">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "トップ",
+      "item": "https://fukuoka-golf-guide.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "福岡フェザントカントリークラブ アクセス・地図",
+      "item": "https://fukuoka-golf-guide.com/access-pheasant.html"
+    }
+  ]
+}
+  </script>
+  <meta property="og:image"        content="https://fukuoka-golf-guide.com/images/golf-mountain.webp">
+  <meta property="og:image:width"  content="1920">
+  <meta property="og:image:height" content="1280">
+  <meta property="og:image:alt"    content="福岡ゴルフ場ガイド | Fukuoka Golf Guide">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:image"       content="https://fukuoka-golf-guide.com/images/golf-mountain.webp">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PENH0Z4VT7');
+  </script>
+<!-- AFFILIATE_TRACKER -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    var service = null;
+    if (/jalan/i.test(h)) service = 'jalan';
+    else if (/rakuten/i.test(h) || /gora/i.test(h)) service = 'rakuten_gora';
+    else if (/agoda/i.test(h)) service = 'agoda';
+    else if (/skyticket/i.test(h)) service = 'skyticket';
+    else if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(h)) service = 'tabimonogatari';
+    else if (/amazon|amzn/i.test(h)) service = 'amazon';
+    else if (/a8\.net/i.test(h)) service = 'a8_other';
+    if (!service) return;
+    var page = (location.pathname.split('/').pop() || 'index') + '';
+    var active = document.querySelector('.content.on');
+    var lang = active ? active.id.replace('c-','') : 'ja';
+    if (typeof gtag === 'function') {
+      gtag('event', 'click_affiliate', {
+        service: service,
+        page: page,
+        lang: lang,
+        link_text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80),
+        link_url: h.slice(0, 200)
+      });
+    }
+  }, true);
+})();
+</script>
+</head>
+<body>
+<header class="page-header">
+  <h1>🗺️ 福岡フェザントカントリークラブ アクセス・地図</h1>
+  <p>Access Guide / 오시는 길 안내</p>
+</header>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　｜　<a href="course-pheasant.html">コース紹介に戻る</a></div>
+<div class="lang-bar">
+  <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
+  <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
+  <button class="lbtn"    onclick="sw('ko')"><span class="f">🇰🇷</span>한국어</button>
+</div>
+
+<!-- 日本語 -->
+<div id="c-ja" class="content on">
+  <div class="sec-head">📍 基本情報</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">福岡フェザントカントリークラブ</span></div>
+    <div class="card-body">
+      〒827-0001　福岡県田川郡川崎町大字安眞木1086-7<br>📞 0947-72-5089<br>🌐 <a href="https://reserve.accordiagolf.com/golfCourse/fukuoka/fukuoka/" target="_blank" rel="noopener">公式予約サイト（アコーディア運営）</a>
+      <div class="tip-bar"><span>💡</span>高低差約20mのフラットな丘陵コース。アコーディアグループ運営でビジターも予約しやすいコースです。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 福岡空港からのアクセス</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">福岡空港から（推奨ルート）</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>福岡空港から都市高速2号線で福岡IC方面へ</li>
+        <li>九州自動車道（北九州方面）で小倉南ICへ</li>
+        <li>小倉南ICで降りる</li>
+        <li>小倉南ICから田川郡川崎町方面へ約30km・約30分</li>
+        <li>合計：福岡空港から車で約60〜70分（推定）</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>空港からは小倉方面まで高速で進んで南下するルートになります。Google Mapsで時刻ごとの最適ルートを確認してください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 博多駅・小倉駅から</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">主要拠点から</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>博多駅から：都市高速・九州自動車道経由で約60〜70分（推定）</li>
+        <li>小倉駅から：小倉南IC経由で約45〜60分</li>
+        <li>小倉南ICから川崎町方面へ約30km・30分</li>
+        <li>JR日田彦山線「豊前川崎駅」からタクシー約10分（約¥1,200）</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>北九州市側からのアクセスが比較的良いロケーションです。福岡市内からは時間に余裕を持ってお越しください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 ナビアプリ</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">おすすめナビアプリ</span></div>
+    <div class="card-body">
+      タップするとアプリ・サイトが開きます。
+      <iframe class="map-embed" src="https://www.google.com/maps?q=福岡フェザントカントリークラブ&hl=ja&output=embed" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=福岡フェザントカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>英語・韓国語対応。最もわかりやすい</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=福岡フェザントカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Yahoo!カーナビ</div>日本道路情報が充実。無料</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/福岡フェザントカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>韓国語で使えて便利</a>
+        <a class="app-card" href="https://map.kakao.com/?q=후쿠오카+페전트+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>韓国語対応。韓国人に人気</a>
+      </div>
+      <div class="info-bar"><span>ℹ️</span>レンタカーの車載ナビは日本語のみの場合が多いため、スマホアプリの併用をおすすめします。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 公共交通機関</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">電車＋タクシー</span></div>
+    <div class="card-body">
+      JR日田彦山線「豊前川崎駅」が最寄り駅です。駅からタクシーで約10分（約¥1,200）。
+      <div class="tip-bar"><span>💡</span>タクシー乗車時はスマホ画面に「福岡フェザントカントリークラブ」と表示してドライバーに見せてください。</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ 駐車場</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">駐車場情報</span></div>
+    <div class="card-body">
+      無料駐車場完備。スタッフの誘導に従ってお停めください。
+    </div>
+  </div>
+  <div class="sec-head">🚗 レンタカー予約</div>
+  <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
+    <div style="font-size:0.72rem;opacity:.85;margin-bottom:4px;">🚗 ゴルフ場へのアクセスはレンタカーが便利！</div>
+    <div style="font-size:1rem;font-weight:800;">skyticket レンタカーで格安予約 →</div>
+    <div style="font-size:0.7rem;opacity:.8;margin-top:4px;">比較して最安値を探せる</div>
+  </a>
+  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1DXO+5K1O1E+DRA+356I3M" alt="">
+</div>
+
+<!-- English -->
+<div id="c-en" class="content">
+  <div class="sec-head">📍 Basic Info</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">Fukuoka Pheasant Country Club</span></div>
+    <div class="card-body">
+      1086-7 Yasumagi, Kawasaki-machi, Tagawa District, Fukuoka 827-0001<br>📞 0947-72-5089<br>🌐 <a href="https://reserve.accordiagolf.com/golfCourse/fukuoka/fukuoka/" target="_blank" rel="noopener">Booking site (Accordia Golf)</a>
+      <div class="tip-bar"><span>💡</span>A relatively flat hilly course (about 20 m in elevation change). Operated by Accordia Golf — visitor-friendly online booking.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ From Fukuoka Airport</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">From Fukuoka Airport (Recommended)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>Take Urban Expressway Route 2 toward Fukuoka IC</li>
+        <li>Continue on the Kyushu Expressway northbound to Kokura-Minami IC</li>
+        <li>Exit at Kokura-Minami IC</li>
+        <li>From Kokura-Minami IC, head toward Kawasaki-machi (Tagawa District) — about 30 km / 30 min</li>
+        <li>Total: approx. 60–70 min from Fukuoka Airport (estimated)</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>The route runs north on the expressway toward Kokura, then south on local roads. Check Google Maps for the best option by time of day.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 From Hakata / Kokura Station</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">From Major Stations</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>From Hakata Station: approx. 60–70 min via Urban Expressway / Kyushu Expressway (estimated)</li>
+        <li>From Kokura Station: approx. 45–60 min via Kokura-Minami IC</li>
+        <li>From Kokura-Minami IC to Kawasaki-machi: about 30 km / 30 min</li>
+        <li>Also reachable from Buzen-Kawasaki Station (JR Hita-Hikosan Line) by taxi (approx. 10 min, around JPY 1,200)</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>Access from the Kitakyushu side is relatively quick. From central Fukuoka, allow extra time.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 Navigation Apps</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">Recommended Apps</span></div>
+    <div class="card-body">
+      Tap to open the app or website.
+      <iframe class="map-embed" src="https://www.google.com/maps?q=福岡フェザントカントリークラブ&hl=en&output=embed" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=福岡フェザントカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>English support. Easiest for visitors</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=福岡フェザントカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Yahoo! Car Navi</div>Best Japanese road data. Free</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/福岡フェザントカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>Korean language support</a>
+        <a class="app-card" href="https://map.kakao.com/?q=후쿠오카+페전트+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>Popular among Korean visitors</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 Public Transport</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">Train + Taxi</span></div>
+    <div class="card-body">
+      The nearest station is Buzen-Kawasaki on the JR Hita-Hikosan Line. From there, take a taxi to the course (approx. 10 min, around JPY 1,200).
+      <div class="tip-bar"><span>💡</span>Show "福岡フェザントカントリークラブ" on your phone screen to the taxi driver.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ Parking</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">Parking Info</span></div>
+    <div class="card-body">
+      Free parking available. Staff will guide you on arrival.
+    </div>
+  </div>
+  <div class="sec-head">🚗 Rent a Car</div>
+  <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
+    <div style="font-size:0.72rem;opacity:.85;margin-bottom:4px;">🚗 A rental car is the easiest way to reach the golf course!</div>
+    <div style="font-size:1rem;font-weight:800;">Book cheap rental cars on skyticket →</div>
+    <div style="font-size:0.7rem;opacity:.8;margin-top:4px;">Compare prices and find the best deal</div>
+  </a>
+  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1DXO+5K1O1E+DRA+356I3M" alt="">
+</div>
+
+<!-- 한국어 -->
+<div id="c-ko" class="content">
+  <div class="sec-head">📍 기본 정보</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">⛳</span><span class="title">후쿠오카 페전트 컨트리 클럽</span></div>
+    <div class="card-body">
+      〒827-0001　후쿠오카현 타가와군 가와사키마치 야스마키 1086-7<br>📞 0947-72-5089<br>🌐 <a href="https://reserve.accordiagolf.com/golfCourse/fukuoka/fukuoka/" target="_blank" rel="noopener">예약 사이트 (아코디아 운영)</a>
+      <div class="tip-bar"><span>💡</span>고저차 약 20m의 비교적 평탄한 구릉 코스. 아코디아 골프 그룹 운영으로 비지터 예약도 편리합니다.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">✈️ 후쿠오카 공항에서 오시는 길</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">✈️</span><span class="title">후쿠오카 공항에서 (추천 경로)</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>후쿠오카 공항에서 도시고속 2호선으로 후쿠오카 IC 방면</li>
+        <li>규슈 자동차도로 (기타큐슈 방면)로 고쿠라미나미 IC까지</li>
+        <li>고쿠라미나미 IC에서 하차</li>
+        <li>고쿠라미나미 IC에서 타가와군 가와사키마치 방면으로 약 30km · 30분</li>
+        <li>합계: 후쿠오카 공항에서 차로 약 60〜70분 (추정)</li>
+      </ul>
+      <div class="tip-bar"><span>💡</span>공항에서는 일단 고쿠라 방면으로 북상한 뒤 남쪽으로 내려오는 경로입니다. Google Maps에서 시간대별 최적 경로를 확인하세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚗 하카타역·고쿠라역에서</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">주요 거점에서</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>하카타역에서: 도시고속·규슈 자동차도로 경유 약 60〜70분 (추정)</li>
+        <li>고쿠라역에서: 고쿠라미나미 IC 경유 약 45〜60분</li>
+        <li>고쿠라미나미 IC에서 가와사키마치 방면으로 약 30km · 30분</li>
+        <li>JR 히타히코산선 「부젠가와사키역」에서 택시로 약 10분 (약 ¥1,200)</li>
+      </ul>
+      <div class="info-bar"><span>ℹ️</span>기타큐슈 측에서의 접근이 비교적 좋은 입지입니다. 후쿠오카 시내에서 출발할 때는 시간 여유를 두고 이동하세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🗾 내비게이션 앱</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">📱</span><span class="title">추천 내비게이션 앱</span></div>
+    <div class="card-body">
+      탭하면 앱 또는 사이트가 열립니다.
+      <iframe class="map-embed" src="https://www.google.com/maps?q=福岡フェザントカントリークラブ&hl=ko&output=embed" loading="lazy" allowfullscreen></iframe>
+      <div class="app-grid">
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=福岡フェザントカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>영어·한국어 지원</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=福岡フェザントカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Yahoo! 카내비</div>일본 도로 정보 충실. 무료</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/福岡フェザントカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>한국어로 사용 가능</a>
+        <a class="app-card" href="https://map.kakao.com/?q=후쿠오카+페전트+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">카카오맵</div>한국어 지원</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">🚌 대중교통</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🚃</span><span class="title">전철 + 택시</span></div>
+    <div class="card-body">
+      JR 히타히코산선 「부젠가와사키역」이 가장 가까운 역입니다. 역에서 택시로 약 10분 (약 ¥1,200).
+      <div class="tip-bar"><span>💡</span>택시 기사에게 「福岡フェザントカントリークラブ」를 스마트폰 화면으로 보여주세요.</div>
+    </div>
+  </div>
+
+  <div class="sec-head">🅿️ 주차장</div>
+  <div class="card">
+    <div class="card-head"><span class="icon">🅿️</span><span class="title">주차장 정보</span></div>
+    <div class="card-body">
+      무료 주차장 완비. 직원의 안내에 따라 주차해 주세요.
+    </div>
+  </div>
+  <div class="sec-head">🚗 렌터카 예약</div>
+  <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
+    <div style="font-size:0.72rem;opacity:.85;margin-bottom:4px;">🚗 골프장까지는 렌터카가 가장 편리합니다!</div>
+    <div style="font-size:1rem;font-weight:800;">skyticket 렌터카로 저렴하게 예약 →</div>
+    <div style="font-size:0.7rem;opacity:.8;margin-top:4px;">가격 비교로 최저가 찾기</div>
+  </a>
+  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1DXO+5K1O1E+DRA+356I3M" alt="">
+</div>
+
+<footer>← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　|　このサイトはゴルフ好きが作った情報ガイドです。最新情報は各ゴルフ場の公式サイトでご確認ください。</footer>
+<script>
+  function sw(l){['ja','en','ko'].forEach(x=>document.getElementById('c-'+x).classList.toggle('on',x===l));document.querySelectorAll('.lbtn').forEach((b,i)=>b.classList.toggle('on',['ja','en','ko'][i]===l));window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+
+  <!-- トップに戻るボタン -->
+  <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップに戻る">▲</button>
+  <style>
+    #btt {
+      position: fixed; bottom: 20px; right: 16px; z-index: 999;
+      width: 44px; height: 44px; border-radius: 50%; border: none;
+      background: #2e8b57; color: #fff; font-size: 1rem; font-weight: 700;
+      cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      transform: translateY(8px);
+    }
+    #btt.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    #btt:hover { background: #1a5c38; }
+  </style>
+  <script>
+    (function(){
+      var btn = document.getElementById('btt');
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('show', window.scrollY > 300);
+      }, {passive: true});
+    })();
+  </script>
+</body>
+</html>

@@ -67,6 +67,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://fukuoka-golf-guide.com/access-fukuokakokusai.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fukuoka-golf-guide.com/access-genkai.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fukuoka-golf-guide.com/access-hisayama.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -151,6 +163,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://fukuoka-golf-guide.com/access-pheasant.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fukuoka-golf-guide.com/access-queenshill.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -165,6 +183,24 @@
   <url>
     <loc>https://fukuoka-golf-guide.com/access-sevenmillion.html</loc>
     <lastmod>2026-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fukuoka-golf-guide.com/access-takaha.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fukuoka-golf-guide.com/access-ukiha.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fukuoka-golf-guide.com/access-wakamatsu.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

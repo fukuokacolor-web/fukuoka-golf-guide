@@ -1,8 +1,8 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-03
-**最終 commit**: `82332dc` (Deep link 楽天GORA to course-specific pages)
-**前回更新**: 2026-05-02 (Phase B Jalan/Rakuten JP-only マーカー)
+**最終更新**: 2026-05-03 (2回目)
+**最終 commit**: `c6a6436` (3コンテンツ修正 aburayama/kokura/genkai)
+**前回 commit**: `82332dc` (Deep link 楽天GORA), `dc53ebc` (NEXT_SESSION update)
 
 ---
 
@@ -22,7 +22,12 @@
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 楽天GORA Deep Link 化完了** (`82332dc` / 2026-05-03)
+1. **🆕 3コンテンツ修正完了** (`c6a6436` / 2026-05-03)
+   - aburayama → ララヒルズ油山に名称統一・2025リニューアルnotice
+   - kokura → 株主会員制(ビジター枠あり)リブランディング+楽天/じゃらんCTA追加(8件/15件)
+   - genkai → 営業中(2023リニューアル)+JGA Open開催notice、楽天/じゃらんは非掲載のためCTA除外継続+公式/GDO推奨
+   - 4エージェント並列稼働: ファクトチェック×2 + CVR + IA
+2. **🆕 楽天GORA Deep Link 化完了** (`82332dc` / 2026-05-03)
    - 約480件の楽天URLをコース個別ページへ deep link 化
    - A8.netフリーリンク (4P34KY+BW8O1) 利用
    - URL構造: `pc=https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/{ID}`
@@ -86,12 +91,19 @@ python scripts/deeplink_multi_course.py              # 適用
 
 ## 📝 未完了タスク（優先順）
 
-### 🔴 高優先：コンテンツ修正
-- [ ] **course-genkai.html**：「現在長期休場中」notice バナー追加
-  - サイト内コンテンツに矛盾あり（リニューアル/Senior Open開催記述）→ 公式サイト最終確認必要
-- [ ] **course-aburayama.html**：コース名を「ララヒルズ油山」に統一更新（10Hショート明記）
-- [ ] **course-kokura.html**：「会員制」表記を「株主会員制（ビジター枠あり・土日¥19,014〜）」に修正
-  - 楽天/じゃらんCTA を**追加**（現状ゼロ）
+### 🔴 高優先：aburayama 旧名の他ファイル更新（IA推奨：新旧併記6ヶ月）
+3ファイル修正 (`c6a6436`) で course-aburayama.html 本体は完了。残り：
+- [ ] `access-aburayama.html` (28箇所) — タイトル/H1のみララヒルズに変更、本文は旧名併記
+- [ ] `area-fukuokacity.html` (2箇所) — エリアガイド内のコース名表記
+- [ ] `hub-beginner.html` (2箇所) — 初心者ハブのコース名
+- [ ] `recommend.html` (1箇所) — レコメンド記事のコース名
+- [ ] `index.html` — トップページにあれば
+- [ ] `sitemap-guide.html` — サイトマップガイド表記
+
+### ✅ 完了済 (2026-05-03 2回目)
+- ~~course-genkai.html notice バナー追加~~ → 完了 (営業中・公式/GDO誘導)
+- ~~course-aburayama.html ララヒルズ統一~~ → 完了 (本体ファイルのみ)
+- ~~course-kokura.html リブランディング+CTA~~ → 完了
 
 ### 🟡 中優先：じゃらんゴルフ Deep Link 化
 - [ ] じゃらんゴルフも同様の deep link 化（楽天と並走）

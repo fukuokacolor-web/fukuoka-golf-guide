@@ -1,8 +1,8 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-03 (2回目)
-**最終 commit**: `c6a6436` (3コンテンツ修正 aburayama/kokura/genkai)
-**前回 commit**: `82332dc` (Deep link 楽天GORA), `dc53ebc` (NEXT_SESSION update)
+**最終更新**: 2026-05-03 (3回目)
+**最終 commit**: `245a0d7` (aburayama 旧名→新名 7ファイル横断 + recommend.html 事実訂正)
+**前回 commit**: `aada5e2` (handover更新), `c6a6436` (3コンテンツ修正)
 
 ---
 
@@ -22,7 +22,14 @@
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 3コンテンツ修正完了** (`c6a6436` / 2026-05-03)
+1. **🆕 aburayama 旧名→新名 横断更新完了** (`245a0d7` / 2026-05-03)
+   - 7ファイル × 3言語(JA/EN/KO) で「ララヒルズ油山(旧 油山ゴルフクラブ)」へ統一
+   - 対象: access-aburayama / area-fukuokacity / hub-beginner / recommend / index / sitemap-guide / fees
+   - IA推奨「新旧併記6ヶ月」に従い、タイトル/H1/structured data は新名、本文は併記
+   - **recommend.html 事実訂正**: 18H Par72/山岳→10H ショート(canonical course-aburayama基準・3言語)
+   - KO「라라힐즈」→「라라 힐스」統一(sitemap-guide.html含む)
+   - 略称「油山GC/Aburayama GC」「物理看板」「Google Maps検索URL」は旧名のまま保持(SEO)
+2. **3コンテンツ修正完了** (`c6a6436` / 2026-05-03)
    - aburayama → ララヒルズ油山に名称統一・2025リニューアルnotice
    - kokura → 株主会員制(ビジター枠あり)リブランディング+楽天/じゃらんCTA追加(8件/15件)
    - genkai → 営業中(2023リニューアル)+JGA Open開催notice、楽天/じゃらんは非掲載のためCTA除外継続+公式/GDO推奨
@@ -91,14 +98,11 @@ python scripts/deeplink_multi_course.py              # 適用
 
 ## 📝 未完了タスク（優先順）
 
-### 🔴 高優先：aburayama 旧名の他ファイル更新（IA推奨：新旧併記6ヶ月）
-3ファイル修正 (`c6a6436`) で course-aburayama.html 本体は完了。残り：
-- [ ] `access-aburayama.html` (28箇所) — タイトル/H1のみララヒルズに変更、本文は旧名併記
-- [ ] `area-fukuokacity.html` (2箇所) — エリアガイド内のコース名表記
-- [ ] `hub-beginner.html` (2箇所) — 初心者ハブのコース名
-- [ ] `recommend.html` (1箇所) — レコメンド記事のコース名
-- [ ] `index.html` — トップページにあれば
-- [ ] `sitemap-guide.html` — サイトマップガイド表記
+### ✅ 完了済 (2026-05-03 3回目) — `245a0d7`
+- ~~aburayama 旧名→新名 7ファイル横断更新~~ → 完了 (3言語・IA推奨併記方式)
+  - access-aburayama.html / area-fukuokacity.html / hub-beginner.html
+  - recommend.html (+ 18H→10H 事実訂正) / index.html / sitemap-guide.html / fees.html
+- ~~KO表記「라라힐즈」→「라라 힐스」統一~~ → 完了
 
 ### ✅ 完了済 (2026-05-03 2回目)
 - ~~course-genkai.html notice バナー追加~~ → 完了 (営業中・公式/GDO誘導)

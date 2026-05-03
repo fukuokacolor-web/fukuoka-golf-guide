@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "generated_at": "2026-05-03",
+    "source": "Rakuten GORA c_id collection + fact-check cross-validation",
+    "rakuten_url_template": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/{c_id}",
+    "a8_template": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+BW8O1&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_BW8O1%3Fpc%3D{ENCODED}%26m%3D{ENCODED}",
+    "exclusion_reasons": {
+      "members_only": "会員制で楽天/じゃらん予約不可",
+      "not_listed": "楽天GORAに掲載なし",
+      "long_closure": "長期休場中"
+    }
+  },
+  "courses": [
+    {"file": "course-ariake",        "name": "有明カントリークラブ",                          "c_id": "400003", "deeplink": true},
+    {"file": "course-asoiizuka",     "name": "麻生飯塚ゴルフ倶楽部",                          "c_id": "400002", "deeplink": true},
+    {"file": "course-central",       "name": "セントラル福岡ゴルフ倶楽部【アコーディア】",     "c_id": "400028", "deeplink": true},
+    {"file": "course-century",       "name": "福岡センチュリーゴルフ倶楽部",                  "c_id": "400042", "deeplink": true},
+    {"file": "course-chikushigaoka", "name": "筑紫ヶ丘ゴルフクラブ",                          "c_id": "400033", "deeplink": true},
+    {"file": "course-chikushino",    "name": "筑紫野カントリークラブ",                        "c_id": "400034", "deeplink": true},
+    {"file": "course-daihakata",     "name": "大博多カントリー倶楽部【PGM】",                 "c_id": "400029", "deeplink": true},
+    {"file": "course-dazaifu",       "name": "太宰府ゴルフ倶楽部",                            "c_id": "400031", "deeplink": true},
+    {"file": "course-fukuokakokusai","name": "福岡国際カントリークラブ【PGM】",               "c_id": "400040", "deeplink": true},
+    {"file": "course-hisayama",      "name": "久山カントリー倶楽部",                          "c_id": "400038", "deeplink": true},
+    {"file": "course-ito",           "name": "伊都ゴルフ倶楽部",                              "c_id": "400006", "deeplink": true},
+    {"file": "course-keya",          "name": "芥屋ゴルフ倶楽部",                              "c_id": "400015", "deeplink": true},
+    {"file": "course-kitakyushu",    "name": "北九州カントリー倶楽部【PGM】",                 "c_id": "400010", "deeplink": true},
+    {"file": "course-koga",          "name": "古賀ゴルフ・クラブ",                            "c_id": "400018", "deeplink": true},
+    {"file": "course-kokura",        "name": "小倉カンツリー倶楽部",                          "c_id": "400019", "deeplink": true, "note": "株主会員制だがビジター枠あり"},
+    {"file": "course-kurume",        "name": "久留米カントリークラブ",                        "c_id": "400014", "deeplink": true},
+    {"file": "course-kyushugc",      "name": "九州ゴルフ倶楽部 八幡コース",                   "c_id": "400012", "deeplink": true},
+    {"file": "course-lakeside",      "name": "福岡レイクサイドカントリークラブ【PGM】",       "c_id": "400044", "deeplink": true},
+    {"file": "course-mission",       "name": "ミッションバレーゴルフクラブ",                  "c_id": "400045", "deeplink": true},
+    {"file": "course-moji",          "name": "門司ゴルフ倶楽部",                              "c_id": "400047", "deeplink": true},
+    {"file": "course-moonlake",      "name": "ムーンレイクゴルフクラブ鞍手コース【PGM】",     "c_id": "400013", "deeplink": true},
+    {"file": "course-nijo",          "name": "二丈カントリークラブ【アコーディア】",          "c_id": "400037", "deeplink": true},
+    {"file": "course-ogori",         "name": "小郡カンツリー倶楽部",                          "c_id": "400008", "deeplink": true},
+    {"file": "course-pheasant",      "name": "福岡フェザントカントリークラブ【アコーディア】", "c_id": "400041", "deeplink": true},
+    {"file": "course-queenshill",    "name": "ザ・クイーンズヒルゴルフクラブ",                "c_id": "400021", "deeplink": true},
+    {"file": "course-saitozaki",     "name": "西戸崎シーサイドカントリークラブ",              "c_id": "400020", "deeplink": true},
+    {"file": "course-sevenmillion",  "name": "セブンミリオンカントリークラブ",                "c_id": "400027", "deeplink": true},
+    {"file": "course-takaha",        "name": "鷹羽ロイヤルカントリークラブ",                  "c_id": "400030", "deeplink": true},
+    {"file": "course-ukiha",         "name": "浮羽カントリークラブ",                          "c_id": "400007", "deeplink": true},
+    {"file": "course-wakamiya",      "name": "トライアルゴルフ&リゾート WAKAMIYA COURSE",      "c_id": "400051", "deeplink": true},
+    {"file": "course-aburayama",     "name": "ララヒルズ油山",                                "c_id": "520392", "deeplink": true, "note": "10Hショートコース・名称変更"},
+    {"file": "course-fukuokacc",     "name": "福岡カンツリー倶楽部 和白コース",               "c_id": null,     "deeplink": false, "exclude_reason": "members_only"},
+    {"file": "course-wakamatsu",     "name": "若松ゴルフ倶楽部",                              "c_id": null,     "deeplink": false, "exclude_reason": "members_only"},
+    {"file": "course-akane",         "name": "あかねカントリークラブ",                        "c_id": null,     "deeplink": false, "exclude_reason": "not_listed"},
+    {"file": "course-genkai",        "name": "玄海ゴルフクラブ",                              "c_id": null,     "deeplink": false, "exclude_reason": "long_closure", "note": "2023/1から長期休場"}
+  ]
+}

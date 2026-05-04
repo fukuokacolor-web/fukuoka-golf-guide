@@ -1,8 +1,8 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-03 (3回目)
-**最終 commit**: `245a0d7` (aburayama 旧名→新名 7ファイル横断 + recommend.html 事実訂正)
-**前回 commit**: `aada5e2` (handover更新), `c6a6436` (3コンテンツ修正)
+**最終更新**: 2026-05-03 (4回目)
+**最終 commit**: `9332513` (じゃらんゴルフ Deep Link 化・約690件)
+**前回 commit**: `245a0d7` (aburayama 7ファイル横断), `5ca5523` (handover更新)
 
 ---
 
@@ -22,7 +22,16 @@
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 aburayama 旧名→新名 横断更新完了** (`245a0d7` / 2026-05-03)
+1. **🆕 じゃらんゴルフ Deep Link 化完了** (`9332513` / 2026-05-03)
+   - 約690件のじゃらんトップURLをコース個別ページ (`https://golf-jalan.net/gc{ID}/`) へ deep link 化
+   - 35コース分の jalan_id 全件収集 (WebSearch + golf-jalan.net prefecture page)
+   - 単体: 910 件置換 / multi-course: 468 件置換 + 34 件除外CTA削除
+   - 楽天 mapping との差分:
+     * **akane** (gc02344): 楽天未掲載だがじゃらん掲載 → 現HTMLにCTA無く no-op (要復活検討・別タスク)
+     * **aburayama**: 楽天 c_id=520392 だがじゃらん未掲載 → 16件削除 + sticky CTA を rakuten のみに変更
+   - 残存トップページCTA 7件 (fees/beginner-cards/area-kitakyushu): コース文脈なし汎用CTA・意図的に保持
+   - 期待効果: 楽天と並走で月¥30-50k 程度の追加収益見込み
+2. **aburayama 旧名→新名 横断更新完了** (`245a0d7` / 2026-05-03)
    - 7ファイル × 3言語(JA/EN/KO) で「ララヒルズ油山(旧 油山ゴルフクラブ)」へ統一
    - 対象: access-aburayama / area-fukuokacity / hub-beginner / recommend / index / sitemap-guide / fees
    - IA推奨「新旧併記6ヶ月」に従い、タイトル/H1/structured data は新名、本文は併記
@@ -81,10 +90,42 @@ python scripts/deeplink_multi_course.py              # 適用
 
 ---
 
-## 🚫 アフィリCTA 除外コース 4件（厳守）
+## 🆕 じゃらんゴルフ Deep Link 仕様（重要）
+
+### URL テンプレート
+```
+https://px.a8.net/svt/ejp?
+  a8mat=4B1D5J+5JG8FM+36SI+BW8O2                  ← フリーリンクコード
+  &a8ejpredirect=https%3A%2F%2Fgolf-jalan.net%2Fgc{ID}%2F
+                                                  ← single URL encode
+```
+
+### コース個別URL
+```
+https://golf-jalan.net/gc{jalan_id}/   ※ ID は 5桁 (例: 02326)
+```
+
+### 既存スクリプト
+- `scripts/deeplink_jalan.py` — course-*.html 単体ファイル一括書き換え
+- `scripts/deeplink_multi_course_jalan.py` — multi-course ファイル文脈推定書き換え
+- `jalan_golf_mapping.json` — jalan_id↔ファイル名マッピング (35コース)
+
+### 再実行方法
+```bash
+cd C:/Users/Owner/fukuoka-golf-guide
+python scripts/deeplink_jalan.py --dry-run            # 確認
+python scripts/deeplink_jalan.py                       # 適用
+python scripts/deeplink_multi_course_jalan.py --dry-run  # 確認
+python scripts/deeplink_multi_course_jalan.py            # 適用
+```
+
+---
+
+## 🚫 アフィリCTA 除外コース（楽天 / じゃらん 別管理・厳守）
 
 **ファクトチェック2エージェント並列クロスチェック確定（2026-05-03）**
 
+### 楽天GORA 除外 (4件)
 | コース | 理由 | 状態 |
 |--------|------|------|
 | **course-fukuokacc** | 会員制（メンバー同伴/紹介必須）・GORAプラン非掲載 | 既にCTAなし ✓ |
@@ -92,11 +133,28 @@ python scripts/deeplink_multi_course.py              # 適用
 | **course-akane** | 楽天GORA未掲載（あかねCC） | CTA削除済 ✓ |
 | **course-genkai** | 2023/1〜長期クローズ表示中 (※ 要追跡) | CTA削除済 ✓ |
 
+### じゃらんゴルフ 除外 (4件) — 楽天とは異なる
+| コース | 理由 | 状態 |
+|--------|------|------|
+| **course-fukuokacc** | 会員制 | 既にCTAなし ✓ |
+| **course-wakamatsu** | 会員制 | 既にCTAなし ✓ |
+| **course-genkai** | 長期休場 | 既にCTAなし ✓ |
+| **course-aburayama** | じゃらん未掲載 (10Hショート) | 9332513 で削除済 ✓ |
+
+### 楽天⇔じゃらん 差分（重要）
+- **akane** (gc02344): 楽天は除外だがじゃらんは掲載 → **要対応(別タスク)**: HTML に再追加して deep link 化
+- **aburayama** (c_id=520392): 楽天は掲載だがじゃらんは未掲載 → 既にじゃらん削除済
+
 **※ 注意**：以前 NEXT_SESSION.md に「福岡CC・若松・玄海」と書いていたが、**小倉CCは株主会員制でビジター枠あり**（土日¥19,014公表）のため CTA 維持。誤記訂正済。
 
 ---
 
 ## 📝 未完了タスク（優先順）
+
+### ✅ 完了済 (2026-05-03 4回目) — `9332513`
+- ~~じゃらんゴルフ Deep Link 化 (約690件)~~ → 完了 (35コース全件マッピング)
+  - jalan_golf_mapping.json + deeplink_jalan.py + deeplink_multi_course_jalan.py
+  - aburayama: 削除 + sticky CTA 整理 / その他: deep link 化
 
 ### ✅ 完了済 (2026-05-03 3回目) — `245a0d7`
 - ~~aburayama 旧名→新名 7ファイル横断更新~~ → 完了 (3言語・IA推奨併記方式)
@@ -109,11 +167,10 @@ python scripts/deeplink_multi_course.py              # 適用
 - ~~course-aburayama.html ララヒルズ統一~~ → 完了 (本体ファイルのみ)
 - ~~course-kokura.html リブランディング+CTA~~ → 完了
 
-### 🟡 中優先：じゃらんゴルフ Deep Link 化
-- [ ] じゃらんゴルフも同様の deep link 化（楽天と並走）
-- 既存じゃらんアフィリ：`a8mat=4B1D5J+5JG8FM+36SI+BW8O2` (フリーリンクコード判明済)
-- URL形式：`https://golf-jalan.net/gc{ID}/` または `https://golf.jalan.net/golf/courseDetail/{ID}/`
-- **未取得の jalan c_id**：35コース分の収集スクリプト or Webfetch 必要
+### 🟡 中優先：akane へのじゃらんCTA 復活 (新規発生タスク)
+- 楽天除外時にじゃらんCTAも一緒に削除されたが、じゃらんは **gc02344** で掲載あり
+- course-akane.html に jalan deep link CTA を再追加 (楽天と同じ場所に配置)
+- 推定収益: 月¥3-5k 程度の上乗せ可能性
 
 ### 🟡 中優先：Phase C インバウンド改善
 **ユーザー側作業 (ASP申請)**:

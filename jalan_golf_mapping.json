@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "generated_at": "2026-05-03",
+    "source": "Jalan Golf prefecture page + WebSearch fact-check (35 courses)",
+    "jalan_url_template": "https://golf-jalan.net/gc{jalan_id}/",
+    "a8_template": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect={ENCODED_URL}",
+    "encoding": "single URL encoding (a8ejpredirect param)",
+    "exclusion_reasons": {
+      "members_only": "会員制で予約サイト掲載なし",
+      "not_listed": "じゃらんゴルフに掲載なし",
+      "long_closure": "長期休場中",
+      "removed_by_rakuten_cleanup": "楽天deep link化時にじゃらんCTAも削除済 (要復活検討)"
+    },
+    "differences_from_rakuten": {
+      "course-akane": "楽天は未掲載だがじゃらんは掲載あり (gc02344)。現在HTMLにじゃらんCTA無し → 別タスクで復活検討",
+      "course-aburayama": "楽天は掲載(c_id=520392)だがじゃらんは未掲載 → 既存じゃらん URL は削除"
+    }
+  },
+  "courses": [
+    {"file": "course-aburayama",     "name": "ララヒルズ油山",                                "jalan_id": null,    "deeplink": false, "exclude_reason": "not_listed", "note": "10Hショートコース・じゃらん未掲載"},
+    {"file": "course-akane",         "name": "茜ゴルフクラブ (あかね)",                       "jalan_id": "02344", "deeplink": true,  "note": "じゃらん掲載あり・現HTMLにCTAなし(楽天除外時に削除済) → script は no-op"},
+    {"file": "course-ariake",        "name": "有明カントリークラブ",                          "jalan_id": "02315", "deeplink": true},
+    {"file": "course-asoiizuka",     "name": "麻生飯塚ゴルフ倶楽部",                          "jalan_id": "02343", "deeplink": true},
+    {"file": "course-central",       "name": "セントラル福岡ゴルフ倶楽部【アコーディア】",     "jalan_id": "02322", "deeplink": true},
+    {"file": "course-century",       "name": "福岡センチュリーゴルフ倶楽部",                  "jalan_id": "02319", "deeplink": true},
+    {"file": "course-chikushigaoka", "name": "筑紫ヶ丘ゴルフクラブ",                          "jalan_id": "02333", "deeplink": true},
+    {"file": "course-chikushino",    "name": "筑紫野カントリークラブ",                        "jalan_id": "02324", "deeplink": true},
+    {"file": "course-daihakata",     "name": "大博多カントリー倶楽部【PGM】",                 "jalan_id": "02332", "deeplink": true},
+    {"file": "course-dazaifu",       "name": "太宰府ゴルフ倶楽部",                            "jalan_id": "02327", "deeplink": true},
+    {"file": "course-fukuokacc",     "name": "福岡カンツリー倶楽部 和白コース",               "jalan_id": null,    "deeplink": false, "exclude_reason": "members_only"},
+    {"file": "course-fukuokakokusai","name": "福岡国際カントリークラブ【PGM】",               "jalan_id": "02326", "deeplink": true},
+    {"file": "course-genkai",        "name": "玄海ゴルフクラブ",                              "jalan_id": null,    "deeplink": false, "exclude_reason": "long_closure"},
+    {"file": "course-hisayama",      "name": "久山カントリー倶楽部",                          "jalan_id": "02334", "deeplink": true},
+    {"file": "course-ito",           "name": "伊都ゴルフ倶楽部",                              "jalan_id": "02329", "deeplink": true},
+    {"file": "course-keya",          "name": "芥屋ゴルフ倶楽部",                              "jalan_id": "02351", "deeplink": true},
+    {"file": "course-kitakyushu",    "name": "北九州カントリー倶楽部【PGM】",                 "jalan_id": "02348", "deeplink": true},
+    {"file": "course-koga",          "name": "古賀ゴルフ・クラブ",                            "jalan_id": "02331", "deeplink": true},
+    {"file": "course-kokura",        "name": "小倉カンツリー倶楽部",                          "jalan_id": "02309", "deeplink": true, "note": "株主会員制だがビジター枠あり"},
+    {"file": "course-kurume",        "name": "久留米カントリークラブ",                        "jalan_id": "02356", "deeplink": true},
+    {"file": "course-kyushugc",      "name": "九州ゴルフ倶楽部 八幡コース",                   "jalan_id": "02310", "deeplink": true},
+    {"file": "course-lakeside",      "name": "福岡レイクサイドカントリークラブ【PGM】",       "jalan_id": "02346", "deeplink": true},
+    {"file": "course-mission",       "name": "ミッションバレーゴルフクラブ",                  "jalan_id": "02338", "deeplink": true},
+    {"file": "course-moji",          "name": "門司ゴルフ倶楽部",                              "jalan_id": "02307", "deeplink": true},
+    {"file": "course-moonlake",      "name": "ムーンレイクゴルフクラブ鞍手コース【PGM】",     "jalan_id": "02339", "deeplink": true},
+    {"file": "course-nijo",          "name": "二丈カントリークラブ【アコーディア】",          "jalan_id": "02350", "deeplink": true},
+    {"file": "course-ogori",         "name": "小郡カンツリー倶楽部",                          "jalan_id": "02321", "deeplink": true},
+    {"file": "course-pheasant",      "name": "福岡フェザントカントリークラブ【アコーディア】", "jalan_id": "02358", "deeplink": true},
+    {"file": "course-queenshill",    "name": "ザ・クイーンズヒルゴルフクラブ",                "jalan_id": "02328", "deeplink": true},
+    {"file": "course-saitozaki",     "name": "西戸崎シーサイドカントリークラブ",              "jalan_id": "02313", "deeplink": true},
+    {"file": "course-sevenmillion",  "name": "セブンミリオンカントリークラブ",                "jalan_id": "02314", "deeplink": true},
+    {"file": "course-takaha",        "name": "鷹羽ロイヤルカントリークラブ",                  "jalan_id": "02359", "deeplink": true},
+    {"file": "course-ukiha",         "name": "浮羽カントリークラブ",                          "jalan_id": "02353", "deeplink": true},
+    {"file": "course-wakamatsu",     "name": "若松ゴルフ倶楽部",                              "jalan_id": null,    "deeplink": false, "exclude_reason": "members_only"},
+    {"file": "course-wakamiya",      "name": "トライアルゴルフ&リゾート WAKAMIYA COURSE",      "jalan_id": "02341", "deeplink": true}
+  ]
+}

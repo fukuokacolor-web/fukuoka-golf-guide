@@ -1,8 +1,8 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-04 (2回目)
-**最終 commit**: `e0e6d64` (How to Book 記事を 47 ページに接続・サイトグラフ統合)
-**前回 commit**: `5540ac9` (How to Book 記事新規), `698c901` (akane jalan CTA復活)
+**最終更新**: 2026-05-05
+**最終 commit**: `4c40600` (Phase 1 - 逆流ナビ + Hero CTA + sticky 価格込み + KO 楽天追加)
+**前回 commit**: `e0e6d64` (How to Book 記事を 47 ページに接続)、`5540ac9` (記事新規)
 
 ---
 
@@ -22,7 +22,20 @@
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 「How to Book」記事をサイト全体に接続** (`e0e6d64` / 2026-05-04)
+1. **🆕 Phase 1 — 逆流ナビ + CVR 改善 (専門家会議結果)** (`4c40600` / 2026-05-05)
+   - **Phase 1A (鈴木玲奈/IA)**: 全 35 course-*.html × 3言語 = 105 セクションに「Explore More」逆流ナビ挿入
+     - 5 エリアハブ (該当エリアをオレンジハイライト) + 4 ペルソナハブ + 3 ガイド
+     - スクリプト: `scripts/inject_explore_nav.py` (冪等・dry-run対応)
+     - 期待効果: ハブ受信 PR +30-50%・回遊率 +15-25%
+   - **Phase 1B (佐藤美咲/CVR)**: 標準 30 コースに hero 内 CTA + sticky 価格込み + KO 楽天追加
+     - Hero CTA: hero-badges 直後にオレンジ「📅 このコースを予約する」ボタン
+     - Sticky CTA: hero-badge から最安値抽出して「📅 じゃらん ¥3,500〜」形式に
+     - KO sticky: 1ボタン (Jalan のみ) → 2ボタン (Jalan + Rakuten・🇯🇵 マーカー保持)
+     - 除外 4件: fukuokacc/wakamatsu (会員制)・akane/genkai (sticky 非表示)・自動 skip 1件: aburayama (Jalan 未掲載)
+     - スクリプト: `scripts/cvr_enhance.py` (冪等・dry-run対応)
+     - 期待効果: CVR 1.2% → 2.4%・月収益 +¥18-35k
+   - **専門家会議**: SEO/CVR/IA/インバウンド/行動経済学/コンテンツの 6 名並列招集→議事録ベースで Phase 1 着手決定
+2. **🆕 「How to Book」記事をサイト全体に接続** (`e0e6d64` / 2026-05-04)
    - Phase A バナー (45ファイル × 2dir = 90 files) の「coming soon」placeholder を実リンクに置換
    - 対象: 35 course pages + 5 area pages + 4 hub pages + index (EN+KO 両方)
    - hub-traveler.html: article-grid (EN/KO) 冒頭に featured カード追加 (orange border emphasis)
@@ -169,6 +182,24 @@ python scripts/deeplink_multi_course_jalan.py            # 適用
 ---
 
 ## 📝 未完了タスク（優先順）
+
+### ✅ 完了済 (2026-05-05) — `4c40600` (Phase 1)
+- ~~**Phase 1A**: 全 35 コース×3言語に逆流ナビ挿入 (鈴木玲奈/IA 提案)~~ → 完了
+- ~~**Phase 1B**: 標準 30 コースに hero CTA + sticky 価格 + KO 楽天 (佐藤美咲/CVR 提案)~~ → 完了
+- 専門家会議 6 名招集→議事録ベースで決定
+- スクリプト: `inject_explore_nav.py` + `cvr_enhance.py`
+
+### 🟡 次に着手候補 (Phase 2 — 会議で議論済)
+- **田中健太郎/SEO**: 取引KW専用ページ 3 本新設 (`book-fukuoka-cheap/tomorrow/solo`)
+  - 想定 KW: 「福岡 ゴルフ 平日 当日予約」「福岡 ゴルフ 1人予約」「福岡 ゴルフ 安い」
+  - 工数 2-3 日・想定効果 月 +2-4kPV / +¥8-15万
+- **教授/行動経済学**: Decoy + Default 価格カード再設計
+  - 中央 featured 化 + 「90% が選ぶ」マイクロコピー (実データ要)
+  - 工数 3-4h・想定効果 CTR +30-50%
+- **金星誠/インバウンド**: 韓国語対応コース認証バッジ + KO 絞り込みハブ
+  - 工数 6-8h・想定効果 KO CVR 0.5% → 1.8%
+- **山本誠一/編集**: 「編集部覆面ラウンド記」(5-7k 字 SEO×差別化)
+  - 工数 25-30h・差別化コンテンツ
 
 ### ✅ 完了済 (2026-05-04) — `5540ac9`
 - ~~「How to Book Fukuoka Golf as a Foreigner」 EN/KO 記事新規~~ → 完了

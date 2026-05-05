@@ -1,8 +1,8 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-04
-**最終 commit**: `5540ac9` (How to Book Fukuoka Golf as a Foreigner EN/KO 記事新規)
-**前回 commit**: `698c901` (akane jalan CTA復活), `9332513` (jalan deep link 化)
+**最終更新**: 2026-05-04 (2回目)
+**最終 commit**: `e0e6d64` (How to Book 記事を 47 ページに接続・サイトグラフ統合)
+**前回 commit**: `5540ac9` (How to Book 記事新規), `698c901` (akane jalan CTA復活)
 
 ---
 
@@ -22,7 +22,14 @@
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 「How to Book Fukuoka Golf as a Foreigner」 EN/KO 記事新規** (`5540ac9` / 2026-05-04)
+1. **🆕 「How to Book」記事をサイト全体に接続** (`e0e6d64` / 2026-05-04)
+   - Phase A バナー (45ファイル × 2dir = 90 files) の「coming soon」placeholder を実リンクに置換
+   - 対象: 35 course pages + 5 area pages + 4 hub pages + index (EN+KO 両方)
+   - hub-traveler.html: article-grid (EN/KO) 冒頭に featured カード追加 (orange border emphasis)
+   - スクリプト: scripts/link_inbound_guide.py (再利用可能)
+   - 結果: 記事への参照 1 → 48 ファイル
+   - 期待効果: 全コースページから 1 hop で記事到達 → 行動経済学的「予約できる橋」が機能
+2. **「How to Book Fukuoka Golf as a Foreigner」 EN/KO 記事新規** (`5540ac9` / 2026-05-04)
    - 戦略会議で次タスクと決定された記事を新規作成
    - book-fukuoka-golf-foreigner.html (976行・EN+KO で約3000語)
    - 構成: Hero / Why Fukuoka / 予約プラットフォーム比較 / 7ステップ予約手順 / 日本語12語表 / 当日の流れ / 推奨3コース(jalan deep link CTA) / FAQ7項目

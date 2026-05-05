@@ -1,8 +1,8 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-03 (5回目)
-**最終 commit**: `698c901` (akane へじゃらんCTA復活・gc02344)
-**前回 commit**: `9332513` (じゃらんゴルフ Deep Link 化・約690件), `04d2285` (handover更新)
+**最終更新**: 2026-05-04
+**最終 commit**: `5540ac9` (How to Book Fukuoka Golf as a Foreigner EN/KO 記事新規)
+**前回 commit**: `698c901` (akane jalan CTA復活), `9332513` (jalan deep link 化)
 
 ---
 
@@ -22,7 +22,15 @@
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 akane へじゃらんCTA復活完了** (`698c901` / 2026-05-03)
+1. **🆕 「How to Book Fukuoka Golf as a Foreigner」 EN/KO 記事新規** (`5540ac9` / 2026-05-04)
+   - 戦略会議で次タスクと決定された記事を新規作成
+   - book-fukuoka-golf-foreigner.html (976行・EN+KO で約3000語)
+   - 構成: Hero / Why Fukuoka / 予約プラットフォーム比較 / 7ステップ予約手順 / 日本語12語表 / 当日の流れ / 推奨3コース(jalan deep link CTA) / FAQ7項目
+   - SEO: Article + BreadcrumbList + FAQPage の JSON-LD・hreflang・canonical
+   - sitemap.xml +1 (94 URLs) / sitemap-guide.html 3言語に追加
+   - 推奨3コース: Saitozaki(gc02313) / Hisayama(gc02334) / Keya(gc02351) → jalan deep link CTA 6件
+   - 期待効果: 月数百PV(EN+KO ロングテールSEO)+ASP承認時に CTA 即埋込可能
+2. **akane へじゃらんCTA復活完了** (`698c901` / 2026-05-03)
    - 茜ゴルフクラブ (gc02344) の jalan booking-card を3言語の空 booking-grid に挿入
    - 楽天除外時に一緒に削除されていたが、じゃらん掲載確認後に復活
    - 期待効果: 月¥3-5k 追加収益
@@ -155,6 +163,12 @@ python scripts/deeplink_multi_course_jalan.py            # 適用
 
 ## 📝 未完了タスク（優先順）
 
+### ✅ 完了済 (2026-05-04) — `5540ac9`
+- ~~「How to Book Fukuoka Golf as a Foreigner」 EN/KO 記事新規~~ → 完了
+  - book-fukuoka-golf-foreigner.html (976行・EN+KO で約3000語)
+  - 7セクション構成・推奨3コース jalan deep link CTA・FAQPage JSON-LD
+  - sitemap.xml + sitemap-guide.html 3言語に登録
+
 ### ✅ 完了済 (2026-05-03 5回目) — `698c901`
 - ~~akane へのじゃらんCTA 復活 (gc02344)~~ → 完了 (3言語 single-column booking-card)
 
@@ -184,9 +198,10 @@ python scripts/deeplink_multi_course_jalan.py            # 適用
 
 **サイト側作業 (Claude Code が実行)**:
 1. ASP承認後、EN/KO の Jalan/楽天 を **完全置換** (GolfStay/GoGolfNippon へ)
-2. **「How to book Fukuoka golf as a foreigner」記事** 新規作成 (EN/KO ・ ゼロ競合SEO枠)
+2. ~~**「How to book Fukuoka golf as a foreigner」記事** 新規作成 (EN/KO ・ ゼロ競合SEO枠)~~ → 完了 (5540ac9)
 3. **「英語/韓国語予約可能コース」フィルター** 機能実装
 4. **hub-international.html** 新設検討 (4→5ペルソナハブに昇格)
+   - 「How to Book」記事を母体として展開可能
 
 ### 🟢 低優先
 - [ ] GA4 で `click_affiliate` イベントの実数値検証（1〜2週間後）

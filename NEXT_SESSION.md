@@ -1,8 +1,8 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-05
-**最終 commit**: `4c40600` (Phase 1 - 逆流ナビ + Hero CTA + sticky 価格込み + KO 楽天追加)
-**前回 commit**: `e0e6d64` (How to Book 記事を 47 ページに接続)、`5540ac9` (記事新規)
+**最終更新**: 2026-05-05 (2回目)
+**最終 commit**: `6a03311` (Phase 2 - 取引KW専用 SEO landing 3 ページ新設)
+**前回 commit**: `4c40600` (Phase 1 - 逆流ナビ + Hero CTA + sticky 価格込み + KO 楽天追加)
 
 ---
 
@@ -22,7 +22,21 @@
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 Phase 1 — 逆流ナビ + CVR 改善 (専門家会議結果)** (`4c40600` / 2026-05-05)
+1. **🆕 Phase 2 — 取引KW専用 SEO landing 3 ページ新設** (`6a03311` / 2026-05-05)
+   - 田中健太郎/SEO 提案の高購買意図 KW を3ページで網羅
+   - **book-fukuoka-cheap.html** (494行・24コース全件比較表): KW「福岡 ゴルフ 平日 安い」
+   - **book-fukuoka-tomorrow.html** (413行・15コース大手チェーン優先): KW「福岡 ゴルフ 当日予約」
+   - **book-fukuoka-solo.html** (418行・12コース★マッチ率付): KW「福岡 ゴルフ 1人予約」
+   - **段階的実行**: 各ページ作成→チェッカーエージェント招集(ファクトチェック+SEO+CVR)→致命的問題修正→次ページ
+   - 検出&修正済の致命的問題:
+     * cheap: jalan_id 02347/02355 誤り(02341/02353に)・wakamiya 名称・aco/PGM フリーパス記述ミス
+     * tomorrow: 「PGM 8コース」→「PGM 5+アコ 3」、福岡国際=宗像市・セブンミリオン=早良区
+     * solo: 古賀/久山「福岡市」→「福岡近郊」・FAQ矛盾解消・「月3,000件」根拠ぼかし
+   - 全ページ JSON-LD 3種(Article/Breadcrumb/FAQPage)・canonical/OGP・jalan deep link
+   - sitemap.xml +3 (97 URLs) / sitemap-guide.html 3言語に追加
+   - hub-budget.html「Quick Booking Guides 3選」セクション + index.html ②③ ブロックから内部リンク
+   - 期待効果: 月+2-4kPV / CVR 2-3% で月+¥8-15万収益寄与
+2. **🆕 Phase 1 — 逆流ナビ + CVR 改善 (専門家会議結果)** (`4c40600` / 2026-05-05)
    - **Phase 1A (鈴木玲奈/IA)**: 全 35 course-*.html × 3言語 = 105 セクションに「Explore More」逆流ナビ挿入
      - 5 エリアハブ (該当エリアをオレンジハイライト) + 4 ペルソナハブ + 3 ガイド
      - スクリプト: `scripts/inject_explore_nav.py` (冪等・dry-run対応)
@@ -183,16 +197,18 @@ python scripts/deeplink_multi_course_jalan.py            # 適用
 
 ## 📝 未完了タスク（優先順）
 
+### ✅ 完了済 (2026-05-05) — `6a03311` (Phase 2)
+- ~~**Phase 2: 田中SEO 取引KW 3 ページ新設**~~ → 完了 (cheap/tomorrow/solo)
+  - 段階的実行: ページ作成→チェッカーAgent→致命的問題修正→次ページ
+- 期待効果: 月+2-4kPV / +¥8-15万収益寄与
+
 ### ✅ 完了済 (2026-05-05) — `4c40600` (Phase 1)
 - ~~**Phase 1A**: 全 35 コース×3言語に逆流ナビ挿入 (鈴木玲奈/IA 提案)~~ → 完了
 - ~~**Phase 1B**: 標準 30 コースに hero CTA + sticky 価格 + KO 楽天 (佐藤美咲/CVR 提案)~~ → 完了
 - 専門家会議 6 名招集→議事録ベースで決定
 - スクリプト: `inject_explore_nav.py` + `cvr_enhance.py`
 
-### 🟡 次に着手候補 (Phase 2 — 会議で議論済)
-- **田中健太郎/SEO**: 取引KW専用ページ 3 本新設 (`book-fukuoka-cheap/tomorrow/solo`)
-  - 想定 KW: 「福岡 ゴルフ 平日 当日予約」「福岡 ゴルフ 1人予約」「福岡 ゴルフ 安い」
-  - 工数 2-3 日・想定効果 月 +2-4kPV / +¥8-15万
+### 🟡 次に着手候補 (Phase 3 — 会議で議論済の残候補)
 - **教授/行動経済学**: Decoy + Default 価格カード再設計
   - 中央 featured 化 + 「90% が選ぶ」マイクロコピー (実データ要)
   - 工数 3-4h・想定効果 CTR +30-50%
@@ -200,6 +216,7 @@ python scripts/deeplink_multi_course_jalan.py            # 適用
   - 工数 6-8h・想定効果 KO CVR 0.5% → 1.8%
 - **山本誠一/編集**: 「編集部覆面ラウンド記」(5-7k 字 SEO×差別化)
   - 工数 25-30h・差別化コンテンツ
+- **GA4 観測フェーズ**: Phase 1+2 効果測定 (2-4週間データ蓄積)
 
 ### ✅ 完了済 (2026-05-04) — `5540ac9`
 - ~~「How to Book Fukuoka Golf as a Foreigner」 EN/KO 記事新規~~ → 完了

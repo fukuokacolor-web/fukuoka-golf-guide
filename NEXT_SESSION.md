@@ -1,8 +1,8 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-05 (2回目)
-**最終 commit**: `6a03311` (Phase 2 - 取引KW専用 SEO landing 3 ページ新設)
-**前回 commit**: `4c40600` (Phase 1 - 逆流ナビ + Hero CTA + sticky 価格込み + KO 楽天追加)
+**最終更新**: 2026-05-05 (3回目)
+**最終 commit**: `289bb21` (Phase 3 - Decoy + Default 価格カード再設計)
+**前回 commit**: `6a03311` (Phase 2 - 取引KW 3 ページ新設)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
 ---
 
@@ -22,7 +22,17 @@
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 Phase 2 — 取引KW専用 SEO landing 3 ページ新設** (`6a03311` / 2026-05-05)
+1. **🆕 Phase 3 — Decoy + Default 価格カード再設計** (`289bb21` / 2026-05-05)
+   - 教授/行動経済学提案を 31 標準コース × 3言語 = 93 価格グリッドに適用
+   - HTML 構造変更ゼロ、CSS only で 4 つの介入:
+     * Center-stage 効果: featured を視覚中央 (desktop) / 最上部 (mobile) に配置
+     * Default 強調: border 2→3px、orange shadow、translateY(-6px)
+     * BEST VALUE バッジ強化: 🌟emoji + overhanging 配置
+     * Hick's Law 対策: Phase 1B sticky CTA と組み合せ
+   - 倫理性: 「90%が選ぶ」マイクロコピーは GA4 実データなしのため除外(虚偽広告リスク回避)
+   - スクリプト: `scripts/decoy_pricing_redesign.py` (冪等・dry-run対応)
+   - 期待効果: featured カードへの視線集中 → CTR +30-50% / 成約率 2 倍 (教授予測)
+2. **🆕 Phase 2 — 取引KW専用 SEO landing 3 ページ新設** (`6a03311` / 2026-05-05)
    - 田中健太郎/SEO 提案の高購買意図 KW を3ページで網羅
    - **book-fukuoka-cheap.html** (494行・24コース全件比較表): KW「福岡 ゴルフ 平日 安い」
    - **book-fukuoka-tomorrow.html** (413行・15コース大手チェーン優先): KW「福岡 ゴルフ 当日予約」
@@ -197,6 +207,10 @@ python scripts/deeplink_multi_course_jalan.py            # 適用
 
 ## 📝 未完了タスク（優先順）
 
+### ✅ 完了済 (2026-05-05) — `289bb21` (Phase 3)
+- ~~**Phase 3: 教授デコイ価格カード再設計**~~ → 完了 (CSS only・倫理リスクゼロ版)
+  - スクリプト: `scripts/decoy_pricing_redesign.py`
+
 ### ✅ 完了済 (2026-05-05) — `6a03311` (Phase 2)
 - ~~**Phase 2: 田中SEO 取引KW 3 ページ新設**~~ → 完了 (cheap/tomorrow/solo)
   - 段階的実行: ページ作成→チェッカーAgent→致命的問題修正→次ページ
@@ -208,15 +222,13 @@ python scripts/deeplink_multi_course_jalan.py            # 適用
 - 専門家会議 6 名招集→議事録ベースで決定
 - スクリプト: `inject_explore_nav.py` + `cvr_enhance.py`
 
-### 🟡 次に着手候補 (Phase 3 — 会議で議論済の残候補)
-- **教授/行動経済学**: Decoy + Default 価格カード再設計
-  - 中央 featured 化 + 「90% が選ぶ」マイクロコピー (実データ要)
-  - 工数 3-4h・想定効果 CTR +30-50%
+### 🟡 次に着手候補 (Phase 4 — 会議で議論済の残候補)
 - **金星誠/インバウンド**: 韓国語対応コース認証バッジ + KO 絞り込みハブ
   - 工数 6-8h・想定効果 KO CVR 0.5% → 1.8%
 - **山本誠一/編集**: 「編集部覆面ラウンド記」(5-7k 字 SEO×差別化)
   - 工数 25-30h・差別化コンテンツ
-- **GA4 観測フェーズ**: Phase 1+2 効果測定 (2-4週間データ蓄積)
+- **GA4 観測フェーズ**: Phase 1+2+3 効果測定 (2-4週間データ蓄積)
+- **Google AdSense**: 月10,000 PV 突破まで保留 (現状アフィリ単価が AdSense の 30 倍)
 
 ### ✅ 完了済 (2026-05-04) — `5540ac9`
 - ~~「How to Book Fukuoka Golf as a Foreigner」 EN/KO 記事新規~~ → 完了

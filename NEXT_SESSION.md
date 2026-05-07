@@ -247,8 +247,10 @@ python scripts/deeplink_multi_course_jalan.py            # 適用
 - **Option A**: バッジ実装 (6-8h) — Tier 別 3 種文言必須 (機械翻訳は明示・隠蔽炎上リスク)
   - 文言例: Tier 1「공식 한국어 페이지」(緑/星) / Tier 2-3「예약 사이트 한국어 (자동번역)」(黄) / Tier 4「영어 안내 가능」(青)
   - ROI 下方修正: KO CVR 0.5% → **0.8-1.0%** (当初予測 1.8% は楽観的・Tier 1 が 1 件のみ)
-- **Option B (推奨)**: wakamiya 単独訴求 LP (4h) — 集中突破戦略
+- **Option B (推奨)**: wakamiya 単独訴求 LP (5h) — 集中突破戦略
   - 「福岡で唯一の公式韓国語対応コース」差別化・韓国旅行ブログ被リンク獲得・SEO「후쿠오카 골프 한국어」1 位狙い
+  - 設計書: `WAKAMIYA_KO_LP_DESIGN.md` (Day 28 GO 後すぐ実装可能な完成度・8 セクション LP 構造・KPI・リスク含む)
+  - 韓国語草稿: `WAKAMIYA_KO_LP_DRAFT.md` (8 セクション + meta + footer・**ネイティブ校正必須** Lancers/Crowdworks で 1-2 万円程度)
 
 **Day 28 観測判断基準**:
 - KO セッション > 月 50 + 直帰率 < 70% → Option A 実装 GO

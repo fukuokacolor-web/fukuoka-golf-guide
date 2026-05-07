@@ -234,13 +234,37 @@ python scripts/deeplink_multi_course_jalan.py            # 適用
 - 専門家会議 6 名招集→議事録ベースで決定
 - スクリプト: `inject_explore_nav.py` + `cvr_enhance.py`
 
-### 🟡 次に着手候補 (Phase 4 — 会議で議論済の残候補)
-- **金星誠/インバウンド**: 韓国語対応コース認証バッジ + KO 絞り込みハブ
-  - 工数 6-8h・想定効果 KO CVR 0.5% → 1.8%
-- **山本誠一/編集**: 「編集部覆面ラウンド記」(5-7k 字 SEO×差別化)
-  - 工数 25-30h・差別化コンテンツ
-- **GA4 観測フェーズ**: Phase 1+2+3 効果測定 (2-4週間データ蓄積)
-- **Google AdSense**: 月10,000 PV 突破まで保留 (現状アフィリ単価が AdSense の 30 倍)
+### 🟡 次に着手候補 (Phase 4 — 会議で議論済 + 2026-05-06 追加調査反映)
+
+#### Phase 4-A (インバウンド) — 金星誠の方針再判定 (2026-05-06)
+**事前調査済**: `i18n_course_compatibility.json` (35 コース全件・Tier 1-5 分類)
+- Tier 1 (公式 KO 直対応): **wakamiya 1 コースのみ** ← 致命的に少ない
+- Tier 2-3 (予約ポータル機械翻訳): 7 コース (Accordia: nijo/central/pheasant・PGM: fukuokakokusai/kitakyushu/moonlake/lakeside)
+- Tier 4 (限定 EN のみ): 2 コース (hisayama 外部リンク / sevenmillion メニュー併記)
+- Tier 5 (非対応): 25 コース
+
+**金星 戦略推奨** (2026-05-06):
+- **Option A**: バッジ実装 (6-8h) — Tier 別 3 種文言必須 (機械翻訳は明示・隠蔽炎上リスク)
+  - 文言例: Tier 1「공식 한국어 페이지」(緑/星) / Tier 2-3「예약 사이트 한국어 (자동번역)」(黄) / Tier 4「영어 안내 가능」(青)
+  - ROI 下方修正: KO CVR 0.5% → **0.8-1.0%** (当初予測 1.8% は楽観的・Tier 1 が 1 件のみ)
+- **Option B (推奨)**: wakamiya 単独訴求 LP (4h) — 集中突破戦略
+  - 「福岡で唯一の公式韓国語対応コース」差別化・韓国旅行ブログ被リンク獲得・SEO「후쿠오카 골프 한국어」1 位狙い
+
+**Day 28 観測判断基準**:
+- KO セッション > 月 50 + 直帰率 < 70% → Option A 実装 GO
+- KO セッション < 月 20 → **Option A 見送り・Option B (単独 LP) 優先**
+- hisayama / sevenmillion (EN のみ) は別セグメント (台湾・香港・在日米軍家族) として扱う
+
+#### その他 Phase 4 候補
+- **山本誠一/編集**: 「現役プロ・支配人インタビュー 5 本」(山本案 E・覆面ラウンド記の代替案)
+  - 工数 18-22h・E-E-A-T 強化・実名取材で被リンク獲得
+- **GA4 観測フェーズ**: Phase 1-3 効果測定 (Day 14-28 進行中・`GA4_DASHBOARD.md` 参照)
+- **Google AdSense**: 月 10,000 PV 突破まで保留 (現状アフィリ単価が AdSense の 30 倍)
+
+#### 公式 URL 訂正候補 (調査で発見・観測終了後に course-*.html / access-*.html を修正)
+- ito: itogolf.jp → ito-gc.com
+- asoiizuka: asoiizuka-gc.jp → aigc.jp
+- kyushugc: kyushu-gc.jp/yahata/ → kg-yahata.com
 
 ### ✅ 完了済 (2026-05-04) — `5540ac9`
 - ~~「How to Book Fukuoka Golf as a Foreigner」 EN/KO 記事新規~~ → 完了

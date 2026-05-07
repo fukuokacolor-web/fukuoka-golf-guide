@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "generated_date": "2026-05-06",
+    "purpose": "Phase 4-A KO/EN badge implementation source data (Day 28+ implementation)",
+    "total_courses": 35,
+    "summary": {
+      "supports_en_count": 10,
+      "supports_ko_count": 8,
+      "tier_distribution": {
+        "tier_1_direct_multilingual": 1,
+        "tier_2_accordia_portal_mt": 3,
+        "tier_3_pgm_portal": 4,
+        "tier_4_limited": 2,
+        "tier_5_japanese_only": 25
+      }
+    },
+    "tier_definition": {
+      "1_direct": "Course official site has dedicated /en or /ko pages with translated content",
+      "2_accordia_portal": "Bookable via Accordia reserve.accordiagolf.com portal with EN/한글/繁體 switcher (machine-translated; JP-only customer service)",
+      "3_pgm_portal": "Bookable via PGM booking.pacificgolf.co.jp portal with 日本語/EN/한글/繁體 switcher",
+      "4_limited": "Limited multilingual support: external EN booking link, bilingual menu labels, etc.",
+      "5_japanese_only": "Japanese-only website, no multilingual support"
+    },
+    "url_corrections_found": {
+      "ito": "itogolf.jp -> ito-gc.com (dead URL)",
+      "asoiizuka": "asoiizuka-gc.jp -> aigc.jp (dead URL)",
+      "kyushugc": "kyushu-gc.jp/yahata/ -> kg-yahata.com (dead URL)"
+    }
+  },
+  "courses": [
+    {"slug":"aburayama","name":"ララヒルズ油山","area":"fukuokacity","official_url":"https://lalahills.co.jp/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only site, no language switcher, no /en or /ko paths"},
+    {"slug":"chikushigaoka","name":"筑紫ヶ丘ゴルフクラブ","area":"fukuokacity","official_url":"http://gaoka27.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only"},
+    {"slug":"daihakata","name":"大博多カントリー倶楽部","area":"fukuokacity","official_url":"https://www.pacificgolf.co.jp/daihakata/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Standalone PGM page Japanese-only (NOT via multilingual booking portal)"},
+    {"slug":"fukuokacc","name":"福岡カンツリー倶楽部","area":"fukuokacity","official_url":"https://fukuokacc.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only. Member-only club"},
+    {"slug":"hisayama","name":"久山カントリー倶楽部","area":"fukuokacity","official_url":"https://www.hisayama.cc/","supports_en":true,"supports_ko":false,"tier":4,"evidence":"Footer English information page link to external golf-in-japan.com (EN reservations possible via third-party platform)"},
+    {"slug":"koga","name":"古賀ゴルフ・クラブ","area":"fukuokacity","official_url":"https://kogagc.co.jp/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only"},
+    {"slug":"saitozaki","name":"西戸崎シーサイドカントリークラブ","area":"fukuokacity","official_url":"http://www.saitozaki.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only"},
+    {"slug":"sevenmillion","name":"セブンミリオンカントリークラブ","area":"fukuokacity","official_url":"https://smcc7.com/","supports_en":true,"supports_ko":false,"tier":4,"evidence":"Bilingual menu labels (EN+JP) but no dedicated /en path or full English content"},
+    {"slug":"ito","name":"伊都ゴルフ倶楽部","area":"itoshima","official_url":"https://www.ito-gc.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only. Known URL itogolf.jp is dead"},
+    {"slug":"keya","name":"芥屋ゴルフ倶楽部","area":"itoshima","official_url":"https://www.keyagc.co.jp/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only"},
+    {"slug":"nijo","name":"二丈カントリークラブ","area":"itoshima","official_url":"https://reserve.accordiagolf.com/golfCourse/fukuoka/nijo/","supports_en":true,"supports_ko":true,"tier":2,"evidence":"Accordia portal: EN/한글/繁體 switcher, machine-translated, JP-only customer service"},
+    {"slug":"queenshill","name":"ザ・クイーンズヒルゴルフクラブ","area":"itoshima","official_url":"https://queenshill.co.jp/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only. English-styled section labels are decorative only"},
+    {"slug":"fukuokakokusai","name":"福岡国際カントリークラブ","area":"kitakyushu","official_url":"https://www.pacificgolf.co.jp/fukuokakokusai/","supports_en":true,"supports_ko":true,"tier":3,"evidence":"PGM booking portal (booking.pacificgolf.co.jp) supports 日本語/EN/한글/繁體 switcher; standalone page JP-only"},
+    {"slug":"genkai","name":"玄海ゴルフクラブ","area":"kitakyushu","official_url":"https://genkai-gc.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only. NOTE: long-term closure status (per NEXT_SESSION.md)"},
+    {"slug":"kitakyushu","name":"北九州カントリー倶楽部","area":"kitakyushu","official_url":"https://www.kitakyushu-cc.com/","supports_en":true,"supports_ko":true,"tier":3,"evidence":"Standalone site unreachable; PGM booking portal supports 日本語/EN/한글/繁體 (cc_id=131 verified)"},
+    {"slug":"kokura","name":"小倉カンツリー倶楽部","area":"kitakyushu","official_url":"https://kokura-cc.com/guide/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only. Stockholder-member club with visitor slots"},
+    {"slug":"kyushugc","name":"九州ゴルフ倶楽部 八幡コース","area":"kitakyushu","official_url":"http://kg-yahata.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only. Site explicitly states no non-Japanese-speaking staff. Known URL kyushu-gc.jp is dead"},
+    {"slug":"mission","name":"ミッションバレーゴルフクラブ","area":"kitakyushu","official_url":"https://www.missionvalley-gc.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"English-styled nav labels but Japanese-only content (does NOT count as multilingual)"},
+    {"slug":"moji","name":"門司ゴルフ倶楽部","area":"kitakyushu","official_url":"https://www.mojigolf.co.jp/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only"},
+    {"slug":"moonlake","name":"ムーンレイクゴルフクラブ","area":"kitakyushu","official_url":"https://booking.pacificgolf.co.jp/guide/144.html","supports_en":true,"supports_ko":true,"tier":3,"evidence":"PGM portal: 日本語/EN/한글/繁體 switcher confirmed"},
+    {"slug":"wakamatsu","name":"若松ゴルフ倶楽部","area":"kitakyushu","official_url":"https://www.wakamatsu.or.jp/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only. Member-only club"},
+    {"slug":"wakamiya","name":"トライアルゴルフリゾート若宮コース","area":"kitakyushu","official_url":"https://trial-golf-resort-wakamiya-course.com/","supports_en":true,"supports_ko":true,"tier":1,"evidence":"STRONGEST. Direct /en-index and /ko-index pages exist with translated content"},
+    {"slug":"ariake","name":"有明カントリークラブ","area":"chikugo","official_url":"https://greenland-resort.com/golf/acc/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only. Greenland Resort group"},
+    {"slug":"century","name":"福岡センチュリーゴルフ倶楽部","area":"chikugo","official_url":"https://www.fcgc.biz/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"日本語/中文 only - no EN or KO support"},
+    {"slug":"chikushino","name":"筑紫野カントリークラブ","area":"chikugo","official_url":"https://chikushino-cc.co.jp/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only"},
+    {"slug":"dazaifu","name":"太宰府ゴルフ倶楽部","area":"chikugo","official_url":"https://www.dazaifugc.co.jp/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only"},
+    {"slug":"kurume","name":"久留米カントリークラブ","area":"chikugo","official_url":"https://greenland-resort.com/golf/kcc/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only. Greenland Resort group (same as ariake)"},
+    {"slug":"ogori","name":"小郡カンツリー倶楽部","area":"chikugo","official_url":"https://www.ogoricc.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only"},
+    {"slug":"ukiha","name":"浮羽カントリークラブ","area":"chikugo","official_url":"https://ukiha-cc.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only"},
+    {"slug":"akane","name":"茜ゴルフクラブ","area":"chikuho","official_url":"http://akanegc.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only with single multilingual notice (EN/KO/ZH/JA) restricting overseas guests to member-accompanied play"},
+    {"slug":"asoiizuka","name":"麻生飯塚ゴルフ倶楽部","area":"chikuho","official_url":"https://aigc.jp/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only. Known URL asoiizuka-gc.jp is dead, current is aigc.jp"},
+    {"slug":"central","name":"セントラルフクオカゴルフクラブ","area":"chikuho","official_url":"https://reserve.accordiagolf.com/golfCourse/fukuoka/central_fukuoka/","supports_en":true,"supports_ko":true,"tier":2,"evidence":"Accordia portal: EN/한글/繁體 switcher, machine-translated, JP-only customer service"},
+    {"slug":"lakeside","name":"福岡レイクサイドカントリークラブ","area":"chikuho","official_url":"https://booking.pacificgolf.co.jp/guide/160.html","supports_en":true,"supports_ko":true,"tier":3,"evidence":"PGM portal: 日本語/EN/한글/繁體 switcher confirmed"},
+    {"slug":"pheasant","name":"福岡フェザントカントリークラブ","area":"chikuho","official_url":"https://reserve.accordiagolf.com/golfCourse/fukuoka/fukuoka/","supports_en":true,"supports_ko":true,"tier":2,"evidence":"Accordia portal: same template as central"},
+    {"slug":"takaha","name":"鷹羽ロイヤルカントリークラブ","area":"chikuho","official_url":"https://www.takaha-royal.com/","supports_en":false,"supports_ko":false,"tier":5,"evidence":"Japanese-only"}
+  ]
+}

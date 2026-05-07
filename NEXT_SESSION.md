@@ -1,8 +1,8 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-05 (3回目)
-**最終 commit**: `289bb21` (Phase 3 - Decoy + Default 価格カード再設計)
-**前回 commit**: `6a03311` (Phase 2 - 取引KW 3 ページ新設)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
+**最終更新**: 2026-05-06
+**最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
+**前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
 ---
 
@@ -22,7 +22,19 @@
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 Phase 3 — Decoy + Default 価格カード再設計** (`289bb21` / 2026-05-05)
+1. **🆕 Phase 4 Step 1 — GA4 観測ダッシュボード準備** (未コミット / 2026-05-06)
+   - 専門家会議 6 名招集 (SEO 田中 / CVR 佐藤 / IA 鈴木 / 行動経済学 教授 / インバウンド 金星 / Content 山本) → コンセンサス: **GA4 観測フェーズ最優先**、Phase 4 候補 A/B/C/D を一旦保留 (会議で 4 名が「観測なき積層」を懸念)
+   - 山本 (Content) は Phase 4-B「覆面ラウンド記」を**自ら却下** (E-E-A-T Experience 偽装リスク) → 代替案「現役プロ・支配人インタビュー 5 本」を提示 (将来の Step 候補)
+   - **Plan B (GA4 tracking v2.1)**: 既存 click handler を拡張 → `cta_position` 自動判定 (hero/ftv/sticky/price_featured/price_default/booking_grid/explore_nav/other) + 内部リンク用 `internal_nav_click` イベント新設
+   - これにより **Phase 1A 逆流ナビ** と **Phase 3 Decoy 価格カード** が初めて計測可能に (これまで 2 施策の効果は未測定だった)
+   - スクリプト: `scripts/inject_ga4_tracking.py` (冪等・dry-run・両ディレクトリ)
+   - 展開: 196 ファイル自動置換 (バリアント B 系) + index.html 個別 Edit (バリアント A・既存 `function trackAffiliate` 温存・preview 検証で二重カウントなし確認)
+   - 計測対象外: sitemap-guide.html (アフィリ・逆流ナビなしのため計測不要)
+   - 検証: preview tool で 13 イベント × 3 言語発火確認・console エラーゼロ
+   - ドキュメント新規: `GA4_DASHBOARD.md` (5 探索レポート定義 + 28 日観測スケジュール + カスタムディメンション 8 個登録手順) / `GSC_CANNIBALIZATION_GUIDE.md` (Phase 2 LP のカニバリ検出 + 重大カニバリ時の対応)
+   - 観測期間: 14日 (最低) / 28日 (推奨) — **観測中の HTML 改修禁止** (効果測定の交絡因子防止・会議合意)
+   - ユーザー側次タスク: GA4 管理画面でカスタムディメンション 8 個登録 (24-48h で反映)
+2. **🆕 Phase 3 — Decoy + Default 価格カード再設計** (`289bb21` / 2026-05-05)
    - 教授/行動経済学提案を 31 標準コース × 3言語 = 93 価格グリッドに適用
    - HTML 構造変更ゼロ、CSS only で 4 つの介入:
      * Center-stage 効果: featured を視覚中央 (desktop) / 最上部 (mobile) に配置

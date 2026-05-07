@@ -81,30 +81,60 @@
     gtag('js', new Date());
     gtag('config', 'G-PENH0Z4VT7');
   </script>
-  <!-- AFFILIATE_TRACKER -->
+    <!-- AFFILIATE_TRACKER -->
   <script>
+  /* GA4 tracking v2.1 (2026-05-06): cta_position + internal_nav_click for Phase 1-3 measurement */
   (function(){
+    function classifyService(href) {
+      if (/jalan/i.test(href)) return 'jalan';
+      if (/rakuten/i.test(href) || /gora/i.test(href)) return 'rakuten_gora';
+      if (/agoda/i.test(href)) return 'agoda';
+      if (/skyticket/i.test(href) || /4B1DXO/.test(href)) return 'skyticket';
+      if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(href)) return 'tabimonogatari';
+      if (/amazon|amzn/i.test(href)) return 'amazon';
+      if (/a8\.net/i.test(href)) return 'a8_other';
+      return null;
+    }
+    function classifyCtaPosition(a) {
+      if (a.classList.contains('hero-cta-btn') || a.closest('.hero-cta-btn')) return 'hero';
+      if (a.classList.contains('ftv-cta-btn') || a.closest('.ftv-cta-strip')) return 'ftv';
+      if (a.closest('#sticky-cta')) return 'sticky';
+      if (a.closest('.price-card.featured')) return 'price_featured';
+      if (a.closest('.price-card')) return 'price_default';
+      if (a.closest('.booking-card')) return 'booking_grid';
+      if (a.closest('section.related')) return 'explore_nav';
+      return 'other';
+    }
+    function getLang() {
+      var active = document.querySelector('.content.on');
+      return active ? active.id.replace('c-','') : (document.documentElement.lang || 'ja');
+    }
+    function getPage() {
+      return (location.pathname.split('/').pop() || 'index') + '';
+    }
     document.addEventListener('click', function(e){
       var a = e.target.closest('a[href]');
       if (!a) return;
       var h = a.getAttribute('href') || '';
-      var service = null;
-      if (/jalan/i.test(h)) service = 'jalan';
-      else if (/rakuten/i.test(h) || /gora/i.test(h)) service = 'rakuten_gora';
-      else if (/agoda/i.test(h)) service = 'agoda';
-      else if (/skyticket/i.test(h)) service = 'skyticket';
-      else if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(h)) service = 'tabimonogatari';
-      else if (/amazon|amzn/i.test(h)) service = 'amazon';
-      else if (/a8\.net/i.test(h)) service = 'a8_other';
-      if (!service) return;
-      var page = (location.pathname.split('/').pop() || 'index') + '';
-      var active = document.querySelector('.content.on');
-      var lang = active ? active.id.replace('c-','') : 'ja';
-      if (typeof gtag === 'function') {
+      if (typeof gtag !== 'function') return;
+      var service = classifyService(h);
+      var page = getPage();
+      var lang = getLang();
+      var ctaPos = classifyCtaPosition(a);
+      var linkText = (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80);
+      if (service) {
         gtag('event', 'click_affiliate', {
           service: service, page: page, lang: lang,
-          link_text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80),
-          link_url: h.slice(0, 200)
+          cta_position: ctaPos,
+          link_text: linkText, link_url: h.slice(0, 200)
+        });
+      } else if (ctaPos === 'explore_nav' && /\.html?(\?|#|$)/.test(h)) {
+        var target = (h.split('?')[0].split('#')[0].split('/').pop() || '').replace(/\.html?$/,'');
+        gtag('event', 'internal_nav_click', {
+          page: page, lang: lang,
+          nav_section: 'explore_nav',
+          target_page: target,
+          link_text: linkText
         });
       }
     }, true);

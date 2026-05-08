@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://fukuoka-golf-guide.com/sitemap.xml
+Sitemap: https://fukuoka-golf-guide.com/sitemap-ko.xml

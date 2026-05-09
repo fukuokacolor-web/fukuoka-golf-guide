@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="fukuoka-golf-guide.com の編集ポリシー。独立系第三者ガイドとしての選定基準・中立性・情報源・ファクトチェックプロセス・利害関係を明示。">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>編集ポリシー｜独立系ガイドとしての選定基準と中立性 | 福岡ゴルフ場ガイド</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "編集ポリシー",
+    "url": "https://fukuoka-golf-guide.com/editorial-policy.html",
+    "description": "fukuoka-golf-guide.com 編集部の選定基準・中立性・情報源・ファクトチェック・利害関係開示。"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"トップ","item":"https://fukuoka-golf-guide.com/"},
+      {"@type":"ListItem","position":2,"name":"編集ポリシー","item":"https://fukuoka-golf-guide.com/editorial-policy.html"}
+    ]
+  }
+  </script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:url" content="https://fukuoka-golf-guide.com/editorial-policy.html">
+  <meta property="og:site_name" content="福岡ゴルフ場ガイド">
+  <meta property="og:title" content="編集ポリシー｜独立系ガイドとしての選定基準と中立性 | 福岡ゴルフ場ガイド">
+  <meta property="og:description" content="fukuoka-golf-guide.com の編集ポリシー。独立系第三者ガイドとしての選定基準・中立性・情報源・ファクトチェックプロセス・利害関係を明示。">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://fukuoka-golf-guide.com/editorial-policy.html" />
+  <link rel="alternate" hreflang="ja" href="https://fukuoka-golf-guide.com/editorial-policy.html">
+  <link rel="alternate" hreflang="en" href="https://fukuoka-golf-guide.com/editorial-policy.html">
+  <link rel="alternate" hreflang="ko" href="https://fukuoka-golf-guide.com/editorial-policy.html">
+  <link rel="alternate" hreflang="x-default" href="https://fukuoka-golf-guide.com/editorial-policy.html">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PENH0Z4VT7');
+  </script>
+  <!-- AFFILIATE_TRACKER -->
+  <script>
+  /* GA4 tracking v2.1 (2026-05-06): cta_position + internal_nav_click for Phase 1-3 measurement */
+  (function(){
+    function classifyService(href) {
+      if (/jalan/i.test(href)) return 'jalan';
+      if (/rakuten/i.test(href) || /gora/i.test(href)) return 'rakuten_gora';
+      if (/agoda/i.test(href)) return 'agoda';
+      if (/skyticket/i.test(href) || /4B1DXO/.test(href)) return 'skyticket';
+      if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(href)) return 'tabimonogatari';
+      if (/amazon|amzn/i.test(href)) return 'amazon';
+      if (/a8\.net/i.test(href)) return 'a8_other';
+      return null;
+    }
+    function classifyCtaPosition(a) {
+      if (a.classList.contains('hero-cta-btn') || a.closest('.hero-cta-btn')) return 'hero';
+      if (a.classList.contains('ftv-cta-btn') || a.closest('.ftv-cta-strip')) return 'ftv';
+      if (a.closest('#sticky-cta')) return 'sticky';
+      if (a.closest('.price-card.featured')) return 'price_featured';
+      if (a.closest('.price-card')) return 'price_default';
+      if (a.closest('.booking-card')) return 'booking_grid';
+      if (a.closest('section.related')) return 'explore_nav';
+      return 'other';
+    }
+    function getLang() {
+      var active = document.querySelector('.content.on');
+      return active ? active.id.replace('c-','') : (document.documentElement.lang || 'ja');
+    }
+    function getPage() {
+      return (location.pathname.split('/').pop() || 'index') + '';
+    }
+    document.addEventListener('click', function(e){
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var h = a.getAttribute('href') || '';
+      if (typeof gtag !== 'function') return;
+      var service = classifyService(h);
+      var page = getPage();
+      var lang = getLang();
+      var ctaPos = classifyCtaPosition(a);
+      var linkText = (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80);
+      if (service) {
+        gtag('event', 'click_affiliate', {
+          service: service, page: page, lang: lang,
+          cta_position: ctaPos,
+          link_text: linkText, link_url: h.slice(0, 200)
+        });
+      } else if (ctaPos === 'explore_nav' && /\.html?(\?|#|$)/.test(h)) {
+        var target = (h.split('?')[0].split('#')[0].split('/').pop() || '').replace(/\.html?$/,'');
+        gtag('event', 'internal_nav_click', {
+          page: page, lang: lang,
+          nav_section: 'explore_nav',
+          target_page: target,
+          link_text: linkText
+        });
+      }
+    }, true);
+  })();
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --forest:#1F4D3A; --forest-dark:#163829; --orange:#E8744C;
+      --sand:#F3EADA; --paper:#FAF8F3; --charcoal:#2A2A2A; --muted:#6B7280;
+      --line:#E5DDC8;
+      --serif:'Noto Serif JP',Georgia,serif;
+      --sans:'Noto Sans JP','Noto Sans KR','Inter',-apple-system,sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--paper); color: var(--charcoal); line-height: 1.7; }
+    .back-link { display: inline-block; padding: 8px 16px; margin: 16px; font-size: 13px; color: var(--forest); text-decoration: none; }
+    .lang-switcher { display: flex; gap: 4px; padding: 0 16px 12px; border-bottom: 1px solid var(--line); }
+    .lang-switcher button { background: #fff; border: 1px solid var(--line); padding: 6px 14px; font-size: 12px; font-weight: 700; cursor: pointer; border-radius: 4px; color: var(--muted); }
+    .lang-switcher button.on { background: var(--forest); color: #fff; border-color: var(--forest); }
+    .content { display: none; }
+    .content.on { display: block; }
+    .hero { background: linear-gradient(135deg, var(--forest), var(--forest-dark)); color: #fff; padding: 64px 24px 48px; text-align: center; }
+    .hero h1 { font-family: var(--serif); font-size: 30px; font-weight: 700; max-width: 720px; margin: 0 auto 16px; line-height: 1.4; }
+    .hero p { font-size: 14px; opacity: 0.9; max-width: 640px; margin: 0 auto; }
+    .container { max-width: 880px; margin: 0 auto; padding: 48px 24px; }
+    .section { margin-bottom: 48px; }
+    .section h2 { font-family: var(--serif); font-size: 22px; color: var(--forest); border-bottom: 2px solid var(--orange); padding-bottom: 8px; margin-bottom: 20px; }
+    .section h3 { font-size: 16px; color: var(--charcoal); margin: 24px 0 8px; font-weight: 700; }
+    .section p { margin-bottom: 12px; font-size: 15px; }
+    .section ul { padding-left: 24px; margin: 8px 0 16px; }
+    .section li { margin-bottom: 6px; font-size: 15px; }
+    .alert { background: #fff8e1; border-left: 4px solid #c9a227; padding: 14px 18px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.6; color: #5a4000; margin: 16px 0; }
+    .info { background: #e8f4ec; border-left: 4px solid var(--forest); padding: 14px 18px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.6; color: var(--forest-dark); margin: 16px 0; }
+    .meta-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .meta-table th, .meta-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+    .meta-table th { background: var(--sand); font-weight: 700; width: 30%; }
+    footer { text-align: center; padding: 32px 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; background: #fff; }
+    footer a { color: var(--forest); text-decoration: none; margin: 0 8px; }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="back-link">← Top</a>
+
+<div class="lang-switcher" role="tablist">
+  <button class="on" onclick="sw('ja')">JA</button>
+  <button onclick="sw('en')">EN</button>
+  <button onclick="sw('ko')">KO</button>
+</div>
+
+<!-- ═══════════════ 日本語 ═══════════════ -->
+<div id="c-ja" class="content on">
+  <section class="hero">
+    <h1>編集ポリシー — 独立系ガイドとしての選定基準と中立性</h1>
+    <p>fukuoka-golf-guide.com 編集部による、コース選定・評価・情報更新の方針</p>
+  </section>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>1. 編集部について</h2>
+      <p><strong>fukuoka-golf-guide.com 編集部</strong>は、福岡県内のゴルフ場 35 コースを 3 言語(日本語・English・한국어)で網羅する独立系ガイドサイトを運営しています。福岡県でのプレー経験と、ゴルフ業界全般の情報収集に基づき、地元目線で「読者が安心してコースを選べる情報基盤」を提供することを目的としています。</p>
+      <div class="info">本サイトは、特定のゴルフコース・予約サイト・運営会社と資本的・契約的な関係を持たない<strong>独立メディア</strong>です(下記「6. 利害関係の開示」参照)。</div>
+    </div>
+
+    <div class="section">
+      <h2>2. コース選定基準</h2>
+      <p>福岡県内でビジターが利用可能な 18H 以上のゴルフコース、および特徴的な短距離コース(10H ショートを含む)を網羅対象としています。具体的な選定基準:</p>
+      <ul>
+        <li><strong>地理的条件</strong>: 福岡県内に立地(北九州・福岡市・糸島・筑後・筑豊の 5 エリア)</li>
+        <li><strong>ビジター受入</strong>: 一般予約 / メンバー紹介 / 株主会員制 など、ビジターがアクセス可能な仕組みがあるコース</li>
+        <li><strong>営業状態</strong>: 公式サイト・大手予約サイト(楽天 GORA・じゃらんゴルフ等)で営業継続が確認できるコース(休場中・閉鎖済は明記)</li>
+        <li><strong>3 言語対応の必要性</strong>: 訪日外国人(韓国・英語圏)も対象とするため、利用可能な情報は 3 言語で提供</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. 情報源と更新方針</h2>
+      <p>各コースの情報は以下の優先順位で収集・検証されます:</p>
+      <ul>
+        <li><strong>一次情報</strong>: 各コース公式サイト、公式パンフレット、運営会社プレスリリース</li>
+        <li><strong>二次情報</strong>: 楽天 GORA / じゃらんゴルフ / GDO 等の大手予約プラットフォーム掲載情報(料金・空き状況等)</li>
+        <li><strong>編集部独自情報</strong>: 公開情報の編集・要約・読み筋の解説(料金表の見方・予約のタイミング等)</li>
+      </ul>
+      <p><strong>更新頻度</strong>: 公式情報の重要変更(休場・リブランディング・料金大幅改定等)は確認次第随時更新。各ページの最終更新日は HTML の lastmod または記事内に明記しています。</p>
+    </div>
+
+    <div class="section">
+      <h2>4. ファクトチェックプロセス</h2>
+      <p>掲載前に以下の確認を実施:</p>
+      <ul>
+        <li>コース名・所在地・電話番号・公式サイト URL は <strong>一次情報源(公式サイト)</strong> で必ず照合</li>
+        <li>料金情報は公式・大手予約サイト 2 ソース以上でクロスチェック</li>
+        <li>営業状態(営業中・休場・閉鎖)は四半期ごとに再検証</li>
+        <li>多言語対応情報(韓国語・英語ページの有無)は実際に該当ページを確認</li>
+      </ul>
+      <p><strong>誤りに気づいた場合</strong>: 読者からのご指摘・公式情報の更新を確認次第、該当ページを 24-48 時間以内に修正します。</p>
+    </div>
+
+    <div class="section">
+      <h2>5. 評価表記の方針</h2>
+      <p>本サイトは <strong>主観的なランキング・点数評価を行いません</strong>。代わりに、客観的な事実(料金・距離・営業形態・多言語対応)とコース特徴の編集要約を提供します。</p>
+      <ul>
+        <li>「名門」「会員制」等の表記は公式情報・業界慣行に基づく事実説明</li>
+        <li>「Top 5」等のランキングは、特定の客観基準(創業年・設計者・料金帯等)に基づく分類</li>
+        <li>編集部の主観的好みでコースを推奨することはありません</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. 利害関係の開示</h2>
+      <div class="alert">本サイトは <strong>アフィリエイト広告(A8.net 経由の楽天 GORA / じゃらんゴルフ)</strong> を収益源としています。読者が当サイト経由で予約サイトに遷移し予約成立した場合、ASP から手数料が支払われます。</div>
+      <ul>
+        <li><strong>選定への影響なし</strong>: アフィリエイト報酬の有無は、コース選定・評価・推奨に一切影響しません</li>
+        <li><strong>透明な明示</strong>: アフィリエイトリンクは <code>rel="nofollow sponsored noopener"</code> で明示</li>
+        <li><strong>除外ポリシー</strong>: 完全会員制クラブ(福岡 CC・若松 GC 等)はビジター利用不可のためアフィリエイトリンクを掲載しません</li>
+        <li><strong>個別契約なし</strong>: 個別のゴルフコースとの直接的なスポンサー契約・PR 契約は一切ありません</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>7. 苦情・修正依頼の窓口</h2>
+      <p>掲載情報の誤り・更新依頼・コースオーナー様からの修正依頼は、各ページのフッター<a href="contact.html">問い合わせフォーム</a>からご連絡ください。原則 48 時間以内に確認・対応します。</p>
+    </div>
+
+    <div class="section">
+      <h2>8. 免責事項</h2>
+      <p>本サイトに掲載された情報は、編集時点での公開情報に基づきますが、料金・営業時間・休業日等は変更される可能性があります。<strong>予約・来場前には必ず各コースの公式サイトで最新情報をご確認ください</strong>。本サイトの情報に基づくいかなる損害についても、編集部は責任を負いかねます。</p>
+    </div>
+
+    <p style="text-align: right; font-size: 12px; color: var(--muted); margin-top: 32px;">最終更新: 2026-05-09</p>
+  </div>
+</div>
+
+<!-- ═══════════════ English ═══════════════ -->
+<div id="c-en" class="content">
+  <section class="hero">
+    <h1>Editorial Policy — Independent Guide Selection Standards & Neutrality</h1>
+    <p>The fukuoka-golf-guide.com Editorial Team's policy on course selection, evaluation, and information updates</p>
+  </section>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>1. About the Editorial Team</h2>
+      <p>The <strong>fukuoka-golf-guide.com Editorial Team</strong> operates an independent guide site covering 35 golf courses in Fukuoka Prefecture in three languages (Japanese / English / Korean). Drawing on local playing experience and broader golf industry research, our purpose is to provide an information foundation that lets readers select courses with confidence — from a local-resident perspective.</p>
+      <div class="info">This site is an <strong>independent media outlet</strong> with no capital or contractual relationship with any specific golf course, booking platform, or operating company (see "6. Disclosure of Interests" below).</div>
+    </div>
+
+    <div class="section">
+      <h2>2. Course Selection Criteria</h2>
+      <p>We cover 18H+ visitor-accessible golf courses in Fukuoka Prefecture, plus distinctive short courses (including 10H short courses). Specific selection standards:</p>
+      <ul>
+        <li><strong>Geography</strong>: Located in Fukuoka Prefecture (5 areas: Kitakyushu / Fukuoka City / Itoshima / Chikugo / Chikuho)</li>
+        <li><strong>Visitor Access</strong>: Courses with mechanisms for visitor access (general booking / member referral / stockholder-member systems)</li>
+        <li><strong>Operational Status</strong>: Courses with confirmed continuing operation via official sites and major booking platforms (Rakuten GORA, Jalan Golf, etc.). Closed or suspended courses are clearly noted.</li>
+        <li><strong>3-Language Necessity</strong>: As we serve inbound visitors (Korean and English-speaking), available information is provided in all three languages.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. Information Sources & Update Policy</h2>
+      <p>Course information is gathered and verified in the following priority order:</p>
+      <ul>
+        <li><strong>Primary sources</strong>: Each course's official website, official brochures, and operating company press releases</li>
+        <li><strong>Secondary sources</strong>: Major booking platforms (Rakuten GORA / Jalan Golf / GDO) for pricing and availability data</li>
+        <li><strong>Editorial-original content</strong>: Editing, summarizing, and explaining how to interpret public information (price-table reading guides, booking-timing tips, etc.)</li>
+      </ul>
+      <p><strong>Update frequency</strong>: Major changes from official sources (closures, rebranding, significant pricing changes) are reflected as soon as confirmed. Each page's last-update date is recorded in the HTML lastmod field or within the article itself.</p>
+    </div>
+
+    <div class="section">
+      <h2>4. Fact-Checking Process</h2>
+      <p>Before publication, the following checks are performed:</p>
+      <ul>
+        <li>Course name, address, phone number, and official URL are always cross-checked against <strong>primary sources (official sites)</strong></li>
+        <li>Pricing information is cross-checked against at least 2 sources (official + major booking platform)</li>
+        <li>Operational status (active / suspended / closed) is re-verified quarterly</li>
+        <li>Multilingual support information (existence of Korean / English pages) is verified by directly accessing those pages</li>
+      </ul>
+      <p><strong>If an error is found</strong>: Upon receiving reader feedback or detecting an official update, we correct the relevant page within 24-48 hours.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. Evaluation Notation Policy</h2>
+      <p>This site does <strong>not provide subjective rankings or scoring</strong>. Instead, we present objective facts (pricing, distance, operational format, multilingual support) and editorial summaries of course characteristics.</p>
+      <ul>
+        <li>Designations like "prestigious" or "members-only" are factual descriptions based on official information and industry conventions</li>
+        <li>"Top 5"-style rankings are categorized by specific objective criteria (founding year, designer, price tier, etc.)</li>
+        <li>We do not recommend courses based on subjective editorial preferences</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. Disclosure of Interests</h2>
+      <div class="alert">This site is monetized through <strong>affiliate advertising (Rakuten GORA / Jalan Golf via A8.net)</strong>. When a reader navigates to a booking platform via our site and completes a booking, the affiliate platform pays a commission.</div>
+      <ul>
+        <li><strong>No influence on selection</strong>: The presence or absence of affiliate compensation has zero influence on course selection, evaluation, or recommendations</li>
+        <li><strong>Transparent disclosure</strong>: All affiliate links are marked with <code>rel="nofollow sponsored noopener"</code></li>
+        <li><strong>Exclusion policy</strong>: Fully members-only clubs (e.g., Fukuoka CC, Wakamatsu GC) are not visitor-accessible, so we do not include affiliate links for them</li>
+        <li><strong>No individual contracts</strong>: We have no direct sponsorship or PR contracts with any individual golf course</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>7. Complaints & Correction Requests</h2>
+      <p>For information errors, update requests, or correction requests from course owners, please contact us via the <a href="contact.html">contact form</a> linked in each page footer. We confirm and respond within 48 hours as a rule.</p>
+    </div>
+
+    <div class="section">
+      <h2>8. Disclaimer</h2>
+      <p>The information published on this site is based on publicly available information at the time of editing. However, pricing, operating hours, and closures are subject to change. <strong>Before booking or visiting, please always confirm the latest information on each course's official website.</strong> The editorial team cannot be held responsible for any losses arising from reliance on this site's information.</p>
+    </div>
+
+    <p style="text-align: right; font-size: 12px; color: var(--muted); margin-top: 32px;">Last updated: 2026-05-09</p>
+  </div>
+</div>
+
+<!-- ═══════════════ 한국어 ═══════════════ -->
+<div id="c-ko" class="content">
+  <section class="hero">
+    <h1>편집 방침 — 독립 가이드의 선정 기준과 중립성</h1>
+    <p>fukuoka-golf-guide.com 편집부의 코스 선정·평가·정보 갱신 방침</p>
+  </section>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>1. 편집부 소개</h2>
+      <p><strong>fukuoka-golf-guide.com 편집부</strong>는 후쿠오카현의 골프장 35개 코스를 3개 언어(일본어·English·한국어)로 망라하는 독립 가이드 사이트를 운영합니다. 후쿠오카에서의 플레이 경험과 골프 업계 전반의 정보 수집을 바탕으로, 현지 시각에서 「독자가 안심하고 코스를 선택할 수 있는 정보 기반」을 제공하는 것을 목표로 합니다.</p>
+      <div class="info">본 사이트는 특정 골프장·예약 사이트·운영 회사와 자본적·계약적 관계를 갖지 않는 <strong>독립 미디어</strong>입니다(아래 「6. 이해관계 공개」 참조).</div>
+    </div>
+
+    <div class="section">
+      <h2>2. 코스 선정 기준</h2>
+      <p>후쿠오카현 내 비지터가 이용 가능한 18홀 이상의 골프 코스, 그리고 특징적인 단거리 코스(10홀 쇼트 포함)를 망라 대상으로 합니다. 구체적인 선정 기준:</p>
+      <ul>
+        <li><strong>지리적 조건</strong>: 후쿠오카현 내 위치 (기타큐슈·후쿠오카시·이토시마·치쿠고·치쿠호의 5개 지역)</li>
+        <li><strong>비지터 수용</strong>: 일반 예약 / 회원 소개 / 주주 회원제 등 비지터가 접근 가능한 시스템이 있는 코스</li>
+        <li><strong>영업 상태</strong>: 공식 사이트·대형 예약 사이트(라쿠텐 GORA·자란 골프 등)에서 영업 지속이 확인되는 코스 (휴장·폐쇄 시 명기)</li>
+        <li><strong>3개 언어 대응 필요성</strong>: 방일 외국인(한국·영어권)도 대상으로 하기 때문에 이용 가능한 정보는 3개 언어로 제공</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. 정보 출처와 갱신 방침</h2>
+      <p>각 코스의 정보는 다음 우선순위로 수집·검증됩니다:</p>
+      <ul>
+        <li><strong>1차 정보</strong>: 각 코스 공식 사이트, 공식 팸플릿, 운영 회사 보도자료</li>
+        <li><strong>2차 정보</strong>: 라쿠텐 GORA / 자란 골프 / GDO 등 대형 예약 플랫폼 게재 정보 (요금·공실 상황 등)</li>
+        <li><strong>편집부 독자 정보</strong>: 공개 정보의 편집·요약·해석 (요금표 보는 법·예약 타이밍 등)</li>
+      </ul>
+      <p><strong>갱신 빈도</strong>: 공식 정보의 중요 변경 (휴장·리브랜딩·요금 대폭 개정 등)은 확인하는 즉시 수시 갱신. 각 페이지의 최종 갱신일은 HTML의 lastmod 또는 기사 내에 명기되어 있습니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>4. 팩트체크 프로세스</h2>
+      <p>게재 전에 다음 확인을 실시합니다:</p>
+      <ul>
+        <li>코스명·소재지·전화번호·공식 사이트 URL은 <strong>1차 정보원(공식 사이트)</strong>에서 반드시 대조</li>
+        <li>요금 정보는 공식·대형 예약 사이트 2개 소스 이상으로 크로스 체크</li>
+        <li>영업 상태(영업 중·휴장·폐쇄)는 분기별로 재검증</li>
+        <li>다국어 대응 정보(한국어·영어 페이지의 유무)는 실제로 해당 페이지를 확인</li>
+      </ul>
+      <p><strong>오류를 발견한 경우</strong>: 독자의 지적·공식 정보의 갱신을 확인하는 즉시 해당 페이지를 24-48시간 이내에 수정합니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. 평가 표기 방침</h2>
+      <p>본 사이트는 <strong>주관적인 랭킹·점수 평가를 실시하지 않습니다</strong>. 대신 객관적인 사실(요금·거리·영업 형태·다국어 대응)과 코스 특징의 편집 요약을 제공합니다.</p>
+      <ul>
+        <li>「명문」「회원제」등의 표기는 공식 정보·업계 관행에 기반한 사실 설명</li>
+        <li>「Top 5」등의 랭킹은 특정한 객관 기준(창업년·설계자·요금대 등)에 기반한 분류</li>
+        <li>편집부의 주관적 선호로 코스를 추천하는 일은 없습니다</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. 이해관계 공개</h2>
+      <div class="alert">본 사이트는 <strong>제휴 광고(A8.net 경유 라쿠텐 GORA / 자란 골프)</strong>를 수익원으로 합니다. 독자가 본 사이트 경유로 예약 사이트로 이동하여 예약이 성립한 경우, ASP에서 수수료가 지불됩니다.</div>
+      <ul>
+        <li><strong>선정에 영향 없음</strong>: 제휴 보수의 유무는 코스 선정·평가·추천에 일절 영향을 미치지 않습니다</li>
+        <li><strong>투명한 명시</strong>: 제휴 링크는 <code>rel="nofollow sponsored noopener"</code>로 명시</li>
+        <li><strong>제외 정책</strong>: 완전 회원제 클럽(후쿠오카 CC·와카마쓰 GC 등)은 비지터 이용 불가하므로 제휴 링크를 게재하지 않습니다</li>
+        <li><strong>개별 계약 없음</strong>: 개별 골프 코스와 직접적인 스폰서 계약·PR 계약은 일절 없습니다</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>7. 클레임·수정 의뢰 창구</h2>
+      <p>게재 정보의 오류·갱신 의뢰·코스 오너님으로부터의 수정 의뢰는 각 페이지의 푸터<a href="contact.html">문의 폼</a>에서 연락해 주세요. 원칙 48시간 이내에 확인·대응합니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>8. 면책 사항</h2>
+      <p>본 사이트에 게재된 정보는 편집 시점의 공개 정보를 기반으로 하지만, 요금·영업시간·휴업일 등은 변경될 가능성이 있습니다. <strong>예약·방문 전에는 반드시 각 코스의 공식 사이트에서 최신 정보를 확인해 주십시오</strong>. 본 사이트의 정보에 기반한 어떠한 손해에 대해서도 편집부는 책임을 지지 않습니다.</p>
+    </div>
+
+    <p style="text-align: right; font-size: 12px; color: var(--muted); margin-top: 32px;">최종 갱신: 2026-05-09</p>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html">← トップへ / Back to Top / 목록으로</a> ｜
+  <a href="sitemap-guide.html">サイトマップ</a> ｜
+  <a href="contact.html">お問い合わせ</a>
+</footer>
+
+<script>
+  function sw(lang) {
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('on'));
+    document.getElementById('c-' + lang).classList.add('on');
+    document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('on'));
+    event.target.classList.add('on');
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>

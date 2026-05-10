@@ -13,7 +13,7 @@
 | **0** | 棚卸し (BLOG_COMPANY_INVENTORY.md) | 3-4h | 🔲 未着手 (省略可・暗黙的に Phase 1-4 で実行) |
 | **1** | Subagent 化 (9 専門家) | 4-6h | ✅ **完了 (2026-05-10)** |
 | **2** | Skill 化 (workflow 自動化) | 8-12h | ✅ **完了 (7/7・2026-05-10)** |
-| **3** | テンプレート化 (複数サイト雛形) | 12-20h | 🔲 未着手 |
+| **3** | テンプレート化 (複数サイト雛形) | 12-20h | ⏳ **3.1 完了 (2026-05-10)・残 3.2-3.4** |
 | **4** | Plugin 化 (配布可能パッケージ) | 4-6h | 🔲 未着手 |
 
 ---
@@ -101,14 +101,37 @@
 
 ---
 
-## Phase 3 計画 (テンプレート化)
+## Phase 3 進捗 (テンプレート化)
 
-複数サイト立ち上げのスケーラビリティ:
+### ✅ Phase 3.1 完了 (2026-05-10): テンプレート構造設計 + 雛形配置
 
-- `~/blog-template/` 標準雛形ディレクトリ
-- `CLAUDE.md` を 共通 (運用規約) + サイト固有 (ドメイン/GA4 ID/収益モデル) に分離
-- 新サイト = 雛形コピー + サイト固有 CLAUDE.md カスタマイズ
-- 既存 9 subagents + Phase 2 skills を 即利用可
+`~/blog-template/` に 7 ファイル / 940 行配置:
+
+| ファイル | 行 | 役割 |
+|---|---|---|
+| `README.md` | 152 | テンプレートの使い方 + 9 subagent + 7 skill カタログ |
+| `CLAUDE.md` | 157 | 運用規約 (共通) + サイト固有プレースホルダ |
+| `NEXT_SESSION.template.md` | 159 | 引き継ぎ正典 skeleton |
+| `docs/ARCHITECTURE.md` | 128 | 設計思想 (なぜこのテンプレートか・規約根拠) |
+| `docs/OBSERVATION_PLAYBOOK.template.md` | 161 | 観測判定インフラ skeleton |
+| `docs/BLOG_COMPANY_PROGRESS.template.md` | 79 | 新規サイト用の進捗管理 skeleton |
+| `scripts/README.md` | 104 | 共通 scripts コピー手順 + サイト固有 vs 共通の判断基準 |
+
+設計判断:
+- **CLAUDE.md は共通 + プレースホルダ** で site-specific を `[REPLACE]` マークアップ
+- **subagent / skill は ~/.claude/ で全プロジェクト共通** (テンプレ内には複製しない)
+- **scripts は fukuoka-golf-guide からコピー** (テンプレに同梱しない・README で案内)
+- **両ディレクトリ規約はオプション** (preview server 使う場合のみ・CLAUDE.md でフラグ化)
+
+### 🔲 残: Phase 3.2-3.4
+
+| サブフェーズ | 内容 | 工数 |
+|---|---|---|
+| **3.2** | 既存 fukuoka-golf-guide の CLAUDE.md 化 (テンプレを repo に逆適用) | 1-2h |
+| **3.3** | 2 つ目のサイト立ち上げ実証 (テンプレから scaffold して動作確認) | 5-8h |
+| **3.4** | テンプレ refine (3.3 の知見でテンプレ修正) | 2-3h |
+
+→ 3.3 が最大の検証ポイント。実サイト立ち上げ要望と合わせて実施推奨。
 
 ---
 

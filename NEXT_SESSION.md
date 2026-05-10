@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-10 (★★★ Phase 2 完全完了 7/7・全 skill 配置済・本日同日内 9 commit)
+**最終更新**: 2026-05-10 (★★★ Phase 3.1 完了・~/blog-template/ 雛形配置・本日同日内 10 commit)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,24 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕★★★ ブログ会社化 Phase 2 完全完了 — `/create-course-page` 配置 (7/7)** (`4fce582` 後継 / 2026-05-10)
+1. **🆕★★★ ブログ会社化 Phase 3.1 完了 — `~/blog-template/` 雛形配置** (`5110d58` 後継 / 2026-05-10)
+   - 配置先: `~/blog-template/` (ユーザーレベル・新規ブログサイト立ち上げ時の雛形)
+   - 配置済 7 ファイル / 940 行:
+     - `README.md` (152 行・テンプレ使い方 + 9 subagent + 7 skill カタログ)
+     - `CLAUDE.md` (157 行・運用規約共通 + サイト固有プレースホルダ `[REPLACE]`)
+     - `NEXT_SESSION.template.md` (159 行・引き継ぎ正典 skeleton)
+     - `docs/ARCHITECTURE.md` (128 行・設計思想 + 規約根拠 7 軸)
+     - `docs/OBSERVATION_PLAYBOOK.template.md` (161 行・観測判定インフラ skeleton)
+     - `docs/BLOG_COMPANY_PROGRESS.template.md` (79 行・新規サイト用進捗管理)
+     - `scripts/README.md` (104 行・共通 scripts コピー手順 + サイト固有 vs 共通の判断基準)
+   - 設計判断:
+     - CLAUDE.md は共通 + プレースホルダ (`[REPLACE]` マークアップ)
+     - subagent/skill は ~/.claude/ で全プロジェクト共通 (テンプレ内には複製しない)
+     - scripts は fukuoka-golf-guide からコピー (テンプレに同梱しない・README で案内)
+     - 両ディレクトリ規約はオプション (Single/Dual ディレクトリ選択式)
+   - **次の活用パターン**: 新サイトは `cp -r ~/blog-template/* {新サイトdir}/` + CLAUDE.md `[REPLACE]` 埋めで scaffold 完了
+   - Phase 3 残: 3.2 (既存 fukuoka-golf-guide に CLAUDE.md 逆適用・1-2h) / 3.3 (2 サイト目実証・5-8h・実サイト要望待ち) / 3.4 (テンプレ refine・2-3h)
+2. **🆕★★★ ブログ会社化 Phase 2 完全完了 — `/create-course-page` 配置 (7/7)** (`4fce582` 後継 / 2026-05-10)
    - 配置先: `~/.claude/skills/create-course-page/SKILL.md` (195 行・最複雑な複合 skill)
    - 引数: `<slug> [--skip-decoy] [--skip-deeplink]`
    - 動作: 新規コースを 1 コマンドで全展開

@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-10 (★★ Phase 2 進捗 6/7・skill 4 件一括配置・残 /create-course-page のみ)
+**最終更新**: 2026-05-10 (★★★ Phase 2 完全完了 7/7・全 skill 配置済・本日同日内 9 commit)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,22 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕★★ ブログ会社化 Phase 2 — skill 4 件一括配置 (6/7)** (`4fe51f5` 後継 / 2026-05-10)
+1. **🆕★★★ ブログ会社化 Phase 2 完全完了 — `/create-course-page` 配置 (7/7)** (`4fce582` 後継 / 2026-05-10)
+   - 配置先: `~/.claude/skills/create-course-page/SKILL.md` (195 行・最複雑な複合 skill)
+   - 引数: `<slug> [--skip-decoy] [--skip-deeplink]`
+   - 動作: 新規コースを 1 コマンドで全展開
+     - Pre-flight 4 チェック (course_data 存在 / 重複 / mapping / 観測抵触)
+     - HTML 生成 (course-{slug}.html + access-{slug}.html・3 言語)
+     - エリアハブ統合 (area-{area}.html + 該当 hub-* + sitemap-guide.html)
+     - 7 post-processing スクリプト順次実行 (Phase 1A 逆流ナビ + 1B CVR + 3 Decoy + 4 GA4 + jalan/rakuten deep link + hreflang + og:locale)
+     - sitemap.xml 更新 (両ディレクトリ自動)
+     - 両ディレクトリ同期確認
+     - preview tool で 3 言語 + dataLayer + JSON-LD 検証
+     - NEXT_SESSION.md 自動更新 + GSC 再送信リマインド
+   - **Phase 2 完全完了 (7/7)・残 0**
+   - 合計 7 skill / 1,022 行・全プロジェクト横断利用可
+   - **次セッションから skill が即時利用可** (skill ファイル直編集はディレクトリ監視で即時反映)
+   - Phase 3 着手準備: テンプレート化 (`~/blog-template/` 雛形 + サイト固有 CLAUDE.md 分離・12-20h)
    - `/sitemap-regenerate` (77 行): `scripts/generate_sitemap.py` ラッパー・dry-run → 承認 → 適用 → diff 表示 → GSC 再送信リマインド
    - `/ga4-tracking-deploy` (91 行): `scripts/inject_ga4_tracking.py` ラッパー・観測抵触チェック → preview 検証 (dataLayer 直接読取で event 確認)
    - `/decoy-pricing-apply` (89 行): `scripts/decoy_pricing_redesign.py` ラッパー・**★★★ 観測抵触チェック最重要 + 倫理境界線チェック (虚偽訴求・dark pattern 拒否)**

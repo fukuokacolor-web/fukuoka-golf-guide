@@ -12,7 +12,7 @@
 |---|---|---|---|
 | **0** | 棚卸し (BLOG_COMPANY_INVENTORY.md) | 3-4h | 🔲 未着手 (省略可・暗黙的に Phase 1-4 で実行) |
 | **1** | Subagent 化 (9 専門家) | 4-6h | ✅ **完了 (2026-05-10)** |
-| **2** | Skill 化 (workflow 自動化) | 8-12h | ⏳ **進捗 6/7・2026-05-10**(残 /create-course-page のみ) |
+| **2** | Skill 化 (workflow 自動化) | 8-12h | ✅ **完了 (7/7・2026-05-10)** |
 | **3** | テンプレート化 (複数サイト雛形) | 12-20h | 🔲 未着手 |
 | **4** | Plugin 化 (配布可能パッケージ) | 4-6h | 🔲 未着手 |
 
@@ -62,7 +62,7 @@
 
 ## Phase 2 進捗 (Skill 化)
 
-### ✅ 配置済 (6/7)
+### ✅ 配置済 (7/7・Phase 2 完了)
 
 | Skill | 配置先 | 行数 | 動作確認 |
 |---|---|---|---|
@@ -72,6 +72,7 @@
 | **`/ga4-tracking-deploy`** | `~/.claude/skills/ga4-tracking-deploy/SKILL.md` | 91 | 🔲 新規 HTML 追加時 |
 | **`/decoy-pricing-apply`** | `~/.claude/skills/decoy-pricing-apply/SKILL.md` | 89 | 🔲 観測終了後 (6/3+) |
 | **`/dual-dir-sync`** | `~/.claude/skills/dual-dir-sync/SKILL.md` | 129 | 🔲 次の Edit 後 |
+| **`/create-course-page`** | `~/.claude/skills/create-course-page/SKILL.md` | 195 | 🔲 新規コース追加時 |
 
 ### 仕様サマリ
 
@@ -92,13 +93,11 @@
 - **両ディレクトリ規約** を全 skill が遵守 (REPO_ROOT + PREVIEW_ROOT)
 - **会議再招集** が必要な状況なら `/expert-meeting` 起動を推奨
 
-### 🔲 残候補 (1/7)
+### 残候補
 
-| Skill | 優先 | 工数推定 | メモ |
-|---|---|---|---|
-| `/create-course-page <slug>` | ★★ | 2-3h | 新規コース追加の最頻出オペレーション・Phase 3 (テンプレート化) への布石 |
+なし — Phase 2 完了 ✅
 
-→ 次セッションで Phase 2 完全完了予定
+合計: 7 skill / 1,022 行 (`~/.claude/skills/` 配下)・全プロジェクト横断利用可
 
 ---
 

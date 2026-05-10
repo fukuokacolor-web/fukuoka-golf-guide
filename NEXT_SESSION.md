@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-10 (sitemap.xml lastmod 修復 + priority 体系再編・鈴木 IA タスク実装)
+**最終更新**: 2026-05-10 (KO_MARKET_RESEARCH.md 新規作成・金星インバウンドタスク完了)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,16 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 IA 改善 (鈴木玲奈タスク) — sitemap.xml lastmod 修復 + priority 体系再編** (`d3a13ab` 後継 / 2026-05-10)
+1. **🆕 KO 市場リサーチ (金星誠タスク) — `KO_MARKET_RESEARCH.md` 新規** (`583deef` 後継 / 2026-05-10)
+   - 専門家会議 Tier 2 (金星 インバウンド) として実装。Day 28 GO 後の launch 速度を 1 週間→1 日に短縮するための事前リサーチ
+   - **被リンク獲得候補 14 件**: 高 ROI Tier (難度 1-2 / 6 件: 딜바다・DC 갤・TOM Cafe・Threads × 2・Calarca) + 中 ROI Tier (難度 3-4 / 8 件: Brunch × 2・InsightKorea 等)
+   - **Influencer**: 도쿄린짱 (한국 대상 일본 골프 専門 YouTuber・第 1 候補) / Threads @japantoyotarent / @fine___tour が Tier 1 候補
+   - **Naver SERP 分析** (3 主 KW): 商用여행사が独占 → 와카미야 ロングテール 5 KW 戦略を確定 (와카미야 골프 / 트라이얼 골프 리조트 / 후쿠오카 4000엔 골프 / 후쿠오카 한국어 골프장 / 미야와카 온천 골프・累計 月 250-830 Vol 推定 / 競争度 1-2)
+   - **新発見**: VISIT FUKUOKA 韓国語版 (crossroadfukuoka.jp/kr/spot/10351) が wakamiya を既掲載 → 公式観光局認定として訴求材料に活用可能
+   - Day 28 GO 後 90 日で月¥10 万到達ロードマップ確定 (KO ¥3-5 万 + EN/JP 累積 ¥7-10 万)
+   - HTML 改修禁止抵触なし (Markdown 文書のみ)
+   - 観測中の更新タスク: Day 7/14/28 で §1 KR セッション数を毎週更新
+2. **🆕 IA 改善 (鈴木玲奈タスク) — sitemap.xml lastmod 修復 + priority 体系再編** (`d3a13ab` 後継 / 2026-05-10)
    - 専門家会議 (5 名) の Tier 1 衛生作業として実装。鈴木 IA 案 a+c (lastmod 修復 + priority 整理)
    - **lastmod 修復**: `scripts/generate_sitemap.py` を「既存 sitemap 値継承」→「git log の最新コミット日」へロジック変更。これにより Phase 1A/1B/3 改修分 (5/5-5/6) や hreflang 全ページ更新 (5/9) が **`<lastmod>2026-04-03</lastmod>` 等のまま陳腐化していた問題**を解消 (98 URL 全件 5/8〜5/9 に更新)
    - **priority 体系**: 0.9 HIGH (10件・area + airport + course-kokura + Phase 2 LP × 3) / 0.8 MEDIUM (5 件・**4 ペルソナハブ + book-fukuoka-golf-foreigner**・新設) / 0.7 default (81) / 0.6 LOW (editorial-policy 1) を 5 階層化。手動編集された Phase 2 LP の 0.9 / editorial-policy の 0.6 / monthly changefreq 2 件を **規約として明文化**して保護

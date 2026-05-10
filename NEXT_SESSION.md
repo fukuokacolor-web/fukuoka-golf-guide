@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-10 (山本 INTERVIEW タスク完了 + ★ Phase 1 ブログ会社化着手・content-strategist subagent 新設)
+**最終更新**: 2026-05-10 (★★ Phase 1 ブログ会社化完了・9 専門家全員 subagent 配置完了)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,16 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕★ ブログ会社化 Phase 1 着手 + 山本 INTERVIEW タスク完了** (`9b38d11` 後継 / 2026-05-10)
+1. **🆕★★ ブログ会社化 Phase 1 完了 — 9 専門家全員 subagent 配置完了** (`d635f43` 後継 / 2026-05-10)
+   - 全 9 名を `~/.claude/agents/<name>.md` に配置 (ユーザーレベル・全プロジェクト横断利用可)
+   - 配置完了リスト: `content-strategist` (山本) / `seo-strategist` (田中) / `cvr-optimizer` (佐藤) / `ia-architect` (鈴木玲奈) / `behavioral-economist` (教授) / `fact-checker-primary` (鈴木一郎) / `fact-checker-secondary` (中村麻衣) / `inbound-strategist` (金星) / `payment-specialist` (David Chen)
+   - 共通骨格 8 セクション: frontmatter + ペルソナ紹介 + 核となる信念 + 思考プロセス + 出力規約 + 文脈読込 + 典型タスク + 自己却下案 + Cross-checking 連携
+   - 平均 74 行 / file (合計 668 行)・tools 設定はロール別に最適化 (fact-checker は read-only / 他は Write/Edit/Bash 含む)
+   - 動作検証: `content-strategist` のみ実証済 (山本タスクで生成)・他 8 名は新セッションで初使用予定
+   - 新規ドキュメント: `BLOG_COMPANY_PROGRESS.md` (4 フェーズ進捗管理)
+   - **次セッションで使う方法**: 主会話で `Agent` ツールに `subagent_type: <name>` で 4-6 名を並列招集・専門家会議が高速化
+   - Phase 2 着手準備: skill 化候補 7 件抽出 (`/expert-meeting` `/observation-checkin` `/create-course-page` 等・上位 3 件で Phase 2 実質完了可)
+2. **🆕★ ブログ会社化 Phase 1 着手 + 山本 INTERVIEW タスク完了** (`9b38d11` 後継 / 2026-05-10)
    - **★ 戦略転換**: 1 サイト運用 → 「複数サイト効率運用ブログ会社」体制への移行決定 (Phase 0-4 アーキテクチャ確定)
    - **Phase 1 第一歩**: `~/.claude/agents/content-strategist.md` 新規作成 (山本誠一 persona の subagent 化・ユーザーレベル配置で全プロジェクト横断利用可)
    - subagent 仕様確認: 必須 (name/description) / 任意 (tools/model/permissionMode 等)・本文に E-E-A-T 信念 + 思考プロセス + 出力規約 + 自己却下案を明文化・新セッションで `subagent_type: content-strategist` で起動可

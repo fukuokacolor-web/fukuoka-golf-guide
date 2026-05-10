@@ -12,7 +12,7 @@
 |---|---|---|---|
 | **0** | 棚卸し (BLOG_COMPANY_INVENTORY.md) | 3-4h | 🔲 未着手 (省略可・暗黙的に Phase 1-4 で実行) |
 | **1** | Subagent 化 (9 専門家) | 4-6h | ✅ **完了 (2026-05-10)** |
-| **2** | Skill 化 (workflow 自動化) | 8-12h | ⏳ **着手中 (2/7・2026-05-10)** |
+| **2** | Skill 化 (workflow 自動化) | 8-12h | ⏳ **進捗 6/7・2026-05-10**(残 /create-course-page のみ) |
 | **3** | テンプレート化 (複数サイト雛形) | 12-20h | 🔲 未着手 |
 | **4** | Plugin 化 (配布可能パッケージ) | 4-6h | 🔲 未着手 |
 
@@ -62,40 +62,43 @@
 
 ## Phase 2 進捗 (Skill 化)
 
-### ✅ 配置済 (2/7)
+### ✅ 配置済 (6/7)
 
-| Skill | 配置先 | 動作確認 |
+| Skill | 配置先 | 行数 | 動作確認 |
+|---|---|---|---|
+| **`/expert-meeting`** | `~/.claude/skills/expert-meeting/SKILL.md` | 177 | 🔲 次セッション初使用予定 |
+| **`/observation-checkin`** | `~/.claude/skills/observation-checkin/SKILL.md` | 264 | 🔲 5/13 (Day 7) 初使用予定 |
+| **`/sitemap-regenerate`** | `~/.claude/skills/sitemap-regenerate/SKILL.md` | 77 | 🔲 次の sitemap 更新時 |
+| **`/ga4-tracking-deploy`** | `~/.claude/skills/ga4-tracking-deploy/SKILL.md` | 91 | 🔲 新規 HTML 追加時 |
+| **`/decoy-pricing-apply`** | `~/.claude/skills/decoy-pricing-apply/SKILL.md` | 89 | 🔲 観測終了後 (6/3+) |
+| **`/dual-dir-sync`** | `~/.claude/skills/dual-dir-sync/SKILL.md` | 129 | 🔲 次の Edit 後 |
+
+### 仕様サマリ
+
+| Skill | 引数 | 主動作 |
 |---|---|---|
-| **`/expert-meeting`** | `~/.claude/skills/expert-meeting/SKILL.md` | 🔲 次セッション初使用予定 |
-| **`/observation-checkin`** | `~/.claude/skills/observation-checkin/SKILL.md` | 🔲 5/13 (Day 7) 初使用予定 |
+| `/expert-meeting` | `<topic> [participants]` | 9 subagent から 4-6 名招集 → 議事録自動生成 |
+| `/observation-checkin` | `<day: 7/14/28/42>` | PLAYBOOK スレッショルド自動適用 → §6 更新 → Day 28 なら §5 マトリクス |
+| `/sitemap-regenerate` | (なし) | dry-run → 承認 → 適用 → 差分表示 → GSC 再送信リマインド |
+| `/ga4-tracking-deploy` | (なし) | dry-run → 抵触チェック → 適用 → preview 検証 |
+| `/decoy-pricing-apply` | (なし) | dry-run → **観測抵触チェック (★★★)** + 倫理境界線 → 適用 |
+| `/dual-dir-sync` | `<pattern>` | repo→preview コピー + 差分検証 + orphan 警告 |
 
-`/expert-meeting` 仕様 (2026-05-10 配置):
-- 引数: `<topic> [participants 任意・カンマ区切り]`
-- 動作: 配置済 9 subagent から 4-6 名を議題から自動選定 (or 明示指定) → 単一メッセージで並列招集 → 議事録自動生成
-- 出力: Markdown 議事録 (各専門家提案サマリ + Tier 1-3 コンセンサス + 今日の最初の 1 手)
-- 全員 ○ で Tier 1 / 1 名でも × あれば Tier 2 降格・抵触理由明記
-- ファクトチェック議題は primary + secondary 必ずペア招集
+### 共通設計原則
 
-`/observation-checkin` 仕様 (2026-05-10 配置):
-- 引数: `<day: 7 | 14 | 28 | 42>`
-- 動作: OBSERVATION_PLAYBOOK §3 のスレッショルドを GA4 5 レポートに自動適用 → §6 結果記入欄を Edit で更新 → Day 28 なら §5 判定マトリクスから Phase 4 着手判断
-- GA4 アクセス: Mode A (Chrome MCP 自動) or Mode B (Manual・ユーザー手入力)
-- ノイズ除外: 5/10 テストクリック 8 件・internal_fees・登録前 `(not set)` 期間外データ
-- Day 7 は GO/NO 確定しない (異常値検出のみ・PLAYBOOK §4 規約)・Day 14 以降で本格判定
-- 両ディレクトリ同期 (PLAYBOOK が repo + preview 両方にある場合)
-- 会議再招集要否を出力 (大きな判定変動時に `/expert-meeting` 起動推奨)
+- **dry-run → 承認 → 本番** の 3 段階を厳守 (即実行禁止)
+- **観測フェーズ抵触チェック** を本番実行前に必ず行う (`/decoy-pricing-apply` で最重要)
+- **倫理境界線チェック** (虚偽訴求・dark pattern) を該当 skill で実施 (`/decoy-pricing-apply`)
+- **両ディレクトリ規約** を全 skill が遵守 (REPO_ROOT + PREVIEW_ROOT)
+- **会議再招集** が必要な状況なら `/expert-meeting` 起動を推奨
 
-### 🔲 残候補 (5/7・優先順)
+### 🔲 残候補 (1/7)
 
-| Skill | 優先 | 工数推定 |
-|---|---|---|
-| `/create-course-page <slug>` | ★★ | 2-3h |
-| `/dual-dir-sync <pattern>` | ★★ | 1h |
-| `/decoy-pricing-apply` | ★ | 1h |
-| `/ga4-tracking-deploy` | ★ | 0.5h |
-| `/sitemap-regenerate` | ★ | 0.3h |
+| Skill | 優先 | 工数推定 | メモ |
+|---|---|---|---|
+| `/create-course-page <slug>` | ★★ | 2-3h | 新規コース追加の最頻出オペレーション・Phase 3 (テンプレート化) への布石 |
 
-残工数: 4.5-7h・上位 2 件 (`/create-course-page` + `/dual-dir-sync`) で 3-4h で Phase 2 実質完了可
+→ 次セッションで Phase 2 完全完了予定
 
 ---
 

@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-10 (★ Phase 2 進捗 2/7・/observation-checkin skill 追加・5/13 Day 7 直前準備完了)
+**最終更新**: 2026-05-10 (★★ Phase 2 進捗 6/7・skill 4 件一括配置・残 /create-course-page のみ)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,14 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕★ ブログ会社化 Phase 2 — `/observation-checkin` skill 配置 (2/7)** (`17b1703` 後継 / 2026-05-10)
+1. **🆕★★ ブログ会社化 Phase 2 — skill 4 件一括配置 (6/7)** (`4fe51f5` 後継 / 2026-05-10)
+   - `/sitemap-regenerate` (77 行): `scripts/generate_sitemap.py` ラッパー・dry-run → 承認 → 適用 → diff 表示 → GSC 再送信リマインド
+   - `/ga4-tracking-deploy` (91 行): `scripts/inject_ga4_tracking.py` ラッパー・観測抵触チェック → preview 検証 (dataLayer 直接読取で event 確認)
+   - `/decoy-pricing-apply` (89 行): `scripts/decoy_pricing_redesign.py` ラッパー・**★★★ 観測抵触チェック最重要 + 倫理境界線チェック (虚偽訴求・dark pattern 拒否)**
+   - `/dual-dir-sync <pattern>` (129 行): repo↔preview 同期強制・identical/diff/orphan の 3 値分類 + 検証 + orphan 警告
+   - 共通設計原則: dry-run → 承認 → 本番 の 3 段階厳守・観測抵触チェック必須・両ディレクトリ規約遵守・会議再招集判断 (`/expert-meeting` 起動推奨)
+   - Phase 2 残: `/create-course-page <slug>` のみ (★★・2-3h・新規コース追加自動化・Phase 3 テンプレート化への布石)
+2. **🆕★ ブログ会社化 Phase 2 — `/observation-checkin` skill 配置 (2/7)** (`17b1703` 後継 / 2026-05-10)
    - 配置先: `~/.claude/skills/observation-checkin/SKILL.md` (ユーザーレベル・全プロジェクト横断)
    - 引数: `<day: 7 | 14 | 28 | 42>`
    - 動作: OBSERVATION_PLAYBOOK §3 のスレッショルドを GA4 5 レポートに自動適用 → §6 Day {day} 結果記入欄を Edit で更新 → Day 28 なら §5 判定マトリクスから Phase 4 着手判断機械決定

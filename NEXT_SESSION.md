@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-10 (KO_MARKET_RESEARCH.md 新規作成・金星インバウンドタスク完了)
+**最終更新**: 2026-05-10 (山本 INTERVIEW タスク完了 + ★ Phase 1 ブログ会社化着手・content-strategist subagent 新設)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,18 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 KO 市場リサーチ (金星誠タスク) — `KO_MARKET_RESEARCH.md` 新規** (`583deef` 後継 / 2026-05-10)
+1. **🆕★ ブログ会社化 Phase 1 着手 + 山本 INTERVIEW タスク完了** (`9b38d11` 後継 / 2026-05-10)
+   - **★ 戦略転換**: 1 サイト運用 → 「複数サイト効率運用ブログ会社」体制への移行決定 (Phase 0-4 アーキテクチャ確定)
+   - **Phase 1 第一歩**: `~/.claude/agents/content-strategist.md` 新規作成 (山本誠一 persona の subagent 化・ユーザーレベル配置で全プロジェクト横断利用可)
+   - subagent 仕様確認: 必須 (name/description) / 任意 (tools/model/permissionMode 等)・本文に E-E-A-T 信念 + 思考プロセス + 出力規約 + 自己却下案を明文化・新セッションで `subagent_type: content-strategist` で起動可
+   - **動作検証**: general-purpose に persona ファイル注入で疑似実行 → 同等動作確認・成果物 2 ファイル生成
+   - **山本タスク成果物**:
+     - `INTERVIEW_CANDIDATES.md` (268 行・35 コース 5 軸スコアリング + 5 件確定: 小倉 19 / 芥屋 21 / 福岡国際 19 / 二丈 20 / 若宮 19 + 補欠 7 件)
+     - `INTERVIEW_PROTOCOL_DRAFT.md` (399 行・打診メール 3 種テンプレ + 取材ガイド + JSON-LD InterviewSchema + リスク遵守事項)
+   - 戦略バランス: 老舗名門 + 単独 + PGM + Accordia + インバウンド差別化 (wakamiya) の 5 セグメント分散
+   - ハルシネーション排除: 人物実名は全て「(要追加調査)」明記・観測終了後に公式サイト直確認必須化
+   - Phase 1 残タスク: 8 名の subagent 化 (seo-strategist / cvr-optimizer / ia-architect / behavioral-economist / fact-checker × 2 / inbound-strategist / payment-specialist)
+2. **🆕 KO 市場リサーチ (金星誠タスク) — `KO_MARKET_RESEARCH.md` 新規** (`583deef` 後継 / 2026-05-10)
    - 専門家会議 Tier 2 (金星 インバウンド) として実装。Day 28 GO 後の launch 速度を 1 週間→1 日に短縮するための事前リサーチ
    - **被リンク獲得候補 14 件**: 高 ROI Tier (難度 1-2 / 6 件: 딜바다・DC 갤・TOM Cafe・Threads × 2・Calarca) + 中 ROI Tier (難度 3-4 / 8 件: Brunch × 2・InsightKorea 等)
    - **Influencer**: 도쿄린짱 (한국 대상 일본 골프 専門 YouTuber・第 1 候補) / Threads @japantoyotarent / @fine___tour が Tier 1 候補

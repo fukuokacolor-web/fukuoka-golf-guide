@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-10 (★★ Phase 1 ブログ会社化完了・9 専門家全員 subagent 配置完了)
+**最終更新**: 2026-05-10 (★ Phase 2 着手・/expert-meeting skill 配置 1/7)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,16 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕★★ ブログ会社化 Phase 1 完了 — 9 専門家全員 subagent 配置完了** (`d635f43` 後継 / 2026-05-10)
+1. **🆕★ ブログ会社化 Phase 2 着手 — `/expert-meeting` skill 配置 (1/7)** (`51577cf` 後継 / 2026-05-10)
+   - 配置先: `~/.claude/skills/expert-meeting/SKILL.md` (ユーザーレベル・全プロジェクト横断)
+   - 引数: `<topic> [participants 任意・カンマ区切り]`
+   - 動作: 配置済 9 subagent から 4-6 名を議題から自動選定 (or 明示指定) → 単一メッセージで並列招集 → 議事録 Markdown を自動生成
+   - 出力構造: 各専門家提案サマリテーブル + Tier 1-3 コンセンサス分類 + 今日の最初の 1 手の推奨
+   - ルール: 全員 ○ で Tier 1 / 1 名でも × あれば Tier 2 降格 + 抵触理由明記・ファクトチェック議題は primary + secondary 必ずペア招集
+   - 動作検証: 次セッションで初使用予定 (skill ファイル直接編集後はディレクトリ監視で即時反映 or 新規ディレクトリは要再起動)
+   - **次セッションで使う方法**: `/expert-meeting Phase 4-B 着手判断` のように topic を渡すだけ → 4-6 名招集 + 議事録が自動で返る
+   - Phase 2 残: /observation-checkin (★★★・Day 7 用に最優先) / /create-course-page / /dual-dir-sync / /decoy-pricing-apply / /ga4-tracking-deploy / /sitemap-regenerate (6 件・残工数 6-9h)
+2. **🆕★★ ブログ会社化 Phase 1 完了 — 9 専門家全員 subagent 配置完了** (`d635f43` 後継 / 2026-05-10)
    - 全 9 名を `~/.claude/agents/<name>.md` に配置 (ユーザーレベル・全プロジェクト横断利用可)
    - 配置完了リスト: `content-strategist` (山本) / `seo-strategist` (田中) / `cvr-optimizer` (佐藤) / `ia-architect` (鈴木玲奈) / `behavioral-economist` (教授) / `fact-checker-primary` (鈴木一郎) / `fact-checker-secondary` (中村麻衣) / `inbound-strategist` (金星) / `payment-specialist` (David Chen)
    - 共通骨格 8 セクション: frontmatter + ペルソナ紹介 + 核となる信念 + 思考プロセス + 出力規約 + 文脈読込 + 典型タスク + 自己却下案 + Cross-checking 連携

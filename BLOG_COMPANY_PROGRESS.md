@@ -12,7 +12,7 @@
 |---|---|---|---|
 | **0** | 棚卸し (BLOG_COMPANY_INVENTORY.md) | 3-4h | 🔲 未着手 (省略可・暗黙的に Phase 1-4 で実行) |
 | **1** | Subagent 化 (9 専門家) | 4-6h | ✅ **完了 (2026-05-10)** |
-| **2** | Skill 化 (workflow 自動化) | 8-12h | 🔲 着手準備中 |
+| **2** | Skill 化 (workflow 自動化) | 8-12h | ⏳ **着手中 (1/7・2026-05-10)** |
 | **3** | テンプレート化 (複数サイト雛形) | 12-20h | 🔲 未着手 |
 | **4** | Plugin 化 (配布可能パッケージ) | 4-6h | 🔲 未着手 |
 
@@ -60,21 +60,33 @@
 
 ---
 
-## Phase 2 着手準備 (Skill 化候補)
+## Phase 2 進捗 (Skill 化)
 
-頻出ワークフローで skill 化 ROI が高いもの:
+### ✅ 配置済 (1/7)
 
-| Skill 候補 | 内容 | 優先 | 工数推定 |
-|---|---|---|---|
-| `/expert-meeting <topic> <participants>` | 4-6 名並列招集 → 議事録自動生成 → コンセンサス + 推奨実行順 | ★★★ | 1.5-2h |
-| `/observation-checkin <day>` | OBSERVATION_PLAYBOOK の Day 7/14/28 自動実行 | ★★★ | 1.5-2h |
-| `/create-course-page <slug>` | コース新規追加 (HTML 生成 + sitemap 更新 + area 追加 + 計測展開) | ★★ | 2-3h |
-| `/dual-dir-sync <pattern>` | repo + preview 両ディレクトリ強制同期 (規約強制) | ★★ | 1h |
-| `/decoy-pricing-apply` | Phase 3 Decoy ロジック適用 (CSS only) | ★ | 1h |
-| `/ga4-tracking-deploy` | inject_ga4_tracking.py 適用 (両ディレクトリ + 検証) | ★ | 0.5h |
-| `/sitemap-regenerate` | scripts/generate_sitemap.py 実行 + 差分確認 | ★ | 0.3h |
+| Skill | 配置先 | 動作確認 |
+|---|---|---|
+| **`/expert-meeting`** | `~/.claude/skills/expert-meeting/SKILL.md` | 🔲 次セッション初使用予定 |
 
-合計工数: 8-10h (一部上位 3 件で Phase 2 を実質完了可)
+`/expert-meeting` 仕様 (2026-05-10 配置):
+- 引数: `<topic> [participants 任意・カンマ区切り]`
+- 動作: 配置済 9 subagent から 4-6 名を議題から自動選定 (or 明示指定) → 単一メッセージで並列招集 → 議事録自動生成
+- 出力: Markdown 議事録 (各専門家提案サマリ + Tier 1-3 コンセンサス + 今日の最初の 1 手)
+- 全員 ○ で Tier 1 / 1 名でも × あれば Tier 2 降格・抵触理由明記
+- ファクトチェック議題は primary + secondary 必ずペア招集
+
+### 🔲 残候補 (6/7・優先順)
+
+| Skill | 優先 | 工数推定 |
+|---|---|---|
+| `/observation-checkin <day>` | ★★★ | 1.5-2h |
+| `/create-course-page <slug>` | ★★ | 2-3h |
+| `/dual-dir-sync <pattern>` | ★★ | 1h |
+| `/decoy-pricing-apply` | ★ | 1h |
+| `/ga4-tracking-deploy` | ★ | 0.5h |
+| `/sitemap-regenerate` | ★ | 0.3h |
+
+残工数: 6-9h・上位 2 件で実質 Phase 2 完了可
 
 ---
 

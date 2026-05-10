@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-10 (OBSERVATION_PLAYBOOK.md 新規作成・Day 7/14/28 判定インフラ完備)
+**最終更新**: 2026-05-10 (sitemap.xml lastmod 修復 + priority 体系再編・鈴木 IA タスク実装)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,21 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕 Phase 4 Step 1 — GA4 観測ダッシュボード準備** (未コミット / 2026-05-06)
+1. **🆕 IA 改善 (鈴木玲奈タスク) — sitemap.xml lastmod 修復 + priority 体系再編** (`d3a13ab` 後継 / 2026-05-10)
+   - 専門家会議 (5 名) の Tier 1 衛生作業として実装。鈴木 IA 案 a+c (lastmod 修復 + priority 整理)
+   - **lastmod 修復**: `scripts/generate_sitemap.py` を「既存 sitemap 値継承」→「git log の最新コミット日」へロジック変更。これにより Phase 1A/1B/3 改修分 (5/5-5/6) や hreflang 全ページ更新 (5/9) が **`<lastmod>2026-04-03</lastmod>` 等のまま陳腐化していた問題**を解消 (98 URL 全件 5/8〜5/9 に更新)
+   - **priority 体系**: 0.9 HIGH (10件・area + airport + course-kokura + Phase 2 LP × 3) / 0.8 MEDIUM (5 件・**4 ペルソナハブ + book-fukuoka-golf-foreigner**・新設) / 0.7 default (81) / 0.6 LOW (editorial-policy 1) を 5 階層化。手動編集された Phase 2 LP の 0.9 / editorial-policy の 0.6 / monthly changefreq 2 件を **規約として明文化**して保護
+   - スクリプト機能追加: `--dry-run` フラグ / 両ディレクトリ処理 / git log fallback (mtime → today)
+   - **ユーザー側次タスク**: GSC で sitemap 再送信 → クローリング更新を 5/13 (Day 7) までに反映予測。観測サンプルサイズの底上げに直結
+   - ROI 期待: Phase 1A/1B/3 のインデックス反映 2-3 週→3-5 日に短縮 / 観測中の自然流入 +200-500 PV/月 (副次効果)
+   - HTML 改修禁止抵触なし (sitemap.xml は HTML ではなく メタファイル・観測指標に非干渉)
+2. **🆕 OBSERVATION_PLAYBOOK.md 新設 + GA4 v2.1 計測本番検証** (`d3a13ab` / 2026-05-10)
+   - `OBSERVATION_PLAYBOOK.md` 新規 (Day 7/14/28 判定インフラ・5 探索レポート × 事前確定スレッショルド・必要 N 計算・結果記入欄テンプレ・Phase 4 着手判断マトリクス 8 シナリオ)
+   - GA4_DASHBOARD.md §1.4 追記: 汎用 `click` 45 件は GA4 Enhanced Measurement の自動 Outbound clicks。リポジトリ全体に `gtag('event','click')` の呼び出し無し・GTM 未導入確認
+   - GA4_DASHBOARD.md §1.5 追記: 8 種クリックパス本番検証完了 (hero/ftv/sticky/price_default/price_featured/booking_grid + internal_nav_click)・dataLayer 直接読取で全件正常動作確認
+   - ノイズ: 5/10 のテストクリック 8 件 (1 ユーザー・direct・ja・desktop・全体傾向への影響微小)
+   - 専門家会議 5 名招集 (田中/佐藤/鈴木/金星/山本) → 24 日観測フェーズ中の Tier 1 タスクとして佐藤 (CVR) PLAYBOOK + 鈴木 (IA) sitemap 修復を承認
+3. **🆕 Phase 4 Step 1 — GA4 観測ダッシュボード準備** (未コミット / 2026-05-06)
    - 専門家会議 6 名招集 (SEO 田中 / CVR 佐藤 / IA 鈴木 / 行動経済学 教授 / インバウンド 金星 / Content 山本) → コンセンサス: **GA4 観測フェーズ最優先**、Phase 4 候補 A/B/C/D を一旦保留 (会議で 4 名が「観測なき積層」を懸念)
    - 山本 (Content) は Phase 4-B「覆面ラウンド記」を**自ら却下** (E-E-A-T Experience 偽装リスク) → 代替案「現役プロ・支配人インタビュー 5 本」を提示 (将来の Step 候補)
    - **Plan B (GA4 tracking v2.1)**: 既存 click handler を拡張 → `cta_position` 自動判定 (hero/ftv/sticky/price_featured/price_default/booking_grid/explore_nav/other) + 内部リンク用 `internal_nav_click` イベント新設

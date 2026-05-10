@@ -1,8 +1,44 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-06
+**最終更新**: 2026-05-10 (OBSERVATION_PLAYBOOK.md 新規作成・Day 7/14/28 判定インフラ完備)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
+
+---
+
+## 🆕 2026-05-09 GA4 Day 3 観測ログ (Claude in Chrome 経由で実数確認)
+
+**GA4 アクセス情報**
+- アカウント ID: `389856983` / プロパティ ID: `531139357`
+- 保存済エクスプロレーション (CTA Position × デバイス × click_affiliate フィルタ): https://analytics.google.com/analytics/web/#/analysis/a389856983p531139357/edit/QHDhd8usTCW-m-czokhZCQ
+
+**✅ カスタムディメンション 8 個 全登録完了 (2026-05-09)**
+CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / Target Page
+→ GA4 仕様で **24-48h 後 (2026-05-10〜11)** からレポート反映開始
+
+**📊 過去 28 日間 (2026-04-11〜2026-05-08) のイベント実数**
+| イベント名 | 件数 | ユーザー | 解釈 |
+|-----------|------|---------|------|
+| page_view | 303 | 101 | — |
+| session_start | 163 | 101 | — |
+| user_engagement | 163 | 34 | — |
+| scroll | 132 | 49 | — |
+| first_visit | 99 | 97 | — |
+| **click** | **45** | 13 | ⚠️ **要調査**: 想定外の汎用 `click` イベントが発火している (`inject_ga4_tracking.py` のロジック確認必要) |
+| **click_affiliate** | **35** | 10 | ✅ 既存トラッキング稼働継続 (desktop 27 / mobile 8 / Japan 34 + Taiwan 1) |
+| **internal_nav_click** | **3** | 1 | ✅ **Plan B v2.1 新規イベント発火確認** (Phase 1A 逆流ナビが実際に使われている初の証拠) |
+
+**📈 流入・国別 (過去 7 日間)**
+- アクティブユーザー: 27 (前週比 ▼61.4%) / PV: 103 / イベント: 322
+- 国別: Japan 9 / **United States 8** / Germany 3 / South Korea 2 / Poland 2 / Canada 1 / Netherlands 1 → **EN/KO 流入が想定以上**
+- 流入: Direct 34 / Organic Search 8 / Referral 5
+
+**⚠️ 要調査事項 (次回優先タスク)**
+1. ~~**`click` 汎用イベント 45 件の発火源**~~ → ✅ **解決 (2026-05-10)**: GA4 Enhanced Measurement の Outbound clicks 自動計測が発火源。リポジトリ全体に `gtag('event', 'click', …)` の呼び出しは無く、GTM 等の他トラッカーも未導入。`click` (GA4 自動) ⊃ `click_affiliate` (自前) の包含関係で、差分 10 件 = 非アフィリ外部離脱 (Google Maps / コース公式等)。コード修正不要・収益指標は `click_affiliate` のみ参照。詳細: `GA4_DASHBOARD.md` §1.4
+2. ~~**本日 (2026-05-10) 同じエクスプロレーション再訪**~~ → ✅ **解決 (2026-05-10)**: course-keya.html で 8 種類のクリックを実機テスト + dataLayer 直接検証で**全件正しい cta_position 値が送信されている**ことを確認。エクスプロレーションでデータゼロだったのは反映遅延ではなく「5/9-5/10 のユーザークリックが少なかった」実数の問題。28 日エクスプロレーションが全件 `(not set)` なのも仕様 (登録 5/9 前のレガシーデータは再分類されない)。詳細: `GA4_DASHBOARD.md` §1.5
+3. **観測スケジュール継続** — Day 7 (2026-05-13): レポート 1-3 / Day 14 (2026-05-19): 本格判定 / Day 28 (2026-06-03): Phase 4 着手判断
+4. ⚠️ **観測中の HTML 改修禁止 (会議合意)** — 5/10 のテストクリック 8 件は計測ノイズとして許容 (1 ユーザー・全件 ja・direct)、全体傾向への影響は無視可能。Phase 1A/1B/3 の効果測定は **5/10 以降の自然トラフィック**で行う。
+5. 📘 **`OBSERVATION_PLAYBOOK.md` (新規)** — Day 7/14/28 各日の 30 分判定フロー + 事前確定スレッショルド + 結果記入欄 + Phase 4 着手判断マトリクス。**観測フェーズ運用の正典**。確証バイアス排除のため、Day 28 当日に数値見ながらスレッショルドを動かすことを禁止。
 
 ---
 

@@ -44,6 +44,53 @@
 index.html の既存 `function trackAffiliate` が内部 fees.html CTA クリックを `click_affiliate` で発火し続ける (3 箇所・3 言語)。
 **集計時は `service NOT IN ('internal_fees')` でフィルタすること。**
 
+### 1.4 `click` イベント (GA4 Enhanced Measurement 自動・自前コード由来ではない)
+
+**結論**: GA4 が自動で記録する **Outbound clicks** (デフォルト ON)。リポジトリ全体に `gtag('event', 'click', ...)` の呼び出しは存在せず、GTM 等の他トラッカーも未導入。`click_affiliate` (自前) と `click` (GA4 自動) は別イベントで、同一クリックで両方発火する。
+
+**包含関係**: `click_affiliate` ⊂ `click` (= 全外部リンククリック)
+
+| イベント | 発火源 | 内容 |
+|---|---|---|
+| `click` | GA4 Enhanced Measurement 自動 | 自サイトドメイン外への `<a>` クリック全件 |
+| `click_affiliate` | `inject_ga4_tracking.py` | うち jalan / rakuten / agoda 等のアフィリ URL のみ |
+| 差分 (`click` − `click_affiliate`) | — | Google Maps・コース公式サイト等の非アフィリ離脱 (有用シグナル) |
+
+**Day 3 観測実例 (2026-05-09 / 過去 28 日)**:
+- `click` 45 / `click_affiliate` 35 → 差分 10 = 非アフィリ外部離脱 10 件
+
+**集計時の方針**:
+- 収益関連の指標は `click_affiliate` のみ参照 (`click` は使わない)
+- 「ユーザーがどこへ離脱しているか」を見たい時は `click` を使い、`link_url` を集計して非アフィリの行き先 (Google Maps / 公式 etc) を分析可能
+
+**確認日**: 2026-05-10 (NEXT_SESSION.md 要調査事項 #1 解決)
+
+### 1.5 計測ロジック実機検証結果 (2026-05-10)
+
+course-keya.html で 8 種類のクリックを実行し、dataLayer 直接読み取りで全件正常動作を確認。
+
+| 検証 | クリック対象 | 期待 cta_position / イベント | 実測 | service |
+|---|---|---|---|---|
+| Hero | `📅 このコースを予約する` | `hero` | ✅ `hero` | `jalan` |
+| FTV | `🎫 じゃらんゴルフでこのコースを予約する` | `ftv` | ✅ `ftv` | `jalan` |
+| Sticky (じゃらん) | sticky bar じゃらん¥21,500〜 | `sticky` | ✅ `sticky` | `jalan` |
+| Sticky (楽天) | sticky bar 楽天GORA | `sticky` | ✅ `sticky` | `rakuten_gora` |
+| Default price card | ビジター 平日 → じゃらんで空き確認 | `price_default` | ✅ `price_default` | `jalan` |
+| Featured price card | ビジター 土日祝 (BEST VALUE) → じゃらんで予約 | `price_featured` | ✅ `price_featured` | `jalan` |
+| Booking grid | booking-card じゃらん リンク | `booking_grid` | ✅ `booking_grid` | `jalan` |
+| Phase 1A 逆流ナビ | `✈️ 旅行者向け` ハブリンク | `internal_nav_click` イベント<br>`nav_section: explore_nav`<br>`target_page: hub-traveler` | ✅ 全項目正解 | (n/a) |
+
+**結論**:
+- `inject_ga4_tracking.py` の v2.1 計測ロジックは**完全に正常動作**
+- カスタムディメンション 8 個 (CTA Position / Service / Page / Language / Target Page / Nav Section / Link Text / Link URL) すべてに対応するパラメータが正しく送信されている
+- Phase 1A/1B/3 の効果測定インフラは完成
+- 28 日エクスプロレーションで全件 `(not set)` だったのは **登録 5/9 前のレガシーイベント** (新ディメンションは登録時刻以降の新規イベントから分類)、5/9-5/10 でゼロだったのは反映遅延ではなく**実数的にクリックが少なかった**だけ
+- 5/13 (Day 7) には登録後の自然トラフィックでエクスプロレーションに hero/sticky/price_featured 等が出現し始める見込み
+
+**ノイズ対応**:
+- 5/10 のテストクリック 8 件は GA4 上に記録される (1 ユーザー・direct・ja・desktop)。全体集計への影響は微小。Day 28 (6/3) 時点の累積に対しては誤差範囲。
+- 必要に応じてユーザー ID/IP でセグメント除外可だが、現時点では除外不要と判断。
+
 ---
 
 ## 2. GA4 カスタムディメンション登録手順

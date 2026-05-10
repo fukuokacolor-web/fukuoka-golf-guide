@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-10 (★ Phase 2 着手・/expert-meeting skill 配置 1/7)
+**最終更新**: 2026-05-10 (★ Phase 2 進捗 2/7・/observation-checkin skill 追加・5/13 Day 7 直前準備完了)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,17 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕★ ブログ会社化 Phase 2 着手 — `/expert-meeting` skill 配置 (1/7)** (`51577cf` 後継 / 2026-05-10)
+1. **🆕★ ブログ会社化 Phase 2 — `/observation-checkin` skill 配置 (2/7)** (`17b1703` 後継 / 2026-05-10)
+   - 配置先: `~/.claude/skills/observation-checkin/SKILL.md` (ユーザーレベル・全プロジェクト横断)
+   - 引数: `<day: 7 | 14 | 28 | 42>`
+   - 動作: OBSERVATION_PLAYBOOK §3 のスレッショルドを GA4 5 レポートに自動適用 → §6 Day {day} 結果記入欄を Edit で更新 → Day 28 なら §5 判定マトリクスから Phase 4 着手判断機械決定
+   - GA4 アクセス: Mode A (Chrome MCP 自動取得) or Mode B (Manual・ユーザー手入力) を自動選択
+   - 機械判定ロジック: 5 レポート × GO/HOLD/NO/延長 を事前確定スレッショルドで離散化 (確証バイアス排除)
+   - ノイズ除外: 5/10 テストクリック 8 件・internal_fees・登録前 `(not set)` 期間外データ
+   - **Day 7 (5/13・3 日後) 初使用予定**: `/observation-checkin 7` で 30 分判定が 5 分に短縮
+   - Day 7 規約: GO/NO 確定しない (異常値検出のみ・PLAYBOOK §4 遵守)・Day 14 以降で本格判定
+   - 大きな判定変動時は `/expert-meeting "Day X 判定結果踏まえた次手判断"` を自動推奨
+2. **🆕★ ブログ会社化 Phase 2 着手 — `/expert-meeting` skill 配置 (1/7)** (`51577cf` 後継 / 2026-05-10)
    - 配置先: `~/.claude/skills/expert-meeting/SKILL.md` (ユーザーレベル・全プロジェクト横断)
    - 引数: `<topic> [participants 任意・カンマ区切り]`
    - 動作: 配置済 9 subagent から 4-6 名を議題から自動選定 (or 明示指定) → 単一メッセージで並列招集 → 議事録 Markdown を自動生成

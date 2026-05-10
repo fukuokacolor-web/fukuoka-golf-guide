@@ -12,7 +12,7 @@
 |---|---|---|---|
 | **0** | 棚卸し (BLOG_COMPANY_INVENTORY.md) | 3-4h | 🔲 未着手 (省略可・暗黙的に Phase 1-4 で実行) |
 | **1** | Subagent 化 (9 専門家) | 4-6h | ✅ **完了 (2026-05-10)** |
-| **2** | Skill 化 (workflow 自動化) | 8-12h | ⏳ **着手中 (1/7・2026-05-10)** |
+| **2** | Skill 化 (workflow 自動化) | 8-12h | ⏳ **着手中 (2/7・2026-05-10)** |
 | **3** | テンプレート化 (複数サイト雛形) | 12-20h | 🔲 未着手 |
 | **4** | Plugin 化 (配布可能パッケージ) | 4-6h | 🔲 未着手 |
 
@@ -62,11 +62,12 @@
 
 ## Phase 2 進捗 (Skill 化)
 
-### ✅ 配置済 (1/7)
+### ✅ 配置済 (2/7)
 
 | Skill | 配置先 | 動作確認 |
 |---|---|---|
 | **`/expert-meeting`** | `~/.claude/skills/expert-meeting/SKILL.md` | 🔲 次セッション初使用予定 |
+| **`/observation-checkin`** | `~/.claude/skills/observation-checkin/SKILL.md` | 🔲 5/13 (Day 7) 初使用予定 |
 
 `/expert-meeting` 仕様 (2026-05-10 配置):
 - 引数: `<topic> [participants 任意・カンマ区切り]`
@@ -75,18 +76,26 @@
 - 全員 ○ で Tier 1 / 1 名でも × あれば Tier 2 降格・抵触理由明記
 - ファクトチェック議題は primary + secondary 必ずペア招集
 
-### 🔲 残候補 (6/7・優先順)
+`/observation-checkin` 仕様 (2026-05-10 配置):
+- 引数: `<day: 7 | 14 | 28 | 42>`
+- 動作: OBSERVATION_PLAYBOOK §3 のスレッショルドを GA4 5 レポートに自動適用 → §6 結果記入欄を Edit で更新 → Day 28 なら §5 判定マトリクスから Phase 4 着手判断
+- GA4 アクセス: Mode A (Chrome MCP 自動) or Mode B (Manual・ユーザー手入力)
+- ノイズ除外: 5/10 テストクリック 8 件・internal_fees・登録前 `(not set)` 期間外データ
+- Day 7 は GO/NO 確定しない (異常値検出のみ・PLAYBOOK §4 規約)・Day 14 以降で本格判定
+- 両ディレクトリ同期 (PLAYBOOK が repo + preview 両方にある場合)
+- 会議再招集要否を出力 (大きな判定変動時に `/expert-meeting` 起動推奨)
+
+### 🔲 残候補 (5/7・優先順)
 
 | Skill | 優先 | 工数推定 |
 |---|---|---|
-| `/observation-checkin <day>` | ★★★ | 1.5-2h |
 | `/create-course-page <slug>` | ★★ | 2-3h |
 | `/dual-dir-sync <pattern>` | ★★ | 1h |
 | `/decoy-pricing-apply` | ★ | 1h |
 | `/ga4-tracking-deploy` | ★ | 0.5h |
 | `/sitemap-regenerate` | ★ | 0.3h |
 
-残工数: 6-9h・上位 2 件で実質 Phase 2 完了可
+残工数: 4.5-7h・上位 2 件 (`/create-course-page` + `/dual-dir-sync`) で 3-4h で Phase 2 実質完了可
 
 ---
 

@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-11 (★ Phase 3.2 完了・fukuoka-golf-guide/CLAUDE.md 配置・テンプレ実証 + Day 2 衛生作業)
+**最終更新**: 2026-05-11 (★ Phase 3.4 完了・テンプレ v1.1.0 refine・Phase 3 実用段階完了)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,18 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕★ ブログ会社化 Phase 3.2 完了 — `CLAUDE.md` 配置 (テンプレ逆適用実証)** (`e33d7a9` 後継 / 2026-05-11)
+1. **🆕★ ブログ会社化 Phase 3.4 完了 — テンプレ v1.1.0 refine** (`0120366` 後継 / 2026-05-11)
+   - 配置先: `~/blog-template/CLAUDE.md` (約 200 行) + `~/blog-template/README.md` (v1.1.0)
+   - Phase 3.2 で発見した改善点 3 件をテンプレに反映:
+     - §10 をファイル役割分担表に拡張 (役割 + 更新頻度 + static/dynamic/cyclic 分類)
+     - §13 プロジェクト構造サマリ新規 (カテゴリ分類 + ペルソナハブ + 特殊分類)
+     - §14 Phase 履歴サマリ新規 (静的保存・NEXT_SESSION.md と役割分離)
+   - 追加: §12 リスクと事故防止を表形式化 + §11 にコミット粒度
+   - README.md にバージョン履歴 (v1.0.0 → v1.1.0) + 変更内容
+   - **Phase 3 実用段階完了**: 3.1 (雛形) + 3.2 (逆適用実証) + 3.4 (refine) 完了・残 3.3 (実サイト要望待ち)
+   - 次にテンプレから scaffold する新規サイトは、これらの section をプレースホルダ埋めで自然に整備可能
+   - 観測指標に非干渉 (HTML 改修なし・メタ文書のみ)
+2. **🆕★ ブログ会社化 Phase 3.2 完了 — `CLAUDE.md` 配置 (テンプレ逆適用実証)** (`e33d7a9` 後継 / 2026-05-11)
    - 配置先: `fukuoka-golf-guide/CLAUDE.md` (221 行・両ディレクトリ同期)
    - テンプレ `~/blog-template/CLAUDE.md` (157 行・全 `[REPLACE]` プレースホルダ) を実値で全埋め
    - fukuoka 固有セクション 3 つ追加:

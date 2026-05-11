@@ -1,6 +1,6 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-10 (★★★ Phase 3.1 完了・~/blog-template/ 雛形配置・本日同日内 10 commit)
+**最終更新**: 2026-05-11 (★ Phase 3.2 完了・fukuoka-golf-guide/CLAUDE.md 配置・テンプレ実証 + Day 2 衛生作業)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
 
@@ -58,7 +58,19 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕★★★ ブログ会社化 Phase 3.1 完了 — `~/blog-template/` 雛形配置** (`5110d58` 後継 / 2026-05-10)
+1. **🆕★ ブログ会社化 Phase 3.2 完了 — `CLAUDE.md` 配置 (テンプレ逆適用実証)** (`e33d7a9` 後継 / 2026-05-11)
+   - 配置先: `fukuoka-golf-guide/CLAUDE.md` (221 行・両ディレクトリ同期)
+   - テンプレ `~/blog-template/CLAUDE.md` (157 行・全 `[REPLACE]` プレースホルダ) を実値で全埋め
+   - fukuoka 固有セクション 3 つ追加:
+     - §10 ファイル役割分担表 (CLAUDE.md / NEXT_SESSION.md / OBSERVATION_PLAYBOOK.md 等の更新頻度)
+     - §13 5 エリア × 35 コース構造 + ペルソナハブ 4 個 + 多言語 Tier 1-5 分類
+     - §14 Phase 履歴サマリ (Phase 1A/1B/2/3/4 Step1 + ブログ会社化 Phase 1/2/3.1/3.2)
+   - 過去事故 4 件を §12 リスクと事故防止に表形式で記録 (course_data 破壊・観測中改修・量産記事・lastmod 陳腐化)
+   - アフィリ除外コース 8 件 (楽天 4 + じゃらん 4・差分 akane/aburayama) を §9 禁止事項 #4 に明文化
+   - Phase 3.2 で発見されたテンプレ改善点 3 件 (BLOG_COMPANY_PROGRESS.md に記録・Phase 3.4 で反映予定)
+   - **wakamiya 公式 KO ページ生存確認済 (2026-05-11)**: HTTP 正常・韓国語コンテンツ正常 → Phase 4-B 前提条件維持
+   - 衛生作業: Day 2 観測中・観測指標に非干渉 (HTML 改修なし・メタ文書のみ)
+2. **🆕★★★ ブログ会社化 Phase 3.1 完了 — `~/blog-template/` 雛形配置** (`5110d58` 後継 / 2026-05-10)
    - 配置先: `~/blog-template/` (ユーザーレベル・新規ブログサイト立ち上げ時の雛形)
    - 配置済 7 ファイル / 940 行:
      - `README.md` (152 行・テンプレ使い方 + 9 subagent + 7 skill カタログ)

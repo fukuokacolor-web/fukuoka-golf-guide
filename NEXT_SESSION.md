@@ -1,9 +1,9 @@
 # 🎯 次セッション 引き継ぎ指示書
 
 **最終更新**: 2026-05-17 (★ Tier 1 Batch 2 — 13 コース生成完了・course+access = 26 ページ追加)
-**最終 commit**: 本コミットで Tier 1 Batch 2 13 コース追加 (37→50 コース体制)
+**最終 commit**: `36eab4e` (sitemap-guide に 13 コース掲載)、`c137410` (Batch 2 26 ページ生成)
 **前回 commit**: `d52230e` (build v3)、`4ac02fa` (Batch 2 準備)、`47af473` (Phase B Step 1)
-**次回作業**: ★ 内部リンク整備 (sitemap-guide.html + エリアハブ 4 ページに 13 コース掲載) / 観測 Day 14 `/observation-checkin 14` (5/20)
+**次回作業**: ★ エリアハブ 4 ページに course-card 追加 (trilingual 39 枚・下記) / 観測 Day 14 `/observation-checkin 14` (5/20)
 
 ---
 
@@ -23,16 +23,28 @@
 - **raizan 料金**: 公式サイト SSL エラー・楽天/じゃらん動的価格のため確定不可 → course_data の fees を「予約サイトで確認」にグレースフル化 (§7 ハルシネーション禁止遵守・捏造せず)
 - **sitemap.xml / sitemap-ko.xml 再生成** (REPO 132 URLs)
 
-### 🔲 残作業: 内部リンク整備 (次セッション)
-新 13 コースは sitemap.xml には登録済だが、ハブページ未掲載 (準オーファン状態)。要対応:
-1. **sitemap-guide.html** (全コース一覧) — JA/EN/KO 3 セクションにエリア別で 13 行追加 (フラットな `<a href>` リスト・各言語 ~L140/258/376 付近)
-2. **エリアハブ 4 ページ** に course-card 追加 (itoshima +1・kitakyushu +4・chikugo +4・chikuho +4):
-   - area-itoshima.html: raizan
-   - area-kitakyushu.html: newui / suonada / chisan-onga / seitanomori
-   - area-chikugo.html: satsuki-tenpai / yasukogen / yamejoyo / sunlake
-   - area-chikuho.html: satsuki-ryuoh / kaho / nishinihon / jruchino
-   - course-card は ~23 行/枚 (画像・blurb・chip・価格目安) — blurb は desc_ja から作成、JSON-LD ItemList も更新
-3. raizan の正式グリーンフィーを fact-checker でファクトチェック → course_data 更新 → raizan 再生成 (任意)
+### ✅ 内部リンク (sitemap-guide.html) — 完了 (`36eab4e`)
+sitemap-guide.html (全コース一覧) の JA/EN/KO 3 セクションに 13 コースを掲載済。
+sitemap-guide は全ページの explore-nav からリンクされるため、**新コースのオーファン状態は解消**。
+
+### 🔲 残作業: エリアハブ 4 ページへの course-card 追加 (次セッション・大きめタスク)
+内部リンク強化のためエリアハブにも course-card を追加したい。**エリアページは 3 言語構成**
+(JA/EN/KO の course-list セクションが各ページに 3 つ) のため **13 コース × 3 言語 = 39 枚**の
+course-card 作成が必要 (1 枚 ~23 行・画像/tagline/chip/blurb/価格)。
+- 追加先と現状カード数 (各言語セクションあたり):
+  - area-itoshima.html (現 4 枚) → +raizan
+  - area-kitakyushu.html (現 10 枚) → +newui / suonada / chisan-onga / seitanomori
+  - area-chikugo.html (現 7 枚) → +satsuki-tenpai / yasukogen / yamejoyo / sunlake
+  - area-chikuho.html (現 6 枚) → +satsuki-ryuoh / kaho / nishinihon / jruchino
+- 各ページの sec-eyebrow「All N Courses」/ h2「Xエリアの N コース」/ JSON-LD `numberOfItems`・
+  `itemListElement` も要更新 (※ chikugo・chikuho は既存 count が eyebrow/h2/JSON-LD で不一致 → 是正機会)
+- **価格目安は fees_ja から手選別済** (年号・カート代の誤抽出を除外した正確な緑フィー範囲):
+  raizan=予約サイトで確認 / newui=¥6,910〜14,091 / suonada=¥7,700〜15,900 /
+  chisan-onga=¥5,878〜11,750 / seitanomori=¥7,728〜14,819 / satsuki-tenpai=¥7,241〜15,569 /
+  yasukogen=¥9,510〜18,100 / yamejoyo=¥7,146〜14,873 / sunlake=¥10,000〜17,500 /
+  satsuki-ryuoh=¥3,332〜9,332 / kaho=¥5,869〜16,778 / nishinihon=¥7,810〜16,446 / jruchino=¥9,500〜16,500
+- blurb は trilingual 必要 → content-strategist の活用推奨
+- raizan の正式グリーンフィーは未確定 (公式 SSL エラー・予約サイト動的価格) → fact-checker 確認後 course_data 更新・raizan 再生成 (任意)
 
 ### 注意
 - 観測フェーズ Day 28 (6/3) まで・新規ページ追加は §6 許容 (観測サンプル加算ありだがユーザー方針「今すぐ段階公開」で受容済)

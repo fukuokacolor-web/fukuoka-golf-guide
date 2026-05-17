@@ -5,29 +5,29 @@
   <link rel="preconnect" href="https://www.google-analytics.com">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="芥屋ゴルフクラブへのアクセス。〒819-1335 {{locality}}{{street}}。車でのルート・地図を掲載。">
-  <meta name="description" lang="en" content="How to get to {{name_ja}} golf course in Fukuoka. Driving route from Fukuoka Airport, nearest highway exit and access map. ~{{airport_min}} min from Fukuoka Airport by car.">
-  <meta name="description" lang="ko" content="{{name_ja}} 골프장 오시는 길 (후쿠오카). 후쿠오카공항에서 차량 루트, 가장 가까운 IC, 상세 지도를 한국어로 안내합니다. 후쿠오카공항에서 {{airport_val_ko}}.">
+  <meta name="description" content="ザ・クラシックゴルフ倶楽部へのアクセス。宮若市倉久1-3。車・高速道路でのルート・地図を掲載。">
+  <meta name="description" lang="en" content="How to get to The Classic Golf Club golf course in Fukuoka. Driving route from Fukuoka Airport, nearest highway exit and access map. ~45 min from Fukuoka Airport by car.">
+  <meta name="description" lang="ko" content="ザ・クラシックゴルフ倶楽部 골프장 오시는 길 (후쿠오카). 후쿠오카공항에서 차량 루트, 가장 가까운 IC, 상세 지도를 한국어로 안내합니다. 후쿠오카공항에서 차로 약 45분.">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <title>{{name_ja}} アクセス・地図 | 福岡ゴルフ場ガイド</title>
+  <title>ザ・クラシックゴルフ倶楽部 アクセス・地図 | 福岡ゴルフ場ガイド</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --accent:#b45309; --accent-mid:#d97706; --accent-light:#fef3c7;
+      --accent:#1a6b5c; --accent-mid:#2ea87a; --accent-light:#e0f5ec;
       --gold:#c9a227; --gold-light:#fff8e1;
-      --bg:#f5f2ee; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
+      --bg:#f0f5f0; --text:#1e1e2e; --muted:#6b7280; --radius:14px;
     }
     body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); }
-    .page-header { background:linear-gradient(1{{airport_min}}deg,#7c2d12 0%,#b45309 {{airport_min}}%,#d97706 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
+    .page-header { background:linear-gradient(160deg,#0a3d2b 0%,#1a6b5c 60%,#2ea87a 100%); color:#fff; padding:22px 20px 18px; text-align:center; }
     .page-header h1 { font-size:1.2rem; font-weight:800; }
     .page-header p { font-size:0.78rem; opacity:0.85; margin-top:5px; line-height:1.5; }
-    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #f0e8d8; font-size:0.8rem; }
+    .back-bar { background:#fff; padding:10px 16px; border-bottom:1px solid #d0e8d8; font-size:0.8rem; }
     .back-bar a { color:var(--accent); text-decoration:none; font-weight:700; }
-    .lang-bar { display:flex; background:#fff; border-bottom:2px solid #d97706; position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .lang-bar { display:flex; background:#fff; border-bottom:2px solid var(--accent-mid); position:sticky; top:0; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.08); }
     .lbtn { flex:1; border:none; background:none; padding:10px 4px; font-size:0.8rem; font-weight:700; cursor:pointer; color:#aaa; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; }
     .lbtn .f { font-size:1.2rem; }
-    .lbtn.on { color:#b45309; background:#fef3c7; border-bottom:3px solid #d97706; margin-bottom:-2px; }
+    .lbtn.on { color:var(--accent); background:var(--accent-light); border-bottom:3px solid var(--accent-mid); margin-bottom:-2px; }
     .content { display:none; padding:16px; max-width:680px; margin:0 auto 48px; }
     .content.on { display:block; }
     .sec-head { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin:28px 0 10px 2px; }
@@ -37,31 +37,31 @@
     .card-head .title { font-size:0.95rem; font-weight:800; }
     .card-body { padding:14px 16px; font-size:0.84rem; line-height:1.7; }
     .step-list { list-style:none; counter-reset:s; }
-    .step-list li { counter-increment:s; display:flex; gap:12px; padding:9px 0; border-bottom:1px dashed #ececec; font-size:0.84rem; line-height:1.5; }
+    .step-list li { counter-increment:s; display:flex; gap:12px; padding:9px 0; border-bottom:1px dashed #b2dfc8; font-size:0.84rem; line-height:1.5; }
     .step-list li:last-child { border-bottom:none; }
-    .step-list li::before { content:counter(s); background:#d97706; color:#fff; font-weight:800; font-size:0.72rem; min-width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .step-list li::before { content:counter(s); background:var(--accent-mid); color:#fff; font-weight:800; font-size:0.72rem; min-width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
     .tip-bar { display:flex; gap:8px; background:var(--gold-light); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#5a4000; }
-    .info-bar { display:flex; gap:8px; background:var(--accent-light); border-left:4px solid var(--accent-mid); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#78350f; }
+    .info-bar { display:flex; gap:8px; background:var(--accent-light); border-left:4px solid var(--accent-mid); border-radius:0 8px 8px 0; padding:10px 12px; font-size:0.8rem; line-height:1.5; margin-top:8px; color:#0a3d2b; }
     .app-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
-    .app-card { background:var(--accent-light); border:1.5px solid #fcd34d; border-radius:10px; padding:10px 12px; font-size:0.8rem; display:block; text-decoration:none; color:inherit; transition:background .15s; }
-    .app-card:hover { background:#fde68a; }
+    .app-card { background:var(--accent-light); border:1.5px solid #a8d8bc; border-radius:10px; padding:10px 12px; font-size:0.8rem; display:block; text-decoration:none; color:inherit; transition:background .15s; }
+    .app-card:hover { background:#c5ecd8; }
     .app-card .app-name { font-weight:800; color:var(--accent); margin-bottom:3px; }
     .map-embed { width:100%; height:220px; border:0; border-radius:10px; margin-top:10px; display:block; }
-    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #eeddc8; }
+    footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #c8e8d4; }
     footer a { color:var(--accent); text-decoration:none; }
   </style>
   <meta property="og:type"        content="website">
   <meta property="og:locale" content="ja_JP">
-  <meta property="og:url"         content="https://fukuoka-golf-guide.com/access-{{slug}}.html">
+  <meta property="og:url"         content="https://fukuoka-golf-guide.com/access-classic.html">
   <meta property="og:site_name"   content="福岡ゴルフ場ガイド">
-  <meta property="og:title"       content="{{name_ja}} アクセス・地図 | 福岡ゴルフ場ガイド">
-  <meta property="og:description" content="芥屋ゴルフクラブへのアクセス。〒819-1335 {{locality}}{{street}}。車でのルート・地図を掲載。">
+  <meta property="og:title"       content="ザ・クラシックゴルフ倶楽部 アクセス・地図 | 福岡ゴルフ場ガイド">
+  <meta property="og:description" content="ザ・クラシックゴルフ倶楽部へのアクセス。宮若市倉久1-3。車・高速道路でのルート・地図を掲載。">
   <meta name="twitter:card"       content="summary_large_image">
-  <link rel="canonical" href="https://fukuoka-golf-guide.com/access-{{slug}}.html" />
-  <link rel="alternate" hreflang="ja" href="https://fukuoka-golf-guide.com/access-{{slug}}.html">
-  <link rel="alternate" hreflang="en" href="https://fukuoka-golf-guide.com/access-{{slug}}.html">
-  <link rel="alternate" hreflang="ko" href="https://fukuoka-golf-guide.com/access-{{slug}}.html">
-  <link rel="alternate" hreflang="x-default" href="https://fukuoka-golf-guide.com/access-{{slug}}.html">
+  <link rel="canonical" href="https://fukuoka-golf-guide.com/access-classic.html" />
+  <link rel="alternate" hreflang="ja" href="https://fukuoka-golf-guide.com/access-classic.html">
+  <link rel="alternate" hreflang="en" href="https://fukuoka-golf-guide.com/access-classic.html">
+  <link rel="alternate" hreflang="ko" href="https://fukuoka-golf-guide.com/access-classic.html">
+  <link rel="alternate" hreflang="x-default" href="https://fukuoka-golf-guide.com/access-classic.html">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -76,18 +76,18 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "{{name_ja}} アクセス・地図",
-      "item": "https://fukuoka-golf-guide.com/access-{{slug}}.html"
+      "name": "ザ・クラシックゴルフ倶楽部 アクセス・地図",
+      "item": "https://fukuoka-golf-guide.com/access-classic.html"
     }
   ]
 }
   </script>
-  <meta property="og:image"        content="https://fukuoka-golf-guide.com/images/itoshimatorii.webp">
+  <meta property="og:image"        content="https://fukuoka-golf-guide.com/images/spring-forest.webp">
   <meta property="og:image:width"  content="1920">
   <meta property="og:image:height" content="1280">
   <meta property="og:image:alt"    content="福岡ゴルフ場ガイド | Fukuoka Golf Guide">
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:image"       content="https://fukuoka-golf-guide.com/images/itoshimatorii.webp">
+  <meta name="twitter:image"       content="https://fukuoka-golf-guide.com/images/spring-forest.webp">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
   <script>
@@ -158,10 +158,10 @@
 </head>
 <body>
 <header class="page-header">
-  <h1>🗺️ {{name_ja}} アクセス・地図</h1>
+  <h1>🗺️ ザ・クラシックゴルフ倶楽部 アクセス・地図</h1>
   <p>Access Guide / 오시는 길 안내</p>
 </header>
-<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　｜　<a href="course-{{slug}}.html">コース紹介に戻る</a></div>
+<div class="back-bar">← <a href="index.html">トップに戻る / Back to Top / 목록으로</a>　｜　<a href="course-classic.html">コース紹介に戻る</a></div>
 <div class="lang-bar">
   <button class="lbtn on" onclick="sw('ja')"><span class="f">🇯🇵</span>日本語</button>
   <button class="lbtn"    onclick="sw('en')"><span class="f">🇺🇸</span>English</button>
@@ -172,10 +172,10 @@
 <div id="c-ja" class="content on">
   <div class="sec-head">📍 基本情報</div>
   <div class="card">
-    <div class="card-head"><span class="icon">⛳</span><span class="title">{{name_ja}}</span></div>
+    <div class="card-head"><span class="icon">⛳</span><span class="title">ザ・クラシックゴルフ倶楽部</span></div>
     <div class="card-body">
-      〒819-1335　{{region}}{{locality}}{{street}}<br>📞 {{phone}}（代表）　📞 092-327-1500（予約）
-      <div class="tip-bar"><span>💡</span>糸島半島の西端に位置します。前原ICを降りてからも約15kmあります。時間に余裕を持ってお越しください。</div>
+      〒823-0017　福岡県宮若市倉久1-3<br>📞 0949-33-1111
+      <div class="tip-bar"><span>💡</span>福岡空港から車で約45分。九州自動車道の若宮ICまたは宮田スマートICから好アクセス。</div>
     </div>
   </div>
 
@@ -184,27 +184,26 @@
     <div class="card-head"><span class="icon">✈️</span><span class="title">福岡空港から（推奨ルート）</span></div>
     <div class="card-body">
       <ul class="step-list">
-        <li>福岡空港から西九州自動車道（前原方面）へ</li>
-        <li>前原ICで降りる（約35〜40分）</li>
-        <li>前原ICから{{locality}}西部・芥屋方面へ県道54号線を約15km走行</li>
-        <li>芥屋大門方面の看板に従い進む</li>
-        <li>合計：福岡空港から{{airport_val_ja}}</li>
+        <li>福岡空港から九州自動車道（鳥栖方面）へ</li>
+        <li>若宮ICまたは宮田スマートICで降りる（約20〜25分）</li>
+        <li>宮若市倉久1-3方面へ約10分</li>
+        <li>合計：福岡空港から車で約45分</li>
       </ul>
-      <div class="tip-bar"><span>💡</span>Google Mapsで「{{name_ja}}」と検索すると最適ルートが案内されます。</div>
+      <div class="tip-bar"><span>💡</span>Google Mapsで「ザ・クラシックゴルフ倶楽部」と検索すると最適ルートが案内されます。</div>
     </div>
   </div>
 
   <div class="sec-head">🚗 博多・天神方面から</div>
   <div class="card">
-    <div class="card-head"><span class="icon">🛣️</span><span class="title">西九州自動車道利用</span></div>
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">九州自動車道利用</span></div>
     <div class="card-body">
       <ul class="step-list">
-        <li>天神北ICまたは福岡ICから西九州自動車道へ</li>
-        <li>前原ICで降りる（天神から約30〜35分）</li>
-        <li>前原ICから芥屋方面へ約15km・20分</li>
-        <li>博多駅からは車で約55分</li>
+        <li>博多ICから九州自動車道（鳥栖方面）へ</li>
+        <li>若宮ICまたは宮田スマートICで降りる（約15〜20分）</li>
+        <li>宮若市倉久1-3方面へ約10分</li>
+        <li>博多駅からは車で約35分</li>
       </ul>
-      <div class="info-bar"><span>ℹ️</span>{{locality}}内は観光シーズン（春・秋の週末）に渋滞が発生することがあります。早めの出発をおすすめします。</div>
+      <div class="info-bar"><span>ℹ️</span>宮若市は福岡市と北九州市の中間に位置し、両都市からアクセス良好です。</div>
     </div>
   </div>
 
@@ -213,14 +212,13 @@
     <div class="card-head"><span class="icon">📱</span><span class="title">おすすめナビアプリ</span></div>
     <div class="card-body">
       タップするとアプリ・サイトが開きます。
-      <iframe class="map-embed" src="https://maps.google.com/maps?q={{name_ja}}&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=ザ・クラシックゴルフ倶楽部+宮若市&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
       <div class="app-grid">
-        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query={{name_ja}}" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>英語・韓国語対応。最もわかりやすい</a>
-        <a class="app-card" href="https://map.yahoo.co.jp/?q={{name_ja}}" target="_blank" rel="noopener"><div class="app-name">Yahoo!カーナビ</div>日本道路情報が充実。無料</a>
-        <a class="app-card" href="https://map.naver.com/v5/search/{{name_ja}}" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>韓国語で使えて便利</a>
-        <a class="app-card" href="https://map.kakao.com/?q=케야+골프클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>韓国語対応。韓国人に人気</a>
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=ザ・クラシックゴルフ倶楽部+宮若市" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>英語・韓国語対応</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=ザ・クラシックゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo!カーナビ</div>日本道路情報充実</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/ザ・クラシックゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>韓国語で使えて便利</a>
+        <a class="app-card" href="https://map.kakao.com/?q=더+클래식+골프+클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>韓国語対応</a>
       </div>
-      <div class="info-bar"><span>ℹ️</span>レンタカーの車載ナビは日本語のみの場合が多いため、スマホアプリの併用をおすすめします。</div>
     </div>
   </div>
 
@@ -228,17 +226,14 @@
   <div class="card">
     <div class="card-head"><span class="icon">🚃</span><span class="title">電車＋タクシー</span></div>
     <div class="card-body">
-      JR筑肥線「筑前前原駅」が最寄りの主要駅です（福岡空港から直通・約40分）。駅からタクシーをご利用ください（約20〜25分）。
-      <div class="tip-bar"><span>💡</span>タクシー乗車時はスマホ画面に「{{name_ja}}」と表示してドライバーに見せてください。</div>
+      JR鹿児島本線「赤間駅」が比較的近い主要駅です。タクシーで約25分。
+      <div class="tip-bar"><span>💡</span>タクシー乗車時はスマホ画面に「ザ・クラシックゴルフ倶楽部 宮若市倉久1-3」と表示してドライバーに見せてください。</div>
     </div>
   </div>
-
   <div class="sec-head">🅿️ 駐車場</div>
   <div class="card">
     <div class="card-head"><span class="icon">🅿️</span><span class="title">駐車場情報</span></div>
-    <div class="card-body">
-      無料駐車場完備。スタッフの誘導に従ってお停めください。
-    </div>
+    <div class="card-body">無料駐車場完備。スタッフの誘導に従ってお停めください。</div>
   </div>
   <div class="sec-head">🚗 レンタカー予約</div>
   <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
@@ -253,10 +248,10 @@
 <div id="c-en" class="content">
   <div class="sec-head">📍 Basic Info</div>
   <div class="card">
-    <div class="card-head"><span class="icon">⛳</span><span class="title">{{name_en}}</span></div>
+    <div class="card-head"><span class="icon">⛳</span><span class="title">The Classic Golf Club</span></div>
     <div class="card-body">
-      1-1 Shima Keya, Itoshima City, Fukuoka 819-1335<br>📞 {{phone}} (General)　📞 092-327-1500 (Reservations)
-      <div class="tip-bar"><span>💡</span>The course is at the western tip of the Itoshima Peninsula — about 15 km from Maebaru IC. Allow extra travel time.</div>
+      Kurahisa 1-3, Miyawaka City, Fukuoka 823-0017<br>📞 0949-33-1111
+      <div class="tip-bar"><span>💡</span>About 45 min from Fukuoka Airport via the Kyushu Expressway. Conveniently located between Fukuoka City and Kitakyushu City.</div>
     </div>
   </div>
 
@@ -265,27 +260,26 @@
     <div class="card-head"><span class="icon">✈️</span><span class="title">From Fukuoka Airport (Recommended)</span></div>
     <div class="card-body">
       <ul class="step-list">
-        <li>Take the Nishi-Kyushu Expressway toward Maebaru</li>
-        <li>Exit at Maebaru IC (approx. 35–40 min)</li>
-        <li>Head west on Prefectural Road 54 toward Keya — approx. 15 km</li>
-        <li>Follow signs for Keya Daimon (芥屋大門)</li>
-        <li>Total: approx. {{airport_min}} min from Fukuoka Airport</li>
+        <li>Take the Kyushu Expressway toward Tosu</li>
+        <li>Exit at Wakamiya IC or Miyata Smart IC (approx. 20–25 min)</li>
+        <li>Head toward Miyawaka City Kurahisa — approx. 10 min</li>
+        <li>Total: approx. 45 min from Fukuoka Airport</li>
       </ul>
-      <div class="tip-bar"><span>💡</span>Search "{{name_ja}}" in Google Maps for turn-by-turn directions.</div>
+      <div class="tip-bar"><span>💡</span>Search "The Classic Golf Club" in Google Maps for directions.</div>
     </div>
   </div>
 
   <div class="sec-head">🚗 From Hakata / Tenjin</div>
   <div class="card">
-    <div class="card-head"><span class="icon">🛣️</span><span class="title">Via Nishi-Kyushu Expressway</span></div>
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">Via Kyushu Expressway</span></div>
     <div class="card-body">
       <ul class="step-list">
-        <li>Take the Nishi-Kyushu Expressway from Tenjin-Kita IC or Fukuoka IC</li>
-        <li>Exit at Maebaru IC (approx. 30–35 min from Tenjin)</li>
-        <li>Head toward Keya — approx. 15 km / 20 min from IC</li>
-        <li>Approx. 55 min from Hakata Station</li>
+        <li>Take the Kyushu Expressway from Hakata IC toward Tosu</li>
+        <li>Exit at Wakamiya IC or Miyata Smart IC (approx. 15–20 min from Hakata)</li>
+        <li>Head toward Kurahisa — approx. 10 min</li>
+        <li>Approx. 35 min from Hakata Station</li>
       </ul>
-      <div class="info-bar"><span>ℹ️</span>Itoshima can get congested on spring and autumn weekends due to tourism. Depart early to be safe.</div>
+      <div class="info-bar"><span>ℹ️</span>Conveniently located between Fukuoka City and Kitakyushu City for easy access.</div>
     </div>
   </div>
 
@@ -294,12 +288,12 @@
     <div class="card-head"><span class="icon">📱</span><span class="title">Recommended Apps</span></div>
     <div class="card-body">
       Tap to open the app or website.
-      <iframe class="map-embed" src="https://maps.google.com/maps?q={{name_ja}}&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=ザ・クラシックゴルフ倶楽部+宮若市&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
       <div class="app-grid">
-        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query={{name_ja}}" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>English support. Easiest for visitors</a>
-        <a class="app-card" href="https://map.yahoo.co.jp/?q={{name_ja}}" target="_blank" rel="noopener"><div class="app-name">Yahoo! Car Navi</div>Best Japanese road data. Free</a>
-        <a class="app-card" href="https://map.naver.com/v5/search/{{name_ja}}" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>Korean language support</a>
-        <a class="app-card" href="https://map.kakao.com/?q=케야+골프클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>Popular among Korean visitors</a>
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=ザ・クラシックゴルフ倶楽部+宮若市" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>English support</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=ザ・クラシックゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo! Car Navi</div>Best Japanese road data</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/ザ・クラシックゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>Korean language support</a>
+        <a class="app-card" href="https://map.kakao.com/?q=더+클래식+골프+클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>Popular among Korean visitors</a>
       </div>
     </div>
   </div>
@@ -308,17 +302,14 @@
   <div class="card">
     <div class="card-head"><span class="icon">🚃</span><span class="title">Train + Taxi</span></div>
     <div class="card-body">
-      Take the JR Chikuhi Line from Fukuoka Airport to "Chikuzen-Maebaru Station" (approx. 40 min, direct). Then take a taxi to the course (approx. 20–25 min).
-      <div class="tip-bar"><span>💡</span>Show "{{name_ja}}" on your phone screen to the taxi driver.</div>
+      Nearest major station: JR "Akama." Taxi from station approx. 25 min.
+      <div class="tip-bar"><span>💡</span>Show "ザ・クラシックゴルフ倶楽部 宮若市倉久1-3" on your phone screen to the taxi driver.</div>
     </div>
   </div>
-
   <div class="sec-head">🅿️ Parking</div>
   <div class="card">
     <div class="card-head"><span class="icon">🅿️</span><span class="title">Parking Info</span></div>
-    <div class="card-body">
-      Free parking available. Staff will guide you on arrival.
-    </div>
+    <div class="card-body">Free parking available. Staff will guide you on arrival.</div>
   </div>
   <div class="sec-head">🚗 Rent a Car</div>
   <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">
@@ -333,10 +324,10 @@
 <div id="c-ko" class="content">
   <div class="sec-head">📍 기본 정보</div>
   <div class="card">
-    <div class="card-head"><span class="icon">⛳</span><span class="title">{{name_ko}}</span></div>
+    <div class="card-head"><span class="icon">⛳</span><span class="title">더 클래식 골프 클럽</span></div>
     <div class="card-body">
-      〒819-1335　후쿠오카현 이토시마시 시마케야 1-1<br>📞 {{phone}}（대표）　📞 092-327-1500（예약）
-      <div class="tip-bar"><span>💡</span>이토시마 반도 서쪽 끝에 위치합니다. 마에바루 IC에서도 약 15km 있으므로 시간 여유를 갖고 출발하세요.</div>
+      〒823-0017　후쿠오카현 미야와카시 구라히사 1-3<br>📞 0949-33-1111
+      <div class="tip-bar"><span>💡</span>후쿠오카 공항에서 차로 약 45분. 미야와카시는 후쿠오카시와 기타큐슈시 중간에 위치합니다.</div>
     </div>
   </div>
 
@@ -345,27 +336,26 @@
     <div class="card-head"><span class="icon">✈️</span><span class="title">후쿠오카 공항에서 (추천 경로)</span></div>
     <div class="card-body">
       <ul class="step-list">
-        <li>니시규슈 자동차도로 (마에바루 방면) 진입</li>
-        <li>마에바루 IC에서 하차 (약 35〜40분)</li>
-        <li>현도 54호선으로 이토시마시 서부·케야 방면으로 약 15km 주행</li>
-        <li>케야 다이몬(芥屋大門) 안내판을 따라 진행</li>
-        <li>합계: 후쿠오카 공항에서 {{airport_val_ko}}</li>
+        <li>규슈 자동차도로 (도스 방면) 진입</li>
+        <li>와카미야 IC 또는 미야타 스마트 IC에서 하차 (약 20〜25분)</li>
+        <li>미야와카시 구라히사 방면으로 약 10분</li>
+        <li>합계: 후쿠오카 공항에서 차로 약 45분</li>
       </ul>
-      <div class="tip-bar"><span>💡</span>Google Maps에서 「{{name_ja}}」로 검색하면 안내됩니다.</div>
+      <div class="tip-bar"><span>💡</span>Google Maps에서 「ザ・クラシックゴルフ倶楽部」로 검색하면 안내됩니다.</div>
     </div>
   </div>
 
   <div class="sec-head">🚗 하카타·텐진 방면에서</div>
   <div class="card">
-    <div class="card-head"><span class="icon">🛣️</span><span class="title">니시규슈 자동차도로 이용</span></div>
+    <div class="card-head"><span class="icon">🛣️</span><span class="title">규슈 자동차도로 이용</span></div>
     <div class="card-body">
       <ul class="step-list">
-        <li>텐진키타 IC 또는 후쿠오카 IC에서 니시규슈 자동차도로 진입</li>
-        <li>마에바루 IC에서 하차 (텐진에서 약 30〜35분)</li>
-        <li>케야 방면으로 약 15km·20분</li>
-        <li>하카타역에서 약 55분</li>
+        <li>하카타 IC에서 규슈 자동차도로 (도스 방면) 진입</li>
+        <li>와카미야 IC 또는 미야타 스마트 IC에서 하차 (약 15〜20분)</li>
+        <li>구라히사 방면으로 약 10분</li>
+        <li>하카타역에서 약 35분</li>
       </ul>
-      <div class="info-bar"><span>ℹ️</span>봄·가을 주말에는 이토시마 관광객으로 시내가 혼잡할 수 있습니다. 일찍 출발하세요.</div>
+      <div class="info-bar"><span>ℹ️</span>미야와카시는 후쿠오카시와 기타큐슈시 중간에 위치해 접근성이 좋습니다.</div>
     </div>
   </div>
 
@@ -374,12 +364,12 @@
     <div class="card-head"><span class="icon">📱</span><span class="title">추천 내비게이션 앱</span></div>
     <div class="card-body">
       탭하면 앱 또는 사이트가 열립니다.
-      <iframe class="map-embed" src="https://maps.google.com/maps?q={{name_ja}}&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
+      <iframe class="map-embed" src="https://maps.google.com/maps?q=ザ・クラシックゴルフ倶楽部+宮若市&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
       <div class="app-grid">
-        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query={{name_ja}}" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>영어·한국어 지원</a>
-        <a class="app-card" href="https://map.yahoo.co.jp/?q={{name_ja}}" target="_blank" rel="noopener"><div class="app-name">Yahoo! 카내비</div>일본 도로 정보 충실. 무료</a>
-        <a class="app-card" href="https://map.naver.com/v5/search/{{name_ja}}" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>한국어로 사용 가능</a>
-        <a class="app-card" href="https://map.kakao.com/?q=케야+골프클럽" target="_blank" rel="noopener"><div class="app-name">카카오맵</div>한국어 지원</a>
+        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=ザ・クラシックゴルフ倶楽部+宮若市" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>영어·한국어 지원</a>
+        <a class="app-card" href="https://map.yahoo.co.jp/?q=ザ・クラシックゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Yahoo! 카내비</div>일본 도로 정보 충실</a>
+        <a class="app-card" href="https://map.naver.com/v5/search/ザ・クラシックゴルフ倶楽部" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>한국어로 사용 가능</a>
+        <a class="app-card" href="https://map.kakao.com/?q=더+클래식+골프+클럽" target="_blank" rel="noopener"><div class="app-name">카카오맵</div>한국어 지원</a>
       </div>
     </div>
   </div>
@@ -388,17 +378,14 @@
   <div class="card">
     <div class="card-head"><span class="icon">🚃</span><span class="title">전철 + 택시</span></div>
     <div class="card-body">
-      후쿠오카 공항에서 JR 치쿠히선으로 「치쿠젠마에바루역」까지 직통 약 40분. 역에서 택시 이용 (약 20〜25분).
-      <div class="tip-bar"><span>💡</span>택시 기사에게 「{{name_ja}}」를 스마트폰 화면으로 보여주세요.</div>
+      JR 가고시마 본선 「아카마역」에서 택시 약 25분.
+      <div class="tip-bar"><span>💡</span>택시 기사에게 「ザ・クラシックゴルフ倶楽部 宮若市倉久1-3」를 스마트폰 화면으로 보여주세요.</div>
     </div>
   </div>
-
   <div class="sec-head">🅿️ 주차장</div>
   <div class="card">
     <div class="card-head"><span class="icon">🅿️</span><span class="title">주차장 정보</span></div>
-    <div class="card-body">
-      무료 주차장 완비. 직원의 안내에 따라 주차해 주세요.
-    </div>
+    <div class="card-body">무료 주차장 완비. 직원의 안내에 따라 주차해 주세요.</div>
   </div>
   <div class="sec-head">🚗 렌터카 예약</div>
   <a href="https://px.a8.net/svt/ejp?a8mat=4B1DXO+5K1O1E+DRA+356I3M" rel="nofollow" target="_blank" style="display:block;background:linear-gradient(135deg,#1a6eb5,#2196f3);color:#fff;border-radius:10px;padding:14px 16px;text-decoration:none;margin:0 0 16px;text-align:center;">

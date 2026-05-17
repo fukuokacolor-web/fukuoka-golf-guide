@@ -49,6 +49,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://fukuoka-golf-guide.com/access-classic.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fukuoka-golf-guide.com/access-daihakata.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -183,6 +189,12 @@
   <url>
     <loc>https://fukuoka-golf-guide.com/access-sevenmillion.html</loc>
     <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fukuoka-golf-guide.com/access-shimaseaside.html</loc>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -337,6 +349,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://fukuoka-golf-guide.com/course-classic.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fukuoka-golf-guide.com/course-daihakata.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -471,6 +489,12 @@
   <url>
     <loc>https://fukuoka-golf-guide.com/course-sevenmillion.html</loc>
     <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fukuoka-golf-guide.com/course-shimaseaside.html</loc>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

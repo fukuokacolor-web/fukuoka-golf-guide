@@ -2252,5 +2252,169 @@
     "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
     "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
     "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "shimaseaside",
+    "file": "course-shimaseaside.html",
+    "name_ja": "志摩シーサイドカンツリークラブ",
+    "name_en": "Shima Seaside Country Club",
+    "name_ko": "시마 시사이드 컨트리 클럽",
+    "title_full": "志摩シーサイドカンツリークラブ(糸島市)料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "糸島市",
+    "phone": "092-327-2131",
+    "street": "志摩野北575",
+    "locality": "糸島市",
+    "region": "福岡県",
+    "desc_ja": "志摩シーサイドカンツリークラブ(糸島市)の詳細情報。玄界灘を望む18ホール・1977年開場のシーサイドコース。「日本のペブルビーチ」と呼ばれる絶景。コースデータ・アクセス・料金を掲載。福岡空港から約50分。",
+    "airport_min": "50",
+    "hero_img": "images/itoshima-sea.webp",
+    "holes": "18ホール",
+    "course_type_en": "Seaside",
+    "location_ja": "糸島市・志摩野北",
+    "website": "https://simascc.com/",
+    "airport_val_ja": "車で約50分",
+    "airport_val_en": "~50 min by car",
+    "airport_val_ko": "차로 약 50분",
+    "fees_ja": [
+      [
+        "📅 平日(3-12月)",
+        "約19,000円"
+      ],
+      [
+        "🎉 土日祝(3-12月)",
+        "約25,000円"
+      ],
+      [
+        "❄️ 冬季(1-2月)平日",
+        "約16,000円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays (Mar-Dec)",
+        "¥19,000"
+      ],
+      [
+        "🎉 Weekends / Holidays (Mar-Dec)",
+        "¥25,000"
+      ],
+      [
+        "❄️ Winter (Jan-Feb) Weekday",
+        "¥16,000"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일(3-12월)",
+        "약 19,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 19만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일(3-12월)",
+        "약 25,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 25만원)</span>"
+      ],
+      [
+        "❄️ 동계(1-2월) 평일",
+        "약 16,000엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 16만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-keya.html",
+        "label": "芥屋GC / Keya GC / 케야 GC"
+      },
+      {
+        "href": "course-ito.html",
+        "label": "糸島GC / Itoshima GC / 이토시마 GC"
+      },
+      {
+        "href": "course-nijo.html",
+        "label": "二丈CC / Nijo CC / 니조 CC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
+  },
+  {
+    "slug": "classic",
+    "file": "course-classic.html",
+    "name_ja": "ザ・クラシックゴルフ倶楽部",
+    "name_en": "The Classic Golf Club",
+    "name_ko": "더 클래식 골프 클럽",
+    "title_full": "ザ・クラシックゴルフ倶楽部(宮若市)料金・アクセス | 福岡ゴルフ場ガイド",
+    "area_ja": "宮若市",
+    "phone": "0949-33-1111",
+    "street": "倉久1-3",
+    "locality": "宮若市",
+    "region": "福岡県",
+    "desc_ja": "ザ・クラシックゴルフ倶楽部(宮若市)の詳細情報。27ホール・1990年開場の名門コース。2028年日本女子オープン開催予定。コースデータ・アクセス・料金を掲載。福岡空港から約45分。",
+    "airport_min": "45",
+    "hero_img": "images/spring-forest.webp",
+    "holes": "27ホール",
+    "course_type_en": "Forest / Championship",
+    "location_ja": "宮若市・倉久",
+    "website": "https://cm-g.co.jp/the-classic/",
+    "airport_val_ja": "車で約45分",
+    "airport_val_en": "~45 min by car",
+    "airport_val_ko": "차로 약 45분",
+    "fees_ja": [
+      [
+        "📅 平日",
+        "約17,070円"
+      ],
+      [
+        "🎉 土日祝",
+        "約24,450円(日曜はメンバー同伴必須)"
+      ],
+      [
+        "🌤️ アフタヌーン(平日)",
+        "約13,390円"
+      ]
+    ],
+    "fees_en": [
+      [
+        "📅 Weekdays",
+        "¥17,070"
+      ],
+      [
+        "🎉 Weekends / Holidays",
+        "¥24,450 (Sun. requires member accompaniment)"
+      ],
+      [
+        "🌤️ Afternoon (Weekday)",
+        "¥13,390"
+      ]
+    ],
+    "fees_ko": [
+      [
+        "📅 평일",
+        "약 17,070엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 17만원)</span>"
+      ],
+      [
+        "🎉 토·일·공휴일",
+        "약 24,450엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 24.5만원・일요일은 멤버 동반 필수)</span>"
+      ],
+      [
+        "🌤️ 오후 (평일)",
+        "약 13,390엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 13.4만원)</span>"
+      ]
+    ],
+    "related": [
+      {
+        "href": "course-wakamiya.html",
+        "label": "若宮GC / Wakamiya GC / 와카미야 GC"
+      },
+      {
+        "href": "course-fukuokakokusai.html",
+        "label": "福岡国際CC / Fukuoka Kokusai CC / 후쿠오카국제 CC"
+      },
+      {
+        "href": "course-kokura.html",
+        "label": "小倉CC / Kokura CC / 코쿠라 CC"
+      }
+    ],
+    "airport_sub_ko": "인천·부산 → 후쿠오카 직항 약 1시간 30분 ｜ 렌터카로 간편하게 이동",
+    "jalan_url": "https://px.a8.net/svt/ejp?a8mat=4B1D5J+5JG8FM+36SI+BW8O2&a8ejpredirect=https%3A%2F%2Fgolf.jalan.net%2F",
+    "rakuten_url": "https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+7O29U&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F"
   }
 ]

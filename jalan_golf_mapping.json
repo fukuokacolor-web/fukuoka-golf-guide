@@ -52,6 +52,8 @@
     {"file": "course-takaha",        "name": "鷹羽ロイヤルカントリークラブ",                  "jalan_id": "02359", "deeplink": true},
     {"file": "course-ukiha",         "name": "浮羽カントリークラブ",                          "jalan_id": "02353", "deeplink": true},
     {"file": "course-wakamatsu",     "name": "若松ゴルフ倶楽部",                              "jalan_id": null,    "deeplink": false, "exclude_reason": "members_only"},
-    {"file": "course-wakamiya",      "name": "トライアルゴルフ&リゾート WAKAMIYA COURSE",      "jalan_id": "02341", "deeplink": true}
+    {"file": "course-wakamiya",      "name": "トライアルゴルフ&リゾート WAKAMIYA COURSE",      "jalan_id": "02341", "deeplink": true},
+    {"file": "course-shimaseaside",  "name": "志摩シーサイドカンツリークラブ",                 "jalan_id": "02352", "deeplink": true, "note": "Tier 1 新規追加 2026-05-12"},
+    {"file": "course-classic",       "name": "ザ・クラシックゴルフ倶楽部",                     "jalan_id": "02340", "deeplink": true, "note": "Tier 1 新規追加 2026-05-12・日曜メンバー同伴必須"}
   ]
 }

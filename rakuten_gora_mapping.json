@@ -46,6 +46,8 @@
     {"file": "course-fukuokacc",     "name": "福岡カンツリー倶楽部 和白コース",               "c_id": null,     "deeplink": false, "exclude_reason": "members_only"},
     {"file": "course-wakamatsu",     "name": "若松ゴルフ倶楽部",                              "c_id": null,     "deeplink": false, "exclude_reason": "members_only"},
     {"file": "course-akane",         "name": "あかねカントリークラブ",                        "c_id": null,     "deeplink": false, "exclude_reason": "not_listed"},
-    {"file": "course-genkai",        "name": "玄海ゴルフクラブ",                              "c_id": null,     "deeplink": false, "exclude_reason": "long_closure", "note": "2023/1から長期休場"}
+    {"file": "course-genkai",        "name": "玄海ゴルフクラブ",                              "c_id": null,     "deeplink": false, "exclude_reason": "long_closure", "note": "2023/1から長期休場"},
+    {"file": "course-shimaseaside",  "name": "志摩シーサイドカンツリークラブ",                 "c_id": "400024", "deeplink": true,  "note": "Tier 1 新規追加 2026-05-12"},
+    {"file": "course-classic",       "name": "ザ・クラシックゴルフ倶楽部",                     "c_id": "400022", "deeplink": true,  "note": "Tier 1 新規追加 2026-05-12・日曜メンバー同伴必須"}
   ]
 }

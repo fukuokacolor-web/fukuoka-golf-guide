@@ -1,8 +1,9 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-11 (★ Phase 3.4 完了・テンプレ v1.1.0 refine・Phase 3 実用段階完了)
+**最終更新**: 2026-05-13 (★ Phase B Step 1 — Tier 1 新規 2 コース追加・専門家会議 6 名チェック → 23 件修正完了)
 **最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
 **前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
+**次回作業**: Phase B Step 1 のコミット (未コミット) / 観測 Day 7 `/observation-checkin 7` / build_course_from_template.py 改善後に残 13 コース追加
 
 ---
 
@@ -57,6 +58,59 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 ---
 
 ## ✅ 直近の実装履歴 (新しい順)
+
+1. **🆕★★★ Phase B Step 1 — Tier 1 新規 2 コース追加 (パイロット)** (未コミット / 2026-05-12〜13)
+   - 観測ノイズ最小化方針で **志摩シーサイドカンツリークラブ + ザ・クラシックゴルフ倶楽部** の 2 件を新規追加
+   - 新規ファイル 6 件:
+     - `course-shimaseaside.html` / `course-classic.html` (各 3 言語・約 990 行)
+     - `access-shimaseaside.html` / `access-classic.html`
+     - `scripts/build_course_from_template.py` (テンプレ駆動 HTML 生成・1 回限り bulk replace)
+   - データ更新: `course_data.json` +2 件 (計 30 件)・`jalan_golf_mapping.json` / `rakuten_gora_mapping.json` +2 件・`sitemap.xml` 102 URLs・`sitemap-guide.html` 3 言語追加
+   - **専門家会議 6 名チェック** (content/seo/cvr/ia/fact-checker × 2) → **35 件の Critical 問題検出**
+   - **Phase 1+2 で 23 件修正完了**:
+     - 🔴 料金誤り (景表法リスク): classic ¥13,900→¥17,070 / shimaseaside ¥21,500→¥19,000 等・テンプレ流用で旧コース料金が残存していた
+     - 🔴 deep link 別コース: classic gc02333→gc02340 / shimaseaside gc02351→gc02352・楽天 c_id も修正
+     - 🔴 郵便番号誤り: classic 811-1245→823-0017 / shimaseaside 819-1335→819-1303
+     - 🔴 KO セクション別コース情報: access-classic の韓国語が筑紫ヶ丘 GC の情報のまま → 全面修正
+     - 🔴 「日曜メンバー同伴必須」3 言語追記 (景表法回避)
+     - 🟠 JSON-LD priceRange / Related anchor 表示 / Maps embed クエリ / og:image / マイクロコピー等
+   - **観測ノイズ最小化**: area-*.html / hub-*.html 改修なし (Day 28 以降に統合)・新規 2 件のみで観測サンプル影響 +1-3%/月
+   - **テンプレ生成スクリプトの教訓**: `build_course_from_template.py` は course_data.json の fees 構造と HTML 料金表記が不一致のため料金が一切置換されなかった。残 13 コース追加前にスクリプト改善が必須
+   - 残課題 (Phase 3・Day 28 後): meta description 強化・title KW 拡張・area/hub 統合・福岡雷山公式 SSL 問題
+
+1. **🆕★★★ Tier 1 新規追加 15 件 Phase A データ収集完了** (未コミット / 2026-05-12)
+   - 福岡県内全 56-60 ゴルフ場を網羅調査 (じゃらん 57 / 楽天 GORA 50 / ティーオフ 60) → 既存 35 コースとの差分から **Tier 1 新規候補 15 件抽出**
+   - 専門家会議招集 6 名 (fact-checker-primary × 3 並列 + secondary + ia-architect + 補助)・全体所要 2-3 時間
+   - 配置先: `data/` (両ディレクトリ同期済・REPO_ROOT + PREVIEW_ROOT)
+   - 配置済 9 ファイル:
+     - `TIER1_SUMMARY.md` (統合サマリ・15 件一覧・課題リスト)
+     - `tier1_batch1_research.md` (糸島・インバウンド系 5 件: ザ・クラシック / 志摩シーサイド / 福岡雷山 / NEW ユーアイ / 周防灘)
+     - `tier1_batch2_research.md` (PGM/アコーディア 5 件: 皐月天拝 / 皐月竜王 / かほ / チサン遠賀 / 瀬板の森)
+     - `tier1_batch3_research.md` (独立・地域分散 5 件: 西日本 / JR 内野 / 夜須高原 / 八女上陽 / 福岡サンレイク)
+     - `tier1_secondary_verification.md` (中村麻衣 独立検証・10 件反証ポイント)
+     - `AREA_CLASSIFICATION.md` (鈴木玲奈 エリア分類・既存 5 エリアで全件収まる)
+     - `yamejoyo_designer_verification.md` (八女上陽 Ian Baker-Finch 設計者反証・**不採用方針確定**)
+     - `COURSE_DATA_TIER1_DRAFT.json` (15 件 JSON 雛形・Phase B 即実装可)
+     - `COURSE_DATA_TIER1_DRAFT.md` (slug 命名・hero_img・エリア分類・マージ手順)
+   - **重要発見 4 件**:
+     1. **公式 KO ページ保有 2 件新発見**: NEW ユーアイ (Tier 1.5・独自翻訳の可能性) / JR 内野 (Tier 3・機械翻訳) → **wakamiya 単独 LP 戦略を「Tier 1 KO 公式クラスタ (3 件)」に拡張可能**
+     2. **八女上陽 ふるさと納税返礼品 確定** (ふるさとチョイス直接確認・利用券 30,000 円分 / 120,000 円寄付等) → hub-traveler 訴求材料
+     3. **福岡雷山 温泉あり** (鈴木調査未言及・複数ソース確認)
+     4. **八女上陽「Ian Baker-Finch 設計」反証**: 公式記述なし / 国際 DB (where2golf / GolfPass / Planet Golf) 日本コース 0 件 / IBF Design 設立 (1997) より八女上陽開場 (1992) が 5 年早い時系列矛盾 → **「全英オープン優勝者設計」SEO 訴求は棄却・代替訴求 (宿泊・ふるさと納税・耳納連山ビュー) で十分**
+   - **エリア分類確定** (既存 5 エリアで収まる・新エリア追加不要):
+     - itoshima +2 (志摩シーサイド・福岡雷山) / kitakyushu +5 (ザ・クラシック・NEW ユーアイ・周防灘・チサン遠賀・瀬板の森) / chikugo +4 (皐月天拝・夜須高原・八女上陽・福岡サンレイク) / chikuho +4 (皐月竜王・かほ・西日本・JR 内野)
+     - area-kitakyushu は既に「北九州・宗像エリア」を採用済 → 宗像市・宮若市は自然に収まる
+   - **数値不一致の結着** (primary + secondary クロスチェック):
+     - 確定 4 件: 皐月竜王 5,827Y / 設計者=大洋緑化 / かほ 6,556Y / 福岡サンレイク 6,723Y
+     - 暫定 1 件: ザ・クラシック開場日 1990/9/22 (Wikipedia)
+     - 未解決 4 件 (Phase B 着手時対処): 皐月天拝 電話・ヤード / 八女上陽 ヤード / 瀬板の森 ヤード
+   - **アフィリ ASP**: 15 件全件両ポータル (じゃらん + 楽天 GORA) 掲載確認済・mapping ファイル拡張ドラフト準備済
+   - **Phase B 着手準備完了** — Day 28 GO 後即実装可
+     - パイロット候補 (両者の推奨が異なる):
+       - IA 鈴木玲奈: 志摩シーサイド (最シンプル・skill 動作検証重視)
+       - secondary 中村麻衣: ザ・クラシック (data 確実・テンプレ横展開・2028 日本女子オープン SEO 強)
+     - 工数: 全 15 件 29-48h / 期待 PV +680〜1,300 PV/月 (3-4 ヶ月後)
+   - **観測抵触ゼロ** (data/ 配下 Markdown/JSON のみ・HTML/sitemap.xml/course_data.json 改修なし・CLAUDE.md §6 完全準拠)
 
 1. **🆕★ ブログ会社化 Phase 3.4 完了 — テンプレ v1.1.0 refine** (`0120366` 後継 / 2026-05-11)
    - 配置先: `~/blog-template/CLAUDE.md` (約 200 行) + `~/blog-template/README.md` (v1.1.0)

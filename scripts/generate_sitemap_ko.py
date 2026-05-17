@@ -39,9 +39,9 @@ INCLUDE_PATTERNS = [
     re.compile(r'^https://fukuoka-golf-guide\.com/sitemap-guide\.html$'),
     re.compile(r'^https://fukuoka-golf-guide\.com/airport-access-top5\.html$'),
     re.compile(r'^https://fukuoka-golf-guide\.com/editorial-policy\.html$'),
-    re.compile(r'^https://fukuoka-golf-guide\.com/course-[a-z]+\.html$'),
-    re.compile(r'^https://fukuoka-golf-guide\.com/hub-[a-z]+\.html$'),
-    re.compile(r'^https://fukuoka-golf-guide\.com/area-[a-z]+\.html$'),
+    re.compile(r'^https://fukuoka-golf-guide\.com/course-[a-z-]+\.html$'),
+    re.compile(r'^https://fukuoka-golf-guide\.com/hub-[a-z-]+\.html$'),
+    re.compile(r'^https://fukuoka-golf-guide\.com/area-[a-z-]+\.html$'),
     re.compile(r'^https://fukuoka-golf-guide\.com/book-[a-z-]+\.html$'),
 ]
 

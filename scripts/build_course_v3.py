@@ -122,11 +122,18 @@ for o, n in sorted(replacements, key=lambda p: -len(str(p[0]))):
 
 # ── 2. price section 再構築 (price-amount / price-card-name) ──
 def amount_html(fee_value):
-    nums = re.findall(r"[\d,]{3,}", fee_value)
+    # KO 料金の韓国ウォン併記 span『<span ...>(약 …)</span>』を保持
+    krw = ""
+    _k = re.search(r'<span[^>]*>\(약[^<]*\)</span>', fee_value)
+    if _k:
+        krw = " " + _k.group()
+    # 3 桁以上の数字を価格として抽出。ただし直後が「年」= 年号は価格でないので除外
+    nums = [m.group() for m in re.finditer(r"[\d,]{3,}", fee_value)
+            if fee_value[m.end():m.end() + 1] != "年"]
     if len(nums) >= 2:
-        return f'<span class="yen">¥</span>{nums[0]}<span class="range">〜{nums[1]}</span>'
+        return f'<span class="yen">¥</span>{nums[0]}<span class="range">〜{nums[1]}</span>{krw}'
     if len(nums) == 1:
-        return f'<span class="yen">¥</span>{nums[0]}<span class="range"></span>'
+        return f'<span class="yen">¥</span>{nums[0]}<span class="range"></span>{krw}'
     return f'<span style="font-size:17px;color:var(--muted);">{fee_value}</span>'
 
 

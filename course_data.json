@@ -2778,7 +2778,7 @@
       ],
       [
         "⚠ 注意",
-        "2024年4月よりスループレー専用・完全セルフ・キッチンカー・シャワーのみ"
+        "スループレー専用・完全セルフ化（食事はキッチンカー）"
       ]
     ],
     "fees_en": [
@@ -2792,7 +2792,7 @@
       ],
       [
         "⚠ Note",
-        "Through-play only since Apr 2024. Self-service. Food truck only. Shower only."
+        "Through-play & full self-play only. Food truck dining."
       ]
     ],
     "fees_ko": [
@@ -2806,7 +2806,7 @@
       ],
       [
         "⚠ 주의",
-        "2024년 4월부터 스루 플레이 전용・완전 셀프・푸드 트럭・샤워실만"
+        "스루 플레이・완전 셀프 전용 (식사는 푸드트럭)"
       ]
     ],
     "related": [
@@ -3179,44 +3179,44 @@
     "airport_val_ko": "차로 약 55분 (호나미히가시 IC에서 13km)",
     "fees_ja": [
       [
-        "📅 平日",
-        "約9,500〜16,500円"
+        "📅 平日 セルフ",
+        "約12,320〜13,420円"
       ],
       [
-        "🎉 土日祝",
-        "約9,500〜15,500円"
+        "🎉 土日祝 セルフ",
+        "約17,820〜18,920円"
       ],
       [
-        "🌐 多言語",
-        "公式韓国語/英語ページあり（自動翻訳）"
+        "🌤️ 午後セルフ",
+        "約11,550〜14,300円"
       ]
     ],
     "fees_en": [
       [
-        "📅 Weekdays",
-        "¥9,500–¥16,500"
+        "📅 Weekday (Self)",
+        "¥12,320–13,420"
       ],
       [
-        "🎉 Weekends / Holidays",
-        "¥9,500–¥15,500"
+        "🎉 Weekend / Holiday (Self)",
+        "¥17,820–18,920"
       ],
       [
-        "🌐 Multi-language",
-        "Official KO/EN pages available (auto-translated)"
+        "🌤️ Afternoon (Self)",
+        "¥11,550–14,300"
       ]
     ],
     "fees_ko": [
       [
-        "📅 평일",
-        "약 9,500〜16,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 9.5만원〜16.5만원)</span>"
+        "📅 평일 셀프",
+        "약 12,320〜13,420엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 12.3만원〜13.4만원)</span>"
       ],
       [
-        "🎉 토·일·공휴일",
-        "약 9,500〜15,500엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 9.5만원〜15.5만원)</span>"
+        "🎉 토·일·공휴일 셀프",
+        "약 17,820〜18,920엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 17.8만원〜18.9만원)</span>"
       ],
       [
-        "🌐 한국어",
-        "공식 한국어 페이지 있음 (자동번역)"
+        "🌤️ 오후 셀프",
+        "약 11,550〜14,300엔 <span style=\"color:#1a3a8f;font-size:0.78rem;\">(약 11.6만원〜14.3만원)</span>"
       ]
     ],
     "related": [

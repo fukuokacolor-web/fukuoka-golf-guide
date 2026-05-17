@@ -1,9 +1,9 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 完了 — 50 コース体制・トップ/ハブ/メタまで全整合)
-**最終 commit**: `5c26369` (トップ/ハブを 50 化)、`58d595f` (raizan 料金)、`c137410` (26 ページ)
-**前回 commit**: `791da3c` (エリアハブ title 修正)、`b5dd12d` (エリアハブ)、`d52230e` (build v3)
-**次回作業**: 観測 Day 14 `/observation-checkin 14` (5/20)
+**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 完了 + 6 エージェント・ミスチェック反映)
+**最終 commit**: `b2f7434` (ミスチェック Critical/High 8 件修正)、`5c26369` (トップ/ハブ 50 化)、`c137410` (26 ページ)
+**前回 commit**: `791da3c` (エリアハブ title)、`b5dd12d` (エリアハブ)、`d52230e` (build v3)
+**次回作業**: 観測 Day 14 `/observation-checkin 14` (5/20) / ミスチェック残 Medium 項目 (下記)
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。
@@ -48,8 +48,21 @@ area-itoshima.html の raizan カード価格更新 + 「🏌 レンタル完備
 ※ 表示値は公式正規セルフ料金。じゃらん/楽天は時期により割安プランあり (ページの予約サイト
   CTA + 「予約サイトにより変動」注記でカバー)。
 
-### 🔲 残作業 (任意)
-- access-classic.html テンプレは未使用 (access は 1 テンプレに統合済)。
+### ✅ 6 エージェント ミスチェック実施 (2026-05-17・`b2f7434`)
+fact-checker×2 / ia-architect / seo / inbound / cvr の 6 名でレビュー。Critical 4 + High 4 を修正済:
+satsuki-ryuoh 偽価格「¥2024」/ KO 価格カードのウォン併記消失 / jruchino 料金が公式と乖離 /
+GolfCourse JSON-LD の url・image 欠落 / エリアハブ hero のコース数旧値 / hub-budget「35」残存 /
+sitemap-ko.xml の `-` 入り slug 取りこぼし — すべて解消。
+deep link 取り違え・テンプレ固有文字列の残存はゼロと確認 (Phase B Step 1 の事故は再発せず)。
+
+### 🔲 残作業 (Medium・任意・次セッション)
+- chisan-onga の KO 名「오우카」→ 遠賀の正しい音写「온가」(course_data name_ko・要再生成)
+- nishinihon「世界三大プロゴルファー」→ 公式表現「世界ビッグスリー」に統一 (要 fact-checker)
+- テンプレ KO 本文の地名「糸島市」等が漢字のまま (romanize 検討・全コース共通の課題)
+- sitemap-guide.html に新 13 コースの access リンク未掲載 (course リンクは掲載済)
+- access ページ 13 件の meta description がテンプレ定型文 → 観測終了 6/3 以降に固有化推奨
+- raizan 公式サイト URL が http:// (SSL 未対応・先方都合)
+- access-classic.html テンプレは未使用 (access は 1 テンプレに統合済)
 
 ### 注意
 - 観測フェーズ Day 28 (6/3) まで・新規ページ追加は §6 許容 (観測サンプル加算ありだがユーザー方針「今すぐ段階公開」で受容済)

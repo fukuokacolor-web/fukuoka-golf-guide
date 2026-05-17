@@ -96,6 +96,13 @@ replacements = [
 for key in ["airport_val_ja", "airport_val_en", "airport_val_ko"]:
     if old.get(key) and new.get(key):
         replacements.append((old[key], new[key]))
+# airport_min — stats-bar / hero-badge の所要分。素の数字置換は危険なので
+# 周辺文字列で context-anchor して安全に置換 (3 言語 hero-badge + JA/EN/KO stats-bar)
+_om, _nm = str(old.get("airport_min", "")), str(new.get("airport_min", ""))
+if _om and _nm and _om != _nm:
+    for _ctx in [f"空港から{_om}分", f"{_om} min from airport", f"공항에서 {_om}분",
+                 f'>{_om}<span class="unit">min', f'>{_om}<span class="unit">분']:
+        replacements.append((_ctx, _ctx.replace(_om, _nm, 1)))
 if old.get("website") and new.get("website"):
     replacements.append((old["website"], new["website"]))
 if old.get("course_type_en") and new.get("course_type_en"):

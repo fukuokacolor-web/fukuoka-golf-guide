@@ -1,37 +1,42 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-17 (★ build v3 完成・テスト実証済・残りテンプレ汎用化 15 箇所)
-**最終 commit**: `d52230e` (build v3 — price/related/エリア完全自動生成)
-**前回 commit**: `4ac02fa` (Batch 2 準備)、`1fe849b` (SEO メタ)、`47af473` (Phase B Step 1)
-**次回作業**: ★ テンプレ固有説明文の汎用化 15 箇所 (下記) → build v3 で 13 コース生成 / 観測 Day 14 `/observation-checkin 14` (5/20)
+**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 — 13 コース生成完了・course+access = 26 ページ追加)
+**最終 commit**: 本コミットで Tier 1 Batch 2 13 コース追加 (37→50 コース体制)
+**前回 commit**: `d52230e` (build v3)、`4ac02fa` (Batch 2 準備)、`47af473` (Phase B Step 1)
+**次回作業**: ★ 内部リンク整備 (sitemap-guide.html + エリアハブ 4 ページに 13 コース掲載) / 観測 Day 14 `/observation-checkin 14` (5/20)
 
 ---
 
-## 🔧 build v3 — ★ 完成済 (`d52230e`)・残りはテンプレ汎用化のみ
+## ✅ Tier 1 Batch 2 — 13 コース追加 完了 (2026-05-17)
 
-### ✅ 完了: build v3 実装・テスト実証
-- `scripts/build_course_v3.py` 完成。price-amount/price-card-name を fees から出現順再構築・related を言語別再構築・エリアハイライト切替・残存チェック・テンプレは templates/ 優先読込
-- パイロット (suonada) で実証: price-amount 9・price-card-name 9・related 3 ブロック自動再構築・残存「志摩」1 件のみ (固有説明文除く)
-- `templates/course-shimaseaside.html` (18H 用) / `templates/course-classic.html` (27H 用) / access 版 配置済
+37 コース → **50 コース体制**。13 コース × (course + access) = 26 ページ生成。
 
-### 🔲 残作業 1: テンプレ固有説明文の汎用化 (次セッション最初・30 分)
-`templates/course-shimaseaside.html` の固有キャッチ「玄界灘」「シーサイド」「名門」15 箇所を汎用化:
-- L11 meta description / L13 title / L22 JSON-LD description / L41 og:title / L42 og:description → shimaseaside の course_data `desc_ja`・`title_full` の値に統一 (build v3 が新コース値に自動置換するため)
-- L341 hero-sub JA「Shima Seaside Country Club ｜ 18H ｜ 玄界灘を望むシーサイドコース」→「Shima Seaside Country Club ｜ 18ホール」(固有キャッチ削除・holes は build v3 置換)
-- L345 hero badge JA「🏆 九州を代表する名門」→ 削除
-- L363 stat-item JA「🏆 名門 プレステージ」→「JP/EN/KO ｜ 3 Languages」
-- L549 hero-sub EN「...Seaside Course Overlooking Genkai-nada」→ 固有削除
-- L757 hero-sub KO / L761 hero badge KO → 同様に汎用化
-- `templates/course-classic.html` (27H 用) も同じ要領で汎用化
+### 完了内容
+- **build v3 拡張**: `airport_min` を context-anchored 置換に追加 (stats-bar `>NN<span class="unit">min/분`・hero-badge「空港からNN分」「NN min from airport」「공항에서 NN분」)
+- **テンプレ完全汎用化** (固有説明文・価格・URL を generic 化、build v3 置換フィールドに統一):
+  - `templates/course-shimaseaside.html` (18H 用) — 玄界灘/シーサイド/名門/¥価格/simascc URL を全廃
+  - `templates/course-classic.html` (27H 用) — ¥13,390/名門/日曜メンバー同伴ルール/KRW 換算を全廃
+  - `templates/access-shimaseaside.html` (access 共通) — 前原IC/筑前前原駅/郵便番号など固有経路を generic 化 (地図 embed はコース名置換で正確)
+- **13 コース生成** (全件 build v3 残存チェック合格・shimaseaside 固有文字列ゼロを grep 検証):
+  - 18H (11): raizan / newui / suonada / satsuki-tenpai / satsuki-ryuoh / kaho / seitanomori / nishinihon / jruchino / yamejoyo / sunlake
+  - 27H (2): chisan-onga / yasukogen
+- **raizan 料金**: 公式サイト SSL エラー・楽天/じゃらん動的価格のため確定不可 → course_data の fees を「予約サイトで確認」にグレースフル化 (§7 ハルシネーション禁止遵守・捏造せず)
+- **sitemap.xml / sitemap-ko.xml 再生成** (REPO 132 URLs)
 
-### 🔲 残作業 2: build v3 で 13 コース生成
-汎用化完了後、build v3 を実行 (18H 11 件 → shimaseaside テンプレ / 27H 2 件 chisan-onga・yasukogen → classic テンプレ):
-```
-python scripts/build_course_v3.py raizan shimaseaside
-python scripts/build_course_v3.py raizan shimaseaside --access
-... (13 コース × course + access = 26 回)
-```
-→ 各生成で残存チェック確認 → preview 検証 → sitemap 再生成 → エリアハブ/sitemap-guide 追加 → コミット
+### 🔲 残作業: 内部リンク整備 (次セッション)
+新 13 コースは sitemap.xml には登録済だが、ハブページ未掲載 (準オーファン状態)。要対応:
+1. **sitemap-guide.html** (全コース一覧) — JA/EN/KO 3 セクションにエリア別で 13 行追加 (フラットな `<a href>` リスト・各言語 ~L140/258/376 付近)
+2. **エリアハブ 4 ページ** に course-card 追加 (itoshima +1・kitakyushu +4・chikugo +4・chikuho +4):
+   - area-itoshima.html: raizan
+   - area-kitakyushu.html: newui / suonada / chisan-onga / seitanomori
+   - area-chikugo.html: satsuki-tenpai / yasukogen / yamejoyo / sunlake
+   - area-chikuho.html: satsuki-ryuoh / kaho / nishinihon / jruchino
+   - course-card は ~23 行/枚 (画像・blurb・chip・価格目安) — blurb は desc_ja から作成、JSON-LD ItemList も更新
+3. raizan の正式グリーンフィーを fact-checker でファクトチェック → course_data 更新 → raizan 再生成 (任意)
+
+### 注意
+- 観測フェーズ Day 28 (6/3) まで・新規ページ追加は §6 許容 (観測サンプル加算ありだがユーザー方針「今すぐ段階公開」で受容済)
+- access-classic.html テンプレは未使用 (access は 1 テンプレに統合)
 
 ### 旧設計メモ (参考・実装済)
 

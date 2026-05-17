@@ -1,7 +1,7 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 完了 — 26 ページ生成 + 全内部リンク掲載)
-**最終 commit**: `b5dd12d` (エリアハブ 13 コース)、`36eab4e` (sitemap-guide)、`c137410` (26 ページ)
+**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 完了 — 全 50 コースの料金表示まで確定)
+**最終 commit**: `58d595f` (raizan 公式料金反映)、`b5dd12d` (エリアハブ)、`c137410` (26 ページ)
 **前回 commit**: `d52230e` (build v3)、`4ac02fa` (Batch 2 準備)、`47af473` (Phase B Step 1)
 **次回作業**: 観測 Day 14 `/observation-checkin 14` (5/20)
 
@@ -34,19 +34,17 @@ h2・JSON-LD itemListElement も更新。chikuho の JSON-LD 欠落 (course-cent
 itoshima は手動 Edit、他 3 ページは `scripts/add_area_cards.py` で生成・挿入。
 → **新 13 コースは sitemap.xml / sitemap-guide / エリアハブの全導線に掲載完了**。
 
-### ✅ raizan 料金 — fact-checker ペア検証済・確定不可と判定 (2026-05-17)
-fact-checker-primary + secondary のペアで検証。結論は **「予約サイトで確認」表示を維持** (正しい状態):
-- 公式サイト (raizan-gc.co.jp/rate-plan/) は SSL 自己署名証明書エラーで一次確認不可
-- 英語アグリゲーター 2 件 (golf-in-japan / air-golf) は文言・数値が完全一致 → 実質同一ソース (独立性なし)
-- practicalkm は 2024-01 更新で陳腐化、かつ平日下限が 9,900 / 10,900 円で食い違い (未解決)
-- 楽天GORA / じゃらん / GDO は動的価格で静的取得不可
-→ 公式一次ソースが取れず §7 ハルシネーション禁止を満たせないため、course/area とも
-  「予約サイトで確認」表示を**意図的に維持**(捏造回避)。確定には電話確認 (092-323-8181) または
-  楽天GORA/じゃらんの実予約カレンダー取得が必要 = 人手タスク。
+### ✅ raizan 料金 — 確定・反映済 (2026-05-17・`58d595f`)
+当初 fact-checker ペア検証では公式サイト SSL エラーで確定不可だったが、**ユーザーが公式
+料金表 (raizan-gc.co.jp/rate-plan/) を直接提供**して解決。利用税・消費税込の公式値:
+- 平日セルフ ¥18,900 / 土日祝セルフ ¥24,900 / 薄暮9Hセルフ ¥7,500〜10,000
+course_data の raizan fees を 3 言語更新 → build v3 で course-raizan.html 再生成、
+area-itoshima.html の raizan カード価格更新 + 「🏌 レンタル完備」chip 追加。
+→ **全 50 コースの料金表示が確定** (「要追加調査」完全解消)。
+※ 表示値は公式正規セルフ料金。じゃらん/楽天は時期により割安プランあり (ページの予約サイト
+  CTA + 「予約サイトにより変動」注記でカバー)。
 
 ### 🔲 残作業 (任意)
-- raizan 料金: 上記のとおり要・電話確認 (人手)。取れたら course_data 更新 → build v3 で raizan
-  再生成 → area-itoshima.html のカード価格も更新。
 - access-classic.html テンプレは未使用 (access は 1 テンプレに統合済)。
 
 ### 注意

@@ -1,9 +1,9 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 — 13 コース生成完了・course+access = 26 ページ追加)
-**最終 commit**: `36eab4e` (sitemap-guide に 13 コース掲載)、`c137410` (Batch 2 26 ページ生成)
+**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 完了 — 26 ページ生成 + 全内部リンク掲載)
+**最終 commit**: `b5dd12d` (エリアハブ 13 コース)、`36eab4e` (sitemap-guide)、`c137410` (26 ページ)
 **前回 commit**: `d52230e` (build v3)、`4ac02fa` (Batch 2 準備)、`47af473` (Phase B Step 1)
-**次回作業**: ★ エリアハブ 4 ページに course-card 追加 (trilingual 39 枚・下記) / 観測 Day 14 `/observation-checkin 14` (5/20)
+**次回作業**: 観測 Day 14 `/observation-checkin 14` (5/20) / raizan 正式料金の fact-check (任意)
 
 ---
 
@@ -27,24 +27,19 @@
 sitemap-guide.html (全コース一覧) の JA/EN/KO 3 セクションに 13 コースを掲載済。
 sitemap-guide は全ページの explore-nav からリンクされるため、**新コースのオーファン状態は解消**。
 
-### 🔲 残作業: エリアハブ 4 ページへの course-card 追加 (次セッション・大きめタスク)
-内部リンク強化のためエリアハブにも course-card を追加したい。**エリアページは 3 言語構成**
-(JA/EN/KO の course-list セクションが各ページに 3 つ) のため **13 コース × 3 言語 = 39 枚**の
-course-card 作成が必要 (1 枚 ~23 行・画像/tagline/chip/blurb/価格)。
-- 追加先と現状カード数 (各言語セクションあたり):
-  - area-itoshima.html (現 4 枚) → +raizan
-  - area-kitakyushu.html (現 10 枚) → +newui / suonada / chisan-onga / seitanomori
-  - area-chikugo.html (現 7 枚) → +satsuki-tenpai / yasukogen / yamejoyo / sunlake
-  - area-chikuho.html (現 6 枚) → +satsuki-ryuoh / kaho / nishinihon / jruchino
-- 各ページの sec-eyebrow「All N Courses」/ h2「Xエリアの N コース」/ JSON-LD `numberOfItems`・
-  `itemListElement` も要更新 (※ chikugo・chikuho は既存 count が eyebrow/h2/JSON-LD で不一致 → 是正機会)
-- **価格目安は fees_ja から手選別済** (年号・カート代の誤抽出を除外した正確な緑フィー範囲):
-  raizan=予約サイトで確認 / newui=¥6,910〜14,091 / suonada=¥7,700〜15,900 /
-  chisan-onga=¥5,878〜11,750 / seitanomori=¥7,728〜14,819 / satsuki-tenpai=¥7,241〜15,569 /
-  yasukogen=¥9,510〜18,100 / yamejoyo=¥7,146〜14,873 / sunlake=¥10,000〜17,500 /
-  satsuki-ryuoh=¥3,332〜9,332 / kaho=¥5,869〜16,778 / nishinihon=¥7,810〜16,446 / jruchino=¥9,500〜16,500
-- blurb は trilingual 必要 → content-strategist の活用推奨
-- raizan の正式グリーンフィーは未確定 (公式 SSL エラー・予約サイト動的価格) → fact-checker 確認後 course_data 更新・raizan 再生成 (任意)
+### ✅ 内部リンク (エリアハブ 4 ページ) — 完了 (`b5dd12d`)
+area-itoshima(+raizan) / area-kitakyushu(+4) / area-chikugo(+4) / area-chikuho(+4) の
+JA/EN/KO 3 言語 course-list に course-card を追加 (計 39 枚)。numberOfItems・sec-eyebrow・
+h2・JSON-LD itemListElement も更新。chikuho の JSON-LD 欠落 (course-central) も是正。
+itoshima は手動 Edit、他 3 ページは `scripts/add_area_cards.py` で生成・挿入。
+→ **新 13 コースは sitemap.xml / sitemap-guide / エリアハブの全導線に掲載完了**。
+
+### 🔲 残作業 (任意・次セッション)
+- **raizan の正式グリーンフィー未確定**: 公式サイト SSL エラー・予約サイト動的価格のため
+  確定できず、course ページ・area カードとも「予約サイトで確認」表示の暫定対応中 (§7 遵守)。
+  fact-checker で確認 → course_data の fees 更新 → build v3 で raizan 再生成 →
+  area-itoshima.html のカード価格も更新、が望ましい。
+- access-classic.html テンプレは未使用 (access は 1 テンプレに統合済)。
 
 ### 注意
 - 観測フェーズ Day 28 (6/3) まで・新規ページ追加は §6 許容 (観測サンプル加算ありだがユーザー方針「今すぐ段階公開」で受容済)

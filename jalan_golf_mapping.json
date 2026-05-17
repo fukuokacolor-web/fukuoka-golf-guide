@@ -54,6 +54,19 @@
     {"file": "course-wakamatsu",     "name": "若松ゴルフ倶楽部",                              "jalan_id": null,    "deeplink": false, "exclude_reason": "members_only"},
     {"file": "course-wakamiya",      "name": "トライアルゴルフ&リゾート WAKAMIYA COURSE",      "jalan_id": "02341", "deeplink": true},
     {"file": "course-shimaseaside",  "name": "志摩シーサイドカンツリークラブ",                 "jalan_id": "02352", "deeplink": true, "note": "Tier 1 新規追加 2026-05-12"},
-    {"file": "course-classic",       "name": "ザ・クラシックゴルフ倶楽部",                     "jalan_id": "02340", "deeplink": true, "note": "Tier 1 新規追加 2026-05-12・日曜メンバー同伴必須"}
+    {"file": "course-classic",       "name": "ザ・クラシックゴルフ倶楽部",                     "jalan_id": "02340", "deeplink": true, "note": "Tier 1 新規追加 2026-05-12・日曜メンバー同伴必須"},
+    {"file": "course-raizan",        "name": "福岡雷山ゴルフ倶楽部",                          "jalan_id": "02330", "deeplink": true, "note": "Tier 1 Batch 2 2026-05-17"},
+    {"file": "course-newui",         "name": "NEWユーアイゴルフクラブ",                       "jalan_id": "02336", "deeplink": true, "note": "Tier 1 Batch 2・公式KO対応"},
+    {"file": "course-suonada",       "name": "周防灘カントリークラブ",                        "jalan_id": "02363", "deeplink": true, "note": "Tier 1 Batch 2"},
+    {"file": "course-satsuki-tenpai","name": "皐月ゴルフ倶楽部 天拝コース【PGM】",            "jalan_id": "02323", "deeplink": true, "note": "Tier 1 Batch 2"},
+    {"file": "course-satsuki-ryuoh", "name": "皐月ゴルフ倶楽部 竜王コース【PGM】",            "jalan_id": "02318", "deeplink": true, "note": "Tier 1 Batch 2・2024/4 スループレー化"},
+    {"file": "course-kaho",          "name": "かほゴルフクラブ【アコーディア】",              "jalan_id": "02347", "deeplink": true, "note": "Tier 1 Batch 2・2025/6 FW乗入有料化"},
+    {"file": "course-chisan-onga",   "name": "チサンカントリークラブ遠賀【PGM】",             "jalan_id": "02337", "deeplink": true, "note": "Tier 1 Batch 2"},
+    {"file": "course-seitanomori",   "name": "瀬板の森北九州ゴルフコース",                    "jalan_id": "02311", "deeplink": true, "note": "Tier 1 Batch 2・北九州市営"},
+    {"file": "course-nishinihon",    "name": "西日本カントリークラブ",                        "jalan_id": "02317", "deeplink": true, "note": "Tier 1 Batch 2・ゲーリー・プレーヤー設計"},
+    {"file": "course-jruchino",      "name": "JR内野カントリークラブ",                        "jalan_id": "02345", "deeplink": true, "note": "Tier 1 Batch 2・公式KO/EN対応"},
+    {"file": "course-yasukogen",     "name": "夜須高原カントリークラブ",                      "jalan_id": "02349", "deeplink": true, "note": "Tier 1 Batch 2・楽天評価4.4"},
+    {"file": "course-yamejoyo",      "name": "八女上陽ゴルフ倶楽部",                          "jalan_id": "02355", "deeplink": true, "note": "Tier 1 Batch 2・宿泊併設"},
+    {"file": "course-sunlake",       "name": "福岡サンレイクゴルフ倶楽部",                    "jalan_id": "02357", "deeplink": true, "note": "Tier 1 Batch 2"}
   ]
 }

@@ -1,9 +1,43 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-13 (★ Phase B Step 1 — Tier 1 新規 2 コース追加・専門家会議 6 名チェック → 23 件修正完了)
-**最終 commit**: `5758dbe` (Phase 4 Step 1 - GA4 観測ダッシュボード準備)
-**前回 commit**: `289bb21` (Phase 3 - Decoy)、`6a03311` (Phase 2 - 取引KW LP)、`4c40600` (Phase 1 - 逆流ナビ+CVR)
-**次回作業**: Phase B Step 1 のコミット (未コミット) / 観測 Day 7 `/observation-checkin 7` / build_course_from_template.py 改善後に残 13 コース追加
+**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 準備完了・build v3 開発設計確定)
+**最終 commit**: `4ac02fa` (Tier 1 Batch 2 準備 - course_data/mapping 13件 + build v2 + テンプレ骨格)
+**前回 commit**: `1fe849b` (SEO メタ強化)、`47af473` (Phase B Step 1 - 2 コース追加)、`18b2a58` (Phase A データ収集)
+**次回作業**: ★ build v3 開発 (下記「build v3 開発設計」セクション参照) → 13 コース生成 / 観測 Day 14 `/observation-checkin 14` (5/20)
+
+---
+
+## 🔧 build v3 開発設計 (次セッション最優先・複数ターン想定)
+
+**目標**: `templates/course-template.html` を完全プレースホルダ式にして、Tier 1 Batch 2 の 13 コースを残存ゼロで自動生成する。
+
+**背景**: Phase B Step 1 で 2 コースに 23 件のバグ (料金が旧コース値・deep link 別コース等)。build v2 で deep link/locality/料金数字は自動化したが、パイロット (suonada) 検証で「実コースをテンプレにする方式は固有説明文 (玄界灘・季節料金構造・略称・related ラベル) が残存」と判明。
+
+### Step 1: course-template.html の汎用化
+- **price section** (Green Fees: `sec-desc` + `pricing-grid` 3 カード + 補足ボックス) → `{{PRICE_BLOCK_JA}}` / `{{PRICE_BLOCK_EN}}` / `{{PRICE_BLOCK_KO}}` の大プレースホルダに置換
+  - 位置: JA L368-419 / EN L575-626 / KO L780 付近
+- **related section** (`<section class="related">` L501) → `{{RELATED_BLOCK_JA/EN/KO}}`
+- **固有説明文** (hero-sub・character body の「芥屋GC」「玄界灘」「季節別7段階」等) → 汎用定型文 + `{{name_ja}}` 等
+- **deep link** → `{{JALAN_ID}}` / `{{RAKUTEN_CID}}`
+- **エリアハイライト** (explore-nav L514 のオレンジ) → build v3 が `area_primary` で動的処理
+
+### Step 2: build v3 スクリプト (`scripts/build_course_v3.py`)
+- `{{field}}` を course_data 値で展開
+- `{{PRICE_BLOCK_xx}}` を `fees_xx` から price-card HTML 構築 (Decoy: 2 番目を `featured`)
+- `{{RELATED_BLOCK_xx}}` を `related` から構築
+- エリアハイライト: `area_primary` でオレンジ切替 (内蔵マッピング: raizan=itoshima / newui・suonada・chisan-onga・seitanomori=kitakyushu / satsuki-tenpai・yasukogen・yamejoyo・sunlake=chikugo / satsuki-ryuoh・kaho・nishinihon・jruchino=chikuho)
+- 残存チェック (v2 から継承)
+
+### Step 3: 13 コース生成 → preview 検証 → sitemap → コミット
+- access テンプレは IC/駅/郵便番号が course_data にないため、course 完成後に別途対応 (汎用化 or course_data 拡張)
+- 観測フェーズ Day 28 まで・ユーザー方針は「今すぐ段階公開」(観測ノイズ受容済)
+
+### 関連ファイル
+- `templates/course-template.html` (130 プレースホルダ展開済・要追加汎用化)
+- `templates/access-template.html` (54 展開済)
+- `scripts/build_course_from_template.py` (v2・参考実装)
+- `course_data.json` (43 件・Batch 2 13 件は fees/related 完備・料金未確定は raizan のみ)
+- `data/COURSE_DATA_TIER1_DRAFT.md` (slug/エリア/hero_img 一覧)
 
 ---
 
@@ -59,7 +93,18 @@ CTA Position / Language / Link Text / Link URL / Nav Section / Page / Service / 
 
 ## ✅ 直近の実装履歴 (新しい順)
 
-1. **🆕★★★ Phase B Step 1 — Tier 1 新規 2 コース追加 (パイロット)** (未コミット / 2026-05-12〜13)
+1. **🆕★ Tier 1 Batch 2 準備 + build v2/v3 開発** (`4ac02fa` / 2026-05-17)
+   - 残 13 コース (福岡雷山/NEWユーアイ/周防灘/皐月天拝/皐月竜王/かほ/チサン遠賀/瀬板の森/西日本/JR内野/夜須高原/八女上陽/福岡サンレイク) の追加準備
+   - `course_data.json` 30→43 件 (Batch 2 13 件 append・テキスト操作で既存整形維持)
+   - `jalan/rakuten mapping` +13 件 (deep link 用 ID)
+   - `build_course_from_template.py` v2: deep link 自動置換・料金数字抽出・残存チェック機能・locality 置換・UTF-8 stdout
+   - `templates/course-template.html` (130 展開) + `access-template.html` (54 展開): プレースホルダ式テンプレ骨格
+   - SEO メタ強化 (`1fe849b`): classic/shimaseaside の title・meta description・og を強化 (2028 日本女子オープン・玄界灘 KW 追加)
+   - **build v2 検証で判明**: 実コースをテンプレにする方式は固有説明文が残存 → **build v3 が必要** (上記「build v3 開発設計」参照)
+   - **次セッション**: build v3 開発 → 13 コース生成 → preview → sitemap → コミット
+   - 観測抵触: course_data/mapping/テンプレは観測指標非干渉。HTML 生成 (13 コース) は観測サンプル加算ありだがユーザー方針「今すぐ段階公開」で受容済
+
+1. **🆕★★★ Phase B Step 1 — Tier 1 新規 2 コース追加 (パイロット)** (`47af473` / 2026-05-12〜13)
    - 観測ノイズ最小化方針で **志摩シーサイドカンツリークラブ + ザ・クラシックゴルフ倶楽部** の 2 件を新規追加
    - 新規ファイル 6 件:
      - `course-shimaseaside.html` / `course-classic.html` (各 3 言語・約 990 行)

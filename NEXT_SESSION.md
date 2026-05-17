@@ -1,13 +1,39 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 準備完了・build v3 開発設計確定)
-**最終 commit**: `4ac02fa` (Tier 1 Batch 2 準備 - course_data/mapping 13件 + build v2 + テンプレ骨格)
-**前回 commit**: `1fe849b` (SEO メタ強化)、`47af473` (Phase B Step 1 - 2 コース追加)、`18b2a58` (Phase A データ収集)
-**次回作業**: ★ build v3 開発 (下記「build v3 開発設計」セクション参照) → 13 コース生成 / 観測 Day 14 `/observation-checkin 14` (5/20)
+**最終更新**: 2026-05-17 (★ build v3 完成・テスト実証済・残りテンプレ汎用化 15 箇所)
+**最終 commit**: `d52230e` (build v3 — price/related/エリア完全自動生成)
+**前回 commit**: `4ac02fa` (Batch 2 準備)、`1fe849b` (SEO メタ)、`47af473` (Phase B Step 1)
+**次回作業**: ★ テンプレ固有説明文の汎用化 15 箇所 (下記) → build v3 で 13 コース生成 / 観測 Day 14 `/observation-checkin 14` (5/20)
 
 ---
 
-## 🔧 build v3 開発設計 (次セッション最優先・複数ターン想定)
+## 🔧 build v3 — ★ 完成済 (`d52230e`)・残りはテンプレ汎用化のみ
+
+### ✅ 完了: build v3 実装・テスト実証
+- `scripts/build_course_v3.py` 完成。price-amount/price-card-name を fees から出現順再構築・related を言語別再構築・エリアハイライト切替・残存チェック・テンプレは templates/ 優先読込
+- パイロット (suonada) で実証: price-amount 9・price-card-name 9・related 3 ブロック自動再構築・残存「志摩」1 件のみ (固有説明文除く)
+- `templates/course-shimaseaside.html` (18H 用) / `templates/course-classic.html` (27H 用) / access 版 配置済
+
+### 🔲 残作業 1: テンプレ固有説明文の汎用化 (次セッション最初・30 分)
+`templates/course-shimaseaside.html` の固有キャッチ「玄界灘」「シーサイド」「名門」15 箇所を汎用化:
+- L11 meta description / L13 title / L22 JSON-LD description / L41 og:title / L42 og:description → shimaseaside の course_data `desc_ja`・`title_full` の値に統一 (build v3 が新コース値に自動置換するため)
+- L341 hero-sub JA「Shima Seaside Country Club ｜ 18H ｜ 玄界灘を望むシーサイドコース」→「Shima Seaside Country Club ｜ 18ホール」(固有キャッチ削除・holes は build v3 置換)
+- L345 hero badge JA「🏆 九州を代表する名門」→ 削除
+- L363 stat-item JA「🏆 名門 プレステージ」→「JP/EN/KO ｜ 3 Languages」
+- L549 hero-sub EN「...Seaside Course Overlooking Genkai-nada」→ 固有削除
+- L757 hero-sub KO / L761 hero badge KO → 同様に汎用化
+- `templates/course-classic.html` (27H 用) も同じ要領で汎用化
+
+### 🔲 残作業 2: build v3 で 13 コース生成
+汎用化完了後、build v3 を実行 (18H 11 件 → shimaseaside テンプレ / 27H 2 件 chisan-onga・yasukogen → classic テンプレ):
+```
+python scripts/build_course_v3.py raizan shimaseaside
+python scripts/build_course_v3.py raizan shimaseaside --access
+... (13 コース × course + access = 26 回)
+```
+→ 各生成で残存チェック確認 → preview 検証 → sitemap 再生成 → エリアハブ/sitemap-guide 追加 → コミット
+
+### 旧設計メモ (参考・実装済)
 
 **目標**: `templates/course-template.html` を完全プレースホルダ式にして、Tier 1 Batch 2 の 13 コースを残存ゼロで自動生成する。
 

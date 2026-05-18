@@ -1,9 +1,9 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 完了 + 6 エージェント・ミスチェック反映)
-**最終 commit**: `b2f7434` (ミスチェック Critical/High 8 件修正)、`5c26369` (トップ/ハブ 50 化)、`c137410` (26 ページ)
-**前回 commit**: `791da3c` (エリアハブ title)、`b5dd12d` (エリアハブ)、`d52230e` (build v3)
-**次回作業**: 観測 Day 14 `/observation-checkin 14` (5/20) / ミスチェック残 Medium 項目 (下記)
+**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 + 6 エージェント・ミスチェック + 残 Medium #1/#2/#4 修正)
+**最終 commit**: `4db9f2a` (NEXT_SESSION)、`b2f7434` (ミスチェック 8 件) — 32 commits を origin/main へ push 済 (GitHub Pages 反映)
+**未コミット**: ミスチェック残 Medium #1/#2/#4 の修正 (本セッション・下記「✅ … 修正完了」参照)
+**次回作業**: 観測 Day 14 `/observation-checkin 14` (5/20) ※ミスチェック残 Medium #1/#2/#4 は修正済
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。
@@ -55,13 +55,24 @@ GolfCourse JSON-LD の url・image 欠落 / エリアハブ hero のコース数
 sitemap-ko.xml の `-` 入り slug 取りこぼし — すべて解消。
 deep link 取り違え・テンプレ固有文字列の残存はゼロと確認 (Phase B Step 1 の事故は再発せず)。
 
-### 🔲 残作業 (Medium・任意・次セッション)
-- chisan-onga の KO 名「오우카」→ 遠賀の正しい音写「온가」(course_data name_ko・要再生成)
-- nishinihon「世界三大プロゴルファー」→ 公式表現「世界ビッグスリー」に統一 (要 fact-checker)
-- テンプレ KO 本文の地名「糸島市」等が漢字のまま (romanize 検討・全コース共通の課題)
-- sitemap-guide.html に新 13 コースの access リンク未掲載 (course リンクは掲載済)
-- access ページ 13 件の meta description がテンプレ定型文 → 観測終了 6/3 以降に固有化推奨
-- raizan 公式サイト URL が http:// (SSL 未対応・先方都合)
+### ✅ ミスチェック残 Medium #1/#2/#4 修正完了 (2026-05-17)
+- **#1 chisan-onga KO 名**: 「오우카」(誤・桜花読み) → 遠賀の正音写「온가」。course_data +
+  公開 HTML (course / access / area-kitakyushu / sitemap-guide) + ソース計 17 箇所修正
+  (`scripts/fix_chisan_onga_ko.py`)。残存「오우카」ゼロを grep 確認。
+- **#2 nishinihon 表記統一**: JA「世界三大プロゴルファー」→「世界ビッグスリー」(HTML 4 + course_data 2)。
+  fact-checker 一次 (鈴木) + 独立検証 (中村) で Gary Player 設計を 5 ソース確定 — 事実誤りでは
+  ないが EN "Big Three" と不統一のため統一 (`scripts/fix_nishinihon_bigthree.py`)。
+  KO「세계 3대 프로골퍼」は正しい韓国語訳のため維持。
+- **#4 sitemap-guide.html 完全化**: access セクション 29→50 (欠落 21 コース ×3 言語 = 63 リンク追加)、
+  セクションヘッダー 6 箇所・KO meta・エリアガイド数値 12 箇所を 50 コース実数へ整合
+  (`scripts/complete_sitemap_guide.py`)。preview で 3 言語 access/course 各 50 件・横スクロールなし確認。
+
+### 🔲 残作業 (Medium・観測終了 6/3 以降推奨)
+- テンプレ KO 本文の地名「糸島市」等が漢字のまま (romanize 検討・全コース共通・既存観測ページ含むため観測後)
+- access ページ 13 件の meta description がテンプレ定型文 → 6/3 以降に固有化推奨
+- sitemap-guide.html の fees.html リンク sublabel が「29コース」×3 言語 (#4 で新たに発見・
+  fees.html 自体の掲載数に依存するため要 fees.html 確認後に更新)
+- raizan 公式サイト URL が http:// (SSL 未対応・先方都合・対応不可)
 - access-classic.html テンプレは未使用 (access は 1 テンプレに統合済)
 
 ### 注意

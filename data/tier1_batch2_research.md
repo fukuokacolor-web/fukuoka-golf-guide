@@ -170,7 +170,7 @@
 ### 3 言語名称
 - name_ja: チサンカントリークラブ遠賀
 - name_en: Chisan Country Club Onga
-- name_ko: 치산 컨트리 클럽 오우카
+- name_ko: 치산 컨트리 클럽 온가
 
 ### KO/EN 対応
 - ✓ PGM ポータル経由 (機械翻訳) → **Tier 3**

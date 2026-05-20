@@ -1,13 +1,45 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 + 6 エージェント・ミスチェック + 残 Medium #1/#2/#4 修正)
-**最終 commit**: `4db9f2a` (NEXT_SESSION)、`b2f7434` (ミスチェック 8 件) — 32 commits を origin/main へ push 済 (GitHub Pages 反映)
-**未コミット**: ミスチェック残 Medium #1/#2/#4 の修正 (本セッション・下記「✅ … 修正完了」参照)
-**次回作業**: 観測 Day 14 `/observation-checkin 14` (5/20) ※ミスチェック残 Medium #1/#2/#4 は修正済
+**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 + ミスチェック + Medium #1/#2/#4 + 編集部現地レポート report-kurume 創設)
+**最終 commit**: `9b77375` (Medium #1/#2/#4)、`4db9f2a` (NEXT_SESSION) — origin/main へ push 済 (GitHub Pages 反映)
+**未コミット**: 編集部現地レポート `report-kurume.html` (オーナー現地ラウンド一次体験) + 写真 3 枚 + sitemap 更新
+**次回作業**: 観測 Day 14 `/observation-checkin 14` (5/20) ※ 観測終了 6/3 後に course-kurume.html へ「編集後記」リンク統合予定
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。
 > 現在 公開 course ページ 50 = index 総数 = エリアカード合計 = エリアハブ合計 で完全一致。
+
+---
+
+## ✅ 編集部現地レポート 創設 — report-kurume.html (2026-05-17)
+
+オーナー自身が **2026-05-17 に久留米CC を実際にラウンド** した一次体験を、観測フェーズ §6 を
+守りながら公開するため、**新規ページとして創設** (既存 `course-kurume.html` は UNCHANGED で
+観測データの完全性維持)。観測終了 6/3 後に course-kurume.html へ「編集後記」リンクを追加して
+統合予定。CLAUDE.md §8 推奨「実名取材・実体験」E-E-A-T の柱に直結する高価値コンテンツ。
+
+### 構成
+- **新ページ**: `report-kurume.html` (JA-only エディトリアル / 24.8 KB)
+  - 8 セクション: 率直な感想 / 打ち下ろし・打ち上げ / ショート / コース幅+verdict / 基本情報 /
+    予約 CTA / 関連ページ (hero + stats-band 含む)
+  - 3 枚の現地写真 + キャプション (打ち下ろしフェアウェイ / 絶景ショート / フェアウェイ中盤)
+  - JSON-LD Article schema (`mentions`: GolfCourse → course-kurume.html で実体グラフ接続)
+  - GA4 v2.1 計測タグ (cta_position: ftv / explore_nav 分類)
+  - 個人差 disclaimer 注記
+- **新スクリプト**: `scripts/convert_kurume_photos.py` (pillow-heif で HEIC → webp 変換)
+- **新画像 3 枚** (両ディレクトリ): kurume-downhill.webp (453KB) / kurume-shorthole.webp (541KB) /
+  kurume-fairway.webp (437KB) — 各 1600×1200
+- **sitemap.xml**: +1 URL (132 → 133・priority 0.7・changefreq weekly)
+- **sitemap-guide.html**: JA セクションに「📝 編集部現地レポート」新設・report-kurume リンク掲載
+  (EN/KO セクションは JA-only ページのため対象外)
+
+### 観測との両立
+- `course-kurume.html` は **手付かず** → kurume の observation データに混入ノイズなし
+- 新規ページ追加は §6 許容例外
+- 観測終了 6/3 以降の統合 TODO は下記「残作業」§ に記載
+
+### preview 検証
+全 8 セクション正常レンダリング・画像 3 枚 complete:true・横スクロールなし・console エラーゼロ。
 
 ---
 
@@ -68,6 +100,9 @@ deep link 取り違え・テンプレ固有文字列の残存はゼロと確認 
   (`scripts/complete_sitemap_guide.py`)。preview で 3 言語 access/course 各 50 件・横スクロールなし確認。
 
 ### 🔲 残作業 (Medium・観測終了 6/3 以降推奨)
+- **編集部現地レポート統合** (report-kurume.html → course-kurume.html): 観測終了 6/3 以降、
+  course-kurume.html 本文末尾に「編集後記」セクション or 別記事への目立つリンクを追加。
+  可能なら同様の現地レポートをシリーズ化 (report-{slug}.html の category として横展開)。
 - テンプレ KO 本文の地名「糸島市」等が漢字のまま (romanize 検討・全コース共通・既存観測ページ含むため観測後)
 - access ページ 13 件の meta description がテンプレ定型文 → 6/3 以降に固有化推奨
 - sitemap-guide.html の fees.html リンク sublabel が「29コース」×3 言語 (#4 で新たに発見・

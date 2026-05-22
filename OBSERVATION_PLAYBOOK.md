@@ -227,43 +227,64 @@
 コメント:
 ```
 
-### Day 14 (2026-05-19)
+### Day 14 (2026-05-19 → 実施 2026-05-22)
 
 ```
-記入日:
-記入者:
+記入日: 2026-05-22
+記入者: Claude (/observation-checkin 14 skill 自動実行)
+観測期間: 2026-05-09 〜 2026-05-22 (14日間)
+raw データ: page_view=103 / click_affiliate=16 / internal_nav_click=2 / users=35
 
 [レポート 1] Decoy
-  - N: __ / featured 比率: __% / 判定: GO/HOLD/NO/延長
+  - N (price_featured + price_default): 4 (featured=1 / default=3)
+  - featured 比率: 25% (1/4)
+  - 判定: ⏳ 延長 (N=4 < 30・Day 42 まで継続)
 
 [レポート 2] Phase 1A 逆流ナビ
-  - internal_nav_click / 全 course-* PV: __% / 判定: GO/HOLD/NO
-  - KO/JA 比: __% / 判定: 改善優先 / 許容
+  - internal_nav_click: 2 件 (1ユーザー / course-keya.html から hub-beginner + hub-traveler)
+  - 全 course-* PV: 28 (moonlake=7, central=3, hisayama=2, keya=2, koga=2, 他×1×12)
+  - internal_nav_click / course-* PV: 2/28 = 7.1% / 判定: ✅ GO (≥5%)
+  - ⚠️ 注意: N=2 の 1 ユーザー由来・統計的信頼性低い
+  - KO/JA 比: 0/2 = 0% / 判定: ⚠️ KO 改善優先 (< 30%)
 
 [レポート 3] Phase 1B CTA
-  - (hero+sticky+ftv) 比率: __% / 判定: GO/HOLD/要見直し
-  - other 比率: __%
-  - jalan / rakuten_gora 比:
+  - hero=2 / sticky=3 / ftv=2 → (hero+sticky+ftv) = 7
+  - (hero+sticky+ftv) 比率: 7/16 = 43.75% / 判定: ❌ 要見直し (< 50%)
+  - other 比率: 3/16 = 18.75% ⚠️ (> 15%・golf-wear Amazon + 未分類リンクが混入)
+  - booking_grid: 2/16 = 12.5% / price_default: 3 / price_featured: 1
+  - jalan / rakuten_gora 比: 12:3 = 80%:20% (jalan 優勢 ✓)
 
 [レポート 4] 言語別ファネル
-  - JA_CTR: __% / EN_CTR: __% / KO_CTR: __%
-  - KO_CTR / JA_CTR: __%
-  - EN_CTR / JA_CTR: __%
-  - KO セッション数 (月換算): __
-  - 判定: インバウンド改善優先 / 継続観測 / 優先度低
+  - click_affiliate 言語内訳: ja=16 (100%) / en=0 / ko=0
+  - JA_CTR: 16/103 ≈ 15.5% (全 PV 分母・参考値)
+  - EN_CTR: 0% / KO_CTR: 0%
+  - KO_CTR / JA_CTR: 0% → ⚠️ インバウンド改善優先
+  - EN_CTR / JA_CTR: 0% → ⚠️ EN 改善要
+  - KO セッション数 (月換算): <5 (click_affiliate KO=0 より推定)
+  - 判定: ⚠️ インバウンド改善優先 → Phase 4-B Option B (wakamiya 単独 LP) 優先
 
 [レポート 5] LP 効果
-  - book-fukuoka-cheap PV (月換算): __ / 判定: GO/HOLD/NO
-  - book-fukuoka-tomorrow PV (月換算): __ / 判定: GO/HOLD/NO
-  - book-fukuoka-solo PV (月換算): __ / 判定: GO/HOLD/NO
-  - 各 LP CTR: __% / 判定: 健全 / 改善余地
+  - book-fukuoka-cheap PV (14日実績→月換算): 2 → 約 4/月 / 判定: ❌ NO (< 100/月)
+  - book-fukuoka-tomorrow PV: 0 / 判定: ❌ NO (リスト未掲載=ゼロ)
+  - book-fukuoka-solo PV: 0 / 判定: ❌ NO (リスト未掲載=ゼロ)
+  - 各 LP CTR: 0% (LP からのクリック実績なし) / 判定: ❌ 改善余地
+  - → SEO カニバリ or 未インデックス疑い (田中タスク C 前倒し強く推奨)
+
+[異常値・要注意]
+  - LP 3本全滅: book-cheap 4/月・tomorrow 0・solo 0 → GSC で順位・インデックス確認必須
+  - KO/EN ゼロ変換: 全 16 click_affiliates が ja のみ (インバウンドほぼ機能せず)
+  - CTA other 超過: 18.75% > 15% → golf-wear.html (Amazon・cta_position=other) が混入
+  - report-kurume URL 二重: /report-kurume (2PV) と /report-kurume.html (1PV) が別記録
+    → canonical タグ確認 or リダイレクト設定を観測終了後に対処
 
 [GSC エクスポート]
-  - 完了日:
-  - 田中タスク C へ連携済 (YES/NO):
+  - 完了日: (要ユーザー実行・GSC ログイン必要)
+  - 田中タスク C へ連携済: NO (要実施・LP 3本全滅のため前倒し推奨)
 
-会議再招集の要否:
-コメント:
+会議再招集の要否: YES (LP 全滅 + KO/EN ゼロ = 複数指標で NO → 戦略再確認推奨)
+コメント: N が小さく統計的確度は低いが、LP 3本(Phase 2)の流入ゼロは SEO 問題の強いシグナル。
+  GSC でのカニバリ・インデックス確認を Day 28 前に実施すべき。
+  観測終了後の Phase 4 候補は現時点の傾向として C (GSC カニバリ修正) が最有力。
 ```
 
 ### Day 28 (2026-06-03)

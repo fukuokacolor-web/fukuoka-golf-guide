@@ -1,13 +1,37 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 + ミスチェック + Medium #1/#2/#4 + report-kurume 創設 + EN/KO 拡張)
-**最終 commit**: `e2f02a3` (report-kurume 創設)、`9b77375` (Medium #1/#2/#4) — origin/main へ push 済 (GitHub Pages 反映)
-**未コミット**: report-kurume.html EN/KO サマリーセクション追加 + lang-specific meta + sitemap-guide EN/KO セクション追加
-**次回作業**: 観測 Day 14 `/observation-checkin 14` (5/19-5/20) ※ 観測終了 6/3 後に course-kurume.html へ「編集後記」リンク統合予定
+**最終更新**: 2026-05-22 (★ Day 14 観測チェックイン実施 + OBSERVATION_PLAYBOOK §6 Day 14 記入済)
+**最終 commit**: `95347aa` (report-kurume EN/KO 拡張) — origin/main へ push 済
+**未コミット**: OBSERVATION_PLAYBOOK.md Day 14 記入 / NEXT_SESSION.md 更新
+**次回作業**: ① GSC エクスポート (LP 3 本カニバリ確認・ユーザー操作要) ② 観測 Day 28 `/observation-checkin 28` (6/3) ③ 観測終了後 course-kurume.html へ「編集後記」リンク統合
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。
 > 現在 公開 course ページ 50 = index 総数 = エリアカード合計 = エリアハブ合計 で完全一致。
+
+---
+
+## ✅ 観測チェックイン Day 14 (2026-05-22 実施)
+
+観測期間 5/9〜5/22 (14日間) の GA4 5 レポートを Chrome MCP で自動取得し機械判定。
+OBSERVATION_PLAYBOOK §6 Day 14 記入欄を更新・両ディレクトリ同期済。
+
+| レポート | 主要指標 | 実測値 | 判定 |
+|---|---|---|---|
+| 1. Decoy | featured 比率 (N=4) | 25% (1/4) | ⏳ 延長 (N<30) |
+| 2. 逆流ナビ | nav_click/course-* PV | 7.1% (2/28) | ✅ GO (N=2・要注意) |
+| 3. CTA 経路 | hero+sticky+ftv | 43.75% (7/16) | ❌ 要見直し (<50%) |
+| 4. 言語別 | KO/JA CTR | 0% (KO=0) | ⚠️ インバウンド改善優先 |
+| 5. LP 効果 | book-cheap PV/月換算 | 約 4 | ❌ NO (<100) |
+
+**主要異常値**:
+- ❗ LP 3本全滅: book-cheap ≈4/月・tomorrow=0・solo=0 (SEO カニバリ or 未インデックス)
+- ❗ KO/EN ゼロ変換: click_affiliate 16件すべて ja (インバウンドほぼ機能せず)
+- ⚠️ CTA other 18.75% > 閾値 15% (golf-wear Amazon + 未分類)
+- ⚠️ report-kurume URL 二重: /report-kurume (2PV) と /report-kurume.html (1PV) が別記録
+
+**Phase 4 暫定傾向** (Day 28 確定): C (GSC カニバリ修正) が最有力
+**要ユーザー操作**: GSC エクスポート (LP 3本 + 競合候補ページの Page×Query CSV)
 
 ---
 

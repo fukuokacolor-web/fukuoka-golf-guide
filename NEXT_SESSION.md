@@ -1,13 +1,39 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 + ミスチェック + Medium #1/#2/#4 + 編集部現地レポート report-kurume 創設)
-**最終 commit**: `9b77375` (Medium #1/#2/#4)、`4db9f2a` (NEXT_SESSION) — origin/main へ push 済 (GitHub Pages 反映)
-**未コミット**: 編集部現地レポート `report-kurume.html` (オーナー現地ラウンド一次体験) + 写真 3 枚 + sitemap 更新
-**次回作業**: 観測 Day 14 `/observation-checkin 14` (5/20) ※ 観測終了 6/3 後に course-kurume.html へ「編集後記」リンク統合予定
+**最終更新**: 2026-05-17 (★ Tier 1 Batch 2 + ミスチェック + Medium #1/#2/#4 + report-kurume 創設 + EN/KO 拡張)
+**最終 commit**: `e2f02a3` (report-kurume 創設)、`9b77375` (Medium #1/#2/#4) — origin/main へ push 済 (GitHub Pages 反映)
+**未コミット**: report-kurume.html EN/KO サマリーセクション追加 + lang-specific meta + sitemap-guide EN/KO セクション追加
+**次回作業**: 観測 Day 14 `/observation-checkin 14` (5/19-5/20) ※ 観測終了 6/3 後に course-kurume.html へ「編集後記」リンク統合予定
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。
 > 現在 公開 course ページ 50 = index 総数 = エリアカード合計 = エリアハブ合計 で完全一致。
+
+---
+
+## ✅ report-kurume.html を EN/KO 拡張 (2026-05-17・report 創設の同日延長)
+
+オーナー一次体験コンテンツを最大の市場 (インバウンド) に届けるため、report-kurume.html に
+**EN・KO サマリーセクション**を本文末尾に追加。inbound-strategist (金星誠) で各言語の
+editorial サマリーを生成し、ファクトチェックを通過してから組み込み。
+
+### 構成
+- **新セクション**: `International Summary · 해외 독자분께` (section-warm 背景・Verdict と Course Facts の間)
+  - 🇬🇧 EN summary (~300 words・editorial "we" 視点・3 観察 + 総評)
+  - 🇰🇷 KO summary (~300 字・습니다체・Naver 핵심어 「후쿠오카 골프 / 구루메 CC / 다운힐 / 전략 코스 / 좁은 페어웨이」自然配置)
+  - anchor: `#international` / `#en-summary` / `#ko-summary` (直接ジャンプ可能)
+- **lang-specific meta description** 追加: `<meta name="description" lang="en">` + `<meta name="description" lang="ko">`
+- **sitemap-guide.html**: EN セクションに「📝 Editor's Field Reports」+ KO セクションに「📝 편집부 현지 리포트」新設 (anchor 付きで各 lang summary へ直接ジャンプ)
+
+### 事実訂正 (inbound-strategist の初稿から修正)
+- ❌「Hiroshima IC」「Hiroshima-Nishi Expressway」(広川 Hirokawa を Hiroshima 広島と誤訳)
+  → ✅「Hirokawa IC on the Kyushu Expressway」(地理的事実訂正)
+- ❌「1968 年開場」(未確認データ)
+  → ✅ 開場年は記載せず (CLAUDE.md §7 ハルシネーション禁止に従い)
+
+### preview 検証
+9 セクション (8→+1)・EN/KO 見出し正常レンダリング・lang-specific meta 3 言語確認・
+Hiroshima 残存ゼロ / Hirokawa 採用 / 1968 削除確認・横スクロールなし・docHeight 7264px。
 
 ---
 

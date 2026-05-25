@@ -31,7 +31,10 @@ OBSERVATION_PLAYBOOK §6 Day 14 記入欄を更新・両ディレクトリ同期
 - ⚠️ report-kurume URL 二重: /report-kurume (2PV) と /report-kurume.html (1PV) が別記録
 
 **Phase 4 暫定傾向** (Day 28 確定): C (GSC カニバリ修正) が最有力
-**要ユーザー操作**: GSC エクスポート (LP 3本 + 競合候補ページの Page×Query CSV)
+**要ユーザー操作**: GSC Page×Query CSV エクスポート (競合候補ページ含む)
+**完了**: LP 3本 GSC インデックス登録リクエスト済 (2026-05-22)
+  - book-fukuoka-cheap.html / book-fukuoka-tomorrow.html / book-fukuoka-solo.html
+  - 数日〜1週間以内にインデックス登録見込み → 5/28〜5/30 頃に GSC で順位確認推奨
 
 ---
 

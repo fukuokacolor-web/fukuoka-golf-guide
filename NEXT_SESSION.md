@@ -1,13 +1,33 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-28 (★ 現地レポート 3 本追加: lakeside / mission / kokura)
-**最終 commit**: `95347aa` (report-kurume EN/KO 拡張) — origin/main へ push 済
-**未コミット**: report-lakeside/mission/kokura.html + sitemap.xml + sitemap-guide.html + NEXT_SESSION.md
-**次回作業**: ① commit+push 実行 ② GSC エクスポート (LP 3 本カニバリ確認・ユーザー操作要) ③ 観測 Day 28 `/observation-checkin 28` (6/3) ④ 観測終了後 course-kurume.html へ「編集後記」リンク統合
+**最終更新**: 2026-05-29 (★ book-wakamiya-ko.html 作成 + KO_MARKET_RESEARCH §1 Day 14 更新)
+**最終 commit**: `5093429` (report 3本追加) — origin/main へ push 済
+**未コミット**: book-wakamiya-ko.html + KO_MARKET_RESEARCH.md Day 14更新 + sitemap.xml + sitemap-guide.html + NEXT_SESSION.md
+**次回作業**: ① commit+push 実行 ② GSC インデックス登録 (report 3本 + book-wakamiya-ko) ③ 観測 Day 28 `/observation-checkin 28` (6/3) ④ Day 28 GO 後 book-wakamiya-ko.html を KO ネイティブ校正へ
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。
 > 現在 公開 course ページ 50 = index 総数 = エリアカード合計 = エリアハブ合計 で完全一致。
+
+---
+
+## ✅ book-wakamiya-ko.html 作成 (2026-05-29・Phase 4-B 事前準備)
+
+Day 28 GO 後に即デプロイできる韓国語 LP を観測フェーズ中に先行作成。
+
+| 要素 | 内容 |
+|---|---|
+| ファイル | `book-wakamiya-ko.html` (38KB) |
+| 言語 | 한국어 전용 (lang="ko") |
+| ターゲット KW | 후쿠오카 골프 / 와카미야 골프 / 후쿠오카 골프장 한국어 |
+| 8 セクション | 公式 KO ページ差別化 / コース情報 / 予約手順 / 温泉 1泊 / チェックリスト / FAQ 7問 / 信頼性 / 最終 CTA |
+| アフィリリンク | じゃらん (gc02341) + 楽天 GORA (c_id/400051) + 公式 KO ページ直リンク |
+| GA4 v2.1 | cta_position (hero/sticky/booking_grid/other) + internal_nav_click |
+| JSON-LD | Article + BreadcrumbList + FAQPage (7問) |
+| hreflang | ko (self) + ja (course-wakamiya.html) + x-default (course-wakamiya.html) |
+| sitemap.xml | priority 0.8 追加 |
+
+**Day 28 GO 後の次ステップ**: KO ネイティブ校正 (Lancers ¥1.5 万) → GSC インデックス登録 → Naver Webmaster Tools 申請
 
 ---
 

@@ -1,13 +1,33 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-22 (★ Day 14 観測チェックイン実施 + OBSERVATION_PLAYBOOK §6 Day 14 記入済)
+**最終更新**: 2026-05-28 (★ 現地レポート 3 本追加: lakeside / mission / kokura)
 **最終 commit**: `95347aa` (report-kurume EN/KO 拡張) — origin/main へ push 済
-**未コミット**: OBSERVATION_PLAYBOOK.md Day 14 記入 / NEXT_SESSION.md 更新
-**次回作業**: ① GSC エクスポート (LP 3 本カニバリ確認・ユーザー操作要) ② 観測 Day 28 `/observation-checkin 28` (6/3) ③ 観測終了後 course-kurume.html へ「編集後記」リンク統合
+**未コミット**: report-lakeside/mission/kokura.html + sitemap.xml + sitemap-guide.html + NEXT_SESSION.md
+**次回作業**: ① commit+push 実行 ② GSC エクスポート (LP 3 本カニバリ確認・ユーザー操作要) ③ 観測 Day 28 `/observation-checkin 28` (6/3) ④ 観測終了後 course-kurume.html へ「編集後記」リンク統合
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。
 > 現在 公開 course ページ 50 = index 総数 = エリアカード合計 = エリアハブ合計 で完全一致。
+
+---
+
+## ✅ 現地レポート 3 本追加 (2026-05-28)
+
+オーナー実体験 3 コースの編集部現地レポートを新規作成・両ディレクトリ展開済。
+
+| ファイル | コース | 体験ポイント |
+|---|---|---|
+| `report-lakeside.html` | 福岡レイクサイドCC (飯塚市) | 入り口から整備・スコアが出やすいレイアウト |
+| `report-mission.html` | ミッションバレーGC (小竹町) | 起伏大・大きなコブ多・野球選手も来訪・本格難コース |
+| `report-kokura.html` | 小倉カンツリー倶楽部 (北九州市) | 上田治設計・コース整備良好・キャディのアプローチ案内が秀逸 |
+
+- sitemap.xml: 3 URL 追加 (priority 0.7)
+- sitemap-guide.html: JA / EN / KO 全セクションにリンク追加
+- 観測フェーズ規約準拠 (新規ページ追加・既存 HTML 不変)
+- GA4 v2.1 計測コード + JSON-LD Article schema 組み込み済
+- アフィリリンク: lakeside (jalan+rakuten) / mission (jalan のみ) / kokura (jalan+rakuten)
+
+**未コミット** → 次回コミット予定: `feat(content): 現地レポート3本追加 (lakeside/mission/kokura)`
 
 ---
 

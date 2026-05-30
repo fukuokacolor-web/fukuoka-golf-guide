@@ -1,9 +1,13 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-29 (★ Phase 4 Day 28 キックオフ準備完了)
-**最終 commit**: `d66879f` (wakamiya KO LP + KO market research) — origin/main へ push 済
-**未コミット**: PHASE4_DAY28_KICKOFF.md + scripts/phase4_lp_title_fix.py + NEXT_SESSION.md
-**次回作業**: ① commit+push 実行 ② GSC インデックス登録 (report 3本 + book-wakamiya-ko) ③ 観測 Day 28 `/observation-checkin 28` (6/3) ④ Day 28 GO 後は PHASE4_DAY28_KICKOFF.md に従い即着手
+**最終更新**: 2026-05-30 (✅ GSC インデックス登録 4件 + report-index.html 新規作成)
+**最終 commit**: `0ee2f64` (PHASE4_DAY28_KICKOFF.md + LP title fix スクリプト) — origin/main へ push 済
+**未コミット**: report-index.html + NEXT_SESSION.md (今セッション作業分・要 commit)
+**次回作業**: ① commit+push (report-index + NEXT_SESSION.md) ② 観測 Day 28 `/observation-checkin 28` (6/3) ③ Day 28 GO 後は PHASE4_DAY28_KICKOFF.md に従い即着手
+
+### ✅ 2026-05-30 完了
+- GSC インデックス登録リクエスト: report-lakeside / report-mission / report-kokura / book-wakamiya-ko — 4件すべて「URL を優先クロール キューに追加しました」確認済
+- report-index.html 新規作成 (レポートシリーズハブ・4本リンク集)
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。

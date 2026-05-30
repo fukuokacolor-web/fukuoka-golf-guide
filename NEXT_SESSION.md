@@ -1,7 +1,7 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-30 (✅ GSC 4件登録 + report-index + book-fukuoka-beginner + book-fukuoka-traveler LP 3本)
-**最終 commit**: TBD (book-fukuoka-traveler.html + sitemap 更新) — 本セッション末に push
+**最終更新**: 2026-05-30 (✅ GSC 4件登録 + report-index + beginner/traveler/business LP 3本 新規作成)
+**最終 commit**: `44dade4` (book-fukuoka-business.html + sitemap 更新) — origin/main へ push 済
 **未コミット**: NEXT_SESSION.md のみ (要 commit)
 **次回作業**: ① 観測 Day 28 `/observation-checkin 28` (6/3) ② Day 28 GO 後は PHASE4_DAY28_KICKOFF.md に従い即着手
 
@@ -10,6 +10,7 @@
 - `report-index.html` 新規作成 (4本レポートのハブページ・CollectionPage + ItemList schema)
   - commit: `7206778`
 - `book-fukuoka-beginner.html` 新規作成 (初心者向け予約 LP)
+  - ターゲット KW: 「福岡 ゴルフ 初心者」「福岡 ゴルフ デビュー」
   - 対象コース: フェザントCC(¥6,490~) / 浮羽CC(¥4,060~) / 茜CC(¥3,500~) / 油山GC(¥3,000~)
   - FAQ 4問 + 4ステップ予約ガイド + sticky CTA + GA4 v2.1 tracking
   - commit: `946bf0e`
@@ -17,11 +18,34 @@
   - ターゲット KW: 「福岡 観光 ゴルフ」「糸島 ゴルフ」「太宰府 ゴルフ」「絶景 ゴルフ 福岡」
   - 対象コース 5選: 芥屋GC(¥10,400~) / 太宰府CC(¥5,500~) / 久留米CC(¥4,000~) / PGM福岡国際(¥8,200~) / クイーンズヒルGC(¥5,000~)
   - 3モデル旅程 (糸島1日/太宰府半日/久留米1泊2日) + FAQ 4問 + sticky CTA + GA4 v2.1 tracking
-  - commit: TBD (本セッション)
-- sitemap.xml: report-index + book-fukuoka-beginner + book-fukuoka-traveler を追加 (priority 0.7/0.8/0.8)
+  - commit: `609b523`
+- `book-fukuoka-business.html` 新規作成 (接待ゴルフ向け予約 LP)
+  - ターゲット KW: 「福岡 接待 ゴルフ」「福岡 名門 ゴルフ場」「福岡 ゴルフ コンペ」
+  - 対象コース 5選: 小倉CC(¥13,769~) / クラシックGC(¥13,390~) / 芥屋GC(¥10,400~) / 西日本CC(¥7,810~) / 久山CC(¥6,000~)
+  - 幹事チェックリスト + 予算目安テーブル + FAQ 4問 + sticky CTA + GA4 v2.1 tracking
+  - commit: `44dade4`
+- sitemap.xml: 上記全 LP を追加 (priority 0.7/0.8/0.8/0.8)
 - sitemap-guide.html: 3 言語セクション全てにリンク追加済
 - sitemap-guide.html: fees.html の「29コース」→「28コース」表記修正
-- **GSC インデックス登録 (要手動)**: report-index / book-fukuoka-beginner / book-fukuoka-traveler → Day 28 前後に登録推奨
+
+### LP カバレッジ現況 (8本)
+| ファイル | ターゲット KW | 対象ユーザー |
+|---|---|---|
+| `book-fukuoka-cheap.html` | 格安・平日¥6,000以下 | コスパ重視 |
+| `book-fukuoka-tomorrow.html` | 当日・明日予約 | 直前予約 |
+| `book-fukuoka-solo.html` | 1人予約 | ソロゴルファー |
+| `book-fukuoka-golf-foreigner.html` | 外国人向け予約 | インバウンド |
+| `book-fukuoka-beginner.html` | 初心者・デビュー | 初級者 |
+| `book-fukuoka-traveler.html` | 観光ゴルフ・糸島・太宰府 | 旅行者 |
+| `book-fukuoka-business.html` | 接待・名門・コンペ | ビジネス |
+| `book-wakamiya-ko.html` | 후쿠오카 골프 (Korean) | 韓国語ユーザー |
+
+### GSC インデックス登録 (要手動)
+以下のページは未登録 → Day 28 (6/3) 前後に GSC URL 検査から手動登録推奨:
+- `report-index.html`
+- `book-fukuoka-beginner.html`
+- `book-fukuoka-traveler.html`
+- `book-fukuoka-business.html`
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。

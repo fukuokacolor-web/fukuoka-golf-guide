@@ -1,9 +1,9 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-30 (✅ GSC 4件登録 + report-index + book-fukuoka-beginner LP + sitemap-guide 修正)
-**最終 commit**: `946bf0e` (book-fukuoka-beginner.html + sitemap 更新) — origin/main へ push 済
+**最終更新**: 2026-05-30 (✅ GSC 4件登録 + report-index + book-fukuoka-beginner + book-fukuoka-traveler LP 3本)
+**最終 commit**: TBD (book-fukuoka-traveler.html + sitemap 更新) — 本セッション末に push
 **未コミット**: NEXT_SESSION.md のみ (要 commit)
-**次回作業**: ① commit+push (NEXT_SESSION.md) ② 観測 Day 28 `/observation-checkin 28` (6/3) ③ Day 28 GO 後は PHASE4_DAY28_KICKOFF.md に従い即着手
+**次回作業**: ① 観測 Day 28 `/observation-checkin 28` (6/3) ② Day 28 GO 後は PHASE4_DAY28_KICKOFF.md に従い即着手
 
 ### ✅ 2026-05-30 完了
 - GSC インデックス登録リクエスト: report-lakeside / report-mission / report-kokura / book-wakamiya-ko — 4件すべて「URL を優先クロール キューに追加しました」確認済
@@ -13,10 +13,15 @@
   - 対象コース: フェザントCC(¥6,490~) / 浮羽CC(¥4,060~) / 茜CC(¥3,500~) / 油山GC(¥3,000~)
   - FAQ 4問 + 4ステップ予約ガイド + sticky CTA + GA4 v2.1 tracking
   - commit: `946bf0e`
-- sitemap.xml: report-index + book-fukuoka-beginner を追加 (priority 0.7/0.8)
-- sitemap-guide.html: 3 言語セクションに report-index + book-fukuoka-beginner リンク追加
+- `book-fukuoka-traveler.html` 新規作成 (観光ゴルフ向け予約 LP)
+  - ターゲット KW: 「福岡 観光 ゴルフ」「糸島 ゴルフ」「太宰府 ゴルフ」「絶景 ゴルフ 福岡」
+  - 対象コース 5選: 芥屋GC(¥10,400~) / 太宰府CC(¥5,500~) / 久留米CC(¥4,000~) / PGM福岡国際(¥8,200~) / クイーンズヒルGC(¥5,000~)
+  - 3モデル旅程 (糸島1日/太宰府半日/久留米1泊2日) + FAQ 4問 + sticky CTA + GA4 v2.1 tracking
+  - commit: TBD (本セッション)
+- sitemap.xml: report-index + book-fukuoka-beginner + book-fukuoka-traveler を追加 (priority 0.7/0.8/0.8)
+- sitemap-guide.html: 3 言語セクション全てにリンク追加済
 - sitemap-guide.html: fees.html の「29コース」→「28コース」表記修正
-- **GSC インデックス登録**: book-fukuoka-beginner + report-index は未登録 → Day 28 前後に登録推奨
+- **GSC インデックス登録 (要手動)**: report-index / book-fukuoka-beginner / book-fukuoka-traveler → Day 28 前後に登録推奨
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。

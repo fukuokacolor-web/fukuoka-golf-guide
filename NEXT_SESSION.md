@@ -1,7 +1,7 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-30 (✅ GSC 4件登録 + report-index + beginner/traveler/business LP 3本 新規作成)
-**最終 commit**: `44dade4` (book-fukuoka-business.html + sitemap 更新) — origin/main へ push 済
+**最終更新**: 2026-05-30 (✅ report-index + beginner/traveler/business/onsen LP 4本 新規作成・LP 計 9本)
+**最終 commit**: `5658fc6` (book-fukuoka-onsen.html + sitemap 更新) — origin/main へ push 済
 **未コミット**: NEXT_SESSION.md のみ (要 commit)
 **次回作業**: ① 観測 Day 28 `/observation-checkin 28` (6/3) ② Day 28 GO 後は PHASE4_DAY28_KICKOFF.md に従い即着手
 
@@ -22,9 +22,13 @@
 - `book-fukuoka-business.html` 新規作成 (接待ゴルフ向け予約 LP)
   - ターゲット KW: 「福岡 接待 ゴルフ」「福岡 名門 ゴルフ場」「福岡 ゴルフ コンペ」
   - 対象コース 5選: 小倉CC(¥13,769~) / クラシックGC(¥13,390~) / 芥屋GC(¥10,400~) / 西日本CC(¥7,810~) / 久山CC(¥6,000~)
-  - 幹事チェックリスト + 予算目安テーブル + FAQ 4問 + sticky CTA + GA4 v2.1 tracking
   - commit: `44dade4`
-- sitemap.xml: 上記全 LP を追加 (priority 0.7/0.8/0.8/0.8)
+- `book-fukuoka-onsen.html` 新規作成 (1泊2日・宿泊ゴルフ向け予約 LP)
+  - ターゲット KW: 「福岡 ゴルフ 宿泊」「福岡 ゴルフ 1泊2日」「原鶴温泉 ゴルフ」
+  - 対象コース 5選: 八女上陽GC(¥7,146~・宿泊完備) / 夜須高原CC(¥10,510~・楽天4.4) / 久留米CC(¥4,000~) / WAKAMIYA(¥4,000~) / 麻生飯塚GC(¥9,000~)
+  - 3モデルプラン (八女リゾート完結/原鶴温泉セット/グループコンペ) + FAQ 4問 + sticky CTA
+  - commit: `5658fc6`
+- sitemap.xml: 上記全 LP を追加 (priority 0.7/0.8/0.8/0.8/0.8)
 - sitemap-guide.html: 3 言語セクション全てにリンク追加済
 - sitemap-guide.html: fees.html の「29コース」→「28コース」表記修正
 
@@ -38,6 +42,7 @@
 | `book-fukuoka-beginner.html` | 初心者・デビュー | 初級者 |
 | `book-fukuoka-traveler.html` | 観光ゴルフ・糸島・太宰府 | 旅行者 |
 | `book-fukuoka-business.html` | 接待・名門・コンペ | ビジネス |
+| `book-fukuoka-onsen.html` | 宿泊ゴルフ・原鶴温泉 | 1泊2日旅行者 |
 | `book-wakamiya-ko.html` | 후쿠오카 골프 (Korean) | 韓国語ユーザー |
 
 ### GSC インデックス登録 (要手動)
@@ -46,6 +51,7 @@
 - `book-fukuoka-beginner.html`
 - `book-fukuoka-traveler.html`
 - `book-fukuoka-business.html`
+- `book-fukuoka-onsen.html`
 
 > preview QA で発見・修正: ① エリアハブ 4 ページの title/meta コース数が旧値 (→ `791da3c`)、
 > ② index.html が「35コース」のまま + エリアハブに Phase B の 2 コース未掲載 (→ `5c26369`)。

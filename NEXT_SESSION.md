@@ -1,8 +1,8 @@
 # 🎯 次セッション 引き継ぎ指示書
 
 **最終更新**: 2026-06-03 (✅ 観測 Day 28 判定完了 → Decoy 延長 Day 42 + Task C 並行着手・LP/hub SEO 改修適用)
-**最終 commit**: (本セッション末に push)
-**未コミット**: OBSERVATION_PLAYBOOK + NEXT_SESSION + LP3本 + hub4本 (Task C・要 commit)
+**最終 commit**: `1c1e625` (Day 28 判定 + Task C) — origin/main へ push 済
+**未コミット**: NEXT_SESSION.md commit ref 更新のみ
 **次回作業**: ① GSC 手動登録 (新規LP4本+report-index) ② Naver登録+KO校正 (wakamiya-ko) ③ Day 42 (6/17) `/observation-checkin 42` で Decoy 最終判定
 
 ### 🎯 観測 Day 28 判定結果 (2026-06-03)

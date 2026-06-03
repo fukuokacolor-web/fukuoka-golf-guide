@@ -1,9 +1,20 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-06-03 (✅ 観測 Day 28 判定完了 → Decoy 延長 Day 42 + Task C 並行着手・LP/hub SEO 改修適用)
-**最終 commit**: `1c1e625` (Day 28 判定 + Task C) — origin/main へ push 済
-**未コミット**: NEXT_SESSION.md commit ref 更新のみ
-**次回作業**: ① GSC 手動登録 (新規LP4本+report-index) ② Naver登録+KO校正 (wakamiya-ko) ③ Day 42 (6/17) `/observation-checkin 42` で Decoy 最終判定
+**最終更新**: 2026-06-03 (✅ Day 28 判定 + Task C + GSC インデックス対応 全完了)
+**最終 commit**: `4f69e82` (commit ref 更新) — origin/main へ push 済
+**未コミット**: NEXT_SESSION.md (GSC 完了記録・要 commit)
+**次回作業**: ① Day 42 (6/17) `/observation-checkin 42` で Decoy 最終判定 ② (要ユーザー) Naver登録 + KO校正発注
+
+### ✅ 2026-06-03 GSC インデックス対応 全完了 (Chrome 自動操作)
+- **sitemap.xml 再送信**: 最終読込 4/27 → 6/3 に更新 (新規LP・コース全件を Google が再検出)
+- **URL 検査 → インデックス登録リクエスト 5件**: いずれも「優先クロールキューに追加」確認済
+  - book-fukuoka-onsen.html / book-fukuoka-business.html / book-fukuoka-traveler.html / book-fukuoka-beginner.html / report-index.html
+- ※ GSC 検索バーは JS .focus() 後に type する手順で自動化成功 (前セッションの失敗を解消)
+
+### ⛔ 私が実行できない残タスク (安全境界・要ユーザー操作)
+- **Naver Webmaster Tools 登録**: アカウント認証/所有権確認が必要 → 手順は PHASE4_DAY28_KICKOFF.md §4.2
+- **Lancers KO ネイティブ校正発注**: 決済・アカウントログインが必要 → 発注文は §4.3
+  - 代替案: Claude による KO 品質改善パス (book-wakamiya-ko.html) は実行可能・指示あれば対応
 
 ### 🎯 観測 Day 28 判定結果 (2026-06-03)
 

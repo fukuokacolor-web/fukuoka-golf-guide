@@ -1,9 +1,32 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-05-30 (✅ report-index + beginner/traveler/business/onsen LP 4本 新規作成・LP 計 9本)
-**最終 commit**: `5658fc6` (book-fukuoka-onsen.html + sitemap 更新) — origin/main へ push 済
-**未コミット**: NEXT_SESSION.md のみ (要 commit)
-**次回作業**: ① 観測 Day 28 `/observation-checkin 28` (6/3) ② Day 28 GO 後は PHASE4_DAY28_KICKOFF.md に従い即着手
+**最終更新**: 2026-06-03 (✅ 観測 Day 28 判定完了 → Decoy 延長 Day 42 + Task C 並行着手・LP/hub SEO 改修適用)
+**最終 commit**: (本セッション末に push)
+**未コミット**: OBSERVATION_PLAYBOOK + NEXT_SESSION + LP3本 + hub4本 (Task C・要 commit)
+**次回作業**: ① GSC 手動登録 (新規LP4本+report-index) ② Naver登録+KO校正 (wakamiya-ko) ③ Day 42 (6/17) `/observation-checkin 42` で Decoy 最終判定
+
+### 🎯 観測 Day 28 判定結果 (2026-06-03)
+
+GA4 実データ (5/9-6/3・click_affiliate=33 / page_view≈279 / users=132) で機械判定:
+
+| レポート | 主要指標 | 値 | 判定 |
+|---|---|---|---|
+| 1. Decoy | featured 比率 (N=12) | 41.7% | ⏳ 延長 (N<30・効果は NO 寄り) |
+| 2. 逆流ナビ | internal_nav_click | Day14値2踏襲 | 継続観測 (精測未取得) |
+| 3. CTA経路 | hero+sticky+ftv | 45.5% | ⏸ 要見直し境界 |
+| 4. 言語別 | KO転換/JP転換 | 1/31 | ⚠️ KO<20→Option B (対応済) |
+| 5. LP効果 | book-cheap PV | 5/月 | ❌ NO (全LP<100/月) |
+
+**Phase 4 着手決定**: 【Decoy 観測を Day 42 (6/17) へ延長】+【Task C 並行着手】
+- 根拠: §2.3 (N=12<30 → 自動延長) + §8 (N<30 → SEO 改善併走・タスクC前倒し)
+- Task C = LP/hub の SEO 改修 (Decoy 観測対象=course 価格カードを交絡しない)
+- ⚠️ **course ページ価格カードは Day42 (6/17) まで凍結維持** (Decoy 観測延長中)
+
+### ✅ 2026-06-03 Task C 実装 (本セッション)
+- `phase4_lp_title_fix.py` 適用: LP3本 (cheap/tomorrow/solo) の title/meta を KW 前方一致・年版付きに最適化 (replaced:6)
+- `phase4_internal_links.py` 適用: hub4本 (beginner/traveler/business/budget) → 各LP への CTA バナー挿入 (applied:8)
+- OBSERVATION_PLAYBOOK.md §6 Day 28 記入欄 記入済 (両ディレクトリ同期)
+- 残: 新規LP4本+report-index の GSC インデックス登録 (手動)
 
 ### ✅ 2026-05-30 完了
 - GSC インデックス登録リクエスト: report-lakeside / report-mission / report-kokura / book-wakamiya-ko — 4件すべて「URL を優先クロール キューに追加しました」確認済

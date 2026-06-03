@@ -290,25 +290,77 @@ raw データ: page_view=103 / click_affiliate=16 / internal_nav_click=2 / users
 ### Day 28 (2026-06-03)
 
 ```
-記入日:
-記入者:
+記入日: 2026-06-03
+記入者: Claude (/observation-checkin 28 skill 自動実行・GA4 Mode A 自動取得)
+観測期間: 2026-05-09 〜 2026-06-03 (26日間)
+raw データ: click_affiliate=33 (Day14=16 から +17) / page_view≈279 (5/6-6/2・28日標準レポート) / users=132
 
-[レポート 1-5 全項目]
-  - (Day 14 と同じテンプレで記入)
+[レポート 1] Decoy ★最重要
+  - N (price_featured + price_default): 12 (featured=5 / default=7)
+  - featured 比率: 41.7% (5/12)
+  - デバイス内訳 featured: desktop 2 / mobile 2 / tablet 1 (国: JP 3 / HK 1 / KR 1)
+  - 判定: ⏳ 延長 (N=12 < 30・Day 42 まで継続)
+  - 補足: 仮に N≥30 でも featured 41.7% < 55% = ❌ NO 水準 (default 7 > featured 5・Decoy 効果は現状observ不確実)
+
+[レポート 2] Phase 1A 逆流ナビ
+  - internal_nav_click: ⚠️ Day 28 精測未取得 (GA4 SPA でフィルタ値変更が反映されず)・Day 14 値=2 を暫定踏襲
+  - 全 course-* PV (28日): 概算 ~100-130 (course-moonlake 12 / fukuokacc 8 / koga 8 / kokura 6 / saitozaki 6 / 他多数 ≤6)
+  - 判定: 継続観測 (Day 14 で 7.1% GO だが N=2 で信頼性低・Day 42 で再測)
+
+[レポート 3] Phase 1B CTA
+  - cta_position 内訳: hero=5 / sticky=6 / ftv=4 / booking_grid=2 / price_default=7 / price_featured=5 / other=4 = 計33
+  - (hero+sticky+ftv) = 15 / 全33 = 45.5% → ❌ 要見直し (< 50%)
+  - other 除外時 (internal_fees/amazon想定): 15/29 = 51.7% → 境界 HOLD
+  - other 比率: 4/33 = 12.1% (< 15% 許容範囲)
+  - 判定: ⏸ HOLD〜要見直し境界 (絶対数 N=33 が小さく確度低)
+
+[レポート 4] 言語別ファネル (国別 proxy)
+  - click_affiliate 国内訳: Japan 31 (93.9%) / Hong Kong 1 / South Korea 1
+  - KO 転換: 1 件 (South Korea・mobile・price_featured) ← Day 14 のゼロから +1
+  - EN 転換: 0 (US 等からの click_affiliate ゼロ)
+  - KO セッション数 (月換算): < 20 (KO 転換 1 件のみより推定)
+  - 判定: ⚠️ インバウンド改善優先・KO セッション < 20 → Phase 4-B Option B (wakamiya 単独 LP)
+    ※ book-wakamiya-ko.html は 2026-05-29 に作成済み・GSC 登録 + Naver 登録 + KO 校正が残タスク
+
+[レポート 5] LP 効果
+  - book-fukuoka-cheap PV (28日): 5 (.html 3 + 拡張子なし 2) → 約 5/月 / 判定: ❌ NO (< 100/月)
+  - book-fukuoka-tomorrow PV: 1 / 判定: ❌ NO
+  - book-fukuoka-solo PV: 0 / 判定: ❌ NO
+  - 新規 LP (beginner/traveler/business/onsen): 0 (5/30 作成・未インデックス) / 判定: 測定対象外 (時期尚早)
+  - 各 LP CTR: 0% (33 件の click_affiliate は全て course/index ページ由来・LP からのアフィリクリックなし) / 判定: ❌ 改善余地
+  - → SEO カニバリ or 未インデックス継続 (Day 14 と同傾向・田中タスク C 強く推奨)
+
+[異常値・要注意]
+  - LP 流入ほぼゼロ継続: Phase 2 LP 3本 + 新規 4本 = 計 7本が合計 6 PV/月 → SEO/インデックスが最大ボトルネック
+  - インバウンド転換は KO 1 件のみ (改善はするが極小)・EN ゼロ継続
+  - Decoy: featured が default を下回る (5 vs 7)・N 不足で確定不能だが効果シグナルは弱い
+  - 全体 N が依然小 (click_affiliate 33/26日 ≈ 月38ペース)・サイト全体のトラフィック不足が根本課題
 
 [Day 28 判定マトリクス §5]
-  - Decoy: GO / HOLD / NO
-  - LP: cheap __, tomorrow __, solo __
-  - KO: __ / EN: __
-  - CTA 配置: __
+  - Decoy: 延長 (N<30)・ただし効果シグナルは NO 寄り (featured 41.7%)
+  - LP: cheap ❌NO (5/月), tomorrow ❌NO (1/月), solo ❌NO (0)
+  - KO: <20 セッション (Option B 該当) / EN: 0 (≤50% 該当)
+  - CTA 配置: 45.5% (<50% 該当・要見直し境界)
 
 [Phase 4 着手決定]
-  - 着手項目: A / B (Option A or B) / C / EN 改善 / 延長 / 戦略再検討
-  - 6/3 中の実装内容:
-  - 6/3 commit hash:
+  - 着手項目: 【延長 Day 42】+【C 並行着手】(複合)
+    理由: §2.3 で N(price)=12<30 → Decoy 観測は機械的に Day 42 (6/17) へ延長。
+          §8 リスク表「全期間 N<30 → Day 42 延長 / 観測 KW SEO 改善併走 (田中タスク C 前倒し)」に従い、
+          LP の SEO/インデックス問題 (Report 5 が 2 期連続 NO・最大ボトルネック) に対し
+          Task C (LP title/meta 最適化 + 内部リンク強化 + GSC 再登録) を並行着手する。
+          Task C は LP/hub ページ対象であり、Decoy 観測対象 (course ページ価格カード) を交絡しないため延長と両立可能。
+          KO<20 → Option B は wakamiya-ko LP 作成済みで対応済み (残: GSC/Naver 登録・校正)。
+  - 6/3 中の実装内容: (本セッションで実施)
+      ① phase4_lp_title_fix.py (LP3本 title/meta) — dry-run → 適用
+      ② phase4_internal_links.py (hub 4本 → LP CTA) — dry-run → 適用
+      ③ 新規 LP 4本 + report-index の GSC インデックス登録 (要手動)
+  - 6/3 commit hash: (実装後に追記)
 
-NEXT_SESSION.md 更新済 (YES/NO):
-コメント:
+NEXT_SESSION.md 更新済 (YES/NO): YES (本チェックイン直後に転記)
+コメント: 観測フェーズ (5/9-6/3) の結論は「CVR 機構 (Decoy/CTA) の優劣を判定するには N 不足・Decoy は Day42 延長」。
+  一方、2 期連続で LP 流入ゼロ (Report 5 NO) が最も明確かつ actionable なシグナル → SEO/インデックス改善 (Task C) を最優先で並行着手。
+  観測フェーズ終了 (6/3) により HTML 改修禁止は解除されるが、Decoy 観測延長中のため course ページ価格カードは Day42 (6/17) まで凍結維持。
+  Task C 対象 (LP/hub) は観測非交絡につき着手可。会議再招集: 不要 (Day14 の方針を data が追認・マトリクス機械判定で確定)。
 ```
 
 ---

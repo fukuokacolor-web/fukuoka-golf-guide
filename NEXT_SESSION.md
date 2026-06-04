@@ -1,9 +1,17 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-06-03 (✅ Day 28 判定 + Task C + GSC対応 + 韓国戦略B確定 + GSC検索分析)
-**最終 commit**: `4f69e82` (commit ref 更新) — origin/main へ push 済
+**最終更新**: 2026-06-03 (✅ Day28判定 + TaskC + GSC対応 + 韓国B確定 + GSC検索分析 + 午後スルーLP)
+**最終 commit**: `dee1cc5` (book-fukuoka-afternoon.html) — origin/main へ push 済 + GSCインデックス申請済
 **未コミット**: NEXT_SESSION.md (要 commit)
-**次回作業**: ① Day 42 (6/17) `/observation-checkin 42` で Decoy 最終判定 + course ページ凍結解除 ② 「午後スルー」導線強化 (今すぐ可) ③ Day42後に hisayama/dazaifu CTR改善
+**次回作業**: ① Day 42 (6/17) `/observation-checkin 42` で Decoy 最終判定 + course ページ凍結解除 ② Day42後に hisayama/dazaifu CTR改善
+
+### ✅ 2026-06-03 午後スルー専用LP 新規作成 (機会クエリ対応)
+- GSC で「福岡 ゴルフ場 午後スルー」70表示/0クリック (受け皿なし) を発見 → `book-fukuoka-afternoon.html` 作成
+- 全コースHTML解析で午後スルー価格を持つ23コース抽出 → **安い順9コース掲載** (ミッションバレー¥3,000台~/西戸崎/セントラル/久留米/ムーンレイク/小郡/WAKAMIYA/レイクサイド/有明)
+- 料金・アフィリリンクは各コース検証済データから抽出 (捏造ゼロ)・全コース除外リスト非該当
+- sitemap priority 0.8 + sitemap-guide 3言語 + GSC インデックス申請済 (優先クロールキュー追加)
+- 新規ページのため観測フェーズ非干渉 (course価格カード不変)
+- **LP 計10本に拡大** (cheap/tomorrow/solo/foreigner/beginner/traveler/business/onsen/afternoon/wakamiya-ko)
 
 ### 🧭 2026-06-03 韓国インバウンド戦略 → 【B 確定】収益化見送り・日本人集中
 専門家2名 (David Chen/金星誠) 招集 + 一次情報確認の結論:

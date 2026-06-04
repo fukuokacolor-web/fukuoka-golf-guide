@@ -1,20 +1,40 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-06-03 (✅ Day 28 判定 + Task C + GSC インデックス対応 全完了)
+**最終更新**: 2026-06-03 (✅ Day 28 判定 + Task C + GSC対応 + 韓国戦略B確定 + GSC検索分析)
 **最終 commit**: `4f69e82` (commit ref 更新) — origin/main へ push 済
-**未コミット**: NEXT_SESSION.md (GSC 完了記録・要 commit)
-**次回作業**: ① Day 42 (6/17) `/observation-checkin 42` で Decoy 最終判定 ② (要ユーザー) Naver登録 + KO校正発注
+**未コミット**: NEXT_SESSION.md (要 commit)
+**次回作業**: ① Day 42 (6/17) `/observation-checkin 42` で Decoy 最終判定 + course ページ凍結解除 ② 「午後スルー」導線強化 (今すぐ可) ③ Day42後に hisayama/dazaifu CTR改善
+
+### 🧭 2026-06-03 韓国インバウンド戦略 → 【B 確定】収益化見送り・日本人集中
+専門家2名 (David Chen/金星誠) 招集 + 一次情報確認の結論:
+- **若宮の韓国語予約**は技術的にはマイリアルトリップで可能 ([商品3848625](https://experiences.myrealtrip.com/products/3848625)・156,960원~)
+- **但し報酬は薄い**: マイリアルトリップ アフィリは 2〜7% (金星誠の「50%分配」報告は**誤り**・一次情報で訂正) → 1予約 ≈ ¥850
+- **Klook には若宮商品なし** (沖縄ゴルフのみ) → David Chen の Klook 案は外れ
+- 韓国人は楽天GORA/カカオゴルフで**当サイトを迂回して予約可能** + 韓国代理店が若宮を大量販売中 (競合多数)
+- 市場規模は全体の3% (33件中KO1件) → **ROI が日本人施策に劣る**
+- **決定**: KO 収益化見送り。**Naver登録・Lancers校正は実施しない** (保留→中止)。韓国語ページは情報/ブランド用途で現状維持。
+- リソースを日本人 (97%) のSEO/CVRに集中。
+
+### 📈 2026-06-03 GSC 検索パフォーマンス分析 (3か月: 表示2,610 / クリック20 / CTR0.8% / 平均順位20.6)
+「検索が増えている」要因 = 数週間の50コース+LP公開でインデックス面拡大 → クエリカバレッジ増。
+**伸びているページ (表示回数順)**:
+- `course-hisayama.html` 366表示/1クリック ← **表示最多・CTR壊滅的=最大の機会** (要title/meta・但しDay42まで凍結)
+- `course-dazaifu.html` 287表示/1クリック ← Day14でも+110%の伸び筋 (同上・凍結中)
+- `hub-business.html` 196表示/4クリック (CTR2%) ← 「名門ゴルフ場」需要が本物 → business LP で強化
+- コース名検索 (久山59/小倉/福岡カンツリー/古賀) が拡大中
+**機会クエリ**:
+- 「福岡 ゴルフ場 午後スルー」70表示/**0クリック** ← 専用導線かCTR対策 (LP/新規ページなら今すぐ可)
+- 「名門ゴルフ場」系 計70表示 → book-fukuoka-business.html (本日インデックス申請済) で受け皿化
 
 ### ✅ 2026-06-03 GSC インデックス対応 全完了 (Chrome 自動操作)
 - **sitemap.xml 再送信**: 最終読込 4/27 → 6/3 に更新 (新規LP・コース全件を Google が再検出)
 - **URL 検査 → インデックス登録リクエスト 5件**: いずれも「優先クロールキューに追加」確認済
-  - book-fukuoka-onsen.html / book-fukuoka-business.html / book-fukuoka-traveler.html / book-fukuoka-beginner.html / report-index.html
+  - book-fukuoka-onsen / business / traveler / beginner / report-index
 - ※ GSC 検索バーは JS .focus() 後に type する手順で自動化成功 (前セッションの失敗を解消)
 
-### ⛔ 私が実行できない残タスク (安全境界・要ユーザー操作)
-- **Naver Webmaster Tools 登録**: アカウント認証/所有権確認が必要 → 手順は PHASE4_DAY28_KICKOFF.md §4.2
-- **Lancers KO ネイティブ校正発注**: 決済・アカウントログインが必要 → 発注文は §4.3
-  - 代替案: Claude による KO 品質改善パス (book-wakamiya-ko.html) は実行可能・指示あれば対応
+### ⛔ 韓国施策 (B決定により中止)
+- ~~Naver Webmaster Tools 登録~~ → B決定で見送り
+- ~~Lancers KO ネイティブ校正発注~~ → B決定で見送り
 
 ### 🎯 観測 Day 28 判定結果 (2026-06-03)
 

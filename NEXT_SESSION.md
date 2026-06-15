@@ -1,7 +1,7 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-06-03 (✅ Day28判定 + TaskC + GSC対応 + 韓国B確定 + GSC検索分析 + 午後スルーLP)
-**最終 commit**: `dee1cc5` (book-fukuoka-afternoon.html) — origin/main へ push 済 + GSCインデックス申請済
+**最終更新**: 2026-06-03 (✅ Day28判定 + TaskC + GSC対応 + 韓国B確定 + 機会クエリLP2本(午後スルー/アクセス))
+**最終 commit**: `ecb25da` (book-fukuoka-access.html) — origin/main へ push 済 + GSCインデックス申請済
 **未コミット**: NEXT_SESSION.md (要 commit)
 **次回作業**: ① Day 42 (6/17) `/observation-checkin 42` で Decoy 最終判定 + course ページ凍結解除 ② Day42後に hisayama/dazaifu CTR改善
 
@@ -12,6 +12,17 @@
 - sitemap priority 0.8 + sitemap-guide 3言語 + GSC インデックス申請済 (優先クロールキュー追加)
 - 新規ページのため観測フェーズ非干渉 (course価格カード不変)
 - **LP 計10本に拡大** (cheap/tomorrow/solo/foreigner/beginner/traveler/business/onsen/afternoon/wakamiya-ko)
+
+### ✅ 2026-06-03 GSC機会クエリ総ざらい → アクセスLP作成 (案①)
+- 全379クエリを表示回数順分析 → 最大クラスタ「アクセス系」(久山アクセス111/久留米87/玄海86/太宰府84/芥屋61=計500表示超・ほぼ0クリック)発見
+- 「福岡 ゴルフ場 駅チカ」84表示0クリック + 「福岡 ゴルフ場 1.5r」82表示0クリックの機会も特定
+- `book-fukuoka-access.html` 作成: 予約可8コースを空港近い順 (久山25分/クイーンズヒル鉄道◎/太宰府/雷山/筑紫ヶ丘/西戸崎鉄道◎/セントラル/古賀)
+  - 各コードから access-*.html へ内部リンク → アクセスページ群の順位底上げ (一石二鳥)
+  - 駅・所要時間は全 access ページの検証済データ・除外リスト非該当
+  - sitemap 0.8 + 3言語 + GSC インデックス申請済
+- **LP 計11本** ・観測非干渉
+- ⏭️ 未着手の機会: 「福岡 ゴルフ場 1.5r」82表示 (1.5ラウンドLP・要コース提供有無確認) / レビュー系 (report-* 強化)
+- ⚠️ GSC で「検索が増加中」を視覚確認 (5/25以降 表示が急上昇・直近500-600/日) = JP集中(B)が追い風
 
 ### 🧭 2026-06-03 韓国インバウンド戦略 → 【B 確定】収益化見送り・日本人集中
 専門家2名 (David Chen/金星誠) 招集 + 一次情報確認の結論:

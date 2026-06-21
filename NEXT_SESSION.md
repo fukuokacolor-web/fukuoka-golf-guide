@@ -1,8 +1,31 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-06-04 (✅ 昨日shipの3LP QA完了 + index.html→ハブ動線追加で内部リンク完結)
-**最終 commit**: `b0e1e24` (index.html→guide-index 動線) — origin/main へ push 済
-**未コミット**: NEXT_SESSION.md (要 commit)
+**最終更新**: 2026-06-21 (✅ Day42 観測最終判定 → Decoy NO確定・観測完全終了・course凍結解除)
+**最終 commit**: `8f1eb44` (6/4 QA) — origin/main へ push 済
+**未コミット**: OBSERVATION_PLAYBOOK + NEXT_SESSION (要 commit)
+
+### 🏁 2026-06-21 観測 Day 42 最終判定 (観測フェーズ完全終了)
+GA4実データ 5/9-6/21 (click_affiliate=122・Day28の33から3.7倍 / PV=523・1.9倍 / users=365):
+
+| レポート | 指標 | 値 | 判定 |
+|---|---|---|---|
+| 1. Decoy ★ | featured比率 (N=37) | **37.8%** | ❌ **NO確定** (N≥30到達・<55%) |
+| 3. CTA経路 | hero+sticky+ftv | 37.7% | 要見直し (other 21%超過) |
+| 4. 言語別 | KR転換 | 5/122 | 優先度低 (B戦略済) |
+| 5. LP効果 | book系LP合計 | 25PV(28日) | NO継続だが流入4倍に増加 |
+
+**★最大の発見**: サイト全体が成長 (アフィリクリック3.7倍・PV1.9倍)。**SEO/コンテンツ戦略(B)が奏功**。
+今後の伸びは「CVR機構いじり」より「流入増」が主ドライバー。
+
+**Day42 結論**:
+- **Decoy = NO 確定** (N=37/featured37.8%・default 23 > featured 14)。Phase 3 Decoy は効果なしで決着。
+  ※「90%が選ぶ」は §8 禁止 (景表法) → 不採用。featured CSS強化 or 撤去が選択肢。
+- **観測フェーズ完全終了 → course ページ凍結 解除** ✅
+- **最優先 (凍結解除後)**: hisayama(GSC366表示)/dazaifu(287表示) の title/meta CTR改善 = 最大の取りこぼし
+- 副次: other 21%の内訳深掘り(golf-wear切り分け) / hero モバイルCTA横展開
+- 会議再招集: 不要 (機械判定で確定・成長は追い風)
+
+### ✅ 2026-06-04 仕上げ (内部リンク完結 + QA)
 
 ### ✅ 2026-06-04 仕上げ (内部リンク完結 + QA)
 - **QA**: 昨日shipの afternoon/access/27holes 3本をプレビュー検証 → 全カード/じゃらん=楽天均衡/内部リンク200/エラーなし ✅

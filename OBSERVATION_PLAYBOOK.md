@@ -363,6 +363,57 @@ NEXT_SESSION.md 更新済 (YES/NO): YES (本チェックイン直後に転記)
   Task C 対象 (LP/hub) は観測非交絡につき着手可。会議再招集: 不要 (Day14 の方針を data が追認・マトリクス機械判定で確定)。
 ```
 
+### Day 42 (2026-06-17 → 実施 2026-06-21・最終最終判定)
+
+```
+記入日: 2026-06-21 (Day42=6/17 の4日後に実施)
+記入者: Claude (/observation-checkin 42 skill 自動実行・GA4 Mode A 自動取得)
+観測期間: 2026-05-09 〜 2026-06-21 (拡張観測の最終エンドポイント)
+raw データ: click_affiliate=122 (Day28=33 から +89・約3.7倍) / page_view=523 (28日・Day28の279から約1.9倍) / users=365
+
+[レポート 1] Decoy ★最重要 — ★ついに確定判定
+  - N (price_featured + price_default): 37 (featured=14 / default=23) ← N≥30 到達 (Day28は12)
+  - featured 比率: 37.8% (14/37)
+  - featured 国内訳: JP 12 / HK 1 / KR 1 ／ default 国内訳: JP 20 / KR 3
+  - 判定: ❌ NO (N≥30 かつ featured 37.8% < 55%)
+  - 確定的結論: default(23) > featured(14)。Decoy 価格カード介入は featured 選択を増やさない = 効果なし。
+    観測延長で N が 12→37 に積み上がり、Decoy は明確に効いていないと確定 (確証バイアスなく機械判定)。
+
+[レポート 2] Phase 1A 逆流ナビ
+  - internal_nav_click: 精測は割愛 (Decoy確定が主目的・GA4 SPA時間)。傾向は継続観測扱い。
+  - 全体トラフィック増 (PV 279→523) に伴い回遊も増加と推定。
+
+[レポート 3] Phase 1B CTA
+  - cta_position: hero=23 / sticky≈17 / ftv=6 / booking_grid=13 / price_default=23 / price_featured=14 / other=26 = 計122
+  - (hero+sticky+ftv) = 46 / 122 = 37.7% → ❌ 要見直し (<50%)
+  - ⚠️ other = 26/122 = 21.3% (>15%) ← golf-wear(amazon) + 未分類リンク混入・要深掘り
+  - 注目: hero=23 のうち mobile 19 = モバイルの hero CTA が効いている (Day28 hero=5 から大幅増)
+
+[レポート 4] 言語別/国別
+  - click_affiliate 国内訳: Japan ≈116 (95%) / South Korea 5 / Hong Kong 1
+  - KR は Day28 の1件→5件に増加だが依然 <20 セッション/月 → インバウンド優先度は低 (B戦略=KO収益化見送り済)
+
+[レポート 5] LP 効果 (直近28日 5/24-6/20)
+  - book-fukuoka 系 LP 合計 25 PV (Day28の6PVから約4倍・新規LPが流入開始)
+    内訳: onsen 8 / tomorrow 8 / solo 4 / afternoon 2 / access 1 / 他
+  - book-fukuoka-cheap: < 100/月 継続 / 判定: ❌ NO (SEO 順位はまだ低いが流入は増加トレンド)
+  - 新規 LP (onsen/afternoon/access等) がインデックスされ流入開始 = インデックス浸透が進行中
+
+[異常値・成長シグナル]
+  - ★ 最大の発見: サイト全体が成長 (click_affiliate 3.7倍・PV 1.9倍)。SEO/コンテンツ戦略(B)が奏功し traffic 増。
+  - Decoy は N 充足で NO 確定 = CVR機構の優劣判定は決着。今後の伸びは「機構いじり」より「流入増」が主ドライバー。
+  - other 21.3% 超過 (golf-wear等) ・hero モバイル急増 が新たな注目点。
+
+[Day 42 最終判断]
+  - Decoy: ❌ NO 確定 (N=37/37.8%) → Phase 3 Decoy は「効果なし」で結論。featured CSS 強化 or 撤去が選択肢。
+    ※「90%が選ぶ」マイクロコピーは CLAUDE.md §8 で禁止 (景表法・実データ無し) → 採用しない。
+  - 観測フェーズ 完全終了 → course ページ凍結 解除。
+  - 最優先アクション (凍結解除後): hisayama(GSC366表示)/dazaifu(287表示) の title/meta CTR 改善 (最大の取りこぼし)。
+  - 副次: other 21% の内訳深掘り (golf-wear切り分け) / hero モバイル CTA の横展開検討。
+  - 会議再招集: 不要 (Decoy NO は機械判定で確定・成長シグナルは追い風で戦略転換不要)。
+NEXT_SESSION.md 更新済 (YES/NO): YES
+```
+
 ---
 
 ## 7. 既知のノイズと除外事項

@@ -1,8 +1,15 @@
 # 🎯 次セッション 引き継ぎ指示書
 
-**最終更新**: 2026-06-03 (✅ Day28判定 + TaskC + GSC対応 + 韓国B確定 + 機会クエリLP3本 + 目的別ハブ)
-**最終 commit**: `ef99edb` (guide-index.html ハブ) — origin/main へ push 済 + GSCインデックス申請済
+**最終更新**: 2026-06-04 (✅ 昨日shipの3LP QA完了 + index.html→ハブ動線追加で内部リンク完結)
+**最終 commit**: `b0e1e24` (index.html→guide-index 動線) — origin/main へ push 済
 **未コミット**: NEXT_SESSION.md (要 commit)
+
+### ✅ 2026-06-04 仕上げ (内部リンク完結 + QA)
+- **QA**: 昨日shipの afternoon/access/27holes 3本をプレビュー検証 → 全カード/じゃらん=楽天均衡/内部リンク200/エラーなし ✅
+- **内部リンク完結**: index.html (ホーム) の「目的別の入口」3言語に guide-index 動線追加
+  → ホーム → guide-index ハブ → 12本LP の経路が開通 (最高権威ページから全LPへ評価が流れる)
+- これで内部リンク構造は完成: ① index→hub→12LP ② 各LP CTA→兄弟LP ③ access/27H LP→course/access詳細
+- 観測非干渉 (course価格カード不変・ナビリンク追加のみ)
 **次回作業**: ① Day 42 (6/17) `/observation-checkin 42` で Decoy 最終判定 + course ページ凍結解除 ② Day42後に hisayama/dazaifu CTR改善
 
 ### ✅ 2026-06-03 午後スルー専用LP 新規作成 (機会クエリ対応)

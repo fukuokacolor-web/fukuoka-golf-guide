@@ -46,7 +46,7 @@
     {"file": "course-fukuokacc",     "name": "福岡カンツリー倶楽部 和白コース",               "c_id": null,     "deeplink": false, "exclude_reason": "members_only"},
     {"file": "course-wakamatsu",     "name": "若松ゴルフ倶楽部",                              "c_id": null,     "deeplink": false, "exclude_reason": "members_only"},
     {"file": "course-akane",         "name": "あかねカントリークラブ",                        "c_id": null,     "deeplink": false, "exclude_reason": "not_listed"},
-    {"file": "course-genkai",        "name": "玄海ゴルフクラブ",                              "c_id": null,     "deeplink": false, "exclude_reason": "long_closure", "note": "2023/1から長期休場"},
+    {"file": "course-genkai",        "name": "玄海ゴルフクラブ",                              "c_id": null,     "deeplink": false, "exclude_reason": "members_only", "note": "2023/10/2グランドオープンで休場解消・現在メンバー本人完全予約制(楽天GORAは旧休場表示が残存・実質ビジター枠なし)・2026日本シニアオープン会場(2026-06確認)"},
     {"file": "course-shimaseaside",  "name": "志摩シーサイドカンツリークラブ",                 "c_id": "400024", "deeplink": true,  "note": "Tier 1 新規追加 2026-05-12"},
     {"file": "course-classic",       "name": "ザ・クラシックゴルフ倶楽部",                     "c_id": "400022", "deeplink": true,  "note": "Tier 1 新規追加 2026-05-12・日曜メンバー同伴必須"},
     {"file": "course-raizan",        "name": "福岡雷山ゴルフ倶楽部",                          "c_id": "400043", "deeplink": true,  "note": "Tier 1 Batch 2 2026-05-17"},

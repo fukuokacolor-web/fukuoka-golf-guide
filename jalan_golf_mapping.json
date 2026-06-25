@@ -30,7 +30,7 @@
     {"file": "course-dazaifu",       "name": "太宰府ゴルフ倶楽部",                            "jalan_id": "02327", "deeplink": true},
     {"file": "course-fukuokacc",     "name": "福岡カンツリー倶楽部 和白コース",               "jalan_id": null,    "deeplink": false, "exclude_reason": "members_only"},
     {"file": "course-fukuokakokusai","name": "福岡国際カントリークラブ【PGM】",               "jalan_id": "02326", "deeplink": true},
-    {"file": "course-genkai",        "name": "玄海ゴルフクラブ",                              "jalan_id": null,    "deeplink": false, "exclude_reason": "long_closure"},
+    {"file": "course-genkai",        "name": "玄海ゴルフクラブ",                              "jalan_id": null,    "deeplink": false, "exclude_reason": "members_only", "note": "2023/10/2グランドオープン(休場は解消)・現在メンバー本人完全予約制でじゃらん枠なし(2026-06確認)"},
     {"file": "course-hisayama",      "name": "久山カントリー倶楽部",                          "jalan_id": "02334", "deeplink": true},
     {"file": "course-ito",           "name": "伊都ゴルフ倶楽部",                              "jalan_id": "02329", "deeplink": true},
     {"file": "course-keya",          "name": "芥屋ゴルフ倶楽部",                              "jalan_id": "02351", "deeplink": true},

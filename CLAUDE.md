@@ -145,7 +145,8 @@
 |---|---|---|
 | `CLAUDE.md` (本ファイル) | プロジェクト運用規約・**静的・timeless** | 規約変更時のみ (年 0-2 回) |
 | `NEXT_SESSION.md` | 引き継ぎ正典・最新の Phase 履歴・直近実装ログ | 毎セッション・コミット後 |
-| `OBSERVATION_PLAYBOOK.md` | 観測フェーズ判定インフラ・スレッショルド事前確定 | Day 7/14/28 で結果記入 |
+| `OBSERVATION_PLAYBOOK.md` | 観測フェーズ判定インフラ・スレッショルド事前確定 | Day 7/14/28/42 で結果記入 |
+| `REWRITE_PLAYBOOK.md` | 定期リライト運用 (料金鮮度・FAQ深化・鮮度シグナル)・候補選定とガードレール | 月次リライト時に実行・ログ追記 |
 | `GA4_DASHBOARD.md` | GA4 計測コード仕様・カスタムディメンション登録手順 | 計測ロジック変更時 |
 | `BLOG_COMPANY_PROGRESS.md` | ブログ会社化 Phase 1-4 進捗 | Phase 完了時 |
 | `KO_MARKET_RESEARCH.md` | 韓国市場リサーチ (Phase 4-B 準備) | Day 7/14/28 で §1 更新 |

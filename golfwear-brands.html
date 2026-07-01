@@ -121,7 +121,12 @@
     .sec-sub { font-size:14px; color:var(--ink-soft); line-height:1.8; margin-bottom:26px; max-width:760px; }
 
     /* Featured (Malbon) */
-    .feat { background:linear-gradient(135deg,#14131A,#2b2440); color:#fff; border-radius:18px; padding:30px 28px; margin-bottom:32px; }
+    .feat { background:linear-gradient(135deg,#14131A,#2b2440); color:#fff; border-radius:18px; padding:30px 28px; margin-bottom:32px; display:flex; gap:28px; align-items:flex-start; }
+    .feat-media { flex:0 0 240px; max-width:240px; }
+    .feat-media img { width:100%; height:auto; border-radius:12px; display:block; box-shadow:0 6px 20px rgba(0,0,0,0.35); }
+    .feat-media figcaption { font-size:11px; color:#C9C4D6; margin-top:8px; text-align:center; line-height:1.6; }
+    .feat-text { flex:1; min-width:0; }
+    @media(max-width:640px){ .feat{ flex-direction:column; gap:20px; } .feat-media{ flex-basis:auto; max-width:220px; margin:0 auto; } }
     .feat-badge { display:inline-block; background:var(--lime); color:#14131A; font-size:11px; font-weight:700; padding:4px 12px; border-radius:999px; letter-spacing:0.05em; margin-bottom:14px; }
     .feat-name { font-family:var(--serif); font-size:26px; font-weight:700; margin-bottom:4px; }
     .feat-origin { font-size:12.5px; color:#C9C4D6; margin-bottom:16px; }
@@ -171,6 +176,11 @@
     <h2 class="sec-title">編集部が愛用：Malbon Golf</h2>
     <p class="sec-sub">数あるブランドのなかで、編集部が実際に愛用しているのがMalbon Golf。"借り物のおすすめ"ではなく、使っているからこその一押しです。</p>
     <div class="feat">
+      <figure class="feat-media">
+        <img src="images/malbon-editor.webp" width="720" height="792" alt="編集部私物のMalbon Golfアイテム（蜂×ゴルフボールのアイコンと『Golf Is Life.』の刺繍）" loading="lazy">
+        <figcaption>編集部私物のMalbon（"Golf Is Life."）</figcaption>
+      </figure>
+      <div class="feat-text">
       <span class="feat-badge">★ 編集部 愛用</span>
       <div class="feat-name">Malbon Golf（マルボンゴルフ）</div>
       <div class="feat-origin">🇺🇸 アメリカ・ロサンゼルス発（2017年 Stephen &amp; Erica Malbon 創業）／ ※韓国・アジアで大人気だが出自はアメリカ</div>
@@ -178,6 +188,7 @@
         「<strong>日常の延長線上にゴルフがある</strong>」をテーマに、コースでも街でも着られるストリート×ゴルフのスタイルで世界的に支持されるライフスタイルブランド。蜂（Buckets）のアイコンと豊富なコラボが人気で、<strong>韓国・アジアで爆発的にヒット</strong>、日本でも2025年にPOP-UPや常設店が上陸し話題に。編集部も普段のラウンドで愛用しています。日本では正規・並行品ともに流通があり、楽天でもアイテムが探せます。
       </div>
       <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+BW8O1&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttps%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%2525E3%252583%25259E%2525E3%252583%2525AB%2525E3%252583%25259C%2525E3%252583%2525B3%2525E3%252582%2525B4%2525E3%252583%2525AB%2525E3%252583%252595%252F%26m%3Dhttps%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%2525E3%252583%25259E%2525E3%252583%2525AB%2525E3%252583%25259C%2525E3%252583%2525B3%2525E3%252582%2525B4%2525E3%252583%2525AB%2525E3%252583%252595%252F" class="btn-rk" target="_blank" rel="nofollow sponsored noopener" style="max-width:320px;">🛍️ 楽天でMalbon Golfを探す →</a>
+      </div>
     </div>
   </div>
 

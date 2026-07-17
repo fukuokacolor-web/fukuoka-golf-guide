@@ -4,6 +4,14 @@
 **最終 commit**: `b18b2a5` (golfwear相互リンク) — origin/main へ push 済
 **未コミット**: NEXT_SESSION + REWRITE_PLAYBOOK (要 commit)
 
+### ✅ 2026-07-06 四半期料金点検 → Policy C 一括適用 (`129175a`)
+- じゃらん現行と突合(13course照会): 旧テンプレの hero「💴最安¥X〜」+ stat が**系統的に¥2,000-4,300安い**(実在しない安値/§7)と判明
+- **Policy C**: 個別修正でなく新テンプレ同様「価格を出さない」表記へ一括統一
+  - hero: 💴¥X〜 → 🌐 日本語・English・한국어 / stat: ¥X/Lowest Fee → 2 sites/Compare bookings(言語別)
+  - 冪等スクリプト `scripts/policyC_hero_price_to_booking.py`(dry-run/両ROOT/除外保護)
+  - **32course変更**(hero93/stat96)・除外4course(会員制)保護・QA全50course JSON-LD妥当
+- **残タスク(第2段)**: 価格カード(平日/土日/午後スルーの具体額)は季節変動する具体値 → 「現行検証値へ更新 or 目安注記強化」を別途検討
+
 ### ✅ 2026-07-06 実収益(A8)分析 → 次フェーズ全体設計 (専門家会議5名)
 **A8実収益の正体を初確認** (成果別レポート 6/01-7/06):
 - 成約4件 (¥549+305+302+327≒¥1,483・全て未確定/確定0)・**全て「楽天アフィリエイト(楽天市場の広域Cookie)」**・成果種別「掲載以外」

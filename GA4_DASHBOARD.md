@@ -28,15 +28,34 @@
 | `price_default` | 通常の価格カード (平日 / 土日祝) | Phase 3 Decoy 比較対象 |
 | `booking_grid` | 大型 booking-card (jalan / rakuten) | Phase 1B |
 | `explore_nav` | section.related 内 (理論上) | Phase 1A |
-| `other` | 上記以外 (記事内リンク等) | — |
+| `other` | 上記以外 (記事内リンク・**会員制コースの代替CTA楽天リンク含む**) | — |
+
+> ### ⚠️ 2026-07-26 計測方式の実機検証で判明した重要事実
+> `cta_position` は **委譲リスナーが DOM 位置から導出** する (`classifyCtaPosition`: hero/ftv/sticky/price-card/booking-card/section.related のみ判定)。
+> **各リンクの `onclick="if(window.trackAffiliate)trackAffiliate(...,'xxx')"` は no-op** (`window.trackAffiliate` は全ページで未定義)。∴ onclick の第4引数でラベルは付かない。
+> **帰結**: 会員制3コースの代替CTA楽天リンクは `cta_position='other'` で記録される (専用ラベルは付かない)。
+> **正しい切り分け方**: 実機確認で **fukuocc/wakamatsu/genkai の唯一のアフィリリンクは代替CTAの楽天GORAのみ** (自ページに§9.4で楽天CTA無し・GDO/公式は `classifyService`=null で click_affiliate 非該当)。
+> ∴ **`page ∈ {course-fukuokacc, course-wakamatsu, course-genkai}` AND `service=rakuten_gora`** で代替CTA楽天クリックを100%特定できる (レポート6)。
+> ※将来ラベルを付けたい場合は `classifyCtaPosition` に `if(a.closest('[data-altcta]'))return 'alternative_cta_direct';` を足し、`inject_ga4_tracking.py` 再展開 (197ファイル) が必要。今は page+service で十分なため見送り。
 
 ### 1.2 `internal_nav_click` (Phase 1A 逆流ナビクリック・新規)
 
 | 項目 | 内容 |
 |------|------|
-| 発火条件 | `<section class="related">` 内の内部 .html リンク (= Phase 1A 逆流ナビ専用) |
-| `nav_section` | `explore_nav` (固定・将来拡張用) |
-| `target_page` | 飛び先ファイル名 (例: `area-fukuokacity` / `hub-beginner` / `book-fukuoka-golf-foreigner`) |
+| 発火条件 | 内部 .html リンクのクリック (逆流ナビ + 後日拡張した各種内部導線) |
+| `nav_section` | 値が拡張済 (下表) |
+| `target_page` | 飛び先ファイル名 (例: `area-fukuokacity` / `hub-beginner` / `course-wakamatsu`) |
+
+#### `nav_section` の値 (2026-07 拡張)
+
+| 値 | 場所 | 導入 |
+|----|------|------|
+| `explore_nav` | section.related 内の逆流ナビ | Phase 1A |
+| `alternative_cta` | 会員制コースの代替誘導ブロック内の**内部**リンク (コース詳細へ) | 2026-06 死に筋対策 |
+| `prestige_prose` | **hub-business 本文プロセ内の名門コースへの文脈リンク** | 2026-07 PageRank注入 |
+| `back_link` / `brand_card` 等 | トップ戻り・golfwear ブランドカード等 | 各ページ個別 |
+
+> 会員制コースの導線は2経路で計測: **収益経路**=`click_affiliate` の `cta_position:alternative_cta_direct` (楽天直・上記1.1)、**回遊経路**=`internal_nav_click` の `nav_section:alternative_cta` (内部詳細へ)。両者を分けて見る。
 | `page` / `lang` / `link_text` | 発火元ページ・言語・テキスト |
 
 ### 1.3 既知の混入: `service: internal_fees`
@@ -188,6 +207,33 @@ GA4 → 管理 → **カスタム定義** → 「カスタムディメンショ�
 - book-fukuoka-cheap.html PV ≥ **300 / 月** → Phase 2 成功 (期待値 +2-4kPV/月の下限)
 - LP CTR (click_affiliate / PV) ≥ **5%** → CVR 健全
 - LP PV が 50/月 未満 → SEO カニバリ疑い (`GSC_CANNIBALIZATION_GUIDE.md` 参照)
+
+---
+
+### レポート 6: 会員制トラフィックの収益化 (2026-07 追加) ★
+
+**狙い**: 予約不可の会員制3コース(fukuocc/wakamatsu/genkai・GSC表示の15%)に来たユーザーが、代替の楽天GORA直リンクをどれだけ押したか=楽天Cookieシード件数
+
+**設定 A (収益経路・楽天直)** ※ラベルでなく page+service で特定:
+- 探索 → 自由形式 → イベント名 = `click_affiliate`
+- フィルタ: `service = rakuten_gora` AND `page` が `course-fukuokacc` / `course-wakamatsu` / `course-genkai` のいずれか
+- 行: `page`・値: イベント数 (cta_position は `other` で出る=正常)
+
+**設定 B (回遊経路・内部詳細)**:
+- イベント名 = `internal_nav_click`・フィルタ `nav_section = alternative_cta`
+- 行: `page` × `target_page`・設定Aと件数比較 → 「楽天直(1ホップ)」vs「内部詳細(2ホップ)」どちらが選ばれるか
+- ✅ 実機検証済 (2026-07-26): 設定Bの internal_nav_click は正常発火・設定Aの楽天リンクも click_affiliate/rakuten_gora で発火 (cta_position=other)
+
+**判断基準 (Day14相当・8/9頃)**:
+- `alternative_cta_direct` ≥ 5件 → 会員制収益化に手応え・他の会員制導線にも横展開
+- 0件かつ内部nav>0 → ユーザーは詳細を見たがる=楽天直より内部経由が有効(設計見直し)
+- 両方0 → 会員制ページからの回遊自体が弱い(N不足・上部配置や訴求を強化)
+
+### レポート 7: 内部リンク(prestige_prose)注入効果
+
+**狙い**: hub-business本文の名門コース文脈リンクが使われ、若松/玄海等の順位が上がるか
+- GA4: `internal_nav_click`・`nav_section = prestige_prose`・行`target_page` → クリック実数
+- **GSC併走(本命)**: course-wakamatsu / course-genkai の平均掲載順位を 7/26前後 vs 3-4週後で比較(12-15位→改善するか)
 
 ---
 

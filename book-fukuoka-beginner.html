@@ -168,9 +168,10 @@
 
     /* Hero */
     .hero { position: relative; height: 64vh; min-height: 440px; max-height: 620px; overflow: hidden; color: #fff; }
-    .hero-bg { position: absolute; inset: 0; background: linear-gradient(160deg, #1a3a20 0%, #2e6035 40%, #1e4a28 70%, #1a3820 100%); }
+    .hero-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+    .hero-bg { z-index:1; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(26,58,32,0.75) 0%, rgba(46,96,53,0.62) 40%, rgba(30,74,40,0.55) 70%, rgba(26,56,32,0.82) 100%); }
     .hero-pattern { position: absolute; inset: 0; opacity: 0.04; background-image: repeating-linear-gradient(60deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 20px 20px; }
-    .hero-inner { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 24px 56px; max-width: 1100px; margin: 0 auto; left: 0; right: 0; }
+    .hero-inner { z-index:3; position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 24px 56px; max-width: 1100px; margin: 0 auto; left: 0; right: 0; }
     .hero-eyebrow { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; opacity: 0.88; margin-bottom: 10px; letter-spacing: 0.04em; }
     .hero-title { font-family: var(--serif); font-weight: 700; font-size: clamp(26px, 4.5vw, 44px); line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.01em; }
     .hero-sub { font-size: 14px; opacity: 0.88; font-weight: 300; letter-spacing: 0.04em; max-width: 640px; line-height: 1.7; margin-bottom: 24px; }
@@ -273,7 +274,8 @@
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <img class="hero-photo" src="images/spring-forest.webp" alt="福岡の初心者向けゴルフ場の風景" fetchpriority="high">
+    <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow">Beginner-Friendly Golf in Fukuoka</div>

@@ -252,12 +252,16 @@
     display:flex;align-items:center;justify-content:center;
     overflow:hidden;color:#fff;
   }
-  .hero-bg{
-    position:absolute;inset:0;
-    background-image:linear-gradient(rgba(15,40,30,.45),rgba(15,40,30,.55)),url('images/IMG_6683.webp');
-    background-size:cover;background-position:center;
+  .hero-photo{
+    position:absolute;inset:0;z-index:0;
+    width:100%;height:100%;object-fit:cover;object-position:center;
     transform:scale(1.05);
     animation:heroZoom 20s ease infinite alternate;
+  }
+  .hero-bg{
+    position:absolute;inset:0;z-index:1;
+    background-image:linear-gradient(rgba(15,40,30,.45),rgba(15,40,30,.55));
+    background-size:cover;background-position:center;
   }
   @keyframes heroZoom{to{transform:scale(1.12);}}
   .hero-content{
@@ -868,7 +872,7 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <img class="hero-photo" src="images/IMG_6683.webp" alt="福岡のゴルフ場 — 絶景コースと名門クラブ" fetchpriority="high"><div class="hero-bg"></div>
     <div class="hero-content">
       <span class="hero-kicker">Fukuoka Golf Guide · 福岡ゴルフ場完全ガイド</span>
       <h1>福岡ゴルフ場ガイド<br>50コースを地元目線で完全網羅</h1>
@@ -1551,7 +1555,7 @@
   </div>
 
   <section class="hero">
-    <div class="hero-bg"></div>
+    <img class="hero-photo" src="images/IMG_6683.webp" alt="福岡のゴルフ場 — 絶景コースと名門クラブ" fetchpriority="high"><div class="hero-bg"></div>
     <div class="hero-content">
       <span class="hero-kicker">Fukuoka Golf Guide · Complete 50-Course Pillar</span>
       <h1>Fukuoka Golf Course Guide<br>All 50 Courses, Locally Curated</h1>
@@ -2224,7 +2228,7 @@
   </div>
 
   <section class="hero">
-    <div class="hero-bg"></div>
+    <img class="hero-photo" src="images/IMG_6683.webp" alt="福岡のゴルフ場 — 絶景コースと名門クラブ" fetchpriority="high"><div class="hero-bg"></div>
     <div class="hero-content">
       <span class="hero-kicker">Fukuoka Golf Guide · 후쿠오카 골프장 완전 가이드</span>
       <h1>후쿠오카 골프장 가이드<br>50개 코스를 현지 시선으로 완전 망라</h1>

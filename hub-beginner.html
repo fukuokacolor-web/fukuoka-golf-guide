@@ -200,13 +200,13 @@
       position: relative; height: 62vh; min-height: 460px; max-height: 620px;
       overflow: hidden; color: #fff;
     }
+    .hero-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+    .hero-inner{z-index:2;}
     .hero-img {
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(92,131,68,0.15) 40%, rgba(22,56,41,0.85) 100%),
-        url('images/spring-forest.webp');
-      background-size: cover; background-position: center;
-    }
+        linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(92,131,68,0.15) 40%, rgba(22,56,41,0.85) 100%);
+      background-size: cover; background-position: center; z-index:1; }
     .hero-inner {
       position: absolute; inset: 0;
       display: flex; flex-direction: column; justify-content: flex-end;
@@ -473,6 +473,7 @@
 <div id="c-ja" class="content on">
 
   <section class="hero">
+    <img class="hero-photo" src="images/spring-forest.webp" alt="ゴルフ、はじめての一打を福岡から。のコース風景" fetchpriority="high">
     <div class="hero-img"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">— For Beginners</div>
@@ -724,6 +725,7 @@
   </div>
 
   <section class="hero">
+    <img class="hero-photo" src="images/spring-forest.webp" alt="ゴルフ、はじめての一打を福岡から。のコース風景" fetchpriority="high">
     <div class="hero-img"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">— For Beginners</div>
@@ -971,6 +973,7 @@
   </div>
 
   <section class="hero">
+    <img class="hero-photo" src="images/spring-forest.webp" alt="ゴルフ、はじめての一打を福岡から。のコース風景" fetchpriority="high">
     <div class="hero-img"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">— For Beginners</div>

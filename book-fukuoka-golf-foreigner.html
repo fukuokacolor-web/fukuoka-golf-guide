@@ -166,7 +166,9 @@
     .back-link { position: fixed; top: 16px; left: 16px; z-index: 100; background: rgba(255,255,255,0.96); border-radius: 999px; padding: 8px 14px; font-size: 12px; font-weight: 700; color: var(--ocean-dark); box-shadow: 0 4px 14px rgba(0,0,0,0.15); backdrop-filter: blur(10px); }
 
     .hero { position: relative; height: 60vh; min-height: 440px; max-height: 600px; overflow: hidden; color: #fff; }
-    .hero-img { position: absolute; inset: 0; background-image: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(58,124,165,0.18) 40%, rgba(22,56,41,0.85) 100%), url('images/keya-waves.webp'); background-size: cover; background-position: center; }
+    .hero-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+    .hero-inner{z-index:2;}
+    .hero-img { position: absolute; inset: 0; background-image: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(58,124,165,0.18) 40%, rgba(22,56,41,0.85) 100%); background-size: cover; background-position: center; z-index:1; }
     .hero-inner { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 24px 56px; max-width: 1100px; margin: 0 auto; left: 0; right: 0; }
     .hero-eyebrow { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; opacity: 0.92; margin-bottom: 12px; letter-spacing: 0.03em; }
     .hero-title { font-family: var(--serif); font-weight: 700; font-size: clamp(28px, 5vw, 46px); line-height: 1.18; margin-bottom: 14px; letter-spacing: -0.01em; }
@@ -301,6 +303,7 @@
 <div id="c-ja" class="content on">
 
   <section class="hero">
+    <img class="hero-photo" src="images/keya-waves.webp" alt="外国人向け福岡ゴルフ場予約ガイドのコース風景" fetchpriority="high">
     <div class="hero-img"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">— A Practical Guide / 実用ガイド</div>
@@ -341,6 +344,7 @@
 <div id="c-en" class="content">
 
   <section class="hero">
+    <img class="hero-photo" src="images/keya-waves.webp" alt="外国人向け福岡ゴルフ場予約ガイドのコース風景" fetchpriority="high">
     <div class="hero-img"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">— A Practical Guide for International Visitors</div>
@@ -665,6 +669,7 @@
 <div id="c-ko" class="content">
 
   <section class="hero">
+    <img class="hero-photo" src="images/keya-waves.webp" alt="外国人向け福岡ゴルフ場予約ガイドのコース風景" fetchpriority="high">
     <div class="hero-img"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">— 외국인을 위한 실용 가이드</div>

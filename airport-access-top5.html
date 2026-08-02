@@ -205,13 +205,13 @@
       position: relative; height: 78vh; min-height: 520px; max-height: 720px;
       overflow: hidden; color: #fff;
     }
+    .hero-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+    .hero-inner{z-index:2;}
     .hero-img {
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.78) 100%),
-        url('images/fukuoka-bay.webp');
-      background-size: cover; background-position: center;
-    }
+        linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.78) 100%);
+      background-size: cover; background-position: center; z-index:1; }
     .hero-inner {
       position: absolute; inset: 0;
       display: flex; flex-direction: column; justify-content: flex-end;
@@ -557,6 +557,7 @@
 
   <!-- HERO -->
   <section class="hero">
+    <img class="hero-photo" src="images/fukuoka-bay.webp" alt="福岡空港から近いゴルフ場ベスト5のコース風景" fetchpriority="high">
     <div class="hero-img"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">— Near Fukuoka Airport</div>
@@ -847,6 +848,7 @@
 <div id="c-en" class="content">
 
   <section class="hero">
+    <img class="hero-photo" src="images/fukuoka-bay.webp" alt="福岡空港から近いゴルフ場ベスト5のコース風景" fetchpriority="high">
     <div class="hero-img"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">— Near Fukuoka Airport</div>
@@ -1070,6 +1072,7 @@
 <div id="c-ko" class="content">
 
   <section class="hero">
+    <img class="hero-photo" src="images/fukuoka-bay.webp" alt="福岡空港から近いゴルフ場ベスト5のコース風景" fetchpriority="high">
     <div class="hero-img"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">— Near Fukuoka Airport</div>

@@ -122,9 +122,10 @@
 
     /* Hero */
     .hero { position: relative; padding: 96px 24px 56px; color: #fff; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: linear-gradient(160deg, #0F1A26 0%, #1B2A3A 45%, #2C4258 100%); }
-    .hero-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at 78% 25%, rgba(182,138,46,0.22) 0%, transparent 60%); }
-    .hero-inner { position: relative; max-width: 1000px; margin: 0 auto; }
+    .hero-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+    .hero-bg { z-index:1; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(15,26,38,0.75) 0%, rgba(27,42,58,0.62) 45%, rgba(44,66,88,0.55) 100%); }
+    .hero-overlay { z-index:2; position: absolute; inset: 0; background: radial-gradient(ellipse at 78% 25%, rgba(182,138,46,0.22) 0%, transparent 60%); }
+    .hero-inner { z-index:3; position: relative; max-width: 1000px; margin: 0 auto; }
     .hero-eyebrow { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; opacity: 0.85; margin-bottom: 12px; color: var(--gold-light); }
     .hero-title { font-family: var(--serif); font-weight: 700; font-size: clamp(26px, 4.4vw, 42px); line-height: 1.25; margin-bottom: 16px; }
     .hero-sub { font-size: 15px; opacity: 0.9; font-weight: 300; max-width: 660px; line-height: 1.8; }
@@ -171,6 +172,7 @@
 
   <!-- Hero -->
   <section class="hero">
+    <img class="hero-photo" src="images/fukuoka-overview.webp" alt="福岡ゴルフ場ガイド 目的別まとめ" fetchpriority="high">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-inner">

@@ -56,8 +56,7 @@
     }
     body { font-family:'Hiragino Sans','Noto Sans KR','Segoe UI',sans-serif; background:var(--bg); color:var(--text); padding-bottom:24px; }
     .page-header {
-      background: linear-gradient(to bottom, rgba(0,25,12,0.30) 0%, rgba(0,20,10,0.65) 100%),
-                  url('images/itoshimatorii.webp') center 45%/cover no-repeat;
+      background: linear-gradient(to bottom, rgba(0,25,12,0.30) 0%, rgba(0,20,10,0.65) 100%);
       color:#fff; padding:64px 20px 48px; text-align:center; position:relative;
     }
     .page-header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:40px;
@@ -103,6 +102,7 @@
     footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde8dd; }
     footer a { color:var(--green-dark); text-decoration:none; }
     .disclaimer { background:#fff3cd; border-bottom:2px solid #e6a817; padding:8px 16px; font-size:0.75rem; line-height:1.5; color:#5a3e00; text-align:center; }
+  .page-header .ph-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;}.page-header>.hero-badge,.page-header>h1,.page-header>p,.page-header>.hero-divider{position:relative;z-index:1;}
   </style>
 <!-- AFFILIATE_TRACKER -->
 <script>
@@ -163,6 +163,7 @@
   }, true);
 })();
 </script>
+<style>.page-lead{margin:0;line-height:0;}.page-lead img{width:100%;max-height:340px;object-fit:cover;display:block;}</style>
 </head>
 <body>
 
@@ -170,11 +171,12 @@
   ※本ページには広告（A8.net / Amazon アソシエイト）が含まれます。
 </div>
 
-<header class="page-header">
+<header class="page-header"><img class="ph-photo" src="images/itoshimatorii.webp" alt="福岡のゴルフ レンタル・送迎ガイド" fetchpriority="high">
   <div class="hero-badge">🧳 RENTAL & TRANSPORT</div>
   <h1>レンタル & ゴルフバッグ輸送<br>完全ガイド</h1>
   <p>手ぶらで福岡ゴルフ／Go golf in Fukuoka without your clubs<br>클럽 없이도 떠나는 후쿠오카 골프</p>
 </header>
+
 
 <div class="back-bar">
   <a href="index.html">← トップに戻る / Back / 홈으로</a>

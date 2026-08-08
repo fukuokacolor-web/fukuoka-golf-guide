@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "purpose": "編集部プレー体験記/現地レポートの単一の真実の源(SSOT)。report-index・course相互リンク・将来のブログ会社化での再利用の基盤。",
+    "created": "2026-08-07",
+    "design_rules": {
+      "pattern": "★今後の体験記は原則『コース詳細ページ内のセクション』(course-{slug}.html の #report)。理由: 小倉の実データで course-kokura(8.2位) > report-kokura(18.9位)=1コース1権威ページが強くカニバリしない。",
+      "legacy_report_pages": "既存の独立 report-{slug}.html (kurume/lakeside/mission) は存置。course側に体験記を持たせた場合は report-* を course へ canonical 集約する(kokuraで実施済)。course側に無い間は report-* が一次ソース。",
+      "title_split": "検索意図で住み分け。course-*=『料金・予約・アクセス』(取引意図) / 体験記セクション・report-*=『編集部ラウンドレポート・体験』(体験意図)。同一intentで2ページ作らない(カニバリ予防の核)。",
+      "area_axis": "エリア分類は hub-* と同一の5軸(fukuokacity/itoshima/kitakyushu/chikugo/chikuho)を再利用。新分類を作らない。",
+      "cross_link": "course詳細 ⇄ 体験記(またはreport) を相互リンク。report-index は全体験記のエリア別発見ハブ。",
+      "portability": "本JSONの構造(course_slug×area×persona×difficulty×review_location)は福岡固有でなく汎用IAパターン。ブログ会社化時に他サイトへ流用可能。",
+      "eeat": "オーナー本人の実プレーのみ(取材・提供・PR不採用)。§7: ホール番号/距離/料金は断定せず主観として明示。§12: 写真or具体ホール描写で薄さ回避。"
+    }
+  },
+  "entries": [
+    {"course_slug": "chisan-onga", "course_name": "チサンカントリークラブ遠賀", "area": "kitakyushu", "review_location": "course-section", "review_url": "course-chisan-onga.html#report", "round_date": "2026-07", "difficulty": 3, "persona": ["戦略好き", "中級"], "tags": ["打ち下ろし", "山越え", "ショートで1オン狙える", "傾斜"], "has_photos": true},
+    {"course_slug": "kokura", "course_name": "小倉カンツリー倶楽部", "area": "kitakyushu", "review_location": "course-section", "review_url": "course-kokura.html#report", "legacy_report": "report-kokura.html(canonical→course-kokura)", "round_date": "2026(4ラウンド)", "difficulty": 3, "persona": ["接待", "名門体験", "中級"], "tags": ["名門", "速い2段グリーン", "5番ドッグレッグ", "11番が狭い", "キャディ的確"], "has_photos": false},
+    {"course_slug": "kurume", "course_name": "久留米カントリークラブ", "area": "chikugo", "review_location": "report-page", "review_url": "report-kurume.html", "round_date": "2026-05-17", "difficulty": 4, "persona": ["中上級", "戦略好き"], "tags": ["高低差", "戦略", "狭いショート"], "has_photos": true, "todo": "course-kurumeへ体験記移設→canonical検討"},
+    {"course_slug": "lakeside", "course_name": "福岡レイクサイドカントリークラブ", "area": "chikuho", "review_location": "report-page", "review_url": "report-lakeside.html", "round_date": "2026-05-22", "difficulty": 2, "persona": ["初中級", "コスパ重視"], "tags": ["フラット", "スコア出やすい", "整備良好", "コスパ"], "has_photos": true, "todo": "course-lakesideへ体験記移設→canonical検討"},
+    {"course_slug": "mission", "course_name": "ミッションバレーゴルフクラブ", "area": "chikuho", "review_location": "report-page", "review_url": "report-mission.html", "round_date": "2026-05-22", "difficulty": 5, "persona": ["上級", "腕試し"], "tags": ["起伏", "コブ", "本格難コース"], "has_photos": true, "todo": "course-missionへ体験記移設→canonical検討"}
+  ],
+  "next_candidates": {
+    "note": "高表示×予約可×オーナープレー済のコースから優先。プレー済みかはオーナー確認必須。",
+    "high_impression_bookable_without_review": ["keya(芥屋)", "fukuokakokusai", "ukiha(浮羽)", "dazaifu", "hisayama", "pheasant"]
+  }
+}

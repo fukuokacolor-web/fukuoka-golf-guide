@@ -355,6 +355,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fukuoka-golf-guide.com/golf-dresscode.html</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fukuoka-golf-guide.com/golf-manner.html</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fukuoka-golf-guide.com/golfwear-brands.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>

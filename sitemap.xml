@@ -355,6 +355,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fukuoka-golf-guide.com/hub-compe.html</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://fukuoka-golf-guide.com/golf-dresscode.html</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>

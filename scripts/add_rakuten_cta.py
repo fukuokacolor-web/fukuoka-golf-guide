@@ -53,18 +53,25 @@ def rak_href(cid):
             "0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2F"
             "a26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3D" + enc + "%26m%3D" + enc)
 
-# じゃらんCTA anchor(pick-btn / compe-btn / course-btn 等の btn-jalan(-s) 系)
+# course固有(gc{ID}付き)の じゃらん anchor を属性順・class名非依存で捕捉。
+# generic homepage(golf-jalan.net/ のみ)は gc要求により対象外。ラベルにタグ無し想定([^<]*)。
 JALAN_A = re.compile(
-    r'<a\s+href="(?P<href>[^"]*golf-jalan\.net%2Fgc0*(?P<jid>\d+)%2F[^"]*)"'
-    r'\s+class="(?P<cls>[^"]*\bbtn-jalan[a-z-]*\b[^"]*)"(?P<rest>[^>]*)>'
+    r'<a\b(?P<tag>[^>]*golf-jalan\.net%2Fgc0*(?P<jid>\d+)%2F[^>]*)>'
     r'(?P<label>[^<]*)</a>'
 )
 
-def rak_anchor(cls, rest, cid):
-    rcls = re.sub(r'btn-jalan[a-z-]*', 'btn-rakuten', cls)
+def cls_of(tag):
+    mm = re.search(r'class="([^"]*)"', tag)
+    return mm.group(1) if mm else ''
+
+def rak_anchor(tag, cid):
+    cls = cls_of(tag)
+    rcls = re.sub(r'btn-jalan[a-z-]*', 'btn-rakuten', cls) if 'btn-jalan' in cls else cls
+    clsattr = f' class="{rcls}"' if rcls else ''
     style = ('background:linear-gradient(135deg,#BF0000,#9B0000);color:#fff;'
              'box-shadow:0 3px 10px rgba(191,0,0,0.28);')
-    return (f'<a href="{rak_href(cid)}" class="{rcls}" style="{style}"{rest}'
+    return (f'<a href="{rak_href(cid)}"{clsattr} style="{style}"'
+            f' target="_blank" rel="nofollow sponsored noopener"'
             f' data-rakcid="{cid}">🅡 楽天GORA</a>')
 
 def process(text, m):
@@ -79,12 +86,13 @@ def process(text, m):
         if not cid:
             skipped_excl += 1
             continue
-        # 冪等: 直後 ~400字以内に data-rakcid="cid" があればスキップ
-        lookahead = text[mt.end():mt.end()+400]
+        # 冪等: 直後 ~1500字以内に data-rakcid="cid" があればスキップ
+        # (楽天hrefは~500字と長いため窓を広めに取る)
+        lookahead = text[mt.end():mt.end()+1500]
         if f'data-rakcid="{cid}"' in lookahead:
             skipped_dup += 1
             continue
-        out.append(rak_anchor(mt.group("cls"), mt.group("rest"), cid))
+        out.append(rak_anchor(mt.group("tag"), cid))
         added += 1
     out.append(text[pos:])
     return "".join(out), added, skipped_dup, skipped_excl

@@ -12,7 +12,7 @@
 | 項目 | 値 |
 |---|---|
 | ドメイン | https://fukuoka-golf-guide.com |
-| 言語 | ja + en + ko (3 言語切替・全 URL 共通・content.c-{lang} クラスで切替) |
+| 言語 | ja + en + ko (既存は 3 言語切替・content.c-{lang})。**★2026-08-12〜 新規ページは JA 単独** (KR/US 流入ほぼ 0・収益は国内主体)。既存 EN/KO は据え置き (撤去は SEO マイナスのためしない)・inbound/KO 施策は凍結 |
 | 収益モデル | A8.net 経由アフィリエイト (じゃらんゴルフ + 楽天 GORA) |
 | GA4 ID | **`G-PENH0Z4VT7`** (絶対変更禁止) |
 | GA4 プロパティ ID | `531139357` / アカウント ID `389856983` |

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="福岡のゴルフ場をたった3つの質問で診断。目的（接待・初心者・観光・コンペ・コスパ）・エリア・予算に答えるだけで、あなたに合う福岡のゴルフ場3コースを編集部が提案します。じゃらん・楽天GORAで予約できるコースから、ぴったりの1コースが見つかります。">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>福岡ゴルフ場 診断｜3つの質問であなた向きの3コースを提案 | 福岡ゴルフ場ガイド</title>
+
+  <!-- Structured Data: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "福岡ゴルフ場 診断（コースファインダー）",
+    "description": "3つの質問（目的・エリア・予算）に答えると、福岡のゴルフ場から自分に合う3コースを提案するインタラクティブ診断。",
+    "url": "https://fukuoka-golf-guide.com/course-quiz.html",
+    "inLanguage": "ja",
+    "isPartOf": { "@type": "WebSite", "name": "福岡ゴルフ場ガイド", "url": "https://fukuoka-golf-guide.com/" }
+  }
+  </script>
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Top", "item": "https://fukuoka-golf-guide.com/" },
+      { "@type": "ListItem", "position": 2, "name": "ゴルフ場診断", "item": "https://fukuoka-golf-guide.com/course-quiz.html" }
+    ]
+  }
+  </script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:url" content="https://fukuoka-golf-guide.com/course-quiz.html">
+  <meta property="og:site_name" content="福岡ゴルフ場ガイド">
+  <meta property="og:title" content="福岡ゴルフ場 診断｜3つの質問であなた向きの3コースを提案">
+  <meta property="og:description" content="目的・エリア・予算に答えるだけ。あなたにぴったりの福岡のゴルフ場3コースを提案します。">
+  <meta property="og:image" content="https://fukuoka-golf-guide.com/images/fukuoka-overview.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://fukuoka-golf-guide.com/course-quiz.html" />
+  <link rel="alternate" hreflang="ja" href="https://fukuoka-golf-guide.com/course-quiz.html">
+  <link rel="alternate" hreflang="x-default" href="https://fukuoka-golf-guide.com/course-quiz.html">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PENH0Z4VT7');
+  </script>
+  <!-- AFFILIATE_TRACKER -->
+  <script>
+  (function(){
+    function getPage(){ return (location.pathname.split('/').pop() || 'index') + ''; }
+    document.addEventListener('click', function(e){
+      var a = e.target.closest('a[href]');
+      if (!a || typeof gtag!=='function') return;
+      var h = a.getAttribute('href') || '';
+      if (/\.html?(\?|#|$)/.test(h) && !/a8\.net|jalan|rakuten/i.test(h)) {
+        var target=(h.split('?')[0].split('#')[0].split('/').pop()||'').replace(/\.html?$/,'');
+        gtag('event','internal_nav_click',{ page:getPage(), lang:'ja',
+          nav_section: a.closest('#results')?'quiz_result':'quiz_nav', target_page:target,
+          link_text:(a.textContent||'').trim().slice(0,80) });
+      }
+    }, true);
+  })();
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:#1B2A3A; --ink-deep:#0F1A26; --ink-mid:#2C4258;
+      --gold:#B68A2E; --gold-light:#D4AC52;
+      --green:#2E7D4F; --green-dark:#1F5C39;
+      --ocean:#3A7CA5;
+      --accent:#E8744C; --accent-dark:#D15A34;
+      --paper:#FAF8F4; --sand:#F1ECE2;
+      --charcoal:#262A2E; --muted:#6B7280; --line:#E5DECF;
+      --serif:'Noto Serif JP','Playfair Display',Georgia,serif;
+      --sans:'Noto Sans JP','Inter',-apple-system,sans-serif;
+      --num:'Inter','Noto Sans JP',sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--sans); background:var(--paper); color:var(--charcoal); line-height:1.8; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+
+    .back-link { position:fixed; top:16px; left:16px; z-index:100; background:rgba(255,255,255,0.96); border-radius:999px; padding:8px 14px; font-size:12px; font-weight:700; color:var(--ink); box-shadow:0 4px 14px rgba(0,0,0,0.15); backdrop-filter:blur(10px); }
+
+    .hero { position:relative; padding:84px 24px 40px; color:#fff; overflow:hidden; text-align:center; }
+    .hero-photo { position:absolute; inset:0; z-index:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+    .hero-bg { z-index:1; position:absolute; inset:0; background:linear-gradient(160deg,rgba(15,26,38,0.82) 0%,rgba(46,125,79,0.6) 55%,rgba(44,66,88,0.6) 100%); }
+    .hero-inner { z-index:3; position:relative; max-width:720px; margin:0 auto; }
+    .hero-eyebrow { font-family:'Playfair Display',serif; font-style:italic; font-size:15px; opacity:0.9; margin-bottom:10px; color:var(--gold-light); }
+    .hero-title { font-family:var(--serif); font-weight:700; font-size:clamp(24px,4.2vw,38px); line-height:1.3; margin-bottom:12px; }
+    .hero-sub { font-size:14.5px; opacity:0.92; font-weight:300; line-height:1.8; }
+
+    .wrap { max-width:760px; margin:0 auto; padding:36px 20px 40px; }
+
+    /* Progress */
+    .progress { display:flex; gap:8px; justify-content:center; margin-bottom:26px; }
+    .dot { width:34px; height:5px; border-radius:999px; background:var(--line); transition:background .2s; }
+    .dot.on { background:linear-gradient(90deg,var(--green),var(--green-dark)); }
+
+    /* Question card */
+    .qcard { background:#fff; border:1px solid var(--line); border-radius:20px; padding:30px 26px; box-shadow:0 8px 30px rgba(31,92,57,0.07); }
+    .q-step { font-family:var(--num); font-size:12px; font-weight:700; letter-spacing:0.08em; color:var(--gold); margin-bottom:8px; }
+    .q-title { font-family:var(--serif); font-size:clamp(19px,2.6vw,23px); font-weight:700; color:var(--ink); margin-bottom:22px; line-height:1.4; }
+    .opts { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:520px){ .opts { grid-template-columns:1fr; } }
+    .opt { display:flex; align-items:center; gap:12px; background:var(--paper); border:1.5px solid var(--line); border-radius:14px; padding:16px 18px; font-size:15px; font-weight:600; color:var(--ink); cursor:pointer; transition:transform .12s, border-color .12s, box-shadow .12s; text-align:left; }
+    .opt:hover { transform:translateY(-2px); border-color:var(--green); box-shadow:0 8px 20px rgba(46,125,79,0.12); }
+    .opt .emo { font-size:24px; flex-shrink:0; }
+    .q-back { margin-top:20px; display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:700; color:var(--muted); cursor:pointer; background:none; border:none; }
+    .q-back:hover { color:var(--ink); }
+
+    /* Results */
+    #results { display:none; }
+    .res-head { text-align:center; margin-bottom:24px; }
+    .res-eyebrow { font-family:'Playfair Display',serif; font-style:italic; font-size:14px; color:var(--gold); margin-bottom:6px; }
+    .res-title { font-family:var(--serif); font-size:clamp(21px,3vw,27px); font-weight:700; color:var(--ink); }
+    .res-sub { font-size:13.5px; color:var(--muted); margin-top:8px; }
+
+    .res-list { display:flex; flex-direction:column; gap:14px; }
+    .res-card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px 22px; position:relative; transition:transform .15s, box-shadow .15s, border-color .15s; }
+    .res-card:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(31,92,57,0.10); border-color:var(--green); }
+    .res-card.top { border:2px solid var(--gold); }
+    .res-rank { position:absolute; top:-11px; left:20px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:#fff; font-family:var(--num); font-weight:700; font-size:12px; padding:3px 12px; border-radius:999px; letter-spacing:0.04em; }
+    .res-name { font-family:var(--serif); font-size:18px; font-weight:700; color:var(--ink); margin:6px 0 8px; line-height:1.35; }
+    .res-chips { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+    .rchip { background:#EEF6F0; color:var(--green-dark); border:1px solid #CDE6D6; padding:3px 10px; border-radius:999px; font-size:11.5px; font-weight:600; }
+    .rchip.area { background:#EAF2F7; color:var(--ocean); border-color:#CBE0EC; }
+    .rchip.tier { background:#FBF3E0; color:var(--gold); border-color:#EBD9A8; }
+    .res-btn { display:inline-flex; align-items:center; gap:6px; background:var(--ink); color:#fff; padding:11px 20px; border-radius:11px; font-weight:700; font-size:14px; transition:transform .15s, background .15s; }
+    .res-btn:hover { transform:translateY(-1px); background:var(--green-dark); }
+
+    .res-actions { text-align:center; margin-top:28px; }
+    .retry { display:inline-flex; align-items:center; gap:7px; background:#fff; border:1.5px solid var(--line); color:var(--ink); padding:12px 24px; border-radius:999px; font-weight:700; font-size:14px; cursor:pointer; transition:border-color .15s; }
+    .retry:hover { border-color:var(--gold); }
+    .res-more { margin-top:16px; }
+    .res-more a { color:var(--accent-dark); font-weight:700; font-size:13.5px; }
+
+    .note { font-size:12px; color:var(--muted); margin-top:26px; line-height:1.7; text-align:center; }
+    footer { text-align:center; font-size:12px; color:var(--muted); padding:28px 24px; border-top:1px solid var(--line); margin-top:10px; }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">← トップ</a>
+
+  <section class="hero">
+    <img class="hero-photo" src="images/fukuoka-overview.webp" alt="福岡ゴルフ場 診断" fetchpriority="high">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">— Fukuoka Golf Course Finder</div>
+      <h1 class="hero-title">3つの質問で<br>あなた向きのゴルフ場を診断</h1>
+      <p class="hero-sub">目的・エリア・予算に答えるだけ。福岡の掲載コースから、あなたにぴったりの<b>3コース</b>を編集部が提案します。</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="progress" id="progress"></div>
+    <div id="quiz"></div>
+
+    <div id="results">
+      <div class="res-head">
+        <div class="res-eyebrow">— Your Match</div>
+        <h2 class="res-title">あなたにおすすめの3コース</h2>
+        <div class="res-sub" id="resSub"></div>
+      </div>
+      <div class="res-list" id="resList"></div>
+      <div class="res-actions">
+        <button class="retry" onclick="resetQuiz()">🔄 もう一度診断する</button>
+        <div class="res-more"><a href="guide-index.html">目的別の予約ガイド一覧も見る →</a></div>
+      </div>
+      <p class="note">※ 診断結果はご回答の条件に合わせて、当サイト掲載データ（エリア・目的・価格帯）をもとに提案しています。料金・空き状況は各コース詳細ページの予約リンク（じゃらん・楽天GORA）で最新情報をご確認ください。</p>
+    </div>
+  </div>
+
+  <footer>
+    福岡ゴルフ場ガイド ｜ ゴルフ場診断（コースファインダー） ｜ 料金・空き状況は各予約サイトの最新情報をご確認ください
+  </footer>
+
+  <script>
+  const COURSES = [{"f": "course-sunlake.html", "n": "福岡サンレイクゴルフ倶楽部", "a": "chikugo", "h": "18ホール", "fee": 10000, "tier": "mid", "p": []}, {"f": "course-satsuki-tenpai.html", "n": "皐月ゴルフ倶楽部 天拝コース", "a": "chikugo", "h": "18ホール", "fee": 7241, "tier": "mid", "p": ["compe"]}, {"f": "course-yamejoyo.html", "n": "八女上陽ゴルフ倶楽部", "a": "chikugo", "h": "18ホール", "fee": 7146, "tier": "mid", "p": []}, {"f": "course-chikushino.html", "n": "筑紫野カントリークラブ", "a": "chikugo", "h": "18ホール", "fee": 6000, "tier": "mid", "p": ["budget"]}, {"f": "course-century.html", "n": "福岡センチュリーゴルフ倶楽部", "a": "chikugo", "h": "27ホール", "fee": 5500, "tier": "premium", "p": ["business", "budget"]}, {"f": "course-dazaifu.html", "n": "太宰府ゴルフ倶楽部", "a": "chikugo", "h": "18ホール", "fee": 5500, "tier": "premium", "p": ["business", "traveler", "budget"]}, {"f": "course-ariake.html", "n": "有明カントリークラブ", "a": "chikugo", "h": "18ホール", "fee": 4000, "tier": "cheap", "p": ["budget"]}, {"f": "course-central.html", "n": "セントラル福岡ゴルフ倶楽部", "a": "chikugo", "h": "18ホール", "fee": 4000, "tier": "cheap", "p": ["compe", "budget"]}, {"f": "course-kurume.html", "n": "久留米カントリークラブ", "a": "chikugo", "h": "18ホール", "fee": 4000, "tier": "cheap", "p": ["traveler", "budget"]}, {"f": "course-ogori.html", "n": "小郡カントリークラブ", "a": "chikugo", "h": "27ホール", "fee": 4000, "tier": "cheap", "p": ["budget"]}, {"f": "course-yasukogen.html", "n": "夜須高原カントリークラブ", "a": "chikugo", "h": "27ホール", "fee": 2629, "tier": "cheap", "p": ["budget"]}, {"f": "course-asoiizuka.html", "n": "麻生飯塚ゴルフ倶楽部", "a": "chikuho", "h": "27ホール", "fee": 9000, "tier": "mid", "p": []}, {"f": "course-nishinihon.html", "n": "西日本カントリークラブ", "a": "chikuho", "h": "18ホール", "fee": 7810, "tier": "mid", "p": []}, {"f": "course-jruchino.html", "n": "JR内野カントリークラブ", "a": "chikuho", "h": "18ホール", "fee": 7066, "tier": "mid", "p": []}, {"f": "course-kaho.html", "n": "かほゴルフクラブ", "a": "chikuho", "h": "18ホール", "fee": 5869, "tier": "cheap", "p": ["budget"]}, {"f": "course-lakeside.html", "n": "福岡レイクサイドカントリークラブ", "a": "chikuho", "h": "18ホール", "fee": 4000, "tier": "cheap", "p": ["compe", "budget"]}, {"f": "course-akane.html", "n": "茜カントリークラブ", "a": "chikuho", "h": "18ホール", "fee": 3500, "tier": "cheap", "p": ["beginner", "budget"]}, {"f": "course-satsuki-ryuoh.html", "n": "皐月ゴルフ倶楽部 竜王コース", "a": "chikuho", "h": "18ホール", "fee": 3332, "tier": "cheap", "p": ["budget"]}, {"f": "course-chikushigaoka.html", "n": "筑紫ヶ丘ゴルフクラブ", "a": "fukuokacity", "h": "27ホール", "fee": 6000, "tier": "mid", "p": ["budget"]}, {"f": "course-koga.html", "n": "古賀ゴルフ・クラブ", "a": "fukuokacity", "h": "18ホール", "fee": 6000, "tier": "premium", "p": ["business", "budget"]}, {"f": "course-fukuokacc.html", "n": "福岡カンツリー倶楽部（和白コース）", "a": "fukuokacity", "h": "18ホール", "fee": 5000, "tier": "premium", "p": ["business"]}, {"f": "course-sevenmillion.html", "n": "セブンミリオンカントリークラブ", "a": "fukuokacity", "h": "18ホール", "fee": 5000, "tier": "cheap", "p": ["budget"]}, {"f": "course-daihakata.html", "n": "大博多カントリー倶楽部", "a": "fukuokacity", "h": "27ホール", "fee": 3500, "tier": "cheap", "p": ["compe", "budget"]}, {"f": "course-hisayama.html", "n": "久山カントリー倶楽部", "a": "fukuokacity", "h": "18ホール", "fee": 3500, "tier": "cheap", "p": ["budget"]}, {"f": "course-saitozaki.html", "n": "西戸崎シーサイドカントリークラブ", "a": "fukuokacity", "h": "18ホール", "fee": 3500, "tier": "cheap", "p": ["budget"]}, {"f": "course-aburayama.html", "n": "油山ゴルフクラブ", "a": "fukuokacity", "h": "10ホール（2グリーン）", "fee": 3000, "tier": "cheap", "p": ["beginner", "budget"]}, {"f": "course-shimaseaside.html", "n": "志摩シーサイドカンツリークラブ", "a": "itoshima", "h": "18ホール", "fee": 16000, "tier": "mid", "p": ["traveler"]}, {"f": "course-ito.html", "n": "伊都ゴルフ倶楽部", "a": "itoshima", "h": "18ホール", "fee": 9000, "tier": "mid", "p": []}, {"f": "course-keya.html", "n": "芥屋ゴルフ倶楽部", "a": "itoshima", "h": "18ホール", "fee": 8000, "tier": "mid", "p": ["traveler"]}, {"f": "course-raizan.html", "n": "福岡雷山ゴルフ倶楽部", "a": "itoshima", "h": "18ホール", "fee": 7500, "tier": "mid", "p": []}, {"f": "course-queenshill.html", "n": "クイーンズヒルゴルフクラブ", "a": "itoshima", "h": "18ホール", "fee": 5000, "tier": "premium", "p": ["business", "traveler", "budget"]}, {"f": "course-nijo.html", "n": "二丈カントリークラブ", "a": "itoshima", "h": "18ホール", "fee": 4000, "tier": "cheap", "p": ["compe", "budget", "traveler"]}, {"f": "course-classic.html", "n": "ザ・クラシックゴルフ倶楽部", "a": "kitakyushu", "h": "27ホール", "fee": 13390, "tier": "premium", "p": ["business"]}, {"f": "course-kyushugc.html", "n": "九州ゴルフ倶楽部 八幡コース", "a": "kitakyushu", "h": "18ホール", "fee": 8000, "tier": "mid", "p": []}, {"f": "course-seitanomori.html", "n": "瀬板の森北九州ゴルフコース", "a": "kitakyushu", "h": "18ホール", "fee": 7728, "tier": "mid", "p": []}, {"f": "course-suonada.html", "n": "周防灘カントリークラブ", "a": "kitakyushu", "h": "18ホール", "fee": 7069, "tier": "mid", "p": []}, {"f": "course-newui.html", "n": "NEWユーアイゴルフクラブ", "a": "kitakyushu", "h": "18ホール", "fee": 6910, "tier": "mid", "p": []}, {"f": "course-moji.html", "n": "門司ゴルフ倶楽部", "a": "kitakyushu", "h": "18ホール", "fee": 6000, "tier": "premium", "p": ["business", "budget"]}, {"f": "course-chisan-onga.html", "n": "チサンカントリークラブ遠賀", "a": "kitakyushu", "h": "27ホール", "fee": 5878, "tier": "cheap", "p": ["compe", "budget"]}, {"f": "course-kitakyushu.html", "n": "北九州カントリー倶楽部", "a": "kitakyushu", "h": "18ホール", "fee": 4500, "tier": "cheap", "p": ["compe", "budget"]}, {"f": "course-moonlake.html", "n": "ムーンレイクゴルフクラブ 鞍手コース", "a": "kitakyushu", "h": "27ホール", "fee": 4000, "tier": "cheap", "p": ["compe", "budget"]}, {"f": "course-wakamiya.html", "n": "トライアルゴルフ＆リゾート 若宮コース", "a": "kitakyushu", "h": "18ホール", "fee": 4000, "tier": "cheap", "p": ["beginner", "budget"]}, {"f": "course-mission.html", "n": "ミッションバレーゴルフクラブ", "a": "kitakyushu", "h": "18ホール", "fee": 3000, "tier": "cheap", "p": ["budget"]}];
+
+  const AREA = {fukuokacity:'福岡市周辺', kitakyushu:'北九州', itoshima:'糸島', chikugo:'筑後・筑紫', chikuho:'筑豊'};
+  const TIER = {cheap:'お手頃', mid:'標準', premium:'名門・上質'};
+  const PERSONA = {business:'接待・名門', beginner:'初心者向け', traveler:'観光も', compe:'コンペ向き', budget:'コスパ'};
+
+  const QUESTIONS = [
+    { key:'goal', step:'STEP 1 / 3', title:'どんなゴルフにしたいですか？',
+      opts:[
+        {emo:'🏆', label:'接待・特別な一日', val:'business'},
+        {emo:'🌿', label:'初心者・気軽に', val:'beginner'},
+        {emo:'🌊', label:'観光も楽しみたい', val:'traveler'},
+        {emo:'🎁', label:'コンペ・団体で', val:'compe'},
+        {emo:'💴', label:'とにかくコスパ', val:'budget'},
+        {emo:'🤷', label:'こだわらない', val:'any'} ] },
+    { key:'area', step:'STEP 2 / 3', title:'どのエリアで探しますか？',
+      opts:[
+        {emo:'🏙️', label:'福岡市周辺', val:'fukuokacity'},
+        {emo:'⛰️', label:'北九州', val:'kitakyushu'},
+        {emo:'🌊', label:'糸島', val:'itoshima'},
+        {emo:'🌾', label:'筑後・筑紫', val:'chikugo'},
+        {emo:'🌲', label:'筑豊', val:'chikuho'},
+        {emo:'🗾', label:'どこでも', val:'any'} ] },
+    { key:'budget', step:'STEP 3 / 3', title:'予算感はどのくらい？',
+      opts:[
+        {emo:'🪙', label:'〜¥6,000（お手頃）', val:'cheap'},
+        {emo:'💳', label:'〜¥10,000（標準）', val:'mid'},
+        {emo:'✨', label:'名門・上質でもOK', val:'premium'},
+        {emo:'🤷', label:'こだわらない', val:'any'} ] }
+  ];
+
+  let step = 0;
+  const answers = {};
+
+  function renderProgress(){
+    const p = document.getElementById('progress');
+    p.innerHTML = QUESTIONS.map((_,i)=>'<div class="dot'+(i<=step?' on':'')+'"></div>').join('');
+  }
+  function renderQuestion(){
+    document.getElementById('results').style.display='none';
+    document.getElementById('progress').style.display='flex';
+    renderProgress();
+    const q = QUESTIONS[step];
+    const back = step>0 ? '<button class="q-back" onclick="goBack()">← 前の質問へ</button>' : '';
+    document.getElementById('quiz').innerHTML =
+      '<div class="qcard">'+
+      '<div class="q-step">'+q.step+'</div>'+
+      '<div class="q-title">'+q.title+'</div>'+
+      '<div class="opts">'+ q.opts.map(o=>
+        '<button class="opt" onclick="choose(\''+q.key+'\',\''+o.val+'\')"><span class="emo">'+o.emo+'</span><span>'+o.label+'</span></button>'
+      ).join('') +'</div>'+ back +'</div>';
+  }
+  function choose(key,val){
+    answers[key]=val;
+    if (step < QUESTIONS.length-1){ step++; renderQuestion(); window.scrollTo({top:0,behavior:'smooth'}); }
+    else { showResults(); }
+  }
+  function goBack(){ if(step>0){ step--; renderQuestion(); } }
+  function resetQuiz(){ step=0; for(const k in answers) delete answers[k]; renderQuestion(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+  function scoreCourse(c){
+    let s = 0;
+    if (answers.goal && answers.goal!=='any' && c.p.indexOf(answers.goal)>=0) s += 3;
+    if (answers.area && answers.area!=='any' && c.a===answers.area) s += 3;
+    if (answers.budget==='cheap' && c.tier==='cheap') s += 2;
+    if (answers.budget==='mid' && (c.tier==='cheap'||c.tier==='mid')) s += 2;
+    if (answers.budget==='premium' && (c.tier==='mid'||c.tier==='premium')) s += 2;
+    if (c.p.length) s += 0.4; // 編集部が目的付けした実力コースを僅かに優遇
+    return s;
+  }
+  function showResults(){
+    const ranked = COURSES.map((c,i)=>({c, s:scoreCourse(c), i}))
+      .sort((a,b)=> b.s-a.s || a.c.fee-b.c.fee || a.i-b.i)
+      .slice(0,3);
+
+    const subBits = [];
+    if (answers.goal && answers.goal!=='any') subBits.push(PERSONA[answers.goal]);
+    if (answers.area && answers.area!=='any') subBits.push(AREA[answers.area]);
+    if (answers.budget && answers.budget!=='any') subBits.push(TIER[answers.budget]);
+    document.getElementById('resSub').textContent = subBits.length ? '条件: '+subBits.join(' × ') : 'すべての条件で幅広く提案';
+
+    document.getElementById('resList').innerHTML = ranked.map((r,idx)=>{
+      const c = r.c;
+      const chips = [];
+      if (answers.goal && answers.goal!=='any' && c.p.indexOf(answers.goal)>=0) chips.push('<span class="rchip">'+PERSONA[answers.goal]+'</span>');
+      chips.push('<span class="rchip area">'+(AREA[c.a]||'福岡')+'</span>');
+      chips.push('<span class="rchip tier">'+TIER[c.tier]+'</span>');
+      if (c.h) chips.push('<span class="rchip">'+c.h+'</span>');
+      const rank = idx===0 ? '★ 一番のおすすめ' : (idx+1)+'番目';
+      return '<article class="res-card'+(idx===0?' top':'')+'">'+
+        '<span class="res-rank">'+rank+'</span>'+
+        '<div class="res-name">'+c.n+'</div>'+
+        '<div class="res-chips">'+chips.join('')+'</div>'+
+        '<a href="'+c.f+'" class="res-btn">コース詳細・予約へ →</a>'+
+        '</article>';
+    }).join('');
+
+    document.getElementById('quiz').innerHTML='';
+    document.getElementById('progress').style.display='none';
+    document.getElementById('results').style.display='block';
+    window.scrollTo({top:0,behavior:'smooth'});
+    if (typeof gtag==='function') gtag('event','quiz_complete',{ page:'course-quiz', lang:'ja',
+      goal:answers.goal||'', area:answers.area||'', budget:answers.budget||'',
+      top_result:(ranked[0]&&ranked[0].c.f||'').replace(/\.html$/,'') });
+  }
+
+  renderQuestion();
+  </script>
+
+</body>
+</html>

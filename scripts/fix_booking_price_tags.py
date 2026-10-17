@@ -112,7 +112,8 @@ def fix(html, spec):
         body = hub.group(0)
         if not text:
             # 今回は料金を確認できない → 前回点検の注記が残っていれば古い情報なので削除
-            new_body = re.sub(r'\n[ \t]*<p class="fee-note"[^>]*>.*?</p>', "", body, count=1, flags=re.S)
+            # \r?\n: CRLF のファイルで \r だけ残すと行末が \r\r\n に壊れる (2026-10-18 queenshill で発生)
+            new_body = re.sub(r'\r?\n[ \t]*<p class="fee-note"[^>]*>.*?</p>', "", body, count=1, flags=re.S)
             if new_body != body:
                 log["note_removed"] += 1
             return new_body
@@ -122,7 +123,8 @@ def fix(html, spec):
                 log["note_updated"] += 1
             return new_body
         log["note"] += 1
-        return DESC_RE.sub(lambda m: m.group(1) + NOTE_P.format(t=text), body, count=1)
+        nl = "\r\n" if "\r\n" in body else "\n"  # ファイルの改行コードに合わせる
+        return DESC_RE.sub(lambda m: m.group(1) + NOTE_P.format(t=text).replace("\n", nl), body, count=1)
 
     html = HUB_RE.sub(hub_sub, html)
     return html, log

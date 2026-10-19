@@ -12,18 +12,22 @@ import sys, json, pathlib
 
 CACHE = pathlib.Path(__file__).parent / ".cache" / "jalan_floor.json"
 
-# slug: (jalan gc id, いまページに出ている額)   ※ gc id が None = じゃらん除外 (§9.4)
+# slug: (jalan gc id, いまページの予約カード/sticky に出ている額)
+# 2026-10-18 反映後の状態。点検のたびに、反映した new をここの old へ書き戻すこと。
+# old が None = 現在は金額を出していない (確認できず外した) コース。今月じゃらんで料金が取れたら
+#               「再掲候補」としてレポートするだけで、自動では戻さない (金額を足す処理は手作業で確認する)。
+# 対象外: koga / moji (じゃらん・楽天とも予約不可 → 公式導線) / aburayama (楽天のみ) / kyushugc (じゃらん予約不可 → 楽天のみ)
 TARGETS = {
-    "ariake": ("02315", "¥4,000"), "central": ("02322", "¥4,000"), "lakeside": ("02346", "¥4,000"),
-    "moonlake": ("02339", "¥4,000"), "nijo": ("02350", "¥4,000"), "ogori": ("02321", "¥4,000"),
-    "wakamiya": ("02341", "¥4,000"), "chikushigaoka": ("02333", "¥6,000"), "chikushino": ("02324", "¥6,000"),
-    "daihakata": ("02332", "¥6,000"), "hisayama": ("02334", "¥6,000"), "koga": ("02331", "¥6,000"),
-    "moji": ("02307", "¥6,000"), "asoiizuka": ("02343", "¥9,000"), "ito": ("02329", "¥9,000"),
-    "kyushugc": ("02310", "¥8,000"), "mission": ("02338", "¥3,000"), "sevenmillion": ("02314", "¥5,000"),
-    "shimaseaside": ("02352", "¥19,000"), "kokura": ("02309", "¥15,000"),
-    "kurume": ("02356", "¥6,137"), "queenshill": ("02328", "¥19,305"),   # 2026-09 是正済 → 最新値へ更新
-    "aburayama": (None, "¥5,000"),
+    "ariake": ("02315", "¥6,773"), "central": ("02322", "¥5,869"), "lakeside": ("02346", "¥7,150"),
+    "moonlake": ("02339", "¥7,273"), "nijo": ("02350", "¥6,778"), "ogori": ("02321", "¥14,546"),
+    "wakamiya": ("02341", "¥10,455"), "chikushigaoka": ("02333", "¥13,150"), "chikushino": ("02324", "¥9,978"),
+    "daihakata": ("02332", "¥7,696"), "hisayama": ("02334", "¥8,564"), "asoiizuka": ("02343", "¥9,182"),
+    "ito": ("02329", "¥16,378"), "mission": ("02338", "¥9,455"), "sevenmillion": ("02314", "¥8,600"),
+    "kurume": ("02356", "¥7,210"),
+    "shimaseaside": ("02352", None), "kokura": ("02309", None), "queenshill": ("02328", None),
 }
+# course ページ以外で手書きしている料金 (スクリプト対象外・レポートで差分だけ知らせる)
+MANUAL = {"kaho (hub-beginner.html のカード)": ("02347", "¥5,869")}
 
 
 def yen(n):
@@ -52,6 +56,10 @@ def main():
     for slug, (jid, old) in TARGETS.items():
         r = fl.get(jid) if jid else None
         wk, we = (r or {}).get("weekday"), (r or {}).get("weekend")
+        if old is None:  # 現在は金額を出していない
+            if wk:
+                print(f"{slug:14} {'(金額なし)':>8} → 再掲候補 {yen(wk['price'])}（じゃらんで販売再開・手動で確認して再掲）")
+            continue
         spec = {"old": old, "new": yen(wk["price"]) if wk else None, "note": None,
                 "evidence": "じゃらん除外(§9.4)・楽天のみ=機械検証不可" if not jid else
                             (f"じゃらんに直近{r['period']}の18H販売プラン無し" if not wk else
@@ -63,6 +71,10 @@ def main():
         out[slug] = spec
         print(f"{slug:14} {old:>8} → {spec['new'] or '金額を外す':>10}"
               + (f" | 土日祝 {yen(we['price'])}〜" if we else ""))
+    for label, (jid, shown) in MANUAL.items():
+        wk = (fl.get(jid) or {}).get("weekday")
+        print(f"[手書き] {label}: 表示 {shown} / 今月 {yen(wk['price']) if wk else '取得不可'}"
+              + ("" if wk and yen(wk["price"]) == shown else "  ← 要更新"))
     pathlib.Path(sys.argv[1]).write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
 
 

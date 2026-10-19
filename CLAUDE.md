@@ -133,6 +133,7 @@
    - **楽天 GORA 除外** (4件): course-fukuokacc / course-wakamatsu / course-akane / course-genkai
    - **じゃらんゴルフ除外** (4件): course-fukuokacc / course-wakamatsu / course-genkai / course-aburayama
    - 差分: akane は jalan 掲載・aburayama は rakuten 掲載 (個別運用)
+   - **★2026-10-19 追加 (オンライン予約不可を確認)**: course-koga / course-moji = じゃらん・楽天とも予約不可 → **公式サイトのみ** / course-kyushugc = じゃらん予約不可 → **楽天のみ**。他ページでも予約ボタンを付けない (判定基準・手順は `REWRITE_PLAYBOOK.md` 学び9)
 5. **本ドキュメント (`CLAUDE.md`) を一括置換 script で書き換えない** (手動 Edit のみ)
 6. **`NEXT_SESSION.md` も一括置換禁止** (手動 Edit のみ)
 7. **`course_data.json` を絶対上書きしない** (マスタ 2,255 行・破壊事故 2026-05-03)
@@ -172,6 +173,8 @@
 | (継続) | 観測中の HTML 改修で計測指標が交絡 | Day 0 から `OBSERVATION_PLAYBOOK.md` で改修禁止期間を明示 |
 | (継続) | ChatGPT 量産記事の薄さで E-E-A-T 評価毀損 | 取材ドリブン・実名 + 一次資料 (`content-strategist` の信念) |
 | 2026-05-10 | `generate_sitemap.py` の lastmod 継承ロジックで 4/3 のまま陳腐化 | git log ベースに修正・MEDIUM_PRIORITY tier 追加 |
+| 2026-10-18 | 置換スクリプトが CRLF ファイルで `\r` だけ残し行末が `\r\r\n` に破損 → git の改行変換が止まり全行差分 | 改行を含む置換は `\r?\n`・挿入はファイルの改行コードに合わせる。改行の検査は grep ではなく Python でバイト単位に行う (この環境の grep `$'\r'` は全行一致して当てにならない) |
+| 2026-10-18 | 「根拠なし」と判断して公式料金を削除 (志摩シーサイド) → 公式の料金ページがメニューに無いだけだった | 確認不可と判断する前に公式の料金ページとページ内リンクの飛び先を見る (`REWRITE_PLAYBOOK.md` 学び9) |
 
 ## 13. 5 エリア × 35 コースの基本構造
 

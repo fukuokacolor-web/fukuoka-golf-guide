@@ -8,21 +8,35 @@ mode "rakuten" : じゃらんのみ予約不可      → じゃらんボタン�
 
 確認方法 (2026-10-19): じゃらん gc ページに予約カレンダー無し / 楽天GORA は「評価なし・ポイント不可・クーポン不可」= 予約不可
 冪等: 対象のアフィリURLが残っていなければ no-op。
+2026-10-24 追加: 西戸崎・茜・夜須高原・サンレイク (じゃらん予約カレンダー無し・楽天は予約可) → 楽天へ、
+             ザ・クラシック (じゃらん・楽天とも不可・公式サイトに WEB 予約あり) → 公式へ。
+             楽天の予約可否は予約カレンダー (search.gora.golf.rakuten.co.jp/cal/disp/c_id/{id}) で判定
+             (「現在公開中の枠が無いか、売り切れたため予約できません。」なら不可)。ページに楽天リンクが無いコース (茜) は c_id から作る。
 Usage:
-  python scripts/convert_unbookable_cta.py            # dry-run
-  python scripts/convert_unbookable_cta.py --apply    # REPO + PREVIEW に書き込み
+  python scripts/convert_unbookable_cta.py                              # dry-run
+  python scripts/convert_unbookable_cta.py --only saitozaki --preview   # 1件テスト: PREVIEW_ROOT だけに書く
+  python scripts/convert_unbookable_cta.py --apply                      # REPO + PREVIEW に書き込み
 """
 import re, os, sys
 
 REPO_ROOT = "C:/Users/Owner/fukuoka-golf-guide"
 PREVIEW_ROOT = "C:/Users/Owner/Documents/新しいPJ"
 ROOTS = [REPO_ROOT, PREVIEW_ROOT]
-APPLY = "--apply" in sys.argv
+APPLY = "--apply" in sys.argv or "--preview" in sys.argv
+if "--preview" in sys.argv:
+    ROOTS = [PREVIEW_ROOT]
+ONLY = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
 
 COURSES = {
     "koga": {"mode": "official", "jalan": "02331", "cid": "400018", "official": "https://kogagc.co.jp/"},
     "moji": {"mode": "official", "jalan": "02307", "cid": "400047", "official": "https://www.mojigolf.co.jp/"},
     "kyushugc": {"mode": "rakuten", "jalan": "02310", "cid": "400012"},
+    # 2026-10-24 確認
+    "saitozaki": {"mode": "rakuten", "jalan": "02313", "cid": "400020"},
+    "akane": {"mode": "rakuten", "jalan": "02344", "cid": "400001"},
+    "yasukogen": {"mode": "rakuten", "jalan": "02349", "cid": "400048"},
+    "sunlake": {"mode": "rakuten", "jalan": "02357", "cid": "400053"},
+    "classic": {"mode": "official", "jalan": "02340", "cid": "400022", "official": "https://cm-g.co.jp/the-classic/"},
 }
 CHECKED = "2026年10月"
 
@@ -70,20 +84,37 @@ OFFICIAL_CARD = {
            '        <div class="booking-desc">비지터 예약 가능 여부·요금·예약 방법은 골프장 공식 사이트(또는 전화)가 가장 정확합니다. 일본어 사이트입니다.</div>\n'
            '        <div class="booking-arrow">공식 사이트로 <span class="arrow-ico">→</span></div>'),
 }
+RAKUTEN_CARD = {
+    "ja": ('<div class="booking-logo">RAKUTEN GORA ／ 楽天GORA</div>\n        <div class="booking-service-name">楽天GORAで予約</div>\n'
+           '        <div class="booking-desc">楽天ポイントが貯まる・使えるゴルフ予約サイト。最新の空き状況と料金プランを確認できます。</div>\n'
+           '        <div class="booking-price-tag">料金は <span class="big">楽天GORAで確認</span></div>\n'
+           '        <div class="booking-arrow">楽天GORAで予約する <span class="arrow-ico">→</span></div>'),
+    "en": ('<div class="booking-logo">RAKUTEN GORA</div>\n        <div class="booking-service-name">Book on Rakuten GORA</div>\n'
+           '        <div class="booking-desc">Japanese golf booking site (Japanese only). Check live availability and rate plans.</div>\n'
+           '        <div class="booking-price-tag">Rates <span class="big">on Rakuten GORA</span></div>\n'
+           '        <div class="booking-arrow">Book on Rakuten GORA <span class="arrow-ico">→</span></div>'),
+}
 RAKUTEN_CARD_KO = ('<div class="booking-logo">RAKUTEN GORA ／ 라쿠텐 GORA</div>\n        <div class="booking-service-name">라쿠텐 GORA에서 예약</div>\n'
                    '        <div class="booking-desc">라쿠텐 포인트가 쌓이는 일본 골프 예약 사이트. 그린피·플레이 스타일을 비교할 수 있습니다.</div>\n'
                    '        <div class="booking-price-tag">요금은 <span class="big">라쿠텐에서 확인</span></div>\n'
                    '        <div class="booking-arrow">라쿠텐에서 예약하기 <span class="arrow-ico">→</span></div>')
 
 
-def aff_urls(html, c):
+def rak_url(cid):
+    inner = f"https%253A%252F%252Fbooking.gora.golf.rakuten.co.jp%252Fguide%252Fdisp%252Fc_id%252F{cid}"
+    return ("https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+BW8O1&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp"
+            "%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3D" + inner + "%26m%3D" + inner)
+
+
+def aff_urls(html, c, build=False):
     j = re.search(r'https://px\.a8\.net/svt/ejp\?[^"\']*golf-jalan\.net%2Fgc' + c["jalan"] + r'%2F', html)
     r = re.search(r'https://rpx\.a8\.net/svt/ejp\?[^"\']*c_id%252F' + c["cid"] + r'%26[^"\']*', html)
-    return (j.group(0) if j else None), (r.group(0) if r else None)
+    r = r.group(0) if r else (rak_url(c["cid"]) if build and c["mode"] == "rakuten" else None)  # 楽天リンクが無いページ (茜) は作る
+    return (j.group(0) if j else None), r
 
 
 def convert(html, slug, c):
-    J, R = aff_urls(html, c)
+    J, R = aff_urls(html, c, build=True)
     if not J and (c["mode"] == "rakuten" or not R):
         return html, {}
     log = {}
@@ -142,7 +173,8 @@ def convert(html, slug, c):
         new_attrs = new_attrs.replace("btn-jalan", "btn-rakuten").replace("trackAffiliate('jalan'", "trackAffiliate('rakuten'")
         if "booking-card" in cls:
             bump("card_to_rakuten")
-            return f"<a {new_attrs}>\n        {RAKUTEN_CARD_KO if lang == 'ko' else inner}\n      </a>"
+            card = RAKUTEN_CARD_KO if lang == "ko" else RAKUTEN_CARD[lang]
+            return f"<a {new_attrs}>\n        {card}\n      </a>"
         label = (T["ftv_rakuten"] if "ftv-cta-btn" in cls else T["rakuten_btn"])[lang]
         if "hero-cta-btn" in cls:
             label = {"ja": "🏌️ 楽天GORAでこのコースを予約 →", "en": "🏌️ Book on Rakuten GORA →", "ko": "🏌️ 라쿠텐 GORA에서 예약 →"}[lang]
@@ -232,15 +264,45 @@ def polish(html, c):
     return html, log
 
 
+# コース固有の文面修正 (LF 前提・置換後に元の改行コードへ戻す)
+TEXT_FIX = {
+    # 茜: 「楽天GORAには掲載がない」「じゃらんでビジター予約可」は 2026-10-24 時点で事実と逆 (じゃらん予約カレンダー無し・楽天 c_id 400001 で予約可)
+    "akane": [
+        ("じゃらんゴルフでビジター予約可。福岡空港から車で約55分。", "楽天GORAでビジター予約可。福岡空港から車で約55分。"),
+        ("じゃらんゴルフでビジター予約可・福岡空港から約55分。", "楽天GORAでビジター予約可・福岡空港から約55分。"),
+        ("はい。じゃらんゴルフからビジター予約が可能です（茜ゴルフクラブは楽天GORAには掲載がないため、オンライン予約はじゃらんゴルフをご利用ください）。",
+         "はい。楽天GORAからビジター予約が可能です（2026年10月時点、じゃらんゴルフでは予約を受け付けていません）。"),
+        ("はい。<strong>じゃらんゴルフ</strong>からビジター予約が可能です（茜GCは楽天GORAには掲載がないため、オンライン予約はじゃらんゴルフをご利用ください）。",
+         "はい。<strong>楽天GORA</strong>からビジター予約が可能です（2026年10月時点、じゃらんゴルフでは予約を受け付けていません）。"),
+        ("最新の最安値はじゃらんゴルフでご確認ください。", "最新の料金は楽天GORAでご確認ください。"),
+        ("最新の最安値は<strong>じゃらんゴルフ</strong>でご確認ください。", "最新の料金は<strong>楽天GORA</strong>でご確認ください。"),
+        ("// [Phase 1.5] あかねCC: 楽天GORA未掲載のため Sticky CTA 非表示", "// あかねCC: Sticky CTA 非表示 (予約導線は本文の楽天GORAボタン)"),
+    ],
+    # 西戸崎: 電話・住所 (§7)。公式 saitozaki.com と楽天GORA で「予約・お問い合わせ 092-603-0677 / 福岡市東区大字西戸崎316」(2026-10-24 確認)
+    "saitozaki": [
+        ('"streetAddress":"西戸崎17-18"', '"streetAddress":"大字西戸崎316"'),
+        ('"telephone": "092-603-1555"', '"telephone": "092-603-0677"'),
+        ('<div class="contact-value">福岡市東区 西戸崎17-18</div>', '<div class="contact-value">福岡市東区 大字西戸崎316</div>'),
+        ('<div class="contact-value">092-603-1555</div>', '<div class="contact-value">092-603-0677</div>'),
+    ],
+}
+
+
 def main():
     total = 0
     for slug, c in COURSES.items():
+        if ONLY and slug != ONLY:
+            continue
         f = f"course-{slug}.html"
         html = open(os.path.join(REPO_ROOT, f), encoding="utf-8", newline="").read()
         nl = "\r\n" if "\r\n" in html else "\n"
         new, log = convert(html.replace("\r\n", "\n"), slug, c)
         new, log2 = polish(new, c)
         log.update(log2)
+        for old, rnew in TEXT_FIX.get(slug, []):
+            if old in new:
+                new = new.replace(old, rnew)
+                log["text_fix"] = log.get("text_fix", 0) + 1
         new = new.replace("\n", nl)
         if new == html:
             print(f"  [already] {f}")
@@ -253,7 +315,7 @@ def main():
         if APPLY:
             for root in ROOTS:
                 open(os.path.join(root, f), "w", encoding="utf-8", newline="").write(new)
-    print(f"\n{'APPLIED' if APPLY else 'DRY-RUN'}: {total} files")
+    print(f"\n{'APPLIED' if APPLY else 'DRY-RUN'}: {total} files" + (f" -> {ROOTS}" if APPLY else ""))
 
 
 if __name__ == "__main__":

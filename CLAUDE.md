@@ -135,6 +135,7 @@
    - 差分: aburayama は rakuten 掲載 (個別運用)
    - **★2026-10-19 追加 (オンライン予約不可を確認)**: course-koga / course-moji = じゃらん・楽天とも予約不可 → **公式サイトのみ** / course-kyushugc = じゃらん予約不可 → **楽天のみ**。他ページでも予約ボタンを付けない (判定基準・手順は `REWRITE_PLAYBOOK.md` 学び9)
    - **★2026-10-24 追加**: course-classic = じゃらん・楽天とも予約不可 → **公式サイトのみ** (公式に WEB 予約あり) / course-saitozaki・course-akane・course-yasukogen・course-sunlake = じゃらん予約不可 → **楽天のみ**。akane は楽天 c_id 400001 で予約可と確認したため楽天除外を解除 (旧「楽天未掲載」は誤り)
+   - **★2026-10-26 追加**: course-kokura / course-queenshill / course-raizan / course-keya = じゃらん・楽天とも予約不可 → **公式サイトのみ**。小倉は「ビジターは会員の紹介を受けてから電話予約」(公式 kokura-cc.com/reserve/) なので「ビジター予約OK」と書かない。クイーンズヒル・雷山は公式にオンライン予約あり。**じゃらんの判定はカレンダーのマス `<td class="jsDayPanel` の数** (文字列 `jsDayPanel` はカレンダーの無いページの JS にも1件あるので数えない)
 5. **本ドキュメント (`CLAUDE.md`) を一括置換 script で書き換えない** (手動 Edit のみ)
 6. **`NEXT_SESSION.md` も一括置換禁止** (手動 Edit のみ)
 7. **`course_data.json` を絶対上書きしない** (マスタ 2,255 行・破壊事故 2026-05-03)

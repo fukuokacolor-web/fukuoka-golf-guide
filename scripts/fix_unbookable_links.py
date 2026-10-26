@@ -31,10 +31,16 @@ PAGES = ["area-fukuokacity.html", "area-kitakyushu.html", "hub-business.html", "
          # 2026-10-24 追加
          "area-chikuho.html", "area-chikugo.html", "hub-beginner.html", "hub-budget.html", "recommend.html", "seasonal.html",
          "book-fukuoka-golf-foreigner.html", "book-fukuoka-27holes.html", "book-fukuoka-onsen.html", "book-fukuoka-business.html",
-         "book-fukuoka-beginner.html", "book-fukuoka-afternoon.html", "access-saitozaki.html"]
+         "book-fukuoka-beginner.html", "book-fukuoka-afternoon.html", "access-saitozaki.html",
+         # 2026-10-26 追加 (小倉・クイーンズヒル・雷山・芥屋へのリンクがあるページ)
+         "airport-access-top5.html", "area-itoshima.html", "book-fukuoka-traveler.html", "course-wakamatsu.html",
+         "hub-traveler.html", "report-kokura.html"]
 
 OFFICIAL = {"koga": ("02331", "400018", "https://kogagc.co.jp/"), "moji": ("02307", "400047", "https://www.mojigolf.co.jp/"),
-            "classic": ("02340", "400022", "https://cm-g.co.jp/the-classic/")}
+            "classic": ("02340", "400022", "https://cm-g.co.jp/the-classic/"),
+            # 2026-10-26 追加 (じゃらん・楽天とも予約不可。判定は convert_unbookable_cta.py の注記参照)
+            "kokura": ("02309", "400019", "https://kokura-cc.com/reserve/"), "queenshill": ("02328", "400021", "https://queenshill.co.jp/"),
+            "raizan": ("02330", "400043", "http://raizan-gc.co.jp/"), "keya": ("02351", "400015", "https://www.keyagc.co.jp/")}
 # じゃらんのみ予約不可 → 楽天へ (2026-10-24 楽天の予約カレンダーで料金・空きを確認)
 RAKUTEN_ONLY = {"kyushugc": ("02310", "400012"), "saitozaki": ("02313", "400020"), "akane": ("02344", "400001"),
                 "yasukogen": ("02349", "400048"), "sunlake": ("02357", "400053")}
@@ -58,14 +64,22 @@ def rak_url(cid):
 OFF_LABEL = {"ja": "🏛️ 公式サイト（ネット予約なし）", "en": "🏛️ Official site (no online booking)", "ko": "🏛️ 공식 사이트 (온라인 예약 없음)"}
 # 公式サイト自体に WEB 予約があるコースは「ネット予約なし」と書かない
 OFF_LABEL_WEB = {"ja": "🏛️ 公式サイトで予約", "en": "🏛️ Book on official site", "ko": "🏛️ 공식 사이트에서 예약"}
-OFFICIAL_WEB = {"classic"}
+OFFICIAL_WEB = {"classic", "queenshill", "raizan"}  # 2026-10-26: クイーンズヒル・雷山は公式にオンライン予約あり
+# ビジターは会員の紹介が必要なコース (公式のご予約案内に明記): 「ネット予約なし」ではなく紹介制と書く
+OFF_LABEL_MEMBER = {"ja": "🏛️ 公式サイト（会員の紹介が必要）", "en": "🏛️ Official site (member introduction required)", "ko": "🏛️ 공식 사이트 (회원 소개 필요)"}
+OFFICIAL_MEMBER = {"kokura"}
 RAK_LABEL = {"ja": "🅡 楽天GORAで予約", "en": "🅡 Rakuten GORA (JP)", "ko": "🅡 라쿠텐 GORA (일본어)"}
 OFF_STYLE = "background:#1a5c38;color:#fff;"
 
 # 会員制コースの代替誘導: 古賀GC → 予約可コース (2026-10-19 楽天GORA で予約可を確認: 評価・ポイント可)
+# page: [(差し替え前の 名前, 補足, slug) → (差し替え後の slug, 名前, 補足, 楽天c_id)]
 ALT = {
-    "course-fukuokacc.html": ("fukuokakokusai", "福岡国際CC", "宗像市", "400040"),
-    "course-genkai.html": ("newui", "NEWユーアイGC", "宗像市", "400052"),
+    "course-fukuokacc.html": [(("古賀GC", "福岡市近郊", "koga"), ("fukuokakokusai", "福岡国際CC", "宗像市", "400040"))],
+    "course-genkai.html": [(("古賀GC", "福岡市近郊", "koga"), ("newui", "NEWユーアイGC", "宗像市", "400052")),
+                           # 2026-10-26: 芥屋はじゃらん・楽天とも予約不可 → 久山CC (楽天の予約カレンダーで評価4.0・空き枠を確認)
+                           (("芥屋GC", "糸島の名門", "keya"), ("hisayama", "久山CC", "久山町", "400038"))],
+    # 2026-10-26: 小倉は「ビジターは会員の紹介が必要」(公式) → チサン遠賀 (楽天で評価3.4・空き枠を確認)
+    "course-wakamatsu.html": [(("小倉CC", "ビジター枠あり", "kokura"), ("chisan-onga", "チサン遠賀CC", "遠賀郡", "400035"))],
 }
 
 TEXT_FIX = {
@@ -92,14 +106,13 @@ def fix(html, page):
     log = {}
     bump = lambda k, n=1: log.__setitem__(k, log.get(k, 0) + n)
 
-    # 1) 会員制コースの代替誘導ブロック (古賀GC の小カード) を差替
-    if page in ALT:
-        slug, name, area, cid = ALT[page]
-        pat = re.compile(r'(<div style="font-weight:700;color:#1a5c38;font-size:13\.5px;margin-bottom:8px;">)古賀GC '
-                         r'<span style="font-weight:400;color:#777;">／福岡市近郊</span>(</div>\s*<div style="display:flex;gap:6px;">\s*'
-                         r'<a href=")[^"]*(" target="_blank" rel="nofollow sponsored noopener" onclick="[^"]*" style="[^"]*">)🏌️ 古賀GCを楽天GORAで →(</a>\s*'
-                         r'<a href=")course-koga\.html(" onclick="[^"]*?target_page:\')course-koga(\'[^"]*" style="[^"]*">[^<]*</a>)', re.S)
-        def alt_sub(m):
+    # 1) 会員制コースの代替誘導ブロック (予約できなくなったコースの小カード) を予約可コースへ差替
+    for (o_name, o_sub, o_slug), (slug, name, area, cid) in ALT.get(page, []):
+        pat = re.compile(r'(<div style="font-weight:700;color:#1a5c38;font-size:13\.5px;margin-bottom:8px;">)' + re.escape(o_name) + ' '
+                         r'<span style="font-weight:400;color:#777;">／' + re.escape(o_sub) + r'</span>(</div>\s*<div style="display:flex;gap:6px;">\s*'
+                         r'<a href=")[^"]*(" target="_blank" rel="nofollow sponsored noopener" onclick="[^"]*" style="[^"]*">)🏌️ ' + re.escape(o_name) + r'を楽天GORAで →(</a>\s*'
+                         r'<a href=")course-' + o_slug + r'\.html(" onclick="[^"]*?target_page:' + "')course-" + o_slug + "('" + r'[^"]*" style="[^"]*">[^<]*</a>)', re.S)
+        def alt_sub(m, slug=slug, name=name, area=area, cid=cid):
             bump("alt_cta")
             return (m.group(1) + f'{name} <span style="font-weight:400;color:#777;">／{area}</span>' + m.group(2) + rak_url(cid)
                     + m.group(3) + f"🏌️ {name}を楽天GORAで →" + m.group(4) + f"course-{slug}.html" + m.group(5) + f"course-{slug}" + m.group(6))
@@ -115,7 +128,7 @@ def fix(html, page):
             cls = re.search(r'class="([^"]*)"', m.group("attrs"))
             cls = cls.group(1).replace("btn-jalan-s", "btn-detail").replace("btn-jalan", "btn-detail").replace("btn-rakuten", "btn-detail") if cls else ""
             bump(f"{slug}_official")
-            label = (OFF_LABEL_WEB if slug in OFFICIAL_WEB else OFF_LABEL)[lang]
+            label = (OFF_LABEL_MEMBER if slug in OFFICIAL_MEMBER else OFF_LABEL_WEB if slug in OFFICIAL_WEB else OFF_LABEL)[lang]
             if "sticky-btn" in cls:  # sticky の行き先ボタンはコース名を残す (確認できない料金は外す)
                 label = "🏛️ " + re.sub(r"（¥[^）]*）", "", re.sub(r"^\S+\s*", "", m.group("inner"))) + "（公式サイト）"
             return f'<a href="{url}" class="{cls}" target="_blank" rel="noopener" style="{OFF_STYLE}">{label}</a>'

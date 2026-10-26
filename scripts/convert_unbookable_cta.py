@@ -37,6 +37,13 @@ COURSES = {
     "yasukogen": {"mode": "rakuten", "jalan": "02349", "cid": "400048"},
     "sunlake": {"mode": "rakuten", "jalan": "02357", "cid": "400053"},
     "classic": {"mode": "official", "jalan": "02340", "cid": "400022", "official": "https://cm-g.co.jp/the-classic/"},
+    # 2026-10-26 確認: じゃらん gc ページに予約カレンダーのマス (<td class="jsDayPanel") が0
+    #   (※ 文字列 "jsDayPanel" はカレンダーの無いページの JS にも1件含まれるので、件数ではなく td で判定する)
+    #   かつ楽天GORA の予約カレンダーが「評価なし・現在公開中の枠が無いか、売り切れたため予約できません」
+    "kokura": {"mode": "official", "jalan": "02309", "cid": "400019", "official": "https://kokura-cc.com/reserve/"},   # ビジターは会員の紹介が必要 (公式)
+    "queenshill": {"mode": "official", "jalan": "02328", "cid": "400021", "official": "https://queenshill.co.jp/"},  # 公式にオンライン予約あり
+    "raizan": {"mode": "official", "jalan": "02330", "cid": "400043", "official": "http://raizan-gc.co.jp/"},        # 公式にオンライン予約あり
+    "keya": {"mode": "official", "jalan": "02351", "cid": "400015", "official": "https://www.keyagc.co.jp/"},       # 公式は予約・問合せフォーム
 }
 CHECKED = "2026年10月"
 
@@ -222,7 +229,8 @@ def convert(html, slug, c):
         btn = lambda t: f"'<a href=\"'+RAKUTEN+'\" class=\"sc-btn sc-rakuten\" rel=\"nofollow sponsored\" target=\"_blank\" style=\"max-width:360px;\">{t}</a>'"
         return ("var RAKUTEN=\"" + R + "\";\n  var sttpl = {\n    // <!-- v2-cvr --> 楽天のみ (じゃらんは予約不可・" + CHECKED + "確認)\n"
                 f"    ja:{btn('🏌️ 楽天GORAで予約する')},\n    en:{btn('🏌️ Book on Rakuten GORA')},\n    ko:{btn('🏌️ 라쿠텐 GORA 예약 🇯🇵')}\n  }};")
-    html = re.sub(r'var JALAN="[^"]*";\s*var RAKUTEN="[^"]*";\s*var sttpl = \{.*?\n  \};', sticky_sub, html, count=1, flags=re.S)
+    # course-kokura だけ RAKUTEN と sttpl の間に var OFFICIAL="..."; がある (2026-10-26) → 任意で許容
+    html = re.sub(r'var JALAN="[^"]*";\s*var RAKUTEN="[^"]*";\s*(?:var OFFICIAL="[^"]*";\s*)?var sttpl = \{.*?\n  \};', sticky_sub, html, count=1, flags=re.S)
     return html, log
 
 

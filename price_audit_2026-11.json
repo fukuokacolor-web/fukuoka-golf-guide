@@ -1,0 +1,382 @@
+{
+ "_meta": {
+  "source": "じゃらんゴルフ gc ページ・直近14日の18ホールプラン最安 (ハーフ/薄暮/ナイト除外)",
+  "rakuten": "楽天GORAは料金が動的読込で機械検証不可 → 楽天カードは金額を外す"
+ },
+ "ariake": {
+  "old": "¥6,773",
+  "new": "¥6,773",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥8,000）。土日祝は¥10,864〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥8,000). Weekends from ¥10,864. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥8,000). 주말·공휴일은 ¥10,864부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    6773,
+    8000,
+    "20261110",
+    "【平日】（セルフ・乗用）☆昼食別☆2サム保証※備考欄必読※"
+   ],
+   "weekend": [
+    10864,
+    12500,
+    "20261103",
+    "【土日祝】（セルフ・乗用）☆昼食別 ☆2サム保証※備考欄必読※"
+   ]
+  }
+ },
+ "central": {
+  "old": "¥5,869",
+  "new": "¥6,323",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥7,490）。土日祝は¥13,141〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥7,490). Weekends from ¥13,141. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥7,490). 주말·공휴일은 ¥13,141부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    6323,
+    7490,
+    "20261102",
+    "★時間限定★4B限定★セルフプレー★昼食補助付（休憩有）"
+   ],
+   "weekend": [
+    13141,
+    14990,
+    "20261103",
+    "【土日祝】★セルフプレー★昼食補助付（休憩有）"
+   ]
+  }
+ },
+ "lakeside": {
+  "old": "¥7,150",
+  "new": "¥7,241",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥8,500）。土日祝は¥12,150〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥8,500). Weekends from ¥12,150. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥8,500). 주말·공휴일은 ¥12,150부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    7241,
+    8500,
+    "20261102",
+    "4サム優待【休憩有】11月2日優待プラン☆備考必読*"
+   ],
+   "weekend": [
+    12150,
+    13900,
+    "20261103",
+    "【午後スルー】土日祝☆2B保証・割増なし☆日没了承～備考必読（前精算）ロッカー浴室利用不可*"
+   ]
+  }
+ },
+ "moonlake": {
+  "old": "¥7,273",
+  "new": "¥6,355",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥7,490）。土日祝は¥11,355〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥7,490). Weekends from ¥11,355. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥7,490). 주말·공휴일은 ¥11,355부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    6355,
+    7490,
+    "20261102",
+    "4サム優待プラン/11月/平日/スタート時間限定/セルフ(指定昼食付)*"
+   ],
+   "weekend": [
+    11355,
+    12990,
+    "20261103",
+    "4サム優待プラン/11月/スタート時間限定/セルフ(指定昼食付)*"
+   ]
+  }
+ },
+ "nijo": {
+  "old": "¥6,778",
+  "new": "¥8,596",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥9,990）。土日祝は¥12,232〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥9,990). Weekends from ¥12,232. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥9,990). 주말·공휴일은 ¥12,232부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    8596,
+    9990,
+    "20261106",
+    "[平日]休憩あり[時間指定]★昼食補助付"
+   ],
+   "weekend": [
+    12232,
+    13990,
+    "20261103",
+    "[土日祝/特別営業日]休憩あり★昼食補助付"
+   ]
+  }
+ },
+ "ogori": {
+  "old": "¥14,546",
+  "new": null,
+  "note": null,
+  "evidence": "じゃらんに直近2026-11-02/2026-11-15の18H販売プラン無し"
+ },
+ "wakamiya": {
+  "old": "¥10,455",
+  "new": "¥10,455",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥12,000）。土日祝は¥16,819〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥12,000). Weekends from ¥16,819. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥12,000). 주말·공휴일은 ¥16,819부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    10455,
+    12000,
+    "20261106",
+    "★4人がお得★【平日】《休憩あり》（セルフ・乗用）※備考必読【※乗り入れ可能※条件あり】"
+   ],
+   "weekend": [
+    16819,
+    19000,
+    "20261103",
+    "【土日祝】《スルー》（セルフ・乗用）※3B以上※備考欄必読【乗り入れ可能※条件あり】"
+   ]
+  }
+ },
+ "chikushigaoka": {
+  "old": "¥13,150",
+  "new": "¥13,150",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥15,000）。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥15,000). Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥15,000). 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    13150,
+    15000,
+    "20261102",
+    "■【通常料金】【平日料金】セルフ☆休憩有■"
+   ],
+   "weekend": null
+  }
+ },
+ "chikushino": {
+  "old": "¥9,978",
+  "new": "¥12,678",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥14,470）。土日祝は¥17,169〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥14,470). Weekends from ¥17,169. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥14,470). 주말·공휴일은 ¥17,169부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    12678,
+    14470,
+    "20261104",
+    "＜オリジナルツアーティ付＞【平日】（セルフ・乗用） ☆2サム保証・割増なし※備考欄必読"
+   ],
+   "weekend": [
+    17169,
+    19410,
+    "20261103",
+    "＜オリジナルツアーティ付＞【土日祝】（セルフ・乗用）☆2サム保証（割増あり）※備考欄必読"
+   ]
+  }
+ },
+ "daihakata": {
+  "old": "¥7,696",
+  "new": "¥8,423",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥9,800）。土日祝は¥11,332〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥9,800). Weekends from ¥11,332. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥9,800). 주말·공휴일은 ¥11,332부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    8423,
+    9800,
+    "20261105",
+    "【お得Day】11月平日/休憩付/GPSナビ付乗用カート/セルフ/(指定昼食付)*"
+   ],
+   "weekend": [
+    11332,
+    13000,
+    "20261103",
+    "10月土日祝/昼スルー/GPSナビ付乗用カートセルフ*"
+   ]
+  }
+ },
+ "hisayama": {
+  "old": "¥8,564",
+  "new": "¥9,473",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥10,980）。土日祝は¥12,200〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥10,980). Weekends from ¥12,200. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥10,980). 주말·공휴일은 ¥12,200부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    9473,
+    10980,
+    "20261105",
+    "平日セルフ☆休憩あり【3B以上でお得！】※備考欄必読"
+   ],
+   "weekend": [
+    12200,
+    13980,
+    "20261108",
+    "土日祝セルフ★PMスルー【3B以上でお得・割増無】日没了承※備考欄必読"
+   ]
+  }
+ },
+ "asoiizuka": {
+  "old": "¥9,182",
+  "new": "¥10,273",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥11,900）。土日祝は¥14,000〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥11,900). Weekends from ¥14,000. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥11,900). 주말·공휴일은 ¥14,000부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    10273,
+    11900,
+    "20261104",
+    "【10月末迄公開】休憩＆セルフ 11900円・昼食補助付き"
+   ],
+   "weekend": [
+    14000,
+    16000,
+    "20261108",
+    "【同コース18ホール】11月：ホワイト～ホワイトセルフプラン限定：備考必読"
+   ]
+  }
+ },
+ "ito": {
+  "old": "¥16,378",
+  "new": "¥16,378",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥18,600）。土日祝は¥22,014〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥18,600). Weekends from ¥22,014. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥18,600). 주말·공휴일은 ¥22,014부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    16378,
+    18600,
+    "20261104",
+    "【平日】（キャディ・乗用）《スルー》☆2サム保証・割増有☆"
+   ],
+   "weekend": [
+    22014,
+    24800,
+    "20261103",
+    "【土日祝】(キャディ・乗用)《スルー》☆2サム保証・割増有☆"
+   ]
+  }
+ },
+ "mission": {
+  "old": "¥9,455",
+  "new": "¥9,455",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥10,900）。土日祝は¥16,600〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥10,900). Weekends from ¥16,600. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥10,900). 주말·공휴일은 ¥16,600부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    9455,
+    10900,
+    "20261104",
+    "（セルフ・乗用）☆昼食付☆2サム保証・割増なし."
+   ],
+   "weekend": [
+    16600,
+    18760,
+    "20261103",
+    "■【土日祝】welcome to ☆彡mission valley☆彡"
+   ]
+  }
+ },
+ "sevenmillion": {
+  "old": "¥8,600",
+  "new": "¥10,600",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥12,195）。土日祝は¥15,100〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥12,195). Weekends from ¥15,100. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥12,195). 주말·공휴일은 ¥15,100부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    10600,
+    12195,
+    "20261104",
+    "【平日】（セルフ・乗用）☆2サム保証※備考欄必読（ロッカー代別途）"
+   ],
+   "weekend": [
+    15100,
+    17145,
+    "20261103",
+    "【土祝】（セルフ・乗用）※3B以上※備考欄必読（ロッカー代別途）"
+   ]
+  }
+ },
+ "kurume": {
+  "old": "¥7,210",
+  "new": "¥6,137",
+  "note": {
+   "ja": "※じゃらん料金は2026年11月1日時点・直近2週間の平日18ホール最安（総額¥7,500）。土日祝は¥9,755〜。時期・プランにより変動するため、最新は予約サイトでご確認ください。",
+   "en": "* Jalan rate is the lowest weekday 18-hole plan in the next two weeks as of 2026-11-01 (total ¥7,500). Weekends from ¥9,755. Rates vary by season and plan — check the booking site for current prices.",
+   "ko": "※자란 요금은 2026년 11월 1일 기준 향후 2주간 평일 18홀 최저가(총액 ¥7,500). 주말·공휴일은 ¥9,755부터. 시기·플랜에 따라 변동됩니다."
+  },
+  "evidence": {
+   "checked": "2026-11-01",
+   "period": "2026-11-02/2026-11-15",
+   "weekday": [
+    6137,
+    7500,
+    "20261109",
+    "完全セルフデー※備考必読〈2025年8月～〉"
+   ],
+   "weekend": [
+    9755,
+    11480,
+    "20261108",
+    "（セルフ・乗用)☆3B以上＜土日祝＞※備考欄必読"
+   ]
+  }
+ }
+}

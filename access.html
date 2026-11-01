@@ -5,12 +5,12 @@
   <link rel="preconnect" href="https://www.google-analytics.com">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="アクセス情報の一覧。福岡近郊の主要ゴルフ場28コースへの車・電車でのルートを掲載。">
-  <meta name="description" lang="en" content="Access and directions for 28 golf courses near Fukuoka. Car routes, nearest highway exits and travel times from Fukuoka Airport.">
-  <meta name="description" lang="ko" content="후쿠오카 근교 골프장 28코스의 교통·오시는 길 안내. 후쿠오카공항에서 소요 시간과 차량 루트를 한국어로 소개합니다.">
+  <meta name="description" content="福岡のゴルフ場50コースのアクセス案内の一覧。各コースの所在地・車でのルート・地図のページへ。">
+  <meta name="description" lang="en" content="Directions to 50 golf courses in Fukuoka. Links to each course page with address, driving route and maps.">
+  <meta name="description" lang="ko" content="후쿠오카 골프장 50개 코스의 오시는 길 안내 목록. 각 코스의 주소·차량 루트·지도 페이지로 이동합니다.">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <title>アクセスガイド | 福岡ゴルフ場ガイド</title>
+  <title>福岡ゴルフ場50コースのアクセス一覧 | 福岡ゴルフ場ガイド</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -54,13 +54,20 @@
     .map-embed { width:100%; height:220px; border:0; border-radius:10px; margin-top:10px; display:block; }
     footer { text-align:center; font-size:0.72rem; color:var(--muted); padding:16px; border-top:1px solid #dde8dd; }
     footer a { color:var(--green-dark); text-decoration:none; }
+  .acc-region { font-size:0.8rem; font-weight:800; color:var(--muted,#6b7280); margin:18px 2px 8px; }
+  .acc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:8px; }
+  .acc-item { display:flex; justify-content:space-between; align-items:center; gap:8px; background:#fff; border:1px solid #e3e6df; border-radius:10px; padding:10px 12px; text-decoration:none; color:inherit; }
+  .acc-item:hover { border-color:#2d6a4f; }
+  .acc-name { font-weight:700; font-size:0.86rem; line-height:1.35; }
+  .acc-name small { display:block; font-weight:400; font-size:0.72rem; color:var(--muted,#6b7280); margin-top:2px; }
+  .acc-cta { font-size:0.72rem; font-weight:700; color:#2d6a4f; white-space:nowrap; }
   </style>
   <meta property="og:type"        content="website">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:url"         content="https://fukuoka-golf-guide.com/access.html">
   <meta property="og:site_name"   content="福岡ゴルフ場ガイド">
-  <meta property="og:title"       content="アクセスガイド | 福岡ゴルフ場ガイド">
-  <meta property="og:description" content="アクセス情報の一覧。福岡近郊の主要ゴルフ場28コースへの車・電車でのルートを掲載。">
+  <meta property="og:title"       content="福岡ゴルフ場50コースのアクセス一覧 | 福岡ゴルフ場ガイド">
+  <meta property="og:description" content="福岡のゴルフ場50コースのアクセス案内の一覧。各コースの所在地・車でのルート・地図のページへ。">
   <meta name="twitter:card"       content="summary_large_image">
   <link rel="canonical" href="https://fukuoka-golf-guide.com/access.html" />
   <link rel="alternate" hreflang="ja"        href="https://fukuoka-golf-guide.com/access.html">
@@ -180,63 +187,72 @@
 <!-- 日本語 -->
 <div id="c-ja" class="content on">
 
-  <div class="sec-head">📍 基本情報</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">⛳</span><span class="title">福岡レイクサイドカントリークラブ</span></div>
-    <div class="card-body">
-      〒820-0077　福岡県飯塚市椋本611-19<br>
-      📞 0948-65-3636<br>
-      運営：パシフィックゴルフマネージメント（PGM）
-      <div class="tip-bar"><span>💡</span>最新のアクセス情報は必ずゴルフ場の公式サイトでご確認ください。</div>
-    </div>
+  <div class="sec-head">📍 コース別アクセス（50コース）</div>
+  <p style="font-size:0.84rem;line-height:1.7;color:#444;margin:0 2px 6px;">50コースそれぞれのアクセスページに、所在地・車でのルート・地図、Google マップや Naver Map などで開くボタンをまとめています。コース名を選んでください。最新の情報は各ゴルフ場の公式サイトでご確認ください。</p>
+  <div class="acc-region">福岡市・近郊</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-koga.html"><span class="acc-name">古賀ゴルフ・クラブ<small>古賀市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-dazaifu.html"><span class="acc-name">太宰府ゴルフ倶楽部<small>太宰府市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-aburayama.html"><span class="acc-name">ララヒルズ油山<small>福岡市城南区</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-sevenmillion.html"><span class="acc-name">セブンミリオンカントリークラブ<small>福岡市早良区</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-fukuokacc.html"><span class="acc-name">福岡カンツリー倶楽部（和白コース）<small>福岡市東区</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-saitozaki.html"><span class="acc-name">西戸崎シーサイドカントリークラブ<small>福岡市東区</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-hisayama.html"><span class="acc-name">久山カントリー倶楽部<small>糟屋郡久山町</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-daihakata.html"><span class="acc-name">大博多カントリー倶楽部<small>那珂川市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-chikushigaoka.html"><span class="acc-name">筑紫ヶ丘ゴルフクラブ<small>那珂川市</small></span><span class="acc-cta">アクセス →</span></a>
   </div>
-
-  <div class="sec-head">🚗 車でのアクセス</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🚗</span><span class="title">車でのご来場（推奨）</span></div>
-    <div class="card-body">
-      福岡県内のゴルフ場の多くは山間部や郊外に位置しており、車でのアクセスが最も便利です。
-      <ul class="step-list" style="margin-top:10px;">
-        <li>博多駅から車で約40分</li>
-        <li>福岡空港から車で約40分</li>
-        <li>カーナビ・Google Mapsで「福岡レイクサイドカントリークラブ」と検索</li>
-      </ul>
-      <div class="tip-bar"><span>💡</span>久保白ダムのほとりに位置する山間コース。紅葉シーズンは特に景観が美しいです。</div>
-    </div>
+  <div class="acc-region">糸島</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-queenshill.html"><span class="acc-name">クイーンズヒルゴルフクラブ<small>糸島市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-nijo.html"><span class="acc-name">二丈カントリークラブ<small>糸島市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-ito.html"><span class="acc-name">伊都ゴルフ倶楽部<small>糸島市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-shimaseaside.html"><span class="acc-name">志摩シーサイドカンツリークラブ<small>糸島市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-raizan.html"><span class="acc-name">福岡雷山ゴルフ倶楽部<small>糸島市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-keya.html"><span class="acc-name">芥屋ゴルフ倶楽部<small>糸島市</small></span><span class="acc-cta">アクセス →</span></a>
   </div>
-
-  <div class="sec-head">🗾 外国人向けカーナビのコツ</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">📱</span><span class="title">ナビアプリの使い方</span></div>
-    <div class="card-body">
-      日本でのドライブに役立つナビアプリを紹介します。タップするとアプリ・サイトが開きます。
-      <iframe class="map-embed" src="https://maps.google.com/maps?q=福岡レイクサイドカントリークラブ&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
-      <div class="app-grid">
-        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=福岡レイクサイドカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>英語・韓国語対応。最もわかりやすい</a>
-        <a class="app-card" href="https://map.yahoo.co.jp/?q=福岡レイクサイドカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Yahoo!カーナビ</div>日本道路情報が充実。無料</a>
-        <a class="app-card" href="https://map.naver.com/v5/search/福岡レイクサイドカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>韓国語で使えて便利</a>
-        <a class="app-card" href="https://map.kakao.com/?q=후쿠오카+레이크사이드+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>韓国語対応。韓国人に人気</a>
-      </div>
-      <div class="info-bar"><span>ℹ️</span>レンタカーの車載ナビは日本語のみの場合が多いため、スマホアプリの併用をおすすめします。</div>
-    </div>
+  <div class="acc-region">宗像・北九州・遠賀・京築</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-kokura.html"><span class="acc-name">小倉カンツリー倶楽部<small>北九州市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-kyushugc.html"><span class="acc-name">九州ゴルフ倶楽部 八幡コース<small>北九州市八幡西区</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-seitanomori.html"><span class="acc-name">瀬板の森北九州ゴルフコース<small>北九州市八幡西区</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-kitakyushu.html"><span class="acc-name">北九州カントリー倶楽部<small>北九州市若松区</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-wakamatsu.html"><span class="acc-name">若松ゴルフ倶楽部<small>北九州市若松区</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-moji.html"><span class="acc-name">門司ゴルフ倶楽部<small>北九州市門司区</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-newui.html"><span class="acc-name">NEWユーアイゴルフクラブ<small>宗像市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-genkai.html"><span class="acc-name">玄海ゴルフクラブ<small>宗像市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-fukuokakokusai.html"><span class="acc-name">福岡国際カントリークラブ<small>宗像市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-suonada.html"><span class="acc-name">周防灘カントリークラブ<small>築上郡築上町</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-chisan-onga.html"><span class="acc-name">チサンカントリークラブ遠賀<small>遠賀郡遠賀町</small></span><span class="acc-cta">アクセス →</span></a>
   </div>
-
-  <div class="sec-head">🚌 公共交通機関</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🚃</span><span class="title">電車＋タクシー</span></div>
-    <div class="card-body">
-      最寄り駅はJR筑豊本線「新飯塚駅」です。駅からゴルフ場まで直接のバスはありません。タクシーをご利用ください（約15〜20分）。
-      <div class="tip-bar"><span>💡</span>タクシーは日本語が通じない場合、スマホの画面でゴルフ場名を見せるだけで伝わります。</div>
-    </div>
+  <div class="acc-region">筑豊（飯塚・田川・直方・鞍手・宮若）</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-classic.html"><span class="acc-name">ザ・クラシックゴルフ倶楽部<small>宮若市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-wakamiya.html"><span class="acc-name">トライアルゴルフ＆リゾート WAKAMIYA COURSE<small>宮若市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-pheasant.html"><span class="acc-name">福岡フェザントカントリークラブ<small>田川郡</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-takaha.html"><span class="acc-name">鷹羽ロイヤルカントリークラブ<small>田川郡</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-nishinihon.html"><span class="acc-name">西日本カントリークラブ<small>直方市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-mission.html"><span class="acc-name">ミッションバレーゴルフクラブ<small>鞍手郡小竹町</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-moonlake.html"><span class="acc-name">ムーンレイクゴルフクラブ 鞍手コース<small>鞍手郡鞍手町</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-jruchino.html"><span class="acc-name">JR内野カントリークラブ<small>飯塚市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-kaho.html"><span class="acc-name">かほゴルフクラブ<small>飯塚市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-satsuki-ryuoh.html"><span class="acc-name">皐月ゴルフ倶楽部 竜王コース<small>飯塚市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-lakeside.html"><span class="acc-name">福岡レイクサイドカントリークラブ<small>飯塚市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-akane.html"><span class="acc-name">茜ゴルフクラブ<small>飯塚市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-asoiizuka.html"><span class="acc-name">麻生飯塚ゴルフ倶楽部<small>飯塚市</small></span><span class="acc-cta">アクセス →</span></a>
   </div>
-
-  <div class="sec-head">🅿️ 駐車場</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🅿️</span><span class="title">駐車場情報</span></div>
-    <div class="card-body">
-      無料駐車場あり。スタッフの誘導に従ってお停めください。
-      <div class="info-bar"><span>ℹ️</span>多くのゴルフ場では駐車場は無料です。スタッフの誘導に従ってください。</div>
-    </div>
+  <div class="acc-region">筑紫・朝倉・筑後</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-ukiha.html"><span class="acc-name">浮羽カントリークラブ<small>うきは市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-sunlake.html"><span class="acc-name">福岡サンレイクゴルフ倶楽部<small>みやま市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-yamejoyo.html"><span class="acc-name">八女上陽ゴルフ倶楽部<small>八女市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-kurume.html"><span class="acc-name">久留米カントリークラブ<small>八女郡広川町</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-ariake.html"><span class="acc-name">有明カントリークラブ<small>大牟田市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-ogori.html"><span class="acc-name">小郡カントリークラブ<small>小郡市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-century.html"><span class="acc-name">福岡センチュリーゴルフクラブ<small>朝倉市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-yasukogen.html"><span class="acc-name">夜須高原カントリークラブ<small>朝倉郡筑前町</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-central.html"><span class="acc-name">セントラル福岡ゴルフ倶楽部<small>筑紫野市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-satsuki-tenpai.html"><span class="acc-name">皐月ゴルフ倶楽部 天拝コース<small>筑紫野市</small></span><span class="acc-cta">アクセス →</span></a>
+    <a class="acc-item" href="access-chikushino.html"><span class="acc-name">筑紫野カントリークラブ<small>筑紫野市</small></span><span class="acc-cta">アクセス →</span></a>
   </div>
 
 </div>
@@ -244,63 +260,72 @@
 <!-- English -->
 <div id="c-en" class="content">
 
-  <div class="sec-head">📍 Basic Info</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">⛳</span><span class="title">Fukuoka Lakeside Country Club</span></div>
-    <div class="card-body">
-      〒820-0077　611-19 Mukunomoto, Iizuka, Fukuoka<br>
-      📞 0948-65-3636<br>
-      Operated by: Pacific Golf Management (PGM)
-      <div class="tip-bar"><span>💡</span>Always verify the latest access information on the club's official website.</div>
-    </div>
+  <div class="sec-head">📍 Directions by Course (50 courses)</div>
+  <p style="font-size:0.84rem;line-height:1.7;color:#444;margin:0 2px 6px;">Each of the 50 course pages has the address, driving route, a map and buttons to open Google Maps, Naver Map and more. Pick a course below. Always confirm the latest details on the course's official website.</p>
+  <div class="acc-region">Fukuoka City & nearby</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-koga.html"><span class="acc-name">Koga Golf Club<small>Koga</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-dazaifu.html"><span class="acc-name">Dazaifu Golf Club<small>Dazaifu</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-aburayama.html"><span class="acc-name">Lala Hills Aburayama Formerly: Aburayama Golf Club<small>Fukuoka (Jonan)</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-sevenmillion.html"><span class="acc-name">Seven Million Country Club<small>Fukuoka (Sawara)</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-fukuokacc.html"><span class="acc-name">Fukuoka Country Club (Wajiro Course)<small>Fukuoka (Higashi)</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-saitozaki.html"><span class="acc-name">Saitozaki Seaside Country Club<small>Fukuoka (Higashi)</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-hisayama.html"><span class="acc-name">Hisayama Country Club<small>Hisayama</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-chikushigaoka.html"><span class="acc-name">Chikushigaoka Golf Club<small>Nakagawa</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-daihakata.html"><span class="acc-name">Dai-Hakata Country Club<small>Nakagawa</small></span><span class="acc-cta">Directions →</span></a>
   </div>
-
-  <div class="sec-head">🚗 Getting Here by Car</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🚗</span><span class="title">By Car (Recommended)</span></div>
-    <div class="card-body">
-      Most golf courses in Fukuoka are located in suburban or hilly areas — a car is the most convenient option.
-      <ul class="step-list" style="margin-top:10px;">
-        <li>Approx. 40 min by car from Hakata Station</li>
-        <li>Approx. 40 min by car from Fukuoka Airport</li>
-        <li>Search "Fukuoka Lakeside Country Club" in Google Maps or your car nav</li>
-      </ul>
-      <div class="tip-bar"><span>💡</span>The course sits beside Kuboshiro Dam — a scenic lakeside setting especially beautiful in autumn.</div>
-    </div>
+  <div class="acc-region">Itoshima</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-raizan.html"><span class="acc-name">Fukuoka Raizan Golf Club<small>Itoshima</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-ito.html"><span class="acc-name">Ito Golf Club<small>Itoshima</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-keya.html"><span class="acc-name">Keya Golf Club<small>Itoshima</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-nijo.html"><span class="acc-name">Nijo Country Club<small>Itoshima</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-queenshill.html"><span class="acc-name">Queens Hill Golf Club<small>Itoshima</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-shimaseaside.html"><span class="acc-name">Shima Seaside Country Club<small>Itoshima</small></span><span class="acc-cta">Directions →</span></a>
   </div>
-
-  <div class="sec-head">🗾 Navigation Apps for Visitors</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">📱</span><span class="title">Recommended Navigation Apps</span></div>
-    <div class="card-body">
-      Tap to open the app or website with destination pre-filled.
-      <iframe class="map-embed" src="https://maps.google.com/maps?q=福岡レイクサイドカントリークラブ&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
-      <div class="app-grid">
-        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=福岡レイクサイドカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>English support. Easiest for visitors</a>
-        <a class="app-card" href="https://map.yahoo.co.jp/?q=福岡レイクサイドカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Yahoo! Car Navi</div>Best for Japanese road info. Free</a>
-        <a class="app-card" href="https://map.naver.com/v5/search/福岡レイクサイドカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>Korean language support</a>
-        <a class="app-card" href="https://map.kakao.com/?q=후쿠오카+레이크사이드+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">kakaomap</div>Korean support. Popular among Korean visitors</a>
-      </div>
-      <div class="info-bar"><span>ℹ️</span>In-car rental navigation is often Japanese-only. We recommend using a smartphone app alongside it.</div>
-    </div>
+  <div class="acc-region">Munakata, Kitakyushu & east</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-kokura.html"><span class="acc-name">Kokura Country Club<small>Kitakyushu</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-kyushugc.html"><span class="acc-name">Kyushu Golf Club — Yahata Course<small>Kitakyushu (Yahatanishi)</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-seitanomori.html"><span class="acc-name">Seitanomori Kitakyushu Golf Course<small>Kitakyushu (Yahatanishi)</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-kitakyushu.html"><span class="acc-name">Kitakyushu Country Club<small>Kitakyushu (Wakamatsu)</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-wakamatsu.html"><span class="acc-name">Wakamatsu Golf Club<small>Kitakyushu (Wakamatsu)</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-moji.html"><span class="acc-name">Moji Golf Club<small>Kitakyushu (Moji)</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-fukuokakokusai.html"><span class="acc-name">Fukuoka Kokusai Country Club<small>Munakata</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-genkai.html"><span class="acc-name">Genkai Golf Club<small>Munakata</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-newui.html"><span class="acc-name">NEW U.I. Golf Club<small>Munakata</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-suonada.html"><span class="acc-name">Suonada Country Club<small>Chikujo</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-chisan-onga.html"><span class="acc-name">Chisan Country Club Onga<small>Onga</small></span><span class="acc-cta">Directions →</span></a>
   </div>
-
-  <div class="sec-head">🚌 Public Transport</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🚃</span><span class="title">Train + Taxi</span></div>
-    <div class="card-body">
-      The nearest train station is Shin-Iizuka Station (JR Chikuho Main Line). There is no direct bus from the station — take a taxi (approx. 15–20 min).
-      <div class="tip-bar"><span>💡</span>If the taxi driver doesn't understand English, simply show the golf course name on your phone screen.</div>
-    </div>
+  <div class="acc-region">Chikuho (Iizuka, Tagawa, Nogata…)</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-classic.html"><span class="acc-name">The Classic Golf Club<small>Miyawaka</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-wakamiya.html"><span class="acc-name">Trial Golf &amp; Resort Wakamiya Course<small>Miyawaka</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-pheasant.html"><span class="acc-name">Fukuoka Pheasant Country Club<small>Tagawa</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-takaha.html"><span class="acc-name">Takaha Royal Country Club<small>Tagawa</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-nishinihon.html"><span class="acc-name">Nishi-Nippon Country Club<small>Nogata</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-mission.html"><span class="acc-name">Mission Valley Golf Club<small>Kotake</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-moonlake.html"><span class="acc-name">Moon Lake Golf Club – Kurate Course<small>Kurate</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-akane.html"><span class="acc-name">Akane Golf Club<small>Iizuka</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-asoiizuka.html"><span class="acc-name">Aso Iizuka Golf Club<small>Iizuka</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-lakeside.html"><span class="acc-name">Fukuoka Lakeside Country Club<small>Iizuka</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-jruchino.html"><span class="acc-name">JR Uchino Country Club<small>Iizuka</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-kaho.html"><span class="acc-name">Kaho Golf Club<small>Iizuka</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-satsuki-ryuoh.html"><span class="acc-name">Satsuki Golf Club Ryuoh Course<small>Iizuka</small></span><span class="acc-cta">Directions →</span></a>
   </div>
-
-  <div class="sec-head">🅿️ Parking</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🅿️</span><span class="title">Parking Info</span></div>
-    <div class="card-body">
-      Free parking available on-site. Follow staff directions when parking.
-      <div class="info-bar"><span>ℹ️</span>Parking is free at most Japanese golf courses. Follow staff directions when parking.</div>
-    </div>
+  <div class="acc-region">Chikushi, Asakura & Chikugo</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-ukiha.html"><span class="acc-name">Ukiha Country Club<small>Ukiha</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-sunlake.html"><span class="acc-name">Fukuoka Sunlake Golf Club<small>Miyama</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-yamejoyo.html"><span class="acc-name">Yame Joyo Golf Club<small>Yame</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-kurume.html"><span class="acc-name">Kurume Country Club<small>Hirokawa</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-ariake.html"><span class="acc-name">Ariake Country Club<small>Omuta</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-ogori.html"><span class="acc-name">Ogori Country Club<small>Ogori</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-century.html"><span class="acc-name">Fukuoka Century Golf Club<small>Asakura</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-yasukogen.html"><span class="acc-name">Yasukogen Country Club<small>Chikuzen</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-central.html"><span class="acc-name">Central Fukuoka Golf Club<small>Chikushino</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-chikushino.html"><span class="acc-name">Chikushino Country Club<small>Chikushino</small></span><span class="acc-cta">Directions →</span></a>
+    <a class="acc-item" href="access-satsuki-tenpai.html"><span class="acc-name">Satsuki Golf Club Tenpai Course<small>Chikushino</small></span><span class="acc-cta">Directions →</span></a>
   </div>
 
 </div>
@@ -308,63 +333,72 @@
 <!-- 한국어 -->
 <div id="c-ko" class="content">
 
-  <div class="sec-head">📍 기본 정보</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">⛳</span><span class="title">후쿠오카 레이크사이드 컨트리클럽</span></div>
-    <div class="card-body">
-      〒820-0077　후쿠오카현 이이즈카시 무쿠노모토 611-19<br>
-      📞 0948-65-3636<br>
-      운영：퍼시픽골프매니지먼트（PGM）
-      <div class="tip-bar"><span>💡</span>최신 오시는 길 정보는 반드시 골프장 공식 사이트에서 확인해 주세요.</div>
-    </div>
+  <div class="sec-head">📍 코스별 오시는 길 (50개 코스)</div>
+  <p style="font-size:0.84rem;line-height:1.7;color:#444;margin:0 2px 6px;">50개 코스의 각 페이지에 주소·차량 루트·지도와 Google 지도, 네이버 지도 등으로 여는 버튼을 정리했습니다. 코스를 선택하세요. 최신 정보는 각 골프장 공식 사이트에서 확인해 주세요.</p>
+  <div class="acc-region">후쿠오카시·근교</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-koga.html"><span class="acc-name">코가 골프 클럽<small>고가시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-dazaifu.html"><span class="acc-name">다자이후 골프 클럽<small>다자이후시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-aburayama.html"><span class="acc-name">라라힐스 아부라야마 구 명칭: 아부라야마 골프 클럽<small>후쿠오카시 조난구</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-sevenmillion.html"><span class="acc-name">세븐 밀리언 컨트리 클럽<small>후쿠오카시 사와라구</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-saitozaki.html"><span class="acc-name">사이토자키 씨사이드 컨트리클럽<small>후쿠오카시 히가시구</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-fukuokacc.html"><span class="acc-name">후쿠오카 컨트리 클럽 (와지로 코스)<small>후쿠오카시 히가시구</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-hisayama.html"><span class="acc-name">히사야마 컨트리 클럽<small>히사야마정</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-daihakata.html"><span class="acc-name">다이하카타 컨트리 클럽<small>나카가와시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-chikushigaoka.html"><span class="acc-name">지쿠시가오카 골프 클럽<small>나카가와시</small></span><span class="acc-cta">오시는 길 →</span></a>
   </div>
-
-  <div class="sec-head">🚗 자동차로 오시는 길</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🚗</span><span class="title">자동차 이용 (추천)</span></div>
-    <div class="card-body">
-      후쿠오카의 골프장 대부분은 교외나 산간 지역에 위치해 있어 자동차 이용이 가장 편리합니다.
-      <ul class="step-list" style="margin-top:10px;">
-        <li>하카타역에서 차로 약 40분</li>
-        <li>후쿠오카 공항에서 차로 약 40분</li>
-        <li>Google Maps 또는 Naver Maps에서 「후쿠오카 레이크사이드 컨트리클럽」 검색</li>
-      </ul>
-      <div class="tip-bar"><span>💡</span>구보시로 댐 옆에 위치한 산간 코스로, 단풍 시즌에 특히 경치가 아름답습니다.</div>
-    </div>
+  <div class="acc-region">이토시마</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-nijo.html"><span class="acc-name">니조 컨트리클럽<small>이토시마시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-shimaseaside.html"><span class="acc-name">시마 시사이드 컨트리 클럽<small>이토시마시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-ito.html"><span class="acc-name">이토 골프 클럽<small>이토시마시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-keya.html"><span class="acc-name">케야 골프 클럽<small>이토시마시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-queenshill.html"><span class="acc-name">퀸즈힐 골프 클럽<small>이토시마시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-raizan.html"><span class="acc-name">후쿠오카 라이잔 골프 클럽<small>이토시마시</small></span><span class="acc-cta">오시는 길 →</span></a>
   </div>
-
-  <div class="sec-head">🗾 방문자용 내비게이션 앱</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">📱</span><span class="title">추천 내비게이션 앱</span></div>
-    <div class="card-body">
-      탭하면 앱 또는 사이트가 열립니다.
-      <iframe class="map-embed" src="https://maps.google.com/maps?q=福岡レイクサイドカントリークラブ&output=embed&z=14" loading="lazy" allowfullscreen></iframe>
-      <div class="app-grid">
-        <a class="app-card" href="https://www.google.com/maps/search/?api=1&query=福岡レイクサイドカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Google Maps</div>영어·한국어 지원. 가장 쉬움</a>
-        <a class="app-card" href="https://map.yahoo.co.jp/?q=福岡レイクサイドカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Yahoo! 카내비</div>일본 도로 정보 충실. 무료</a>
-        <a class="app-card" href="https://map.naver.com/v5/search/福岡レイクサイドカントリークラブ" target="_blank" rel="noopener"><div class="app-name">Naver Maps</div>한국어로 사용 가능</a>
-        <a class="app-card" href="https://map.kakao.com/?q=후쿠오카+레이크사이드+컨트리클럽" target="_blank" rel="noopener"><div class="app-name">카카오맵</div>한국어 지원. 한국인에게 인기</a>
-      </div>
-      <div class="info-bar"><span>ℹ️</span>렌터카 내비는 일본어만 지원하는 경우가 많습니다. 스마트폰 앱 병용을 권장합니다.</div>
-    </div>
+  <div class="acc-region">무나카타·기타큐슈·동부</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-kokura.html"><span class="acc-name">코쿠라 컨트리 클럽<small>기타큐슈시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-kyushugc.html"><span class="acc-name">규슈 골프 클럽 야하타 코스<small>기타큐슈시 야하타니시구</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-seitanomori.html"><span class="acc-name">세이타노모리 기타큐슈 골프 코스<small>기타큐슈시 야하타니시구</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-kitakyushu.html"><span class="acc-name">기타큐슈 컨트리 클럽<small>기타큐슈시 와카마쓰구</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-wakamatsu.html"><span class="acc-name">와카마쓰 골프 클럽<small>기타큐슈시 와카마쓰구</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-moji.html"><span class="acc-name">모지 골프 클럽<small>기타큐슈시 모지구</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-newui.html"><span class="acc-name">NEW 유아이 골프 클럽<small>무나카타시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-genkai.html"><span class="acc-name">겐카이 골프 클럽<small>무나카타시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-fukuokakokusai.html"><span class="acc-name">후쿠오카 국제 컨트리 클럽<small>무나카타시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-suonada.html"><span class="acc-name">스오나다 컨트리 클럽<small>지쿠조정</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-chisan-onga.html"><span class="acc-name">치산 컨트리 클럽 온가<small>온가군</small></span><span class="acc-cta">오시는 길 →</span></a>
   </div>
-
-  <div class="sec-head">🚌 대중교통</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🚃</span><span class="title">전철 + 택시</span></div>
-    <div class="card-body">
-      가장 가까운 역은 JR 지쿠호 본선 「신이이즈카역」입니다. 역에서 골프장까지 직통 버스는 없으므로 택시를 이용하세요（약 15〜20분）.
-      <div class="tip-bar"><span>💡</span>택시 기사가 한국어를 모르는 경우, 스마트폰 화면에 골프장 이름을 보여주면 됩니다.</div>
-    </div>
+  <div class="acc-region">지쿠호 (이이즈카·다가와 등)</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-classic.html"><span class="acc-name">더 클래식 골프 클럽<small>미야와카시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-wakamiya.html"><span class="acc-name">트라이얼 골프 앤 리조트 와카미야 코스<small>미야와카시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-takaha.html"><span class="acc-name">타카하 로열 컨트리 클럽<small>다가와군</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-pheasant.html"><span class="acc-name">후쿠오카 페전트 컨트리 클럽<small>다가와군</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-nishinihon.html"><span class="acc-name">니시니혼 컨트리 클럽<small>노가타시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-mission.html"><span class="acc-name">미션 밸리 골프 클럽<small>고타케정</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-moonlake.html"><span class="acc-name">문레이크 골프 클럽 쿠라테 코스<small>구라테정</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-jruchino.html"><span class="acc-name">JR 우치노 컨트리 클럽<small>이이즈카시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-satsuki-ryuoh.html"><span class="acc-name">사쓰키 골프 클럽 류오 코스<small>이이즈카시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-asoiizuka.html"><span class="acc-name">아소이이즈카 골프 클럽<small>이이즈카시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-akane.html"><span class="acc-name">아카네 컨트리 클럽<small>이이즈카시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-kaho.html"><span class="acc-name">카호 골프 클럽<small>이이즈카시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-lakeside.html"><span class="acc-name">후쿠오카 레이크사이드 컨트리클럽<small>이이즈카시</small></span><span class="acc-cta">오시는 길 →</span></a>
   </div>
-
-  <div class="sec-head">🅿️ 주차장</div>
-  <div class="card">
-    <div class="card-head"><span class="icon">🅿️</span><span class="title">주차장 정보</span></div>
-    <div class="card-body">
-      무료 주차장 완비. 직원의 안내에 따라 주차해 주세요.
-      <div class="info-bar"><span>ℹ️</span>일본의 대부분 골프장에서 주차는 무료입니다. 직원의 안내에 따라 주차해 주세요.</div>
-    </div>
+  <div class="acc-region">지쿠시·아사쿠라·지쿠고</div>
+  <div class="acc-grid">
+    <a class="acc-item" href="access-ukiha.html"><span class="acc-name">우키하 컨트리 클럽<small>우키하시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-sunlake.html"><span class="acc-name">후쿠오카 선레이크 골프 클럽<small>미야마시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-yamejoyo.html"><span class="acc-name">야메 죠요 골프 클럽<small>야메시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-kurume.html"><span class="acc-name">구루메 컨트리 클럽<small>히로카와정</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-ariake.html"><span class="acc-name">아리아케 컨트리 클럽<small>오무타시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-ogori.html"><span class="acc-name">오고리 컨트리 클럽<small>오고리시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-century.html"><span class="acc-name">후쿠오카 센추리 골프 클럽<small>아사쿠라시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-yasukogen.html"><span class="acc-name">야스코겐 컨트리 클럽<small>지쿠젠정</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-satsuki-tenpai.html"><span class="acc-name">사쓰키 골프 클럽 덴파이 코스<small>지쿠시노시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-central.html"><span class="acc-name">센트럴 후쿠오카 골프 클럽<small>지쿠시노시</small></span><span class="acc-cta">오시는 길 →</span></a>
+    <a class="acc-item" href="access-chikushino.html"><span class="acc-name">치쿠시노 컨트리 클럽<small>지쿠시노시</small></span><span class="acc-cta">오시는 길 →</span></a>
   </div>
 
 </div>

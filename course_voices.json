@@ -65,7 +65,19 @@
           "count": 2
         }
       ],
-      "fit": "景色を目的に出かけたい人、特別な1日にしたい人に。風の強い日は、スコアより海風との勝負を楽しむつもりで。"
+      "fit": "景色を目的に出かけたい人、特別な1日にしたい人に。風の強い日は、スコアより海風との勝負を楽しむつもりで。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DRBPBYNDj-S/",
+          "label": "この投稿をInstagramで見る",
+          "note": "海に向かって下るフェアウェイ（2025年11月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DLo9JFsxR3G/",
+          "label": "この投稿をInstagramで見る",
+          "note": "高台のティーグラウンドからの眺め（2025年7月の投稿）"
+        }
+      ]
     },
     "keya": {
       "total": 12,

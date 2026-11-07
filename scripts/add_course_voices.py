@@ -32,18 +32,32 @@ def items(rows):
     return "".join(f'<li style="{ITEM}">{r["text"]}<span style="{COUNT}">{r["count"]}件</span></li>' for r in rows)
 
 
+def embed_card(p):
+    if "instagram.com" in p["url"]:
+        attrs = f'class="instagram-media" data-instgrm-permalink="{p["url"]}" data-instgrm-version="14"'
+    else:
+        attrs = f'class="text-post-media" data-text-post-permalink="{p["url"]}" data-text-post-version="0"'
+    note = f'<p style="font-size:12px;color:var(--muted);margin:0 0 8px;">{p["note"]}</p>' if p.get("note") else ""
+    return (f'<div style="min-height:420px;min-width:0;">{note}<blockquote {attrs} style="margin:0;max-width:100%;">'
+            f'<a href="{p["url"]}" target="_blank" rel="noopener">{p["label"]}</a></blockquote></div>')
+
+
 def embed_lines(c):
     """公式の埋め込み。スクリプトは欄が画面に近づいてから読み込む (LCP を邪魔しない)"""
     posts = c.get("embeds")
     if not posts:
         return []
-    cards = "".join(
-        f'<div style="min-height:420px;"><blockquote class="text-post-media" data-text-post-permalink="{p["url"]}" data-text-post-version="0" '
-        f'style="margin:0;"><a href="{p["url"]}" target="_blank" rel="noopener">{p["label"]}</a></blockquote></div>' for p in posts)
+    srcs = []
+    if any("instagram.com" in p["url"] for p in posts):
+        srcs.append("https://www.instagram.com/embed.js")
+    if any("threads." in p["url"] for p in posts):
+        srcs.append("https://www.threads.com/embed.js")
+    names = "・".join(n for n, k in (("Instagram", "instagram.com"), ("Threads", "threads.")) if any(k in p["url"] for p in posts))
+    src_js = ",".join(f"'{u}'" for u in srcs)
     return [
-        f'    <div class="voices-embeds" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:24px;">{cards}</div>',
-        '    <p style="margin-top:12px;font-size:12px;line-height:1.7;color:var(--muted);">投稿はThreadsの公式埋め込みで紹介しています。表示されない場合は、元の投稿が削除されたか非公開になった可能性があります。掲載の取り下げは<a href="https://www.threads.com/@fukuoka_golf_guide1" target="_blank" rel="noopener">運営者のThreads</a>へご連絡ください（<a href="privacy.html">プライバシーポリシー</a>）。</p>',
-        "    <script>(function(){var e=document.querySelector('.voices-embeds');if(!e)return;function l(){var s=document.createElement('script');s.src='https://www.threads.com/embed.js';s.async=true;document.body.appendChild(s);}"
+        f'    <div class="voices-embeds" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:24px;">{"".join(embed_card(p) for p in posts)}</div>',
+        f'    <p style="margin-top:12px;font-size:12px;line-height:1.7;color:var(--muted);">投稿は{names}の公式埋め込みで紹介しています。表示されない場合は、元の投稿が削除されたか非公開になった可能性があります。掲載の取り下げは<a href="https://www.threads.com/@fukuoka_golf_guide1" target="_blank" rel="noopener">運営者のThreads</a>へご連絡ください（<a href="privacy.html">プライバシーポリシー</a>）。</p>',
+        "    <script>(function(){var e=document.querySelector('.voices-embeds');if(!e)return;function l(){[" + src_js + "].forEach(function(u){var s=document.createElement('script');s.src=u;s.async=true;document.body.appendChild(s);});}"
         "if(!('IntersectionObserver' in window)){l();return;}var o=new IntersectionObserver(function(x){if(x[0].isIntersecting){o.disconnect();l();}},{rootMargin:'400px'});o.observe(e);})();</script>",
     ]
 

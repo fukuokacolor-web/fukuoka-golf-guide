@@ -32,6 +32,7 @@ ROWS = [
     row("楽天アフィリエイト・楽天GORA", "楽天グループ株式会社", "広告リンクの先での成果の計測", "https://privacy.rakuten.co.jp/"),
     row("じゃらんゴルフ", "株式会社リクルート", "広告リンクの先での予約", "https://www.recruit.co.jp/privacy/"),
     row("Threads（投稿の埋め込み）", "Meta Platforms, Inc.", "投稿の表示（埋め込みのあるページを開いたとき）", "https://help.instagram.com/515230437301944"),
+    row("Instagram（投稿の埋め込み）", "Meta Platforms, Inc.", "投稿の表示（埋め込みのあるページを開いたとき）", "https://privacycenter.instagram.com/policy"),
 ]
 
 BODY = f"""<body>

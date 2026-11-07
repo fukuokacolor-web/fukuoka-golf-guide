@@ -1,8 +1,15 @@
 # 🎯 次セッション 引き継ぎ指示書
 
 **最終更新**: 2026-11-02 (✅ エリア・ハブ10ページのカード料金を実データに / ✅ 午後スルーのページを実データで書き直し / ✅ 11月の料金を予約カードに反映 / ✅ 広告表示を126ページに追加)
-**最終 commit**: `b1309f8` fix(content) area-kitakyushu 金額表現 — origin/main へ push 済・本番反映確認済
+**最終 commit**: `92e5ec9` feat(content) コースページに「Threadsでの評判」欄 — origin/main へ push 済・本番反映確認済
 **未コミット**: なし
+
+### ✅ 2026-11-06〜07 格安ガイド更新・トップ更新・評判欄・埋め込み会議
+- **book-fukuoka-cheap** (`a4de161`): `rebuild_cheap_guide.py` で 11/1 に再生成。総額¥8,000以下は 11 コース (プラン料金なら16だが基準は総額)・最安 総額¥5,600。リンク文言も更新。course-queenshill を公式 平日¥21,800/土日祝¥30,200 に・course-saitozaki の¥3,500 を削除
+- **index + 午後スルー訂正** (`19903ca`・`fix_index_2026_11.py`・`fix_thru_correction_2026_11.py`): 841ab79 の誤り「久山に午後スルーなし」を訂正。**プラン名は「午後スルー」だけで探さない** (PMスルー・午後1Rスルー等がある)。11/2〜15 の午後スルー: レイクサイド 平日8/土日祝2・北九州CC 平日8・チサン遠賀 平日7/土日祝1・皐月竜王 平日2/土日祝1・久山 土日祝2
+- **評判欄** (`92e5ec9`・`course_voices.json`・`scripts/add_course_voices.py`・JA のみ): nijo/shimaseaside/keya/century/saitozaki/chikushigaoka/mission/asoiizuka/lakeside/ukiha/yasukogen。元データは `course-opinions-detailed.md` (Muse・Threads 349件)。編集部要約と件数のみ。投稿文・ユーザー名・国籍への言及・伝聞・投稿者提示の料金は載せない。Review 構造化データなし。**原文未確認** → 芥屋の動画撮影禁止・芥屋のドレスコード・ミッションの「福岡で1、2を争う」・浮羽の芝なしティーは確認まで非掲載
+- **埋め込み会議 (11/7)**: 許可なしの第三者投稿の埋め込みは全会一致で見送り。「権利的にクリーン」は根拠なし (Instagram は2020年に埋め込みは権利許諾ではないと表明と報道)。公式スクリプトは `threads.com/embed.js`。埋め込む場合も投稿者本人の許可つき・facade・`privacy.html` 整備後
+- **⚠️次**: `privacy.html` 新設 (サイトにプライバシーポリシーなし)・写真募集の許可文 (11/10 開始予定)・コースページ下部ボタンの古い料金 (浮羽 ¥4,500 vs 11/1 ¥6,332)・フェザント「フラット」と hub-beginner の掲載見直し・book-fukuoka-afternoon に5コース反映・午後スルーのひな形42件
 
 ### ✅ 2026-11-02〜06 ページ全体の金額表現 (ステップ2) — エリア5・ハブ・foreigner すべて完了
 - **area-kitakyushu** (`scripts/fix_kitakyushu_2026_11.py`・`b1309f8`・9置換): 平日最安¥3,500〜→¥5,869 (チサン遠賀)・FAQ→チサン遠賀¥5,869/ムーンレイク鞍手¥6,355/北九州CC¥6,778・ミッションバレーの「コスパ」チップ→「バレーコース」 (平日¥9,455)

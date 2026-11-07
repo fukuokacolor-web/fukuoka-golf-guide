@@ -24,7 +24,7 @@ import sys
 from pathlib import Path
 
 DOMAIN = "https://fukuoka-golf-guide.com"
-EXCLUDE_DIRS = {".git", "node_modules", "scripts", ".github"}
+EXCLUDE_DIRS = {".git", "node_modules", "scripts", ".github", "templates", "images"}
 EXCLUDE_FILES = {"404.html", "seo-meta.html", "menu-multilang.html"}
 
 REPO_ROOT = Path(r"C:\Users\Owner\fukuoka-golf-guide")

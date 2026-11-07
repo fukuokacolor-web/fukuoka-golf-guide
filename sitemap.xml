@@ -823,12 +823,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fukuoka-golf-guide.com/images/golfwear-brands.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://fukuoka-golf-guide.com/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -897,30 +891,6 @@
   <url>
     <loc>https://fukuoka-golf-guide.com/sitemap-guide.html</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fukuoka-golf-guide.com/templates/access-classic.html</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fukuoka-golf-guide.com/templates/access-shimaseaside.html</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fukuoka-golf-guide.com/templates/course-classic.html</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fukuoka-golf-guide.com/templates/course-shimaseaside.html</loc>
-    <lastmod>2026-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

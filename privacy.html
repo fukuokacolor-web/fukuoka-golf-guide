@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="福岡ゴルフ場ガイドのプライバシーポリシー。アクセス解析、広告リンク、地図、SNS投稿の埋め込みなどで外部に送信される情報と、停止の方法、削除依頼の窓口を案内します。">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>プライバシーポリシー | 福岡ゴルフ場ガイド</title>
+
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:url" content="https://fukuoka-golf-guide.com/privacy.html">
+  <meta property="og:site_name" content="福岡ゴルフ場ガイド">
+  <meta property="og:title" content="プライバシーポリシー | 福岡ゴルフ場ガイド">
+  <meta property="og:description" content="福岡ゴルフ場ガイドのプライバシーポリシー。アクセス解析、広告リンク、地図、SNS投稿の埋め込みなどで外部に送信される情報と、停止の方法、削除依頼の窓口を案内します。">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://fukuoka-golf-guide.com/privacy.html" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENH0Z4VT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PENH0Z4VT7');
+  </script>
+  <!-- AFFILIATE_TRACKER -->
+  <script>
+  /* GA4 tracking v2.1 (2026-05-06): cta_position + internal_nav_click for Phase 1-3 measurement */
+  (function(){
+    function classifyService(href) {
+      if (/jalan/i.test(href)) return 'jalan';
+      if (/rakuten/i.test(href) || /gora/i.test(href)) return 'rakuten_gora';
+      if (/agoda/i.test(href)) return 'agoda';
+      if (/skyticket/i.test(href) || /4B1DXO/.test(href)) return 'skyticket';
+      if (/tabikobo|tabi|TM[0-9]|1NJRXE/i.test(href)) return 'tabimonogatari';
+      if (/amazon|amzn/i.test(href)) return 'amazon';
+      if (/a8\.net/i.test(href)) return 'a8_other';
+      return null;
+    }
+    function classifyCtaPosition(a) {
+      if (a.classList.contains('hero-cta-btn') || a.closest('.hero-cta-btn')) return 'hero';
+      if (a.classList.contains('ftv-cta-btn') || a.closest('.ftv-cta-strip')) return 'ftv';
+      if (a.closest('#sticky-cta')) return 'sticky';
+      if (a.closest('.price-card.featured')) return 'price_featured';
+      if (a.closest('.price-card')) return 'price_default';
+      if (a.closest('.booking-card')) return 'booking_grid';
+      if (a.closest('section.related')) return 'explore_nav';
+      return 'other';
+    }
+    function getLang() {
+      var active = document.querySelector('.content.on');
+      return active ? active.id.replace('c-','') : (document.documentElement.lang || 'ja');
+    }
+    function getPage() {
+      return (location.pathname.split('/').pop() || 'index') + '';
+    }
+    document.addEventListener('click', function(e){
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var h = a.getAttribute('href') || '';
+      if (typeof gtag !== 'function') return;
+      var service = classifyService(h);
+      var page = getPage();
+      var lang = getLang();
+      var ctaPos = classifyCtaPosition(a);
+      var linkText = (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80);
+      if (service) {
+        gtag('event', 'click_affiliate', {
+          service: service, page: page, lang: lang,
+          cta_position: ctaPos,
+          link_text: linkText, link_url: h.slice(0, 200)
+        });
+      } else if (ctaPos === 'explore_nav' && /\.html?(\?|#|$)/.test(h)) {
+        var target = (h.split('?')[0].split('#')[0].split('/').pop() || '').replace(/\.html?$/,'');
+        gtag('event', 'internal_nav_click', {
+          page: page, lang: lang,
+          nav_section: 'explore_nav',
+          target_page: target,
+          link_text: linkText
+        });
+      }
+    }, true);
+  })();
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --forest:#1F4D3A; --forest-dark:#163829; --orange:#E8744C;
+      --sand:#F3EADA; --paper:#FAF8F3; --charcoal:#2A2A2A; --muted:#6B7280;
+      --line:#E5DDC8;
+      --serif:'Noto Serif JP',Georgia,serif;
+      --sans:'Noto Sans JP','Noto Sans KR','Inter',-apple-system,sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--paper); color: var(--charcoal); line-height: 1.7; }
+    .back-link { display: inline-block; padding: 8px 16px; margin: 16px; font-size: 13px; color: var(--forest); text-decoration: none; }
+    .lang-switcher { display: flex; gap: 4px; padding: 0 16px 12px; border-bottom: 1px solid var(--line); }
+    .lang-switcher button { background: #fff; border: 1px solid var(--line); padding: 6px 14px; font-size: 12px; font-weight: 700; cursor: pointer; border-radius: 4px; color: var(--muted); }
+    .lang-switcher button.on { background: var(--forest); color: #fff; border-color: var(--forest); }
+    .content { display: none; }
+    .content.on { display: block; }
+    .hero { background: linear-gradient(135deg, var(--forest), var(--forest-dark)); color: #fff; padding: 64px 24px 48px; text-align: center; }
+    .hero h1 { font-family: var(--serif); font-size: 30px; font-weight: 700; max-width: 720px; margin: 0 auto 16px; line-height: 1.4; }
+    .hero p { font-size: 14px; opacity: 0.9; max-width: 640px; margin: 0 auto; }
+    .container { max-width: 880px; margin: 0 auto; padding: 48px 24px; }
+    .section { margin-bottom: 48px; }
+    .section h2 { font-family: var(--serif); font-size: 22px; color: var(--forest); border-bottom: 2px solid var(--orange); padding-bottom: 8px; margin-bottom: 20px; }
+    .section h3 { font-size: 16px; color: var(--charcoal); margin: 24px 0 8px; font-weight: 700; }
+    .section p { margin-bottom: 12px; font-size: 15px; }
+    .section ul { padding-left: 24px; margin: 8px 0 16px; }
+    .section li { margin-bottom: 6px; font-size: 15px; }
+    .alert { background: #fff8e1; border-left: 4px solid #c9a227; padding: 14px 18px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.6; color: #5a4000; margin: 16px 0; }
+    .info { background: #e8f4ec; border-left: 4px solid var(--forest); padding: 14px 18px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.6; color: var(--forest-dark); margin: 16px 0; }
+    .meta-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .meta-table th, .meta-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+    .meta-table th { background: var(--sand); font-weight: 700; width: 30%; }
+    footer { text-align: center; padding: 32px 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; background: #fff; }
+    footer a { color: var(--forest); text-decoration: none; margin: 0 8px; }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="back-link">← Top</a>
+
+<div id="c-ja" class="content on">
+  <section class="hero">
+    <h1>プライバシーポリシー</h1>
+    <p>福岡ゴルフ場ガイド（fukuoka-golf-guide.com）が扱う情報と、外部に送信される情報について</p>
+  </section>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>1. 取得する情報</h2>
+      <p>当サイトには会員登録がなく、閲覧のために氏名やメールアドレスを入力していただく必要はありません。次の情報を扱います。</p>
+      <ul>
+        <li>アクセス解析と広告の計測で、Cookieなどにより自動で送信される情報（閲覧したページ、クリック、端末やブラウザの種類、IPアドレス、おおよその地域など）</li>
+        <li>お問い合わせの際にお送りいただいた内容</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>2. 利用の目的</h2>
+      <ul>
+        <li>サイトの利用状況を把握し、内容を改善するため</li>
+        <li>広告の成果を計測するため</li>
+        <li>お問い合わせに返信するため</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. 外部に送信される情報</h2>
+      <p>当サイトでは次のサービスを利用しており、ページを開いたときやリンクを押したときに、お使いの端末から各社へ情報が送信されることがあります。各社での扱いは、それぞれの説明をご覧ください。</p>
+      <div style="overflow-x:auto;">
+      <table class="meta-table">
+        <thead><tr><th>サービス</th><th>提供者</th><th>目的</th><th>詳細</th></tr></thead>
+        <tbody>
+        <tr><td>Google Analytics 4</td><td>Google LLC</td><td>アクセス解析（閲覧ページ、クリック、端末、おおよその地域など）</td><td><a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener">公式の説明</a></td></tr>
+<tr><td>Google Fonts</td><td>Google LLC</td><td>文字の表示（IPアドレスなどが送信されます）</td><td><a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noopener">公式の説明</a></td></tr>
+<tr><td>Googleマップ</td><td>Google LLC</td><td>地図の表示（地図のあるページ）</td><td><a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noopener">公式の説明</a></td></tr>
+<tr><td>Googleフォーム</td><td>Google LLC</td><td>お問い合わせページのフォームの受付</td><td><a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noopener">公式の説明</a></td></tr>
+<tr><td>A8.net</td><td>株式会社ファンコミュニケーションズ</td><td>アフィリエイト広告の表示と成果の計測</td><td><a href="https://www.a8.net/privacy.html" target="_blank" rel="noopener">公式の説明</a></td></tr>
+<tr><td>楽天アフィリエイト・楽天GORA</td><td>楽天グループ株式会社</td><td>広告リンクの先での成果の計測</td><td><a href="https://privacy.rakuten.co.jp/" target="_blank" rel="noopener">公式の説明</a></td></tr>
+<tr><td>じゃらんゴルフ</td><td>株式会社リクルート</td><td>広告リンクの先での予約</td><td><a href="https://www.recruit.co.jp/privacy/" target="_blank" rel="noopener">公式の説明</a></td></tr>
+<tr><td>Threads（投稿の埋め込み）</td><td>Meta Platforms, Inc.</td><td>投稿の表示（埋め込みのあるページを開いたとき）</td><td><a href="https://help.instagram.com/515230437301944" target="_blank" rel="noopener">公式の説明</a></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4. 送信を止める方法</h2>
+      <ul>
+        <li>Google Analyticsは、Googleの<a href="https://tools.google.com/dlpage/gaoptout?hl=ja" target="_blank" rel="noopener">オプトアウトアドオン</a>で止められます。</li>
+        <li>ブラウザの設定でCookieを無効にしたり削除したりできます。一部の機能や広告の計測が働かなくなることがあります。</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>5. SNS投稿の埋め込みと掲載の取り下げ</h2>
+      <p>コースページでは、ThreadsやInstagramの公開投稿を、各サービスの公式の埋め込み機能で紹介することがあります。投稿の画像や文章は当サイトに保存していません。元の投稿が削除されたり非公開になったりすると、表示されなくなります。</p>
+      <p>ご自身の投稿や、写っている方から取り下げのご希望があれば、<a href="https://www.threads.com/@fukuoka_golf_guide1" target="_blank" rel="noopener">運営者のThreads（@fukuoka_golf_guide1）</a>へお知らせください。確認でき次第、速やかに外します。</p>
+    </div>
+
+    <div class="section">
+      <h2>6. お問い合わせの窓口と内容の扱い</h2>
+      <p>このページの内容についてのお問い合わせは、<a href="https://www.threads.com/@fukuoka_golf_guide1" target="_blank" rel="noopener">運営者のThreads（@fukuoka_golf_guide1）</a>で受け付けています。お問い合わせの内容は、返信と対応のためにだけ使います。法令に基づく場合を除き、ご本人の同意なく第三者に提供しません。</p>
+    </div>
+
+    <div class="section">
+      <h2>7. このページの変更</h2>
+      <p>利用するサービスの変更などに応じて、内容を変更することがあります。変更後の内容は、このページに掲載した時点から適用します。</p>
+      <p>制定：2026年11月7日</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <a href="index.html">← トップへ</a> ｜
+  <a href="sitemap-guide.html">サイトマップ</a> ｜
+  <a href="editorial-policy.html">編集ポリシー</a> ｜
+  <a href="contact.html">お問い合わせ</a>
+</footer>
+
+</body>
+</html>

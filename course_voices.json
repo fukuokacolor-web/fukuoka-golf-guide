@@ -36,7 +36,19 @@
           "count": 1
         }
       ],
-      "fit": "景色を楽しみたい人、女性や初心者を含むグループに。曲がり幅が大きい人は、狭さを覚悟しておくと安心です。"
+      "fit": "景色を楽しみたい人、女性や初心者を含むグループに。曲がり幅が大きい人は、狭さを覚悟しておくと安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DToxgPvE8Un/",
+          "label": "この投稿をInstagramで見る",
+          "note": "下るフェアウェイと海、島、砂浜（2026年1月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DRrqkgXEjem/",
+          "label": "この投稿をInstagramで見る",
+          "note": "「NIJO」のサインと海の遠景（2025年11月の投稿）"
+        }
+      ]
     },
     "shimaseaside": {
       "total": 16,
@@ -103,7 +115,19 @@
           "count": 3
         }
       ],
-      "fit": "名門の難しさを味わいたい人に。パットに苦しむ前提で、キャディの助言を頼りに回るのがよさそうです。"
+      "fit": "名門の難しさを味わいたい人に。パットに苦しむ前提で、キャディの助言を頼りに回るのがよさそうです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DfLroMyNSmn/",
+          "label": "この投稿をInstagramで見る",
+          "note": "グリーンとクラブハウス、奥の海（2026年11月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DZBq-8RGCri/",
+          "label": "この投稿をInstagramで見る",
+          "note": "大会のサインと奥のフェアウェイ（2026年6月の投稿）"
+        }
+      ]
     },
     "century": {
       "total": 9,
@@ -132,7 +156,19 @@
           "count": 1
         }
       ],
-      "fit": "歯ごたえのあるコースを回りたい人に。スコアより挑戦を楽しむつもりで出かけると満足しやすそうです。"
+      "fit": "歯ごたえのあるコースを回りたい人に。スコアより挑戦を楽しむつもりで出かけると満足しやすそうです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DdnlzNHp3oy/",
+          "label": "この投稿をInstagramで見る",
+          "note": "グリーンと池、森林のホール景観（2026年9月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DRdV2wKE-Rj/",
+          "label": "この投稿をInstagramで見る",
+          "note": "夕景のバンカーと紅葉（2025年11月の投稿）"
+        }
+      ]
     },
     "saitozaki": {
       "total": 11,
@@ -224,6 +260,11 @@
           "url": "https://www.instagram.com/p/DdJcDXgBHC9/",
           "label": "この投稿をInstagramで見る",
           "note": "夕暮れの全景、池と山並み（2026年9月の投稿）"
+        },
+        {
+          "url": "https://www.threads.com/@karsdamt/post/DIGsnwwyyMY",
+          "label": "@karsdamt さんの投稿をThreadsで見る",
+          "note": "春のコース風景（2025年4月の投稿）"
         }
       ]
     },
@@ -307,7 +348,19 @@
           "count": 1
         }
       ],
-      "fit": "少し難しいコースで腕を試したい人に。速いグリーンとバンカーの多さを念頭に置くと安心です。"
+      "fit": "少し難しいコースで腕を試したい人に。速いグリーンとバンカーの多さを念頭に置くと安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DZgSHUAz0eH/",
+          "label": "この投稿をInstagramで見る",
+          "note": "樹木に挟まれた広いフェアウェイ（2026年6月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DEe-rcmzX1B/",
+          "label": "この投稿をInstagramで見る",
+          "note": "高台のグリーンと小さな池（2025年1月の投稿）"
+        }
+      ]
     },
     "lakeside": {
       "total": 9,
@@ -336,7 +389,14 @@
           "count": 1
         }
       ],
-      "fit": "夏のナイターを試したい人に。冬は天候による営業状況を確認してから出かけると安心です。"
+      "fit": "夏のナイターを試したい人に。冬は天候による営業状況を確認してから出かけると安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DMFC2PJTK63/",
+          "label": "この投稿をInstagramで見る",
+          "note": "谷へ下るコースと森林の丘陵（2025年7月の投稿）"
+        }
+      ]
     },
     "ukiha": {
       "total": 16,
@@ -383,6 +443,11 @@
           "url": "https://www.instagram.com/p/DPEHeGskwQ5/",
           "label": "この投稿をInstagramで見る",
           "note": "フェアウェイと丘陵の風景（2025年9月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DLy09J3TB4Y/",
+          "label": "この投稿をInstagramで見る",
+          "note": "山間の谷に下るフェアウェイと山並み（2025年7月の投稿）"
         }
       ]
     },

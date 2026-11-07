@@ -1,14 +1,14 @@
 # 🎯 次セッション 引き継ぎ指示書
 
 **最終更新**: 2026-11-02 (✅ エリア・ハブ10ページのカード料金を実データに / ✅ 午後スルーのページを実データで書き直し / ✅ 11月の料金を予約カードに反映 / ✅ 広告表示を126ページに追加)
-**最終 commit**: `387568c` feat(content) 5コースに Instagram 埋め込み — origin/main へ push 済・本番反映確認済
+**最終 commit**: `a834b5b` feat(content) 評判欄の全11コースに埋め込み — origin/main へ push 済・本番反映確認済
 **未コミット**: なし
 
 ### ✅ 2026-11-06〜07 格安ガイド更新・トップ更新・評判欄・埋め込み会議
 - **book-fukuoka-cheap** (`a4de161`): `rebuild_cheap_guide.py` で 11/1 に再生成。総額¥8,000以下は 11 コース (プラン料金なら16だが基準は総額)・最安 総額¥5,600。リンク文言も更新。course-queenshill を公式 平日¥21,800/土日祝¥30,200 に・course-saitozaki の¥3,500 を削除
 - **index + 午後スルー訂正** (`19903ca`・`fix_index_2026_11.py`・`fix_thru_correction_2026_11.py`): 841ab79 の誤り「久山に午後スルーなし」を訂正。**プラン名は「午後スルー」だけで探さない** (PMスルー・午後1Rスルー等がある)。11/2〜15 の午後スルー: レイクサイド 平日8/土日祝2・北九州CC 平日8・チサン遠賀 平日7/土日祝1・皐月竜王 平日2/土日祝1・久山 土日祝2
 - **評判欄** (`92e5ec9`・`course_voices.json`・`scripts/add_course_voices.py`・JA のみ): nijo/shimaseaside/keya/century/saitozaki/chikushigaoka/mission/asoiizuka/lakeside/ukiha/yasukogen。元データは `course-opinions-detailed.md` (Muse・Threads 349件)。編集部要約と件数のみ。投稿文・ユーザー名・国籍への言及・伝聞・投稿者提示の料金は載せない。Review 構造化データなし。**原文未確認** → 芥屋の動画撮影禁止・芥屋のドレスコード・ミッションの「福岡で1、2を争う」・浮羽の芝なしティーは確認まで非掲載
-- **埋め込み (11/7)**: 会議は見送りを提言したが、**オーナー判断で公式埋め込みを採用** (事前許可なし・風景中心・転載しない・宣伝の顔にしない・取り下げは即対応)。権利面は断定できない点は説明済み。投稿選びは Muse。`course_voices.json` の `embeds` に url・label・note を入れて `add_course_voices.py` で反映 (Instagram・Threads 両対応)。Instagram 埋め込みを 志摩3・ミッション2・夜須2・西戸崎2・浮羽1・筑紫ヶ丘1 で公開。小さな人物が写る投稿あり (志摩 DLo9JFsxR3G 3名・DFplCe3zUUz 2名・浮羽 DPEHeGskwQ5 1名。いずれも顔は判別不可)。不採用: Threads @raicom.28 DCla5kBpluu (人物が主役の動画)・筑紫ヶ丘 Dbl1yAJzWFf (文字とスコアが主体)。残る5コース (nijo・keya・century・asoiizuka・lakeside) は未選定
+- **埋め込み (11/7)**: 会議は見送りを提言したが、**オーナー判断で公式埋め込みを採用** (事前許可なし・風景中心・転載しない・宣伝の顔にしない・取り下げは即対応)。権利面は断定できない点は説明済み。投稿選びは Muse。`course_voices.json` の `embeds` に url・label・note を入れて `add_course_voices.py` で反映 (Instagram・Threads 両対応)。公式埋め込みを評判欄の全11コースに公開 (志摩3・ミッション2・夜須2・西戸崎2・二丈2・麻生2・センチュリー2・芥屋2・浮羽2・筑紫ヶ丘2 (うち Threads 1)・レイクサイド1)。不採用追加: レイクサイド Dbe7p5RJg2b (スコア表示)。小さな人物が写る投稿あり (志摩 DLo9JFsxR3G 3名・DFplCe3zUUz 2名・浮羽 DPEHeGskwQ5 1名。いずれも顔は判別不可)。不採用: Threads @raicom.28 DCla5kBpluu (人物が主役の動画)・筑紫ヶ丘 Dbl1yAJzWFf (文字とスコアが主体)
 - **privacy** (`91a9489`・`bddcf6b`): `privacy.html` 新設。窓口は運営者の Threads @fukuoka_golf_guide1。`add_privacy_link.py` で150ページにリンク (seo-meta・menu-multilang は対象外)。全ページ更新で sitemap の lastmod が 11/7 に揃った
 - **⚠️次**: Muse の投稿候補を反映・写真募集の許可文 (11/10 開始予定)・編集ポリシーに SNS の扱いを追記・コースページ下部ボタンの古い料金 (浮羽 ¥4,500 vs 11/1 ¥6,332)・フェザント「フラット」と hub-beginner の掲載見直し・book-fukuoka-afternoon に5コース反映・午後スルーのひな形42件
 

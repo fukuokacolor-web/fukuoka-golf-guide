@@ -20,7 +20,7 @@ ROOTS = [PREVIEW_ROOT] if "--preview" in sys.argv else [REPO_ROOT, PREVIEW_ROOT]
 ONLY = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
 MARKER = "<!-- course-voices-v1 -->"
 END = "<!-- /course-voices-v1 -->"
-ANCHOR = re.compile(r'[ \t]*<section class="section">\r?\n[ \t]*<div class="sec-eyebrow">— Getting Here</div>')
+ANCHOR = re.compile(r'[ \t]*<section class="section[^"]*">\r?\n[ \t]*<div class="sec-eyebrow">— Getting Here</div>')
 BLOCK = re.compile(re.escape(MARKER) + r".*?" + re.escape(END) + r"\r?\n", re.S)
 CARD = "background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;"
 HEAD = "font-weight:700;font-size:15px;margin-bottom:10px;"
@@ -71,7 +71,7 @@ def render(c, nl):
         f'    <p class="sec-desc">Threadsの公開投稿とコメント{c["total"]}件（{c["period"]}）を編集部が要約しました。個人の感想で、時期や条件によって変わります。</p>',
         '    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:24px;">',
         f'      <div style="{CARD}"><div style="{HEAD}color:var(--forest);">よく挙がる良い点</div><ul style="list-style:none;margin:0;padding:0;">{items(c["good"])}</ul></div>',
-        f'      <div style="{CARD}"><div style="{HEAD}color:var(--orange-dark);">行く前に知っておきたい点</div><ul style="list-style:none;margin:0;padding:0;">{items(c["care"])}</ul></div>',
+        *([f'      <div style="{CARD}"><div style="{HEAD}color:var(--orange-dark);">行く前に知っておきたい点</div><ul style="list-style:none;margin:0;padding:0;">{items(c["care"])}</ul></div>'] if c["care"] else []),
         '    </div>',
         f'    <p style="margin-top:18px;font-size:14px;line-height:1.8;"><strong>編集部のまとめ：</strong>{c["fit"]}</p>',
         *embed_lines(c),
@@ -104,6 +104,8 @@ def main():
             c["not_found"] += 1; continue
         src = open(path, encoding="utf-8", newline="").read()
         new, st = apply_one(src, v)
+        if st == "no_match":
+            print("no_match", name)
         c["already" if new == src and st == "rebuilt" else st] += 1
         if APPLY and new != src:
             for root in ROOTS:

@@ -535,7 +535,19 @@
           "count": 1
         }
       ],
-      "fit": "キャディ付きで名門らしいラウンドを楽しみたい人に。エアレーションの時期は事前に確認すると安心です。"
+      "fit": "キャディ付きで名門らしいラウンドを楽しみたい人に。エアレーションの時期は事前に確認すると安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DDtsJNuyXeE/",
+          "label": "この投稿をInstagramで見る",
+          "note": "晴天のフェアウェイと山並み（2024年12月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DPAplL4EXLx/",
+          "label": "この投稿をInstagramで見る",
+          "note": "フェアウェイとクラブハウス、時計塔（2025年9月の投稿）"
+        }
+      ]
     },
     "raizan": {
       "total": 8,
@@ -593,7 +605,19 @@
           "count": 1
         }
       ],
-      "fit": "きれいなコースでゆったり回りたい人に。公式料金はキャディ付きのやや高めの価格帯です。"
+      "fit": "きれいなコースでゆったり回りたい人に。公式料金はキャディ付きのやや高めの価格帯です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DZrd0TQzWyh/",
+          "label": "この投稿をInstagramで見る",
+          "note": "広いフェアウェイとバンカー、池、山並み（2026年6月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DeMBnkbgZUy/",
+          "label": "この投稿をInstagramで見る",
+          "note": "コースの全景など（2026年10月の投稿）"
+        }
+      ]
     },
     "genkai": {
       "total": 8,
@@ -626,7 +650,14 @@
           "count": 1
         }
       ],
-      "fit": "機会があれば挑戦したい名門です。バンカーの練習をしてから行くと安心です。"
+      "fit": "機会があれば挑戦したい名門です。バンカーの練習をしてから行くと安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DdWT2lnH0Aw/",
+          "label": "この投稿をInstagramで見る",
+          "note": "松林とバンカーのフェアウェイ（2026年9月の投稿）"
+        }
+      ]
     },
     "newui": {
       "total": 6,
@@ -651,7 +682,19 @@
           "count": 1
         }
       ],
-      "fit": "海の景色と歯ごたえのあるコースを楽しみたい人に。風のある日は特に手強そうです。"
+      "fit": "海の景色と歯ごたえのあるコースを楽しみたい人に。風のある日は特に手強そうです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DXitLLSj1M8/",
+          "label": "この投稿をInstagramで見る",
+          "note": "フェアウェイの奥に海と島々（2026年4月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DeTwJ7hk45F/",
+          "label": "この投稿をInstagramで見る",
+          "note": "丘陵のフェアウェイと海（2026年10月の投稿）"
+        }
+      ]
     },
     "fukuokacc": {
       "total": 4,
@@ -676,7 +719,14 @@
           "count": 1
         }
       ],
-      "fit": "会員制の名門です。紹介を受けて回る機会があれば、林間の難しさを味わえそうです。"
+      "fit": "会員制の名門です。紹介を受けて回る機会があれば、林間の難しさを味わえそうです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DMUVE4vOWxD/",
+          "label": "この投稿をInstagramで見る",
+          "note": "丘の上のクラブハウスと入口の看板（2025年7月の投稿）"
+        }
+      ]
     },
     "aburayama": {
       "total": 5,
@@ -705,7 +755,14 @@
           "count": 1
         }
       ],
-      "fit": "短い時間で練習したい人に。初心者は「ショートだから簡単」と思わず、気楽な気持ちで。"
+      "fit": "短い時間で練習したい人に。初心者は「ショートだから簡単」と思わず、気楽な気持ちで。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DfLlnRFkpt1/",
+          "label": "この投稿をInstagramで見る",
+          "note": "テラスから見下ろす市街地の夕景（2026年11月の投稿）"
+        }
+      ]
     },
     "daihakata": {
       "total": 7,
@@ -734,7 +791,14 @@
           "count": 2
         }
       ],
-      "fit": "初めて行く人は、時間と運転に余裕を持って。コースの状態は時期で印象が変わるようです。"
+      "fit": "初めて行く人は、時間と運転に余裕を持って。コースの状態は時期で印象が変わるようです。",
+      "embeds": [
+        {
+          "url": "https://www.threads.com/@ikukomotomura/post/Ddnp1c7mKKD",
+          "label": "@ikukomotomura さんの投稿をThreadsで見る",
+          "note": "コースの様子（2026年9月の投稿）"
+        }
+      ]
     },
     "hisayama": {
       "total": 9,
@@ -763,7 +827,19 @@
           "count": 1
         }
       ],
-      "fit": "短めでも戦略的なコースが好きな人に。高麗グリーンの対策をして、秋なら紅葉も楽しみに。"
+      "fit": "短めでも戦略的なコースが好きな人に。高麗グリーンの対策をして、秋なら紅葉も楽しみに。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/reel/DRlPDLCARav/",
+          "label": "この投稿をInstagramで見る",
+          "note": "紅葉した大木と石畳の小道（2025年11月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/reel/DHw8VNLzqQQ/",
+          "label": "この投稿をInstagramで見る",
+          "note": "満開の桜越しのコース（2025年3月の投稿）"
+        }
+      ]
     },
     "koga": {
       "total": 4,
@@ -788,7 +864,14 @@
           "count": 1
         }
       ],
-      "fit": "声はまだ少なめです。入場の条件や料金は公式サイトで確認してください。"
+      "fit": "声はまだ少なめです。入場の条件や料金は公式サイトで確認してください。",
+      "embeds": [
+        {
+          "url": "https://www.threads.com/@netkres0519/post/DILMNAOzldt",
+          "label": "@netkres0519 さんの投稿をThreadsで見る",
+          "note": "メイングリーン（2025年4月の投稿）"
+        }
+      ]
     },
     "central": {
       "total": 4,
@@ -813,7 +896,19 @@
           "count": 1
         }
       ],
-      "fit": "初心者や、女性を含むグループのコースデビューに向いていそうです。"
+      "fit": "初心者や、女性を含むグループのコースデビューに向いていそうです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DfZAvaIk-5H/",
+          "label": "この投稿をInstagramで見る",
+          "note": "紅葉のモミジとフェアウェイ（2026年11月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/reel/DN9lhlvE1LL/",
+          "label": "この投稿をInstagramで見る",
+          "note": "フェアウェイのパノラマとヤシの木（2025年8月の投稿）"
+        }
+      ]
     },
     "satsuki-tenpai": {
       "total": 8,
@@ -850,7 +945,19 @@
           "count": 1
         }
       ],
-      "fit": "近さを重視する人に。混む日は時間がかかることがあるので、午後の予定は余裕を持って。"
+      "fit": "近さを重視する人に。混む日は時間がかかることがあるので、午後の予定は余裕を持って。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DeghATgEnJH/",
+          "label": "この投稿をInstagramで見る",
+          "note": "ティーグラウンドと松林、丘陵（2026年10月の投稿）"
+        },
+        {
+          "url": "https://www.threads.com/@whip0010/post/DeYjpp8mcvu",
+          "label": "@whip0010 さんの投稿をThreadsで見る",
+          "note": "緑の多いコースの様子（2026年10月の投稿）"
+        }
+      ]
     },
     "satsuki-ryuoh": {
       "total": 6,
@@ -871,7 +978,19 @@
           "count": 2
         }
       ],
-      "fit": "安さと面白さを楽しめる人に。混雑を避けるなら、人の少ない時期や時間を選ぶとよさそうです。"
+      "fit": "安さと面白さを楽しめる人に。混雑を避けるなら、人の少ない時期や時間を選ぶとよさそうです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DI8s162B2-2/",
+          "label": "この投稿をInstagramで見る",
+          "note": "広いフェアウェイとグリーン（2025年4月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/reel/DOurYWCk7Rk/",
+          "label": "この投稿をInstagramで見る",
+          "note": "18番グリーンの定点タイムラプス（2025年9月の投稿）"
+        }
+      ]
     },
     "chikushino": {
       "total": 4,
@@ -932,7 +1051,19 @@
           "count": 1
         }
       ],
-      "fit": "市内から近いコースで距離感を磨きたい人に。スタートの登りは余裕を持って。"
+      "fit": "市内から近いコースで距離感を磨きたい人に。スタートの登りは余裕を持って。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DCgYD2wSObu/",
+          "label": "この投稿をInstagramで見る",
+          "note": "池越しのクラブハウスと紅葉（2024年11月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DGHZdBJTa_H/",
+          "label": "この投稿をInstagramで見る",
+          "note": "冬の木々に囲まれたホール（2025年2月の投稿）"
+        }
+      ]
     },
     "jruchino": {
       "total": 7,
@@ -965,7 +1096,19 @@
           "count": 1
         }
       ],
-      "fit": "コンディションの良いコースで腕試しをしたい人に。無理にドライバーを振らない作戦もありそうです。"
+      "fit": "コンディションの良いコースで腕試しをしたい人に。無理にドライバーを振らない作戦もありそうです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DeYhRPWPfRu/",
+          "label": "この投稿をInstagramで見る",
+          "note": "ティーエリアとフェアウェイ、丘陵（2026年10月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/reel/DfBI_meheJ0/",
+          "label": "この投稿をInstagramで見る",
+          "note": "池のほとりの鹿とコース全景（2026年10月の投稿）"
+        }
+      ]
     },
     "dazaifu": {
       "total": 6,
@@ -994,7 +1137,19 @@
           "count": 1
         }
       ],
-      "fit": "ゴルフと太宰府の観光を組み合わせたい人に。初心者はグリーンの難しさを覚悟して。"
+      "fit": "ゴルフと太宰府の観光を組み合わせたい人に。初心者はグリーンの難しさを覚悟して。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DcKPtJ7BL6e/",
+          "label": "この投稿をInstagramで見る",
+          "note": "夕景のグリーンと山並み（2026年8月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DSTqIZ9k40s/",
+          "label": "この投稿をInstagramで見る",
+          "note": "紅葉の巨木と楓のフェアウェイ（2025年12月の投稿）"
+        }
+      ]
     },
     "wakamatsu": {
       "total": 3,
@@ -1011,7 +1166,19 @@
           "count": 2
         }
       ],
-      "fit": "声はまだ少なめです。会員制のため、入場の条件は公式サイトで確認してください。"
+      "fit": "声はまだ少なめです。会員制のため、入場の条件は公式サイトで確認してください。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/reel/DaRnoENPHu4/",
+          "label": "この投稿をInstagramで見る",
+          "note": "ツツジのグリーンと海沿いのフェアウェイ（2026年7月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DYwPgj-zSoY/",
+          "label": "この投稿をInstagramで見る",
+          "note": "7番ホールのグリーンと松林、海（2026年5月の投稿）"
+        }
+      ]
     },
     "kokura": {
       "total": 7,
@@ -1073,7 +1240,14 @@
           "count": 1
         }
       ],
-      "fit": "歴史ある名門の雰囲気を楽しみたい人に。バンカーの難しさは覚悟しておくと安心です。"
+      "fit": "歴史ある名門の雰囲気を楽しみたい人に。バンカーの難しさは覚悟しておくと安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/reel/DfPKsPwNxq4/",
+          "label": "この投稿をInstagramで見る",
+          "note": "赤屋根のクラブハウスとフェアウェイ（2026年11月の投稿）"
+        }
+      ]
     },
     "suonada": {
       "total": 3,
@@ -1094,7 +1268,14 @@
           "count": 1
         }
       ],
-      "fit": "自然を楽しみながら回りたい人に。声はまだ少なめです。"
+      "fit": "自然を楽しみながら回りたい人に。声はまだ少なめです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DPtIKIQiUcX/",
+          "label": "この投稿をInstagramで見る",
+          "note": "海を背景にした全景とハート型バンカー（2025年10月の投稿）"
+        }
+      ]
     },
     "kitakyushu": {
       "total": 8,
@@ -1231,7 +1412,19 @@
           "count": 1
         }
       ],
-      "fit": "狭いコースで戦略を考えて回りたい人に。夏から秋は虫よけがあると安心です。"
+      "fit": "狭いコースで戦略を考えて回りたい人に。夏から秋は虫よけがあると安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DPrFVBBE9rG/",
+          "label": "この投稿をInstagramで見る",
+          "note": "青空の下のフェアウェイとグリーン（2025年10月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DZCSqvtCAas/",
+          "label": "この投稿をInstagramで見る",
+          "note": "コースの様子（2026年6月の投稿）"
+        }
+      ]
     },
     "classic": {
       "total": 6,
@@ -1260,7 +1453,14 @@
           "count": 1
         }
       ],
-      "fit": "トーナメントの舞台に挑戦したい人に。深いラフでのロストに備えて、ボールは多めに。"
+      "fit": "トーナメントの舞台に挑戦したい人に。深いラフでのロストに備えて、ボールは多めに。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DX6FQm-lHUF/",
+          "label": "この投稿をInstagramで見る",
+          "note": "山並みの広い風景（2026年5月の投稿）"
+        }
+      ]
     },
     "kaho": {
       "total": 4,
@@ -1281,7 +1481,19 @@
           "count": 1
         }
       ],
-      "fit": "初心者や100切りを狙う人に。"
+      "fit": "初心者や100切りを狙う人に。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DetCG7ina1R/",
+          "label": "この投稿をInstagramで見る",
+          "note": "松林とグリーン、山並み（2026年10月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DWaM0U1k6Xg/",
+          "label": "この投稿をInstagramで見る",
+          "note": "入口付近の桜と緑の丘（2026年3月の投稿）"
+        }
+      ]
     },
     "moonlake": {
       "total": 7,
@@ -1310,7 +1522,19 @@
           "count": 1
         }
       ],
-      "fit": "スコアを狙いたい人に。ナイターに行くなら、見やすいボールを選ぶと安心です。"
+      "fit": "スコアを狙いたい人に。ナイターに行くなら、見やすいボールを選ぶと安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DWvgC2eCb19/",
+          "label": "この投稿をInstagramで見る",
+          "note": "長いフェアウェイと桜（2026年4月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DdNTOeYGU1j/",
+          "label": "この投稿をInstagramで見る",
+          "note": "広いグリーンと丘陵（2026年9月の投稿）"
+        }
+      ]
     },
     "akane": {
       "total": 6,
@@ -1339,7 +1563,14 @@
           "count": 1
         }
       ],
-      "fit": "OBを気にせず打ちたい人に。距離は長めなので、ティーの選び方に注意を。"
+      "fit": "OBを気にせず打ちたい人に。距離は長めなので、ティーの選び方に注意を。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DWTXCfxCVQ5/",
+          "label": "この投稿をInstagramで見る",
+          "note": "池と木橋、ホールごとの風景（2026年3月の投稿）"
+        }
+      ]
     },
     "pheasant": {
       "total": 7,
@@ -1372,7 +1603,19 @@
           "count": 1
         }
       ],
-      "fit": "自然を楽しみながら回りたい人に。起伏もあるので、夏はカート乗り入れの有無を確認すると安心です。"
+      "fit": "自然を楽しみながら回りたい人に。起伏もあるので、夏はカート乗り入れの有無を確認すると安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/reel/Dek7aKLTiuQ/",
+          "label": "この投稿をInstagramで見る",
+          "note": "秋色の木々とグリーン、夕景（2026年10月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DXyk92mEyYL/",
+          "label": "この投稿をInstagramで見る",
+          "note": "広いフェアウェイと新緑、バンカー（2026年5月の投稿）"
+        }
+      ]
     },
     "yamejoyo": {
       "total": 3,
@@ -1389,7 +1632,19 @@
           "count": 3
         }
       ],
-      "fit": "秋の景色を楽しみたい人に。声はまだ少なめです。"
+      "fit": "秋の景色を楽しみたい人に。声はまだ少なめです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DR_BkAsE8do/",
+          "label": "この投稿をInstagramで見る",
+          "note": "真っ赤なモミジと池（2025年12月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/Dcr_BY3GDan/",
+          "label": "この投稿をInstagramで見る",
+          "note": "鮮やかな芝と青空（2026年8月の投稿）"
+        }
+      ]
     },
     "ogori": {
       "total": 9,
@@ -1418,7 +1673,19 @@
           "count": 1
         }
       ],
-      "fit": "きれいなコースと食事を楽しみたい人に。高麗グリーンの対策をしておくと安心です。"
+      "fit": "きれいなコースと食事を楽しみたい人に。高麗グリーンの対策をしておくと安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DOf0Ph3j05w/",
+          "label": "この投稿をInstagramで見る",
+          "note": "広いフェアウェイと松林（2025年9月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DfagI9cTxOF/",
+          "label": "この投稿をInstagramで見る",
+          "note": "フェアウェイと林、青空（2026年11月の投稿）"
+        }
+      ]
     }
   }
 }

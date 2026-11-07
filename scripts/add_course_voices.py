@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+コースページ (JA のみ) に「Threadsでの評判」セクションを入れる。内容は course_voices.json から生成する。
+
+- 位置: JA の「— Getting Here」セクションの直前
+- 編集部の要約だけを載せる (ユーザー名・投稿文の転載なし)。Review 等の構造化データは付けない
+- 冪等: MARKER で囲んだ範囲を作り直す
+Usage:
+  python scripts/add_course_voices.py --dry-run               # 件数を表示 (書き込みなし)
+  python scripts/add_course_voices.py --only nijo --preview   # 1件テスト: PREVIEW だけ
+  python scripts/add_course_voices.py --apply                 # REPO + PREVIEW
+"""
+import json, os, re, sys
+
+REPO_ROOT = "C:/Users/Owner/fukuoka-golf-guide"
+PREVIEW_ROOT = "C:/Users/Owner/Documents/新しいPJ"
+APPLY = "--apply" in sys.argv or "--preview" in sys.argv
+ROOTS = [PREVIEW_ROOT] if "--preview" in sys.argv else [REPO_ROOT, PREVIEW_ROOT]
+ONLY = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
+MARKER = "<!-- course-voices-v1 -->"
+END = "<!-- /course-voices-v1 -->"
+ANCHOR = re.compile(r'[ \t]*<section class="section">\r?\n[ \t]*<div class="sec-eyebrow">— Getting Here</div>')
+BLOCK = re.compile(re.escape(MARKER) + r".*?" + re.escape(END) + r"\r?\n", re.S)
+CARD = "background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;"
+HEAD = "font-weight:700;font-size:15px;margin-bottom:10px;"
+ITEM = "font-size:14px;line-height:1.7;padding:9px 0;border-top:1px solid var(--line);"
+COUNT = "color:var(--muted);font-size:12px;white-space:nowrap;margin-left:6px;"
+
+
+def items(rows):
+    return "".join(f'<li style="{ITEM}">{r["text"]}<span style="{COUNT}">{r["count"]}件</span></li>' for r in rows)
+
+
+def render(c, nl):
+    lines = [
+        MARKER,
+        '  <section class="section">',
+        '    <div class="sec-eyebrow">— Voices on Threads</div>',
+        '    <h2 class="sec-title">Threadsでの評判</h2>',
+        f'    <p class="sec-desc">Threadsの公開投稿とコメント{c["total"]}件（{c["period"]}）を編集部が要約しました。個人の感想で、時期や条件によって変わります。</p>',
+        '    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:24px;">',
+        f'      <div style="{CARD}"><div style="{HEAD}color:var(--forest);">よく挙がる良い点</div><ul style="list-style:none;margin:0;padding:0;">{items(c["good"])}</ul></div>',
+        f'      <div style="{CARD}"><div style="{HEAD}color:var(--orange-dark);">行く前に知っておきたい点</div><ul style="list-style:none;margin:0;padding:0;">{items(c["care"])}</ul></div>',
+        '    </div>',
+        f'    <p style="margin-top:18px;font-size:14px;line-height:1.8;"><strong>編集部のまとめ：</strong>{c["fit"]}</p>',
+        '  </section>',
+        END,
+    ]
+    return nl.join(lines) + nl
+
+
+def apply_one(html, c):
+    nl = "\r\n" if "\r\n" in html else "\n"
+    block = render(c, nl)
+    if MARKER in html:
+        return BLOCK.sub(lambda m: block, html, count=1), "rebuilt"
+    m = ANCHOR.search(html)  # 最初の一致 = JA
+    if not m:
+        return html, "no_match"
+    return html[:m.start()] + block + html[m.start():], "inserted"
+
+
+def main():
+    data = json.load(open(os.path.join(REPO_ROOT, "course_voices.json"), encoding="utf-8"))["courses"]
+    c = {"inserted": 0, "rebuilt": 0, "already": 0, "no_match": 0, "not_found": 0}
+    for slug, v in data.items():
+        if ONLY and slug != ONLY:
+            continue
+        name = f"course-{slug}.html"
+        path = os.path.join(REPO_ROOT, name)
+        if not os.path.exists(path):
+            c["not_found"] += 1; continue
+        src = open(path, encoding="utf-8", newline="").read()
+        new, st = apply_one(src, v)
+        c["already" if new == src and st == "rebuilt" else st] += 1
+        if APPLY and new != src:
+            for root in ROOTS:
+                open(os.path.join(root, name), "w", encoding="utf-8", newline="").write(new)
+    print(c, "APPLIED" if APPLY else "DRY-RUN")
+
+
+if __name__ == "__main__":
+    main()

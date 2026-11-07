@@ -76,6 +76,11 @@
           "url": "https://www.instagram.com/p/DLo9JFsxR3G/",
           "label": "この投稿をInstagramで見る",
           "note": "高台のティーグラウンドからの眺め（2025年7月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DFplCe3zUUz/",
+          "label": "この投稿をInstagramで見る",
+          "note": "白波の立つ荒れた海と曇天（2025年2月の投稿）"
         }
       ]
     },
@@ -172,7 +177,19 @@
           "count": 1
         }
       ],
-      "fit": "海沿いの景色と平坦さを楽しみたい人に。木やバンカーの位置を確かめながら回ると安心です。"
+      "fit": "海沿いの景色と平坦さを楽しみたい人に。木やバンカーの位置を確かめながら回ると安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DLm6ZkZTDSh/",
+          "label": "この投稿をInstagramで見る",
+          "note": "グリーン越しのヤシと青い海（2025年7月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DMuvHzEz2xW/",
+          "label": "この投稿をInstagramで見る",
+          "note": "高台から見下ろすフェアウェイと海（2025年7月の投稿）"
+        }
+      ]
     },
     "chikushigaoka": {
       "total": 10,
@@ -201,7 +218,14 @@
           "count": 1
         }
       ],
-      "fit": "市内から近いコースで腕試しをしたい人に。速いグリーンへの備えがあると楽しめそうです。"
+      "fit": "市内から近いコースで腕試しをしたい人に。速いグリーンへの備えがあると楽しめそうです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DdJcDXgBHC9/",
+          "label": "この投稿をInstagramで見る",
+          "note": "夕暮れの全景、池と山並み（2026年9月の投稿）"
+        }
+      ]
     },
     "mission": {
       "total": 17,
@@ -234,7 +258,19 @@
           "count": 3
         }
       ],
-      "fit": "スコアより攻略を楽しみたい人に。いつもより叩く覚悟で出かけるのがよさそうです。"
+      "fit": "スコアより攻略を楽しみたい人に。いつもより叩く覚悟で出かけるのがよさそうです。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/Ddn2kTSzBjk/",
+          "label": "この投稿をInstagramで見る",
+          "note": "池と橋、フェアウェイと山並み（2026年9月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DReQSFwCTLM/",
+          "label": "この投稿をInstagramで見る",
+          "note": "紅葉した木々と池のある起伏（2025年11月の投稿）"
+        }
+      ]
     },
     "asoiizuka": {
       "total": 10,
@@ -341,7 +377,14 @@
           "count": 1
         }
       ],
-      "fit": "食事と手入れの良さを楽しみたい人に。距離は短めでも狭いので、初心者は無理のない気持ちで。初めての人は余裕を持って出発を。"
+      "fit": "食事と手入れの良さを楽しみたい人に。距離は短めでも狭いので、初心者は無理のない気持ちで。初めての人は余裕を持って出発を。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DPEHeGskwQ5/",
+          "label": "この投稿をInstagramで見る",
+          "note": "フェアウェイと丘陵の風景（2025年9月の投稿）"
+        }
+      ]
     },
     "yasukogen": {
       "total": 12,
@@ -386,7 +429,19 @@
           "count": 1
         }
       ],
-      "fit": "広いコースでのびのび回りたい人に。大きなグリーンのロングパットに備えておくと安心です。"
+      "fit": "広いコースでのびのび回りたい人に。大きなグリーンのロングパットに備えておくと安心です。",
+      "embeds": [
+        {
+          "url": "https://www.instagram.com/p/DNZGoL-z_2M/",
+          "label": "この投稿をInstagramで見る",
+          "note": "樹木に囲まれたフェアウェイとバンカー（2025年8月の投稿）"
+        },
+        {
+          "url": "https://www.instagram.com/p/DPoH_MxgWTb/",
+          "label": "この投稿をInstagramで見る",
+          "note": "ティーから見下ろす下りのフェアウェイ（2025年10月の投稿）"
+        }
+      ]
     }
   }
 }

@@ -74,6 +74,7 @@ PLAN = {
         ("<li>Approx. 50–55 min from Hakata Station</li>", "<li>Approx. 40 min from Hakata Station (per the club)</li>"),
         ('Nearest stations: JR Sasaguri Line "Choshahara" or "Suekita-chuo." Take a taxi from the station.', 'About 10 min by car from Amagi Station (Amagi Railway) or Nishitetsu Amagi Station (Nishitetsu Amagi Line), per the club. Take a taxi from the station.'),
         ("후쿠오카공항에서 차로 약 55분.", "후쿠오카공항·하카타역에서 차로 약 40분(공식)."),
+        ("후쿠오카 공항에서 차로 약 55분.", "후쿠오카공항·하카타역에서 차로 약 40분(공식)."),
         ("<li>후쿠오카 도시 고속도로 또는 규슈 자동차도로 진입</li>", "<li>공항에서 규슈 자동차도로 진입 후 도스 JCT에서 오이타 자동차도로</li>"),
         ("<li>카스야·카스야마치 방면 IC에서 하차</li>", "<li>아마기 IC 또는 아사쿠라 IC에서 하차</li>"),
         ("<li>일반 도로를 경유하여 클럽하우스 도착</li>", "<li>일반 도로로 약 10분</li>"),

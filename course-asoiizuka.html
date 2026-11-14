@@ -447,6 +447,37 @@
     <div class="access-tip"><span class="access-tip-icon">💡</span><div>Google Maps・Naver Mapsで「麻生飯塚ゴルフ倶楽部」と検索すると案内されます。<br><a href="access-asoiizuka.html" style="color:var(--forest);font-weight:700;text-decoration:underline;">詳しいアクセスガイドを見る →</a></div></div>
   </section>
 
+  <!-- jma-weather-v1 -->
+  <section class="section" id="weather">
+    <div class="sec-eyebrow">— Weather</div>
+    <h2 class="sec-title">麻生飯塚ゴルフ倶楽部周辺の天気予報</h2>
+    <p class="sec-desc">気象庁が発表する筑豊地方の予報を、今日・明日と週間で表示します。</p>
+  <style>
+    .jma-weather{max-width:880px;margin-top:8px;}
+    .jw-days{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+    .jw-day{background:#fff;border:1px solid var(--line,#e5e0d5);border-radius:14px;padding:16px 18px;}
+    .jw-date{font-weight:700;color:var(--forest,#1a5c38);font-size:14px;margin-bottom:6px;}
+    .jw-main{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+    .jw-text{font-size:14px;line-height:1.5;}
+    .jw-temp{font-size:15px;margin-bottom:6px;} .jw-hi{color:#c0392b;font-weight:700;} .jw-lo{color:#2563a8;font-weight:700;}
+    .jw-temp small{color:var(--muted,#777);font-size:11px;}
+    .jw-pop{font-size:12px;color:#444;display:flex;flex-wrap:wrap;gap:4px 10px;margin-bottom:6px;} .jw-pop b{color:#2563a8;}
+    .jw-wind{font-size:12px;color:var(--muted,#777);line-height:1.5;}
+    .jw-week-head{font-weight:700;font-size:13px;color:var(--forest,#1a5c38);margin:18px 0 8px;}
+    .jw-week{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px;}
+    .jw-w{background:#fff;border:1px solid var(--line,#e5e0d5);border-radius:10px;padding:8px 6px;text-align:center;font-size:12px;}
+    .jw-w .jw-date{font-size:12px;margin-bottom:2px;} .jw-wtext{font-size:11px;color:#444;min-height:2.6em;} .jw-wpop{color:#2563a8;font-weight:700;}
+    .jw-src{font-size:11px;color:var(--muted,#777);margin-top:12px;line-height:1.6;}
+    .jw-loading{font-size:13px;color:var(--muted,#777);}
+  </style>
+    <div class="jma-weather" data-area="400030" data-area-name="筑豊地方" data-city="82136" data-city-name="飯塚">
+      <p class="jw-loading">予報を読み込んでいます…</p>
+      <p class="jw-fallback" style="display:none;">予報を読み込めませんでした。<a href="https://www.jma.go.jp/bosai/forecast/#area_type=class10s&amp;area_code=400030" target="_blank" rel="noopener">気象庁の筑豊地方の天気予報</a>をご覧ください。</p>
+    </div>
+  </section>
+  <script src="weather-jma.js" defer></script>
+
+
   <section class="section section-sand">
     <div class="sec-eyebrow">— Play Styles</div>
     <h2 class="sec-title">プレースタイル</h2>

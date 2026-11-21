@@ -22,7 +22,7 @@ PREVIEW_ROOT = "C:/Users/Owner/Documents/新しいPJ"
 APPLY = "--apply" in sys.argv or "--preview" in sys.argv
 ROOTS = [PREVIEW_ROOT] if "--preview" in sys.argv else [REPO_ROOT, PREVIEW_ROOT]
 ONLY = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
-CHECKED = "2026-11-01"
+CHECKED = "2026-11-20"  # 2026-11-21 更新: 11/20 のデータ・税込総額 (コースページの料金欄と同じ基準) に
 
 PAGES = ["area-chikugo.html", "area-chikuho.html", "area-fukuokacity.html", "area-itoshima.html", "area-kitakyushu.html",
          "book-fukuoka-golf-foreigner.html", "hub-beginner.html", "hub-budget.html", "hub-business.html", "hub-traveler.html"]
@@ -31,11 +31,11 @@ RAKUTEN_ONLY = {"aburayama", "kyushugc", "saitozaki", "akane", "yasukogen", "sun
 
 NOTE = '<span style="display:block;font-size:11px;font-weight:400;opacity:.75;">{t}</span>'
 TXT = {
-    "ja": {"wd": "平日", "we": "土日祝", "suf": "〜", "note": "じゃらん・2026年11月1日時点の18H最安（変動あり）",
+    "ja": {"wd": "平日", "we": "土日祝", "suf": "〜", "note": "じゃらん・2026年11月20日時点の18H最安（税込総額・変動あり）",
            "official": "料金は公式サイトで確認", "rakuten": "料金は楽天GORAで確認", "none": "料金は予約サイトで確認"},
-    "en": {"wd": "Wkdy", "we": "Wknd", "suf": "", "note": "Jalan, lowest 18-hole plan as of Nov 1, 2026 (varies)",
+    "en": {"wd": "Wkdy", "we": "Wknd", "suf": "", "note": "Jalan, lowest 18-hole total incl. tax as of Nov 20, 2026 (varies)",
            "official": "Rates on the official site", "rakuten": "Rates on Rakuten GORA", "none": "Rates on the booking site"},
-    "ko": {"wd": "평일", "we": "주말", "suf": "〜", "note": "자란 · 2026년 11월 1일 기준 18홀 최저가(변동 있음)",
+    "ko": {"wd": "평일", "we": "주말", "suf": "〜", "note": "자란 · 2026년 11월 20일 기준 18홀 최저가(세금 포함 총액·변동 있음)",
            "official": "요금은 공식 사이트에서 확인", "rakuten": "요금은 라쿠텐 GORA에서 확인", "none": "요금은 예약 사이트에서 확인"},
 }
 PRICE_RE = re.compile(r'<div class="course-price">(?:(?!</div>).)*</div>', re.S)
@@ -49,7 +49,7 @@ def load():
     data = {}
     for slug, jid in mapping.items():
         r = floor.get(str(jid).zfill(5)) if jid else None
-        if r:
+        if r and slug not in OFFICIAL_ONLY | RAKUTEN_ONLY and r.get("weekday"):
             assert r["checked"] == CHECKED, (slug, r["checked"])
         data[slug] = r
     return data
@@ -64,9 +64,9 @@ def render(slug, lang, data):
     r = data.get(slug)
     if not r or not r.get("weekday"):
         return f'<div class="course-price">{t["none"]}</div>'
-    s = f'{t["wd"]} <strong>¥{r["weekday"]["price"]:,}{t["suf"]}</strong>'
+    s = f'{t["wd"]} <strong>¥{r["weekday"]["total"]:,}{t["suf"]}</strong>'
     if r.get("weekend"):
-        s += f' / {t["we"]} ¥{r["weekend"]["price"]:,}{t["suf"]}'
+        s += f' / {t["we"]} ¥{r["weekend"]["total"]:,}{t["suf"]}'
     return f'<div class="course-price">{s}{NOTE.format(t=t["note"])}</div>'
 
 

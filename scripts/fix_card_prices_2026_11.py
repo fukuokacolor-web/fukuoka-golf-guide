@@ -28,6 +28,13 @@ PAGES = ["area-chikugo.html", "area-chikuho.html", "area-fukuokacity.html", "are
          "book-fukuoka-golf-foreigner.html", "hub-beginner.html", "hub-budget.html", "hub-business.html", "hub-traveler.html"]
 OFFICIAL_ONLY = {"fukuokacc", "wakamatsu", "genkai", "koga", "moji", "classic", "kokura", "queenshill", "raizan", "keya"}
 RAKUTEN_ONLY = {"aburayama", "kyushugc", "saitozaki", "akane", "yasukogen", "sunlake"}
+# 2026-11-22 追加: 楽天のみコースは楽天GORAの予約カレンダーの値 (scripts/gora_floor.py --days 39・11/23〜12/31・18H 空きありの税込総額)。
+# コースページ (fix_rakuten_only_prices_2026_11.py) と同じ数字。九州GC (リクエスト予約のみ)・油山 (10H) は文字のまま
+GORA_CHECKED = "2026-11-22"
+GORA = {"sunlake": (8500, 12500), "saitozaki": (12060, None), "akane": (16000, 22000), "yasukogen": (10510, 15020)}
+GORA_NOTE = {"ja": "楽天GORA・2026年11月22日時点の18H最安（税込総額・変動あり）",
+             "en": "Rakuten GORA, lowest 18-hole total incl. tax as of Nov 22, 2026 (varies)",
+             "ko": "라쿠텐 GORA · 2026년 11월 22일 기준 18홀 최저가(세금 포함 총액·변동 있음)"}
 
 NOTE = '<span style="display:block;font-size:11px;font-weight:400;opacity:.75;">{t}</span>'
 TXT = {
@@ -59,6 +66,10 @@ def render(slug, lang, data):
     t = TXT[lang]
     if slug in OFFICIAL_ONLY:
         return f'<div class="course-price">{t["official"]}</div>'
+    if slug in GORA:
+        wd, we = GORA[slug]
+        g = f'{t["wd"]} <strong>¥{wd:,}{t["suf"]}</strong>' + (f' / {t["we"]} ¥{we:,}{t["suf"]}' if we else "")
+        return f'<div class="course-price">{g}{NOTE.format(t=GORA_NOTE[lang])}</div>'
     if slug in RAKUTEN_ONLY:
         return f'<div class="course-price">{t["rakuten"]}</div>'
     r = data.get(slug)

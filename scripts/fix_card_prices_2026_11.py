@@ -32,6 +32,10 @@ RAKUTEN_ONLY = {"aburayama", "kyushugc", "saitozaki", "akane", "yasukogen", "sun
 # コースページ (fix_rakuten_only_prices_2026_11.py) と同じ数字。九州GC (リクエスト予約のみ)・油山 (10H) は文字のまま
 GORA_CHECKED = "2026-11-22"
 GORA = {"sunlake": (8500, 12500), "saitozaki": (12060, None), "akane": (16000, 22000), "yasukogen": (10510, 15020)}
+# 志摩シーサイド: じゃらん・楽天ともオンラインの空きがほぼ無い (11/23〜12/31 でじゃらん0日・楽天2日) → 公式料金表 (2026年10月確認・3〜12月セルフ)
+OFFICIAL_PRICE = {"shimaseaside": (19000, 25000)}
+OFFICIAL_NOTE = {"ja": "公式料金表・2026年11月確認（3〜12月のセルフ・税込）", "en": "Official rate card, checked Nov 2026 (Mar–Dec self-play, incl. tax)",
+                 "ko": "공식 요금표 · 2026년 11월 확인 (3〜12월 셀프·세금 포함)"}
 GORA_NOTE = {"ja": "楽天GORA・2026年11月22日時点の18H最安（税込総額・変動あり）",
              "en": "Rakuten GORA, lowest 18-hole total incl. tax as of Nov 22, 2026 (varies)",
              "ko": "라쿠텐 GORA · 2026년 11월 22일 기준 18홀 최저가(세금 포함 총액·변동 있음)"}
@@ -66,6 +70,9 @@ def render(slug, lang, data):
     t = TXT[lang]
     if slug in OFFICIAL_ONLY:
         return f'<div class="course-price">{t["official"]}</div>'
+    if slug in OFFICIAL_PRICE:
+        wd, we = OFFICIAL_PRICE[slug]
+        return f'<div class="course-price">{t["wd"]} <strong>¥{wd:,}</strong> / {t["we"]} ¥{we:,}{NOTE.format(t=OFFICIAL_NOTE[lang])}</div>'
     if slug in GORA:
         wd, we = GORA[slug]
         g = f'{t["wd"]} <strong>¥{wd:,}{t["suf"]}</strong>' + (f' / {t["we"]} ¥{we:,}{t["suf"]}' if we else "")

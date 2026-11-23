@@ -93,7 +93,7 @@
       if (!a) return;
       var h = a.getAttribute('href') || '';
       if (typeof gtag !== 'function') return;
-      var service = classifyService(h);
+      var service = classifyService(h); /* track-official-v1 */ if (!service && /^https?:\/\//i.test(h) && !/fukuoka-golf-guide\.com/i.test(h) && (/trackAffiliate\('official'/.test(a.getAttribute('onclick') || '') || /hero-cta-btn|ftv-cta-btn|btn-book/.test(a.className || '') || a.closest('#sticky-cta, .booking-card, .price-card') || /公式/.test(a.textContent || ''))) service = 'official';
       var page = getPage();
       var lang = getLang();
       var ctaPos = classifyCtaPosition(a);
@@ -368,6 +368,38 @@
     </div>
   </div>
 
+  <!-- alt-cta-official-v1 -->
+  <div style="max-width:1100px;margin:0 auto;padding:28px 24px 0;">
+    <div style="background:#f4f1ea;border:1px solid #e3ddcf;border-left:5px solid #1a5c38;border-radius:14px;padding:22px 24px;">
+      <div style="font-weight:700;font-size:16px;color:#1a5c38;margin-bottom:6px;">⛳ 糸島で、楽天GORAから予約できるコース</div>
+      <div style="font-size:13px;color:#5a5a5a;line-height:1.8;margin-bottom:14px;">福岡雷山ゴルフ倶楽部は、じゃらん・楽天GORAではオンライン予約を受け付けていません（予約は公式サイトか電話で）。ネットで予約したい日は、近くのこちらのコースも候補に。下のボタンは各コースの楽天GORAの予約ページに移動します。</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;">
+        <div style="background:#fff;border:1px solid #e3ddcf;border-radius:10px;padding:12px 14px;">
+          <div style="font-weight:700;color:#1a5c38;font-size:13.5px;margin-bottom:8px;">二丈カントリークラブ <span style="font-weight:400;color:#777;">／糸島市</span></div>
+          <div style="display:flex;gap:6px;">
+            <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+BW8O1&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttps%253A%252F%252Fbooking.gora.golf.rakuten.co.jp%252Fguide%252Fdisp%252Fc_id%252F400037%26m%3Dhttps%253A%252F%252Fbooking.gora.golf.rakuten.co.jp%252Fguide%252Fdisp%252Fc_id%252F400037" target="_blank" rel="nofollow sponsored noopener" style="flex:1;text-align:center;background:linear-gradient(135deg,#BF0000,#8B0000);color:#fff;font-weight:700;font-size:12.5px;padding:9px 10px;border-radius:8px;text-decoration:none;">楽天GORAで予約 →</a>
+            <a href="course-nijo.html" onclick="if(window.gtag)gtag('event','internal_nav_click',{page:'course-raizan',lang:'ja',nav_section:'alternative_cta',target_page:'course-nijo'})" style="text-align:center;background:#f4f1ea;color:#1a5c38;font-weight:700;font-size:12px;padding:9px 12px;border-radius:8px;text-decoration:none;border:1px solid #e3ddcf;">詳細</a>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #e3ddcf;border-radius:10px;padding:12px 14px;">
+          <div style="font-weight:700;color:#1a5c38;font-size:13.5px;margin-bottom:8px;">伊都ゴルフ倶楽部 <span style="font-weight:400;color:#777;">／糸島市</span></div>
+          <div style="display:flex;gap:6px;">
+            <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+BW8O1&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttps%253A%252F%252Fbooking.gora.golf.rakuten.co.jp%252Fguide%252Fdisp%252Fc_id%252F400006%26m%3Dhttps%253A%252F%252Fbooking.gora.golf.rakuten.co.jp%252Fguide%252Fdisp%252Fc_id%252F400006" target="_blank" rel="nofollow sponsored noopener" style="flex:1;text-align:center;background:linear-gradient(135deg,#BF0000,#8B0000);color:#fff;font-weight:700;font-size:12.5px;padding:9px 10px;border-radius:8px;text-decoration:none;">楽天GORAで予約 →</a>
+            <a href="course-ito.html" onclick="if(window.gtag)gtag('event','internal_nav_click',{page:'course-raizan',lang:'ja',nav_section:'alternative_cta',target_page:'course-ito'})" style="text-align:center;background:#f4f1ea;color:#1a5c38;font-weight:700;font-size:12px;padding:9px 12px;border-radius:8px;text-decoration:none;border:1px solid #e3ddcf;">詳細</a>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #e3ddcf;border-radius:10px;padding:12px 14px;">
+          <div style="font-weight:700;color:#1a5c38;font-size:13.5px;margin-bottom:8px;">セブンミリオンカントリークラブ <span style="font-weight:400;color:#777;">／福岡市早良区</span></div>
+          <div style="display:flex;gap:6px;">
+            <a href="https://rpx.a8.net/svt/ejp?a8mat=4B1D5J+4P34KY+2HOM+BW8O1&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa26040498058_4B1D5J_4P34KY_2HOM_7O29U%3Fpc%3Dhttps%253A%252F%252Fbooking.gora.golf.rakuten.co.jp%252Fguide%252Fdisp%252Fc_id%252F400027%26m%3Dhttps%253A%252F%252Fbooking.gora.golf.rakuten.co.jp%252Fguide%252Fdisp%252Fc_id%252F400027" target="_blank" rel="nofollow sponsored noopener" style="flex:1;text-align:center;background:linear-gradient(135deg,#BF0000,#8B0000);color:#fff;font-weight:700;font-size:12.5px;padding:9px 10px;border-radius:8px;text-decoration:none;">楽天GORAで予約 →</a>
+            <a href="course-sevenmillion.html" onclick="if(window.gtag)gtag('event','internal_nav_click',{page:'course-raizan',lang:'ja',nav_section:'alternative_cta',target_page:'course-sevenmillion'})" style="text-align:center;background:#f4f1ea;color:#1a5c38;font-weight:700;font-size:12px;padding:9px 12px;border-radius:8px;text-decoration:none;border:1px solid #e3ddcf;">詳細</a>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:11.5px;color:#888;margin-top:10px;">楽天GORAで予約を受け付けていることを2026年11月23日に確認。空き状況・料金は日によって変わります。</div>
+    </div>
+  </div>
+  <!-- /alt-cta-official-v1 -->
   <section class="section">
     <div class="sec-eyebrow">— Green Fees</div>
     <h2 class="sec-title">料金を、一目で比べる。</h2>

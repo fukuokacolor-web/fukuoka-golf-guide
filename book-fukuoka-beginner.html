@@ -122,7 +122,7 @@
       if (!a) return;
       var h = a.getAttribute('href') || '';
       if (typeof gtag !== 'function') return;
-      var service = classifyService(h);
+      var service = classifyService(h); /* track-official-v1 */ if (!service && /^https?:\/\//i.test(h) && !/fukuoka-golf-guide\.com/i.test(h) && (/trackAffiliate\('official'/.test(a.getAttribute('onclick') || '') || /hero-cta-btn|ftv-cta-btn|btn-book/.test(a.className || '') || a.closest('#sticky-cta, .booking-card, .price-card') || /公式/.test(a.textContent || ''))) service = 'official';
       var page = getPage();
       var ctaPos = classifyCtaPosition(a);
       var linkText = (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80);

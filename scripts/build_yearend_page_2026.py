@@ -175,7 +175,9 @@ footer = tpl[tpl.index("<footer>"):]
 
 EXTRA_CSS = """
   <style>
-    .ye-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    .ye-wrap { overflow:auto; max-height:78vh; -webkit-overflow-scrolling:touch; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    .ye-table thead th { position:sticky; top:0; z-index:2; }
+    .ye-table thead th:first-child { left:0; z-index:3; }
     .ye-table { border-collapse:collapse; min-width:860px; width:100%; font-size:13px; }
     .ye-table th { background:var(--forest-dark); color:#fff; padding:10px 8px; font-size:12px; white-space:nowrap; }
     .ye-table td { border-top:1px solid var(--line); padding:8px 6px; text-align:center; vertical-align:middle; }
@@ -273,7 +275,7 @@ html = f"""<!DOCTYPE html>
 <section class="section">
   <div class="sec-eyebrow">— Availability</div>
   <h2 class="sec-title">日付ごとの空き（18ホール）。</h2>
-  <p class="sec-desc">○ はじゃらんか楽天GORAに空きがあった日で、金額はその日の18ホール最安（税込総額）です。空きの多い順に並べています。マスの「じゃらん」「楽天」を押すと予約ページに移動します（じゃらんはその日付のページ）。日ごとの空き：{day_line}。表は横にスクロールできます。</p>
+  <p class="sec-desc">○ はじゃらんか楽天GORAに空きがあった日で、金額はその日の18ホール最安（税込総額）です。空きの多い順に並べています。マスの「じゃらん」「楽天」を押すと予約ページに移動します（じゃらんはその日付のページ）。日ごとの空き：{day_line}。表は縦横にスクロールでき、日付とコース名は固定されます。</p>
   <div class="ye-wrap"><table class="ye-table"><thead>{thead}</thead><tbody>{"".join(tbody)}</tbody></table></div>
   <p class="sec-desc" style="margin-top:14px;margin-bottom:0;font-size:13px;">ハーフ・薄暮・コンペ・年齢や会員の限定プランは除いています。最安だったのは {low_row["name"]}（{LABEL[low_row["low_d"]]}・{yen(low_row["low"])}〜）。</p>
 </section>

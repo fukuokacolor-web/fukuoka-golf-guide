@@ -27,6 +27,11 @@ jal = {c["file"].replace("course-", ""): c["jalan_id"] for c in json.load(open(o
 rak = {c["file"].replace("course-", ""): c["c_id"] for c in json.load(open(os.path.join(ROOT, "rakuten_gora_mapping.json"), encoding="utf-8"))["courses"]}
 slugs = sorted(set(jal) | set(rak))
 OUT = os.path.join(HERE, ".cache", "yearend_2026.json")
+# じゃらんの日付ページは jalan_<id>_<日付>.html で保存され取得日を含まないので、取り直すたびに消す (古い空きを使わない)
+if "--keep-cache" not in sys.argv:
+    for d in DATES:
+        for f in __import__("glob").glob(os.path.join(HERE, ".cache", f"jalan_*_{d:%Y%m%d}.html")):
+            os.remove(f)
 res = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
 
 for slug in slugs:

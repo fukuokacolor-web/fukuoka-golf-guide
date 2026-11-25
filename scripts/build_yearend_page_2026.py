@@ -14,8 +14,10 @@ ROOTS = ["C:/Users/Owner/fukuoka-golf-guide", "C:/Users/Owner/Documents/新し�
 APPLY = "--apply" in sys.argv
 R0 = ROOTS[0]
 OUT = "book-fukuoka-yearend.html"
-CHECKED = "2026年11月25日"
 DATA = json.load(open(os.path.join(R0, "scripts", ".cache", "yearend_2026.json"), encoding="utf-8"))
+_cd = datetime.date.fromisoformat(min(r["checked"] for r in DATA.values()))  # いちばん古い取得日 (全コース同じ日に取り直す前提)
+CHECKED = f"{_cd.year}年{_cd.month}月{_cd.day}日"
+CHECKED_SHORT = f"{_cd.month}/{_cd.day}"
 DATES = [datetime.date(2026, 12, 29) + datetime.timedelta(days=k) for k in range(6)]
 WD = "月火水木金土日"
 LABEL = {d: f"{d.month}/{d.day}({WD[d.weekday()]})" for d in DATES}
@@ -256,7 +258,7 @@ html = f"""<!DOCTYPE html>
     <div class="stats-band-item"><div class="stats-band-num">{N}<span class="unit">コース</span></div><div class="stats-band-label">ネット予約できる</div></div>
     <div class="stats-band-item"><div class="stats-band-num">{n_all6}<span class="unit">コース</span></div><div class="stats-band-label">6日すべて空きあり</div></div>
     <div class="stats-band-item"><div class="stats-band-num">{n_ganjitsu}<span class="unit">コース</span></div><div class="stats-band-label">元日に空きあり</div></div>
-    <div class="stats-band-item"><div class="stats-band-num">11/25</div><div class="stats-band-label">空きを確認した日</div></div>
+    <div class="stats-band-item"><div class="stats-band-num">{CHECKED_SHORT}</div><div class="stats-band-label">空きを確認した日</div></div>
   </div>
 </div>
 

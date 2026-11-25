@@ -4,6 +4,12 @@
 **最終 commit**: `b2493d2` fix(content) 汎用写真の alt を「イメージ写真」に — origin/main へ push 済・本番反映確認済
 **未コミット**: なし (リポジトリ外の未追跡ファイル course_data.json.backup-*・saga_course_data.json・images/malbon-editor.jpg.jpg は触っていない)
 
+### ✅ 2026-11-25 年末年始ページ (book-fukuoka-yearend.html)
+- `42a7305` **年末年始 (12/29〜1/3) に予約できる34コース** (JAのみ)。`scripts/yearend_scan_2026.py` (じゃらん日付ページ + 楽天12月カレンダー・CLAUDE.md §9.4 の除外を反映・`scripts/.cache/yearend_2026.json`) → `scripts/build_yearend_page_2026.py` (数字はすべてデータから計算・FAQ JSON-LD)。11/25 時点: 6日すべて空き11・元日17・日別 12/29 23・12/30 24・12/31 22・1/1 17・1/2 30・1/3 29コース・最安 セントラル福岡 元日¥10,990。油山 (10H) は除外
+- 18H 判定に **0.5R** を追加 (jalan_floor・gora_floor。ムーンレイクの早朝0.5R ¥5,700 が混ざっていた)
+- トップ「料金で比較」と当日予約ページから内部リンク・sitemap 0.9・GSC インデックス登録リクエスト済み
+- **12月に2回ほど取り直す** (空きは埋まる・新プランも出る): `python scripts/yearend_scan_2026.py` (約20分) → `python scripts/build_yearend_page_2026.py --apply` (CHECKED の日付を書き換えてから)。**年明けに来年版へ更新するか noindex にするか決める**
+
 ### ✅ 2026-11-23 (午後) GA4・A8 の現状分析と、クリック減への対応
 - `df1d69f` **`ANALYSIS_2026-11-23.md`**: 自然検索 +15%/4週なのに予約ボタンのクリック -40% (296→178・時間×ページ×サイトで重複除去)。A8 11月(〜22日) 楽天8件¥2,054・じゃらん0件 (10月はじゃらん5件)。主因 = 10/19〜26 に公式のみにした7コース (公式リンクは計測されず・代わりの予約先なし)。西戸崎はビュー 21→4 (GSCで要確認)・hub-business は350ビューでクリック5。11/7 のボット的アクセス約200ビューに注意
 - `79cb5f0` **公式リンクを GA4 で計測** (`track_official_links_2026_11.py`・MARKER `track-official-v1`・150ページ): click_affiliate に `service='official'` (公式への予約ボタン・固定バー・料金カード・「公式」を含むリンク)。**公式のみ7コースに「楽天GORAで予約できる近くのコース」枠** (`add_alt_cta_official_only_2026_11.py`・MARKER `alt-cta-official-v1`・JAのみ・料金セクションの直前): 糸島3コース→二丈/伊都/セブンミリオン・古賀→NEWユーアイ/久山/WAKAMIYA・クラシック→WAKAMIYA/ムーンレイク/西日本・小倉→瀬板の森/北九州CC/チサン遠賀・門司→北九州CC/瀬板の森/周防灘 (11/23 楽天で空き7〜14日を確認)。**12月初めに GA4 でこの7ページの rakuten_gora / official クリックを見る**

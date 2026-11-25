@@ -4,6 +4,13 @@
 **最終 commit**: `b2493d2` fix(content) 汎用写真の alt を「イメージ写真」に — origin/main へ push 済・本番反映確認済
 **未コミット**: なし (リポジトリ外の未追跡ファイル course_data.json.backup-*・saga_course_data.json・images/malbon-editor.jpg.jpg は触っていない)
 
+### ✅ 2026-11-25 福岡から近い佐賀のゴルフ場 (saga-near-fukuoka.html)
+- `81318de` (JAのみ) 鳥栖・みやき・神埼: ブリヂストンCC (jalan 02366 / 楽天 410013)・佐賀CC (02376/410002)・日の隈CC (02373/410011) / 三瀬・佐賀大和: 北山CC (02374/410014)・大和不動CC (02371/410015)・フジCC (じゃらんは予約カレンダーなし/410012) / 9H: ウェルカムGC (21013/520385・パー27ショート)・山水CC (02375/6389)
+- 選定: じゃらん `golf-jalan.net/course/kyushu/saga/` の20コースの住所 → 福岡寄り。楽天GORAのコースガイド (`scripts/.cache/saga_rakuten_guide_2026-11-25.json`) で住所・ホール数一致を確認。**食い違い**: ブリヂストンのIC距離 (じゃらん「鳥栖ICから31km以上」・楽天「10km以内」→楽天を採用)、佐賀CCの電話 (じゃらん 0942-89-3342・楽天 0942-89-2049 → 電話は全コース載せない)
+- 料金: `jalan_floor.py` / `gora_floor.py --days 14` の結果を `scripts/build_saga_near_page_2026.py` が読む (両サイトの安い方)。**月次点検で取り直すなら**: `jalan_floor.py 02366 02376 02373 02374 02371 21013 02375` と `gora_floor.py 410013 410002 410011 410014 410015 410012 520385 6389 --days 14` → `build_saga_near_page_2026.py --apply`
+- 未掲載: 豆津 (9H 河川敷)・三根CC (楽天は別名で同一性未確認)・嘉瀬川 (河川敷)。8月の `saga_course_data.json` (未追跡) は別サイト案の調査
+- リンク: トップ「エリアで絞る」に「佐賀（鳥栖・三瀬）」・筑後/福岡市エリアの関連ガイド (JA)・sitemap 0.7・GSC 登録リクエスト済み
+
 ### ✅ 2026-11-25 年末年始ページ (book-fukuoka-yearend.html)
 - `42a7305` **年末年始 (12/29〜1/3) に予約できる34コース** (JAのみ)。`scripts/yearend_scan_2026.py` (じゃらん日付ページ + 楽天12月カレンダー・CLAUDE.md §9.4 の除外を反映・`scripts/.cache/yearend_2026.json`) → `scripts/build_yearend_page_2026.py` (数字はすべてデータから計算・FAQ JSON-LD)。11/25 時点: 6日すべて空き11・元日17・日別 12/29 23・12/30 24・12/31 22・1/1 17・1/2 30・1/3 29コース・最安 セントラル福岡 元日¥10,990。油山 (10H) は除外
 - 18H 判定に **0.5R** を追加 (jalan_floor・gora_floor。ムーンレイクの早朝0.5R ¥5,700 が混ざっていた)

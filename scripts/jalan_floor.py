@@ -18,7 +18,7 @@ import re, sys, json, time, datetime, pathlib, subprocess
 
 CACHE = pathlib.Path(__file__).parent / ".cache"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"
-EXCL_NAME = re.compile(r"ハーフプレー|ハーフラウンド|ハーフのみ|午後ハーフ|早朝ハーフ|朝ハーフ|9H|９Ｈ|9ホール|薄暮|ナイター|ナイト|1\.5R|練習"
+EXCL_NAME = re.compile(r"ハーフプレー|ハーフラウンド|ハーフのみ|午後ハーフ|早朝ハーフ|朝ハーフ|9H|９Ｈ|9ホール|薄暮|ナイター|ナイト|0\.5R|1\.5R|練習"
                        r"|コンペ"  # コンペプラン (3組10名以上等) は通常の1組では予約できない (2026-10-24 追加)
                        r"|[0-9０-９]+代|学生|シニア|レディース|女性|ジュニア")  # 年齢・属性限定プランも誰でも予約できる最安ではない
 HOLIDAYS = {"2026-10-12", "2026-11-03", "2026-11-23", "2026-12-31", "2027-01-01", "2027-01-11"}  # 期間に合わせて更新

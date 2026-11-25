@@ -21,7 +21,7 @@ import re, sys, json, time, datetime, pathlib, subprocess
 sys.stdout.reconfigure(encoding="utf-8")
 CACHE = pathlib.Path(__file__).parent / ".cache"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"
-EXCL_NAME = re.compile(r"ハーフプレー|ハーフラウンド|ハーフのみ|午後ハーフ|早朝ハーフ|朝ハーフ|9H|９Ｈ|9ホール|９ホール|薄暮|ナイター|ナイト|1\.5R|練習"
+EXCL_NAME = re.compile(r"ハーフプレー|ハーフラウンド|ハーフのみ|午後ハーフ|早朝ハーフ|朝ハーフ|9H|９Ｈ|9ホール|９ホール|薄暮|ナイター|ナイト|0\.5R|1\.5R|練習"
                        r"|コンペ|[0-9０-９]+代|学生|シニア|レディース|女性|ジュニア|会員|メンバー")
 HOLIDAYS = {"2026-11-03", "2026-11-23", "2026-12-31", "2027-01-01", "2027-01-02", "2027-01-03", "2027-01-11", "2027-02-11", "2027-02-23"}
 WD = "月火水木金土日"

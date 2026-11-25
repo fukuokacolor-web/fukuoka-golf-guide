@@ -44,6 +44,7 @@ HIGH_PRIORITY_PAGES = {
     "book-fukuoka-cheap.html",
     "book-fukuoka-tomorrow.html",
     "book-fukuoka-solo.html",
+    "book-fukuoka-yearend.html",  # 2026-11-25 年末年始 (季節・取引KW)
 }
 
 # priority 0.8 (MEDIUM): 4 ペルソナハブ + 多言語エバーグリーンガイド (2026-05-10 追加)

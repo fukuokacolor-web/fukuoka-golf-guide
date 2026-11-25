@@ -231,7 +231,7 @@ html = f"""<!DOCTYPE html>
   <meta property="og:site_name" content="福岡ゴルフ場ガイド">
   <meta property="og:title" content="福岡のゴルフ場 年末年始に予約できる{N}コース（12/29〜1/3）">
   <meta property="og:description" content="{desc}">
-  <meta property="og:image" content="https://fukuoka-golf-guide.com/images/golf-mountain.webp">
+  <meta property="og:image" content="https://fukuoka-golf-guide.com/images/kaho-play-2.webp">
   <script type="application/ld+json">
 {faq_ld}
   </script>
@@ -247,7 +247,7 @@ html = f"""<!DOCTYPE html>
 <body>{disclosure}<a href="/" class="back-link">← Top</a>
 
 <section class="hero">
-  <img class="hero-photo" src="images/golf-mountain.webp" alt="イメージ写真（特定のゴルフ場の写真ではありません）" fetchpriority="high">
+  <img class="hero-photo" src="images/kaho-play-2.webp" alt="かほゴルフクラブのティーグラウンドからの眺め（編集部撮影）" fetchpriority="high">
   <div class="hero-img"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow">— Year-End &amp; New Year Golf</div>

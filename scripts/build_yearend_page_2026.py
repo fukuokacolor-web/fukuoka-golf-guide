@@ -116,7 +116,12 @@ for x in rows:
     for d in DATES:
         if d in x["days"]:
             v = x["days"][d]
-            cells.append(f'<td class="ye-ok"><span class="ye-mark">○</span><span class="ye-p">{yen(v["low"])}〜</span><span class="ye-s">{"・".join(v["sites"])}</span></td>')
+            links = []
+            if "じゃらん" in v["sites"]:  # じゃらんはその日付の予約ページへ
+                links.append(f'<a href="{jalan_url(x["jalan"], d)}" class="ye-sl ye-sl-j" target="_blank" rel="nofollow sponsored noopener">じゃらん</a>')
+            if "楽天" in v["sites"]:
+                links.append(f'<a href="{rakuten_url(x["rakuten"])}" class="ye-sl ye-sl-r" target="_blank" rel="nofollow sponsored noopener">楽天</a>')
+            cells.append(f'<td class="ye-ok"><span class="ye-mark">○</span><span class="ye-p">{yen(v["low"])}〜</span><span class="ye-s">{"".join(links)}</span></td>')
         else:
             cells.append('<td class="ye-no">－</td>')
     tbody.append(f'<tr><td class="ye-name"><a href="course-{x["slug"]}.html">{x["name"]}</a><span class="ye-area">{AREA_NAME.get(x["area"], "")}</span></td>'
@@ -180,7 +185,10 @@ EXTRA_CSS = """
     .ye-ok { background:#f1f8f3; }
     .ye-mark { display:block; color:#1a7f3c; font-weight:700; }
     .ye-p { display:block; font-family:var(--num); font-weight:700; color:var(--orange-dark); white-space:nowrap; }
-    .ye-s { display:block; font-size:10.5px; color:var(--muted); white-space:nowrap; }
+    .ye-s { display:flex; justify-content:center; gap:4px; margin-top:4px; white-space:nowrap; }
+    .ye-sl { display:inline-block; font-size:11.5px; font-weight:700; padding:6px 8px; border-radius:6px; line-height:1.3; }
+    .ye-sl-j { background:#fdeee7; color:var(--orange-dark); border:1px solid #f3c2ad; }
+    .ye-sl-r { background:#fbe9e9; color:#a00000; border:1px solid #efb4b4; }
     .ye-no { color:#bbb; }
     .ye-act { white-space:nowrap; }
     .ye-btn { display:inline-block; color:#fff; font-weight:700; font-size:12px; padding:7px 10px; border-radius:8px; margin:2px; }
@@ -265,7 +273,7 @@ html = f"""<!DOCTYPE html>
 <section class="section">
   <div class="sec-eyebrow">— Availability</div>
   <h2 class="sec-title">日付ごとの空き（18ホール）。</h2>
-  <p class="sec-desc">○ はじゃらんか楽天GORAに空きがあった日で、金額はその日の18ホール最安（税込総額）です。空きの多い順に並べています。日ごとの空き：{day_line}。表は横にスクロールできます。</p>
+  <p class="sec-desc">○ はじゃらんか楽天GORAに空きがあった日で、金額はその日の18ホール最安（税込総額）です。空きの多い順に並べています。マスの「じゃらん」「楽天」を押すと予約ページに移動します（じゃらんはその日付のページ）。日ごとの空き：{day_line}。表は横にスクロールできます。</p>
   <div class="ye-wrap"><table class="ye-table"><thead>{thead}</thead><tbody>{"".join(tbody)}</tbody></table></div>
   <p class="sec-desc" style="margin-top:14px;margin-bottom:0;font-size:13px;">ハーフ・薄暮・コンペ・年齢や会員の限定プランは除いています。最安だったのは {low_row["name"]}（{LABEL[low_row["low_d"]]}・{yen(low_row["low"])}〜）。</p>
 </section>

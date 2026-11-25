@@ -4,6 +4,10 @@
 **最終 commit**: `b2493d2` fix(content) 汎用写真の alt を「イメージ写真」に — origin/main へ push 済・本番反映確認済
 **未コミット**: なし (リポジトリ外の未追跡ファイル course_data.json.backup-*・saga_course_data.json・images/malbon-editor.jpg.jpg は触っていない)
 
+### ✅ 2026-11-25 終了した skyticket レンタカーのリンクを置き換え
+- A8 の**無効クリックレポート**に skyticket レンタカー (`a8mat=4B1DXO+5K1O1E+DRA+356I3M`・2026/05/31 終了) のクリック 11/18・11/23 → 54ページ (access 48・area 5・airport-access-top5) の 3言語のレンタカーボタン・固定バー (JS 変数 SKYTICKET)・本文リンクを**楽天トラベル レンタカー** (`travel.rakuten.co.jp/cars/`・A8経由の楽天アフィリ) に (`replace_skyticket_2026_11.py`)。計測画像 0.gif 削除。「最大50%OFF」「空港ターミナル直結」「待ち時間ゼロ」(出典なし) を削除。EN/KO は「Japanese site / 일본어」と明記。GA4 上は楽天のリンクなので service=`rakuten_gora` で記録される
+- **無効クリックレポートは月1回見る** (A8 メディア管理画面 → レポート → 無効クリック)。サイト内の a8mat は 楽天・じゃらん・楽天(7O29U)・JTB旅物語・画像広告3種のみ
+
 ### ✅ 2026-11-25 福岡から近い佐賀のゴルフ場 (saga-near-fukuoka.html)
 - `81318de` (JAのみ) 鳥栖・みやき・神埼: ブリヂストンCC (jalan 02366 / 楽天 410013)・佐賀CC (02376/410002)・日の隈CC (02373/410011) / 三瀬・佐賀大和: 北山CC (02374/410014)・大和不動CC (02371/410015)・フジCC (じゃらんは予約カレンダーなし/410012) / 9H: ウェルカムGC (21013/520385・パー27ショート)・山水CC (02375/6389)
 - 選定: じゃらん `golf-jalan.net/course/kyushu/saga/` の20コースの住所 → 福岡寄り。楽天GORAのコースガイド (`scripts/.cache/saga_rakuten_guide_2026-11-25.json`) で住所・ホール数一致を確認。**食い違い**: ブリヂストンのIC距離 (じゃらん「鳥栖ICから31km以上」・楽天「10km以内」→楽天を採用)、佐賀CCの電話 (じゃらん 0942-89-3342・楽天 0942-89-2049 → 電話は全コース載せない)

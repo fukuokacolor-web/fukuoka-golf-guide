@@ -4,6 +4,15 @@
 **最終 commit**: `b2493d2` fix(content) 汎用写真の alt を「イメージ写真」に — origin/main へ push 済・本番反映確認済
 **未コミット**: なし (リポジトリ外の未追跡ファイル course_data.json.backup-*・saga_course_data.json・images/malbon-editor.jpg.jpg は触っていない)
 
+### ✅ 2026-11-28 福岡のゴルフ場ランチページ (`b8183cf`・`gourmet-fukuoka-golf.html`・JA)
+- 生成 `scripts/build_gourmet_page_2026.py` (`--apply`)。専門家会議の結論どおり、**公式サイトのレストランページで確認できた料理名・価格だけ** (11/28確認・出典リンク付き)。「名物/絶品/必食/ランキング」は使わない (芥屋の「芥屋ゴルフ倶楽部名物」は公式表記の引用)
+- 掲載: 志摩 (天然鯛茶漬け・海鮮皿うどん・価格記載なし) / 小郡 (和牛とろろ丼 2,480円税込) / WAKAMIYA (ハンバーグ定食 1,650円税込) / 玄海 (鯛茶漬け膳 ¥2,200・若鶏の半身揚げ ¥2,000 数量限定・海鮮ちゃんぽん ¥1,750・税込表記なし) / 芥屋 (鯛茶漬 2,720円・海鮮丼 2,300円 税込)。玄海・芥屋は公式リンクのみ (玄海はメンバー本人完全予約制)
+- SNS 埋め込み3件: 志摩 IG DemQhDuE6y_ (皿うどん)・小郡 Threads @hideyoshisato DXtRHR8E51Y・浮羽 IG DgE1K3aTS3V (パスタ)。浮羽は公式のランチ画像が表紙と飲み物だけなので別枠「SNSに料理の写真があるコース」。不採用: 玄海の IG C9zddgtS_4B (カレー・公式メニューに無い)。夜須・クイーンズヒルは SNS の料理が公式に無く不掲載
+- 食事関連の IG 位置ID: 志摩 387724372・夜須 451088921637148・クイーンズヒル 1025668888・浮羽 1477344722297078・玄海 252534904 (「玄海ゴルフ場」)・小郡 5024429・芥屋 629238573923154・若宮 258455551 (「若宮ゴルフクラブ」・WAKAMIYA と同一か未確認)
+- hub-traveler の記事カードからリンク・sitemap 168 URL。GA4 は共通計測で page=gourmet-fukuoka-golf.html として取れる (cta_position は other)
+- **28日判定 (12/26・事前確定)**: PV≥100 かつ楽天クリック率≥5% → GO (他コースへ拡大) / PV<100 → 14日延長 / PV≥100・2〜5% → HOLD / <2% → NO
+- 未対応: 楽天GORAの「昼食付」プランに絞ったリンク (フィルタが URL で保持されるか未確認)・GSC 登録リクエスト
+
 ### ✅ 2026-11-28 佐賀の個別コースページ 11件 (オーナー指示で 12/9 判定を待たずに作成)
 - `35cef42` `course-saga-{bridgestone,sagacc,hinokuma,welcome,sansui,kitayama,yamatofudo,fuji,karatsu,wakagi,classic}.html` (JA)。データ `saga_courses.json` ← `scripts/build_saga_course_data_2026.py` (取得済みページは `scripts/.cache/saga/`: 楽天GORAコースガイド + じゃらん /info/)。生成 `scripts/build_saga_course_pages_2026.py` (料金は jalan_floor/gora_floor のキャッシュ)
 - 各項目に出典 (楽天GORA/じゃらん/公式)。確認済み事実 (SAGA_MEIMON_FACTS.md) を優先。佐賀CC の開場年は載せない・電話番号は載せない。ヒーロー写真は福岡のコースの写真で「○○の写真ではありません」と明記

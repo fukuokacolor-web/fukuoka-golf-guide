@@ -17,6 +17,7 @@ R0 = ROOTS[0]
 DATA = json.load(open(os.path.join(R0, "saga_courses.json"), encoding="utf-8"))["courses"]
 JF = json.load(open(os.path.join(R0, "scripts", ".cache", "jalan_floor.json"), encoding="utf-8"))
 GF = json.load(open(os.path.join(R0, "scripts", ".cache", "gora_floor.json"), encoding="utf-8"))
+VOICES = json.load(open(os.path.join(R0, "saga_voices.json"), encoding="utf-8"))["courses"]  # SNS の評判 (編集部要約・3人分以上のコースだけ)
 AREA = {"tosu": ("鳥栖・みやき・神埼", "saga-near-fukuoka.html", ("area-chikugo.html", "筑後・久留米エリア（福岡県）")),
         "yamato": ("三瀬・佐賀大和", "saga-near-fukuoka.html", ("area-fukuokacity.html", "福岡市エリア")),
         "karatsu": ("唐津", "saga-meimon.html", ("area-itoshima.html", "糸島エリア（福岡県）")),
@@ -101,6 +102,13 @@ CSS = """
     .sc-table th { width:28%; text-align:left; background:#f6f3ec; color:var(--forest-dark); padding:10px 12px; border-top:1px solid var(--line); font-weight:700; vertical-align:top; }
     .sc-table td { padding:10px 12px; border-top:1px solid var(--line); vertical-align:top; }
     .sc-src { display:block; font-size:11px; color:var(--muted); margin-top:2px; }
+    .sc-voices { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:12px; max-width:980px; }
+    .sc-vbox { background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+    .sc-vh { font-weight:700; font-size:15px; margin-bottom:6px; color:var(--forest-dark); }
+    .sc-vbox ul { list-style:none; margin:0; padding:0; }
+    .sc-vbox li { font-size:14px; line-height:1.7; padding:8px 0; border-top:1px solid var(--line); }
+    .sc-vc { color:var(--muted); font-size:12px; white-space:nowrap; margin-left:6px; }
+    .sc-vfit { font-size:14px; line-height:1.8; max-width:820px; margin-top:14px; }
     .sc-facts { font-size:14px; line-height:1.9; padding-left:20px; max-width:820px; }
     .sc-facts a, .sc-sources a { color:var(--ocean-dark); border-bottom:1px dotted var(--ocean); }
     .sc-price-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:12px; margin-bottom:14px; }
@@ -161,6 +169,22 @@ def page(slug, c, idx):
         facts_html = ('<section class="section section-pale"><div class="sec-eyebrow">— History</div><h2 class="sec-title">公式などで確認できた経歴。</h2>'
                       '<ul class="sc-facts">' + "".join(f'<li><strong>{v["item"]}</strong>：{v["value"]}（<a href="{v["url"]}" target="_blank" rel="noopener">{v["source"]}</a>）</li>' for v in c["verified"])
                       + '</ul></section>')
+
+    voices_html = ""
+    v = VOICES.get(slug)
+    if v:
+        li = lambda rows: "".join(f'<li>{r["text"]}<span class="sc-vc">{r["count"]}件</span></li>' for r in rows)
+        voices_html = ('<section class="section section-pale"><div class="sec-eyebrow">— Voices on SNS</div>'
+                       '<h2 class="sec-title">SNSでの評判。</h2>'
+                       f'<p class="sec-desc">ThreadsとInstagramの公開投稿のうち、{c["name"]}について書かれた{v["total"]}件（{v["src"]}・{v["period"]}）を編集部が読み、'
+                       '同じ趣旨の感想をまとめました。数字は同じ趣旨の投稿の数です。投稿の文章やユーザー名は載せていません。</p>'
+                       '<div class="sc-voices">'
+                       f'<div class="sc-vbox"><div class="sc-vh">よかったという声</div><ul>{li(v["good"])}</ul></div>'
+                       f'<div class="sc-vbox"><div class="sc-vh">気をつけたいという声</div><ul>{li(v["care"])}</ul></div>'
+                       '</div>'
+                       f'<p class="sc-vfit"><strong>編集部のまとめ：</strong>{v["fit"]}</p>'
+                       '<p class="sec-desc" style="font-size:12px;">個人の感想で、回った日の天候やコースの状態によって変わります。2026年11月28日に確認した投稿です。</p>'
+                       '</section>')
 
     pc = []
     for k, lbl in (("weekday", "平日"), ("weekend", "土日祝")):
@@ -262,6 +286,8 @@ def page(slug, c, idx):
   <div class="sc-price-grid">{"".join(pc)}</div>
   <div class="sc-btns">{btns}</div>
 </section>
+
+{voices_html}
 
 <section class="section section-pale">
   <div class="sec-eyebrow">— Nearby</div>

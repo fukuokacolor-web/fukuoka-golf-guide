@@ -32,6 +32,9 @@ ALT = {  # slug: (表示名, 所在地, 楽天 c_id)
     "chisan-onga": ("チサンカントリークラブ遠賀", "遠賀町", "400035"),
     "suonada": ("周防灘カントリークラブ", "築上町", "400025"),
 }
+# 枠を入れる位置 (その見出しのセクションの直前)。既定は料金セクション。
+# 小倉は料金の前に服装・編集部のプレー体験記があり枠がスマホで4,217px (他6コースは約1,073px) だったので、服装の前に置く (2026-11-28)。
+ANCHOR = {"kokura": "— Dress Code"}
 NOTICE_STD = "{name}は、じゃらん・楽天GORAではオンライン予約を受け付けていません（予約は公式サイトか電話で）。"
 TARGETS = {  # slug: (コース名, エリア見出し, 説明, 案内するコース)
     "queenshill": ("ザ・クイーンズヒルゴルフクラブ", "糸島・福岡市西部", NOTICE_STD, ["nijo", "ito", "sevenmillion"]),
@@ -89,7 +92,7 @@ for root in ROOTS:
         nl = "\r\n" if "\r\n" in s else "\n"
         new = BLOCK_RE.sub("", s)
         i = new.find('id="c-ja"')
-        j = new.find("— Green Fees", i)
+        j = new.find(ANCHOR.get(slug, "— Green Fees"), i)
         k = new.find('id="c-en"', i)
         assert i > 0 and 0 < j < k, (f, i, j, k)
         sec = new.rfind("<section", i, j)

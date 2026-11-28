@@ -204,6 +204,7 @@ html = f"""<!DOCTYPE html>
   <div class="sec-eyebrow">— Related Pages</div>
   <h2 class="sec-title">関連ページ。</h2>
   <div class="related-grid">
+    <a href="saga-meimon.html" class="related-card"><span class="related-name">🏛️ 佐賀の名門ゴルフ場はどこ？</span><span class="related-arrow">→</span></a>
     <a href="area-chikugo.html" class="related-card"><span class="related-name">⛳ 筑後・久留米エリア（福岡県）</span><span class="related-arrow">→</span></a>
     <a href="area-fukuokacity.html" class="related-card"><span class="related-name">🏙️ 福岡市エリア</span><span class="related-arrow">→</span></a>
     <a href="/" class="related-card"><span class="related-name">🏠 福岡の全50コースを比べる</span><span class="related-arrow">→</span></a>

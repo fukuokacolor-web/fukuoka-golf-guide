@@ -17,7 +17,9 @@ R0 = ROOTS[0]
 DATA = json.load(open(os.path.join(R0, "saga_courses.json"), encoding="utf-8"))["courses"]
 JF = json.load(open(os.path.join(R0, "scripts", ".cache", "jalan_floor.json"), encoding="utf-8"))
 GF = json.load(open(os.path.join(R0, "scripts", ".cache", "gora_floor.json"), encoding="utf-8"))
-VOICES = json.load(open(os.path.join(R0, "saga_voices.json"), encoding="utf-8"))["courses"]  # SNS の評判 (編集部要約・3人分以上のコースだけ)
+_SV = json.load(open(os.path.join(R0, "saga_voices.json"), encoding="utf-8"))
+VOICES = _SV["courses"]
+EMBEDS = _SV.get("embeds", {})  # 公式埋め込み (風景中心・編集部が目視で選定)  # SNS の評判 (編集部要約・3人分以上のコースだけ)
 AREA = {"tosu": ("鳥栖・みやき・神埼", "saga-near-fukuoka.html", ("area-chikugo.html", "筑後・久留米エリア（福岡県）")),
         "yamato": ("三瀬・佐賀大和", "saga-near-fukuoka.html", ("area-fukuokacity.html", "福岡市エリア")),
         "karatsu": ("唐津", "saga-meimon.html", ("area-itoshima.html", "糸島エリア（福岡県）")),
@@ -172,19 +174,38 @@ def page(slug, c, idx):
 
     voices_html = ""
     v = VOICES.get(slug)
-    if v:
+    emb = EMBEDS.get(slug, [])
+    if v or emb:
         li = lambda rows: "".join(f'<li>{r["text"]}<span class="sc-vc">{r["count"]}件</span></li>' for r in rows)
-        voices_html = ('<section class="section section-pale"><div class="sec-eyebrow">— Voices on SNS</div>'
-                       '<h2 class="sec-title">SNSでの評判。</h2>'
-                       f'<p class="sec-desc">ThreadsとInstagramの公開投稿のうち、{c["name"]}について書かれた{v["total"]}件（{v["src"]}・{v["period"]}）を編集部が読み、'
-                       '同じ趣旨の感想をまとめました。数字は同じ趣旨の投稿の数です。投稿の文章やユーザー名は載せていません。</p>'
-                       '<div class="sc-voices">'
-                       f'<div class="sc-vbox"><div class="sc-vh">よかったという声</div><ul>{li(v["good"])}</ul></div>'
-                       f'<div class="sc-vbox"><div class="sc-vh">気をつけたいという声</div><ul>{li(v["care"])}</ul></div>'
-                       '</div>'
-                       f'<p class="sc-vfit"><strong>編集部のまとめ：</strong>{v["fit"]}</p>'
-                       '<p class="sec-desc" style="font-size:12px;">個人の感想で、回った日の天候やコースの状態によって変わります。2026年11月28日に確認した投稿です。</p>'
-                       '</section>')
+        parts = ['<section class="section section-pale"><div class="sec-eyebrow">— Voices on SNS</div>',
+                 f'<h2 class="sec-title">{"SNSでの評判。" if v else "SNSに投稿されたコースの風景。"}</h2>']
+        if v:
+            parts += [f'<p class="sec-desc">ThreadsとInstagramの公開投稿のうち、{c["name"]}について書かれた{v["total"]}件（{v["src"]}・{v["period"]}）を編集部が読み、'
+                      '同じ趣旨の感想をまとめました。数字は同じ趣旨の投稿の数です。投稿の文章やユーザー名は載せていません。</p>',
+                      '<div class="sc-voices">',
+                      f'<div class="sc-vbox"><div class="sc-vh">よかったという声</div><ul>{li(v["good"])}</ul></div>',
+                      f'<div class="sc-vbox"><div class="sc-vh">気をつけたいという声</div><ul>{li(v["care"])}</ul></div>',
+                      '</div>',
+                      f'<p class="sc-vfit"><strong>編集部のまとめ：</strong>{v["fit"]}</p>',
+                      '<p class="sec-desc" style="font-size:12px;">個人の感想で、回った日の天候やコースの状態によって変わります。2026年11月28日に確認した投稿です。</p>']
+        else:
+            parts += [f'<p class="sec-desc">{c["name"]}で撮られた、SNSの公開投稿から風景の写真を選びました。</p>']
+        if emb:
+            def card(p):
+                if "instagram.com" in p["url"]:
+                    at = f'class="instagram-media" data-instgrm-permalink="{p["url"]}" data-instgrm-version="14"'
+                else:
+                    at = f'class="text-post-media" data-text-post-permalink="{p["url"]}" data-text-post-version="0"'
+                return (f'<div style="min-height:420px;min-width:0;"><p style="font-size:12px;color:var(--muted);margin:0 0 8px;">{p["note"]}</p>'
+                        f'<blockquote {at} style="margin:0;max-width:100%;"><a href="{p["url"]}" target="_blank" rel="noopener">{p["label"]}</a></blockquote></div>')
+            srcs = [u for u, k in (("https://www.instagram.com/embed.js", "instagram.com"), ("https://www.threads.com/embed.js", "threads.")) if any(k in p["url"] for p in emb)]
+            names = "・".join(n for n, k in (("Instagram", "instagram.com"), ("Threads", "threads.")) if any(k in p["url"] for p in emb))
+            parts += [f'<div class="voices-embeds" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:16px;margin-top:20px;">{"".join(card(p) for p in emb)}</div>',
+                      f'<p style="margin-top:12px;font-size:12px;line-height:1.7;color:var(--muted);">投稿は{names}の公式埋め込みで紹介しています。表示されない場合は、元の投稿が削除されたか非公開になった可能性があります。掲載の取り下げは<a href="https://www.threads.com/@fukuoka_golf_guide1" target="_blank" rel="noopener">運営者のThreads</a>へご連絡ください（<a href="privacy.html">プライバシーポリシー</a>）。</p>',
+                      "<script>(function(){var e=document.querySelector('.voices-embeds');if(!e)return;function l(){[" + ",".join(f"'{u}'" for u in srcs) + "].forEach(function(u){var s=document.createElement('script');s.src=u;s.async=true;document.body.appendChild(s);});}"
+                      "if(!('IntersectionObserver' in window)){l();return;}var o=new IntersectionObserver(function(x){if(x[0].isIntersecting){o.disconnect();l();}},{rootMargin:'400px'});o.observe(e);})();</script>"]
+        parts.append('</section>')
+        voices_html = "".join(parts)
 
     pc = []
     for k, lbl in (("weekday", "平日"), ("weekend", "土日祝")):

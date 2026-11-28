@@ -11,7 +11,9 @@
 - 食事関連の IG 位置ID: 志摩 387724372・夜須 451088921637148・クイーンズヒル 1025668888・浮羽 1477344722297078・玄海 252534904 (「玄海ゴルフ場」)・小郡 5024429・芥屋 629238573923154・若宮 258455551 (「若宮ゴルフクラブ」・WAKAMIYA と同一か未確認)
 - hub-traveler の記事カードからリンク・sitemap 168 URL。GA4 は共通計測で page=gourmet-fukuoka-golf.html として取れる (cta_position は other)
 - **28日判定 (12/26・事前確定)**: PV≥100 かつ楽天クリック率≥5% → GO (他コースへ拡大) / PV<100 → 14日延長 / PV≥100・2〜5% → HOLD / <2% → NO
-- 未対応: 楽天GORAの「昼食付」プランに絞ったリンク (フィルタが URL で保持されるか未確認)・GSC 登録リクエスト
+- 6コース (志摩・小郡・WAKAMIYA・玄海・芥屋・浮羽) の日本語セクションからリンク (`5a0021f`・`link_gourmet_from_courses_2026.py`・SNS 評判欄の直後)
+- GSC 登録リクエスト済 (11/28)
+- 楽天GORAの「昼食付」絞り込みリンクは**作れない**: 絞り込み (`lunch=1`/`lunch_flg=1`) はトップの日付・エリア検索のフォームにしかなく、コースのカレンダー (`search.gora…/cal/disp/c_id/…`) やコースページは URL に付けても変わらない (11/28 確認)。コースページへのリンクのまま
 
 ### ✅ 2026-11-28 佐賀の個別コースページ 11件 (オーナー指示で 12/9 判定を待たずに作成)
 - `35cef42` `course-saga-{bridgestone,sagacc,hinokuma,welcome,sansui,kitayama,yamatofudo,fuji,karatsu,wakagi,classic}.html` (JA)。データ `saga_courses.json` ← `scripts/build_saga_course_data_2026.py` (取得済みページは `scripts/.cache/saga/`: 楽天GORAコースガイド + じゃらん /info/)。生成 `scripts/build_saga_course_pages_2026.py` (料金は jalan_floor/gora_floor のキャッシュ)

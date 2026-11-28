@@ -1,0 +1,449 @@
+{
+ "_meta": {
+  "created": "2026-11-28",
+  "note": "佐賀の個別コースページ用。じゃらん・楽天GORAのコース情報と SAGA_MEIMON_FACTS.md から作成。course_data.json とは別管理。"
+ },
+ "courses": {
+  "bridgestone": {
+   "name": "ブリヂストンカンツリー倶楽部",
+   "city": "鳥栖市",
+   "area": "tosu",
+   "jalan_id": "02366",
+   "rakuten_cid": "410013",
+   "addr": "佐賀県鳥栖市村田町朝日986",
+   "holes": "18",
+   "par": "72",
+   "yard": "6,371",
+   "kind": "丘陵",
+   "greens": "1グリーン",
+   "green": "高麗",
+   "slope": "適度なアップダウン",
+   "area_m2": "55",
+   "design": "三好徳行",
+   "rating": {
+    "tee": "BLUE",
+    "rate": "70.0",
+    "yard": "6,371"
+   },
+   "access": [
+    "九州自動車道・鳥栖 10km以内"
+   ],
+   "open": "1957年9月23日",
+   "round_style": "セルフ・キャディ選択制",
+   "practice": "250Y 10打席",
+   "verified": [
+    {
+     "item": "開場",
+     "value": "1957年（昭和32年）",
+     "source": "公式サイト",
+     "url": "https://bridgestone-cc.com/about/"
+    },
+    {
+     "item": "創設",
+     "value": "ブリヂストン創業者・石橋正二郎",
+     "source": "公式サイト",
+     "url": "https://bridgestone-cc.com/about/"
+    },
+    {
+     "item": "設計",
+     "value": "三好徳行",
+     "source": "公式サイト",
+     "url": "https://bridgestone-cc.com/about/"
+    }
+   ],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc02366/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/410013"
+   },
+   "checked": "2026-11-28"
+  },
+  "sagacc": {
+   "name": "佐賀カントリー倶楽部",
+   "city": "三養基郡みやき町",
+   "area": "tosu",
+   "jalan_id": "02376",
+   "rakuten_cid": "410002",
+   "addr": "佐賀県三養基郡みやき町白壁2785",
+   "holes": "18",
+   "par": "72",
+   "yard": "6,748",
+   "kind": "丘陵",
+   "greens": "1グリーン",
+   "green": "ベント",
+   "slope": "適度なアップダウン",
+   "area_m2": "82",
+   "design": "井上誠一",
+   "rating": {
+    "tee": "バック",
+    "rate": "72.9",
+    "yard": "6,748"
+   },
+   "access": [
+    "長崎自動車道・鳥栖 10km以内"
+   ],
+   "open": null,
+   "round_style": null,
+   "practice": "１５０Ｙ／１０打席／３０球・２５０0円 / / レンタルフルセット：３０００円（税別） / / レンタルシューズ：５００円（税別）",
+   "verified": [
+    {
+     "item": "設計",
+     "value": "井上誠一",
+     "source": "公式サイト（当倶楽部の歴史）",
+     "url": "https://www.saga-cc.com/history"
+    },
+    {
+     "item": "起工",
+     "value": "1969年（昭和44年）",
+     "source": "公式サイト（当倶楽部の歴史）",
+     "url": "https://www.saga-cc.com/history"
+    }
+   ],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc02376/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/410002"
+   },
+   "checked": "2026-11-28"
+  },
+  "hinokuma": {
+   "name": "日の隈カンツリークラブ",
+   "city": "神埼市",
+   "area": "tosu",
+   "jalan_id": "02373",
+   "rakuten_cid": "410011",
+   "addr": "佐賀県神埼市神埼町尾崎3617-1",
+   "holes": "18",
+   "par": "72",
+   "yard": "5,800",
+   "kind": "丘陵",
+   "greens": "1グリーン",
+   "green": "高麗",
+   "slope": "適度なアップダウン",
+   "area_m2": "89",
+   "design": "(株)熊谷組 九州技術開発",
+   "rating": {
+    "tee": "バック",
+    "rate": "71.0",
+    "yard": "6,184"
+   },
+   "access": [
+    "長崎自動車道・東脊振 10km以内"
+   ],
+   "open": "1976年9月30日",
+   "round_style": "セルフプレー",
+   "practice": "なし",
+   "verified": [],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc02373/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/410011"
+   },
+   "checked": "2026-11-28"
+  },
+  "welcome": {
+   "name": "ウェルカムゴルフクラブ",
+   "city": "鳥栖市",
+   "area": "tosu",
+   "jalan_id": "21013",
+   "rakuten_cid": "520385",
+   "addr": "佐賀県鳥栖市村田町986-36",
+   "holes": "9",
+   "par": "27",
+   "yard": "93",
+   "kind": "林間",
+   "greens": "1グリーン",
+   "green": "高麗",
+   "slope": "フラット",
+   "area_m2": null,
+   "design": null,
+   "rating": null,
+   "access": [
+    "九州自動車道・鳥栖 10km以内",
+    "長崎自動車道・東脊振 10km以内"
+   ],
+   "open": "2008年7月5日",
+   "round_style": null,
+   "practice": "打席数：60打席 / 距離：300ヤード / 使用球：レンジボール / 芝から直接打てる：不可 / アプローチ練習場有 / バンカー練習場有 / ドライバー使用可",
+   "verified": [],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc21013/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/520385"
+   },
+   "checked": "2026-11-28"
+  },
+  "sansui": {
+   "name": "山水カントリークラブ",
+   "city": "三養基郡みやき町",
+   "area": "tosu",
+   "jalan_id": "02375",
+   "rakuten_cid": "6389",
+   "addr": "佐賀県三養基郡みやき町蓑原4807",
+   "holes": "9",
+   "par": "72",
+   "yard": "4,931",
+   "kind": "山岳",
+   "greens": "1グリーン",
+   "green": "高麗",
+   "slope": "適度なアップダウン",
+   "area_m2": null,
+   "design": "豊栄建設 佐賀土地改良連合会",
+   "rating": null,
+   "access": [
+    "長崎自動車道・東脊振 10km以内"
+   ],
+   "open": "1974年8月22日",
+   "round_style": null,
+   "practice": "打席数：3打席 / 距離：15ヤード / 芝から直接打てる：不可 / アプローチ練習場有 / ドライバー使用可",
+   "verified": [],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc02375/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/6389"
+   },
+   "checked": "2026-11-28"
+  },
+  "kitayama": {
+   "name": "北山カントリー倶楽部",
+   "city": "佐賀市三瀬村",
+   "area": "yamato",
+   "jalan_id": "02374",
+   "rakuten_cid": "410014",
+   "addr": "佐賀県佐賀市三瀬村杠609",
+   "holes": "18",
+   "par": "72",
+   "yard": "7,061",
+   "kind": "丘陵",
+   "greens": "2グリーン",
+   "green": "ベント",
+   "slope": "適度なアップダウン",
+   "area_m2": "99",
+   "design": "富澤誠造",
+   "rating": {
+    "tee": "フルバック",
+    "rate": "74.5",
+    "yard": "7,061"
+   },
+   "access": [
+    "福岡都市高速道路・野芥 25km以内"
+   ],
+   "open": "1975年1月1日",
+   "round_style": null,
+   "practice": "あり / 打席数：8打席 / 距離：40ヤード / 料金：25球：￥216 / 使用球：コースボール / 芝から直接打てる：不可",
+   "verified": [],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc02374/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/410014"
+   },
+   "checked": "2026-11-28"
+  },
+  "yamatofudo": {
+   "name": "大和不動カントリー倶楽部",
+   "city": "佐賀市大和町",
+   "area": "yamato",
+   "jalan_id": "02371",
+   "rakuten_cid": "410015",
+   "addr": "佐賀県佐賀市大和町川上5576",
+   "holes": "18",
+   "par": "72",
+   "yard": "6,073",
+   "kind": "丘陵",
+   "greens": "1グリーン",
+   "green": "ベント",
+   "slope": "適度なアップダウン",
+   "area_m2": "152",
+   "design": "上田 鉄弘",
+   "rating": {
+    "tee": "バック",
+    "rate": "72.7",
+    "yard": "6,928"
+   },
+   "access": [
+    "長崎自動車道・佐賀大和 5km以内"
+   ],
+   "open": "1995年4月1日",
+   "round_style": "セルフ・キャディ選択制",
+   "practice": "打席数：7打席 / 距離：10ヤード / 使用球：レンジボール / 芝から直接打てる：不可 / アプローチ練習場有 / ドライバー使用可",
+   "verified": [],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc02371/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/410015"
+   },
+   "checked": "2026-11-28"
+  },
+  "fuji": {
+   "name": "フジカントリークラブ",
+   "city": "佐賀市富士町",
+   "area": "yamato",
+   "jalan_id": null,
+   "rakuten_cid": "410012",
+   "addr": "佐賀県佐賀市富士町上熊川691",
+   "holes": "18",
+   "par": "72",
+   "yard": "6,777",
+   "kind": "丘陵",
+   "greens": "1グリーン",
+   "green": "ベント",
+   "slope": "適度なアップダウン",
+   "area_m2": "160",
+   "design": "熊谷組",
+   "rating": {
+    "tee": "CHAMP",
+    "rate": "73.4",
+    "yard": "6,772"
+   },
+   "access": [
+    "長崎自動車道・佐賀大和 10km以内"
+   ],
+   "open": "1988年10月1日",
+   "round_style": "セルフ・キャディ選択制",
+   "practice": "打席数：8打席 / 距離：50ヤード / 料金：30球 \\215 / 使用球：レンジボール / 芝から直接打てる：不可 / アプローチ練習場有 / バンカー練習場有 / ドライバー使用可",
+   "verified": [],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc02372/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/410012"
+   },
+   "checked": "2026-11-28"
+  },
+  "karatsu": {
+   "name": "唐津ゴルフ倶楽部",
+   "city": "唐津市",
+   "area": "karatsu",
+   "jalan_id": "02365",
+   "rakuten_cid": "410001",
+   "addr": "佐賀県唐津市菅牟田64-1",
+   "holes": "18",
+   "par": "72",
+   "yard": "6,710",
+   "kind": "丘陵",
+   "greens": "1グリーン",
+   "green": "ベント",
+   "slope": "適度なアップダウン",
+   "area_m2": "81",
+   "design": "（株）オオバ",
+   "rating": null,
+   "access": [
+    "西九州自動車道・唐津千々賀山田 10km以内",
+    "長崎自動車道・多久 30km以内"
+   ],
+   "open": "1937年7月12日",
+   "round_style": null,
+   "practice": "打席数：10打席 / 距離：230ヤード / 料金：30球 \\270 / 使用球：コースボール / 芝から直接打てる：不可 / アプローチ練習場有 / バンカー練習場有 / ドライバー使用可",
+   "verified": [
+    {
+     "item": "開場",
+     "value": "1937年（昭和12年）",
+     "source": "公式サイト",
+     "url": "https://www.resol-golf.jp/karatsu/course/"
+    }
+   ],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc02365/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/410001"
+   },
+   "checked": "2026-11-28"
+  },
+  "wakagi": {
+   "name": "若木ゴルフ倶楽部",
+   "city": "武雄市",
+   "area": "takeo",
+   "jalan_id": "02370",
+   "rakuten_cid": "410016",
+   "addr": "佐賀県武雄市若木町大字本部1939-1",
+   "holes": "18",
+   "par": "72",
+   "yard": "6,837",
+   "kind": "丘陵",
+   "greens": "1グリーン",
+   "green": "ベント",
+   "slope": "適度なアップダウン",
+   "area_m2": "104",
+   "design": "デズモンド・ミュアヘッド",
+   "rating": {
+    "tee": "Black",
+    "rate": "73.4",
+    "yard": "6,837"
+   },
+   "access": [
+    "長崎自動車道・武雄北方 10km以内"
+   ],
+   "open": "1991年10月10日",
+   "round_style": "セルフプレ－",
+   "practice": "打席数：10打席 / 距離：220ヤード / 料金：25球 \\330 / 使用球：レンジボール / 芝から直接打てる：不可 / アプローチ練習場有 / バンカー練習場有 / ドライバー使用可",
+   "verified": [
+    {
+     "item": "設計",
+     "value": "デズモンド・ミュアヘッド",
+     "source": "PGM公式サイト",
+     "url": "https://booking.pacificgolf.co.jp/guide/125.html"
+    }
+   ],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc02370/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/410016"
+   },
+   "checked": "2026-11-28"
+  },
+  "classic": {
+   "name": "佐賀クラシックゴルフ倶楽部",
+   "city": "多久市",
+   "area": "taku",
+   "jalan_id": "02369",
+   "rakuten_cid": "410003",
+   "addr": "佐賀県多久市西多久町大字板屋60-1",
+   "holes": "18",
+   "par": "72",
+   "yard": "6,873",
+   "kind": "林間",
+   "greens": "1グリーン",
+   "green": "ベント",
+   "slope": "適度なアップダウン",
+   "area_m2": "126",
+   "design": "安達建設, 中村享治",
+   "rating": {
+    "tee": "バック",
+    "rate": "73.5",
+    "yard": "6,879"
+   },
+   "access": [
+    "長崎自動車道・多久 10km以内"
+   ],
+   "open": "1996年9月3日",
+   "round_style": "セルフ・キャディ選択制",
+   "practice": "打席数：12打席 / 距離：260ヤード / 料金：30球 \\300 / 使用球：レンジボール / 芝から直接打てる：不可 / アプローチ練習場有 / バンカー練習場有 / ドライバー使用可",
+   "verified": [
+    {
+     "item": "開場",
+     "value": "1996年",
+     "source": "公式サイト",
+     "url": "https://cm-g.co.jp/saga/history/"
+    },
+    {
+     "item": "設計",
+     "value": "中村亨治",
+     "source": "公式サイト",
+     "url": "https://cm-g.co.jp/saga/history/"
+    },
+    {
+     "item": "認定",
+     "value": "JLPGA認定コース",
+     "source": "日本女子プロゴルフ協会",
+     "url": "https://www.lpga.or.jp/about/authorized_course/"
+    },
+    {
+     "item": "公式競技",
+     "value": "2023年 日本シニアゴルフ選手権",
+     "source": "日本ゴルフ協会 競技規定",
+     "url": "https://www.jga.or.jp/jga/jsp/2023/12-0/regulation.pdf"
+    },
+    {
+     "item": "公式競技",
+     "value": "2007年 九州アマチュアゴルフ選手権 決勝・2012年 九州オープン",
+     "source": "公式サイト・GDO",
+     "url": "https://cm-g.co.jp/saga/history/tournament/"
+    }
+   ],
+   "sources": {
+    "jalan": "https://golf-jalan.net/gc02369/info/",
+    "rakuten": "https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/410003"
+   },
+   "checked": "2026-11-28"
+  }
+ }
+}

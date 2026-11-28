@@ -20,6 +20,7 @@ OUT = "saga-near-fukuoka.html"
 C = os.path.join(R0, "scripts", ".cache")
 JF = json.load(open(os.path.join(C, "jalan_floor.json"), encoding="utf-8"))
 GF = json.load(open(os.path.join(C, "gora_floor.json"), encoding="utf-8"))
+SLUG = {v["name"]: k for k, v in json.load(open(os.path.join(R0, "saga_courses.json"), encoding="utf-8"))["courses"].items()}
 RG = json.load(open(os.path.join(C, "saga_rakuten_guide_2026-11-25.json"), encoding="utf-8"))
 
 COURSES = [  # (key, 名前, エリア, じゃらんID or None, 楽天c_id, アクセス表記, ひとこと)
@@ -82,7 +83,8 @@ def card(key, name, jid, cid, access, note):
     if jid:
         btns += f'<a href="{jalan_url(jid)}" class="sn-btn sn-jal" target="_blank" rel="nofollow sponsored noopener">じゃらんで予約</a>'
     spec = f"{g['holes']}・パー{g['par']}・{g['yard']}" if g.get("yard") else g["holes"]
-    return (f'<div class="sn-card"><div class="sn-name">{name}</div>'
+    detail = f' <a href="course-saga-{SLUG[name]}.html" style="font-size:12.5px;font-weight:700;color:#1a5fa0;">コース詳細 →</a>' if name in SLUG else ""
+    return (f'<div class="sn-card"><div class="sn-name">{name}{detail}</div>'
             f'<div class="sn-meta">{g["addr"].replace("佐賀県 ", "佐賀県")}｜{spec}</div>'
             f'<div class="sn-meta">🚗 {access}</div>'
             + (f'<div class="sn-note">{note}</div>' if note else "")

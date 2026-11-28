@@ -18,6 +18,7 @@ OUT = "saga-meimon.html"
 C = os.path.join(R0, "scripts", ".cache")
 JF = json.load(open(os.path.join(C, "jalan_floor.json"), encoding="utf-8"))
 GF = json.load(open(os.path.join(C, "gora_floor.json"), encoding="utf-8"))
+SLUG = {v["name"]: k for k, v in json.load(open(os.path.join(R0, "saga_courses.json"), encoding="utf-8"))["courses"].items()}
 RG = json.load(open(os.path.join(C, "saga_rakuten_guide_2026-11-25.json"), encoding="utf-8"))
 
 # 開場の古い順。facts は (項目, 内容, 出典の表示, 出典URL)
@@ -88,10 +89,10 @@ for x in COURSES:
     g = RG[x["cid"]]
     f = floor(x["jid"], x["cid"])
     x["f"] = f
-    rows.append(f'<tr><td class="sm-n">{x["name"]}<span>{x["city"]}</span></td><td>{x["open"]}</td><td>{x["design"]}</td><td>{x["event"]}</td><td class="sm-p">{yen(f["weekday"])}</td></tr>')
+    rows.append(f'<tr><td class="sm-n"><a href="course-saga-{SLUG[x["name"]]}.html" style="color:inherit;border-bottom:1px dotted;">{x["name"]}</a><span>{x["city"]}</span></td><td>{x["open"]}</td><td>{x["design"]}</td><td>{x["event"]}</td><td class="sm-p">{yen(f["weekday"])}</td></tr>')
     facts = "".join(f'<li><strong>{k}</strong>：{v}（<a href="{u}" target="_blank" rel="noopener">{s}</a>）</li>' for k, v, s, u in x["facts"])
     cards.append(
-        f'<div class="sm-card"><div class="sm-name">{x["name"]}</div>'
+        f'<div class="sm-card"><div class="sm-name">{x["name"]} <a href="course-saga-{SLUG[x["name"]]}.html" style="font-size:12.5px;font-weight:700;color:#1a5fa0;">コース詳細 →</a></div>'
         f'<div class="sm-meta">{g["addr"].replace("佐賀県 ", "佐賀県")}｜{g["holes"]}・パー{g["par"]}・{g["yard"]}｜🚗 {x["access"]}</div>'
         f'<ul class="sm-facts">{facts}</ul><p class="sm-note">{x["note"]}</p>'
         f'<div class="sm-price">平日 <strong>{yen(f["weekday"])}</strong>　土日祝 <strong>{yen(f["weekend"])}</strong></div>'

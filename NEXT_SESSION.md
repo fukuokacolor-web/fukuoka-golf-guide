@@ -9,6 +9,11 @@
 - 各項目に出典 (楽天GORA/じゃらん/公式)。確認済み事実 (SAGA_MEIMON_FACTS.md) を優先。佐賀CC の開場年は載せない・電話番号は載せない。ヒーロー写真は福岡のコースの写真で「○○の写真ではありません」と明記
 - 佐賀の2ページのカードに「コース詳細」リンク。sitemap 167 URL。月次タスク (E) に個別ページの dry-run を追加
 - **判定**: 12/9・12/23 の佐賀判定 (saga-near 8コース) とは別に、course-saga-* の click_affiliate も見る
+- GSC 登録リクエスト (11/28): course-saga-karatsu・bridgestone・sagacc・classic・kitayama の5件 (いずれも「未登録」だった)。saga-meimon は登録済みを確認。残り6件は sitemap 任せ (必要なら後日リクエスト)
+
+### ✅ 2026-11-28 小倉の代わり枠を上へ (`beae3fc`)
+- 公式のみ7コースの「近くの予約できるコース」枠の位置をスマホで測定: 6コースは約1,073px、小倉だけ 4,217px (料金の前に服装・プレー体験記があるため)
+- `scripts/add_alt_cta_official_only_2026_11.py` に `ANCHOR = {"kokura": "— Dress Code"}` を追加し、小倉は服装セクションの前へ → 1,371px。本番反映確認済み
 
 ### ✅ 2026-11-28 まとめページの予約導線 (CVR 会議の Tier)
 - 点検 (スマホ 375px・最初の予約リンクの位置): コースページ 648〜1,383px に対し、hub-business 2,973・hub-beginner 3,572・area-fukuokacity 4,330・airport-access-top5 3,467・トップはなし。course-kokura も 4,549 (公式のみコースの代わり枠が料金欄の前で下の方)

@@ -4,6 +4,12 @@
 **最終 commit**: `b2493d2` fix(content) 汎用写真の alt を「イメージ写真」に — origin/main へ push 済・本番反映確認済
 **未コミット**: なし (リポジトリ外の未追跡ファイル course_data.json.backup-*・saga_course_data.json・images/malbon-editor.jpg.jpg は触っていない)
 
+### ✅ 2026-11-28 佐賀の個別コースページ 11件 (オーナー指示で 12/9 判定を待たずに作成)
+- `35cef42` `course-saga-{bridgestone,sagacc,hinokuma,welcome,sansui,kitayama,yamatofudo,fuji,karatsu,wakagi,classic}.html` (JA)。データ `saga_courses.json` ← `scripts/build_saga_course_data_2026.py` (取得済みページは `scripts/.cache/saga/`: 楽天GORAコースガイド + じゃらん /info/)。生成 `scripts/build_saga_course_pages_2026.py` (料金は jalan_floor/gora_floor のキャッシュ)
+- 各項目に出典 (楽天GORA/じゃらん/公式)。確認済み事実 (SAGA_MEIMON_FACTS.md) を優先。佐賀CC の開場年は載せない・電話番号は載せない。ヒーロー写真は福岡のコースの写真で「○○の写真ではありません」と明記
+- 佐賀の2ページのカードに「コース詳細」リンク。sitemap 167 URL。月次タスク (E) に個別ページの dry-run を追加
+- **判定**: 12/9・12/23 の佐賀判定 (saga-near 8コース) とは別に、course-saga-* の click_affiliate も見る
+
 ### ✅ 2026-11-28 まとめページの予約導線 (CVR 会議の Tier)
 - 点検 (スマホ 375px・最初の予約リンクの位置): コースページ 648〜1,383px に対し、hub-business 2,973・hub-beginner 3,572・area-fukuokacity 4,330・airport-access-top5 3,467・トップはなし。course-kokura も 4,549 (公式のみコースの代わり枠が料金欄の前で下の方)
 - `6fe3503` 5ページの数字の帯の直後に **楽天GORA「福岡のゴルフ場の空きを見る」ボタン** (`add_hub_rakuten_cta_2026_11.py`・MARKER `hub-rakuten-cta-v1`・リンク先は楽天GORA 福岡県検索結果 map_search/result/?area[]=40・A8経由の楽天アフィリ) → 745〜1,289px。**12月初めに GA4 で 5ページの rakuten_gora クリック (cta_position=other・link_url に map_search) を 11/28 前後で比べる**
